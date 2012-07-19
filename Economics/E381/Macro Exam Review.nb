@@ -1,0 +1,1940 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     75635,       1931]
+NotebookOptionsPosition[     66619,       1658]
+NotebookOutlinePosition[     67135,       1678]
+CellTagsIndexPosition[     67092,       1675]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["1", "BookChapterNumber",
+ CellChangeTimes->{3.5377441775988626`*^9}],
+
+Cell["Introduction to Macroeconomics", "BookChapterTitle",
+ CellChangeTimes->{{3.537744196212695*^9, 3.537744204162057*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Definitions", "Subsection",
+ CellChangeTimes->{{3.537744941316288*^9, 3.537744942866395*^9}},
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Macroeconomics: ",
+  FontWeight->"Bold"],
+ "The study of an economy as a whole (Mankiw). The study of how the choices \
+of households and firms and the effects of outside forces influence aggregate \
+economic outcomes. "
+}], "Definition",
+ CellChangeTimes->{{3.537745881445966*^9, 3.5377459018940773`*^9}, {
+  3.537745995870286*^9, 3.5377460366838837`*^9}}],
+
+Cell[TextData[{
+ StyleBox["The Three Characteristics of a good Macro Model: ",
+  FontWeight->"Bold"],
+ "1.) Reference to micro-level household and firm decisions 2.) Aggregation \
+of micro-agent decision rules 3.) Stance on how prices are determined \
+(concept of equilibrium). "
+}], "Definition",
+ CellChangeTimes->{{3.53774605449282*^9, 3.537746133867084*^9}}],
+
+Cell[TextData[{
+ StyleBox["Exogenous Variable: ",
+  FontWeight->"Bold"],
+ "These are the inputs into a model. They are also often called the \
+independent variables."
+}], "Definition",
+ CellChangeTimes->{{3.5377461548354807`*^9, 3.5377461599641438`*^9}, {
+  3.5377462050575113`*^9, 3.537746265695363*^9}}],
+
+Cell[TextData[{
+ StyleBox["Endogenous Variable:",
+  FontWeight->"Bold"],
+ " These are the variables that a model tries to explain. They are also \
+called dependent variables. They are the ",
+ StyleBox["end",
+  FontWeight->"Bold"],
+ " result of your model. "
+}], "Definition",
+ CellChangeTimes->{{3.537746160217958*^9, 3.537746167236701*^9}, {
+  3.537746245488785*^9, 3.537746262576726*^9}, {3.5377483424053307`*^9, 
+  3.537748353699222*^9}}],
+
+Cell[TextData[{
+ StyleBox["Models:",
+  FontWeight->"Bold"],
+ " The purpose of a model is to explain how exogeous variables affect \
+endogenous variables. They are simplified versions of percieved reality to \
+reveal how variables interact. "
+}], "Definition",
+ CellChangeTimes->{{3.537746167769629*^9, 3.53774616917347*^9}, {
+  3.5377462752402363`*^9, 3.5377462873235807`*^9}, {3.5377483929489*^9, 
+  3.537748410253641*^9}}],
+
+Cell[TextData[{
+ StyleBox["GDP:",
+  FontWeight->"Bold"],
+ " The total income earned domestically, including the income earned by \
+foreigen-owned factors of production OR the total expenditore on domestically \
+produced goods and services (these two are and must be equivalent)."
+}], "Definition",
+ CellChangeTimes->{{3.537746170546156*^9, 3.537746173100226*^9}, {
+  3.537746532630764*^9, 3.537746579516234*^9}}],
+
+Cell[TextData[{
+ StyleBox["Inflation:",
+  FontWeight->"Bold"],
+ " An increase in the overall level of prices"
+}], "Definition",
+ CellChangeTimes->{{3.5377461734180527`*^9, 3.5377461782256804`*^9}, 
+   3.5377464385824413`*^9, {3.5377465917414637`*^9, 3.537746600867601*^9}}],
+
+Cell[TextData[{
+ StyleBox["Unemployment Rate:",
+  FontWeight->"Bold"],
+ " The percentage of thos in the labor force who do not have jobs."
+}], "Definition",
+ CellChangeTimes->{{3.537746180170362*^9, 3.537746181994055*^9}, {
+  3.537746440270204*^9, 3.5377464652135*^9}, {3.53774663033941*^9, 
+  3.537746642587102*^9}}],
+
+Cell[TextData[{
+ StyleBox["Economic Stock: ",
+  FontWeight->"Bold"],
+ "A variable measured as a quantity at a point of time."
+}], "Definition",
+ CellChangeTimes->{{3.537746451792015*^9, 3.537746468350078*^9}, {
+  3.537748068683221*^9, 3.537748080359222*^9}}],
+
+Cell[TextData[{
+ StyleBox["Economic Flow: ",
+  FontWeight->"Bold"],
+ "A variable measured as a quantity per unit time. "
+}], "Definition",
+ CellChangeTimes->{{3.537746457541812*^9, 3.537746459661627*^9}, {
+  3.537748176408173*^9, 3.5377481821972513`*^9}}],
+
+Cell[TextData[{
+ StyleBox["Nominal things:",
+  FontWeight->"Bold"],
+ " These are variables expressed in terms of todays conditions. For example \
+nominal GDP is GDP in today\[CloseCurlyQuote]s dollars, nominal inerest rates \
+are the rates advertised, but do not account for inflation. "
+}], "Definition",
+ CellChangeTimes->{{3.53774618343406*^9, 3.537746190417387*^9}, {
+  3.537746315153447*^9, 3.5377463763031263`*^9}}],
+
+Cell[TextData[{
+ StyleBox["Real things:",
+  FontWeight->"Bold"],
+ " Real things are measured in a way that you can compare accross time. Real \
+GDP might be normalized to a common \[OpenCurlyDoubleQuote]base\
+\[CloseCurlyDoubleQuote] year so you can look at time-series data and make \
+accurate comparisons. Real interest rates are the nominal rate minus \
+inflation. "
+}], "Definition",
+ CellChangeTimes->{{3.537746192881563*^9, 3.537746193881392*^9}, {
+  3.53774637879079*^9, 3.5377464299663067`*^9}}]
+}, Closed]]
+}, Closed]],
+
+Cell["Equations", "Subsection",
+ CellChangeTimes->{{3.537744944922474*^9, 3.5377449528657618`*^9}},
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell["Examples/Other", "Subsection",
+ CellChangeTimes->{{3.53774495496961*^9, 3.537744958001937*^9}},
+ FontSize->18],
+
+Cell["", "Text",
+ CellChangeTimes->{{3.537747846075183*^9, 3.5377478464673433`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Stock vs. Flow", "Subsubsection",
+ CellChangeTimes->{{3.537747465313306*^9, 3.53774746821777*^9}, {
+  3.537748111360558*^9, 3.537748113269518*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[GridBox[{
+    {
+     StyleBox["Stock",
+      FontFamily->"Helvetica",
+      FontSize->14,
+      FontWeight->"Bold",
+      FontVariations->{"Underline"->True}], 
+     StyleBox["Flow",
+      FontFamily->"Helvetica",
+      FontSize->14,
+      FontWeight->"Bold",
+      FontVariations->{"Underline"->True}]},
+    {
+     RowBox[{"Total", " ", "Wealth"}], "GDP"},
+    {"Debt", "Deficit"},
+    {"Captial", "Investment"},
+    {
+     RowBox[{"Labor", " ", "Force"}], "Income"},
+    {"\[Placeholder]", "Expenditure"},
+    {"\[Placeholder]", 
+     RowBox[{"Job", " ", "Growth"}]}
+   }], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{{3.537748489768032*^9, 3.537748519402719*^9}}],
+
+Cell["", "Text"]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2", "BookChapterNumber",
+ CellChangeTimes->{3.53774421021916*^9}],
+
+Cell["Macroeconomic Data", "BookChapterTitle",
+ CellChangeTimes->{{3.537744218129341*^9, 3.537744222472801*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Definitions", "Subsection",
+ CellChangeTimes->{{3.537744941316288*^9, 3.537744942866395*^9}},
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["CPI:",
+  FontWeight->"Bold"],
+ " A measure of the overall level of prices that shows the cost of a fixed \
+basket of consumer goods raltive to the cost of the same basket in a base \
+year. Because the basket is not updated continuously, the CPI tends to ",
+ StyleBox["overstate",
+  FontWeight->"Bold"],
+ " inflation. "
+}], "Definition",
+ CellChangeTimes->{{3.5377475966493483`*^9, 3.537747604115608*^9}, {
+  3.5377488037194033`*^9, 3.5377488697091293`*^9}}],
+
+Cell[TextData[{
+ StyleBox["GDP Deflator:",
+  FontWeight->"Bold"],
+ " The ratio of nominal GDP to real GDP; a measure of the overall level of \
+prices that shows the cost of the currently produced basket of goods relative \
+to the cost of that basket in a base year. "
+}], "Definition",
+ CellChangeTimes->{{3.537747606789823*^9, 3.53774760870986*^9}, {
+  3.537748887269023*^9, 3.537748928091847*^9}}],
+
+Cell[TextData[{
+ StyleBox["Laspeyres index:",
+  FontWeight->"Bold"],
+ " A measure of the level of prices based on a fixed basket of goods. "
+}], "Definition",
+ CellChangeTimes->{{3.5377476133265038`*^9, 3.537747622109743*^9}, {
+  3.537749002250231*^9, 3.537749023065386*^9}}],
+
+Cell[TextData[{
+ StyleBox["Paasche Index:",
+  FontWeight->"Bold"],
+ " A measure of the level of prices based on a changing basket of goods."
+}], "Definition",
+ CellChangeTimes->{
+  3.537747645142709*^9, {3.537749043819983*^9, 3.537749044279405*^9}}],
+
+Cell[TextData[{
+ StyleBox["Labor Force:",
+  FontWeight->"Bold"],
+ " Those in the population who have a job or are looking for a job."
+}], "Definition",
+ CellChangeTimes->{{3.5377476569973*^9, 3.537747658160975*^9}, {
+  3.5377489568905497`*^9, 3.537748976834196*^9}}],
+
+Cell[TextData[{
+ StyleBox["Labor Force Participation Rate:",
+  FontWeight->"Bold"],
+ " The percentage of the adult population in the labor force. "
+}], "Definition",
+ CellChangeTimes->{{3.5377489484619904`*^9, 3.537748990263344*^9}, {
+  3.53779140707095*^9, 3.53779140816288*^9}}],
+
+Cell[TextData[{
+ StyleBox["Investment:",
+  FontWeight->"Bold"],
+ " This is NOT a reallocation of resources, but the deliberate creation of \
+additional capital.  Example: Jones and Diana buy houses - Diana\
+\[CloseCurlyQuote]s is old, Jones builds his. Only Jones\[CloseCurlyQuote]s \
+purchase counts towards investment. "
+}], "Definition",
+ CellChangeTimes->{{3.5377914097366734`*^9, 3.537791484994782*^9}}]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Equations", "Subsection",
+ CellChangeTimes->{{3.537744944922474*^9, 3.5377449528657618`*^9}},
+ FontSize->18],
+
+Cell["", "Text",
+ CellChangeTimes->{3.537747854067247*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Price Indicies", "Subsubsection",
+ CellChangeTimes->{{3.5377476717264*^9, 3.5377476732044897`*^9}}],
+
+Cell[TextData[{
+ "Laspeyres fixed weight Index: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["PI", "cpi"], " ", "=", " ", 
+    FractionBox[
+     RowBox[{
+      RowBox[{
+       SubscriptBox["P", 
+        RowBox[{"a", ",", " ", 
+         RowBox[{"t", "+", "1"}]}]], 
+       SubscriptBox["A", "t"]}], "  ", "+", "  ", 
+      RowBox[{
+       SubscriptBox["P", 
+        RowBox[{"b", ",", " ", 
+         RowBox[{"t", "+", "1"}]}]], 
+       SubscriptBox["B", "t"]}]}], 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["P", 
+        RowBox[{"a", ",", "t"}]], 
+       SubscriptBox["A", "t"]}], "  ", "+", "  ", 
+      RowBox[{
+       SubscriptBox["P", 
+        RowBox[{"b", ",", "t"}]], 
+       SubscriptBox["B", "t"]}]}]]}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.537747676335761*^9, 3.537747750061598*^9}, {
+  3.5377487778771887`*^9, 3.5377487798943453`*^9}}],
+
+Cell[TextData[{
+ "Paasche changing weight index: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["PI", "gdp"], " ", "=", " ", 
+    FractionBox[
+     RowBox[{
+      RowBox[{
+       SubscriptBox["P", 
+        RowBox[{"a", ",", " ", 
+         RowBox[{"t", "+", "1"}]}]], 
+       SubscriptBox["A", 
+        RowBox[{"t", "+", "1"}]]}], "  ", "+", "  ", 
+      RowBox[{
+       SubscriptBox["P", 
+        RowBox[{"b", ",", " ", 
+         RowBox[{"t", "+", "1"}]}]], 
+       SubscriptBox["B", 
+        RowBox[{"t", "+", "1"}]]}]}], 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["P", 
+        RowBox[{"a", ",", " ", "t"}]], 
+       SubscriptBox["A", 
+        RowBox[{"t", "+", "1"}]]}], "  ", "+", "  ", 
+      RowBox[{
+       SubscriptBox["P", 
+        RowBox[{"b", ",", " ", "t"}]], 
+       SubscriptBox["B", 
+        RowBox[{"t", "+", "1"}]]}]}]]}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.537747756829528*^9, 3.5377478309725723`*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["GDP", "Subsubsection",
+ CellChangeTimes->{{3.537747338263165*^9, 3.5377473397142363`*^9}}],
+
+Cell["Y = C + I + G + NX", "Text",
+ CellChangeTimes->{{3.537747353751986*^9, 3.537747366401348*^9}, {
+  3.537747872065884*^9, 3.5377478720702057`*^9}, {3.537791335755011*^9, 
+  3.537791335757052*^9}}],
+
+Cell["\<\
+\tC = nondurable goods + Durable Goods + Services\
+\>", "Text",
+ CellChangeTimes->{{3.537791336563181*^9, 3.537791352146688*^9}}],
+
+Cell["\<\
+\tI = Business Investment + Residential Investment + Inventory\
+\>", "Text",
+ CellChangeTimes->{{3.5377478724581013`*^9, 3.537747884750256*^9}, {
+  3.537791316214246*^9, 3.537791354347518*^9}}],
+
+Cell["\<\
+\tG = Military + Highways + ... \
+\>", "Text",
+ CellChangeTimes->{{3.537791354513928*^9, 3.537791374563348*^9}}],
+
+Cell["\tNX = Exports - Imports", "Text",
+ CellChangeTimes->{{3.537791375065815*^9, 3.537791383513796*^9}}],
+
+Cell[TextData[{
+ "real GDP = ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{"nominal", " ", "GDP"}], 
+    RowBox[{"GDP", " ", "Deflator"}]], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.537747886458584*^9, 3.537747900388623*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Unemployment", "Subsubsection",
+ CellChangeTimes->{{3.5377479100306377`*^9, 3.537747914393086*^9}}],
+
+Cell["\<\
+Labor Rate = Employed + Unemployed: L = E + U\
+\>", "Text",
+ CellChangeTimes->{{3.537747921469122*^9, 3.53774794306971*^9}}],
+
+Cell["Unemployment rate: UR = U/L", "Text",
+ CellChangeTimes->{{3.537747944137362*^9, 3.53774795572132*^9}, {
+  3.537792160256873*^9, 3.537792160260559*^9}}],
+
+Cell[TextData[{
+ "Labor Force partitipation rate: ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{"Labor", " ", "Force"}], 
+    RowBox[{"Adult", " ", "Population"}]], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.537792160887529*^9, 3.537792178899076*^9}}]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Examples/Other", "Subsection",
+ CellChangeTimes->{{3.53774495496961*^9, 3.537744958001937*^9}},
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell["Unemployment questions\.08", "Subsubsection",
+ CellChangeTimes->{{3.5377490615401297`*^9, 3.537749067153884*^9}, {
+  3.5377917372096243`*^9, 3.537791742413726*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["The Household Survey", "Subsubsubsection",
+ CellChangeTimes->{{3.537791745710832*^9, 3.53779174912084*^9}}],
+
+Cell["\<\
+The official unemployment rate comes from a survey of about 60,000 houses \
+called the Current Population Survey.\
+\>", "Text",
+ CellChangeTimes->{{3.537791753084579*^9, 3.537791789911708*^9}}],
+
+Cell["\<\
+The survey splits every adult (16 or older) into three categories:\
+\>", "Text",
+ CellChangeTimes->{{3.537791790115954*^9, 3.537791809931592*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Employed (E):",
+  FontWeight->"Bold"],
+ " This is everyone who worked as paid employees, worked in a personally \
+owned business, worked unpaid in a family business, or those who were until \
+recently workin but stopped because of extraneous circumstances (bad weather, \
+sickness, vacation...)"
+}], "Item1Numbered",
+ CellChangeTimes->{{3.537791813828518*^9, 3.5377918882442007`*^9}, {
+  3.537792135208907*^9, 3.537792136040703*^9}}],
+
+Cell[TextData[{
+ StyleBox["Unemployed (U):",
+  FontWeight->"Bold"],
+ " This is everyone who was not employed, wanted to be employed, and actively \
+looked for employment in the past 4 weeks. It includes people waiting to be \
+called back to a job after being laid off. "
+}], "Item1Numbered",
+ CellChangeTimes->{{3.537791888688859*^9, 3.53779195653997*^9}, {
+  3.5377921413205423`*^9, 3.5377921433044033`*^9}}],
+
+Cell[TextData[{
+ StyleBox["Not in the labor force",
+  FontWeight->"Bold"],
+ ": This category includes everyone who doesn\[CloseCurlyQuote]t fit in to \
+the first two categories. That includes full-time students, homemakers, \
+discourgaed workers (those who want a job, but gave up the search more than 4 \
+weeks ago), and retired people"
+}], "Item1Numbered",
+ CellChangeTimes->{{3.5377919574785557`*^9, 3.5377919935407743`*^9}, {
+  3.537792092334484*^9, 3.537792114697275*^9}}]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["The Establishment Survey", "Subsubsubsection",
+ CellChangeTimes->{{3.537792208896141*^9, 3.537792216797721*^9}}],
+
+Cell["\<\
+Beyond surveying hosues for information. The Bureau of Labor Statistics (BLS) \
+also surveys over 160,000 business that employ over 40 million people. This \
+is where stats like the number of jobs created comes from. Almost all thier \
+data is based on how many people are on corporate payrolls. \
+\>", "Text",
+ CellChangeTimes->{{3.5377922401385927`*^9, 3.5377922986672163`*^9}, {
+  3.537792355665473*^9, 3.537792370542499*^9}}]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["What is counted in GDP?", "Subsubsection",
+ CellChangeTimes->{{3.5377535679857264`*^9, 3.5377535718605223`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Circular Flow Diagram", "Subsubsubsection",
+ CellChangeTimes->{{3.537753573153593*^9, 3.537753577105023*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJztvQl0G8eZ75vkzXnnncm55+TMmXNm3puXzL15eTe5L5Pr+I7j3GR8Ldux
+FTu2bGscb8k4kRUv8h5btrzKkrwpthVLsiUCIKmNMglSEglQEklxlUSJkqiF
+WgiQIgDuO8B9AYmlwfdVVXejiZ1ko5tsfH+VaaBRXfV1ddWvv1q6+7+sfuXf
+n/nWN77xjbX/B/z59yffvP211558+6G/gS93vP3606v/N/jw1je/8Y1y+I98
+nkGhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKh
+UCgUCoVCoVAoFAqFQqFQKBQKhUqavoFCoVBLTeoyU8XcUSgUKnGpzivVDUCh
+UKgEpTqvVDcAhUKhEpTqvFLdANRiUCAQ4Diut7f34sWLAUHJyAXk8Xj27Nkj
+5uL3+1tbW41GI/u6devWrq6uZOSO0oBU55XqBqAWgxCYqCUh1XmlugGoxSAG
+q48++gh4lVRgApYhC7vdzrKYnp5+7rnn1q1b9+qrr5aUlMCWycnJl19+GSgq
+e+4oDUh1XqluAGoxiOHrlltuOXbsWFKB6Xa7n3nmGUZO+HvixIn3338/Pz8f
+3E6WKWzftWtXTU2N7LmjNCDVeaW6AajFICDV8PDwt771rZaWFvDu0tLSOjs7
+n3/+ecZPn8+XnZ29Zs2as2fPwteDBw+uX7/eZDLBZ/AVy8rKrly5Ar82NDRc
+vnz5qaee6u/vB+5NTEykp6e/8847HR0dYi7l5eWQlEhj2OWuu+7KzMwUEQqC
++LBX8riNWrpSnVeqG4BaDAIugVP3wx/+EGjZ1tb27LPPQvf80KFDq1atgp8+
+++wzQOLY2BiQEPrLBQUFEO2mm24Cd9FgMICL+OWXXxqNxo8//hgICX9ra2uB
+fi+++KLL5dq9ezegVcxl48aNNptNxCDD77/927+Nj4+LhIR9H3nkEQQmKlyq
+80p1A1CLQcAl6AgD4gBW4FXeeOONo6OjAMOvvvoKqPjYY48x9+/atWs//elP
+2edbb72VjTcyb3D79u0QDT48/fTT4J1WV1c/+uijW7du/d3vfjc9PS1m9Kc/
+/WlwcFAKTOiM//rXv3711VelwHzooYdYLiqVB2qRSnVeqW4AajEI0ATIMpvN
+8GHbtm3gFsKHF1544dKlS+BbbtiwgaEMtm/atIl1t++55x7Ysnz5csAjfHjm
+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
+Vwkom5+HCeHIwY8/eutJ6f25wi7kUS2egYr/eOSuXkeBZ6DM20+evdbdlP/E
+47/yDMLnSgQmSknNAZgu+YFJmoOrdLK/Yqy7dLy7eLynZLT7WPf1g40Xsry8
+/6kIMOflYS4hYMoTaL/7ZMm29a/9PrhxsGrZL/6/wfbDcNXz8cVYRoKTdbHL
+p4O9afHpcOXscXAe1pcfqHrt2Yfy9m2iz4VjF81K/mFx7InEA1V3LfuJx1UJ
+P5GnqvZXVpd89dmHz0MuHklvXc5hB5wlR0VRNGBGpoorKjA9c+qqS9w5aC/P
+PHnPiuU/f/mZla88vXL9G78vO7ztq89e8LqY20n7gBStbBfPrOykD5idw/ND
+otozlzmFRQ7MBV5Qou37xacv5e5ZT4u9DMq8v9l8y//8sW+QPG7dB/3lAfHU
+lAVPE0FfGTuPHv5rsOQn+4794//1HftlI/1aSc+70NEmCC1rbzz4h0eXs1/h
+q89Vmbb1lXLTX8mWfuJ/0lzK5nFhjVE+OIaJiigBmHPpvS4AmLPGpmgY6y75
+zn/63y9UZ/gGxNyhJVbRwUxoBaUsPkUiaaEeEZvk4e3EQfUR3yPWzcIx3OYE
+kYLA5It3oHL1Y/ddrdnNHksOcKut1L/4zErYDpFPlu/Y/P6zLZYDXldJ87Vc
+24UsOC89TaYLlQbY99rZ/X9Zv8p+yQhe4rSrzLjn/eyM9XCim6/m/PM//KdJ
+V/nuna/br3ztcZLn5x/M+uDj9U92XC8AZlYd3bZl84vs7DddMX66/qkVK25p
+tuZM9pbt3/XW5x8/199cEONMITBRMkoVYEpzsZ7P+ptvfXOwo0ic+jlZvG2s
+65jPVV5e+EVf65EdW14a6yky7/tooqcsd/f6hgv73K4y/ba1tks5QFRn29HP
+PlhTfnhbItnNA5gxRm41AMw5BCc9O4OVN/zL9ze9t/qzj57/7OPnPv/o+Sce
+X67b/hpE+MumNfrta2sq0u689Ua4hG355MUy81bg6s4tr3655c/t9QdffPbB
+Iwc+P12+Y8pVuv71VTVVuj8+fnfTpZyS/M+e+uO9n3/43Afvrd686RnfQOWm
+t1YdPfBpScGnD9z9S5+rKm3bK0cPbIbqsTvt7U83PlVXs/vH/+/3PM7Kd9/4
+3cF9G/P2bnTUZUd85vNCAgITFVFz6JLLAczQvVzlBdkf/fN3/5HW/A3QdnxD
+Vb+69Qa3s3Kg7chDDyxb/8bjGV+9XXdmz89v/MHutLc+3vDspnee/OT9p9a+
+9OjTf7zXO1S15skVx8xbDuzdGIt1c3nAV+LAFINYmBoGJhuKHOko+u//8p8t
+l/Lqa/fV12ZZavc/+ftfHy/e1m459Myqez2DJyC7f73xv071l6167E7oSo92
+Ff/f//h35eYvThVtf/3Pj/uh4+Aqz923YfuW1zrt5rtuvWG0p+SLv7xw969u
+Kju8tfjgp2nbXmu8mLX2xUd8ruPQ1/7ZT74PJHzhmRX2OmPlkS8eX3mHd+D4
+RG/pQytu8Q1X/+bO/9F4JWd6oHSuDyeM22tAYKKiKRFgzp82CcTcvPHpVY/d
+/bVh/T79OyUHPnO1HP73Fb/0DR2/VJ1x040/aL56AJqMcc/6FSuWZWe+c64y
+7d5f/ex0hW6P4a1Nb/xxsq/0lzf/eKKPvfYidMI0hmMZw7Bo+8ZISixMDQOT
+eZiXqjPhOsVeUkYczqGKu2771+7r+bt1bx/I2kgGJHtLlv3yX3zDJ2E79Ltz
+dr3/d3/3t22WgxO9Jc+svv+Dt1fB2bzphh++u+6J9O1r262HfK6yVY//5rMP
+XoDt2z59sfLw9h1bXobrpqe/oq/16N3LfuodPnH3bf862Vfx1B/vcVzNgWh7
+0t56Z+0TYMPJ4q9u+G//nLdnA39dQ2Ciki+VgTlQ+duVy86WZ9ApGzIpcK5S
+t+GdJ6EdfZ359msvPu6jQ5cb3lr9x8d/BXjcp3/3hWcf9A1Vrnvld+VHtkN8
+wOyKu//nYMsRb/iilHl5mAjMGMDctfNNw1dv0Hefka9j3cdu+sl/9Q1WfPTu
+6hMl0AE/fvTQZt22tYNth3+74n9dOb/vr5uf+9d/+f60q2KypwzO9b+v+F/X
+r+Z+61vf7G4qmOgrK8z92DNQCe6lZ6gCOvu//+2veu2mda88Xncy3TtQ8dbr
+f9if/t5gx5EH7v05EPjOZT/1D1dcqt6z6tHlB7M2jfYU+QbKR/vKb/3Ff/cM
+yL+CHYGJiqhEFq4nD5jTzoqf/vg/T/SVikuU9dvXHs79GH5a+8Ij0Dsj0Qar
+HvzNz10dxfDrS8+utF3NgaSW3/Y/xjqKx3pKodXot6/LATcjvMlEn/uOa+qc
+nFKxMBc/MOdxOeADmY8ue/X5h0+VfjnN39pTXn923+8euc3rqjpyYPOLzz1W
+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
+n5terYJd8vaRZgRmsnX8+HFA4hGqw4cPQ3f4nnvuAScQetngOkLX+IYbbgC4
+ffLJJ8eOHYNzAR1tRjy2ngcwCBs7Ojq+/e1vA05h++bNm4G34PsBP+Gn559/
+vqWlBXrQN910E/xUWlqanZ0NHiagde3atV1dXRCHzdHDByAt0BuyBhhCLiIJ
+HQ7Hz372M7E/Dl3v/fv3A0LB7ayoqBCjQb4XL15Uu0RTSB0jzbM8TCsCUzl5
+OU8uHQ+hw5gkOAYb2KNdFLYkpQS9b3ACdwk6evQoQIwt/oEudnV1NcDt1Vdf
+hb424xWwC3rfZ86cCdD5dMYrcDLz8/Phw/Dw8IYNG8BrBTACP2ELQNjr9cIH
+IKTNZmORoR8NG4uLi9lSebPZzBKHv5ARpMBsEK+VEO0HP/gB7MjACOl//vnn
+AOe2trbA7Jl08GDVK8tUkVjmtsF64GSeJZM1WHByvP5pbgaBqYSAjQUN+0iX
+nN4gCVeuuu4zrIEobElKSVwYKfpp0hXmOp2urKwsZGMMSaOFfA5PITxyeBxm
+JHzIy8sDn1bcDkAWx11ZHIDnBx98gMuKlBEr9rrus0aLwWhlHcP0/IYsLuDH
+SR+FFJgpbykk7j0ZFSEd8yJb3vxuykMlrhiUAz355JOisxctzlwVbfeI20Uj
+A3TufnBwMHwXFufdd99lK9jVK8vUEhT1EXtuHrvThAKzvPUwe7a88sakIDAD
+M1xdzznq22fyQyL1epfbqbrPEAjwbhi9dAZSZIiAHfHKlSuhOyxll1oK0P5+
++KohZltra+vx48c1cnnlgm98XpyPGmbWDUz259Qb6NClIbchPe9aZl3vWbVM
+SkFgQj3pHmvPIR6+OOmWcaa9As6O0paE2EXfXlrfe9HtnWRvMVXXHmUkunCi
+46e6MRHNWFR2yiJ6OP5rfRc9/mn6EqhFdxWgPA/UdFSwoUtosHn1mfsb03rH
+OtUyKRWBGZjxct5D1r25klUKEPonu5W2JMQuOrp2pNlovp4FxqTI09EDYeOK
+6toT8hglUSF2qt4fWbgYMA807j5mzx/ykmcxLTYPkwv4+ya6jRa9ODmeW59h
+avzaz6k245aCwGS1/WLPKTLpY8lgT+GA7vnh68YJz1hAfKy/4m2XvUGiyH7Q
+aMnMrc8821Hl9k3M8D0m3ixFDVJEEccSF4M90bYvEjsXrgB9uWg+mQA1HKjP
+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
+    "], {{0, 376}, {443, 0}}, {0,
+     255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->{286., Automatic},
+  ImageSizeRaw->{443, 376},
+  PlotRange->{{0, 443}, {0, 376}}]], "Figure",
+ CellChangeTimes->{{3.537753659822294*^9, 3.537753684422556*^9}}],
+
+Cell["\<\
+The figure above shows how GDP can be viewed as total expenditure or total \
+income. \
+\>", "FigureCaption",
+ CellChangeTimes->{{3.5377536398058023`*^9, 3.5377536659700937`*^9}, {
+  3.537753705991778*^9, 3.537753722409832*^9}}]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Rules for Computing", "Subsubsubsection",
+ CellChangeTimes->{{3.537754133195139*^9, 3.5377541394010477`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Used goods are not included.", "Item1",
+ CellChangeTimes->{{3.537754148914153*^9, 3.5377541543573914`*^9}}],
+
+Cell["\<\
+Goods that go bad before sale or are never sold do not affect GDP\
+\>", "Item1",
+ CellChangeTimes->{{3.5377541946253777`*^9, 3.537754234332451*^9}}],
+
+Cell["\<\
+Goods that are put in inventory are thought of as purchased by the firm \
+holding the inventory and are a part of GDP. When they are eventually sold, \
+the sale does not count. \
+\>", "Item1",
+ CellChangeTimes->{{3.53775423571102*^9, 3.537754292730135*^9}}],
+
+Cell["\<\
+For goods that are produced in stages you need only to add to GDP the value \
+that was added at each stage. For example someone raises grain and sells it \
+to a bakery for $2.00 [GDP value in braces =  $2.00], the bakery makes bread \
+and sells it to a grocercy store for $3.00 [$2.00 + $1.00 = $3.00], finally \
+the store sells it to Bob for $5.00 and he eats it [$2.00 + $1.00 +$2.00 = \
+$5.00].\
+\>", "Item1",
+ CellChangeTimes->{{3.537754293078746*^9, 3.5377544418815517`*^9}}],
+
+Cell["\<\
+The point of the above is that you only include final goods in GDP. \
+\>", "Item1",
+ CellChangeTimes->{{3.537754442332412*^9, 3.537754465039631*^9}}],
+
+Cell["\<\
+Sometimes goods are consumed, but not explicity paid for. A good example is \
+the non-existent mortgage payments on a house that is owned by the person \
+living there. These should still be counted, but becuase there is no price \
+one must be estimated. This estimate is called imputed value. \
+\>", "Item1",
+ CellChangeTimes->{{3.537754467027748*^9, 3.537754535027247*^9}}]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+How much of GDP is in each of the categories?\
+\>", "Subsubsubsection",
+ CellChangeTimes->{{3.537791545696103*^9, 3.5377915562924337`*^9}}],
+
+Cell["\<\
+Consumption make s up about 70% of GDP.\
+\>", "Text",
+ CellChangeTimes->{{3.537791560274604*^9, 3.537791595239419*^9}}],
+
+Cell["Investment is about 15%.", "Text",
+ CellChangeTimes->{{3.537791596162347*^9, 3.537791614037318*^9}}],
+
+Cell["\<\
+Government spending is about 19%.\
+\>", "Text",
+ CellChangeTimes->{{3.537791631306076*^9, 3.5377916321328917`*^9}}],
+
+Cell["\<\
+Net Exports is about -5.1% (negative means we were net importers).\
+\>", "Text",
+ CellChangeTimes->{{3.537791632489368*^9, 3.537791660920671*^9}}]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Working with Percentage changes\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.537791234641767*^9, 3.537791239062188*^9}}],
+
+Cell["\<\
+When you are working with percentage changes you should note that as long as \
+everything is a percent change, a product will become a sum and a quotient \
+will become a difference. \
+\>", "Text",
+ CellChangeTimes->{{3.537791241005966*^9, 3.537791285173188*^9}}]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3", "BookChapterNumber",
+ CellChangeTimes->{3.537744226969388*^9}],
+
+Cell["\<\
+Simple Theory of National Income\
+\>", "BookChapterTitle",
+ CellChangeTimes->{{3.5377442346250143`*^9, 3.537744239376211*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Definitions", "Subsection",
+ CellChangeTimes->{{3.537744941316288*^9, 3.537744942866395*^9}},
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell["Capital Income Share:", "Definition",
+ CellChangeTimes->{{3.5377938216928663`*^9, 3.537793825389303*^9}, 
+   3.537794056925215*^9}],
+
+Cell["Constant Capital and Labor Shares of Income: ", "Definition",
+ CellChangeTimes->{{3.53779404207898*^9, 3.537794079246882*^9}}],
+
+Cell[TextData[{
+ StyleBox["Constant Returns to Scale:",
+  FontWeight->"Bold"],
+ " A property of a pro-duction function whereby a proportionate increase in \
+all factors of production leads to an increase in output of the same \
+proportion. To verify this mathematically is do to this zY = F(zK, zL)"
+}], "Definition",
+ CellChangeTimes->{{3.537793860693418*^9, 3.5377938654599648`*^9}, {
+  3.537794041658403*^9, 3.5377940546133633`*^9}, {3.537813956039422*^9, 
+  3.537813984307399*^9}, {3.537814478681864*^9, 3.53781448632199*^9}}],
+
+Cell["Labor Income Share:", "Definition",
+ CellChangeTimes->{{3.537793830533203*^9, 3.5377938323326674`*^9}, 
+   3.537794055957015*^9}],
+
+Cell[TextData[{
+ StyleBox["Loanable Funds:",
+  FontWeight->"Bold"],
+ " The flow of resources available to finance capital accumulation."
+}], "Definition",
+ CellChangeTimes->{{3.537794080700405*^9, 3.53779408466073*^9}, {
+  3.53781403980691*^9, 3.537814039867902*^9}}],
+
+Cell[TextData[{
+ StyleBox["Marginal Product of Capital:",
+  FontWeight->"Bold"],
+ " The amount of extra output produced when the capital input is increased by \
+one unit. "
+}], "Definition",
+ CellChangeTimes->{{3.5377937567898607`*^9, 3.537793801566279*^9}, 
+   3.53779405896558*^9, {3.537814104110372*^9, 3.537814104185783*^9}}],
+
+Cell[TextData[{
+ StyleBox["Marginal Product of Labor:",
+  FontWeight->"Bold"],
+ " The amount of extra output produced when the labor input is inncreased by \
+one unit."
+}], "Definition",
+ CellChangeTimes->{{3.5377938137894077`*^9, 3.537793816949182*^9}, 
+   3.537794057933299*^9, {3.537814112117969*^9, 3.5378141164029303`*^9}, {
+   3.537814295673154*^9, 3.537814296095469*^9}, {3.537814332008624*^9, 
+   3.5378143320137568`*^9}}],
+
+Cell[TextData[{
+ StyleBox["Public Saving:",
+  FontWeight->"Bold"],
+ " This is defined as the excess of taxes above and beyond what the \
+government spends (a budget surplus is positive public saving and a budget \
+deficit is when it is negative)."
+}], "Definition",
+ CellChangeTimes->{{3.537814333110745*^9, 3.5378143632407*^9}, {
+  3.537814415092064*^9, 3.5378144526585712`*^9}}],
+
+Cell[TextData[{
+ StyleBox["Private Savings:",
+  FontWeight->"Bold"],
+ " This is defined as the excess in income after taxes and consumption. "
+}], "Definition",
+ CellChangeTimes->{{3.5378143638696327`*^9, 3.5378143938844423`*^9}}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Equations", "Subsection",
+ CellChangeTimes->{{3.537744944922474*^9, 3.5377449528657618`*^9}},
+ FontSize->18],
+
+Cell["Y =  C + I + G + NX", "Text",
+ CellChangeTimes->{{3.5377936829700623`*^9, 3.537793686921715*^9}, {
+  3.537814126974289*^9, 3.5378141269758587`*^9}}],
+
+Cell["Y = F ( K , L )", "Text",
+ CellChangeTimes->{{3.537814127597625*^9, 3.5378141342051363`*^9}, {
+  3.537814975011579*^9, 3.537814975013406*^9}}],
+
+Cell["\<\
+Y = (MPK K) + (MPL L ) + economicProfits // usually assumed to be zero. \
+\>", "Text",
+ CellChangeTimes->{{3.537814975353818*^9, 3.537814982378212*^9}, {
+  3.537815130165056*^9, 3.53781514586202*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Supply", "Subsubsection",
+ CellChangeTimes->{{3.537794132867704*^9, 3.537794133611273*^9}}],
+
+Cell["MPK = R/P", "Text",
+ CellChangeTimes->{{3.5377941415125103`*^9, 3.537794152364038*^9}}],
+
+Cell["\<\
+\tR is the rental rate of capital, P is the price of outputs. R/P is the real \
+rental price of capital.\t\
+\>", "Text",
+ CellChangeTimes->{{3.5377941524339867`*^9, 3.5377941852013607`*^9}, {
+  3.537814789794485*^9, 3.537814819657506*^9}}],
+
+Cell["MPL = W/P", "Text",
+ CellChangeTimes->{{3.537794147282486*^9, 3.5377941643326397`*^9}}],
+
+Cell["\<\
+\tW is the wage, P is the price of outputs. W/P is called the real wage. \
+\>", "Text",
+ CellChangeTimes->{{3.537794164537511*^9, 3.537794175425659*^9}, {
+  3.537814763203381*^9, 3.53781476643213*^9}}],
+
+Cell["\<\
+Y = (MPK K) + (MPL L ) + economicProfits // usually assumed to be zero. \
+\>", "Text",
+ CellChangeTimes->{{3.5378154521319942`*^9, 3.537815454319922*^9}}],
+
+Cell["Y = F( K, L)", "Text",
+ CellChangeTimes->{{3.5378154937473*^9, 3.537815495442135*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Demand", "Subsubsection",
+ CellChangeTimes->{{3.537794135658721*^9, 3.537794136834309*^9}}],
+
+Cell["\<\
+For now we make the assumption that we are in a closed economy (NX = 0 )\
+\>", "Text",
+ CellChangeTimes->{{3.5378156777110147`*^9, 3.537815692963081*^9}}],
+
+Cell["Y = C + I + G", "Text",
+ CellChangeTimes->{{3.537815746690042*^9, 3.537815756873258*^9}}],
+
+Cell["\<\
+\tC = C(Y-T)  > 0 //this statement says that consumption is a positive \
+function of Y-T\
+\>", "Text",
+ CellChangeTimes->{{3.537815723468226*^9, 3.537815774132763*^9}}],
+
+Cell[TextData[{
+ "\t\tMPC = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     RowBox[{"\[PartialD]", "C"}], 
+     RowBox[{"\[PartialD]", "Y"}]], "\[TildeTilde]", " ", "0.7"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.5378158202098513`*^9, 3.537815852843485*^9}}],
+
+Cell["\<\
+\tI (r) = Private savings + public savings =  (Y-T-C) + (T-G) =  = Y - C - G\
+\>", "Text",
+ CellChangeTimes->{{3.537815905162519*^9, 3.537815909212748*^9}, {
+  3.53781594906388*^9, 3.537815951650948*^9}, {3.5378159987397413`*^9, 
+  3.537815998743432*^9}}],
+
+Cell["\<\
+\t\tIt is a negative function of r because as r increases williness to invest \
+slows.\
+\>", "Text",
+ CellChangeTimes->{{3.537815998796605*^9, 3.53781603339284*^9}, {
+  3.5378160655622597`*^9, 3.537816065566531*^9}, {3.53781847782485*^9, 
+  3.537818477826889*^9}}],
+
+Cell["\<\
+\t\tIs affectd through r by G and T. \
+\>", "Text",
+ CellChangeTimes->{{3.537818478271431*^9, 3.5378184858797417`*^9}}],
+
+Cell["\tG ", "Text",
+ CellChangeTimes->{{3.537815998796605*^9, 3.53781603339284*^9}, {
+  3.5378160655622597`*^9, 3.537816087476206*^9}}],
+
+Cell["\<\
+\t\tDoes not include transfer payments (social security, welfare...)\
+\>", "Text",
+ CellChangeTimes->{{3.537816087838297*^9, 3.53781612737145*^9}}],
+
+Cell["Y = C(Y-T) + I(r) + G", "Text",
+ CellChangeTimes->{{3.5378161283573112`*^9, 3.537816136933299*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Equilibrium", "Subsubsection",
+ CellChangeTimes->{{3.5378161863586493`*^9, 3.537816189059621*^9}}],
+
+Cell["\<\
+S =  Y - G - C = I //this is called national savings. \t\
+\>", "Text",
+ CellChangeTimes->{{3.537816192495393*^9, 3.5378162197948017`*^9}}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Examples/Other", "Subsection",
+ CellChangeTimes->{{3.53774495496961*^9, 3.537744958001937*^9}},
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell["Cobb Douglas Production Functions", "Subsubsection",
+ CellChangeTimes->{{3.537793882858556*^9, 3.537793888333188*^9}}],
+
+Cell[TextData[{
+ "General Form: Y = F(K,L) = A ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["K", "\[Alpha]"], 
+    SuperscriptBox["L", "\[Beta]"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.5378152516211443`*^9, 3.537815291985383*^9}}],
+
+Cell["\<\
+\tConstant returns to scale iff \[Alpha] + \[Beta] =1 or \[Beta] = 1-\[Alpha]\
+\
+\>", "Text",
+ CellChangeTimes->{{3.53781527750436*^9, 3.5378152992556334`*^9}, {
+   3.537815351222324*^9, 3.537815362169283*^9}, 3.5378154993539143`*^9}],
+
+Cell["\<\
+\tIncreasing returns to scale iff \[Alpha] + \[Beta] > 1\
+\>", "Text",
+ CellChangeTimes->{{3.5378153630135927`*^9, 3.537815385213076*^9}, 
+   3.537815500561405*^9}],
+
+Cell["\<\
+\tDecreasing returns to scale iff \[Alpha] + \[Beta] < 1\
+\>", "Text",
+ CellChangeTimes->{{3.537815372021806*^9, 3.537815387893271*^9}, 
+   3.5378155016256647`*^9}],
+
+Cell["Captial share of income  = \[Alpha]", "Text",
+ CellChangeTimes->{{3.5378155037651*^9, 3.537815521524124*^9}}],
+
+Cell["Labor share of income  = \[Beta]", "Text",
+ CellChangeTimes->{{3.537815522929016*^9, 3.537815525899996*^9}}],
+
+Cell["\<\
+\tWith Cobb Douglas you have consant capital and labor shares of motion. \
+\>", "Text",
+ CellChangeTimes->{{3.5378155266886997`*^9, 3.537815539719417*^9}, {
+  3.537815597299399*^9, 3.5378156245818167`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Shares to Capital (K) and Labor (L)\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.537815058962471*^9, 3.5378150725748377`*^9}}],
+
+Cell["\<\
+The capital income is just MPK *K, with its share being MPK *K /Y\
+\>", "Text",
+ CellChangeTimes->{{3.5378150849012003`*^9, 3.537815118311706*^9}, {
+  3.537815221711789*^9, 3.537815233217881*^9}}],
+
+Cell["\<\
+The labor income is just MPL *L  with its share being MPL *L /Y\
+\>", "Text",
+ CellChangeTimes->{{3.537815246761668*^9, 3.537815247826763*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+What happens when \[OpenCurlyDoubleQuote] __ \[OpenCurlyDoubleQuote] changes?\
+\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.537823037166318*^9, 3.5378230468268223`*^9}}],
+
+Cell["\<\
+For this model (Y = C(Y-T) + I(r) + G) all changes in exogenous variables are \
+channeled through Investment and the interest rate (our real exogenous \
+variable) changes.\
+\>", "Text",
+ CellChangeTimes->{{3.537823048181532*^9, 3.537823106243918*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+G \[UpArrow], I\[DownArrow], r \[UpArrow]       OR      G\[DownArrow], I \
+\[UpArrow], r\[DownArrow]\
+\>", "Item1",
+ CellChangeTimes->{{3.537823130669065*^9, 3.537823166687591*^9}}],
+
+Cell["\<\
+Y \[UpArrow], C\[UpArrow], I\[DownArrow], r\[UpArrow]    OR    Y\[DownArrow], \
+C\[DownArrow], I\[UpArrow], r\[DownArrow]\
+\>", "Item1",
+ CellChangeTimes->{{3.537823171014922*^9, 3.5378232045519133`*^9}}],
+
+Cell["\<\
+T \[UpArrow], \[UpArrow]C\[DownArrow], I\[UpArrow], r\[DownArrow]    OR    T\
+\[DownArrow], C\[UpArrow], I\[DownArrow], r\[UpArrow]\
+\>", "Item1",
+ CellChangeTimes->{{3.5378232057340393`*^9, 3.5378232347164917`*^9}}],
+
+Cell["\<\
+r  \[UpArrow], I\[DownArrow], Y\[DownArrow]    OR    r\[DownArrow], I\
+\[UpArrow], Y\[UpArrow]\
+\>", "Item1",
+ CellChangeTimes->{{3.537823239404724*^9, 3.537823264499427*^9}}],
+
+Cell["\<\
+(K or L) \[UpArrow], Y\[UpArrow], C\[UpArrow] , I\[DownArrow], r\[UpArrow]    \
+OR    (K or L)\[DownArrow], Y\[DownArrow], C\[DownArrow], I\[UpArrow], r\
+\[DownArrow]\
+\>", "Item1",
+ CellChangeTimes->{{3.5378232723430643`*^9, 3.537823318498191*^9}, {
+  3.537823387219316*^9, 3.537823387227153*^9}, {3.537823440969352*^9, 
+  3.537823454774242*^9}}],
+
+Cell["\<\
+\[Alpha]\[UpArrow], K\[UpArrow], L\[DownArrow], Y? \[Therefore] r?    OR     \
+\[Alpha]\[DownArrow], K\[DownArrow], L\[UpArrow], Y? \[Therefore] r?\
+\>", "Item1",
+ CellChangeTimes->{{3.53782338821627*^9, 3.5378235000285254`*^9}}],
+
+Cell["\<\
+W/P\[UpArrow], MPL\[UpArrow], Y\[UpArrow], C\[UpArrow], I\[DownArrow], r\
+\[UpArrow]    OR    W/P\[DownArrow], MPL\[DownArrow], Y\[DownArrow], C\
+\[DownArrow], I \[UpArrow], r\[DownArrow]\
+\>", "Item1",
+ CellChangeTimes->{{3.537823500812376*^9, 3.537823588482499*^9}, {
+  3.537823640792488*^9, 3.537823653672185*^9}}],
+
+Cell["\<\
+R/P\[UpArrow], MPK\[UpArrow], Y\[UpArrow], C\[UpArrow], I\[DownArrow], r\
+\[UpArrow]    OR    R/P\[DownArrow], MPK\[DownArrow], Y\[DownArrow], C\
+\[DownArrow], I \[UpArrow], r\[DownArrow]\
+\>", "Item1",
+ CellChangeTimes->{{3.537823588758019*^9, 3.537823625936735*^9}, {
+  3.537823661407721*^9, 3.537823661911639*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4", "BookChapterNumber",
+ CellChangeTimes->{3.5377442574084597`*^9}],
+
+Cell["Money and Inflation", "BookChapterTitle",
+ CellChangeTimes->{{3.537744262631508*^9, 3.537744265911227*^9}}],
+
+Cell[" ", "Text",
+ CellChangeTimes->{3.5378230220836153`*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Definitions", "Subsection",
+ CellChangeTimes->{{3.537744941316288*^9, 3.537744942866395*^9}},
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Barter Money:",
+  FontWeight->"Bold"],
+ " This is a type of money where you trade services for other services. \
+Requires the double coincidence of wants. Worst type of money because it is \
+so ineffective. "
+}], "Definition",
+ CellChangeTimes->{{3.5377942831660433`*^9, 3.537794285293524*^9}, 
+   3.537794337620241*^9, {3.537818631425584*^9, 3.537818661418251*^9}}],
+
+Cell[TextData[{
+ StyleBox["Classical Dichotomy:",
+  FontWeight->"Bold"],
+ " The theoretical separation of real and nominal variables in the classical \
+model, which implies that nominal variables do not influence real variables. \
+Real variables are functions of real variables and nominal variables are \
+functions of nominal variables. "
+}], "Definition",
+ CellChangeTimes->{{3.537794363178981*^9, 3.537794376386856*^9}, {
+  3.5378187496537447`*^9, 3.5378187752623863`*^9}, {3.537818891521064*^9, 
+  3.537818892576384*^9}}],
+
+Cell[TextData[{
+ StyleBox["Commodity Money:",
+  FontWeight->"Bold"],
+ " Money that is intrinsically useful and would be valued even if it did not \
+serve as money. This is where one goods becomes money. Second tier money. "
+}], "Definition",
+ CellChangeTimes->{
+  3.53779429836922*^9, 3.537794336627728*^9, {3.537818664282007*^9, 
+   3.537818732728297*^9}, {3.537818981953327*^9, 3.537818987685026*^9}}],
+
+Cell["Expected Inflation:", "Definition",
+ CellChangeTimes->{{3.5377943705947*^9, 3.537794373658845*^9}}],
+
+Cell[TextData[{
+ StyleBox["Fiat Money:",
+  FontWeight->"Bold"],
+ " Money that is not intrinsically useful and is valued only because it is \
+used as money. The scrappy pieces of green paper we use. "
+}], "Definition",
+ CellChangeTimes->{{3.537794289229535*^9, 3.537794295513341*^9}, 
+   3.537794335123885*^9, {3.537818935270776*^9, 3.5378189455905724`*^9}}],
+
+Cell[TextData[{
+ StyleBox["Money:",
+  FontWeight->"Bold"],
+ " The stock of assets used for transactions. It has three key properties: \
+1.) store of value 2.) medium of exchange 3.) unit of account. "
+}], "Definition",
+ CellChangeTimes->{{3.537794272495417*^9, 3.537794272989863*^9}, 
+   3.5377943385716267`*^9, {3.537819016793333*^9, 3.5378190640903482`*^9}}],
+
+Cell["Money Aggregates:", "Definition",
+ CellChangeTimes->{{3.537794304061179*^9, 3.537794333956089*^9}}],
+
+Cell["Seignorage:", "Definition",
+ CellChangeTimes->{{3.5377943265319347`*^9, 3.537794331908351*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Equations", "Subsection",
+ CellChangeTimes->{{3.537744944922474*^9, 3.5377449528657618`*^9}},
+ FontSize->18],
+
+Cell["Quantity theory of Money", "Subsubsection",
+ CellChangeTimes->{{3.53779430932655*^9, 3.537794315700951*^9}}],
+
+Cell["Inflation and Interest Rates", "Subsubsection",
+ CellChangeTimes->{{3.537794346499791*^9, 3.5377943544912558`*^9}}]
+}, Open  ]],
+
+Cell["Examples/Other", "Subsection",
+ CellChangeTimes->{{3.53774495496961*^9, 3.537744958001937*^9}},
+ FontSize->18]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["5", "BookChapterNumber",
+ CellChangeTimes->{3.537744276631682*^9}],
+
+Cell["Small Open Economy", "BookChapterTitle",
+ CellChangeTimes->{{3.537744280999381*^9, 3.537744283239293*^9}}],
+
+Cell["Definitions", "Subsection",
+ CellChangeTimes->{{3.537744941316288*^9, 3.537744942866395*^9}},
+ FontSize->18],
+
+Cell["Equations", "Subsection",
+ CellChangeTimes->{{3.537744944922474*^9, 3.5377449528657618`*^9}},
+ FontSize->18],
+
+Cell["Examples/Other", "Subsection",
+ CellChangeTimes->{{3.53774495496961*^9, 3.537744958001937*^9}},
+ FontSize->18]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["6", "BookChapterNumber",
+ CellOpen->False,
+ CellChangeTimes->{{3.537744318508328*^9, 3.537744319799068*^9}, 
+   3.537747977617096*^9}],
+
+Cell["", "Text",
+ CellOpen->False]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["7", "BookChapterNumber",
+ CellChangeTimes->{{3.537744322085848*^9, 3.537744325957716*^9}}],
+
+Cell["Growth 1", "BookChapterTitle",
+ CellChangeTimes->{{3.537744334711669*^9, 3.537744336069956*^9}}],
+
+Cell["Definitions", "Subsection",
+ CellChangeTimes->{{3.537744941316288*^9, 3.537744942866395*^9}},
+ FontSize->18],
+
+Cell["Equations", "Subsection",
+ CellChangeTimes->{{3.537744944922474*^9, 3.5377449528657618`*^9}},
+ FontSize->18],
+
+Cell["Examples/Other", "Subsection",
+ CellChangeTimes->{{3.53774495496961*^9, 3.537744958001937*^9}},
+ FontSize->18]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["8", "BookChapterNumber",
+ CellChangeTimes->{3.5377443280058527`*^9}],
+
+Cell["Growth 2", "BookChapterTitle",
+ CellChangeTimes->{{3.537744341765271*^9, 3.537744343249958*^9}}],
+
+Cell["Definitions", "Subsection",
+ CellChangeTimes->{{3.537744941316288*^9, 3.537744942866395*^9}},
+ FontSize->18],
+
+Cell["Equations", "Subsection",
+ CellChangeTimes->{{3.537744944922474*^9, 3.5377449528657618`*^9}},
+ FontSize->18],
+
+Cell["Examples/Other", "Subsection",
+ CellChangeTimes->{{3.53774495496961*^9, 3.537744958001937*^9}},
+ FontSize->18]
+}, Open  ]]
+},
+WindowToolbars->{"RulerBar", "EditBar"},
+WindowSize->{511, 1043},
+WindowMargins->{{Automatic, 207}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 74, 1, 146, "BookChapterNumber"],
+Cell[656, 25, 124, 1, 125, "BookChapterTitle"],
+Cell[CellGroupData[{
+Cell[805, 30, 114, 2, 36, "Subsection"],
+Cell[CellGroupData[{
+Cell[944, 36, 384, 8, 35, "Definition"],
+Cell[1331, 46, 362, 7, 50, "Definition"],
+Cell[1696, 55, 305, 7, 35, "Definition"],
+Cell[2004, 64, 441, 11, 35, "Definition"],
+Cell[2448, 77, 424, 9, 35, "Definition"],
+Cell[2875, 88, 412, 8, 50, "Definition"],
+Cell[3290, 98, 273, 6, 20, "Definition"],
+Cell[3566, 106, 317, 7, 20, "Definition"],
+Cell[3886, 115, 258, 6, 20, "Definition"],
+Cell[4147, 123, 255, 6, 20, "Definition"],
+Cell[4405, 131, 421, 8, 35, "Definition"],
+Cell[4829, 141, 503, 10, 50, "Definition"]
+}, Closed]]
+}, Closed]],
+Cell[5359, 155, 114, 2, 30, "Subsection"],
+Cell[CellGroupData[{
+Cell[5498, 161, 116, 2, 30, "Subsection"],
+Cell[5617, 165, 84, 1, 20, "Text"],
+Cell[CellGroupData[{
+Cell[5726, 170, 153, 2, 18, "Subsubsection"],
+Cell[5882, 174, 739, 24, 127, "Text"],
+Cell[6624, 200, 16, 0, 20, "Text"]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6701, 207, 71, 1, 146, "BookChapterNumber"],
+Cell[6775, 210, 112, 1, 125, "BookChapterTitle"],
+Cell[CellGroupData[{
+Cell[6912, 215, 114, 2, 36, "Subsection"],
+Cell[CellGroupData[{
+Cell[7051, 221, 484, 11, 50, "Definition"],
+Cell[7538, 234, 399, 8, 35, "Definition"],
+Cell[7940, 244, 275, 6, 20, "Definition"],
+Cell[8218, 252, 249, 6, 20, "Definition"],
+Cell[8470, 260, 266, 6, 20, "Definition"],
+Cell[8739, 268, 280, 6, 20, "Definition"],
+Cell[9022, 276, 408, 8, 50, "Definition"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9479, 290, 114, 2, 30, "Subsection"],
+Cell[9596, 294, 58, 1, 20, "Text"],
+Cell[CellGroupData[{
+Cell[9679, 299, 105, 1, 18, "Subsubsection"],
+Cell[9787, 302, 913, 30, 38, "Text"],
+Cell[10703, 334, 989, 33, 38, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[11729, 372, 96, 1, 18, "Subsubsection"],
+Cell[11828, 375, 200, 3, 20, "Text"],
+Cell[12031, 380, 139, 3, 20, "Text"],
+Cell[12173, 385, 203, 4, 20, "Text"],
+Cell[12379, 391, 122, 3, 20, "Text"],
+Cell[12504, 396, 106, 1, 20, "Text"],
+Cell[12613, 399, 280, 9, 31, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[12930, 413, 105, 1, 18, "Subsubsection"],
+Cell[13038, 416, 134, 3, 20, "Text"],
+Cell[13175, 421, 157, 2, 20, "Text"],
+Cell[13335, 425, 305, 9, 33, "Text"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[13689, 440, 116, 2, 30, "Subsection"],
+Cell[CellGroupData[{
+Cell[13830, 446, 170, 2, 18, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[14025, 452, 113, 1, 18, "Subsubsubsection"],
+Cell[14141, 455, 203, 4, 35, "Text"],
+Cell[14347, 461, 156, 3, 20, "Text"],
+Cell[CellGroupData[{
+Cell[14528, 468, 460, 9, 42, "Item1Numbered"],
+Cell[14991, 479, 409, 8, 42, "Item1Numbered"],
+Cell[15403, 489, 477, 9, 42, "Item1Numbered"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[15929, 504, 118, 1, 18, "Subsubsubsection"],
+Cell[16050, 507, 439, 7, 50, "Text"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[16538, 520, 118, 1, 18, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[16681, 525, 115, 1, 18, "Subsubsubsection"],
+Cell[CellGroupData[{
+Cell[16821, 530, 29397, 487, 257, "Figure"],
+Cell[46221, 1019, 237, 5, 20, "FigureCaption"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[46507, 1030, 115, 1, 18, "Subsubsubsection"],
+Cell[CellGroupData[{
+Cell[46647, 1035, 113, 1, 16, "Item1"],
+Cell[46763, 1038, 158, 3, 16, "Item1"],
+Cell[46924, 1043, 267, 5, 29, "Item1"],
+Cell[47194, 1050, 490, 8, 55, "Item1"],
+Cell[47687, 1060, 159, 3, 16, "Item1"],
+Cell[47849, 1065, 384, 6, 42, "Item1"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[48282, 1077, 149, 3, 18, "Subsubsubsection"],
+Cell[48434, 1082, 129, 3, 20, "Text"],
+Cell[48566, 1087, 106, 1, 20, "Text"],
+Cell[48675, 1090, 125, 3, 20, "Text"],
+Cell[48803, 1095, 156, 3, 20, "Text"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[49008, 1104, 130, 3, 18, "Subsubsection"],
+Cell[49141, 1109, 272, 5, 35, "Text"]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49474, 1121, 72, 1, 146, "BookChapterNumber"],
+Cell[49549, 1124, 136, 3, 125, "BookChapterTitle"],
+Cell[CellGroupData[{
+Cell[49710, 1131, 114, 2, 36, "Subsection"],
+Cell[CellGroupData[{
+Cell[49849, 1137, 137, 2, 20, "Definition"],
+Cell[49989, 1141, 132, 1, 20, "Definition"],
+Cell[50124, 1144, 530, 9, 50, "Definition"],
+Cell[50657, 1155, 135, 2, 20, "Definition"],
+Cell[50795, 1159, 267, 6, 20, "Definition"],
+Cell[51065, 1167, 329, 7, 35, "Definition"],
+Cell[51397, 1176, 430, 9, 35, "Definition"],
+Cell[51830, 1187, 380, 8, 50, "Definition"],
+Cell[52213, 1197, 230, 5, 35, "Definition"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[52492, 1208, 114, 2, 30, "Subsection"],
+Cell[52609, 1212, 154, 2, 20, "Text"],
+Cell[52766, 1216, 148, 2, 20, "Text"],
+Cell[52917, 1220, 210, 4, 20, "Text"],
+Cell[CellGroupData[{
+Cell[53152, 1228, 97, 1, 18, "Subsubsection"],
+Cell[53252, 1231, 93, 1, 20, "Text"],
+Cell[53348, 1234, 249, 5, 35, "Text"],
+Cell[53600, 1241, 93, 1, 20, "Text"],
+Cell[53696, 1244, 211, 4, 20, "Text"],
+Cell[53910, 1250, 164, 3, 20, "Text"],
+Cell[54077, 1255, 92, 1, 20, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54206, 1261, 97, 1, 18, "Subsubsection"],
+Cell[54306, 1264, 164, 3, 20, "Text"],
+Cell[54473, 1269, 95, 1, 20, "Text"],
+Cell[54571, 1272, 178, 4, 20, "Text"],
+Cell[54752, 1278, 324, 11, 32, "Text"],
+Cell[55079, 1291, 265, 5, 20, "Text"],
+Cell[55347, 1298, 274, 6, 20, "Text"],
+Cell[55624, 1306, 129, 3, 20, "Text"],
+Cell[55756, 1311, 136, 2, 20, "Text"],
+Cell[55895, 1315, 157, 3, 20, "Text"],
+Cell[56055, 1320, 105, 1, 20, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56197, 1326, 104, 1, 18, "Subsubsection"],
+Cell[56304, 1329, 148, 3, 20, "Text"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[56501, 1338, 116, 2, 30, "Subsection"],
+Cell[CellGroupData[{
+Cell[56642, 1344, 124, 1, 18, "Subsubsection"],
+Cell[56769, 1347, 301, 10, 23, "Text"],
+Cell[57073, 1359, 244, 5, 20, "Text"],
+Cell[57320, 1366, 174, 4, 20, "Text"],
+Cell[57497, 1372, 174, 4, 20, "Text"],
+Cell[57674, 1378, 115, 1, 20, "Text"],
+Cell[57792, 1381, 114, 1, 20, "Text"],
+Cell[57909, 1384, 216, 4, 20, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[58162, 1393, 136, 3, 18, "Subsubsection"],
+Cell[58301, 1398, 206, 4, 20, "Text"],
+Cell[58510, 1404, 153, 3, 20, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[58700, 1412, 180, 4, 18, "Subsubsection"],
+Cell[58883, 1418, 261, 5, 35, "Text"],
+Cell[CellGroupData[{
+Cell[59169, 1427, 191, 4, 16, "Item1"],
+Cell[59363, 1433, 214, 4, 16, "Item1"],
+Cell[59580, 1439, 226, 4, 16, "Item1"],
+Cell[59809, 1445, 185, 4, 16, "Item1"],
+Cell[59997, 1451, 357, 7, 16, "Item1"],
+Cell[60357, 1460, 239, 4, 16, "Item1"],
+Cell[60599, 1466, 327, 6, 16, "Item1"],
+Cell[60929, 1474, 327, 6, 16, "Item1"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[61329, 1488, 74, 1, 146, "BookChapterNumber"],
+Cell[61406, 1491, 113, 1, 125, "BookChapterTitle"],
+Cell[61522, 1494, 61, 1, 20, "Text"],
+Cell[CellGroupData[{
+Cell[61608, 1499, 114, 2, 36, "Subsection"],
+Cell[CellGroupData[{
+Cell[61747, 1505, 393, 8, 50, "Definition"],
+Cell[62143, 1515, 525, 10, 65, "Definition"],
+Cell[62671, 1527, 403, 8, 35, "Definition"],
+Cell[63077, 1537, 105, 1, 20, "Definition"],
+Cell[63185, 1540, 357, 7, 35, "Definition"],
+Cell[63545, 1549, 360, 7, 35, "Definition"],
+Cell[63908, 1558, 105, 1, 20, "Definition"],
+Cell[64016, 1561, 101, 1, 20, "Definition"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[64166, 1568, 114, 2, 36, "Subsection"],
+Cell[64283, 1572, 114, 1, 18, "Subsubsection"],
+Cell[64400, 1575, 121, 1, 18, "Subsubsection"]
+}, Open  ]],
+Cell[64536, 1579, 116, 2, 36, "Subsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[64689, 1586, 72, 1, 146, "BookChapterNumber"],
+Cell[64764, 1589, 112, 1, 125, "BookChapterTitle"],
+Cell[64879, 1592, 114, 2, 36, "Subsection"],
+Cell[64996, 1596, 114, 2, 30, "Subsection"],
+Cell[65113, 1600, 116, 2, 30, "Subsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[65266, 1607, 140, 3, 19, "BookChapterNumber",
+ CellOpen->False],
+Cell[65409, 1612, 34, 1, 19, "Text",
+ CellOpen->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[65480, 1618, 96, 1, 146, "BookChapterNumber"],
+Cell[65579, 1621, 102, 1, 125, "BookChapterTitle"],
+Cell[65684, 1624, 114, 2, 36, "Subsection"],
+Cell[65801, 1628, 114, 2, 30, "Subsection"],
+Cell[65918, 1632, 116, 2, 30, "Subsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66071, 1639, 74, 1, 146, "BookChapterNumber"],
+Cell[66148, 1642, 102, 1, 125, "BookChapterTitle"],
+Cell[66253, 1645, 114, 2, 36, "Subsection"],
+Cell[66370, 1649, 114, 2, 30, "Subsection"],
+Cell[66487, 1653, 116, 2, 30, "Subsection"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,265 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7372,        255]
+NotebookOptionsPosition[      6003,        202]
+NotebookOutlinePosition[      6420,        219]
+CellTagsIndexPosition[      6377,        216]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Income and Substitution Effects\
+\>", "Title",
+ CellChangeTimes->{{3.5095650508571157`*^9, 3.509565058078232*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["The Parameters", "Section",
+ CellChangeTimes->{{3.509565080671932*^9, 3.5095651050697327`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Utility", "Subsection",
+ CellChangeTimes->{{3.50956510736515*^9, 3.509565108013117*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Cobb-Douglas (Ucobb)", "Subsubsection",
+ CellChangeTimes->{{3.5095651367252617`*^9, 3.509565141111404*^9}, {
+  3.509565575906178*^9, 3.509565579882615*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Ucobb", "[", 
+   RowBox[{"a_", ",", "x_", ",", "\[Alpha]_", ",", "y_", ",", "\[Beta]_"}], 
+   "]"}], ":=", 
+  RowBox[{"a", "*", 
+   SuperscriptBox["x", "\[Alpha]"], "*", 
+   SuperscriptBox["y", "\[Beta]"], " "}]}]], "Input",
+ CellChangeTimes->{{3.5095651103345203`*^9, 3.509565165965908*^9}, {
+  3.509565248748439*^9, 3.5095652806036587`*^9}, {3.509565772592545*^9, 
+  3.5095658176083517`*^9}, {3.5095659100267963`*^9, 3.509565943477429*^9}, {
+  3.509566056006028*^9, 3.5095660912903023`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ces Utility (Uces)", "Subsubsection",
+ CellChangeTimes->{{3.509565171980219*^9, 3.509565178011376*^9}, {
+  3.5095655838025208`*^9, 3.509565588010318*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Uces", "[", 
+   RowBox[{"x_", ",", "\[Sigma]_", ",", "\[Kappa]_", ",", "y_"}], "]"}], ":=", 
+  RowBox[{
+   FractionBox[
+    SuperscriptBox["x", "\[Sigma]"], "\[Kappa]"], "+", 
+   FractionBox[
+    SuperscriptBox["y", "\[Sigma]"], "\[Kappa]"]}]}]], "Input",
+ CellChangeTimes->{{3.509565194612756*^9, 3.509565275083877*^9}, {
+  3.509566130126793*^9, 3.5095662252520037`*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Linear (perfect Subsitutes, Ulin)\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.5095652938587313`*^9, 3.50956529779825*^9}, {
+  3.509565463085146*^9, 3.5095654685890093`*^9}, {3.509565590698822*^9, 
+  3.509565594874016*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Ulin", "[", 
+   RowBox[{"\[Alpha]_", ",", "x_", ",", "\[Beta]_", ",", "y_"}], "]"}], ":=", 
+  
+  RowBox[{
+   RowBox[{"\[Alpha]", " ", "*", "x"}], " ", "+", 
+   RowBox[{"\[Beta]", "*", " ", "y", " "}]}]}]], "Input",
+ CellChangeTimes->{{3.509565317362094*^9, 3.509565345194003*^9}, {
+  3.509566235271823*^9, 3.509566252662189*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Leontief Preferences (Perfect Complements, Ucom)\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.509565357966867*^9, 3.509565383591601*^9}, {
+  3.509565416622333*^9, 3.509565419830262*^9}, {3.50956559816218*^9, 
+  3.509565599962205*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Ucom", " ", "[", 
+   RowBox[{"\[Alpha]_", ",", "x_", ",", "\[Beta]_", ",", "y_"}], "]"}], ":=", 
+  " ", 
+  RowBox[{"Min", "[", 
+   RowBox[{
+    RowBox[{"\[Alpha]", "*", "x"}], ",", " ", 
+    RowBox[{"\[Beta]", "*", "y"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.5095653900377293`*^9, 3.5095654373050327`*^9}, {
+  3.5095656495648737`*^9, 3.5095656572189007`*^9}, {3.509566259959692*^9, 
+  3.509566281757845*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Budget Constraint (Income)", "Subsubsection",
+ CellChangeTimes->{{3.509565628430431*^9, 3.5095656331372213`*^9}, {
+  3.509566779999835*^9, 3.509566782087591*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Income", "[", 
+   RowBox[{"Px_", ",", "x_", ",", "Py_", ",", "y_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Px", "*", "x"}], "+", 
+   RowBox[{"Py", "*", "y"}]}]}]], "Input",
+ CellChangeTimes->{
+  3.5095656761889467`*^9, {3.509565720280604*^9, 3.509565759875949*^9}, {
+   3.50956628950902*^9, 3.509566302084997*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Solving First order Conditions (Cobb-Douglas Example)\
+\>", "Section",
+ CellChangeTimes->{{3.509566787996378*^9, 3.509566821054785*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"l", "=", 
+  RowBox[{
+   RowBox[{"Ucobb", "[", 
+    RowBox[{"5", ",", "x", ",", ".6", ",", "y", ",", ".4"}], "]"}], "+", 
+   RowBox[{"\[Lambda]", 
+    RowBox[{"(", 
+     RowBox[{"Inc", "-", 
+      RowBox[{"Income", "[", 
+       RowBox[{"Px", ",", "x", ",", "Py", ",", "y"}], "]"}]}], 
+     ")"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.509566825742365*^9, 3.509566835936666*^9}, {
+  3.509566891334746*^9, 3.50956695076735*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"5", " ", 
+   SuperscriptBox["x", "0.6`"], " ", 
+   SuperscriptBox["y", "0.4`"]}], "+", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"Inc", "-", 
+     RowBox[{"Px", " ", "x"}], "-", 
+     RowBox[{"Py", " ", "y"}]}], ")"}], " ", "\[Lambda]"}]}]], "Output",
+ CellChangeTimes->{3.509566910421851*^9, 3.509566951571929*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", "'"}], ":=", 
+  RowBox[{
+   SubscriptBox["\[PartialD]", "x"], "l"}]}]], "Input",
+ CellChangeTimes->{{3.509567040117098*^9, 3.509567057174631*^9}, {
+  3.509567511627119*^9, 3.509567569216034*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"y", "'"}], ":=", 
+  RowBox[{
+   SubscriptBox["\[PartialD]", "y"], "l"}]}]], "Input",
+ CellChangeTimes->{{3.5095670682507277`*^9, 3.509567069467072*^9}, {
+  3.509567574959828*^9, 3.509567576071611*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Lambda]", "'"}], ":=", 
+  RowBox[{
+   SubscriptBox["\[PartialD]", "\[Lambda]"], "l"}]}]], "Input",
+ CellChangeTimes->{{3.5095671112791443`*^9, 3.509567121326318*^9}, {
+  3.509567579943712*^9, 3.509567582783492*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
+2010)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 124, 3, 76, "Title"],
+Cell[CellGroupData[{
+Cell[728, 29, 101, 1, 54, "Section"],
+Cell[CellGroupData[{
+Cell[854, 34, 94, 1, 31, "Subsection"],
+Cell[CellGroupData[{
+Cell[973, 39, 162, 2, 18, "Subsubsection"],
+Cell[1138, 43, 528, 11, 30, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1703, 59, 160, 2, 18, "Subsubsection"],
+Cell[1866, 63, 407, 10, 47, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2310, 78, 233, 5, 18, "Subsubsection"],
+Cell[2546, 85, 364, 9, 27, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2947, 99, 244, 5, 18, "Subsubsection"],
+Cell[3194, 106, 449, 11, 27, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3680, 122, 168, 2, 18, "Subsubsection"],
+Cell[3851, 126, 348, 9, 27, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4260, 142, 146, 3, 54, "Section"],
+Cell[CellGroupData[{
+Cell[4431, 149, 449, 12, 27, "Input"],
+Cell[4883, 163, 349, 10, 30, "Output"]
+}, Open  ]],
+Cell[5247, 176, 234, 6, 27, "Input"],
+Cell[5484, 184, 236, 6, 30, "Input"],
+Cell[5723, 192, 252, 6, 27, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

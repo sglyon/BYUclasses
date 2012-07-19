@@ -1,0 +1,1795 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     73887,       1785]
+NotebookOptionsPosition[     71490,       1698]
+NotebookOutlinePosition[     72139,       1724]
+CellTagsIndexPosition[     72096,       1721]
+WindowTitle->Consumer Demand - Source
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["Consumer Demand", "Section",
+ CellFrame->{{0, 0}, {0, 0}},
+ ShowCellBracket->False,
+ FontColor->RGBColor[0.597406, 0, 0.0527047]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ GraphicsBox[RasterBox[CompressedData["
+1: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
+FP/69esnAAAAAAAAAAAAwM74B4thROM=
+   "], {{0, 0}, {1800, 25}}, {0, 255},
+   ColorFunction->RGBColor],
+  ImageSize->{1800, 25},
+  PlotRange->{{0, 1800}, {0, 25}}]], "Section",
+ CellFrame->{{0, 0}, {0, 0}},
+ ShowCellBracket->False],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sus", "[", 
+   RowBox[{"x1_", ",", "x2_", ",", "a_", ",", "b_"}], "]"}], ":=", " ", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"a", " "}], "b"], "x1"}], "+", "x2"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4602116960624*^9, 3.4602117516963997`*^9}, {
+  3.4602158672874002`*^9, 3.4602158838424*^9}, {3.4602162625243998`*^9, 
+  3.4602162658094*^9}, {3.4602164795504*^9, 3.4602165146724*^9}},
+ CellID->146154395],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x2rest", "[", 
+   RowBox[{"x1_", ",", "m_", ",", "p1_", ",", "p2_"}], "]"}], ":=", 
+  RowBox[{
+   FractionBox["m", "p2"], "-", 
+   RowBox[{
+    FractionBox["p1", "p2"], " ", "x1"}]}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4602115962864*^9, 3.4602116690324*^9}},
+ CellID->256047670],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CD", "[", 
+   RowBox[{"x1_", ",", "x2_", ",", "a_", ",", "b_"}], "]"}], ":=", " ", 
+  RowBox[{
+   SuperscriptBox["x1", "a"], " ", 
+   SuperscriptBox["x2", "b"]}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4602116960624*^9, 3.4602117516963997`*^9}},
+ CellID->320875825],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"soltan", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        FractionBox[
+         RowBox[{"D", "[", 
+          RowBox[{
+           RowBox[{"CD", "[", 
+            RowBox[{"x1", ",", "x2", ",", "a", ",", "b"}], "]"}], ",", "x1"}],
+           "]"}], 
+         RowBox[{"D", "[", 
+          RowBox[{
+           RowBox[{"CD", "[", 
+            RowBox[{"x1", ",", "x2", ",", "a", ",", "b"}], "]"}], ",", "x2"}],
+           "]"}]], "\[Equal]", 
+        FractionBox["p1", "p2"]}], ",", 
+       RowBox[{"m", "\[Equal]", 
+        RowBox[{
+         RowBox[{"p1", " ", "x1"}], " ", "+", " ", 
+         RowBox[{"p2", " ", "x2"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x1", ",", "x2"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4602129036864*^9, 3.4602130651794*^9}, 
+   3.4603139846343007`*^9},
+ CellID->593898596],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"op", "[", 
+    RowBox[{"m_", ",", "p1_", ",", "p2_", ",", "a_", ",", "b_"}], "]"}], ":=", 
+   RowBox[{"Evaluate", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x1", ",", "x2"}], "}"}], "/.", 
+     RowBox[{"soltan", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4602130447874002`*^9, 3.4602131629644003`*^9}, 
+   3.4603139874235797`*^9},
+ CellID->848580427],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"x1op", "[", 
+    RowBox[{"m_", ",", "p1_", ",", "p2_", ",", "a_", ",", "b_"}], "]"}], ":=", 
+   RowBox[{"Evaluate", "[", 
+    RowBox[{"x1", "/.", 
+     RowBox[{"soltan", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4602138548134003`*^9, 3.4602138967684*^9}, 
+   3.460313988275665*^9},
+ CellID->50933491],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"x2op", "[", 
+    RowBox[{"m_", ",", "p1_", ",", "p2_", ",", "a_", ",", "b_"}], "]"}], ":=", 
+   RowBox[{"Evaluate", "[", 
+    RowBox[{"x2", "/.", 
+     RowBox[{"soltan", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4602139049914*^9, 3.4602139126284*^9}, 
+   3.460313988974735*^9},
+ CellID->28373860],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"idx1", "[", 
+    RowBox[{"m_", ",", "p2_", ",", "a_", ",", "b_", ",", "x1_"}], "]"}], ":=", 
+   RowBox[{"Evaluate", "[", 
+    RowBox[{"p1", "/.", 
+     RowBox[{
+      RowBox[{"Solve", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"x1op", "[", 
+          RowBox[{"m", ",", "p1", ",", "p2", ",", "a", ",", "b"}], "]"}], 
+         "\[Equal]", "x1"}], ",", "p1"}], "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4602144719444*^9, 3.4602145992054*^9}, {
+   3.4602147218254004`*^9, 3.4602147247964*^9}, 3.460313990093847*^9},
+ CellID->97119259],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"comp", "[", 
+   RowBox[{"x1_", ",", "x2_", ",", "a_", ",", "b_"}], "]"}], ":=", " ", 
+  RowBox[{"Min", "[", 
+   RowBox[{
+    RowBox[{
+     FractionBox["a", "b"], " ", "x1"}], ",", " ", "x2"}], "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4602116960624*^9, 3.4602117516963997`*^9}, {
+  3.4602158672874002`*^9, 3.4602158838424*^9}, {3.4602162625243998`*^9, 
+  3.4602162658094*^9}},
+ CellID->166857043],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"solver", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"a", " ", "x1"}], "==", 
+        RowBox[{"b", " ", "x2"}]}], ",", 
+       RowBox[{"m", "\[Equal]", 
+        RowBox[{
+         RowBox[{"p1", " ", "x1"}], " ", "+", " ", 
+         RowBox[{"p2", " ", "x2"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x1", ",", "x2"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4602129036864*^9, 3.4602130651794*^9}, {
+   3.4602159047024*^9, 3.4602159237124*^9}, 3.4603140055563927`*^9},
+ CellID->212046201],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"opcomp", "[", 
+   RowBox[{"m_", ",", "p1_", ",", "p2_", ",", "a_", ",", "b_"}], "]"}], ":=", 
+  
+  RowBox[{"Evaluate", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x1", ",", "x2"}], "}"}], "/.", 
+    RowBox[{"solver", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4602130447874002`*^9, 3.4602131629644003`*^9}, {
+  3.4602159423104*^9, 3.4602159565144*^9}},
+ CellID->539209326],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x1opcomp", "[", 
+   RowBox[{"m_", ",", "p1_", ",", "p2_", ",", "a_", ",", "b_"}], "]"}], ":=", 
+  
+  RowBox[{"Evaluate", "[", 
+   RowBox[{"x1", "/.", 
+    RowBox[{"solver", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4602138548134003`*^9, 3.4602138967684*^9}, {
+  3.4602159708184*^9, 3.4602159819804*^9}},
+ CellID->716350497],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x2opcomp", "[", 
+   RowBox[{"m_", ",", "p1_", ",", "p2_", ",", "a_", ",", "b_"}], "]"}], ":=", 
+  
+  RowBox[{"Evaluate", "[", 
+   RowBox[{"x2", "/.", 
+    RowBox[{"solver", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4602139049914*^9, 3.4602139126284*^9}, {
+  3.4602159876094*^9, 3.4602159925434*^9}},
+ CellID->1050257960],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"idx1comp", "[", 
+   RowBox[{"m_", ",", "p2_", ",", "a_", ",", "b_", ",", "x1_"}], "]"}], ":=", 
+  
+  RowBox[{"Evaluate", "[", 
+   RowBox[{"p1", "/.", 
+    RowBox[{
+     RowBox[{"Solve", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"x1opcomp", "[", 
+         RowBox[{"m", ",", "p1", ",", "p2", ",", "a", ",", "b"}], "]"}], 
+        "\[Equal]", "x1"}], ",", "p1"}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4602144719444*^9, 3.4602145992054*^9}, {
+  3.4602147218254004`*^9, 3.4602147247964*^9}, {3.4602160068934*^9, 
+  3.4602160132714*^9}},
+ CellID->442679599],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"t", "\[Equal]", "3"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"GraphicsGrid", "[", 
+      RowBox[{
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Show", "[", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Plot", "[", 
+             RowBox[{"0", ",", 
+              RowBox[{"{", 
+               RowBox[{"x1", ",", 
+                RowBox[{"-", "3"}], ",", "103"}], "}"}], ",", 
+              RowBox[{"PlotRange", "\[Rule]", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"-", "3"}], ",", "103"}], "}"}]}], ",", 
+              RowBox[{"AxesLabel", "\[Rule]", 
+               RowBox[{"{", 
+                RowBox[{
+                "\"\<good \!\(\*SubscriptBox[\(x\), \(1\)]\)\>\"", " ", ",", 
+                 "\"\<good \!\(\*SubscriptBox[\(x\), \(2\)]\)\>\""}], "}"}]}],
+               ",", 
+              RowBox[{"AxesOrigin", "\[Rule]", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+              RowBox[{"PlotStyle", "\[Rule]", 
+               RowBox[{"{", 
+                RowBox[{"Thin", ",", "White"}], "}"}]}], ",", 
+              RowBox[{"PlotLabel", "\[Rule]", "\"\<Demanded goods\>\""}]}], 
+             "]"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"ContourPlot", "[", 
+             RowBox[{
+              RowBox[{"sus", "[", 
+               RowBox[{"x1", ",", "x2", ",", "a", ",", 
+                RowBox[{"1", "-", "a"}]}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"x1", ",", "0", ",", "100"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"x2", ",", "0", ",", "100"}], "}"}], ",", 
+              RowBox[{"ContourShading", "\[Rule]", "False"}], ",", 
+              RowBox[{"Frame", "\[Rule]", "False"}], ",", 
+              RowBox[{"Axes", "\[Rule]", "True"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{"Plot", "[", 
+             RowBox[{
+              RowBox[{"Tooltip", "[", 
+               RowBox[{
+                RowBox[{"x2rest", "[", 
+                 RowBox[{"x1", ",", "m", ",", "p1", ",", "p2"}], "]"}], ",", 
+                "\"\<Budget constraint\>\""}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"x1", ",", "0", ",", "100"}], "}"}], ",", 
+              RowBox[{"Filling", "\[Rule]", "Axis"}], ",", 
+              RowBox[{"PlotStyle", "\[Rule]", 
+               RowBox[{"{", 
+                RowBox[{"Black", ",", "Thick"}], "}"}]}], ",", 
+              RowBox[{"PlotRange", "\[Rule]", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "100"}], "}"}]}]}], "]"}], ",", 
+            "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{"ContourPlot", "[", 
+             RowBox[{
+              RowBox[{"sus", "[", 
+               RowBox[{"x1", ",", "x2", ",", "a", ",", 
+                RowBox[{"1", "-", "a"}]}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"x1", ",", "0", ",", "100"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"x2", ",", "0", ",", "100"}], "}"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Contours", "\[Rule]", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"sus", "[", 
+                  RowBox[{
+                   RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    FractionBox["p1", "p2"], ">", 
+                    FractionBox["a", 
+                    RowBox[{"1", "-", "a"}]]}], ",", "0", ",", 
+                    FractionBox["m", "p1"]}], "]"}], ",", 
+                   RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    FractionBox["p1", "p2"], ">", 
+                    FractionBox["a", 
+                    RowBox[{"1", "-", "a"}]]}], ",", 
+                    FractionBox["m", "p2"], ",", "0"}], "]"}], ",", "a", ",", 
+                   RowBox[{"1", "-", "a"}]}], "]"}], "}"}], "}"}]}], ",", 
+              RowBox[{"ContourShading", "\[Rule]", "False"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{"Graphics", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"PointSize", "[", ".03", "]"}], ",", "Red", ",", 
+               RowBox[{"Tooltip", "[", 
+                RowBox[{
+                 RowBox[{"Point", "[", 
+                  RowBox[{"If", "[", 
+                   RowBox[{
+                    RowBox[{
+                    FractionBox["p1", "p2"], ">", 
+                    FractionBox["a", 
+                    RowBox[{"1", "-", "a"}]]}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", 
+                    FractionBox["m", "p2"]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    FractionBox["m", "p1"], ",", "0"}], "}"}]}], "]"}], "]"}],
+                  ",", "\"\<Demand\>\""}], "]"}]}], "}"}], "]"}]}], 
+           "\[IndentingNewLine]", "]"}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"Show", "[", 
+           RowBox[{
+            RowBox[{"Plot", "[", 
+             RowBox[{
+              RowBox[{"Tooltip", "[", 
+               RowBox[{
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{
+                   FractionBox["m", "x1"], "<", 
+                   RowBox[{
+                    FractionBox["a", 
+                    RowBox[{"1", "-", "a"}]], " ", "p2"}]}], ",", 
+                  FractionBox["m", "x1"]}], "]"}], ",", 
+                "\"\<Demand function\>\""}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"x1", ",", "0", ",", "100"}], "}"}], ",", 
+              RowBox[{"AxesOrigin", "\[Rule]", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+              RowBox[{"AxesLabel", "\[Rule]", 
+               RowBox[{"{", 
+                RowBox[{
+                "\"\<good \!\(\*SubscriptBox[\(x\), \(1\)]\)\>\"", " ", ",", 
+                 SubscriptBox["p", "1"]}], "}"}]}], ",", 
+              RowBox[{"PlotRange", "\[Rule]", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "10"}], "}"}]}], ",", 
+              RowBox[{"PlotStyle", "\[Rule]", 
+               RowBox[{"{", 
+                RowBox[{"Thick", ",", "Red"}], "}"}]}], ",", 
+              RowBox[{
+              "PlotLabel", "\[Rule]", 
+               "\"\<Demand function for good \!\(\*SubscriptBox[\(x\), \(1\)]\
+\)\>\""}]}], "]"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"Graphics", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"PointSize", "[", ".03", "]"}], ",", "Red", ",", 
+               RowBox[{"Tooltip", "[", 
+                RowBox[{
+                 RowBox[{"Point", "[", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    FractionBox["p1", "p2"], ">", 
+                    FractionBox["a", 
+                    RowBox[{"1", "-", "a"}]]}], ",", "0", ",", 
+                    FractionBox["m", "p1"]}], "]"}], ",", "p1"}], "}"}], 
+                  "]"}], ",", "\"\<Demand\>\""}], "]"}]}], "}"}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Graphics", "[", 
+             RowBox[{"{", 
+              RowBox[{"Red", ",", "Thick", ",", 
+               RowBox[{"Tooltip", "[", 
+                RowBox[{
+                 RowBox[{"Line", "[", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", 
+                    RowBox[{
+                    FractionBox["a", 
+                    RowBox[{"1", "-", "a"}]], "p2"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    FractionBox["m", 
+                    RowBox[{"p2", " "}]], " ", 
+                    FractionBox[
+                    RowBox[{"1", "-", "a"}], "a"]}], ",", 
+                    RowBox[{
+                    FractionBox["a", 
+                    RowBox[{"1", "-", "a"}]], "p2"}]}], "}"}]}], "}"}], "]"}],
+                  ",", "\"\<Demand\>\""}], "]"}]}], "}"}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Graphics", "[", 
+             RowBox[{"{", 
+              RowBox[{"Red", ",", "Thick", ",", 
+               RowBox[{"Tooltip", "[", 
+                RowBox[{
+                 RowBox[{"Line", "[", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", 
+                    RowBox[{
+                    FractionBox["a", 
+                    RowBox[{"1", "-", "a"}]], "p2"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "10"}], "}"}]}], "}"}], "]"}], ",", 
+                 "\"\<Demand\>\""}], "]"}]}], "}"}], "]"}]}], 
+           "\[IndentingNewLine]", "]"}], "}"}]}], "\[IndentingNewLine]", 
+        "}"}], ",", 
+       RowBox[{"ImageSize", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"375", ",", "450"}], "}"}]}]}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"t", "\[Equal]", "1"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"GraphicsGrid", "[", 
+        RowBox[{
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"Show", "[", 
+             RowBox[{
+              RowBox[{"Plot", "[", 
+               RowBox[{"0", ",", 
+                RowBox[{"{", 
+                 RowBox[{"x1", ",", 
+                  RowBox[{"-", "3"}], ",", "103"}], "}"}], ",", 
+                RowBox[{"PlotRange", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"-", "3"}], ",", "103"}], "}"}]}], ",", 
+                RowBox[{"AxesLabel", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{
+                  "\"\<good \!\(\*SubscriptBox[\(x\), \(1\)]\)\>\"", " ", 
+                   ",", "\"\<good \!\(\*SubscriptBox[\(x\), \(2\)]\)\>\""}], 
+                  " ", "}"}]}], ",", 
+                RowBox[{"AxesOrigin", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+                RowBox[{"PlotStyle", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"Thin", ",", "White"}], "}"}]}], ",", 
+                RowBox[{"PlotLabel", "\[Rule]", "\"\<Demanded goods\>\""}]}], 
+               "]"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+              RowBox[{"ContourPlot", "[", 
+               RowBox[{
+                RowBox[{"CD", "[", 
+                 RowBox[{"x1", ",", "x2", ",", "a", ",", 
+                  RowBox[{"1", "-", "a"}]}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x1", ",", "0", ",", "100"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x2", ",", "0", ",", "100"}], "}"}], ",", 
+                RowBox[{"ContourShading", "\[Rule]", "False"}], ",", 
+                RowBox[{"Frame", "\[Rule]", "False"}], ",", 
+                RowBox[{"Axes", "\[Rule]", "True"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", "\[IndentingNewLine]", 
+              RowBox[{"Plot", "[", 
+               RowBox[{
+                RowBox[{"Tooltip", "[", 
+                 RowBox[{
+                  RowBox[{"x2rest", "[", 
+                   RowBox[{"x1", ",", "m", ",", "p1", ",", "p2"}], "]"}], 
+                  ",", "\"\<Budget constraint\>\""}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x1", ",", "0", ",", "100"}], "}"}], ",", 
+                RowBox[{"Filling", "\[Rule]", "Axis"}], ",", 
+                RowBox[{"PlotRange", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "100"}], "}"}]}], ",", 
+                RowBox[{"PlotStyle", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"Thick", ",", "Black"}], "}"}]}]}], "]"}], ",", 
+              "\[IndentingNewLine]", "\[IndentingNewLine]", 
+              RowBox[{"Graphics", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"PointSize", "[", "Large", "]"}], ",", "Red", ",", 
+                 RowBox[{"Tooltip", "[", 
+                  RowBox[{
+                   RowBox[{"Point", "[", 
+                    RowBox[{"op", "[", 
+                    RowBox[{"m", ",", "p1", ",", "p2", ",", "a", ",", 
+                    RowBox[{"1", "-", "a"}]}], "]"}], "]"}], ",", 
+                   "\"\<Demand\>\""}], "]"}]}], "}"}], "]"}], ",", 
+              "\[IndentingNewLine]", "\[IndentingNewLine]", 
+              RowBox[{"ContourPlot", "[", 
+               RowBox[{
+                RowBox[{"CD", "[", 
+                 RowBox[{"x1", ",", "x2", ",", "a", ",", 
+                  RowBox[{"1", "-", "a"}]}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x1", ",", "0", ",", "100"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x2", ",", "0", ",", "100"}], "}"}], ",", 
+                "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                RowBox[{"Contours", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"{", 
+                   RowBox[{"CD", "[", 
+                    RowBox[{
+                    RowBox[{"x1op", "[", 
+                    RowBox[{"m", ",", "p1", ",", "p2", ",", "a", ",", 
+                    RowBox[{"1", "-", "a"}]}], "]"}], ",", 
+                    RowBox[{"x2op", "[", 
+                    RowBox[{"m", ",", "p1", ",", "p2", ",", "a", ",", 
+                    RowBox[{"1", "-", "a"}]}], "]"}], ",", "a", ",", 
+                    RowBox[{"1", "-", "a"}]}], "]"}], "}"}], "}"}]}], ",", 
+                RowBox[{"ContourShading", "\[Rule]", "False"}]}], "]"}]}], 
+             "\[IndentingNewLine]", "]"}], "}"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"Show", "[", 
+             RowBox[{
+              RowBox[{"Plot", "[", 
+               RowBox[{
+                RowBox[{"Tooltip", "[", 
+                 RowBox[{
+                  RowBox[{"idx1", "[", 
+                   RowBox[{"m", ",", "p2", ",", "a", ",", 
+                    RowBox[{"1", "-", "a"}], ",", "x1"}], "]"}], ",", 
+                  "\"\<Demand function\>\""}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x1", ",", "0", ",", "100"}], "}"}], ",", 
+                RowBox[{"AxesOrigin", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+                RowBox[{"AxesLabel", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{
+                  "\"\<good \!\(\*SubscriptBox[\(x\), \(1\)]\)\>\"", " ", ",", 
+                   SubscriptBox["p", "1"]}], "}"}]}], ",", 
+                RowBox[{"PlotRange", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "10"}], "}"}]}], ",", 
+                RowBox[{"PlotStyle", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"Thick", ",", "Red"}], "}"}]}], ",", 
+                RowBox[{
+                "PlotLabel", "\[Rule]", 
+                 "\"\<Demand function for good \!\(\*SubscriptBox[\(x\), \
+\(1\)]\)\>\""}]}], "]"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"Graphics", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"PointSize", "[", ".03", "]"}], ",", "Red", ",", 
+                 RowBox[{"Tooltip", "[", 
+                  RowBox[{
+                   RowBox[{"Point", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"x1op", "[", 
+                    RowBox[{"m", ",", "p1", ",", "p2", ",", "a", ",", 
+                    RowBox[{"1", "-", "a"}]}], "]"}], ",", 
+                    RowBox[{"idx1", "[", 
+                    RowBox[{"m", ",", "p2", ",", "a", ",", 
+                    RowBox[{"1", "-", "a"}], ",", 
+                    RowBox[{"x1op", "[", 
+                    RowBox[{"m", ",", "p1", ",", "p2", ",", "a", ",", 
+                    RowBox[{"1", "-", "a"}]}], "]"}]}], "]"}]}], "}"}], "]"}],
+                    ",", "\"\<Demand\>\""}], "]"}]}], "}"}], "]"}]}], 
+             "\[IndentingNewLine]", "]"}], "}"}]}], "\[IndentingNewLine]", 
+          "}"}], ",", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"375", ",", "450"}], "}"}]}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"GraphicsGrid", "[", 
+        RowBox[{
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"Show", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Plot", "[", 
+               RowBox[{"0", ",", 
+                RowBox[{"{", 
+                 RowBox[{"x1", ",", 
+                  RowBox[{"-", "3"}], ",", "103"}], "}"}], ",", 
+                RowBox[{"PlotRange", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"-", "3"}], ",", "103"}], "}"}]}], ",", 
+                RowBox[{"AxesLabel", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{
+                  "\"\<good \!\(\*SubscriptBox[\(x\), \(1\)]\)\>\"", " ", 
+                   ",", "\"\<good \!\(\*SubscriptBox[\(x\), \(2\)]\)\>\""}], 
+                  " ", "}"}]}], ",", 
+                RowBox[{"AxesOrigin", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+                RowBox[{"PlotStyle", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"Thin", ",", "White"}], "}"}]}], ",", 
+                RowBox[{"PlotLabel", "\[Rule]", "\"\<Demanded goods\>\""}]}], 
+               "]"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"ContourPlot", "[", 
+               RowBox[{
+                RowBox[{"comp", "[", 
+                 RowBox[{"x1", ",", "x2", ",", "a", ",", 
+                  RowBox[{"1", "-", "a"}]}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x1", ",", "0", ",", "100"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x2", ",", "0", ",", "100"}], "}"}], ",", 
+                RowBox[{"ContourShading", "\[Rule]", "False"}], ",", 
+                RowBox[{"Frame", "\[Rule]", "False"}], ",", 
+                RowBox[{"Axes", "\[Rule]", "True"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", "\[IndentingNewLine]", 
+              RowBox[{"Plot", "[", 
+               RowBox[{
+                RowBox[{"Tooltip", "[", 
+                 RowBox[{
+                  RowBox[{"x2rest", "[", 
+                   RowBox[{"x1", ",", "m", ",", "p1", ",", "p2"}], "]"}], 
+                  ",", "\"\<Budget constraint\>\""}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x1", ",", "0", ",", "100"}], "}"}], ",", 
+                RowBox[{"Filling", "\[Rule]", "Axis"}], ",", 
+                RowBox[{"PlotStyle", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"Thick", ",", "Black"}], "}"}]}], ",", 
+                RowBox[{"PlotRange", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "100"}], "}"}]}]}], "]"}], ",", 
+              "\[IndentingNewLine]", "\[IndentingNewLine]", 
+              RowBox[{"Graphics", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"PointSize", "[", ".03", "]"}], ",", "Red", ",", 
+                 RowBox[{"Tooltip", "[", 
+                  RowBox[{
+                   RowBox[{"Point", "[", 
+                    RowBox[{"opcomp", "[", 
+                    RowBox[{"m", ",", "p1", ",", "p2", ",", "a", ",", 
+                    RowBox[{"1", "-", "a"}]}], "]"}], "]"}], ",", 
+                   "\"\<Demand\>\""}], "]"}]}], "}"}], "]"}], ",", 
+              "\[IndentingNewLine]", "\[IndentingNewLine]", 
+              RowBox[{"ContourPlot", "[", 
+               RowBox[{
+                RowBox[{"comp", "[", 
+                 RowBox[{"x1", ",", "x2", ",", "a", ",", 
+                  RowBox[{"1", "-", "a"}]}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x1", ",", "0", ",", "100"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x2", ",", "0", ",", "100"}], "}"}], ",", 
+                "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                RowBox[{"Contours", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"{", 
+                   RowBox[{"comp", "[", 
+                    RowBox[{
+                    RowBox[{"x1opcomp", "[", 
+                    RowBox[{"m", ",", "p1", ",", "p2", ",", "a", ",", 
+                    RowBox[{"1", "-", "a"}]}], "]"}], ",", 
+                    RowBox[{"x2opcomp", "[", 
+                    RowBox[{"m", ",", "p1", ",", "p2", ",", "a", ",", 
+                    RowBox[{"1", "-", "a"}]}], "]"}], ",", "a", ",", 
+                    RowBox[{"1", "-", "a"}]}], "]"}], "}"}], "}"}]}], ",", 
+                RowBox[{"ContourShading", "\[Rule]", "False"}]}], "]"}]}], 
+             "\[IndentingNewLine]", "]"}], "}"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"Show", "[", 
+             RowBox[{
+              RowBox[{"Plot", "[", 
+               RowBox[{
+                RowBox[{"Tooltip", "[", 
+                 RowBox[{
+                  RowBox[{"idx1comp", "[", 
+                   RowBox[{"m", ",", "p2", ",", "a", ",", 
+                    RowBox[{"1", "-", "a"}], ",", "x1"}], "]"}], ",", 
+                  "\"\<Demand function\>\""}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x1", ",", "0", ",", "100"}], "}"}], ",", 
+                RowBox[{"AxesOrigin", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+                RowBox[{"AxesLabel", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"\"\<good \>\"", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    "\"\<\!\(\*SubscriptBox[\(x\), \(1\)]\)\>\"", ",", 
+                    "Italic"}], "]"}]}], " ", ",", 
+                   SubscriptBox["p", "1"]}], "}"}]}], ",", 
+                RowBox[{"PlotRange", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "10"}], "}"}]}], ",", 
+                RowBox[{"PlotStyle", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"Red", ",", "Thick"}], "}"}]}], ",", 
+                RowBox[{
+                "PlotLabel", "\[Rule]", 
+                 "\"\<Demand function for good \!\(\*SubscriptBox[\(x\), \
+\(1\)]\)\>\""}]}], "]"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"Graphics", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"PointSize", "[", ".03", "]"}], ",", "Red", ",", 
+                 RowBox[{"Tooltip", "[", 
+                  RowBox[{
+                   RowBox[{"Point", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"x1opcomp", "[", 
+                    RowBox[{"m", ",", "p1", ",", "p2", ",", "a", ",", 
+                    RowBox[{"1", "-", "a"}]}], "]"}], ",", 
+                    RowBox[{"idx1comp", "[", 
+                    RowBox[{"m", ",", "p2", ",", "a", ",", 
+                    RowBox[{"1", "-", "a"}], ",", 
+                    RowBox[{"x1opcomp", "[", 
+                    RowBox[{"m", ",", "p1", ",", "p2", ",", "a", ",", 
+                    RowBox[{"1", "-", "a"}]}], "]"}]}], "]"}]}], "}"}], "]"}],
+                    ",", "\"\<Demand\>\""}], "]"}]}], "}"}], "]"}]}], 
+             "\[IndentingNewLine]", "]"}], "}"}]}], "\[IndentingNewLine]", 
+          "}"}], ",", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"375", ",", "450"}], "}"}]}]}], "]"}]}], 
+      "\[IndentingNewLine]", "]"}]}], "]"}], ",", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"t", ",", "1", ",", "\"\<utility function\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+       "1", "\[Rule]", 
+        "\"\<\!\(\*SuperscriptBox[SubscriptBox[\(x\), \(1\)], \(a\)]\) \
+\!\(\*SuperscriptBox[SubscriptBox[\(x\), \(2\)], \(1 - a\)]\)\>\""}], ",", 
+       RowBox[{
+       "2", "\[Rule]", 
+        "\"\<Min[\!\(\*FractionBox[\(a\), \(1 - \
+a\)]\)\!\(\*SubscriptBox[\(x\), \(1\)]\),\!\(\*SubscriptBox[\(x\), \
+\(2\)]\)]\>\""}], ",", 
+       RowBox[{
+       "3", "\[Rule]", 
+        "\"\<\!\(\*FractionBox[\(a\), \(1 - a\)]\)\!\(\*SubscriptBox[\(x\), \
+\(1\)]\)+\!\(\*SubscriptBox[\(x\), \(2\)]\)\>\""}]}], "}"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", "PopupMenu"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", ".5", ",", "\"\<preference a\>\""}], "}"}], ",", 
+     "0.1", ",", ".9", ",", ".01", ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "->", "Tiny"}]}], "}"}], ",", "\"\<\>\"", ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Style", "[", 
+    RowBox[{
+    "\"\<budget constraint: m \[GreaterEqual] \!\(\*SubscriptBox[\(p\), \
+\(1\)]\) \!\(\*SubscriptBox[\(x\), \(1\)]\) + \!\(\*SubscriptBox[\(p\), \
+\(2\)]\) \!\(\*SubscriptBox[\(x\), \(2\)]\)\>\"", ",", "Bold"}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m", ",", "100", ",", "\"\<budget m\>\""}], "}"}], ",", "10", 
+     ",", "100", ",", "1", ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "->", "Tiny"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "p1", ",", "1", ",", 
+       "\"\<good price \!\(\*SubscriptBox[\(p\), \(1\)]\)\>\""}], "}"}], ",", 
+     "1", ",", "10", ",", ".01", ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "->", "Tiny"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "p2", ",", "1", ",", 
+       "\"\<good price \!\(\*SubscriptBox[\(p\), \(2\)]\)\>\""}], "}"}], ",", 
+     "1", ",", "10", ",", ".01", ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "->", "Tiny"}]}], "}"}], ",", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}], ",", 
+   RowBox[{"ControlPlacement", "\[Rule]", "Left"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4602290786724*^9, 3.4602290890584*^9}, {
+   3.4602302304584*^9, 3.4602302453984003`*^9}, {3.4603140356173983`*^9, 
+   3.460314110701906*^9}, {3.460319694520525*^9, 3.4603197466924*^9}, {
+   3.460320096551775*^9, 3.460320123208025*^9}, {3.460320176958025*^9, 
+   3.46032018253615*^9}, {3.460320455676775*^9, 3.460320508833025*^9}, {
+   3.460428399672*^9, 3.460428435446*^9}, 3.460428518439*^9, {
+   3.460428632675*^9, 3.460428643535*^9}, {3.460428674898*^9, 
+   3.460428683907*^9}, {3.460428993808*^9, 3.460429102459*^9}, {
+   3.4604292646029997`*^9, 3.460429272608*^9}, {3.460429381646*^9, 
+   3.4604294360150003`*^9}, {3.4604294674049997`*^9, 
+   3.4604294700369997`*^9}, {3.460429521354*^9, 3.460429526057*^9}, {
+   3.460430081461*^9, 3.460430206705*^9}, {3.4604302495550003`*^9, 
+   3.460430281664*^9}, {3.460430742927*^9, 3.460430769892*^9}, {
+   3.460432972139*^9, 3.4604330543450003`*^9}, {3.460433121758*^9, 
+   3.460433199342*^9}, {3.460433231941*^9, 3.46043324634*^9}, {
+   3.4604334348310003`*^9, 3.460433534601*^9}, {3.460433660606*^9, 
+   3.46043368876*^9}, {3.460433973888*^9, 3.460434084843*^9}, {
+   3.460434123072*^9, 3.460434139495*^9}, {3.460434184118*^9, 
+   3.460434232941*^9}, {3.460434284894*^9, 3.460434320108*^9}, {
+   3.460435354049*^9, 3.460435517973*^9}, 3.460435552083*^9, {
+   3.460435599377*^9, 3.460435600172*^9}, {3.4604356717209997`*^9, 
+   3.460435673146*^9}, 3.4604357153459997`*^9, 3.4604357453719997`*^9, {
+   3.460435936289*^9, 3.460435984424*^9}, {3.460436021557*^9, 
+   3.460436107198*^9}, {3.460436141901*^9, 3.460436150406*^9}, {
+   3.460436235421*^9, 3.460436252594*^9}, {3.4604363082469997`*^9, 
+   3.460436316733*^9}, 3.460436437019*^9, {3.460436470564*^9, 
+   3.4604364779189997`*^9}, {3.460436545509*^9, 3.460436562474*^9}, {
+   3.4604368350550003`*^9, 3.460436858111*^9}, {3.4604369344890003`*^9, 
+   3.460437024599*^9}, {3.4604370744779997`*^9, 3.460437107179*^9}, {
+   3.460437155222*^9, 3.460437310988*^9}, {3.4604375370629997`*^9, 
+   3.460437569102*^9}, 3.4604376098859997`*^9, {3.460437669362*^9, 
+   3.460437686174*^9}, {3.460437791256*^9, 3.460437834302*^9}, 
+   3.460437925724*^9, {3.460438021725*^9, 3.4604380312939997`*^9}, {
+   3.460438065847*^9, 3.460438077309*^9}, {3.460438283269*^9, 
+   3.460438294177*^9}, {3.460438713767*^9, 3.46043878617*^9}, {
+   3.460438865658*^9, 3.460438866065*^9}, {3.46043890091*^9, 
+   3.46043892454*^9}, {3.460438985745*^9, 3.460438994465*^9}, {
+   3.460439126244*^9, 3.4604392377799997`*^9}, {3.4604392879309998`*^9, 
+   3.4604393206800003`*^9}, 3.460441539849*^9, {3.460441874679*^9, 
+   3.4604418992200003`*^9}, {3.46044195608*^9, 3.4604420198710003`*^9}, {
+   3.460442130334*^9, 3.460442144429*^9}, {3.460442178212*^9, 
+   3.460442268759*^9}, 3.460442336236*^9, {3.460442374409*^9, 
+   3.4604424276219997`*^9}, {3.460442608189*^9, 3.460442610495*^9}, {
+   3.460442701149*^9, 3.4604427017679996`*^9}, {3.460442812443*^9, 
+   3.4604428129890003`*^9}, 3.460442942241*^9, 3.4604433313190002`*^9, 
+   3.46044336262*^9, {3.460476894771669*^9, 3.460476937348976*^9}, {
+   3.460476975363871*^9, 3.46047697592636*^9}, {3.4604770295659556`*^9, 
+   3.460477139987028*^9}, {3.4604771839398723`*^9, 3.4604772154552956`*^9}, 
+   3.460721100097514*^9, 3.4610698211018133`*^9}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 0.5, $CellContext`m$$ = 
+    100, $CellContext`p1$$ = 1, $CellContext`p2$$ = 1, $CellContext`t$$ = 1, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 1, "utility function"}, {
+      1 -> "\!\(\*SuperscriptBox[SubscriptBox[\(x\), \(1\)], \(a\)]\) \
+\!\(\*SuperscriptBox[SubscriptBox[\(x\), \(2\)], \(1 - a\)]\)", 2 -> 
+       "Min[\!\(\*FractionBox[\(a\), \(1 - a\)]\)\!\(\*SubscriptBox[\(x\), \
+\(1\)]\),\!\(\*SubscriptBox[\(x\), \(2\)]\)]", 3 -> 
+       "\!\(\*FractionBox[\(a\), \(1 - a\)]\)\!\(\*SubscriptBox[\(x\), \(1\)]\
+\)+\!\(\*SubscriptBox[\(x\), \(2\)]\)"}}, {{
+       Hold[$CellContext`a$$], 0.5, "preference a"}, 0.1, 0.9, 0.01}, {
+      Hold[""], Manipulate`Dump`ThisIsNotAControl}, {
+      Hold[
+       Style[
+       "budget constraint: m \[GreaterEqual] \!\(\*SubscriptBox[\(p\), \(1\)]\
+\) \!\(\*SubscriptBox[\(x\), \(1\)]\) + \!\(\*SubscriptBox[\(p\), \(2\)]\) \!\
+\(\*SubscriptBox[\(x\), \(2\)]\)", Bold]], 
+      Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`m$$], 100, "budget m"}, 10, 100, 1}, {{
+       Hold[$CellContext`p1$$], 1, 
+       "good price \!\(\*SubscriptBox[\(p\), \(1\)]\)"}, 1, 10, 0.01}, {{
+       Hold[$CellContext`p2$$], 1, 
+       "good price \!\(\*SubscriptBox[\(p\), \(2\)]\)"}, 1, 10, 0.01}}, 
+    Typeset`size$$ = {375., {223., 227.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`t$46561$$ = False, $CellContext`a$46562$$ = 
+    0, $CellContext`m$46563$$ = 0, $CellContext`p1$46564$$ = 
+    0, $CellContext`p2$46565$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 0.5, $CellContext`m$$ = 
+        100, $CellContext`p1$$ = 1, $CellContext`p2$$ = 1, $CellContext`t$$ = 
+        1}, "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$46561$$, False], 
+        Hold[$CellContext`a$$, $CellContext`a$46562$$, 0], 
+        Hold[$CellContext`m$$, $CellContext`m$46563$$, 0], 
+        Hold[$CellContext`p1$$, $CellContext`p1$46564$$, 0], 
+        Hold[$CellContext`p2$$, $CellContext`p2$46565$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> If[$CellContext`t$$ == 3, 
+        GraphicsGrid[{{
+           Show[
+            Plot[
+            0, {$CellContext`x1, -3, 103}, PlotRange -> {-3, 103}, 
+             AxesLabel -> {
+              "good \!\(\*SubscriptBox[\(x\), \(1\)]\)", 
+               "good \!\(\*SubscriptBox[\(x\), \(2\)]\)"}, 
+             AxesOrigin -> {0, 0}, PlotStyle -> {Thin, White}, PlotLabel -> 
+             "Demanded goods"], 
+            ContourPlot[
+             $CellContext`sus[$CellContext`x1, $CellContext`x2, \
+$CellContext`a$$, 1 - $CellContext`a$$], {$CellContext`x1, 0, 
+              100}, {$CellContext`x2, 0, 100}, ContourShading -> False, Frame -> 
+             False, Axes -> True], 
+            Plot[
+             Tooltip[
+              $CellContext`x2rest[$CellContext`x1, $CellContext`m$$, \
+$CellContext`p1$$, $CellContext`p2$$], "Budget constraint"], {$CellContext`x1,
+               0, 100}, Filling -> Axis, PlotStyle -> {Black, Thick}, 
+             PlotRange -> {0, 100}], 
+            ContourPlot[
+             $CellContext`sus[$CellContext`x1, $CellContext`x2, \
+$CellContext`a$$, 1 - $CellContext`a$$], {$CellContext`x1, 0, 
+              100}, {$CellContext`x2, 0, 100}, Contours -> {{
+                $CellContext`sus[
+                 
+                 If[$CellContext`p1$$/$CellContext`p2$$ > $CellContext`a$$/(
+                   1 - $CellContext`a$$), 
+                  0, $CellContext`m$$/$CellContext`p1$$], 
+                 
+                 If[$CellContext`p1$$/$CellContext`p2$$ > $CellContext`a$$/(
+                   1 - $CellContext`a$$), $CellContext`m$$/$CellContext`p2$$, 
+                  0], $CellContext`a$$, 1 - $CellContext`a$$]}}, 
+             ContourShading -> False], 
+            Graphics[{
+              PointSize[0.03], Red, 
+              Tooltip[
+               Point[
+                
+                If[$CellContext`p1$$/$CellContext`p2$$ > $CellContext`a$$/(
+                  1 - $CellContext`a$$), {
+                 0, $CellContext`m$$/$CellContext`p2$$}, \
+{$CellContext`m$$/$CellContext`p1$$, 0}]], "Demand"]}]]}, {
+           Show[
+            Plot[
+             Tooltip[
+              
+              If[$CellContext`m$$/$CellContext`x1 < ($CellContext`a$$/(
+                 1 - $CellContext`a$$)) $CellContext`p2$$, \
+$CellContext`m$$/$CellContext`x1], "Demand function"], {$CellContext`x1, 0, 
+              100}, AxesOrigin -> {0, 0}, 
+             AxesLabel -> {"good \!\(\*SubscriptBox[\(x\), \(1\)]\)", 
+               Subscript[$CellContext`p, 1]}, PlotRange -> {0, 10}, 
+             PlotStyle -> {Thick, Red}, PlotLabel -> 
+             "Demand function for good \!\(\*SubscriptBox[\(x\), \(1\)]\)"], 
+            Graphics[{
+              PointSize[0.03], Red, 
+              Tooltip[
+               Point[{
+                 
+                 If[$CellContext`p1$$/$CellContext`p2$$ > $CellContext`a$$/(
+                   1 - $CellContext`a$$), 
+                  0, $CellContext`m$$/$CellContext`p1$$], $CellContext`p1$$}],
+                "Demand"]}], 
+            Graphics[{Red, Thick, 
+              Tooltip[
+               
+               Line[{{0, ($CellContext`a$$/(
+                   1 - $CellContext`a$$)) $CellContext`p2$$}, \
+{($CellContext`m$$/$CellContext`p2$$) ((
+                    1 - $CellContext`a$$)/$CellContext`a$$), \
+($CellContext`a$$/(1 - $CellContext`a$$)) $CellContext`p2$$}}], "Demand"]}], 
+            Graphics[{Red, Thick, 
+              Tooltip[
+               
+               Line[{{0, ($CellContext`a$$/(
+                   1 - $CellContext`a$$)) $CellContext`p2$$}, {0, 10}}], 
+               "Demand"]}]]}}, ImageSize -> {375, 450}], 
+        If[$CellContext`t$$ == 1, 
+         GraphicsGrid[{{
+            Show[
+             Plot[
+             0, {$CellContext`x1, -3, 103}, PlotRange -> {-3, 103}, 
+              AxesLabel -> {
+               "good \!\(\*SubscriptBox[\(x\), \(1\)]\)", 
+                "good \!\(\*SubscriptBox[\(x\), \(2\)]\)"}, 
+              AxesOrigin -> {0, 0}, PlotStyle -> {Thin, White}, PlotLabel -> 
+              "Demanded goods"], 
+             ContourPlot[
+              $CellContext`CD[$CellContext`x1, $CellContext`x2, \
+$CellContext`a$$, 1 - $CellContext`a$$], {$CellContext`x1, 0, 
+               100}, {$CellContext`x2, 0, 100}, ContourShading -> False, 
+              Frame -> False, Axes -> True], 
+             Plot[
+              Tooltip[
+               $CellContext`x2rest[$CellContext`x1, $CellContext`m$$, \
+$CellContext`p1$$, $CellContext`p2$$], "Budget constraint"], {$CellContext`x1,
+                0, 100}, Filling -> Axis, PlotRange -> {0, 100}, 
+              PlotStyle -> {Thick, Black}], 
+             Graphics[{
+               PointSize[Large], Red, 
+               Tooltip[
+                Point[
+                 $CellContext`op[$CellContext`m$$, $CellContext`p1$$, \
+$CellContext`p2$$, $CellContext`a$$, 1 - $CellContext`a$$]], "Demand"]}], 
+             ContourPlot[
+              $CellContext`CD[$CellContext`x1, $CellContext`x2, \
+$CellContext`a$$, 1 - $CellContext`a$$], {$CellContext`x1, 0, 
+               100}, {$CellContext`x2, 0, 100}, Contours -> {{
+                 $CellContext`CD[
+                  $CellContext`x1op[$CellContext`m$$, $CellContext`p1$$, \
+$CellContext`p2$$, $CellContext`a$$, 1 - $CellContext`a$$], 
+                  $CellContext`x2op[$CellContext`m$$, $CellContext`p1$$, \
+$CellContext`p2$$, $CellContext`a$$, 1 - $CellContext`a$$], $CellContext`a$$, 
+                  1 - $CellContext`a$$]}}, ContourShading -> False]]}, {
+            Show[
+             Plot[
+              Tooltip[
+               $CellContext`idx1[$CellContext`m$$, $CellContext`p2$$, \
+$CellContext`a$$, 1 - $CellContext`a$$, $CellContext`x1], 
+               "Demand function"], {$CellContext`x1, 0, 100}, 
+              AxesOrigin -> {0, 0}, 
+              AxesLabel -> {"good \!\(\*SubscriptBox[\(x\), \(1\)]\)", 
+                Subscript[$CellContext`p, 1]}, PlotRange -> {0, 10}, 
+              PlotStyle -> {Thick, Red}, PlotLabel -> 
+              "Demand function for good \!\(\*SubscriptBox[\(x\), \(1\)]\)"], 
+             Graphics[{
+               PointSize[0.03], Red, 
+               Tooltip[
+                Point[{
+                  $CellContext`x1op[$CellContext`m$$, $CellContext`p1$$, \
+$CellContext`p2$$, $CellContext`a$$, 1 - $CellContext`a$$], 
+                  $CellContext`idx1[$CellContext`m$$, $CellContext`p2$$, \
+$CellContext`a$$, 1 - $CellContext`a$$, 
+                   $CellContext`x1op[$CellContext`m$$, $CellContext`p1$$, \
+$CellContext`p2$$, $CellContext`a$$, 1 - $CellContext`a$$]]}], "Demand"]}]]}},
+           ImageSize -> {375, 450}], 
+         GraphicsGrid[{{
+            Show[
+             Plot[
+             0, {$CellContext`x1, -3, 103}, PlotRange -> {-3, 103}, 
+              AxesLabel -> {
+               "good \!\(\*SubscriptBox[\(x\), \(1\)]\)", 
+                "good \!\(\*SubscriptBox[\(x\), \(2\)]\)"}, 
+              AxesOrigin -> {0, 0}, PlotStyle -> {Thin, White}, PlotLabel -> 
+              "Demanded goods"], 
+             ContourPlot[
+              $CellContext`comp[$CellContext`x1, $CellContext`x2, \
+$CellContext`a$$, 1 - $CellContext`a$$], {$CellContext`x1, 0, 
+               100}, {$CellContext`x2, 0, 100}, ContourShading -> False, 
+              Frame -> False, Axes -> True], 
+             Plot[
+              Tooltip[
+               $CellContext`x2rest[$CellContext`x1, $CellContext`m$$, \
+$CellContext`p1$$, $CellContext`p2$$], "Budget constraint"], {$CellContext`x1,
+                0, 100}, Filling -> Axis, PlotStyle -> {Thick, Black}, 
+              PlotRange -> {0, 100}], 
+             Graphics[{
+               PointSize[0.03], Red, 
+               Tooltip[
+                Point[
+                 $CellContext`opcomp[$CellContext`m$$, $CellContext`p1$$, \
+$CellContext`p2$$, $CellContext`a$$, 1 - $CellContext`a$$]], "Demand"]}], 
+             ContourPlot[
+              $CellContext`comp[$CellContext`x1, $CellContext`x2, \
+$CellContext`a$$, 1 - $CellContext`a$$], {$CellContext`x1, 0, 
+               100}, {$CellContext`x2, 0, 100}, Contours -> {{
+                 $CellContext`comp[
+                  $CellContext`x1opcomp[$CellContext`m$$, $CellContext`p1$$, \
+$CellContext`p2$$, $CellContext`a$$, 1 - $CellContext`a$$], 
+                  $CellContext`x2opcomp[$CellContext`m$$, $CellContext`p1$$, \
+$CellContext`p2$$, $CellContext`a$$, 1 - $CellContext`a$$], $CellContext`a$$, 
+                  1 - $CellContext`a$$]}}, ContourShading -> False]]}, {
+            Show[
+             Plot[
+              Tooltip[
+               $CellContext`idx1comp[$CellContext`m$$, $CellContext`p2$$, \
+$CellContext`a$$, 1 - $CellContext`a$$, $CellContext`x1], 
+               "Demand function"], {$CellContext`x1, 0, 100}, 
+              AxesOrigin -> {0, 0}, 
+              AxesLabel -> {
+               "good " Style["\!\(\*SubscriptBox[\(x\), \(1\)]\)", Italic], 
+                Subscript[$CellContext`p, 1]}, PlotRange -> {0, 10}, 
+              PlotStyle -> {Red, Thick}, PlotLabel -> 
+              "Demand function for good \!\(\*SubscriptBox[\(x\), \(1\)]\)"], 
+             Graphics[{
+               PointSize[0.03], Red, 
+               Tooltip[
+                Point[{
+                  $CellContext`x1opcomp[$CellContext`m$$, $CellContext`p1$$, \
+$CellContext`p2$$, $CellContext`a$$, 1 - $CellContext`a$$], 
+                  $CellContext`idx1comp[$CellContext`m$$, $CellContext`p2$$, \
+$CellContext`a$$, 1 - $CellContext`a$$, 
+                   $CellContext`x1opcomp[$CellContext`m$$, $CellContext`p1$$, \
+$CellContext`p2$$, $CellContext`a$$, 1 - $CellContext`a$$]]}], "Demand"]}]]}},
+           ImageSize -> {375, 450}]]], 
+      "Specifications" :> {{{$CellContext`t$$, 1, "utility function"}, {
+         1 -> "\!\(\*SuperscriptBox[SubscriptBox[\(x\), \(1\)], \(a\)]\) \!\(\
+\*SuperscriptBox[SubscriptBox[\(x\), \(2\)], \(1 - a\)]\)", 2 -> 
+          
+          "Min[\!\(\*FractionBox[\(a\), \(1 - a\)]\)\!\(\*SubscriptBox[\(x\), \
+\(1\)]\),\!\(\*SubscriptBox[\(x\), \(2\)]\)]", 3 -> 
+          "\!\(\*FractionBox[\(a\), \(1 - a\)]\)\!\(\*SubscriptBox[\(x\), \(1\
+\)]\)+\!\(\*SubscriptBox[\(x\), \(2\)]\)"}, ControlType -> 
+         PopupMenu}, {{$CellContext`a$$, 0.5, "preference a"}, 0.1, 0.9, 0.01,
+          Appearance -> "Labeled", ImageSize -> Tiny}, "", 
+        Style[
+        "budget constraint: m \[GreaterEqual] \!\(\*SubscriptBox[\(p\), \
+\(1\)]\) \!\(\*SubscriptBox[\(x\), \(1\)]\) + \!\(\*SubscriptBox[\(p\), \
+\(2\)]\) \!\(\*SubscriptBox[\(x\), \(2\)]\)", 
+         Bold], {{$CellContext`m$$, 100, "budget m"}, 10, 100, 1, Appearance -> 
+         "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`p1$$, 1, 
+          "good price \!\(\*SubscriptBox[\(p\), \(1\)]\)"}, 1, 10, 0.01, 
+         Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`p2$$, 1, 
+          "good price \!\(\*SubscriptBox[\(p\), \(2\)]\)"}, 1, 10, 0.01, 
+         Appearance -> "Labeled", ImageSize -> Tiny}}, 
+      "Options" :> {ControlPlacement -> Left}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{612., {249., 254.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>(({
+       Attributes[PlotRange] = {ReadProtected}, $CellContext`sus[
+          Pattern[$CellContext`x1, 
+           Blank[]], 
+          Pattern[$CellContext`x2, 
+           Blank[]], 
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           
+           Blank[]]] := ($CellContext`a/$CellContext`b) $CellContext`x1 + \
+$CellContext`x2, $CellContext`x2rest[
+          Pattern[$CellContext`x1, 
+           Blank[]], 
+          Pattern[$CellContext`m, 
+           Blank[]], 
+          Pattern[$CellContext`p1, 
+           Blank[]], 
+          Pattern[$CellContext`p2, 
+           
+           Blank[]]] := $CellContext`m/$CellContext`p2 - \
+($CellContext`p1/$CellContext`p2) $CellContext`x1, 
+        Attributes[Subscript] = {NHoldRest}, $CellContext`CD[
+          Pattern[$CellContext`x1, 
+           Blank[]], 
+          Pattern[$CellContext`x2, 
+           Blank[]], 
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           
+           Blank[]]] := $CellContext`x1^$CellContext`a \
+$CellContext`x2^$CellContext`b, $CellContext`op[
+          Pattern[$CellContext`m, 
+           Blank[]], 
+          Pattern[$CellContext`p1, 
+           Blank[]], 
+          Pattern[$CellContext`p2, 
+           Blank[]], 
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           
+           Blank[]]] := {($CellContext`a $CellContext`m)/(($CellContext`a + \
+$CellContext`b) $CellContext`p1), ($CellContext`b \
+$CellContext`m)/(($CellContext`a + $CellContext`b) $CellContext`p2)}, \
+$CellContext`x1op[
+          Pattern[$CellContext`m, 
+           Blank[]], 
+          Pattern[$CellContext`p1, 
+           Blank[]], 
+          Pattern[$CellContext`p2, 
+           Blank[]], 
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           
+           Blank[]]] := ($CellContext`a $CellContext`m)/(($CellContext`a + \
+$CellContext`b) $CellContext`p1), $CellContext`x2op[
+          Pattern[$CellContext`m, 
+           Blank[]], 
+          Pattern[$CellContext`p1, 
+           Blank[]], 
+          Pattern[$CellContext`p2, 
+           Blank[]], 
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           
+           Blank[]]] := ($CellContext`b $CellContext`m)/(($CellContext`a + \
+$CellContext`b) $CellContext`p2), $CellContext`idx1[
+          Pattern[$CellContext`m, 
+           Blank[]], 
+          Pattern[$CellContext`p2, 
+           Blank[]], 
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           Blank[]], 
+          Pattern[$CellContext`x1, 
+           
+           Blank[]]] := ($CellContext`a $CellContext`m)/(($CellContext`a + \
+$CellContext`b) $CellContext`x1), $CellContext`comp[
+          Pattern[$CellContext`x1, 
+           Blank[]], 
+          Pattern[$CellContext`x2, 
+           Blank[]], 
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           Blank[]]] := 
+        Min[($CellContext`a/$CellContext`b) $CellContext`x1, \
+$CellContext`x2], $CellContext`opcomp[
+          Pattern[$CellContext`m, 
+           Blank[]], 
+          Pattern[$CellContext`p1, 
+           Blank[]], 
+          Pattern[$CellContext`p2, 
+           Blank[]], 
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           
+           Blank[]]] := {($CellContext`b $CellContext`m)/($CellContext`b \
+$CellContext`p1 + $CellContext`a $CellContext`p2), ($CellContext`a \
+$CellContext`m)/($CellContext`b $CellContext`p1 + $CellContext`a \
+$CellContext`p2)}, $CellContext`x1opcomp[
+          Pattern[$CellContext`m, 
+           Blank[]], 
+          Pattern[$CellContext`p1, 
+           Blank[]], 
+          Pattern[$CellContext`p2, 
+           Blank[]], 
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           
+           Blank[]]] := ($CellContext`b $CellContext`m)/($CellContext`b \
+$CellContext`p1 + $CellContext`a $CellContext`p2), $CellContext`x2opcomp[
+          Pattern[$CellContext`m, 
+           Blank[]], 
+          Pattern[$CellContext`p1, 
+           Blank[]], 
+          Pattern[$CellContext`p2, 
+           Blank[]], 
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           
+           Blank[]]] := ($CellContext`a $CellContext`m)/($CellContext`b \
+$CellContext`p1 + $CellContext`a $CellContext`p2), $CellContext`idx1comp[
+          Pattern[$CellContext`m, 
+           Blank[]], 
+          Pattern[$CellContext`p2, 
+           Blank[]], 
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           Blank[]], 
+          Pattern[$CellContext`x1, 
+           
+           Blank[]]] := ($CellContext`b $CellContext`m - ($CellContext`a \
+$CellContext`p2) $CellContext`x1)/($CellContext`b $CellContext`x1)}; 
+      Typeset`initDone$$ = True); ReleaseHold[
+       HoldComplete[{$CellContext`sus[
+           Pattern[$CellContext`x1, 
+            Blank[]], 
+           Pattern[$CellContext`x2, 
+            Blank[]], 
+           Pattern[$CellContext`a, 
+            Blank[]], 
+           Pattern[$CellContext`b, 
+            
+            Blank[]]] := ($CellContext`a/$CellContext`b) $CellContext`x1 + \
+$CellContext`x2, $CellContext`x2rest[
+           Pattern[$CellContext`x1, 
+            Blank[]], 
+           Pattern[$CellContext`m, 
+            Blank[]], 
+           Pattern[$CellContext`p1, 
+            Blank[]], 
+           Pattern[$CellContext`p2, 
+            
+            Blank[]]] := $CellContext`m/$CellContext`p2 - \
+($CellContext`p1/$CellContext`p2) $CellContext`x1, $CellContext`CD[
+           Pattern[$CellContext`x1, 
+            Blank[]], 
+           Pattern[$CellContext`x2, 
+            Blank[]], 
+           Pattern[$CellContext`a, 
+            Blank[]], 
+           Pattern[$CellContext`b, 
+            
+            Blank[]]] := $CellContext`x1^$CellContext`a \
+$CellContext`x2^$CellContext`b, $CellContext`soltan = Solve[{D[
+                $CellContext`CD[$CellContext`x1, $CellContext`x2, \
+$CellContext`a, $CellContext`b], $CellContext`x1]/D[
+               $CellContext`CD[$CellContext`x1, $CellContext`x2, \
+$CellContext`a, $CellContext`b], $CellContext`x2] == \
+$CellContext`p1/$CellContext`p2, $CellContext`m == $CellContext`p1 \
+$CellContext`x1 + $CellContext`p2 $CellContext`x2}, {$CellContext`x1, \
+$CellContext`x2}]; Null, $CellContext`op[
+            Pattern[$CellContext`m, 
+             Blank[]], 
+            Pattern[$CellContext`p1, 
+             Blank[]], 
+            Pattern[$CellContext`p2, 
+             Blank[]], 
+            Pattern[$CellContext`a, 
+             Blank[]], 
+            Pattern[$CellContext`b, 
+             Blank[]]] := Evaluate[
+            ReplaceAll[{$CellContext`x1, $CellContext`x2}, 
+             Part[$CellContext`soltan, 1]]]; Null, $CellContext`x1op[
+            Pattern[$CellContext`m, 
+             Blank[]], 
+            Pattern[$CellContext`p1, 
+             Blank[]], 
+            Pattern[$CellContext`p2, 
+             Blank[]], 
+            Pattern[$CellContext`a, 
+             Blank[]], 
+            Pattern[$CellContext`b, 
+             Blank[]]] := Evaluate[
+            ReplaceAll[$CellContext`x1, 
+             Part[$CellContext`soltan, 1]]]; Null, $CellContext`x2op[
+            Pattern[$CellContext`m, 
+             Blank[]], 
+            Pattern[$CellContext`p1, 
+             Blank[]], 
+            Pattern[$CellContext`p2, 
+             Blank[]], 
+            Pattern[$CellContext`a, 
+             Blank[]], 
+            Pattern[$CellContext`b, 
+             Blank[]]] := Evaluate[
+            ReplaceAll[$CellContext`x2, 
+             Part[$CellContext`soltan, 1]]]; Null, $CellContext`idx1[
+            Pattern[$CellContext`m, 
+             Blank[]], 
+            Pattern[$CellContext`p2, 
+             Blank[]], 
+            Pattern[$CellContext`a, 
+             Blank[]], 
+            Pattern[$CellContext`b, 
+             Blank[]], 
+            Pattern[$CellContext`x1, 
+             Blank[]]] := Evaluate[
+            ReplaceAll[$CellContext`p1, 
+             Part[
+              
+              Solve[$CellContext`x1op[$CellContext`m, $CellContext`p1, \
+$CellContext`p2, $CellContext`a, $CellContext`b] == $CellContext`x1, \
+$CellContext`p1], 1]]]; Null, $CellContext`comp[
+           Pattern[$CellContext`x1, 
+            Blank[]], 
+           Pattern[$CellContext`x2, 
+            Blank[]], 
+           Pattern[$CellContext`a, 
+            Blank[]], 
+           Pattern[$CellContext`b, 
+            Blank[]]] := 
+         Min[($CellContext`a/$CellContext`b) $CellContext`x1, \
+$CellContext`x2], $CellContext`solver = 
+          Solve[{$CellContext`a $CellContext`x1 == $CellContext`b \
+$CellContext`x2, $CellContext`m == $CellContext`p1 $CellContext`x1 + \
+$CellContext`p2 $CellContext`x2}, {$CellContext`x1, $CellContext`x2}]; 
+         Null, $CellContext`opcomp[
+           Pattern[$CellContext`m, 
+            Blank[]], 
+           Pattern[$CellContext`p1, 
+            Blank[]], 
+           Pattern[$CellContext`p2, 
+            Blank[]], 
+           Pattern[$CellContext`a, 
+            Blank[]], 
+           Pattern[$CellContext`b, 
+            Blank[]]] := Evaluate[
+           ReplaceAll[{$CellContext`x1, $CellContext`x2}, 
+            Part[$CellContext`solver, 1]]], $CellContext`x1opcomp[
+           Pattern[$CellContext`m, 
+            Blank[]], 
+           Pattern[$CellContext`p1, 
+            Blank[]], 
+           Pattern[$CellContext`p2, 
+            Blank[]], 
+           Pattern[$CellContext`a, 
+            Blank[]], 
+           Pattern[$CellContext`b, 
+            Blank[]]] := Evaluate[
+           ReplaceAll[$CellContext`x1, 
+            Part[$CellContext`solver, 1]]], $CellContext`x2opcomp[
+           Pattern[$CellContext`m, 
+            Blank[]], 
+           Pattern[$CellContext`p1, 
+            Blank[]], 
+           Pattern[$CellContext`p2, 
+            Blank[]], 
+           Pattern[$CellContext`a, 
+            Blank[]], 
+           Pattern[$CellContext`b, 
+            Blank[]]] := Evaluate[
+           ReplaceAll[$CellContext`x2, 
+            Part[$CellContext`solver, 1]]], $CellContext`idx1comp[
+           Pattern[$CellContext`m, 
+            Blank[]], 
+           Pattern[$CellContext`p2, 
+            Blank[]], 
+           Pattern[$CellContext`a, 
+            Blank[]], 
+           Pattern[$CellContext`b, 
+            Blank[]], 
+           Pattern[$CellContext`x1, 
+            Blank[]]] := Evaluate[
+           ReplaceAll[$CellContext`p1, 
+            Part[
+             
+             Solve[$CellContext`x1opcomp[$CellContext`m, $CellContext`p1, \
+$CellContext`p2, $CellContext`a, $CellContext`b] == $CellContext`x1, \
+$CellContext`p1], 1]]]}]]; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->404604967]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["CAPTION", "Section",
+ CellFrame->{{0, 0}, {1, 0}},
+ CellFrameColor->RGBColor[0.87, 0.87, 0.87],
+ FontFamily->"Helvetica",
+ FontSize->12,
+ FontWeight->"Bold",
+ FontColor->RGBColor[0.597406, 0, 0.0527047]],
+
+Cell["\<\
+The upper plot represents, in black, the combination of goods that a consumer \
+can purchase with the budget constraint and, in grey, the consumer's \
+indifference map. You can choose three possible utility functions: \
+Cobb\[Dash]Douglas, perfect complements, and perfect substitutes. The \
+consumption choice is highlighted in red; it represents the combination of \
+goods that the consumer decides to buy. \
+\>", "Text"],
+
+Cell["\<\
+The graph below shows, for each price, the amount purchased of good one, \
+while holding the consumer's preferences, budget, and the other good price \
+constant.\
+\>", "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["THIS NOTEBOOK IS THE SOURCE CODE FROM", "Text",
+ CellFrame->{{0, 0}, {0, 0}},
+ CellMargins->{{48, 10}, {4, 28}},
+ CellGroupingRules->{"SectionGrouping", 25},
+ CellFrameMargins->{{48, 48}, {6, 5}},
+ CellFrameColor->RGBColor[0.87, 0.87, 0.87],
+ FontFamily->"Helvetica",
+ FontSize->10,
+ FontWeight->"Bold",
+ FontColor->RGBColor[0.597406, 0, 0.0527047]],
+
+Cell[TextData[{
+ "\"",
+ ButtonBox["Consumer Demand",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/ConsumerDemand/"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/ConsumerDemand/"],
+ "\"",
+ " from ",
+ ButtonBox["the Wolfram Demonstrations Project",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/"],
+ "\[ParagraphSeparator]\[NonBreakingSpace]",
+ ButtonBox["http://demonstrations.wolfram.com/ConsumerDemand/",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/ConsumerDemand/"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/ConsumerDemand/"]
+}], "Text",
+ CellMargins->{{48, Inherited}, {0, Inherited}},
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->GrayLevel[0.5]],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["Loreto Llorente",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Loreto+\
+Llorente"], None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Loreto+Llorente"]
+}], "Text",
+ CellDingbat->"\[FilledSmallSquare]",
+ CellMargins->{{66, 48}, {2, 4}},
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->GrayLevel[0.6]],
+
+Cell[TextData[{
+ "A full-function Wolfram ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " system (Version 6 or higher) is required to edit this notebook.\n",
+ StyleBox[ButtonBox["GET WOLFRAM MATHEMATICA \[RightGuillemet]",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://www.wolfram.com/products/mathematica/"], None},
+  ButtonNote->"http://www.wolfram.com/products/mathematica/"],
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.42, 0]]
+}], "Text",
+ CellFrame->True,
+ CellMargins->{{48, 68}, {8, 28}},
+ CellFrameMargins->12,
+ CellFrameColor->RGBColor[0.87, 0.87, 0.87],
+ CellChangeTimes->{3.3750111182355957`*^9},
+ ParagraphSpacing->{1., 1.},
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->GrayLevel[0.411765],
+ Background->RGBColor[1, 1, 1]],
+
+Cell[TextData[{
+ "\[Copyright] ",
+ StyleBox[ButtonBox["Wolfram Demonstrations Project & Contributors",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/"],
+  FontColor->GrayLevel[0.6]],
+ "\[ThickSpace]\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+ StyleBox[ButtonBox["Terms of Use",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/termsofuse.html"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/termsofuse.html"],
+  FontColor->GrayLevel[0.6]],
+ "\[ThickSpace]\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+ StyleBox[ButtonBox["Make a new version of this Demonstration \
+\[RightGuillemet]",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/participate/upload.jsp?id=\
+ConsumerDemand"], None},
+  ButtonNote->None],
+  FontColor->GrayLevel[0.6]]
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellMargins->{{48, 10}, {20, 50}},
+ CellFrameMargins->{{6, 0}, {6, 6}},
+ CellFrameColor->GrayLevel[0.6],
+ FontFamily->"Verdana",
+ FontSize->9,
+ FontColor->GrayLevel[0.6]]
+}, Open  ]]
+},
+Editable->True,
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+CellInsertionPointCell->None,
+WindowSize->{780, 650},
+WindowMargins->{{Inherited, Inherited}, {Inherited, 0}},
+WindowElements->{
+ "StatusArea", "MemoryMonitor", "MagnificationPopUp", "VerticalScrollBar", 
+  "MenuBar"},
+WindowTitle->"Consumer Demand - Source",
+DockedCells->{},
+CellContext->Notebook,
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
+2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[595, 21, 135, 3, 62, "Section"],
+Cell[CellGroupData[{
+Cell[755, 28, 3700, 64, 37, "Section"],
+Cell[4458, 94, 476, 12, 44, "Input",
+ InitializationCell->True,
+ CellID->146154395],
+Cell[4937, 108, 339, 10, 49, "Input",
+ InitializationCell->True,
+ CellID->256047670],
+Cell[5279, 120, 322, 9, 30, "Input",
+ InitializationCell->True,
+ CellID->320875825],
+Cell[5604, 131, 946, 29, 49, "Input",
+ InitializationCell->True,
+ CellID->593898596],
+Cell[6553, 162, 485, 14, 27, "Input",
+ InitializationCell->True,
+ CellID->848580427],
+Cell[7041, 178, 426, 12, 27, "Input",
+ InitializationCell->True,
+ CellID->50933491],
+Cell[7470, 192, 422, 12, 27, "Input",
+ InitializationCell->True,
+ CellID->28373860],
+Cell[7895, 206, 676, 18, 27, "Input",
+ InitializationCell->True,
+ CellID->97119259],
+Cell[8574, 226, 457, 12, 44, "Input",
+ InitializationCell->True,
+ CellID->166857043],
+Cell[9034, 240, 644, 19, 27, "Input",
+ InitializationCell->True,
+ CellID->212046201],
+Cell[9681, 261, 483, 14, 27, "Input",
+ InitializationCell->True,
+ CellID->539209326],
+Cell[10167, 277, 429, 12, 27, "Input",
+ InitializationCell->True,
+ CellID->716350497],
+Cell[10599, 291, 426, 12, 27, "Input",
+ InitializationCell->True,
+ CellID->1050257960],
+Cell[11028, 305, 680, 19, 27, "Input",
+ InitializationCell->True,
+ CellID->442679599],
+Cell[CellGroupData[{
+Cell[11733, 328, 30156, 643, 1684, "Input"],
+Cell[41892, 973, 24994, 578, 520, "Output",
+ CellID->404604967]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66935, 1557, 209, 6, 59, "Section"],
+Cell[67147, 1565, 433, 7, 70, "Text"],
+Cell[67583, 1574, 185, 4, 70, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[67805, 1583, 355, 9, 20, "Text",
+ CellGroupingRules->{"SectionGrouping", 25}],
+Cell[68163, 1594, 862, 24, 35, "Text"],
+Cell[69028, 1620, 439, 14, 18, "Text"],
+Cell[69470, 1636, 815, 24, 99, "Text"],
+Cell[70288, 1662, 1186, 33, 88, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+(* NotebookSignature LQNcnAVb@F4bxCpIPJGhRN99 *)

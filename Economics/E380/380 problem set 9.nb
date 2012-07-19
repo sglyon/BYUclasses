@@ -1,0 +1,206 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      8294,        196]
+NotebookOptionsPosition[      7685,        170]
+NotebookOutlinePosition[      8114,        189]
+CellTagsIndexPosition[      8071,        186]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Non - Technical questions", "Section",
+ CellChangeTimes->{{3.5105731091959057`*^9, 3.510573117792437*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+In order for the firm to maximize profits they will need to allocate each \
+unit of production to the plant that at the time has the highest marginal \
+benefit. This is the right idea becuase the firms are equidistant so costs \
+for getting tools and inputs to the plants should be the same, they just need \
+to put them in the place that will be most productive.\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.510573135666883*^9, 3.510573219264007*^9}}],
+
+Cell["\<\
+If the statement each output is cheaper in Saudi Arabia means that they have \
+a comparative advantage in oil production over Venezuela then the statement \
+might be true. The only reason Venezuela would get all their oil from Saudi \
+Arabia is if after all trasaction, shipping, and other overhead costs were \
+said and done it would be cheaper for them to buy from Saudi Arabia than it \
+would for them to produce their own oil. \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.510573307601791*^9, 3.5105733787223997`*^9}}],
+
+Cell["\<\
+False. Marginal cost can be increasing when average cost is still decreasing. \
+This happens only when marginal costs is below average costs, but sloping \
+upward. See figure below. (in between the arrow we have the situation \
+described)\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.5105738365915337`*^9, 3.510573845929364*^9}}]
+}, Open  ]],
+
+Cell[TextData[Cell[BoxData[
+ GraphicsBox[{
+   {Hue[0.9060679774997897, 0.6, 0.6], 
+    LineBox[{{0.37254901960784326`, 0.8137254901960782}, {0.3803921568627454, 
+     0.12352941176470456`}}]}, 
+   {Hue[0.9060679774997897, 0.6, 0.6], 
+    LineBox[{{0.2705882352941178, 0.25686274509803875`}, {1.2117647058823535`,
+      0.24901960784313593`}}]}, 
+   {Hue[0.9060679774997897, 0.6, 0.6], LineBox[CompressedData["
+1:eJxFkntQlFUYxheUEOLiEiCIgCCDXdAVWZKrDwZGSXHZiuG2mCgINo6Mlm5j
+EeNwmS6g4iyILSgUY6OIYhuXZGizZCIQbRHalP34vm8/9s5eBqIgg779o+WP
+M2d+57znvM/7vG9I0TFBsSOHw0lil23fni5bGItTQnnMvawhQI3/We7zR0Sd
+eAZTvlvfPX1YiVHtYP1nghnEfTO/85FMCb+5xNonNANteb6kclYJr6EtOsVl
+Bo2xd522bSQg5Wf7Vr7KYP7Xs4rqEwQ4mPD4bVKFzALhdWKUwNc3nBNEH6uw
+HPaz9+eLBBaYK/KRTBUKes5rVIJpWHpr+MPuKvSl7v8+oXMaSebgkU0UDfrh
+6/9s9ieRYEvTSiM2+l/eKR4JRij4+6daGijaMPbhcRLEjpi8H1NoSOZsH5NQ
+rAkaGHSg0b55ZfeEB4UX43sFXhMUVrpHudtLKYR5tEg9Gyi4ujmkR5konNz7
+ctrBYgo/OJx5hxbSGProAdUTQyFEVjaUuETDT1oqcnWjUFWRtau5UYUjBgfP
+wmkS59hqWzcx8KpNf+w8TGKu8Siz2MdgIPTLju7bJJYtbayCGbjl8ROcakjc
+Voc+39U1g8Lz9+U5uSQOT33FEwapsY6tzjGZRIA8bJdbvRq3fikp64wgER6R
+e4LrrbHzzpq6m76XNMg59C3rOAn1aY/eey5aOye7T30adHCV/3IUsplWeY0N
+c3R29mRfK4hV9mamrz4O0ds5eLftZJUnosSG+g0Gu57Ie0WDmnKDXX9icNOS
+ccFgr8/q7ecoKTHiEBuVLyHR4drskjZpxN2M75Klf5LI5WzkLu2dRRB1xtc9
+g0JxXvqbKyOzkE/aGkjBP/PB213xJnt/T1GSrc5iExrC+w+US2m89Hsgr2et
+Ga2Vsy0fxKkQuTbmfl+qGUvcO+VjF1SoEztd4baZUfiwnXphBwND+PjxI0tm
+yNjprh5lEFZgu7DY533cZn+2BZWEbbRnkB2fku8psoD/SNaijVRDkZV17Vyz
+BbrhPR1NbWrklxYucu9YML/lJKtMA6LivdcuTFnAqbgW2H5DgwNiUZP3sgXP
+Kojcq1Fa1KXKu+FiRSnrHqdOC+Z6tVocbEXg/m38m0+1iF8fG2CMtiL0C1ug
+Dg3vGzNeecOKTwJ9WOt00CsuV10ssqJ6H49ttQ57Et/qN4ms4D/X2Nm/To+j
+5s5x/yor6CdPfUqi9bjY9owp5awVsUm39g2k6fEfgXoA8Q==
+     "]]}, 
+   {Hue[0.9060679774997897, 0.6, 0.6], LineBox[CompressedData["
+1:eJxllHk0VnkYx99MGRyTmpFRUbYRRpjSQvI1LcpIKYyaqCShOEmqtzFDiylj
+KW1vGNOu3jmJM+Ukyxj1loYk2Sbvvt77vi0SRjLJvNc5/e4f88c993zuOffe
+3/N8F9vNO9bEGHA4nGj9xdx5Qy8G1i8W4tN6e93Tc2p84HLPby32+7NsmPCq
+pG0yyxx0jH/SqSI8NLE6qfmkCv6CkE1GSUL4W3nHT3dQoT+7qqG8SIgTjpVR
+SeVKXAy1nR3VIETO27OCxJ0se8Q96TG3VCLYOrPokwEhWjs/mlZTqwCH6h5X
+ZSdC02+69MpUBUpLw3ZsXSVCkqXV9U12Cpj62S/6ky9Cjd0vxb/fkKPKKOva
+9g4RNhx/1Lp2nRyjnzUQI3ReAS+kTQaLwvC0e25iFJm/77lgI0PKl1+sts4U
+I485ZqEUdqMHFiNj02nuGXMpWmp67fcoxOAaRvmcOCqB28q6gWZvCax2n4z3
+miNBliy3YcYpCRJKXDm5RhJ48/tntddJUKO6z5OLxOB53R03c4oU5T8f/04U
+JkZ/47GnP+2SYuwdl9duzmIER0RekzZJwXePnNb5WISIW8dp1RoZlp89Fvjj
+HhFM0geD89JlKOpwUrYEiBA3gRFKBr8l6824PUJkJ/DqGw3kyEvtL34oEMJr
+zrD7Xnc55DdyfaafEUI7HF1gHyGH5zPHtuRtQnS7pM1zPCdHhm1dfP1CIYr6
+1OdbH8rRvnYdZ8pEIS7ajPh2jFeA+yB75p2KLgTrYvgHFijQ9N7hnnl2F/hB
+kyV/r/4/JySGv67+qguMazLSWB4no8o8rrEcsbhQffgOyyamY1bO7ma5sj22
+QjZFSTj212abnGUsW2ydkzU/heXERm3t0SyWrU6uclpQwfLomEMst2S2uD9z
+VBFOW80YQ0XmyRh9wPLsZbfPLxWoyD4UZtNNel+p4JTXy0tUd8ErpdV3uaGa
+MO3jpXeAmuzT98IL8TcBLL+MD/F/s1tN9FjSbJgalMNyn/4rb2+riX4XNrYH
+XdGoib6DgiMH3/2rJvpfzel+znfS4IXpXa6DtQiMq0d8NcQv1yuZQGiIn8bq
+UzXmoAaDWwfKnS+JsP7gjr7wfA3xn0lgZ8TY+xriz6gyxrga4l/9T4cMjShM
+mLpxpmeZGLHiS/o3KeL/Wr/wLTc9KZKPScUmBcaBFMlPgnHto41RFNrPuJk9
+pyW4l7jT4NZeCh7O7xSLv5ZiaqvDPNOjFHwOeUwLeCBF8tyn2zdfpjCon35o
+nwwNhdnnb1dRYLqLw5GDG91rHENTJO+PHxT7Vg9TpA/S8kz5sS40LMvjuCam
+Criu2zXRPJzGnqVzA6NjFDj0h6P/tkSa9I3IVvh93SGa9NGsw7llFoU06asP
+nB/SNpL8Rgn5yn5LQT2NFQGhH9vFqjD/5lV9ImjSj1Tq+Ir7xlpsGa5Jd92l
+xuklu22S52pRX32554iZXje+U9hfK7RwCEoWyOM0KNx5rDZlnxb7pUx1aBDg
+PTDD9ooWOfMZo1F4YxCpn1QLP7d/ul5WUFgVyxSCFisynS36FtK4wqxpRItw
+ZeSaQQENpg1aJukQrd/+cIAWYadctji66vD5rM94JZValAxK8n9YpMOT0NIF
+GxJ0hNOtGeVYFpcq90b36vAfLo0vqw==
+     "]]}, 
+   {Hue[0.9060679774997897, 0.6, 0.6], EdgeForm[{Hue[
+    0.9060654612039368, 0.6, 0.6], Opacity[1.], AbsoluteThickness[1]}], 
+    FaceForm[Opacity[0.2]], 
+    ArrowBox[{{0.8166325835037491, 0.3991138377641448}, {0.5848670756646215, 
+     0.3909338786639406}}]}, 
+   {Hue[0.9060679774997897, 0.6, 0.6], EdgeForm[{Hue[
+    0.9060654612039368, 0.6, 0.6], Opacity[1.], AbsoluteThickness[1]}], 
+    FaceForm[Opacity[0.2]], 
+    ArrowBox[{{0.8302658486707567, 0.4481935923653717}, {0.718473074301295, 
+     0.5000000000000006}}]}, InsetBox[
+    StyleBox[Cell["MC",
+      GeneratedCell->False,
+      CellAutoOverwrite->False,
+      CellBaseline->Baseline,
+      TextAlignment->Left],
+     FontFamily->"Courier",
+     FontSize->12,
+     FontColor->Automatic,
+     FontOpacity->Automatic,
+     Background->GrayLevel[1.]], {0.7539195637355146, 0.8244717109747787}, {
+    Left, Baseline},
+    Alignment->{Left, Top}], InsetBox[
+    StyleBox[Cell["AC",
+      GeneratedCell->False,
+      CellAutoOverwrite->False,
+      CellBaseline->Baseline,
+      TextAlignment->Left],
+     FontFamily->"Courier",
+     FontSize->12,
+     FontColor->Automatic,
+     FontOpacity->Automatic,
+     Background->GrayLevel[1.]], {1.0593047034764826`, 0.8271983640081801}, {
+    Left, Baseline},
+    Alignment->{Left, Top}]},
+  ContentSelectable->True,
+  ImageMargins->{{215., 0.}, {2., 0.}},
+  ImagePadding->{{0., 0.}, {0., 0.}},
+  ImageSize->{156., 119.},
+  PlotRange->{{0., 1.3333333333333335`}, {0., 1.}},
+  PlotRangePadding->Automatic]], "Input"]], "Text",
+ CellChangeTimes->{{3.510573471446301*^9, 3.510573526288994*^9}, {
+  3.510573558960493*^9, 3.510573730011001*^9}, {3.510573760792869*^9, 
+  3.5105738019730062`*^9}}],
+
+Cell["\<\
+True. We know that the long run total cost curve provides a lower envelope \
+for the short run cost curves. That means that the short run curve touches \
+the long run curve at its own minimum and then goes up. \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.5105738561175632`*^9, 3.510573872116852*^9}, {
+  3.510574686127337*^9, 3.510574705477274*^9}, {3.51058165381218*^9, 
+  3.510581654335433*^9}, {3.5105817354539423`*^9, 3.510581859744411*^9}}]
+}, Open  ]]
+},
+WindowToolbars->{},
+WindowSize->{740, 752},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 112, 1, 67, "Section"],
+Cell[CellGroupData[{
+Cell[716, 27, 461, 7, 46, "ItemNumbered"],
+Cell[1180, 36, 531, 8, 59, "ItemNumbered"],
+Cell[1714, 46, 338, 6, 33, "ItemNumbered"]
+}, Open  ]],
+Cell[2067, 55, 5144, 103, 135, "Text"],
+Cell[7214, 160, 455, 7, 33, "ItemNumbered"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
