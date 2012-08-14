@@ -17,14 +17,14 @@ omega(1) = 0;
 
 for n=1:N
 	% Compute 1/2 steps (predictor step)
-	theta_half = theta(n) + (omega(n)) * tao / 2;
-	omega_half(n + 1) = omega(n) +  (- w0.^2 .* sin(theta(n))) * tao / 2 ;
+	theta_half = theta(n) + omega(n) * tao * .5;
+	omega_half = omega(n) - w0.^2 .* sin(theta(n)) * tao * .5 ;
 	
 	% Compute full steps (corrector step)
-	theta(n + 1) = theta(n) + omega_half(n) * tao;  % TODO: This is wrong
-	omega(n + 1) = omega(n) + (- w0.^2 .* sin(theta(n))) * tao;  % TODO: This is wrong
+	theta(n + 1) = theta(n) + omega_half * tao;  % TODO: This is wrong
+	omega(n + 1) = omega(n) - w0.^2 .* sin(theta_half) * tao;  % TODO: This is wrong
 end
 
-plot_2 = pi .* w0 ./ (2 .* ellipke(linspace(0, 1, N+1)) .* (sin(theta ./ 2) .^2))
+real_ans = pi * w0 ./ (2 * ellipke(sin(theta / 2) .^2));
 
-plot(t, theta, 'r-', t, plot_2, 'b-');  % TODO: This is wrong
+plot(t, theta, 'r-', t, max(theta) * cos(t .* real_ans), 'b-');  % TODO: This looks funny
