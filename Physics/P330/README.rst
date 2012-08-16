@@ -8,23 +8,23 @@ Physics 330
 
 Lab 1
 =====
-	*
+	* Check for written
 
 Lab 2
 =====
-	*
+	* Check for written
 
 Lab 3
 =====
-	*
+	* Check for written
 
 Lab 4
 =====
-	*
+	* Check for written
 
 Lab 5
 =====
-	*
+	* Check for written
 
 Lab 6
 =====
@@ -34,7 +34,9 @@ Lab 6
 
 Lab 7
 =====
-	*
+	* P7_2.m The semilogy plot looks funny.
+	* Fill in table for P7_3.m. Also check for 'aliasing'?
+	* Finish P7_4.m
 
 Lab 8
 =====
