@@ -1,0 +1,2523 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     85547,       2514]
+NotebookOptionsPosition[     77428,       2245]
+NotebookOutlinePosition[     77859,       2262]
+CellTagsIndexPosition[     77816,       2259]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Math 334: Differential Equations", "Title",
+ CellChangeTimes->{{3.5256524896698933`*^9, 3.525652499579837*^9}}],
+
+Cell["Exam 1 Review", "Subtitle",
+ CellChangeTimes->{{3.525652502501155*^9, 3.525652508979724*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Chapter 1: Introduction", "Section",
+ CellChangeTimes->{{3.525652509838853*^9, 3.525652519003168*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Section 1.1: Some Basic Mathematical Models and Direction Fields\
+\>", "Subsection",
+ CellChangeTimes->{{3.5256525217476587`*^9, 3.5256525333469152`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Differential equations",
+  FontWeight->"Bold"],
+ " are simply equations involving derivatives. "
+}], "Item",
+ CellChangeTimes->{{3.525784590877839*^9, 3.5257846343061023`*^9}}],
+
+Cell["\<\
+Many things in life and nature in involve relationships and the rate at which \
+those relationships change. Mathematically, these relationships are defined \
+by equations and the rate at which they change are defined by derivatives. \
+\>", "Item",
+ CellChangeTimes->{{3.5257846352760634`*^9, 3.525784720681383*^9}}],
+
+Cell[TextData[{
+ "A",
+ StyleBox[" direction field",
+  FontWeight->"Bold"],
+ " is a plot that contains small arrow at every point and these arrows show \
+the slope of the underlying function at every point. "
+}], "Item",
+ CellChangeTimes->{{3.5257847216913223`*^9, 3.5257847690984774`*^9}}],
+
+Cell[TextData[{
+ "An",
+ StyleBox[" Equilibrium solution",
+  FontWeight->"Bold"],
+ " is one that shows the dependent variable staying constant at the \
+independent one changing (often it is y held constant with a change in time). \
+These are where the derivative of the dependent variable is 0 and the \
+direction field will show horizontal lines as you move down the horizontal \
+axis. "
+}], "Item",
+ CellChangeTimes->{{3.525784769528452*^9, 3.525784847973745*^9}, {
+   3.525784926349042*^9, 3.525784926349042*^9}, 3.5257973415702515`*^9}],
+
+Cell["Steps to constructing a mathematical model", "Item",
+ CellChangeTimes->{{3.525784926649024*^9, 3.5257849344085584`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Identify the independent and dependent variables and assign letters to \
+represent them. Often an independent variable is time.\
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.5257849468778105`*^9, 3.525784978106143*^9}}],
+
+Cell["\<\
+Choose the units of measurement for each variable. Try to make them as \
+convenient as possible.\
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.52578497935608*^9, 3.5257849964452257`*^9}, 
+   3.5257973423002152`*^9}],
+
+Cell["\<\
+Discover the basic underlying principle or law behind what you are trying to \
+model. \
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.5257849979151525`*^9, 3.525785024243836*^9}}],
+
+Cell["\<\
+Express the principle or law in terms of your variables chosen in step 1\
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.5257850245538206`*^9, 3.5257850391230917`*^9}}],
+
+Cell["\<\
+Make sure that the units match up when you solve the equation\
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.5257850592520857`*^9, 3.52578506076201*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Section 1.2: Solutions of Some Differential Equations", "Subsection",
+ CellChangeTimes->{{3.525652534706915*^9, 3.52565254478379*^9}, {
+  3.525785064261835*^9, 3.525785066231736*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "An",
+ StyleBox[" initial condition",
+  FontWeight->"Bold"],
+ " is the value of all your Variables at a specific instance. Often this will \
+be at t=0. "
+}], "Item",
+ CellChangeTimes->{{3.525785083780859*^9, 3.5257851310284967`*^9}, 
+   3.5257973428601875`*^9}],
+
+Cell[TextData[{
+ "The solving of a differential equation subject to initial conditions is \
+called the ",
+ StyleBox["initial value problem",
+  FontWeight->"Bold"],
+ " and is abbreviated I.V.P."
+}], "Item",
+ CellChangeTimes->{{3.5257851324484253`*^9, 3.5257851699565496`*^9}}],
+
+Cell[TextData[{
+ "A ",
+ StyleBox["general solution",
+  FontWeight->"Bold"],
+ " is one that contains all possible solutions to a differential equation, \
+subject on some values for arbitrary constants ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["c", "1"], "..."}], 
+    RowBox[{"ect", ".", " "}]}], TraditionalForm]]]
+}], "Item",
+ CellChangeTimes->{{3.525785170236536*^9, 3.525785207774659*^9}}],
+
+Cell[TextData[{
+ "The graphical representation of the general solution and that is called a \
+family of",
+ StyleBox[" integral curves",
+  FontWeight->"Bold"],
+ ". This is simply a plot containing multiple lines, each defined by choosing \
+a different value for your constants. "
+}], "Item",
+ CellChangeTimes->{{3.5257852110844936`*^9, 3.5257852714614744`*^9}, 
+   3.525797343480156*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Section 1.3: Classification of Differential Equations", "Subsection",
+ CellChangeTimes->{{3.525652546514477*^9, 3.5256525582421503`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Ordinary Differential equations (ODE\[CloseCurlyQuote]s)",
+  FontWeight->"Bold"],
+ " are where your dependent variable only depends on one independent variable \
+and there for you have only ordinary derivatives in your equation (no \
+partials)"
+}], "Item",
+ CellChangeTimes->{{3.525785293290383*^9, 3.5257853872056866`*^9}}],
+
+Cell[TextData[{
+ "A ",
+ StyleBox["partial differential equation (PDE\[CloseCurlyQuote]s)",
+  FontWeight->"Bold"],
+ " is where you have partial derivatives. "
+}], "Item",
+ CellChangeTimes->{{3.5257853658767533`*^9, 3.525785405084793*^9}}],
+
+Cell[TextData[{
+ "The ",
+ StyleBox["order",
+  FontWeight->"Bold"],
+ " of a differential equation is simply the same as the highest order \
+derivative you have in the equation. "
+}], "Item",
+ CellChangeTimes->{{3.52578540534478*^9, 3.525785428923601*^9}}],
+
+Cell[TextData[{
+ "A differential equation is ",
+ StyleBox["linear",
+  FontWeight->"Bold"],
+ " if there are only linear terms in the equation. This one is a little \
+fuzzy, but I know that if I see something like yy\[CloseCurlyQuote] it isn\
+\[CloseCurlyQuote]t linear. Also if you have a differential equation \
+\[PartialD]y/\[PartialD]t and somewhere you see the product of y and a \
+different "
+}], "Item",
+ CellChangeTimes->{{3.5257854293135815`*^9, 3.525785437763159*^9}, {
+  3.5257854733313804`*^9, 3.5257855063497295`*^9}, {3.5257855487976065`*^9, 
+  3.5257856474335747`*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Chapter  2:First Order Differential Equations", "Section",
+ CellChangeTimes->{{3.5256525596740303`*^9, 3.525652571113661*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Section 2.1: Linear Equations; Method of Integrating Factors", \
+"Subsection",
+ CellChangeTimes->{{3.525652572913678*^9, 3.5256525855693083`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "There are various algorithms that will make the solving of first order \
+linear differential equations much easier, but in order to apply them you \
+need to express the equation in \[OpenCurlyDoubleQuote]standard form\
+\[CloseCurlyDoubleQuote]: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     RowBox[{"\[DifferentialD]", "y"}], 
+     RowBox[{"\[DifferentialD]", "t"}]], "+", 
+    RowBox[{
+     RowBox[{"p", "(", "t", ")"}], "*", "y", "  ", 
+     RowBox[{"g", "(", "t", ")"}]}]}], TraditionalForm]]],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.5257860461816244`*^9, 3.5257861342980995`*^9}}],
+
+Cell[TextData[{
+ "In order to solve an equation in standard form we will often need to alter \
+the equation by multiplying the entire thing by a integrating factor \
+\[Mu](t). We would like to choose \[Mu](t) so that we end up getting the \
+entire left side of the equation being the derivative of something. So we \
+want ",
+ Cell[BoxData[
+  RowBox[{
+   FractionBox[
+    RowBox[{"\[DifferentialD]", "y"}], 
+    RowBox[{"\[DifferentialD]", "t"}]], "+", 
+   RowBox[{
+    RowBox[{"p", "(", "t", ")"}], "*", "y", "  "}]}]]],
+ " to be equal to ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["d", "dt"], "[", 
+    RowBox[{
+     RowBox[{"\[Mu]", "(", "t", ")"}], "*", "y"}], "]"}], TraditionalForm]]]
+}], "Item",
+ CellChangeTimes->{{3.5257863580891476`*^9, 3.5257864031773443`*^9}}],
+
+Cell[TextData[{
+ "We know from the chain rule that ",
+ Cell[BoxData[
+  RowBox[{
+   FractionBox[
+    RowBox[{"\[DifferentialD]", "y"}], 
+    RowBox[{"\[DifferentialD]", "t"}]], "+", 
+   RowBox[{
+    RowBox[{"p", "(", "t", ")"}], "*", "y", "  "}]}]]],
+ "= ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[Mu]", "(", "t", ")"}], 
+     FractionBox["dy", "dt"]}], "+", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"d\[Mu]", "(", "t", ")"}], "dt"], "y"}]}], TraditionalForm]]],
+ ". Upon examination we can see that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     RowBox[{"d\[Mu]", "(", "t", ")"}], "dt"], "=", 
+    RowBox[{"p", "(", "t", ")"}], " "}], TraditionalForm]]],
+ "*\[Mu](t)."
+}], "Item",
+ CellChangeTimes->{{3.525786403707323*^9, 3.525786520552649*^9}, {
+  3.5257865658608365`*^9, 3.5257865903098583`*^9}}],
+
+Cell[TextData[{
+ "Algebra says ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"d\[Mu]", "(", "t", ")"}], "/", "dt"}], ")"}], 
+     RowBox[{"\[Mu]", "(", "t", ")"}]], "=", 
+    RowBox[{
+     RowBox[{"p", "(", "t", ")"}], " ", "\[Rule]", " ", 
+     RowBox[{
+      FractionBox["d", "dt"], "[", 
+      RowBox[{
+       RowBox[{"ln", "|", 
+        RowBox[{"\[Mu]", "(", "t", ")"}], "|"}], " ", "=", " ", 
+       RowBox[{
+        RowBox[{"p", "(", "t", ")"}], " ", "\[Rule]", 
+        StyleBox[" ",
+         FontWeight->"Bold"], 
+        StyleBox[
+         RowBox[{
+          RowBox[{"\[Mu]", 
+           RowBox[{"(", "t", ")"}]}], " ", "=", " ", 
+          RowBox[{"Exp", "[", 
+           RowBox[{"\[Integral]", 
+            RowBox[{
+             RowBox[{"p", "(", "t", ")"}], " ", "dt"}]}], "]"}]}],
+         FontWeight->"Bold"]}]}]}]}]}], TraditionalForm]]]
+}], "Item",
+ CellChangeTimes->{{3.525786520882636*^9, 3.525786700995431*^9}}],
+
+Cell[TextData[{
+ "Now the general form with an integrating factor is \[Mu](t) ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["dy", "dt"], "+", 
+     RowBox[{
+      RowBox[{"\[Mu]", "(", "t", ")"}], 
+      RowBox[{"p", "(", "t", ")"}], "y"}]}], "=", 
+    RowBox[{
+     RowBox[{"\[Mu]", "(", "t", ")"}], 
+     RowBox[{"g", "(", "t", ")"}]}]}], TraditionalForm]]]
+}], "Item",
+ CellChangeTimes->{{3.5257867025153704`*^9, 3.525786702815358*^9}, {
+  3.525786764810505*^9, 3.5257868228058653`*^9}}],
+
+Cell[TextData[{
+ "Using what we know about the integrating factor we have ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["d", "dt"], "[", 
+     RowBox[{
+      RowBox[{"\[Mu]", "(", "t", ")"}], "y"}], "]"}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Mu]", "(", "t", ")"}], 
+       RowBox[{"g", "(", "t", ")"}]}], "\[Rule]", " ", 
+      RowBox[{
+       RowBox[{"\[Mu]", "(", "t", ")"}], "y"}]}], " ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Integral]", 
+        RowBox[{
+         RowBox[{"\[Mu]", "(", "t", ")"}], 
+         RowBox[{"g", "(", "t", ")"}], "dt"}]}], "\[Rule]", 
+       StyleBox["y",
+        FontWeight->"Bold"]}], 
+      StyleBox[" ",
+       FontWeight->"Bold"], 
+      StyleBox["=",
+       FontWeight->"Bold"], 
+      StyleBox[" ",
+       FontWeight->"Bold"], 
+      StyleBox[
+       RowBox[{
+        FractionBox["1", 
+         RowBox[{"\[Mu]", "(", "t", ")"}]], 
+        RowBox[{"\[Integral]", 
+         RowBox[{
+          RowBox[{"\[Mu]", "(", "t", ")"}], 
+          RowBox[{"g", "(", "t", ")"}], " ", "dt"}]}]}],
+       FontWeight->"Bold"]}]}]}], TraditionalForm]]]
+}], "Item",
+ CellChangeTimes->{{3.5257868240857625`*^9, 3.525786922437894*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Section 2.2: Separable Equations", "Subsection",
+ CellChangeTimes->{{3.5256525868571863`*^9, 3.525652596513307*^9}, 
+   3.525797349439858*^9}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "A differential equation is called",
+ StyleBox[" separable",
+  FontWeight->"Bold"],
+ " if we can write it in the form ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"M", 
+      RowBox[{"(", 
+       RowBox[{"x", ",", "y"}], ")"}]}], "+", 
+     RowBox[{"N", 
+      RowBox[{"(", 
+       RowBox[{"x", ",", "y"}], ")"}], 
+      FractionBox["dy", "dx"]}]}], "=", "0"}], TraditionalForm]]],
+ "  or M(x,y)dx+N(x,y)dy=0"
+}], "Item",
+ CellChangeTimes->{{3.525786954175355*^9, 3.5257870305397463`*^9}, 
+   3.525797350139823*^9}],
+
+Cell[TextData[{
+ "If an equation is",
+ StyleBox[" separable ",
+  FontWeight->"Bold"],
+ "it also means that you will be able to isolate all the x terms from the y \
+terms and then just integrate both side to find your solution. "
+}], "Item",
+ CellChangeTimes->{{3.525787031049716*^9, 3.525787062597823*^9}, {
+  3.5257870968657665`*^9, 3.5257870968657665`*^9}}],
+
+Cell[TextData[{
+ "It is really easy to solve separable equations if they are written in this \
+form ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["dy", 
+     RowBox[{"dx", " "}]], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      FractionBox[
+       RowBox[{"f", "(", "x", ")"}], 
+       RowBox[{"g", "(", "y", ")"}]], "\[Rule]", " ", 
+      RowBox[{
+       RowBox[{"g", "(", "y", ")"}], "dy"}]}], " ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"f", "(", "x", ")"}], "dx"}], "\[Rule]", 
+       RowBox[{"\[Integral]", 
+        RowBox[{
+         RowBox[{"g", "(", "y", ")"}], "dy"}]}]}], " ", "=", " ", 
+      RowBox[{"\[Integral]", 
+       RowBox[{
+        RowBox[{"f", "(", "x", ")"}], "dx"}]}]}]}]}], TraditionalForm]]]
+}], "Item",
+ CellChangeTimes->{{3.525787097425733*^9, 3.5257871667315745`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Section 2.3: Modeling with First Order Equations", "Subsection",
+ CellChangeTimes->{{3.525652597601122*^9, 3.525652606032817*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Steps to modeling with first order equations", "Item",
+ CellChangeTimes->{{3.525787183260583*^9, 3.52578718881025*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Generate a model using the steps from section 1.1", "Subitem",
+ CellChangeTimes->{{3.5257871973997345`*^9, 3.5257872202483635`*^9}}],
+
+Cell["\<\
+Analysis of the model: this is where you are actually presented with the \
+problem of solving the differential equation. \
+\>", "Subitem",
+ CellChangeTimes->{{3.5257872208883247`*^9, 3.5257872459268227`*^9}}],
+
+Cell["\<\
+Compare results with experimental results or observation: After you have \
+found mathematical solutions to your model you need to test the validity of \
+your model and make sure that it holds up. \
+\>", "Subitem",
+ CellChangeTimes->{{3.5257872463567967`*^9, 3.525787301124511*^9}}]
+}, Open  ]],
+
+Cell["The Tank Problem", "Item",
+ CellChangeTimes->{{3.525787305524247*^9, 3.525787311193964*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+A lot of problems in first order linear differential equations involve a \
+reservoir of some type with a rate of inflow to the reservoir and a rate of \
+outflow out of the reservoir. \
+\>", "Subitem",
+ CellChangeTimes->{{3.525787311313958*^9, 3.525787365721237*^9}, {
+  3.525797353469657*^9, 3.5257973546695967`*^9}}],
+
+Cell[TextData[{
+ "This is an example problem and the steps to solving it: At time t = 0 a \
+tank contains ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Q", "0"], TraditionalForm]]],
+ " lb of salt dissolved in 100 gal of water. Assume that water containing 1/4 \
+lb of salt/gal is entering the tank at a rate of r gam/min and that he \
+well-mixed solution is draining at the same rate. Write a model that will \
+help you determine the amount of salt Q(t) at any moment in time. "
+}], "Subitem",
+ CellChangeTimes->{{3.525787366401203*^9, 3.5257874589665747`*^9}, 
+   3.5257973556295485`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   FractionBox["dQ", "dt"], TraditionalForm]]],
+ " = rate in - rate out = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["r", "4"], "-", 
+     FractionBox[
+      RowBox[{"r", "*", "Q"}], "100"]}], ",", " ", 
+    RowBox[{
+     RowBox[{"Q", "(", "0", ")"}], "=", 
+     SubscriptBox["Q", "0"]}]}], TraditionalForm]]]
+}], "Subsubitem",
+ CellChangeTimes->{{3.5257874651362667`*^9, 3.52578751826361*^9}}],
+
+Cell[TextData[{
+ "This is a linear equation and can therefore be solved using the method of \
+an integrating factor where \[Mu](t) = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["e", 
+     RowBox[{"rt", "/", "100"}]], "."}], TraditionalForm]]]
+}], "Subsubitem",
+ CellChangeTimes->{{3.5257875255832443`*^9, 3.525787566201213*^9}}],
+
+Cell[TextData[{
+ "Q(t)  = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["e", 
+      RowBox[{
+       RowBox[{"-", "rt"}], "/", "100"}]], "*", 
+     RowBox[{"\[Integral]", 
+      RowBox[{
+       SuperscriptBox["e", 
+        RowBox[{"rt", "/", "100"}]], "*", 
+       FractionBox["r", "4"], "dt"}]}]}], "=", 
+    RowBox[{"25", " ", "+", " ", 
+     SuperscriptBox["ce", 
+      RowBox[{
+       RowBox[{"-", "rt"}], "/", "100"}]]}]}], TraditionalForm]]]
+}], "Subsubitem",
+ CellChangeTimes->{{3.5257874835353465`*^9, 3.5257874855952435`*^9}, {
+  3.5257875706109924`*^9, 3.5257876314782095`*^9}, {3.5257876741465025`*^9, 
+  3.525787674166502*^9}}],
+
+Cell[TextData[{
+ "It can be verified that using the initial condition you get c = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["Q", "0"], "-", "25", " "}], TraditionalForm]]]
+}], "Subsubitem",
+ CellChangeTimes->{{3.5257876745264874`*^9, 3.525787692515768*^9}}],
+
+Cell[TextData[{
+ "This makes the solution to the IVP Q(t) = 25+ ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["Q", "0"], "-", "25"}], ")"}], 
+    SuperscriptBox["e", 
+     RowBox[{
+      RowBox[{"-", "rt"}], "/", "100"}]]}], TraditionalForm]]]
+}], "Subsubitem",
+ CellChangeTimes->{{3.525787692785757*^9, 3.525787719604684*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Section 2.4: Differences Between Linear and Nonlinear Equations\
+\>", "Subsection",
+ CellChangeTimes->{{3.5256526073366957`*^9, 3.525652635087834*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["THEOREM 2.4.1:",
+  FontWeight->"Bold"],
+ " If the functions p and g are continuous on an open interval I:\[Alpha]<t<\
+\[Beta] containing the point t = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["t", "o"], ","}], TraditionalForm]]],
+ " then there exists a unique function y = \[Phi](t) that satisfies the \
+differential equation y\[CloseCurlyQuote] + p(t)y = g(t) for each t in I. "
+}], "Item",
+ CellChangeTimes->{{3.5257877517729516`*^9, 3.5257877565426655`*^9}, {
+  3.52578810183267*^9, 3.525788187718376*^9}, {3.5257973685989*^9, 
+  3.525797370228819*^9}}],
+
+Cell[TextData[{
+ StyleBox["THEOREM 2.4.2:",
+  FontWeight->"Bold"],
+ " Let the functions f and \[PartialD]f/\[PartialD]y be continuous in some \
+rectangle \[Alpha] < t < \[Beta], \[Gamma] < y < \[Delta] containing the \
+point ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["t", "0"], ",", 
+      SubscriptBox["y", "0"]}], ")"}], "."}], TraditionalForm]]],
+ " Then in some interval ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["t", "o"], "-", "h"}], " ", "<", " ", "t", " ", "<", " ", 
+    RowBox[{
+     SubscriptBox["t", "0"], " ", "+", " ", "h"}]}], TraditionalForm]]],
+ " contained in \[Alpha] < t < \[Beta], there is a unique solution y = \
+\[Phi](t) of the initial value problem y\[CloseCurlyQuote] =  f(y,t), y(0) ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"=", 
+    SubscriptBox["t", "0"]}], TraditionalForm]]],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.5257881882083516`*^9, 3.525788331711199*^9}, {
+  3.5257973734486575`*^9, 3.525797391277766*^9}}],
+
+Cell[TextData[{
+ "Sometimes you will not be able to do an integral or have some other \
+obstacle that prevents you from solving for y directly. That is ok . Go as \
+far as you can and when you are done simplifying you will get what is called \
+the",
+ StyleBox[" implicit solution",
+  FontWeight->"Bold"],
+ ". The ",
+ StyleBox["explicit solution",
+  FontWeight->"Bold"],
+ " is preferable and is in the form y = f(t)"
+}], "Item",
+ CellChangeTimes->{{3.5257883320911837`*^9, 3.525788402449369*^9}, {
+  3.5257970052570677`*^9, 3.5257970070669775`*^9}, {3.5257973919977303`*^9, 
+  3.5257973959475327`*^9}}],
+
+Cell["\<\
+Summary of properties of Linear differential Equations of the form y\
+\[CloseCurlyQuote] + p(t)y = g(t)\
+\>", "Item",
+ CellChangeTimes->{{3.5257884036893196`*^9, 3.525788415248857*^9}, {
+  3.5257884984555283`*^9, 3.525788507315174*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+On the interval where the Coefficient functions p(t) and g(t) are continuous \
+there is a solution contain a constant c that is  the general solution to the \
+differential equation.\
+\>", "Subitem",
+ CellChangeTimes->{{3.5257884234185305`*^9, 3.5257884740765038`*^9}, {
+  3.5257973977874403`*^9, 3.525797399157372*^9}}],
+
+Cell["There is an explicit solution to the differential equation.", "Subitem",
+ CellChangeTimes->{{3.525788513814914*^9, 3.5257885146448812`*^9}}],
+
+Cell["\<\
+The points of discontinuity can be seen before solving the problem by looking \
+at possible points of discontinuity in the coefficient functions p(t) and \
+g(t).\
+\>", "Subitem",
+ CellChangeTimes->{{3.5257885181347413`*^9, 3.5257885478135543`*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Section 2.5: Autonomous Equations and Population Dynamics", "Subsection",
+ CellChangeTimes->{{3.52565263623983*^9, 3.525652646727393*^9}, {
+  3.525788308982312*^9, 3.525788313292097*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "An",
+ StyleBox[" autonomous equation",
+  FontWeight->"Bold"],
+ " is one in which the independent variable doesn't appear explicit in the \
+original differential equation, thus it has form dy/dt = f(y). (in this case \
+the independent variable is t and its only appearance is in the derivative \
+term)"
+}], "Item",
+ CellChangeTimes->{{3.5257885721625805`*^9, 3.525788653119342*^9}, {
+  3.525797400307315*^9, 3.525797401037278*^9}}],
+
+Cell["\<\
+These types of equations are common in economics and population growth \
+studies. \
+\>", "Item",
+ CellChangeTimes->{{3.525788627940349*^9, 3.525788676088423*^9}, {
+  3.5257892014744067`*^9, 3.5257892014844065`*^9}}],
+
+Cell["\<\
+For graphically understanding the behavior of the solutions without solving \
+the equation we have a few tools:\
+\>", "Item",
+ CellChangeTimes->{{3.5257892022743745`*^9, 3.5257892720015855`*^9}, {
+  3.525793044502784*^9, 3.525793045582719*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Because these equations are written at dy/dt = f(y) it is helpful to draw a \
+plot of f(y) vs y. The first step in doing this is to find the critical \
+points  or roots (zeros) of f(y). We can then choose values in between \
+critical points and see if the curve comes from above or below to meet the \
+critical point on the horizontal (y in this case) axis. If it comes from \
+above we will be able to know that the solutions are increasing on the \
+interval between the critical points and if it comes from below we know that \
+they are decreasing. (We usually draw lines on the axis to show direction so \
+if the it is above the y line we draw an arrow on the axis to the right and \
+it is below we draw a line to the left on the axis..)\
+\>", "Subitem",
+ CellChangeTimes->{{3.5257892022743745`*^9, 3.525789426175418*^9}, {
+  3.5257930680913687`*^9, 3.525793097609597*^9}, {3.525793848262796*^9, 
+  3.525793868581577*^9}, {3.525797403107175*^9, 3.5257974111567717`*^9}}],
+
+Cell[TextData[{
+ "The ",
+ StyleBox["phase line",
+  FontWeight->"Bold"],
+ " is just a vertical line representing the y axis where the arrows we hinted \
+at above are shown.  This will allow us to determine the characteristics of \
+the equilibrium solutions identified from our plot of f(y) and y. There are \
+three possibilities and they are summarized as follows: ",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {
+      StyleBox[
+       RowBox[{
+       "One", " ", "arrow", " ", "in", " ", "and", " ", "one", " ", "out"}],
+       FontWeight->"Bold"], 
+      StyleBox[
+       RowBox[{"Both", " ", "out"}],
+       FontWeight->"Bold"], 
+      StyleBox[
+       RowBox[{"Both", " ", "in"}],
+       FontWeight->"Bold"]},
+     {
+      RowBox[{"semi", "-", "stable"}], "unstable", 
+      RowBox[{"Asomptotically", " ", "Stable"}]}
+    }], TraditionalForm]]]
+}], "Subitem",
+ CellChangeTimes->{{3.525789426735396*^9, 3.525789576459407*^9}}],
+
+Cell["\<\
+Finally we can plot some sample solutions of our equation on a graph of y vs. \
+t. We start by drawing horizontal lines at all of our Equilibrium solutions \
+and then using the phase line to determine whether the in between starting \
+points head to a particular critical point or away from them. We determine \
+changes in concavity of our solution line by looking at the second derivative \
+of y. This is also the first derivative of f(y) because of how the \
+differential equation is written. On our graph of f(y) vs y we will see these \
+changes in concavity as points of inflection (change from heading up to down).\
+\>", "Subitem",
+ CellChangeTimes->{{3.5257895773693705`*^9, 3.525789730943227*^9}, {
+  3.5257942489918823`*^9, 3.5257942489918823`*^9}, {3.5257974134966555`*^9, 
+  3.525797415696545*^9}}],
+
+Cell[TextData[{
+ "Example dy/dt = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["y", "3"], "-", 
+     RowBox[{"2", 
+      SuperscriptBox["y", "2"]}], "-", 
+     RowBox[{"3", "y"}]}], "\[Rule]", " ", 
+    RowBox[{
+     RowBox[{"y", "(", 
+      RowBox[{"y", "-", "3"}], ")"}], 
+     RowBox[{"(", 
+      RowBox[{"y", "+", "1"}], ")"}]}]}], TraditionalForm]]],
+ ", zeros are -1,0,3"
+}], "Subitem",
+ CellChangeTimes->{{3.5257942506717987`*^9, 3.5257942832001715`*^9}, {
+   3.525794380575101*^9, 3.5257944430913496`*^9}, 3.5257974194463577`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"y", "^", "3"}], "-", 
+     RowBox[{"2", 
+      RowBox[{"y", "^", "2"}]}], "-", 
+     RowBox[{"3", "y"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"y", ",", 
+      RowBox[{"-", "2"}], ",", "5"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"D", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"y", "^", "3"}], "-", 
+        RowBox[{"2", 
+         RowBox[{"y", "^", "2"}]}], "-", 
+        RowBox[{"3", "y"}]}], ",", "y"}], "]"}], "\[Equal]", "0"}], ",", 
+    "y"}], "]"}], "//", "N"}]}], "Input",
+ CellOpen->False,
+ CellChangeTimes->{{3.5257944084234295`*^9, 3.5257944623401947`*^9}, {
+  3.5257947219252343`*^9, 3.5257947569234843`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"y", "\[Rule]", 
+     RowBox[{"-", "0.5351837584879964`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", "\[Rule]", "1.8685170918213299`"}], "}"}]}], "}"}]], "Output",\
+
+ CellOpen->False,
+ CellChangeTimes->{{3.5257947316747465`*^9, 3.525794757343463*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  GraphicsBox[{{{}, {}, 
+     {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1: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
+       "]]}}, 
+    ArrowBox[{{-0.9488456893348203, -0.0128074401780367}, \
+{-0.09530611296915747, 0.18143697947019177`}}], 
+    ArrowBox[{{2.8920824043106643`, 0.18143697947017756`}, {
+     0.14856233742103164`, -0.0128074401780367}}], 
+    ArrowBox[{{-1.1520693979933117`, 
+     0.37568139911840603`}, {-1.924319490895579, 0.18143697947019177`}}], 
+    ArrowBox[{{3.0953061129691557`, -0.0128074401780367}, {4.721095782237084, 
+     0.37568139911840603`}}], 
+    LineBox[{{0.7704407831819124, 30.07113224284604}, {0.7837516022156237, 
+     6.788608891495734}}], InsetBox[
+     StyleBox[Cell["y",
+       GeneratedCell->False,
+       CellAutoOverwrite->False,
+       CellBaseline->Baseline,
+       TextAlignment->Left],
+      Background->GrayLevel[1.]], {-1.681285749056834, 29.29884568795312}, {
+     Left, Baseline},
+     Alignment->{Left, Top}], 
+    LineBox[{{0.6240217738110958, 14.6766769121718}, {0.9567922496538614, 
+     14.676676912171772`}}], InsetBox[
+     StyleBox[Cell["0",
+       GeneratedCell->False,
+       CellAutoOverwrite->False,
+       CellBaseline->Baseline,
+       TextAlignment->Left],
+      Background->GrayLevel[1.]], {0.4642919454065686, 14.931130719290394`}, {
+     Left, Baseline},
+     Alignment->{Left, Top}], InsetBox[
+     StyleBox[Cell["-1",
+       GeneratedCell->False,
+       CellAutoOverwrite->False,
+       CellBaseline->Baseline,
+       TextAlignment->Left],
+      Background->GrayLevel[
+       1.]], {0.47760276444027916`, 10.096508384037321`}, {Left, Baseline},
+     Alignment->{Left, Top}], InsetBox[
+     StyleBox[Cell["1",
+       GeneratedCell->False,
+       CellAutoOverwrite->False,
+       CellBaseline->Baseline,
+       TextAlignment->Left],
+      Background->GrayLevel[1.]], {0.4909135834739897, 22.31029112572928}, {
+     Left, Baseline},
+     Alignment->{Left, Top}], 
+    LineBox[{{0.7038866880133594, 22.69197183640715}, {0.8769273354515978, 
+     22.56474493284783}}], 
+    LineBox[{{0.6905758689796488, 9.969281480478031}, {0.8769273354515981, 
+     10.096508384037307`}}], 
+    {EdgeForm[{GrayLevel[0.], Opacity[1.], AbsoluteThickness[1]}], EdgeForm[
+     None], ArrowBox[{{0.7571299641482019, 23.96424087200006}, {
+      0.7571299641482028, 29.689451532168135`}}]}, 
+    {EdgeForm[{GrayLevel[0.], Opacity[1.], AbsoluteThickness[1]}], EdgeForm[
+     None], ArrowBox[{{0.7704407831819124, 20.910795186577076`}, {
+      0.7970624212493345, 15.44003833352754}}]}, 
+    {EdgeForm[{GrayLevel[0.], Opacity[1.], AbsoluteThickness[1]}], EdgeForm[
+     None], ArrowBox[{{0.7704407831819124, 11.241550516070944`}, {
+      0.7837516022156237, 14.422223105053206`}}]}, 
+    {EdgeForm[{GrayLevel[0.], Opacity[1.], AbsoluteThickness[1]}], EdgeForm[
+     None], ArrowBox[{{0.7704407831819124, 9.205920059122292}, {
+      0.7970624212493345, 5.261886048784248}}]}, 
+    InsetBox["", {0.4750669344042837, 25.736492388292966`}, {Left, Baseline},
+     Alignment->{Left, Top}], InsetBox[
+     StyleBox[
+      RowBox[{
+       RowBox[{
+       "In", " ", "the", " ", "Phase", " ", "Diagram", " ", "we", " ", "see", 
+        " ", "that", " ", "0", " ", "is", " ", "asomptotically", " ", 
+        "stable", " ", "and"}], " ", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"3", " ", "are", " ", 
+         RowBox[{"unstable", ".", Cell["",
+           GeneratedCell->False,
+           CellAutoOverwrite->False,
+           CellBaseline->Baseline,
+           TextAlignment->Left]}]}]}]}],
+      Background->GrayLevel[
+       1.]], {1.3462206752900485`, 27.375654413310954`}, {
+     Left, Baseline}, {2.5517454318465225`, 18.67907025082208}, {{1., 0.}, {
+     0., 1.}},
+     Alignment->{Left, Top}]},
+   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+   Axes->True,
+   AxesOrigin->{0, 0},
+   ImagePadding->{{0.1, 1.1}, {2.565001, 0.1}},
+   ImageSize->{292., Automatic},
+   PlotRange->{{-2.1458333333333335`, 
+    5.145833333333333}, {-10.861473884712197`, 32.2123417794609}},
+   PlotRangeClipping->True,
+   PlotRangePadding->Automatic], 
+  GraphicsBox[{
+    LineBox[{{0.2892156862745099, 0.9803921568627454}, {0.2990196078431373, 
+     0.019607843137255054`}}], 
+    LineBox[{{0.0490196078431373, 0.2843137254901964}, {1.2941176470588238`, 
+     0.2941176470588238}}], InsetBox[
+     StyleBox[Cell["3",
+       GeneratedCell->False,
+       CellAutoOverwrite->False,
+       CellBaseline->Baseline,
+       TextAlignment->Left],
+      Background->GrayLevel[
+       1.]], {0.20588235294117663`, 0.8529411764705885}, {Left, Baseline},
+     Alignment->{Left, Top}], InsetBox[
+     StyleBox[Cell["0",
+       GeneratedCell->False,
+       CellAutoOverwrite->False,
+       CellBaseline->Baseline,
+       TextAlignment->Left],
+      Background->GrayLevel[1.]], {0.196078431372549, 0.30392156862745123`}, {
+     Left, Baseline},
+     Alignment->{Left, Top}], InsetBox[
+     StyleBox[Cell["-1",
+       GeneratedCell->False,
+       CellAutoOverwrite->False,
+       CellBaseline->Baseline,
+       TextAlignment->Left],
+      Background->GrayLevel[
+       1.]], {0.17647058823529416`, 0.03921568627451011}, {Left, Baseline},
+     Alignment->{Left, Top}], 
+    {Dashing[{Medium, Medium}], 
+     LineBox[{{0.2549019607843137, 0.06862745098039236}, {1.220588235294118, 
+      0.07352941176470607}}]}, 
+    {Dashing[{Medium, Medium}], 
+     LineBox[{{0.25, 0.865196078431373}, {1.2156862745098043`, 
+      0.8700980392156867}}]}, 
+    {Dashing[{Medium, Medium}], 
+     LineBox[{{0.26470588235294135`, 0.7009803921568631}, {
+      0.32352941176470607`, 0.700980392156864}}]}, 
+    {Dashing[{Medium, Medium}], 
+     LineBox[{{0.27941176470588247`, 0.16176470588235325`}, {
+      0.3284313725490198, 0.16176470588235414`}}]}, LineBox[CompressedData["
+1:eJxlln9olXUYxS+iISaYkWEiUooxRE3sjyDUR2MYlMQSLRHBkBIVmVEhQ/yF
+CkZEWMSEFFmyMqZYhPgLUUgRkSmim9rc5p3b/X03r3MaTJF8zve874G9B8bl
+M/bj/T7POef7vrFqw+IvhqVSqRPPv/xz1w7XdTt7ylWwC+ddN6z+R1fBXoFa
+Yv4cEh+DxMNHuFpjXrLUJW78zSUeeOQSVy903Yx5f71LXM66xHPecd2K+fvd
+LnH7LSjm6VWu2zFvrnOJmy+5xBNfc/0b8/q1LvEZzE08epSrLeYVy13iI00u
+8dNBl3jRh647Ov8+l7hcconnQO06PyRuD9L5Z7g6dP4tLnHzFZf4m1pXp/ww
+xnVXfljpumu1mMtzP/zpErvHUql0gqsXuAo2DfsQb8I+xAcbXEkOeynYZexL
+3F9xiSfgs8sG8P28vYe/k+Sw97ytw3OKf8I5u6wR/zdvp7Fv8b0uKMHBV3mD
+HUbdsyU1rrzNhpIcfJk32GV5kodjbnlDXHeIYacm8XUoySEHOXsGv4nfnOLq
+5t5y9hH8l+SQq5xt/NrVzb3n7AD82W3vIoc5u4j+EPfBr0l+GT7K2avol54E
+F5HzbMz/nHWJf0EvZG0e/C9ejX7qsa/g26z9gDz02AfoFfHkSa6sHUd/iTsR
+lx4bRC9l7AX0Wcaa0FsZm4n8JHk7cpSxT9B3GVvGz4hn8ee28uci/p1/ZyT/
+z1XkL2NpPsdjPsdJPmfEe3iOSXzuobyGc1jIc8/nnGo5l/GcYz3nVuFeIr7E
+PUZzH8oN3Hu0p6FcR59EXEMfRXuuou8iTj0Jvox8cpu+XUWf/UWfR7yLOfiO
+vlzBnPxN3w7l0cxhG31/hjkexpz8zJxPY+7WswcWM6fV7IlNzPVE9krEA+yd
+y+yNZvZSxI3srX72zmb23AT2VOiDNPsouqfS7KMC85xmHxVsDXv3NO/t8ezl
+iOvY26GPClYFX3Syb4r2LXs/9EuRfuywo5hzkf5rj7nCe+cm9lLkPu+wT4rc
+Xxv7pGSf8d4LfVGyl3gvRvwl79HQHyV7nfds6I+SXeM9HPoiydt5b4c+KMcc
++qBsad77Ie9J3sP3hJD/ss3ne0TIf9kqfM8I+e61Br6HhDyLQ57FIc+9VsP3
+mJDnXks9Du85IZ99MYeeEoce67M/+J4U8iYOebnPfmllHsTB7/fZJ602DvOp
+xDwX8xF/DN9V2C8t9it8WmF/tFgH5iHGr414EPNbmI/4UzyHeBvmIz6Ec4i7
+4U/xf+g38YvwTX/Mb8O/4vcxZ/EGzFO8Ez0h3ov5ig/D3+JzmLf4BvwuzsEX
+Yth+UDwW+3kY81TkQfw/h8nD9A==
+     "]], LineBox[CompressedData["
+1:eJxllm9klXEUx6+sZKJkLyqT/pDJykxEpnPL7EUl11QyUWaxkpVKJiszUTJZ
+yV7U5MpKJrUXk5UkNZms5La/d3ftuf/X3eTK2ouV1Dm/7+853N+HeXxm9z7P
+c37ne8421p+tPbkkEAh0/v/h67U2JkKxMSZLA++Zr9T3nMlSiTDse4Og3ieo
+Fy1lRnw/dJhxvf06k6XuR4z6/C9GvbqGGfW9q5NxveE4k6W5DKNetZMZo11y
+zeJz6ua9x2j1SiZL5WXMuO8tzYzrOblPxvd3b5gMDQ0y6qVrmQnH78lzZ+jM
+KWaCzjcxGXr9knF9n9QhQyuKmajjm9YzGTpWx6g/7WGitCh1Tfse+cSk6c8i
+43qPnIt66xUmTQf2M5OOH5VzVa/Yxqgvl75IU9d9ZpK8GJOiuVnG9X7pK/WO
+diZFVULM8UbpS/WgXFMkf9bu+hrp6xTFDI7n5b5J3wclF0kql/eaorC8h3rz
+BUY9JO+dpBapk+tlm5kkDUndpyjwm+ucoFI5t280HmESdFH6wPVeOccEDUhf
+qZdIn06TybW66YsEcjFNOyqZBHI5jT5KEM+EQMBzPBUXaKvkw0Nfqt+9zcSp
+NsSoX5Z8eOjzOD0MM65X72Hi9FHy4yEncfqZZzyax3Udfl/oQ/ic9W587158
+r/XTuG8LnusOnrPQy/Fer/CehV6EuiRQl37UsRh1a0SdK1HnQZxTHc7BehvO
+qRnn2oNzLEMfRHDu4+iTv4umT26gj6xXoO+2oK+sH0TfeejjS+jTDuTgAfo4
+iNxYzyN3H9D31n8gF4UeRq53I2ch5N666e8o3UJuezGHXiDnJzC3lmFOrMJc
+s/4Wc3A75so5zM0jmDsbMFevYi59wRx+jDlm/TPmXCvmtvUKzP0FzMlC97An
+ajB3rTdhTndgr1gPYu/YuW/d7o089pTdK4Uexl6rxx4LYQ/exN6zHsXeLvTA
+gtmjJp8zvpt8ztAT7F2TT3WTvxnM8xHkT93k67vvJl/qJl/qJk/qJj/qJj/q
+Jj85301+1E1+ctgnI8hPDvtimJ5JX6mPSn7UTT5mHW/E/zUmL+omL7PYD8PI
+h7rJh7rJg/o/uqnAig==
+     "]], LineBox[CompressedData["
+1:eJxllE9IVFEUxh9iEBLYQiJDoghCwkDauBk8FtGmiEEMRIQkLCyiAiUkDKJN
+LWahLdokMYRBSJALFxYSQRISBtEftZk3+t4UbpIYwlpYRH5nvnsPvPeDx+U3
+i/fmnvOds//c1c7zNUEQ9G09OOdeg49y+SKIpUH5JBsVEHlfmAfmE3lgPjIM
+zLuywLylGUTSr6S9NgCRTCvmtdvAZ5l5Bla9D5wF5rvrwap0nQFpn38JVmTi
+MTDf+AXSPnwFrMjxE2DR+/h9sCjNe4H58jtQkvU1YJ5pA0spv3sTlCR3B6S9
+9TAoSbikeK/WbVmiUPE+mgMh+5D2jgwI2UfzpkbwRSrfQZE5SHv+ASjK7HNg
+vqMOFFKePQmK0tsDzJ9OgoIEfza3KHif4vl3s/p70vv4nlN8j/NxfjfpO/k/
+1nmPpL/iPTKswzXeM8e6OQ9Z56TvY91a2BfnI+zje9Z5gX2/xT40MTfOh5gr
+53PMYSv72sAcJz1iLvo5B86nOSfOazhHSR9lzpx3MJeHOJfOOznHFeb6Bufc
++SPugaTnORfOs5yjt9wjzn9yzwS/q3O3R+sYez92FMTyhHN7iXvK+b0xYP5C
++xpLN+fe+XbuiXKseNdY1JW9H1HMNVY9ZZnhXrqtmGtMJ80/KOb/NL9lGeCe
+O3gAfPV+WvNsfn0QmD/UPJu/0X1t/kPzbL5L9+037+2ab/MLepr/B9DC7Nk=
+
+     "]], LineBox[CompressedData["
+1:eJxl0i9IA2EYx/FDtAzBMgRlCP4JIlpWLMOHGQxqkKFlCIJMQREtBhEtKxZB
+NBh0QRTLECwrihjEIKJl/pluU7cLBt3uDtEyRLzfc+N9wvuBcXwPBvc+79M6
+uRCZqjEMI+z+8OxohzsK9kCZUuxedW0dPKgeHQPp7x+QTmzDo+rSO0ivr0FG
+dXcnPKleWQLpmyuQDjTBs+q5GZA+OwHpeh9kVY9HIUtRPkeZjpIg/VsB6eEh
+yKlO7IJ06RNyFF8F93wsrzrvoeQhuOfj9y+UvgX3fPyUDrTAq9YVnnOZFudB
++vIc9G7j/1nkb4A31bEJ0HtwACxKHYM0dsQwClrv8D1b1MX3Jx0ZAellvs8C
+XfB3WbS/B3p/8J5Ie99t0zXfv/SXA9LNvA9FrUO9IO2d06b+MOjt7aVNs7xP
+entzsWlrE/TOZ8CmU96/YnVODplFpprX0WdSox8cCjKzOkfpvhA4xOsa1dub
+s0Nxpvd0DBzi9U5Kp5lJG7ynDv3xvpt0wHN36B9Nw+Bw
+     "]], LineBox[CompressedData["
+1:eJxt0j8ohHEcx/FfRimlo+gim3TKZrn6HsnCJBaZlIHEcoN0yqAslyIpuYTu
+lD9lsTDwlBukM4nD/cFicYPEIoPn81Xfz3D3rqen19Ov3+/5Pb+ndWxmcLzK
+OdfpX7inL9GteJvoUIaG0Z05mUL01zeie/vQvTmxjujSG6LDXShrji8hOp/V
+zKE29GCOzSI6c4XoYCN6NE9NILqmGj1JRMfty+gIoo8OEP37g+iBfpQzJ3Te
+nHi67z0pvaNyRwIoKXEtX2ZvBe1I/j9zqAMVzLF5VJCFZrQlmRvkW99nQ4L6
+vGiOTiPfut6apM9RUVwLxi1LoBY9m0+OEY1/xLkXc7ueBz2n51HB9VhvUXa3
+EX2t50V/fiDfDXCU1rxwk+7j1dzTjehJPV96Vb9TBdfp/Bdnp4j+A9GUUrc=
+
+     "]], LineBox[CompressedData["
+1:eJxllG9ozHEcx38tJE+UpGitiQfSSHuitLyPtBRJC2mpXWsUaRRJGl2eKC3h
+wZ7Yg0uUllJayqw52222cztn/oxzd+5u7iaWjkxCcu/31ffz4Peq69frut/v
+973f5/X7rm4/0XK4xvO8tsqHx7VryEuEWskAOsQr5/3CfMFC8tr5vv3E/NZt
+Yv5jnpjvaCZvnPf2EPO5EjFv2kymnXdfIubpaeG8YR1567zrLDGPjxPz2pXk
+nfPjR4n54ENifkjHlM8jN8gj3O0j5n9/kxS8TLrCIHbvIu+d9+p3fg/UkSHM
+fSHmTSLtvFukEWojj5Gu4rxhA8kguJdEnHvfyhUi6DpPzOOTJIPwNfIEtbpP
+1vnpTpJFoJEMO89NkWFEh4jfQ6fICDq0rg8+r19Ooui/R/weUYdRrNd8cwiq
+u1G06H/l4P1kZ6M4p3nnEFZXY7gZJjkE1NFTxDR/v4d03ji+8zGUzVepjzzq
+dZzA9m3E/Jh6ySOiTiZwXc8pj6C6iGFA35sX8gLeH3YRwxJRcK7H2miu01rN
+Lwq/h9XNMyi/PnONYcr8n3osIKCO4tijHmdQVjZxnNFcZnBVXUxibISYf1WP
+5is0p4/YpE4S2Krrmh/RfmJ+Rb2aP9BczbNah/ki7TdFJNVRAhvVr/kBdVDE
+SXX0HBe0LvOEejZXJvNFLPZIErpNXcm5tqfmEg6qqySUd6e5suop4Y66SuKz
+9qsSfqmbJJYtJbPOt6gz83atw/yy9rNZ7FRXL3BfvZuntL2Z12idn5xX3wfz
+6vtgXn0fzP8DIFnk1A==
+     "]], LineBox[CompressedData["
+1:eJxl0T1IQmEUxvGLFEQELi2BBG0RKm0uF05DtNQQYksEQeQQRDo0NOjc4tDU
+koNELRG0uAQRQQ59XE0oM/NmTS46NNQSDfUc4TyDP3h5+a/nmVhLxZMBx3Gi
+/w9/6Roe5eocbqWonqRwAPfWMy54MjAINfn0wZPEErCPjqEme1koW0+PQ0W+
+voE9OwfP1vl96O/qJVSk24b+Tq/Cg7gxqFvndoHt15V1eBJerDM7wPZugB0a
+g4b15gawL/SODRlyoCojw/BqvbIM7NMTYP/+AHthHprWed2F3e0AW2dyfeuc
+Yvs91uEIvFlndDe2VwZ2SHdpWW9vAbuku7BHg/Buva53YhfPgB3Q/8N6Svdh
+xxeBfVgA9p3uxf4DCoAqew==
+     "]]},
+   ContentSelectable->True,
+   ImagePadding->{{0., 0.}, {0., 0.}},
+   ImageSize->{272., 220.},
+   PlotRange->{{0., 1.3333333333333335`}, {0., 1.}},
+   PlotRangePadding->Automatic]}]], "Input",
+ CellChangeTimes->{{3.5257944805391026`*^9, 3.525794716535504*^9}, {
+  3.525794765873037*^9, 3.525794814110625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Types of Autonomous equations and their solutions", "Item",
+ CellChangeTimes->{{3.525788676398411*^9, 3.525788684618082*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Exponential growth or decay",
+  FontWeight->"Bold"],
+ ":"
+}], "Subitem",
+ CellChangeTimes->{{3.5257886901778593`*^9, 3.525788697087583*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "dy/dt = ry and y(0) = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["y", "0"], TraditionalForm]]],
+ ", where r is the rate of growth or decay. "
+}], "Subsubitem",
+ CellChangeTimes->{{3.5257887066672*^9, 3.5257887385259256`*^9}}],
+
+Cell[TextData[{
+ "This is a separable equation and we get ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["dy", "y"], "=", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"r", " ", "dt"}], " ", "\[Rule]", " ", 
+      RowBox[{"\[Integral]", 
+       RowBox[{
+        RowBox[{"1", "/", "y"}], " ", "dy"}]}]}], " ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Integral]", 
+        RowBox[{"r", " ", "dt"}]}], " ", "\[Rule]", " ", 
+       RowBox[{"ln", "[", "y", "]"}]}], " ", "=", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"rt", " ", "+", "c"}], "\[Rule]", "y"}], " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         SuperscriptBox["ce", "rt"], "\[Rule]", " ", 
+         StyleBox["y",
+          FontWeight->"Bold"]}], 
+        StyleBox[" ",
+         FontWeight->"Bold"], 
+        StyleBox["=",
+         FontWeight->"Bold"], 
+        StyleBox[" ",
+         FontWeight->"Bold"], 
+        StyleBox[
+         RowBox[{
+          SubscriptBox["y", "0"], 
+          SuperscriptBox["e", "rt"], " "}],
+         FontWeight->"Bold"]}]}]}]}]}], TraditionalForm]]]
+}], "Subsubitem",
+ CellChangeTimes->{{3.525788748235537*^9, 3.52578883702115*^9}}],
+
+Cell["\<\
+These types of solutions aren\[CloseCurlyQuote]t always realistic because \
+they imply that there is room for y to grow very quickly as t increases \
+without ever hitting a ceiling of sorts. \
+\>", "Subsubitem",
+ CellChangeTimes->{{3.52578883742113*^9, 3.5257888813489337`*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Logistic Growth or decay:",
+  FontWeight->"Bold"],
+ " Similar to the exponential, but they account for the fact that the growth \
+rate actually depends on the current value of the population. "
+}], "Subitem",
+ CellChangeTimes->{{3.5257888308714576`*^9, 3.525788834181292*^9}, {
+  3.525788886378682*^9, 3.525788913637319*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["dy/dt = h(y)y", "Subsubitem",
+ CellChangeTimes->{{3.525788919397031*^9, 3.525788928636569*^9}}],
+
+Cell["\<\
+We want h(y) to be about equal to r when y is small and we want it to \
+decrease as y gets bugger so the best way to do that is to say that h(y) = \
+r-ay where r is the growth rate in the absence of limiting factor and a is a \
+positive constant\
+\>", "Subsubitem",
+ CellChangeTimes->{{3.525788929096546*^9, 3.5257889960231996`*^9}}],
+
+Cell[TextData[{
+ "dy/dt = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"r", "-", "ay"}], ")"}], "y"}], "\[Rule]", " ", 
+     RowBox[{"dy", "/", "dt"}]}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"r", "(", 
+       RowBox[{"1", "-", 
+        FractionBox["y", "K"]}], ")"}], " ", "where", " ", "K"}], " ", "=", 
+     " ", 
+     RowBox[{"r", "/", "a"}]}]}], TraditionalForm]]]
+}], "Subsubitem",
+ CellChangeTimes->{{3.525789107338172*^9, 3.525789113597922*^9}}],
+
+Cell[TextData[{
+ "We want to look for ",
+ StyleBox["equilibrium or constant solutions",
+  FontWeight->"Bold"],
+ ", those are where there is no change or dy/dt =0, this can be written \
+r(1-y/K)y = 0. They are also known as",
+ StyleBox[" critical points",
+  FontWeight->"Bold"],
+ ". "
+}], "Subsubitem",
+ CellChangeTimes->{{3.525789113847912*^9, 3.525789165095862*^9}}],
+
+Cell[TextData[{
+ "In this case K is called the ",
+ StyleBox["carrying capacity",
+  FontWeight->"Bold"],
+ " or the ",
+ StyleBox["saturation level.",
+  FontWeight->"Bold"],
+ " It is actually an equilibrium solution to the differential equation. "
+}], "Subsubitem",
+ CellChangeTimes->{{3.52578903921104*^9, 3.5257890825391645`*^9}, {
+  3.525794857378461*^9, 3.525794857378461*^9}}],
+
+Cell["\<\
+You will probably have to do partial fractions here, but the solution works \
+out to be:\
+\>", "Subsubitem",
+ CellChangeTimes->{{3.5257948577884407`*^9, 3.5257948801773214`*^9}}],
+
+Cell[TextData[{
+ "y = ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{"(", 
+     RowBox[{"K", " ", 
+      SubscriptBox["y", "0"]}], ")"}], 
+    RowBox[{
+     SubscriptBox["y", "0"], " ", "+", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"K", " ", "-", " ", 
+        SubscriptBox["y", "0"]}], ")"}], 
+      SuperscriptBox["e", 
+       RowBox[{"-", "rt"}]]}]}]], TraditionalForm]]]
+}], "Subsubitem",
+ CellChangeTimes->{{3.525794882477206*^9, 3.525794937134473*^9}, {
+  3.525795083217169*^9, 3.525795083227168*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Logistic Growth with a Thresh hold:",
+  FontWeight->"Bold"],
+ " Combines the ideas from both of them to say you have a threshold like \
+before, but that you also have a factor that makes dy/dt negative when y is \
+large so it decreases down to the threshold, rather than just increasing. "
+}], "Subitem",
+ CellChangeTimes->{{3.5257950872569666`*^9, 3.525795164833088*^9}, 
+   3.525797425426059*^9}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["dy", "dt"], "=", 
+    RowBox[{
+     RowBox[{"-", "r"}], " ", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       FractionBox["y", "T"]}], ")"}], 
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       FractionBox["y", "K"]}], ")"}], "y"}]}], TraditionalForm]]],
+ " There will be three circuital points, y=0,T,K"
+}], "Subsubitem",
+ CellChangeTimes->{{3.525795168132923*^9, 3.525795224800089*^9}, 
+   3.5257974262860155`*^9}],
+
+Cell["\<\
+The solution to this equation will depend on the actual problem, but it is in \
+form. \
+\>", "Subsubitem",
+ CellChangeTimes->{{3.5257952248300877`*^9, 3.525795243199169*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Section 2.6: Exact Equations and Integrating Factors", "Subsection",
+ CellChangeTimes->{{3.525652648335628*^9, 3.5256526612790613`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "An Equation is said to be",
+ StyleBox[" exact",
+  FontWeight->"Bold"],
+ " if it can be written in the form M(x,y) + N(x,y) y\[CloseCurlyQuote] =0 \
+Where ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     RowBox[{"\[PartialD]", "M"}], 
+     RowBox[{"\[PartialD]", "y"}]], "=", 
+    FractionBox[
+     RowBox[{"\[PartialD]", "N"}], 
+     RowBox[{"\[PartialD]", "x"}]]}], TraditionalForm]]],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.5257954390082855`*^9, 3.5257954604467845`*^9}, {
+  3.525795603206791*^9, 3.525795623465372*^9}}],
+
+Cell[TextData[{
+ "We don\[CloseCurlyQuote]t know how to solve these all the time so we need \
+to learn a new trick. Let\[CloseCurlyQuote]s say that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     RowBox[{"\[PartialD]", "\[Psi]"}], 
+     RowBox[{"\[PartialD]", "x"}]], "=", 
+    RowBox[{
+     RowBox[{"M", "(", 
+      RowBox[{"x", ",", "y"}], ")"}], " ", "and", " ", 
+     FractionBox[
+      RowBox[{"\[PartialD]", "\[Psi]"}], 
+      RowBox[{"\[PartialD]", "y"}]]}]}], TraditionalForm]]],
+ "= N(x,y)"
+}], "Item",
+ CellChangeTimes->{{3.525795460996746*^9, 3.5257955548801737`*^9}}],
+
+Cell[TextData[{
+ "If that is the case M(x,y) + N(x,y) y\[CloseCurlyQuote] = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["d", "dx"], "\[Psi]", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"\[Phi]", "(", "x", ")"}]}], "]"}]}], "=", "0"}], 
+   TraditionalForm]]]
+}], "Item",
+ CellChangeTimes->{{3.525795596757242*^9, 3.5257955992970643`*^9}, {
+  3.525795757546718*^9, 3.525795759866579*^9}}],
+
+Cell["\<\
+We now have a two step problem to finding out what \[Psi] is:\
+\>", "Item",
+ CellChangeTimes->{{3.5257957602465563`*^9, 3.5257957986742506`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "We know that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Psi]", "x"], "=", 
+    RowBox[{
+     RowBox[{"m", "\[Rule]", "\[Psi]"}], "=", 
+     RowBox[{
+      RowBox[{"\[Integral]", 
+       RowBox[{"M", " ", "dx"}]}], " ", "+", 
+      RowBox[{"g", "(", "y", ")"}]}]}]}], TraditionalForm]]],
+ " //in this case the constant of integration is a function of the other \
+variable in our integrand. That is noted as g(y)"
+}], "Subitem",
+ CellChangeTimes->{{3.525795802214038*^9, 3.525795921326891*^9}}],
+
+Cell[TextData[{
+ "we also know that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Psi]", "y"], "=", "N"}], TraditionalForm]]]
+}], "Subitem",
+ CellChangeTimes->{{3.5257958578806977`*^9, 3.5257958597205877`*^9}}],
+
+Cell[TextData[{
+ "We write that in the middle  and expand in this way ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"d", "/", "dy\[Psi]"}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[Integral]", 
+       RowBox[{"M", " ", "dx"}]}], " ", "+", " ", 
+      RowBox[{"g", 
+       RowBox[{"(", "y", ")"}]}]}], "=", 
+     RowBox[{
+      SubscriptBox["\[Psi]", "y"], "=", 
+      RowBox[{"N", "(", 
+       RowBox[{"x", ",", "y"}], ")"}]}]}]}], TraditionalForm]]],
+ ". We should see that everything with an x is canceling in the \[Psi] part \
+except g\[CloseCurlyQuote](y) and we will get that is either equal to a \
+constant (sometimes 0) or a function of only y. We then integrate that and \
+get g(y)"
+}], "Subitem",
+ CellChangeTimes->{{3.5257959645242987`*^9, 3.5257960119117312`*^9}, {
+  3.5257974273459625`*^9, 3.525797436975297*^9}}],
+
+Cell["\<\
+With g(y) we go back to \[Psi] = \[Integral]mdx + g(y) = c and that is our \
+solution.  \
+\>", "Subitem",
+ CellChangeTimes->{{3.5257959645242987`*^9, 3.525796034280613*^9}, {
+  3.525806262157305*^9, 3.5258062621620398`*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "If ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["M", "y"], "\[NotEqual]", 
+    SubscriptBox["N", "x"]}], TraditionalForm]]],
+ " there might exist an integrating factor \[Mu] such that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox[
+     RowBox[{"(", "\[Mu]M", ")"}], "y"], "=", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox[
+       RowBox[{"(", "\[Mu]N", ")"}], "x"], "\[Rule]", " ", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["\[Mu]", "y"], "M"}], " ", "+", " ", 
+       SubscriptBox["\[Mu]M", "y"]}]}], " ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["\[Mu]", "x"], "N"}], " ", "+", " ", 
+      SubscriptBox["\[Mu]N", "x"]}]}]}], TraditionalForm]]],
+ " (* this is by the product rule  *)"
+}], "Item",
+ CellChangeTimes->{{3.5258063012403584`*^9, 3.5258064631999617`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+For this class we will assume that \[Mu] is either only a function of x or \
+only a function of y. \
+\>", "Subitem",
+ CellChangeTimes->{{3.525806354764868*^9, 3.5258063724554653`*^9}}],
+
+Cell[TextData[{
+ "If we asume that \[Mu] is only a function of x we know that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Mu]", "y"], "=", "0"}], TraditionalForm]]],
+ " and we can solve for \[Mu] and show that \[Mu](x) = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Exp", "[", 
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      FractionBox[
+       RowBox[{
+        SubscriptBox["M", "x"], "-", 
+        SubscriptBox["N", "y"]}], "N"], "dx"}]}], "]"}], TraditionalForm]]]
+}], "Subitem",
+ CellChangeTimes->{{3.525806372772462*^9, 3.525806378820093*^9}, {
+  3.525806466033615*^9, 3.525806495265744*^9}, {3.525806593725432*^9, 
+  3.525806606673573*^9}, {3.526127480261904*^9, 3.5261274823418207`*^9}}],
+
+Cell[TextData[{
+ "By the same logic \[Mu] as a function of y can be found t o be \[Mu](y) = \
+Exp[",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["N", "y"], "-", 
+        SubscriptBox["M", "x"]}], ")"}], "M"], "dy"}]}], TraditionalForm]]],
+ "]"
+}], "Subitem",
+ CellChangeTimes->{{3.525806607301372*^9, 3.525806639264805*^9}, {
+  3.526127473682167*^9, 3.5261274760920706`*^9}}],
+
+Cell["\<\
+After that we multiplly everything through by \[Mu] and solve for \[Psi] \
+using the algorithm above. \
+\>", "Subitem",
+ CellChangeTimes->{{3.52580663964428*^9, 3.525806661000153*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Equations or things to remember for solving Different types of eqns. \
+\>", "Section",
+ CellChangeTimes->{{3.525787780491228*^9, 3.5257878011999855`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Linear First order equations", "Subsection",
+ CellChangeTimes->{{3.525787805709715*^9, 3.5257878092595024`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FractionBox["dy", "dt"], "+", 
+    RowBox[{
+     RowBox[{"p", "(", "t", ")"}], "y"}]}], " ", "=", " ", 
+   RowBox[{"g", "(", "t", ")"}]}], TraditionalForm]]]], "Item",
+ CellChangeTimes->{{3.5257878145391855`*^9, 3.5257878419975376`*^9}}],
+
+Cell["\[Mu](t) = Exp[\[Integral]p(t) dt]", "Item",
+ CellChangeTimes->{{3.5257878145391855`*^9, 3.5257878306382194`*^9}, {
+  3.525787869395894*^9, 3.5257878714457707`*^9}}],
+
+Cell[TextData[{
+ "y = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"\[Mu]", "(", "t", ")"}]], "[", 
+    RowBox[{
+     RowBox[{"\[Integral]", 
+      RowBox[{
+       RowBox[{"\[Mu]", "(", "t", ")"}], 
+       RowBox[{"g", "(", "t", ")"}], "dt"}]}], " ", "+", "c"}], "]"}], 
+   TraditionalForm]]]
+}], "Item",
+ CellChangeTimes->{{3.5257878289083233`*^9, 3.5257878659361014`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Separable First order equations", "Subsection",
+ CellChangeTimes->{{3.5257878820751333`*^9, 3.525787888244763*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "M(x,y) dx + N(x,y)dy = 0 or ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"M", 
+      RowBox[{"(", 
+       RowBox[{"x", ",", "y"}], ")"}]}], "+", 
+     RowBox[{"N", 
+      RowBox[{"(", 
+       RowBox[{"x", ",", "y"}], ")"}], 
+      FractionBox["dy", "dx"]}]}], "=", "0"}], TraditionalForm]]],
+ " or the most useful ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["dy", "dx"], "=", 
+    FractionBox[
+     RowBox[{"f", "(", "x", ")"}], 
+     RowBox[{"g", "(", "y", ")"}]]}], TraditionalForm]]]
+}], "Item",
+ CellChangeTimes->{{3.5257878952343435`*^9, 3.5257879266124606`*^9}, {
+  3.5257880372958975`*^9, 3.5257880488653193`*^9}}],
+
+Cell["g(y)dy = f(x)dx", "Item",
+ CellChangeTimes->{{3.5257880531951027`*^9, 3.525788060124756*^9}}],
+
+Cell[TextData[{
+ "\[Integral]g(y)dy = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[Integral]", 
+       RowBox[{
+        RowBox[{"f", "(", "x", ")"}], "dx"}]}], " ", "+", "c"}], "\[Rule]", 
+     " ", 
+     RowBox[{"algebra", " ", "gets", " ", "you", " ", "y"}]}], " ", "=", " ", 
+    
+    RowBox[{"f", "(", "x", ")"}]}], TraditionalForm]]]
+}], "Item",
+ CellChangeTimes->{{3.525788061964664*^9, 3.5257880927331257`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Autonomous Equations (population dynamics)", "Subsection",
+ CellChangeTimes->{{3.5257960621192207`*^9, 3.5257960700088263`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+ dy/dt = f(y) (* t doesn\[CloseCurlyQuote]t appear explicit in our \
+differential equation)\
+\>", "Item",
+ CellChangeTimes->{{3.52579610533706*^9, 3.5257961197063413`*^9}, 
+   3.525797450094116*^9}],
+
+Cell["\<\
+Get an idea of what it looks like by plotting f(y) vs y, the phase line, and \
+some sample solutions (name critical points as semi-stable, unstable, or \
+asymptotically stable*)\
+\>", "Item",
+ CellChangeTimes->{{3.5257961221962166`*^9, 3.5257961630941715`*^9}, 
+   3.525797451314006*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exponential Growth or Decay", "Subsubsection",
+ CellChangeTimes->{{3.525796180773288*^9, 3.525796187472953*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "dy/dt = ry and y(0) = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["y", "0"], TraditionalForm]]],
+ ", where r is the rate of growth or decay. "
+}], "Item",
+ CellChangeTimes->{{3.525796212901681*^9, 3.5257962149315796`*^9}}],
+
+Cell[TextData[{
+ "This is a separable equation and we get ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["dy", "y"], "=", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"r", " ", "dt"}], " ", "\[Rule]", " ", 
+      RowBox[{"\[Integral]", 
+       RowBox[{
+        RowBox[{"1", "/", "y"}], " ", "dy"}]}]}], " ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Integral]", 
+        RowBox[{"r", " ", "dt"}]}], " ", "\[Rule]", " ", 
+       RowBox[{"ln", "[", "y", "]"}]}], " ", "=", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"rt", " ", "+", "c"}], "\[Rule]", "y"}], " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         SuperscriptBox["ce", "rt"], "\[Rule]", " ", 
+         StyleBox["y",
+          FontWeight->"Bold"]}], 
+        StyleBox[" ",
+         FontWeight->"Bold"], 
+        StyleBox["=",
+         FontWeight->"Bold"], 
+        StyleBox[" ",
+         FontWeight->"Bold"], 
+        StyleBox[
+         RowBox[{
+          SubscriptBox["y", "0"], 
+          SuperscriptBox["e", "rt"], " "}],
+         FontWeight->"Bold"]}]}]}]}]}], TraditionalForm]]]
+}], "Item",
+ CellChangeTimes->{{3.525796212901681*^9, 3.525796219301361*^9}}],
+
+Cell[TextData[{
+ StyleBox["y = ",
+  FontWeight->"Bold"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["y", "0"], 
+    SuperscriptBox["e", "rt"]}], TraditionalForm]],
+  FontWeight->"Bold"]
+}], "Item",
+ CellChangeTimes->{{3.525796219901331*^9, 3.5257962335206504`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Logistic Growth or Decay", "Subsubsection",
+ CellChangeTimes->{{3.5257962354005566`*^9, 3.525796245950029*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "dy/dt = h(y)y = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"r", "(", 
+     RowBox[{"1", "-", 
+      FractionBox["y", "K"]}], ")"}], ",", " ", 
+    RowBox[{"K", " ", "=", " ", 
+     RowBox[{"r", "/", "a"}]}], ",", " ", 
+    RowBox[{"a", " ", "is", " ", "positive", " ", "constant"}]}], 
+   TraditionalForm]]]
+}], "Item",
+ CellChangeTimes->{{3.525796251899731*^9, 3.525796298497401*^9}}],
+
+Cell["Carrying capacity is K", "Item",
+ CellChangeTimes->{{3.525796304047124*^9, 3.5257963074069557`*^9}}],
+
+Cell[TextData[{
+ "y = ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{"(", 
+     RowBox[{"K", " ", 
+      SubscriptBox["y", "0"]}], ")"}], 
+    RowBox[{
+     SubscriptBox["y", "0"], " ", "+", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"K", " ", "-", " ", 
+        SubscriptBox["y", "0"]}], ")"}], 
+      SuperscriptBox["e", 
+       RowBox[{"-", "rt"}]]}]}]], TraditionalForm]]]
+}], "Item",
+ CellChangeTimes->{{3.5257963124667025`*^9, 3.5257963151165705`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Logistic Growth with a Threshold", "Subsubsection",
+ CellChangeTimes->{{3.5257963164365044`*^9, 3.525796328825885*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox["dy", "dt"], "=", 
+   RowBox[{
+    RowBox[{"-", "r"}], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      FractionBox["y", "T"]}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      FractionBox["y", "K"]}], ")"}], "y"}]}], TraditionalForm]]]], "Item",
+ CellChangeTimes->{{3.525796334505601*^9, 3.5257963367854867`*^9}}],
+
+Cell["Critical points are y = 0, y = T, y = K", "Item",
+ CellChangeTimes->{{3.525796337005476*^9, 3.525796353614645*^9}}],
+
+Cell["Solve probably using Partial Fraction Integration", "Item",
+ CellChangeTimes->{{3.5257963614642525`*^9, 3.5257963769334793`*^9}, 
+   3.5257974528738656`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exact Equations", "Subsection",
+ CellChangeTimes->{{3.525797050854788*^9, 3.525797053204671*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["M(x,y)dx + N(x,y)dy = 0 or M(x,y) + N(x,y) dy/dx=0", "Item",
+ CellChangeTimes->{{3.525797061574252*^9, 3.5257970896428485`*^9}}],
+
+Cell[TextData[{
+ "Check to see if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["M", "y"], "=", 
+    SubscriptBox["N", "x"]}], TraditionalForm]]],
+ " (subscripts mean partial derivatives). If so the equation is exact. If not \
+see below for help to find integrating factor"
+}], "Item",
+ CellChangeTimes->{{3.525797090052828*^9, 3.5257971193613625`*^9}, {
+  3.525806682223208*^9, 3.525806691650869*^9}}],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     RowBox[{"\[PartialD]", "\[Psi]"}], 
+     RowBox[{"\[PartialD]", "x"}]], "=", 
+    RowBox[{
+     RowBox[{"M", "(", 
+      RowBox[{"x", ",", "y"}], ")"}], " ", "and", " ", 
+     FractionBox[
+      RowBox[{"\[PartialD]", "\[Psi]"}], 
+      RowBox[{"\[PartialD]", "y"}]]}]}], TraditionalForm]]],
+ "= N(x,y)"
+}], "Item",
+ CellChangeTimes->{{3.5257971439101353`*^9, 3.5257971648490877`*^9}}],
+
+Cell["\[Psi] = \[Integral] M dx + g(y)", "Item",
+ CellChangeTimes->{{3.5257971662090197`*^9, 3.5257971758785367`*^9}}],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["d", "dy"], "[", 
+     RowBox[{
+      RowBox[{"\[Integral]", 
+       RowBox[{"M", " ", "dx"}]}], " ", "+", " ", 
+      RowBox[{"g", "(", "y", ")"}]}], "]"}], " ", "=", " ", 
+    RowBox[{
+     SubscriptBox["\[Psi]", "y"], "=", "  ", "N"}]}], TraditionalForm]]],
+ " // all x\[CloseCurlyQuote]s should drop out when you equate ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Psi]", "y"], "=", "N"}], TraditionalForm]]],
+ ". If not you did it wrong. This lets you integrate to solve for g(y). You \
+have to integrate because in doing the derivative of the \[Integral]  you get \
+a g\[CloseCurlyQuote](y)."
+}], "Item",
+ CellChangeTimes->{{3.525797182978182*^9, 3.525797295662547*^9}}],
+
+Cell["\<\
+The solution is \[Integral]M(x,y) dx + g(y) = c\
+\>", "Item",
+ CellChangeTimes->{{3.5257972960125294`*^9, 3.525797315781541*^9}}],
+
+Cell["\<\
+Finding an Integrating Factor (* note that for this class our integrating \
+factors will always be functions of only one vairable *)\
+\>", "Item",
+ CellChangeTimes->{{3.52580669705086*^9, 3.5258067199728003`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "If we want an integrating factor as a function of x, \[Mu](x) = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Exp", "[", 
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      FractionBox[
+       RowBox[{
+        SubscriptBox["M", "x"], "-", 
+        SubscriptBox["N", "y"]}], "N"], "dx"}]}], "]"}], TraditionalForm]]],
+ ". We will be able to tell before we do the integration if this is what we \
+want because all the y\[CloseCurlyQuote]s will have to drop out of the ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{
+     SubscriptBox["M", "x"], "-", 
+     SubscriptBox["N", "y"]}], "N"], TraditionalForm]]],
+ " in order to get a function of only x out of the integral. "
+}], "Subitem",
+ CellChangeTimes->{{3.525806725081634*^9, 3.525806797340472*^9}, {
+  3.52580684146446*^9, 3.525806841945489*^9}, {3.5261275487741632`*^9, 
+  3.5261275526440086`*^9}}],
+
+Cell[TextData[{
+ "If we want an integrating factor as a function of y, \[Mu](y) = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Exp", 
+     RowBox[{"\[Integral]", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["N", "y"], "-", 
+          SubscriptBox["M", "x"]}], ")"}], "M"], "dy"}]}]}], "]"}], 
+   TraditionalForm]]],
+ " We will be able to tell before we do the integration if this is what we \
+want because all the x\[CloseCurlyQuote]s will have to drop out of the ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{
+     SubscriptBox["N", "y"], "-", 
+     SubscriptBox["M", "x"]}], "M"], TraditionalForm]]],
+ " in order to get a function of only x out of the integral. "
+}], "Subitem",
+ CellChangeTimes->{{3.525806797607643*^9, 3.525806837719603*^9}, {
+  3.5261275561138697`*^9, 3.5261275622736235`*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Integrals Expected to have Known", "Section",
+ CellChangeTimes->{{3.5257963924627028`*^9, 3.5257964008122854`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\[Integral]sin[ax]dx = ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{"-", 
+     RowBox[{"cos", "[", "ax", "]"}]}], "a"], TraditionalForm]]],
+ " + C"
+}], "Item",
+ CellChangeTimes->{{3.525796431305767*^9, 3.5257964568644896`*^9}, {
+  3.525796767888937*^9, 3.5257968090768776`*^9}, {3.5257968458050413`*^9, 
+  3.525796857174473*^9}}],
+
+Cell[TextData[{
+ "\[Integral]cos[ax]dx = ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{"sin", "[", "ax", "]"}], "a"], TraditionalForm]]],
+ " + C"
+}], "Item",
+ CellChangeTimes->{{3.5257967962075214`*^9, 3.5257968107367945`*^9}, {
+  3.5257968676039515`*^9, 3.5257968709937816`*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     SuperscriptBox["e", "ax"], "dx"}]}], " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "a"], 
+     SuperscriptBox["e", "ax"]}], "+", "C"}]}], TraditionalForm]]]], "Item",
+ CellChangeTimes->{{3.5257968130466795`*^9, 3.525796828085927*^9}}],
+
+Cell["\<\
+\[Integral]sec[x] dx = ln |sec x +tan x| + C\
+\>", "Item",
+ CellChangeTimes->{{3.525796431305767*^9, 3.5257964568644896`*^9}, 
+   3.525796767888937*^9}],
+
+Cell["\<\
+\[Integral] csc x dx = ln|scsx - cot x| + C = - ln |csc x +cot x| +C\
+\>", "Item",
+ CellChangeTimes->{{3.5257964581944227`*^9, 3.5257964870729785`*^9}}],
+
+Cell["\[Integral] tan x dx = -ln|cos x| + C", "Item",
+ CellChangeTimes->{{3.5257964874129615`*^9, 3.5257965039221363`*^9}}],
+
+Cell["\[Integral] cot x dx  = ln |sin x| + C", "Item",
+ CellChangeTimes->{{3.525796504562104*^9, 3.525796516431511*^9}}],
+
+Cell["\[Integral] ln |x| = xln|x| -x +C", "Item",
+ CellChangeTimes->{{3.525796517141475*^9, 3.5257965345406055`*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    FractionBox["dx", 
+     RowBox[{
+      SuperscriptBox["a", "2"], "+", 
+      SuperscriptBox["x", "2"]}]]}], "=", " ", 
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "a"], 
+     RowBox[{"artcan", " ", "[", 
+      FractionBox["x", "a"], "]"}]}], " ", "+", " ", "C"}]}], 
+  TraditionalForm]]]], "Item",
+ CellChangeTimes->{{3.5257965351005774`*^9, 3.525796563949135*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    FractionBox["dx", 
+     SqrtBox[
+      RowBox[{
+       SuperscriptBox["a", "2"], "-", 
+       SuperscriptBox["x", "2"]}]]]}], "=", " ", 
+   RowBox[{
+    RowBox[{"arcsin", "[", 
+     FractionBox["x", "a"], "]"}], " ", "+", "C"}]}], 
+  TraditionalForm]]]], "Item",
+ CellChangeTimes->{{3.5257965645891027`*^9, 3.525796601707247*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     SuperscriptBox["e", "ax"], 
+     RowBox[{"sin", "[", "bx", "]"}], " ", "dx"}]}], " ", "=", " ", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["e", "ax"], "(", 
+     RowBox[{
+      RowBox[{"a", " ", 
+       RowBox[{"sin", "[", "bx", "]"}]}], " ", "-", " ", 
+      RowBox[{"bcos", "[", "bx", "]"}]}], ")"}], 
+    RowBox[{
+     SuperscriptBox["a", "2"], "+", 
+     SuperscriptBox["b", "2"]}]]}], TraditionalForm]]]], "Item",
+ CellChangeTimes->{{3.5257966023472147`*^9, 3.5257966796833477`*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     SuperscriptBox["e", "ax"], 
+     RowBox[{"cos", "[", "bx", "]"}], " ", "dx"}]}], " ", "=", " ", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["e", "ax"], "(", 
+     RowBox[{
+      RowBox[{"b", " ", 
+       RowBox[{"sin", "[", "bx", "]"}]}], " ", "+", " ", 
+      RowBox[{"a", " ", 
+       RowBox[{"cos", "[", "bx", "]"}]}]}], ")"}], 
+    RowBox[{
+     SuperscriptBox["a", "2"], "+", 
+     SuperscriptBox["b", "2"]}]]}], TraditionalForm]]]], "Item",
+ CellChangeTimes->{{3.525796657214471*^9, 3.5257966950225806`*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["sin", "2"], "[", "mx", "]"}], " ", "dx"}]}], " ", "=", 
+   " ", 
+   FractionBox[
+    RowBox[{"mx", " ", "-", " ", 
+     RowBox[{
+      RowBox[{"sin", "[", "mx", "]"}], 
+      RowBox[{"cos", "[", "mx", "]"}]}]}], 
+    RowBox[{"2", "m"}]]}], TraditionalForm]]]], "Item",
+ CellChangeTimes->{{3.52579669543256*^9, 3.5257967243511143`*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     SuperscriptBox["cos", "2"], "[", "mx", "]"}]}], " ", "=", " ", 
+   FractionBox[
+    RowBox[{"mx", " ", "+", " ", 
+     RowBox[{
+      RowBox[{"sin", "[", "mx", "]"}], " ", 
+      RowBox[{"cos", "[", "mx", "]"}]}]}], 
+    RowBox[{"2", "m"}]]}], TraditionalForm]]]], "Item",
+ CellChangeTimes->{{3.525796724971083*^9, 3.5257967465600033`*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{784, 1122},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "ConfidentialReport.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 117, 1, 66, "Title"],
+Cell[699, 25, 99, 1, 26, "Subtitle"],
+Cell[CellGroupData[{
+Cell[823, 30, 108, 1, 67, "Section"],
+Cell[CellGroupData[{
+Cell[956, 35, 164, 3, 34, "Subsection"],
+Cell[CellGroupData[{
+Cell[1145, 42, 203, 5, 20, "Item"],
+Cell[1351, 49, 325, 5, 33, "Item"],
+Cell[1679, 56, 289, 7, 33, "Item"],
+Cell[1971, 65, 539, 11, 46, "Item"],
+Cell[2513, 78, 126, 1, 20, "Item"],
+Cell[CellGroupData[{
+Cell[2664, 83, 230, 4, 20, "SubitemNumbered"],
+Cell[2897, 89, 226, 5, 20, "SubitemNumbered"],
+Cell[3126, 96, 189, 4, 20, "SubitemNumbered"],
+Cell[3318, 102, 177, 3, 20, "SubitemNumbered"],
+Cell[3498, 107, 163, 3, 20, "SubitemNumbered"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3722, 117, 189, 2, 34, "Subsection"],
+Cell[CellGroupData[{
+Cell[3936, 123, 278, 8, 20, "Item"],
+Cell[4217, 133, 275, 7, 20, "Item"],
+Cell[4495, 142, 422, 13, 33, "Item"],
+Cell[4920, 157, 386, 9, 33, "Item"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5355, 172, 143, 1, 34, "Subsection"],
+Cell[CellGroupData[{
+Cell[5523, 177, 351, 7, 33, "Item"],
+Cell[5877, 186, 237, 6, 20, "Item"],
+Cell[6117, 194, 254, 7, 20, "Item"],
+Cell[6374, 203, 582, 12, 46, "Item"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7017, 222, 132, 1, 67, "Section"],
+Cell[CellGroupData[{
+Cell[7174, 227, 152, 2, 34, "Subsection"],
+Cell[CellGroupData[{
+Cell[7351, 233, 619, 16, 44, "Item"],
+Cell[7973, 251, 785, 21, 57, "Item"],
+Cell[8761, 274, 847, 29, 32, "Item"],
+Cell[9611, 305, 991, 31, 33, "Item"],
+Cell[10605, 338, 515, 15, 30, "Item"],
+Cell[11123, 355, 1227, 40, 34, "Item"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12399, 401, 148, 2, 34, "Subsection"],
+Cell[CellGroupData[{
+Cell[12572, 407, 554, 19, 30, "Item"],
+Cell[13129, 428, 359, 8, 33, "Item"],
+Cell[13491, 438, 840, 26, 32, "Item"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14380, 470, 136, 1, 34, "Subsection"],
+Cell[CellGroupData[{
+Cell[14541, 475, 125, 1, 20, "Item"],
+Cell[CellGroupData[{
+Cell[14691, 480, 138, 1, 20, "Subitem"],
+Cell[14832, 483, 218, 4, 20, "Subitem"],
+Cell[15053, 489, 291, 5, 33, "Subitem"]
+}, Open  ]],
+Cell[15359, 497, 98, 1, 20, "Item"],
+Cell[CellGroupData[{
+Cell[15482, 502, 327, 6, 33, "Subitem"],
+Cell[15812, 510, 589, 12, 59, "Subitem"],
+Cell[CellGroupData[{
+Cell[16426, 526, 464, 16, 30, "Subsubitem"],
+Cell[16893, 544, 344, 9, 23, "Subsubitem"],
+Cell[17240, 555, 666, 21, 29, "Subsubitem"],
+Cell[17909, 578, 273, 7, 20, "Subsubitem"],
+Cell[18185, 587, 373, 12, 23, "Subsubitem"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18631, 607, 161, 3, 34, "Subsection"],
+Cell[CellGroupData[{
+Cell[18817, 614, 600, 14, 33, "Item"],
+Cell[19420, 630, 1021, 30, 46, "Item"],
+Cell[20444, 662, 601, 14, 46, "Item"],
+Cell[21048, 678, 246, 5, 20, "Item"],
+Cell[CellGroupData[{
+Cell[21319, 687, 329, 6, 33, "Subitem"],
+Cell[21651, 695, 146, 1, 20, "Subitem"],
+Cell[21800, 698, 258, 5, 33, "Subitem"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22119, 710, 193, 2, 34, "Subsection"],
+Cell[CellGroupData[{
+Cell[22337, 716, 448, 10, 33, "Item"],
+Cell[22788, 728, 225, 5, 20, "Item"],
+Cell[23016, 735, 254, 5, 20, "Item"],
+Cell[CellGroupData[{
+Cell[23295, 744, 982, 14, 85, "Subitem"],
+Cell[24280, 760, 925, 26, 65, "Subitem"],
+Cell[25208, 788, 818, 12, 72, "Subitem"],
+Cell[26029, 802, 567, 18, 23, "Subitem"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26645, 826, 805, 27, 19, "Input",
+ CellOpen->False],
+Cell[27453, 855, 328, 10, 19, "Output",
+ CellOpen->False]
+}, Open  ]],
+Cell[27796, 868, 20693, 389, 229, "Input"],
+Cell[CellGroupData[{
+Cell[48514, 1261, 131, 1, 20, "Item"],
+Cell[CellGroupData[{
+Cell[48670, 1266, 167, 5, 20, "Subitem"],
+Cell[CellGroupData[{
+Cell[48862, 1275, 245, 7, 20, "Subsubitem"],
+Cell[49110, 1284, 1168, 37, 32, "Subsubitem"],
+Cell[50281, 1323, 288, 5, 33, "Subsubitem"]
+}, Open  ]],
+Cell[50584, 1331, 352, 7, 33, "Subitem"],
+Cell[CellGroupData[{
+Cell[50961, 1342, 101, 1, 20, "Subsubitem"],
+Cell[51065, 1345, 343, 6, 33, "Subsubitem"],
+Cell[51411, 1353, 530, 18, 32, "Subsubitem"],
+Cell[51944, 1373, 367, 10, 33, "Subsubitem"],
+Cell[52314, 1385, 378, 10, 33, "Subsubitem"],
+Cell[52695, 1397, 188, 4, 20, "Subsubitem"],
+Cell[52886, 1403, 531, 18, 38, "Subsubitem"]
+}, Open  ]],
+Cell[53432, 1424, 425, 8, 46, "Subitem"],
+Cell[CellGroupData[{
+Cell[53882, 1436, 490, 16, 32, "Subsubitem"],
+Cell[54375, 1454, 184, 4, 20, "Subsubitem"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54632, 1466, 142, 1, 34, "Subsection"],
+Cell[CellGroupData[{
+Cell[54799, 1471, 554, 18, 34, "Item"],
+Cell[55356, 1491, 594, 17, 33, "Item"],
+Cell[55953, 1510, 430, 13, 31, "Item"],
+Cell[56386, 1525, 155, 3, 20, "Item"],
+Cell[CellGroupData[{
+Cell[56566, 1532, 528, 15, 39, "Subitem"],
+Cell[57097, 1549, 225, 7, 22, "Subitem"],
+Cell[57325, 1558, 852, 22, 52, "Subitem"],
+Cell[58180, 1582, 234, 5, 24, "Subitem"]
+}, Open  ]],
+Cell[58429, 1590, 842, 27, 37, "Item"],
+Cell[CellGroupData[{
+Cell[59296, 1621, 194, 4, 20, "Subitem"],
+Cell[59493, 1627, 708, 19, 33, "Subitem"],
+Cell[60204, 1648, 472, 15, 37, "Subitem"],
+Cell[60679, 1665, 194, 4, 20, "Subitem"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[60946, 1677, 164, 3, 67, "Section"],
+Cell[CellGroupData[{
+Cell[61135, 1684, 118, 1, 34, "Subsection"],
+Cell[CellGroupData[{
+Cell[61278, 1689, 302, 8, 30, "Item"],
+Cell[61583, 1699, 171, 2, 24, "Item"],
+Cell[61757, 1703, 405, 14, 33, "Item"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62211, 1723, 121, 1, 34, "Subsection"],
+Cell[CellGroupData[{
+Cell[62357, 1728, 674, 23, 32, "Item"],
+Cell[63034, 1753, 99, 1, 20, "Item"],
+Cell[63136, 1756, 458, 15, 27, "Item"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[63643, 1777, 134, 1, 34, "Subsection"],
+Cell[CellGroupData[{
+Cell[63802, 1782, 208, 5, 20, "Item"],
+Cell[64013, 1789, 297, 6, 33, "Item"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[64347, 1800, 118, 1, 24, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[64490, 1805, 241, 7, 20, "Item"],
+Cell[64734, 1814, 1163, 37, 32, "Item"],
+Cell[65900, 1853, 277, 10, 23, "Item"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66226, 1869, 117, 1, 24, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[66368, 1874, 413, 13, 32, "Item"],
+Cell[66784, 1889, 106, 1, 20, "Item"],
+Cell[66893, 1892, 480, 17, 38, "Item"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[67422, 1915, 125, 1, 24, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[67572, 1920, 391, 12, 32, "Item"],
+Cell[67966, 1934, 121, 1, 20, "Item"],
+Cell[68090, 1937, 163, 2, 20, "Item"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[68314, 1946, 103, 1, 34, "Subsection"],
+Cell[CellGroupData[{
+Cell[68442, 1951, 134, 1, 20, "Item"],
+Cell[68579, 1954, 414, 11, 35, "Item"],
+Cell[68996, 1967, 461, 15, 33, "Item"],
+Cell[69460, 1984, 118, 1, 24, "Item"],
+Cell[69581, 1987, 776, 21, 50, "Item"],
+Cell[70360, 2010, 139, 3, 24, "Item"],
+Cell[70502, 2015, 223, 4, 20, "Item"],
+Cell[CellGroupData[{
+Cell[70750, 2023, 870, 23, 72, "Subitem"],
+Cell[71623, 2048, 873, 25, 75, "Subitem"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[72569, 2081, 121, 1, 67, "Section"],
+Cell[CellGroupData[{
+Cell[72715, 2086, 359, 11, 31, "Item"],
+Cell[73077, 2099, 291, 9, 31, "Item"],
+Cell[73371, 2110, 345, 10, 31, "Item"],
+Cell[73719, 2122, 162, 4, 24, "Item"],
+Cell[73884, 2128, 162, 3, 24, "Item"],
+Cell[74049, 2133, 123, 1, 24, "Item"],
+Cell[74175, 2136, 120, 1, 24, "Item"],
+Cell[74298, 2139, 117, 1, 24, "Item"],
+Cell[74418, 2142, 448, 14, 33, "Item"],
+Cell[74869, 2158, 410, 13, 41, "Item"],
+Cell[75282, 2173, 589, 17, 34, "Item"],
+Cell[75874, 2192, 614, 18, 34, "Item"],
+Cell[76491, 2212, 460, 14, 31, "Item"],
+Cell[76954, 2228, 434, 12, 31, "Item"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
