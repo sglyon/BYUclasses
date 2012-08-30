@@ -132,8 +132,7 @@ def main():
         all_data[7, :, mc] = create_moments(k_approx)
 
         if mc % 50 == 0:
-            print "Finished Monte Carlo simulation %s"\
-                                                                        % (mc)
+            print "Finished Monte Carlo simulation %s" % (mc)
 
     data_table = all_data.mean(2)
 
@@ -149,6 +148,10 @@ data_1.columns = ['mean', 'standard deviation', 'corr with y', 'corr with A',
                   'autocorrelation']
 data_1 = data_1.rename(index = new_ind)
 
+print '####' * 18
+print '#--------------------Finished parameter set 1--------------------------#'
+print '####' * 18
+
 # Parameters for simulation 2 followed by simulation and cleaning data.
 sigma, rho = [0.1, 0.]
 kbar = (sigma / (delta + n + g)) ** (1 / (1 - theta))
@@ -156,6 +159,10 @@ data_2 = pd.DataFrame(main())
 data_2.columns = ['mean', 'standard deviation', 'corr with y', 'corr with A',
                   'autocorrelation']
 data_2 = data_2.rename(index = new_ind)
+
+print '####' * 18
+print '#--------------------Finished parameter set 2--------------------------#'
+print '####' * 18
 
 # Parameters for simulation 3 followed by simulation and cleaning data.
 sigma, rho = [0.2, 0.9]
