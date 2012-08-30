@@ -1,0 +1,215 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/spencerlyon2/Documents/k36.log
+  log type:  text
+ opened on:  29 Nov 2011, 10:37:10
+
+. reg k36 price sigma timeLeft tBillRate timeLeftSquares priceSquared sigmaSquared tBillRateSquared priceAndSigma priceAndTimeLeft priceAndTBillRate sigmaAndTimeLeft sigmaAndTBillRate timeLeftAndTBillRate
+
+      Source |       SS       df       MS              Number of obs =      44
+-------------+------------------------------           F( 14,    29) =   50.58
+       Model |  3.66251442    14  .261608173           Prob > F      =  0.0000
+    Residual |    .1499833    29  .005171838           R-squared     =  0.9607
+-------------+------------------------------           Adj R-squared =  0.9417
+       Total |  3.81249772    43  .088662738           Root MSE      =  .07192
+
+------------------------------------------------------------------------------
+         k36 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       price |  -2.426789   .6350539    -3.82   0.001     -3.72562   -1.127958
+       sigma |  -2.086528   1.438478    -1.45   0.158    -5.028546      .85549
+    timeLeft |  -.0135736   .0928869    -0.15   0.885    -.2035486    .1764014
+   tBillRate |  -5.284793   3.953061    -1.34   0.192    -13.36971    2.800124
+timeLeftSq~s |   -.000682   .0002795    -2.44   0.021    -.0012535   -.0001104
+priceSquared |   .0354354   .0090897     3.90   0.001     .0168448     .054026
+sigmaSquared |  -.1098528   .1690634    -0.65   0.521    -.4556263    .2359207
+tBillRateS~d |  -.0528274   .6744021    -0.08   0.938    -1.432134     1.32648
+priceAndSi~a |   .0676347   .0353952     1.91   0.066    -.0047566    .1400261
+priceAndTi~t |   .0008747    .002291     0.38   0.705    -.0038109    .0055604
+priceAndTB~e |    .122154   .1044576     1.17   0.252    -.0914859    .3357938
+sigmaAndTi~t |   .0073066   .0096581     0.76   0.455    -.0124465    .0270596
+sigmaAndTB~e |   .1929796   .3493315     0.55   0.585    -.5214834    .9074427
+timeLeftAn~e |   .0261363   .0126099     2.07   0.047     .0003461    .0519265
+       _cons |   42.09705   11.70262     3.60   0.001     18.16252    66.03159
+------------------------------------------------------------------------------
+
+. estat ic
+
+-----------------------------------------------------------------------------
+       Model |    Obs    ll(null)   ll(model)     df          AIC         BIC
+-------------+---------------------------------------------------------------
+           . |     44   -8.623383    62.55797     15    -95.11593   -68.35309
+-----------------------------------------------------------------------------
+               Note:  N=Obs used in calculating BIC; see [R] BIC note
+
+. reg k36 price sigma timeLeft tBillRate timeLeftSquares priceSquared sigmaSquared priceAndSigma priceAndTimeLeft sigmaAndTimeLeft sigmaAndTBillRate timeLeftAndTBillRate
+
+      Source |       SS       df       MS              Number of obs =      44
+-------------+------------------------------           F( 12,    31) =   60.12
+       Model |  3.65542471    12  .304618726           Prob > F      =  0.0000
+    Residual |  .157073014    31  .005066871           R-squared     =  0.9588
+-------------+------------------------------           Adj R-squared =  0.9429
+       Total |  3.81249772    43  .088662738           Root MSE      =  .07118
+
+------------------------------------------------------------------------------
+         k36 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       price |  -2.524739   .6062818    -4.16   0.000    -3.761259   -1.288219
+       sigma |  -1.617983   1.360858    -1.19   0.243    -4.393471    1.157506
+    timeLeft |  -.0249478   .0886838    -0.28   0.780    -.2058197    .1559241
+   tBillRate |  -.9299283   .7132972    -1.30   0.202    -2.384707    .5248509
+timeLeftSq~s |  -.0006506   .0002681    -2.43   0.021    -.0011975   -.0001037
+priceSquared |   .0387714   .0083448     4.65   0.000     .0217522    .0557906
+sigmaSquared |  -.1553143   .1605478    -0.97   0.341    -.4827538    .1721252
+priceAndSi~a |   .0593628   .0341152     1.74   0.092    -.0102156    .1289412
+priceAndTi~t |   .0015619   .0021443     0.73   0.472    -.0028114    .0059352
+sigmaAndTi~t |   .0067902   .0094437     0.72   0.478    -.0124703    .0260507
+sigmaAndTB~e |   .1805772    .344712     0.52   0.604    -.5224676     .883622
+timeLeftAn~e |   .0144972   .0076335     1.90   0.067    -.0010713    .0300658
+       _cons |   41.15151   11.33453     3.63   0.001     18.03459    64.26842
+------------------------------------------------------------------------------
+
+. estat ic
+
+-----------------------------------------------------------------------------
+       Model |    Obs    ll(null)   ll(model)     df          AIC         BIC
+-------------+---------------------------------------------------------------
+           . |     44   -8.623383    61.54186     13    -97.08371   -73.88925
+-----------------------------------------------------------------------------
+               Note:  N=Obs used in calculating BIC; see [R] BIC note
+
+. predict e36, resid
+
+. sktest e36
+
+                    Skewness/Kurtosis tests for Normality
+                                                         ------- joint ------
+    Variable |    Obs   Pr(Skewness)   Pr(Kurtosis)  adj chi2(2)    Prob>chi2
+-------------+---------------------------------------------------------------
+         e36 |     44      0.0247         0.0849         7.16         0.0279
+
+. qreg k36 price sigma timeLeft tBillRate timeLeftSquares priceSquared sigmaSquared priceAndSigma priceAndTimeLeft sigmaAndTimeLeft sigmaAndTBillRate timeLeftAndTBillRate
+Iteration  1:  WLS sum of weighted deviations =   1.941162
+
+Iteration  1: sum of abs. weighted deviations =  9.7195518
+Iteration  2: sum of abs. weighted deviations =  4.3905645
+Iteration  3: sum of abs. weighted deviations =  2.8516467
+Iteration  4: sum of abs. weighted deviations =  2.1995947
+Iteration  5: sum of abs. weighted deviations =  1.9160249
+Iteration  6: sum of abs. weighted deviations =  1.8924854
+Iteration  7: sum of abs. weighted deviations =  1.8810857
+Iteration  8: sum of abs. weighted deviations =  1.8798574
+Iteration  9: sum of abs. weighted deviations =  1.8764311
+Iteration 10: sum of abs. weighted deviations =  1.8667588
+Iteration 11: sum of abs. weighted deviations =    1.85359
+Iteration 12: sum of abs. weighted deviations =  1.8494318
+Iteration 13: sum of abs. weighted deviations =  1.8440427
+
+Median regression                                    Number of obs =        44
+  Raw sum of deviations    10.37 (about .44999999)
+  Min sum of deviations 1.844043                     Pseudo R2     =    0.8222
+
+------------------------------------------------------------------------------
+         k36 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       price |  -2.586151   11.33607    -0.23   0.821    -25.70622    20.53391
+       sigma |  -2.234212    20.6508    -0.11   0.915    -44.35179    39.88336
+    timeLeft |  -.0558922   1.655477    -0.03   0.973    -3.432259    3.320475
+   tBillRate |  -.9427103    7.43925    -0.13   0.900    -16.11516    14.22974
+timeLeftSq~s |  -.0006465   .0049148    -0.13   0.896    -.0106704    .0093774
+priceSquared |   .0385992   .1557728     0.25   0.806    -.2791014    .3562999
+sigmaSquared |  -.1877776   2.644455    -0.07   0.944    -5.581179    5.205624
+priceAndSi~a |   .0820509   .5710057     0.14   0.887    -1.082523    1.246625
+priceAndTi~t |   .0025684   .0400622     0.06   0.949    -.0791391    .0842759
+sigmaAndTi~t |   .0061676   .1520994     0.04   0.968    -.3040411    .3163764
+sigmaAndTB~e |   .2148552   3.760028     0.06   0.955    -7.453773    7.883483
+timeLeftAn~e |   .0145578   .0810997     0.18   0.859    -.1508461    .1799617
+       _cons |   43.16091   212.2332     0.20   0.840    -389.6916    476.0134
+------------------------------------------------------------------------------
+
+. reg k36 price sigma timeLeft tBillRate timeLeftSquares priceSquared sigmaSquared priceAndSigma priceAndTimeLeft sigmaAndTimeLeft sigmaAndTBillRate timeLeftAndTBillRate
+
+      Source |       SS       df       MS              Number of obs =      44
+-------------+------------------------------           F( 12,    31) =   60.12
+       Model |  3.65542471    12  .304618726           Prob > F      =  0.0000
+    Residual |  .157073014    31  .005066871           R-squared     =  0.9588
+-------------+------------------------------           Adj R-squared =  0.9429
+       Total |  3.81249772    43  .088662738           Root MSE      =  .07118
+
+------------------------------------------------------------------------------
+         k36 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       price |  -2.524739   .6062818    -4.16   0.000    -3.761259   -1.288219
+       sigma |  -1.617983   1.360858    -1.19   0.243    -4.393471    1.157506
+    timeLeft |  -.0249478   .0886838    -0.28   0.780    -.2058197    .1559241
+   tBillRate |  -.9299283   .7132972    -1.30   0.202    -2.384707    .5248509
+timeLeftSq~s |  -.0006506   .0002681    -2.43   0.021    -.0011975   -.0001037
+priceSquared |   .0387714   .0083448     4.65   0.000     .0217522    .0557906
+sigmaSquared |  -.1553143   .1605478    -0.97   0.341    -.4827538    .1721252
+priceAndSi~a |   .0593628   .0341152     1.74   0.092    -.0102156    .1289412
+priceAndTi~t |   .0015619   .0021443     0.73   0.472    -.0028114    .0059352
+sigmaAndTi~t |   .0067902   .0094437     0.72   0.478    -.0124703    .0260507
+sigmaAndTB~e |   .1805772    .344712     0.52   0.604    -.5224676     .883622
+timeLeftAn~e |   .0144972   .0076335     1.90   0.067    -.0010713    .0300658
+       _cons |   41.15151   11.33453     3.63   0.001     18.03459    64.26842
+------------------------------------------------------------------------------
+
+. estat hettest
+
+Breusch-Pagan / Cook-Weisberg test for heteroskedasticity 
+         Ho: Constant variance
+         Variables: fitted values of k36
+
+         chi2(1)      =     0.01
+         Prob > chi2  =   0.9194
+
+. estat imtest, white
+
+White's test for Ho: homoskedasticity
+         against Ha: unrestricted heteroskedasticity
+
+         chi2(43)     =     44.00
+         Prob > chi2  =    0.4290
+
+Cameron & Trivedi's decomposition of IM-test
+
+---------------------------------------------------
+              Source |       chi2     df      p
+---------------------+-----------------------------
+  Heteroskedasticity |      44.00     43    0.4290
+            Skewness |      11.54     12    0.4836
+            Kurtosis |       1.43      1    0.2311
+---------------------+-----------------------------
+               Total |      56.97     56    0.4387
+---------------------------------------------------
+
+. estat dwatson
+
+Durbin-Watson d-statistic( 13,    44) =  1.879438
+
+. ac e36
+
+. reg e36 l.e36
+
+      Source |       SS       df       MS              Number of obs =      43
+-------------+------------------------------           F(  1,    41) =    0.03
+       Model |  .000113115     1  .000113115           Prob > F      =  0.8644
+    Residual |  .156930416    41  .003827571           R-squared     =  0.0007
+-------------+------------------------------           Adj R-squared = -0.0237
+       Total |  .157043531    42  .003739132           Root MSE      =  .06187
+
+------------------------------------------------------------------------------
+         e36 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         e36 |
+         L1. |    .027833   .1619056     0.17   0.864     -.299142     .354808
+             |
+       _cons |  -.0001921   .0094428    -0.02   0.984    -.0192622     .018878
+------------------------------------------------------------------------------
+
+. log close
+      name:  <unnamed>
+       log:  /Users/spencerlyon2/Documents/k36.log
+  log type:  text
+ closed on:  29 Nov 2011, 10:38:06
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

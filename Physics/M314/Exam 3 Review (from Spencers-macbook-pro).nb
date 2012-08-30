@@ -1,0 +1,882 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     26519,        873]
+NotebookOptionsPosition[     23406,        765]
+NotebookOutlinePosition[     23891,        784]
+CellTagsIndexPosition[     23848,        781]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Math 314 Exam 3 Review", "Title",
+ CellChangeTimes->{{3.5110420360121098`*^9, 3.5110420414957647`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Triple Integrals", "Section",
+ CellChangeTimes->{{3.5110420452728643`*^9, 3.511042050912263*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Types of regions", "Subsection",
+ CellChangeTimes->{{3.511042053408763*^9, 3.5110420726949873`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Type 1", "Subsubsection",
+ CellChangeTimes->{{3.5110420791125813`*^9, 3.511042080343689*^9}}],
+
+Cell[TextData[{
+ "You have a region such that you have ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["z", "1"], "(", 
+     RowBox[{"x", ",", "y"}], ")"}], " ", "and", " ", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["z", "2"], "(", 
+      RowBox[{"x", ",", "y"}], ")"}], ".", " "}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "You can then treat the domain as a Type I or Type II region for double \
+integrals"
+}], "Text",
+ CellChangeTimes->{{3.511042094192157*^9, 3.511042159218753*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Type 2", "Subsubsection",
+ CellChangeTimes->{{3.511042163326805*^9, 3.511042164805674*^9}}],
+
+Cell[TextData[{
+ "You have a regions such that you have ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["x", "1"], "(", 
+     RowBox[{"y", ",", "z"}], ")"}], " ", "and", " ", 
+    RowBox[{
+     SubscriptBox["x", "2"], "(", 
+     RowBox[{"y", ",", "z"}], ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.511042167101615*^9, 3.511042183112657*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Type 3", "Subsubsection",
+ CellChangeTimes->{{3.511042186213789*^9, 3.511042187812746*^9}}],
+
+Cell[TextData[{
+ "You have a region such that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["y", "1"], "(", 
+     RowBox[{"x", ",", "z"}], ")"}], " ", "and", " ", 
+    RowBox[{
+     SubscriptBox["y", "2"], "(", 
+     RowBox[{"x", ",", "z"}], ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.511042189781107*^9, 3.511042219342154*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Cylindrical Coordinates", "Subsection",
+ CellChangeTimes->{{3.51104223044528*^9, 3.5110422382220383`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"x", "=", " ", 
+  RowBox[{"r", " ", 
+   RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"y", "=", 
+  RowBox[{"r", " ", 
+   RowBox[{"Sin", "[", "\[Theta]", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"z", "=", "z"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  SuperscriptBox["r", "2"], "=", 
+  RowBox[{
+   SuperscriptBox["x", "2"], "+", 
+   SuperscriptBox["y", "2"]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Tan", "[", "\[Theta]", "]"}], "=", 
+  FractionBox["x", "y"]}], "\[IndentingNewLine]", 
+ RowBox[{"z", "=", "z"}]}], "Input",
+ CellChangeTimes->{{3.511042245997139*^9, 3.511042307547525*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Spherical Coordinates", "Subsection",
+ CellChangeTimes->{{3.5110423230585546`*^9, 3.5110423297623262`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"x", "=", 
+  RowBox[{
+   RowBox[{"\[Rho]Sin", "[", "\[Phi]", "]"}], 
+   RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"y", "=", 
+  RowBox[{"\[Rho]", " ", 
+   RowBox[{"Sin", "[", "\[Phi]", "]"}], 
+   RowBox[{"Sin", "[", "\[Theta]", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"z", "=", 
+  RowBox[{"\[Rho]", " ", 
+   RowBox[{"Cos", "[", "\[Phi]", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SuperscriptBox["\[Rho]", "2"], "=", 
+   RowBox[{
+    SuperscriptBox["x", "2"], "+", 
+    SuperscriptBox["y", "2"], "+", 
+    SuperscriptBox["z", "2"]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Jacobian", "=", 
+  RowBox[{
+   SuperscriptBox["\[Rho]", "2"], 
+   RowBox[{"Sin", "[", "\[Phi]", "]"}], 
+   RowBox[{"\[PartialD]", "\[Rho]"}], 
+   RowBox[{"\[PartialD]", "\[Phi]"}], 
+   RowBox[{"\[PartialD]", "\[Theta]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.511042334501993*^9, 3.511042437626149*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Change of Variables", "Subsection",
+ CellChangeTimes->{{3.511042444392324*^9, 3.511042447877214*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Jacobian", " ", "2", "D"}], "=", " ", 
+  RowBox[{
+   RowBox[{"|", GridBox[{
+      {
+       FractionBox["dx", "du"], 
+       FractionBox["dx", "dv"]},
+      {
+       FractionBox["dy", "du"], 
+       FractionBox["dy", "dv"]}
+     }], "|", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"Jacobian", " ", "3", " ", "D"}]}], "=", 
+   RowBox[{"|", 
+    RowBox[{"(", GridBox[{
+       {
+        FractionBox["dx", "du"], 
+        FractionBox["dx", "dv"], 
+        FractionBox["dx", "dw"]},
+       {
+        FractionBox["dy", "du"], 
+        FractionBox["dy", "dv"], 
+        FractionBox["dy", "dw"]},
+       {
+        FractionBox["dz", "du"], 
+        FractionBox["dz", "dv"], 
+        FractionBox["dz", "dw"]}
+      }], ")"}], "|"}]}]}]], "Input",
+ CellChangeTimes->{{3.5110424602539062`*^9, 3.511042592638421*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Vector Fields", "Section",
+ CellChangeTimes->{{3.511042618845125*^9, 3.5110426202821417`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Basic Info", "Subsection",
+ CellChangeTimes->{{3.511042707523703*^9, 3.511042711417396*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Del]", "f"}], "=", 
+  RowBox[{
+   RowBox[{"Grad", "[", "f", "]"}], "=", 
+   RowBox[{
+    FractionBox["df", "dx"], "+", 
+    FractionBox["df", "dy"], "+", 
+    RowBox[{
+     FractionBox["df", "dz"], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+       "when", " ", "f", " ", "is", " ", "a", " ", "scalar", " ", "function", 
+        " ", "of", " ", "x"}], ",", "y", ",", "z"}], ")"}]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.511042628324294*^9, 3.5110426974078693`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Line Integrals", "Subsection",
+ CellChangeTimes->{{3.5110427140114603`*^9, 3.511042719363104*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Basic Form", "Subsubsection",
+ CellChangeTimes->{{3.511042909442128*^9, 3.511042910871071*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Integral]", "C"], 
+    RowBox[{"F", "\[CenterDot]", "dr"}]}], "=", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Integral]", "C"], 
+     RowBox[{"P", 
+      RowBox[{"\[PartialD]", "x"}]}]}], "+", 
+    RowBox[{"Q", 
+     RowBox[{"\[PartialD]", "y"}]}], "+", 
+    RowBox[{"R", 
+     RowBox[{"\[PartialD]", "z"}]}]}]}], ",", " ", 
+  RowBox[{
+   RowBox[{"where", " ", "F"}], "=", 
+   RowBox[{"<", "P"}]}], ",", "Q", ",", 
+  RowBox[{"R", ">"}]}]], "Text",
+ CellChangeTimes->{{3.5110427819139233`*^9, 3.511042915361141*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Fundmental Theorem of Calculus for Line Integrals\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.511042923670939*^9, 3.5110429319586906`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SuperscriptBox[
+    SubscriptBox["\[Integral]", "a"], "b"], 
+   RowBox[{
+    RowBox[{"\[Del]", "f"}], " ", "\[CenterDot]", 
+    RowBox[{"\[PartialD]", "r"}]}]}], "=", 
+  RowBox[{
+   RowBox[{"f", 
+    RowBox[{"(", 
+     RowBox[{"r", 
+      RowBox[{"(", "b", ")"}]}], ")"}]}], "-", 
+   RowBox[{"f", 
+    RowBox[{"(", 
+     RowBox[{"r", 
+      RowBox[{"(", "a", ")"}]}], ")"}]}]}]}]], "Text",
+ CellChangeTimes->{{3.51104293796257*^9, 3.5110430478648157`*^9}, 
+   3.511043082437998*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"This", " ", "integral", 
+   RowBox[{
+    SubscriptBox["\[Integral]", "C"], 
+    RowBox[{"F", "\[CenterDot]", 
+     RowBox[{"\[PartialD]", "r"}]}]}]}], "=", 
+  RowBox[{
+  "0", " ", "is", " ", "independent", " ", "of", " ", "path", " ", "iff", " ",
+    "it", " ", "is", " ", "equal", " ", "to", " ", "0", " ", "for", " ", 
+   "all", " ", 
+   RowBox[{"C", "'"}], "s", " ", "in", " ", "the", " ", 
+   RowBox[{"domain", ".", " "}]}]}]], "Text",
+ CellChangeTimes->{{3.511043105712432*^9, 3.511043155001896*^9}, 
+   3.511043209258185*^9}],
+
+Cell["\<\
+It should be noted that an easy, visual test for conservation is if there are \
+any \[OpenCurlyDoubleQuote]holes\[CloseCurlyDoubleQuote] in your domain. If \
+there are you know right away that it is not conservative.\
+\>", "Text",
+ CellChangeTimes->{{3.5110435832020073`*^9, 3.5110436393372173`*^9}}],
+
+Cell[TextData[{
+ "We were told this problem would be on the exam in one way or another....\n\n\
+Let ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"F", 
+     RowBox[{"(", 
+      RowBox[{"x", ",", "y"}], ")"}]}], "=", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "y\[Iota]"}], "+", "xj"}], ")"}], 
+      RowBox[{
+       SuperscriptBox["x", "2"], "+", 
+       SuperscriptBox["y", "2"]}]], "."}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "We can tell by inspection that the domain is not defined at the origin so \
+it is not conservative. regardless of path you take around the origin you get \
+the answer to be 2 \[Pi]"
+}], "Text",
+ CellChangeTimes->{{3.5110436526566553`*^9, 3.511043773879632*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Test for conservation", "Subsubsection",
+ CellChangeTimes->{{3.511043167690639*^9, 3.511043170514234*^9}}],
+
+Cell["\<\
+You must be able to find a function f such that \[Del]f = F\
+\>", "Text",
+ CellChangeTimes->{{3.511043176116248*^9, 3.511043189750634*^9}}],
+
+Cell[TextData[{
+ "In 2 dimesions this means that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[PartialD]", "P"}], 
+      RowBox[{"\[PartialD]", "y"}]], "+", " ", 
+     SubscriptBox["C", "1"]}], "=", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[PartialD]", "Q"}], 
+      RowBox[{"\[PartialD]", "Q"}]], "+", 
+     SubscriptBox["C", "2"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.5110432018496313`*^9, 3.511043259611807*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Green\[CloseCurlyQuote]s Theorem", "Subsubsection",
+ CellChangeTimes->{{3.51104327265187*^9, 3.511043275391963*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["\[Integral]", "C"], 
+   RowBox[{"F", "\[CenterDot]", 
+    RowBox[{"\[PartialD]", "r"}]}]}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Integral]", "C"], 
+     RowBox[{"P", 
+      RowBox[{"\[PartialD]", "x"}]}]}], "+", 
+    RowBox[{"Q", 
+     RowBox[{"\[PartialD]", "y"}]}]}], "=", 
+   RowBox[{
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      SubscriptBox["\[Integral]", "D"], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         FractionBox[
+          RowBox[{"\[PartialD]", "Q"}], 
+          RowBox[{"\[PartialD]", "x"}]], "-", 
+         FractionBox[
+          RowBox[{"\[PartialD]", "P"}], 
+          RowBox[{"\[PartialD]", "y"}]]}], ")"}], 
+       RowBox[{"\[PartialD]", "A"}]}]}]}], "=", " ", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[ContourIntegral]", "C"], 
+      RowBox[{"P", 
+       RowBox[{"\[PartialD]", "x"}]}]}], "+", 
+     RowBox[{"Q", 
+      RowBox[{"\[PartialD]", "y"}]}]}]}]}]}]], "Text",
+ CellChangeTimes->{{3.511043312191696*^9, 3.511043386187948*^9}, {
+   3.511043509466798*^9, 3.511043524319517*^9}, 3.511043868350452*^9}],
+
+Cell["\<\
+In English this means that the line integral around a curve in the presence \
+of a vector field F=<P,Q,R> is equal to the Curl of F in the domain where the \
+curve C lives. Basically you can sum up what happens on the boundary by \
+looking at what happens inside it and vice versa. 
+
+In practice what we need to do is simply look at the problem and decide if \
+the Line integral or area integral will be easier and then decide which way \
+we want to do it.\
+\>", "Text",
+ CellChangeTimes->{{3.5110433900139227`*^9, 3.5110434832920628`*^9}, {
+  3.5110435395165443`*^9, 3.5110435479866667`*^9}, {3.511043845925213*^9, 
+  3.5110438766285677`*^9}}],
+
+Cell["\<\
+We use Green\[CloseCurlyQuote]s Theorem when we have a 2 dimensional vector \
+field and we want to know wha the line integral about a certian curve is.\
+\>", "Text",
+ CellChangeTimes->{{3.511045213419853*^9, 3.511045238342437*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Curl and Divergence", "Subsubsection",
+ CellChangeTimes->{{3.511043880356901*^9, 3.5110438827926826`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Curl", "[", "F", "]"}], "=", 
+   RowBox[{
+    RowBox[{"\[Del]", 
+     RowBox[{"\[Cross]", "F"}]}], "=", 
+    RowBox[{"|", 
+     RowBox[{"(", GridBox[{
+        {"i", "j", "k"},
+        {
+         SubscriptBox["d", "x"], 
+         SubscriptBox["d", "y"], 
+         SubscriptBox["d", "z"]},
+        {"P", "Q", "R"}
+       }], ")"}], "|"}]}]}], " ", ",", " ", 
+  RowBox[{
+   RowBox[{"where", " ", "F"}], "=", 
+   RowBox[{"<", "P"}]}], ",", "Q", ",", 
+  RowBox[{"R", ">"}]}]], "Text",
+ CellChangeTimes->{{3.511043887746357*^9, 3.511043945118774*^9}, 
+   3.511044000780876*^9}],
+
+Cell["\<\
+This gives us another way to check if a field is conservaitve. If is is then \
+Curl(F)=0 and the partial derivatives of F are continuous. 
+The curl is related to the rotational aspect of the field. This means if \
+Curl(F)=0 then then the field F is irrotational. \
+\>", "Text",
+ CellChangeTimes->{{3.511043962378941*^9, 3.511043997417696*^9}, {
+  3.511044193830914*^9, 3.511044241941309*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Divergence", "[", "F", "]"}], "=", 
+   RowBox[{
+    RowBox[{"\[Del]", 
+     RowBox[{"\[CenterDot]", "F"}]}], "=", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[PartialD]", "P"}], 
+      RowBox[{"\[PartialD]", "x"}]], "+", 
+     FractionBox[
+      RowBox[{"\[PartialD]", "Q"}], 
+      RowBox[{"\[PartialD]", "y"}]], "+", 
+     FractionBox[
+      RowBox[{"\[PartialD]", "R"}], 
+      RowBox[{"\[PartialD]", "z"}]]}]}]}], ",", " ", 
+  RowBox[{
+   RowBox[{"Where", " ", "F"}], "=", 
+   RowBox[{"<", "P"}]}], ",", "Q", ",", 
+  RowBox[{"R", ">"}]}]], "Text",
+ CellChangeTimes->{{3.5110440076447973`*^9, 3.511044064163521*^9}}],
+
+Cell["\<\
+The Divergence is related to the compressibility of the medium in which the \
+vector field lies.\
+\>", "Text",
+ CellChangeTimes->{{3.51104417523876*^9, 3.511044191814468*^9}}],
+
+Cell["\<\
+It should be noted that to take the Curl or Divergence you need a vector \
+quanitiy
+The ouput of a Curl operator is a vector
+The output of the Divergence operator is a scalar
+The input of the gradient operator is scalar and its output is a vector. \
+\>", "Text",
+ CellChangeTimes->{{3.511044083816472*^9, 3.511044142167273*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Surface Integrals", "Subsubsection",
+ CellChangeTimes->{{3.511044294660818*^9, 3.511044299076312*^9}}],
+
+Cell[TextData[{
+ "The Surface area of an object that is parameterized in terms of u and v is \
+the following integral:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"A", 
+     RowBox[{"(", "S", ")"}]}], "=", 
+    RowBox[{
+     RowBox[{"\[Integral]", 
+      SubscriptBox["\[Integral]", "D"]}], "|", 
+     RowBox[{
+      SubscriptBox["r", "u"], "\[Cross]", 
+      SubscriptBox["r", "v"]}], "|", 
+     RowBox[{"\[PartialD]", "A"}]}]}], TraditionalForm]]],
+ ", where \[PartialD]A=\[PartialD]u\[PartialD]v and ",
+ Cell[BoxData[
+  RowBox[{"|", 
+   RowBox[{
+    SubscriptBox["r", "u"], "\[Cross]", 
+    SubscriptBox["r", "v"]}], "|"}]]],
+ " is the magnitude of the cross product of the derivative vectors."
+}], "Text",
+ CellChangeTimes->{{3.5110443221719007`*^9, 3.511044435377614*^9}}],
+
+Cell["\<\
+Another interpretation is as follows\
+\>", "Text",
+ CellChangeTimes->{{3.511044354502748*^9, 3.5110443553257313`*^9}, {
+  3.511044455979645*^9, 3.5110444640571547`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     SubscriptBox["\[Integral]", "S"], 
+     RowBox[{"f", 
+      RowBox[{"(", 
+       RowBox[{"x", ",", "y", ",", "z"}], ")"}], 
+      RowBox[{"\[PartialD]", "S"}]}]}]}], "=", 
+   RowBox[{
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      SubscriptBox["\[Integral]", "D"], 
+      RowBox[{"F", 
+       RowBox[{"(", 
+        RowBox[{"r", 
+         RowBox[{"(", 
+          RowBox[{"u", ",", "v"}], ")"}]}], ")"}]}]}]}], "|", 
+    RowBox[{
+     SubscriptBox["r", "u"], "\[Cross]", 
+     SubscriptBox["r", "v"]}], "|", 
+    RowBox[{"\[PartialD]", "A"}]}]}], ",", " ", 
+  RowBox[{
+  "This", " ", "means", " ", "that", " ", "the", " ", "surface", " ", 
+   "integral", " ", "of", " ", "the", " ", "surface", " ", "S", " ", "in", 
+   " ", "terms", " ", "of", " ", "x"}], ",", "y", ",", 
+  RowBox[{
+  "z", " ", "can", " ", "be", " ", "evaluated", " ", "after", " ", 
+   "parameterizing", " ", "x"}], ",", "y", ",", 
+  RowBox[{
+   RowBox[{
+   "z", " ", "in", " ", "terms", " ", "of", " ", "u", " ", "and", " ", "v", 
+    " ", "is", " ", "simply", " ", "the", " ", "double", " ", "inegral", " ", 
+    "of", " ", "f", 
+    RowBox[{"(", 
+     RowBox[{"r", 
+      RowBox[{"(", 
+       RowBox[{"u", ",", "v"}], ")"}]}], ")"}], " ", "times", " ", 
+    "magnitude", " ", "of", " ", "the", " ", "cross", " ", "product", " ", 
+    "of", " ", "the", " ", "derivative", " ", "vectors", " ", "with", " ", 
+    "respect", " ", "to", " ", 
+    RowBox[{"\[PartialD]", "A"}]}], "=", 
+   RowBox[{
+    RowBox[{"\[PartialD]", "v"}], 
+    RowBox[{"\[PartialD]", "u"}]}]}]}]], "Text",
+ CellChangeTimes->{{3.511044467626912*^9, 3.5110446420158653`*^9}}],
+
+Cell[TextData[{
+ "The Flux of F accross S is defined as follows:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["\[Integral]", "S"], 
+       RowBox[{"F", "\[CenterDot]"}]}], 
+      RowBox[{"\[PartialD]", "S"}]}]}], "=", 
+    RowBox[{"\[Integral]", 
+     SubscriptBox["\[Integral]", "S"]}]}], TraditionalForm]]],
+ "F\[CenterDot]n ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[PartialD]", "s"}], "=", 
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      SubscriptBox["\[Integral]", "D"], 
+      RowBox[{"F", "\[CenterDot]", 
+       RowBox[{"(", 
+        RowBox[{
+         SubscriptBox["r", "u"], "\[Cross]", " ", 
+         SubscriptBox["r", "v"]}], ")"}]}]}]}]}], TraditionalForm]]],
+ "\[PartialD]v\[PartialD]u"
+}], "Text",
+ CellChangeTimes->{{3.511044653749337*^9, 3.511044745507801*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Stokes\[CloseCurlyQuote] Theorem", "Subsubsection",
+ CellChangeTimes->{{3.5110447603642807`*^9, 3.511044767363367*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Integral]", "C"], 
+    RowBox[{"F", "\[CenterDot]", 
+     RowBox[{"\[PartialD]", "r"}]}]}], "=", 
+   RowBox[{
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      SubscriptBox["\[Integral]", "S"], 
+      RowBox[{
+       RowBox[{"Curl", "[", "F", "]"}], "\[CenterDot]", 
+       RowBox[{"\[PartialD]", "S"}]}]}]}], "=", 
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      SubscriptBox["\[Integral]", "S"], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Curl", "[", "F", "]"}], "\[CenterDot]", "n"}], " ", 
+       RowBox[{"\[PartialD]", "S"}]}]}]}]}]}], ","}]], "Text",
+ CellChangeTimes->{{3.511044769346325*^9, 3.511044857785142*^9}}],
+
+Cell[TextData[{
+ "Where n is the normal vector computed as follows ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"n", "=", 
+     RowBox[{"<", 
+      FractionBox[
+       RowBox[{"\[PartialD]", "f"}], 
+       RowBox[{"\[PartialD]", "x"}]]}]}], ",", 
+    FractionBox[
+     RowBox[{"\[PartialD]", "f"}], 
+     RowBox[{"\[PartialD]", "y"}]], ",", 
+    RowBox[{
+     RowBox[{"\[PlusMinus]", "1"}], ">"}]}], TraditionalForm]]],
+ " you decide the \[PlusMinus] based on the orientation of your curve. "
+}], "Text",
+ CellChangeTimes->{{3.511044859734556*^9, 3.511044912640822*^9}}],
+
+Cell["\<\
+We use Stokes\[CloseCurlyQuote] Theorem when we have  3D vector field along \
+an open surface (there are boundary curves). It tell us that the net effect \
+of the field on the boundary curve is the sum (integral) of the effects \
+contained within that curve. \
+\>", "Text",
+ CellChangeTimes->{{3.511045243106577*^9, 3.511045316039011*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Gauss\[CloseCurlyQuote] Theorem or the Divergence Theorem\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.511044925504869*^9, 3.51104493393647*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Integral]", 
+   RowBox[{
+    SubscriptBox["\[Integral]", "S"], 
+    RowBox[{"F", "\[CenterDot]", 
+     RowBox[{"\[PartialD]", "S"}]}]}]}], "=", 
+  RowBox[{
+   RowBox[{"\[Integral]", 
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      SubscriptBox["\[Integral]", "E"], 
+      RowBox[{
+       RowBox[{"Divergence", "[", "F", "]"}], 
+       RowBox[{"\[PartialD]", "V"}]}]}]}]}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[Integral]", 
+      RowBox[{"\[Integral]", 
+       RowBox[{
+        SubscriptBox["\[Integral]", "E"], 
+        RowBox[{
+         FractionBox[
+          RowBox[{"\[PartialD]", "P"}], 
+          RowBox[{"\[PartialD]", "x"}]], 
+         RowBox[{"\[PartialD]", "V"}]}]}]}]}], "+", 
+     RowBox[{"\[Integral]", 
+      RowBox[{"\[Integral]", 
+       RowBox[{
+        SubscriptBox["\[Integral]", "E"], 
+        RowBox[{
+         FractionBox[
+          RowBox[{"\[PartialD]", "Q"}], 
+          RowBox[{"\[PartialD]", "y"}]], 
+         RowBox[{"\[PartialD]", "V"}]}]}]}]}], "+", 
+     RowBox[{"\[Integral]", 
+      RowBox[{"\[Integral]", 
+       RowBox[{
+        SubscriptBox["\[Integral]", "E"], 
+        RowBox[{
+         FractionBox[
+          RowBox[{"\[PartialD]", "R"}], 
+          RowBox[{"\[PartialD]", "z"}]], 
+         RowBox[{"\[PartialD]", "V"}]}]}]}]}]}], "=", 
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      SubscriptBox["\[Integral]", "S"], 
+      RowBox[{
+       RowBox[{"F", "\[CenterDot]", "n"}], " ", 
+       RowBox[{"\[PartialD]", "S"}]}]}]}]}]}]}]], "Text",
+ CellChangeTimes->{{3.511044944572109*^9, 3.511045044024433*^9}, {
+  3.5110450828703938`*^9, 3.511045098081154*^9}}],
+
+Cell[TextData[{
+ "When actually doing problems with the divergence theorem I should be aware \
+of the angle between n (k) and F. If it is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["\[Pi]", "2"], " ", "or", " ", "3", 
+    FractionBox["\[Pi]", "2"]}], TraditionalForm]]],
+ "then I know that the answer is zero due to the Cos factor hidden in the dot \
+product. "
+}], "Text",
+ CellChangeTimes->{{3.5110450458302393`*^9, 3.51104513232445*^9}}],
+
+Cell["\<\
+We use the Divergence Theorem when we have a 3D vector field and a Closed \
+surface. It tells us that hte flux accross a surface S is equal to the \
+divergence of the triple integral of the entier shape or region bounded by \
+the surface. 
+
+We know from this theorem that if the divergence of F is always zero that the \
+flux through that surface will also always be zero.\
+\>", "Text",
+ CellChangeTimes->{{3.511045319297016*^9, 3.511045375922757*^9}, {
+  3.511045416080338*^9, 3.511045445224194*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{Automatic, -17}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
+2010)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "ConfidentialReport.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 109, 1, 66, "Title"],
+Cell[CellGroupData[{
+Cell[713, 27, 103, 1, 67, "Section"],
+Cell[CellGroupData[{
+Cell[841, 32, 106, 1, 34, "Subsection"],
+Cell[CellGroupData[{
+Cell[972, 37, 99, 1, 24, "Subsubsection"],
+Cell[1074, 40, 530, 16, 41, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1641, 61, 97, 1, 24, "Subsubsection"],
+Cell[1741, 64, 416, 13, 26, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2194, 82, 97, 1, 24, "Subsubsection"],
+Cell[2294, 85, 406, 13, 26, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2749, 104, 112, 1, 34, "Subsection"],
+Cell[2864, 107, 685, 18, 144, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3586, 130, 113, 1, 34, "Subsection"],
+Cell[3702, 133, 977, 27, 110, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4716, 165, 107, 1, 34, "Subsection"],
+Cell[4826, 168, 854, 28, 166, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5729, 202, 100, 1, 67, "Section"],
+Cell[CellGroupData[{
+Cell[5854, 207, 98, 1, 34, "Subsection"],
+Cell[5955, 210, 510, 15, 49, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6502, 230, 104, 1, 34, "Subsection"],
+Cell[CellGroupData[{
+Cell[6631, 235, 101, 1, 24, "Subsubsection"],
+Cell[6735, 238, 586, 19, 44, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7358, 262, 150, 3, 24, "Subsubsection"],
+Cell[7511, 267, 520, 18, 45, "Text"],
+Cell[8034, 287, 566, 14, 44, "Text"],
+Cell[8603, 303, 310, 5, 41, "Text"],
+Cell[8916, 310, 762, 22, 84, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9715, 337, 112, 1, 24, "Subsubsection"],
+Cell[9830, 340, 149, 3, 26, "Text"],
+Cell[9982, 345, 518, 17, 39, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10537, 367, 122, 1, 24, "Subsubsection"],
+Cell[10662, 370, 1133, 36, 48, "Text"],
+Cell[11798, 408, 654, 12, 101, "Text"],
+Cell[12455, 422, 241, 4, 41, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12733, 431, 112, 1, 24, "Subsubsection"],
+Cell[12848, 434, 618, 21, 60, "Text"],
+Cell[13469, 457, 402, 7, 56, "Text"],
+Cell[13874, 466, 670, 21, 48, "Text"],
+Cell[14547, 489, 185, 4, 26, "Text"],
+Cell[14735, 495, 338, 7, 71, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15110, 507, 108, 1, 24, "Subsubsection"],
+Cell[15221, 510, 787, 23, 47, "Text"],
+Cell[16011, 535, 179, 4, 26, "Text"],
+Cell[16193, 541, 1693, 46, 106, "Text"],
+Cell[17889, 589, 865, 28, 47, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18791, 622, 125, 1, 24, "Subsubsection"],
+Cell[18919, 625, 693, 21, 44, "Text"],
+Cell[19615, 648, 578, 17, 54, "Text"],
+Cell[20196, 667, 349, 6, 41, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20582, 678, 155, 3, 24, "Subsubsection"],
+Cell[20740, 683, 1643, 51, 48, "Text"],
+Cell[22386, 736, 454, 11, 59, "Text"],
+Cell[22843, 749, 511, 10, 71, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

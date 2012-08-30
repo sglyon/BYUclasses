@@ -1,0 +1,657 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     24520,        648]
+NotebookOptionsPosition[     22730,        582]
+NotebookOutlinePosition[     23139,        600]
+CellTagsIndexPosition[     23096,        597]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Economics 381", "Title",
+ CellChangeTimes->{{3.535470419089082*^9, 3.535470424893297*^9}}],
+
+Cell["Homework", "Subtitle",
+ CellChangeTimes->{{3.5354704269548483`*^9, 3.535470427626169*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Problem Set 1", "Section",
+ CellChangeTimes->{{3.535470430163147*^9, 3.535470434002203*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["1: Hands Dirty with Data", "Subsection",
+ CellChangeTimes->{{3.535470436322544*^9, 3.535470441249672*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["a.) Downloading the Data", "Subsubsection",
+ CellChangeTimes->{{3.53547044305908*^9, 3.535470459585155*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "SetDirectory", "[", 
+   "\"\</Users/spencerlyon2/Documents/School/Semesters/Winter 2012/Economics \
+381/Homeworks/Data\>\"", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"CPILFESL", " ", "=", 
+    RowBox[{"priceIndex", "=", " ", 
+     RowBox[{"Import", "[", "\"\<CPILFESL.csv\>\"", "]"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PAYEMS", " ", "=", 
+   RowBox[{"payrollEmployment", "=", " ", 
+    RowBox[{"Import", "[", "\"\<PAYEMS.csv\>\"", "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GDPC96", " ", "=", " ", 
+   RowBox[{"gdp", " ", "=", " ", 
+    RowBox[{"Import", "[", "\"\<GDPC96.csv\>\"", "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Dimensions", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"{", 
+    RowBox[{"payrollEmployment", ",", "gdp", ",", "priceIndex"}], "}"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.53547046078765*^9, 3.5354704624925957`*^9}, {
+   3.53547058072161*^9, 3.535470669525236*^9}, {3.5354707015648613`*^9, 
+   3.535470757016158*^9}, {3.5354708351999693`*^9, 3.5354708701574087`*^9}, {
+   3.535470908183132*^9, 3.535470916556451*^9}, {3.535470963347526*^9, 
+   3.535470984553926*^9}, {3.5354710360096893`*^9, 3.5354710379759693`*^9}, {
+   3.535471071201315*^9, 3.5354711761878233`*^9}, {3.535471209592698*^9, 
+   3.535471209914185*^9}, {3.53547175049417*^9, 3.535471794597127*^9}, 
+   3.53547239470804*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+b.) Plot GDP and PayrollEmp on same axis from Q1-1948 to Q3-2011\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.5354716409074163`*^9, 3.535471675374483*^9}, 
+   3.535473631287293*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"payrollDate", ",", "payrollData"}], "}"}], " ", "=", " ", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"payrollEmployment", "[", 
+     RowBox[{"[", 
+      RowBox[{"38", ";;", "292"}], "]"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"gdpDate", ",", "gdpData"}], "}"}], " ", "=", " ", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"gdp", "[", 
+     RowBox[{"[", 
+      RowBox[{"5", ";;", "259"}], "]"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Dimensions", "[", "#", "]"}], "&"}], "/@", 
+  RowBox[{"{", 
+   RowBox[{"payrollData", ",", "gdpData"}], "}"}]}]}], "Input",
+ CellChangeTimes->{{3.5354717363504868`*^9, 3.535471745116909*^9}, {
+  3.535471813559927*^9, 3.535471861459234*^9}, {3.5354719209600077`*^9, 
+  3.535471980695056*^9}, {3.535472440385242*^9, 3.53547244050349*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"255"},
+     {"255"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{3.535472449434273*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"payrollData", ",", "gdpData"}], "}"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"Red", ",", "Dashed"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Blue", ",", "Thick"}], "}"}]}], "}"}]}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Correlation", "[", 
+  RowBox[{"payrollData", ",", "gdpData"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.535471863655562*^9, 3.535471867929864*^9}, {
+  3.535471927128394*^9, 3.535471930006958*^9}, {3.5354719606073637`*^9, 
+  3.535471970093618*^9}, {3.535472007606041*^9, 3.5354720077018147`*^9}, {
+  3.535472434288616*^9, 3.535472447151243*^9}, {3.535473999879274*^9, 
+  3.535474018973113*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  GraphicsBox[{{}, {}, 
+    {RGBColor[1, 0, 0], Dashing[{Small, Small}], LineBox[CompressedData["
+1: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
+      "]]}, 
+    {RGBColor[0, 0, 1], Thickness[Large], LineBox[CompressedData["
+1:eJxdl8luHUUUhpswhSEQgoEwd0KEUIQQEObJRQYyJ56w4yF23dm+19f3Feo1
+YNWvwYraIsEqK3YtISFFYhEEioJAQJz+jqX/tHRV+vs/Y9U5p/oeaU/mevuK
+ovjv7m93bZ5b0yfuPQ8HXoRvv9l9ngbvD/17z7Pgg+GnH3efg+Ap5H+fbvBh
+w983+CXkanAJ/xf4KPafQO4Y/Mvg1/F3DPwG+Dj4OPLGvwl/BPxWaPJ7Efw2
+/BT4HZfvu8TzKPjE3r40y3tO/33kD4M/gH8B/CH2nwF/BP6Z/foY/X/Zj0+Q
+eyA366fI34T/DPmHkPuc/J4Hf4H8q+Bp+BIc0Ce+FIh3P/yX6N8Hb/gm8Z5E
+/p8Gp5NB6+eU5QN/ivdm/zTyN+BPG0++Z8x/g9MZ/P1G/l/Z/hCf4VdYz7K+
+Bn8We3b+5/DPeadzxGvneZ6V807n4ffx/gL6vxD/Bd7fIr6LxPsn/EV3Xpf0
+vNIlF/9lrZ90mfdWX1ewR/+lK8g/Dn9V+yld1XyLGTD1GGZcPDPYw1+ecf0/
+q/sVZtVemkUO+Tyr9oo5VvozOJzmtP+z8aY/j7+n0J9H/kH0jb8f/Xn0qJdi
+QXFYQP8A+gvar3lB8yu+ZrX8DR9C3zD1nh0uFlmpr7Do+mER/z80OC+6ebFk
+fFNvYUnrKxn/CP6XXH9f03iDYeonXdN8s/F2/svaT2EZ+9RvWkaO+s3Lbr6u
+6P0RVoj/V/Jf0fzyHk9/rdr+5UZ/1fqzwWnV5hP6q25+raFv57+m9ZnWdJ7n
+NRf/dVd/13W/k2H4bPLPob/OavWz7vp53flfd/W3ofMhbOh+J+PJL2+4+RV1
+PpUR/naDQ9T7Jka9r5Ph7xpc7fHUa9T7oI66H0UL/g/8t+w8cuN/j8d/y/q7
+4VPL4sW/6d/Bf0vPo265+dXWei3bvLd51Nb7M7a13lNb7VWmTz/lts7juu2+
+lzqKS4dDR+dR7Gj/po72e9Vx887J1x38Wv93tX7LrvPf1fOKXVefXY2vcnzu
+uvzN35P47+m8LnuaT+ghR/3GHvp/Mx96ev9WJs/9m3s6L2qTv8H86Js89dfX
+fgnGs1+xr/mkvu5fZfgx8u+7+u/r+RQDl/+A99gPA7UfB3oeaaDnVQ2cf5Pn
++60eOP+brNw/pWHL3zD2o8NpU+OpjLf639T4603ihS+2XP1tqX7Y0nqJxpt/
+w8zPakvnc97S753a4WKouBy6+h/q/R+Hrv6Her7VUOdrHuKH+qqHWq/FSO/z
+cqTzM4zQZ57FkdpPI/2+rpx8Hun3eW289f+27m+5rfkFx8dt1U/bLn/T5/9S
+3nbzx+FirP1ejtV+cDiO3f+RsdZzNdb7JI91XtRmz77/dtReueP2fwc5zi/u
+2Plx/+1Yvrnxb/KHGpwNTzW4NvsHGlxM4Pk/XE40njDR/Ywmb/NnovtZOf08
+0Xxq078z/T+PQrZp
+      "]]}},
+   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+   Axes->True,
+   AxesOrigin->{0, 0},
+   ImageSize->{505., Automatic},
+   PlotRange->{{0., 255.}, {-5., 13.4}},
+   PlotRangeClipping->True,
+   PlotRangePadding->{
+     Scaled[0.02], 
+     Scaled[0.02]}], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.5354718685489483`*^9, 3.535471923917239*^9, {3.535471955854678*^9, 
+   3.535471970293069*^9}, 3.5354720088225203`*^9, 3.535472450603305*^9, {
+   3.53547400122191*^9, 3.535474019460836*^9}}],
+
+Cell[BoxData[
+ FormBox["0.8121957783867599`", TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.5354718685489483`*^9, 3.535471923917239*^9, {3.535471955854678*^9, 
+   3.535471970293069*^9}, 3.5354720088225203`*^9, 3.535472450603305*^9, {
+   3.53547400122191*^9, 3.5354740194676733`*^9}}]
+}, Open  ]],
+
+Cell["\<\
+I believe these two series are so closely related (positively) because the \
+higher the GDP, the more goods the US produces. The more goods the US \
+produces, the more workers it will need and the higher the employment level \
+will be. \
+\>", "Text",
+ CellChangeTimes->{{3.535472034220256*^9, 3.53547209012057*^9}, {
+  3.535472354959887*^9, 3.535472357199999*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+c.) Plot GDP and the CPI from Q!-1958 to Q3-2011\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.5354721007610607`*^9, 3.535472124854947*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"priceDates", ",", "priceData"}], " ", "}"}], "=", " ", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"priceIndex", "[", 
+     RowBox[{"[", 
+      RowBox[{"6", ";;", "220"}], "]"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"newGdpData", " ", "=", " ", 
+   RowBox[{"gdpData", "[", 
+    RowBox[{"[", 
+     RowBox[{"40", ";;", "254"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Dimensions", "[", "#", "]"}], "&"}], "/@", 
+  RowBox[{"{", 
+   RowBox[{"priceData", ",", "newGdpData"}], "}"}]}]}], "Input",
+ CellChangeTimes->{{3.5354721297347517`*^9, 3.535472232183674*^9}, {
+  3.535472275245377*^9, 3.5354722753715076`*^9}, {3.535472453558653*^9, 
+  3.535472459846485*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"215"},
+     {"215"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{3.535472471736719*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.5354726334510603`*^9, 3.5354726343917723`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"newGdpData", ",", "priceData"}], "}"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"GridLines", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"{", "}"}]}], "}"}]}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"Blue", ",", "Thick"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", "Dashed"}], "}"}]}], "}"}]}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Correlation", "[", 
+  RowBox[{"newGdpData", ",", "priceData"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.535472282431942*^9, 3.535472333162232*^9}, {
+  3.535472638185075*^9, 3.535472725365727*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  GraphicsBox[{{}, {}, 
+    {RGBColor[0, 0, 1], Thickness[Large], LineBox[CompressedData["
+1:eJxdlslqVUEQho9xnud5OlERERHnWdNxjkOGm5uYwSTnzsPGV+jX0NV5DVf2
+VtCVC3F3QBAEFwFFFEU09leBqgOX4u+auqr/rr691WelRk+SJO///RZk/Ob7
+zv7/3vWx4KJYFZDuxfOFbwl4k3v7ZuH78iribdgvQ+5CHkDuQx5GpsTbCz7k
+Yv6t4COu+f+TuEed3tcx9D3g4/h/ZP8nWJ9nfyfZ7zf0p/Bfgd1p/HeDz5j9
+n8V/D/icqfM88TaBL2C/DnwR/QbwJVPvZfB28BWzn6vEk3zXiLcDfN3064aJ
+14cUe6fjecd6L7JfY9/Pee1n/aau398k32bWb2G/HP0t9EvR30bCF29wcgf/
+9egFSz13dX3+LutS/z3kFvSCVyHva+wFC78GnLoPfoD8r+HPA/AH9IJfw7eH
+ml/+IfrVxH9E/yX/I73f5DES/vjH5jwHkZynHzT3aYj48NcPsS78HcYe/rlh
+7OGvH2b/n2J9YdjUNyL6iN2I9C9Ef9H3RBxGiP8b/xLxPsf4roS/8KGk+RlK
+xBP+j5r9j2r++VHd7yBY+FnGfif+Zdbhjy/r+xzKJv+YPg83pueDH9P9DqIX
+fo/r+eXG9Xzyov9O/8elX/TvCfgn/Rf8MmK/qMf/CftdSf4J3Q83gf4r+Sfk
+PEL0X9STf1Lud9S7Sdkv+Sfx/0H+ScP/KT2/3JTh6xR2zJ8whf9B1qc13920
+juenseM+hWkzj59qvjuDvcHhqZ5HyYy+v27G3PcZPe+CsU9mkeI/a/g7a/LP
+Gv7OaX66OTMvjT7Mmfoz8m2MOM30vHaZrifL8JP7Kf6/4vnmmX5/g9jz/haZ
+nhdJReZrxGlF7JkHFX1fMtHLvKzoevKK7l8QvDbiomL4X9Xnk1ZN/VXsiJ9V
+zflU9XnkVXNeVZNf7JcQt2by11jn/XGCpX7Bwk+D85reTxA9/C9q5n2us1/0
+aV3rXV37Z3XNFy96yS+Y+Rnqej4XdfN/p6FxarBr6H5mDf3++4bmd97Q5xsa
+er4WDfLCr6Sp+Zo29Xvumnp+Zk38mWe+qePngv/Af2NfNOX9I38LPXxOW7q/
+rqXry4zeG/+8ZeoX/zXU3zLzp61x2tb33bV1/Mxg39Z8zttm3rX1e1K09bxI
+OsSD32lHx3Md03+x5/x8R84vzo+8I/WGmF/st0RcCN4WcdKVeRlx2kVf8J52
+9X6yru6nF3uZP13dz2D8i+5iPX8BSGD9UA==
+      "]]}, 
+    {RGBColor[1, 0, 0], Dashing[{Small, Small}], LineBox[CompressedData["
+1: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
+Ay7/Aw40txc=
+      "]]}},
+   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+   Axes->True,
+   AxesOrigin->{0, 0},
+   GridLines->{{}, {}},
+   PlotRange->{{0., 215.}, {-5., 13.27684}},
+   PlotRangeClipping->True,
+   PlotRangePadding->{
+     Scaled[0.02], 
+     Scaled[0.02]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.535472309356769*^9, 3.535472333663455*^9}, {
+   3.535472653831429*^9, 3.535472693033719*^9}, 3.53547272578224*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", "0.19892224722860952`"}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.535472309356769*^9, 3.535472333663455*^9}, {
+   3.535472653831429*^9, 3.535472693033719*^9}, 3.535472725788412*^9}]
+}, Open  ]],
+
+Cell["\<\
+I believe there is a somewhat weak negative relationship between GDP and the \
+CPI because in times when GDP is high, consumption in future periods will be \
+higher. This is due to higher average income for a US citizen in previous \
+periods. This effect doesn\[CloseCurlyQuote]t completely take place in the \
+same period, so a lagged effect of GPD on the CPI could explain why the \
+relationship is weak. 
+
+The sign of the correlation can also be explained by the same lagged idea \
+that was spoken of before. As GDP is increasing, CPI will follow and increase \
+in later periods. When GPD stops increasing as much ( negative second \
+derivative) the CPI is still rising because of increased income in previous \
+periods. This results in the direction of change in the two statistics to be \
+in the opposite direction much of the time.
+
+Both of these ideas can be seen clearly in the graph above.\
+\>", "Text",
+ CellChangeTimes->{{3.535472342799506*^9, 3.5354723860629387`*^9}, {
+  3.535472474979681*^9, 3.535472626094124*^9}, {3.535472740899084*^9, 
+  3.535472741578677*^9}, {3.535472777075735*^9, 3.535472984434794*^9}, {
+  3.535473635577951*^9, 3.535473637048339*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "2.) Problems and Applications: Chapter 2, #6: ",
+ StyleBox["S A farmer grows a bushel of wheat and sells it to a miller for \
+$1.00. The Miller turns the wheat into flour and then sell the flour to a \
+Baker for $3.00. The baker uses the flour to make bread and sells the bread \
+to an engineer for $6.00. The engineer eats the bread. What is the value \
+added by each person? What is GDP?",
+  FontSize->12,
+  FontWeight->"Plain"]
+}], "Subsection",
+ CellChangeTimes->{{3.535472994764203*^9, 3.535473008769421*^9}, {
+  3.535473495654689*^9, 3.5354735969185553`*^9}, {3.535473639550041*^9, 
+  3.535473650287272*^9}}],
+
+Cell["\<\
+
+
+
+
+
+
+
+
+
+
+
+
+\
+\>", "Text",
+ CellChangeTimes->{{3.535473108294394*^9, 3.5354731097503633`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "3.) Chapter 2, Related employment Question: ",
+ StyleBox["Suppose an economy is made up of 100 people who are in the \
+following mutually exclusive categories shown in Table 1. Three concepts are \
+at play here: adult population, workforce, and labor force. A simple \
+definition of the workforce is everybody in the economy who is 16 or older. \
+So the labor force is a subset of the workforce, and the workforce is a \
+subset of the adult population.",
+  FontSize->12,
+  FontWeight->"Plain"]
+}], "Subsection",
+ CellChangeTimes->{{3.53547311816681*^9, 3.535473149909897*^9}, {
+  3.5354736101523523`*^9, 3.535473614134797*^9}}],
+
+Cell[TextData[{
+ "(a) What is the percent of the adult population ",
+ StyleBox["not in the labor force?\n\n\n\n\n\n\n\n\n\n",
+  FontSlant->"Italic"]
+}], "Subsubsection",
+ CellChangeTimes->{{3.535473159877322*^9, 3.5354732069553747`*^9}}],
+
+Cell["\<\
+(b) What is the labor force participation rate?
+
+
+
+
+
+
+
+
+
+
+\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.535473180668222*^9, 3.5354732106277027`*^9}}],
+
+Cell["\<\
+(c) What is the unemployment rate?
+
+
+
+
+
+
+
+
+
+\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.535473189515794*^9, 3.535473195571713*^9}, {
+  3.5354733492602*^9, 3.535473350559211*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{718, 856},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 96, 1, 76, "Title"],
+Cell[678, 25, 96, 1, 46, "Subtitle"],
+Cell[CellGroupData[{
+Cell[799, 30, 98, 1, 67, "Section"],
+Cell[CellGroupData[{
+Cell[922, 35, 112, 1, 35, "Subsection"],
+Cell[CellGroupData[{
+Cell[1059, 40, 114, 1, 24, "Subsubsection"],
+Cell[1176, 43, 1510, 36, 133, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2723, 84, 191, 4, 24, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[2939, 92, 941, 26, 58, "Input"],
+Cell[3883, 120, 590, 17, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4510, 142, 831, 20, 58, "Input"],
+Cell[5344, 164, 5803, 103, 325, "Output"],
+Cell[11150, 269, 290, 5, 27, "Output"]
+}, Open  ]],
+Cell[11455, 277, 374, 7, 41, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11866, 289, 149, 3, 24, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[12040, 296, 799, 23, 58, "Input"],
+Cell[12842, 321, 590, 17, 46, "Output"]
+}, Open  ]],
+Cell[13447, 341, 96, 1, 27, "Input"],
+Cell[CellGroupData[{
+Cell[13568, 346, 779, 22, 58, "Input"],
+Cell[14350, 370, 4843, 87, 235, "Output"],
+Cell[19196, 459, 231, 4, 27, "Output"]
+}, Open  ]],
+Cell[19442, 466, 1183, 20, 176, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20674, 492, 632, 12, 74, "Subsection"],
+Cell[21309, 506, 104, 15, 206, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21450, 526, 645, 12, 74, "Subsection"],
+Cell[22098, 540, 237, 5, 154, "Subsubsection"],
+Cell[22338, 547, 159, 14, 161, "Subsubsection"],
+Cell[22500, 563, 190, 14, 148, "Subsubsection"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

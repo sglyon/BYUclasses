@@ -1,0 +1,3049 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[    126616,       3040]
+NotebookOptionsPosition[    119318,       2825]
+NotebookOutlinePosition[    119786,       2843]
+CellTagsIndexPosition[    119743,       2840]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Physics 230 -- Lab 1 (Introduction to Mathematica)", "Title",
+ CellChangeTimes->{{3.399308987464324*^9, 3.399308997477577*^9}, {
+   3.3996509147507887`*^9, 3.3996509168582067`*^9}, 3.4274817158062444`*^9, {
+   3.427505828304313*^9, 3.427505832757467*^9}, {3.433259568081151*^9, 
+   3.4332596026289105`*^9}}],
+
+Cell["\<\
+Branton J. Campbell, BYU Physics & Astronomy, Winter 2010
+R. Steven Turley, BYU Physics and Astronomy, Fall 2011\
+\>", "Subtitle",
+ CellChangeTimes->{{3.433259527908248*^9, 3.433259551315097*^9}, {
+  3.439665062935153*^9, 3.4396650637789087`*^9}, {3.4396681571112056`*^9, 
+  3.4396681574237075`*^9}, {3.4717903729337626`*^9, 3.4717903735118947`*^9}, {
+  3.5112495384748*^9, 3.511249553326*^9}}],
+
+Cell[TextData[{
+ "Find the ",
+ StyleBox["Preferences",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " option in the ",
+ StyleBox["Edit",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " menu, and check the box that says \"Show open/close icons for cell \
+groups\".  This will cause triangular icons to appear at the left of each \
+expandable section below.  These navigation icons then allow you to \
+conveniently open or close the corresponding sections of the notebook.  If \
+you later forget how to enable the navigation icons, pat your head with one \
+hand while rubbing your stomach with the other hand, while also singing ",
+ StyleBox["I Can't Remember",
+  FontSlant->"Italic"],
+ " (The Thorns, 2003).  One of the TAs will eventually notice and drop by \
+remind you to review this paragraph. "
+}], "Text",
+ CellChangeTimes->{{3.405698951757959*^9, 3.4056989652268815`*^9}, {
+  3.4274821844342437`*^9, 3.4274821862936306`*^9}, {3.427482340107115*^9, 
+  3.4274824471234245`*^9}, {3.4274913027269754`*^9, 3.427491316430188*^9}, {
+  3.4332805525714197`*^9, 3.433280573634459*^9}, {3.4396650832946587`*^9, 
+  3.4396653900622463`*^9}, {3.439665526203743*^9, 3.4396655350006742`*^9}, {
+  3.439665603657364*^9, 3.4396656631733694`*^9}, {3.4396674148877053`*^9, 
+  3.4396674155752096`*^9}, {3.439675284854319*^9, 3.439675299729319*^9}, {
+  3.439675411744944*^9, 3.439675420901194*^9}, {3.4396765855491524`*^9, 
+  3.439676590221058*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Getting Started (50 min)", "Section",
+ CellChangeTimes->{{3.399171094227*^9, 3.399171099477*^9}, {
+   3.399650322332314*^9, 3.3996503265159283`*^9}, {3.3996618827887726`*^9, 
+   3.3996618833354588`*^9}, {3.4057003448070397`*^9, 3.405700376073065*^9}, {
+   3.405702493912673*^9, 3.4057024951158133`*^9}, {3.4057056738283753`*^9, 
+   3.4057056744377584`*^9}, {3.4057154528454123`*^9, 3.4057154536586657`*^9}, 
+   3.405720440813705*^9, 3.405720479881176*^9, 3.427323107248788*^9, {
+   3.427505820601139*^9, 3.4275058725389714`*^9}, {3.4275060470088377`*^9, 
+   3.427506050618236*^9}, {3.4311829246595087`*^9, 3.4311829261439123`*^9}, 
+   3.433259591253619*^9}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+(#1) Notebooks, cells, expressions, white-space and evaluation (10 min)\
+\>", "Subsection",
+ CellChangeTimes->{{3.399650347605714*^9, 3.3996503501970563`*^9}, {
+  3.3996508210253468`*^9, 3.3996508283778925`*^9}, {3.399650876130412*^9, 
+  3.3996508818750763`*^9}, {3.39975768225478*^9, 3.3997576870185747`*^9}, {
+  3.405700384213794*^9, 3.405700396526452*^9}, {3.405702497131464*^9, 
+  3.405702497506469*^9}, {3.4057213236791196`*^9, 3.4057213241795835`*^9}, {
+  3.427491011131359*^9, 3.4274910252095737`*^9}, {3.4274911208664365`*^9, 
+  3.4274911308821254`*^9}, {3.4274981839428897`*^9, 3.427498188161667*^9}, {
+  3.4275416649555416`*^9, 3.427541665939923*^9}, {3.431182693373818*^9, 
+  3.431182694748844*^9}}],
+
+Cell[TextData[{
+ "When you first start ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", you usually get a big white window with absolutely nothing in it.  This \
+blank window is called a \"notebook\" and is like a clean workbench ready for \
+you to start a new project.  ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " is actually a high-level programming language; and you will need to learn \
+a few of its words and phrases in order to proceed.  However, because ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " is a mathematical programming language, you already know the basics.  \n\n\
+(a) Most (but not all) simple algebraic math operations (e.g. +, -, *, /) are \
+coded up just like you would see them printed in a book.  Let's suppose that \
+you want to compute 104 + 280.  In the blank input cell below, just type \
+\"104+280\" and press ",
+ StyleBox["Shift-Enter",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " (first hold the ",
+ StyleBox["Shift",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " key down and then press the ",
+ StyleBox["Enter",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " key).  The result appears in an output cell just below the cell containing \
+your input."
+}], "Text",
+ CellChangeTimes->{{3.399650526221054*^9, 3.3996507164193864`*^9}, {
+  3.4056967183924837`*^9, 3.4056968017019353`*^9}, {3.4056970660346003`*^9, 
+  3.4056972840459847`*^9}, {3.405782774240396*^9, 3.405782784507138*^9}, {
+  3.406055135081481*^9, 3.406055194881035*^9}, {3.4274826731404963`*^9, 
+  3.4274833530354724`*^9}, {3.427483388066947*^9, 3.4274836556311593`*^9}, {
+  3.4274837607099566`*^9, 3.4274837953976784`*^9}, {3.427483886695138*^9, 
+  3.4274838886795254`*^9}, {3.427483938882972*^9, 3.4274839502892947`*^9}, {
+  3.427488727710495*^9, 3.4274887293198805`*^9}, {3.427488858320706*^9, 
+  3.4274892221511593`*^9}, {3.4274893479332147`*^9, 3.4274893484019675`*^9}, {
+  3.439660264388818*^9, 3.43966029993592*^9}, {3.4396607132666903`*^9, 
+  3.4396607150479517`*^9}, {3.439660745610647*^9, 3.439660752454441*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.427483391504469*^9, 3.427483407973324*^9}, 
+   3.427489217182378*^9, {3.427489480512188*^9, 3.4274894825747013`*^9}, 
+   3.42748974488888*^9}],
+
+Cell[TextData[{
+ "\n(b) So why do we have to press ",
+ StyleBox["Shift-Enter",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " rather than simply press ",
+ StyleBox["Enter",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " when executing an input cell?  The standard ",
+ StyleBox["Enter",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " key is used to create white space (i.e. blank lines) in an input cell.  \
+You will often use white space to make your input easier to read and to \
+organize visually.  In the cell below, white space has been used to visually \
+separate several unrelated computations.  Put your cursor inside this cell \
+and try adding or deleting blank lines.  When you evaluate the cell, observe \
+that the white space has no effect on the output.  Also notice that it does \
+not matter where your cursor is located within the cell as long as it is in \
+there somewhere."
+}], "Text",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGCQBGIQ/UDo+OzAkJeOc7N7N4Noq/4zN2/Gv3R0LDN7AqKL
+pB1ZbwHprRWNCiA6eOPxe8wJLx0rrQQegOi62Y9udwDpAsOYxyD6U51KW3rn
+S8fpSoq3QXSeStN9EP1oycwHIPqY0RbGDCA9Z7sdL4hesMdQEkR3ObQrgWiN
+QylqIFrnpKw5iN5/ZpE9iN599rcjiJ4U/MIfRJuET4gA0QqPZhWB6Lx0p3oQ
+/WdPZk0WSP/eO2A6J0xgJ4iuCtMH07uiAg+DaJaczjcg+kbusw8g+lOB9w8Q
+veXrEuZsIP2j5ocIiA5o2qwIoiNa32qA+ZwpRiB6NTeTBYhe1LvRBkSv4j0C
+ptvenGCb2QO0L+cZmGb69HfewgVA936+thBE23TGXwPRftx+t0H0jRvR3CuB
+9MSbwrwgGgDfn9AH
+  "]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"4", "+", "3"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Factor", "[", 
+   RowBox[{
+    RowBox[{"x", "^", "2"}], " ", "+", " ", 
+    RowBox[{"2", "*", "x"}], " ", "+", " ", "1"}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"1", "*", "2", "*", "3", "*", "4", "*", "5"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"x", "^", "2"}], ",", "x"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.399650361951763*^9, 3.3996503795760174`*^9}, {
+  3.3996504113902164`*^9, 3.3996504263450756`*^9}, {3.3996504599232607`*^9, 
+  3.399650510969596*^9}, {3.399650806554414*^9, 3.399650815124578*^9}, {
+  3.399661893550677*^9, 3.3996618971275654`*^9}, {3.3997527883252106`*^9, 
+  3.399752792486887*^9}, {3.405696682756295*^9, 3.405696707171075*^9}, {
+  3.4056969366856456`*^9, 3.4056970078400917`*^9}, {3.427484131227953*^9, 
+  3.427484150759328*^9}, {3.427484360073168*^9, 3.4274843617294283`*^9}}],
+
+Cell[TextData[{
+ "\n(c) The Enter key on your keyboard's separate numeric keypad (if it has \
+one) is called ",
+ StyleBox["Enter(numeric)",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ ".  Because ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " treats ",
+ StyleBox["Enter(numeric)",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " and ",
+ StyleBox["Shift-Enter",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " as identical key strokes, you may find it more convenient to press ",
+ StyleBox["Enter(numeric)",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " when executing an input cell.  The ",
+ StyleBox["Shift-Enter(numeric)",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " key combination is a very nice feature that either evaluates the current \
+cell or takes you to the next evaluatable cell.  Try these keys and key \
+combinations on the examples below.  Demonstrate for you TA that you can use ",
+ StyleBox["Shift-Enter(numeric)",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " to evaluate each of the following five input cells in sequence."
+}], "Text",
+ CellChangeTimes->{{3.4057844484225273`*^9, 3.405784478269524*^9}, {
+   3.4057851807521963`*^9, 3.4057852141152*^9}, {3.42748405575872*^9, 
+   3.4274840565556*^9}, {3.427484234322363*^9, 3.4274842383380136`*^9}, {
+   3.4274843759951444`*^9, 3.4274845444805975`*^9}, {3.4274846949815607`*^9, 
+   3.4274848212792444`*^9}, {3.4274848725295725`*^9, 3.427484873654579*^9}, {
+   3.427484999342884*^9, 3.4274850004366407`*^9}, {3.427488756851307*^9, 
+   3.4274887574606857`*^9}, 3.427489238370013*^9, 3.427490274454769*^9, {
+   3.4291569409506025`*^9, 3.429156961216098*^9}, {3.429157001028343*^9, 
+   3.4291570021064615`*^9}, {3.429883279593058*^9, 3.4298832900234013`*^9}, {
+   3.4396603328423805`*^9, 3.439660368670735*^9}, {3.4396607570482206`*^9, 
+   3.439660764610769*^9}, {3.439675504354733*^9, 3.439675567042634*^9}}],
+
+Cell[BoxData[
+ RowBox[{"a", " ", "=", " ", "3"}]], "Input",
+ CellChangeTimes->{{3.427484823138631*^9, 3.4274848531856985`*^9}, {
+  3.427484939389375*^9, 3.427484941967517*^9}}],
+
+Cell[BoxData[
+ RowBox[{"2", "*", "a"}]], "Input",
+ CellChangeTimes->{{3.4274848563419685`*^9, 3.427484857654477*^9}}],
+
+Cell[BoxData[
+ RowBox[{"2", "^", "a"}]], "Input",
+ CellChangeTimes->{{3.4274848658889046`*^9, 3.42748493468622*^9}}],
+
+Cell[BoxData[
+ RowBox[{"a", "^", "2"}]], "Input",
+ CellChangeTimes->{{3.427484947561302*^9, 3.427484949373814*^9}}],
+
+Cell[BoxData[
+ RowBox[{"3", 
+  RowBox[{"(", 
+   RowBox[{"a", "+", 
+    RowBox[{"1", "/", "2"}]}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.4274849601863832`*^9, 3.427484978608376*^9}}],
+
+Cell[TextData[{
+ "\n(d) The small label just beyond the left margin of each cell uniquely \
+identifies the cell from any previous or subsequent computations.  This label \
+distinguishes between \"input\" and \"output\" cells.  Modify one of the \
+output cells above and observe that it automatically becomes an input cell.\n\
+\n(e) A cell or group of cells can be deleted by selecting the corresponding \
+thin bracket at  the right-hand side of the window and pressing the ",
+ StyleBox["Delete",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " key (but not the ",
+ StyleBox["Backspace",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " key).  Use the ",
+ StyleBox["Delete",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " key to delete a few of your output cells above.  The ",
+ StyleBox["Cell",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " menu has a ",
+ StyleBox["Delete All Output",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " option that simultaneously deletes every output cell in the notebook.  \
+This is useful when cleaning up your notebook at the end of a session.  Try \
+it right now.\n\n(f) Put your cursor somewhere in this text cell, and explore \
+the behaviors of the up and down arrow keys.  Can you see that when the \
+cursor is between cells, that it appears as a thin horizontal line extending \
+the entire width of the window?  Alternatively, you can use the mouse to \
+place the cursor between two existing cells, and get the same effect.  Now \
+for your next trick, place your cursor in the space between this cell and the \
+next, so that it becomes a long horizontal line, and then type anything.  \
+Show your TA that this creates a new input cell."
+}], "Text",
+ CellChangeTimes->{{3.427490293845518*^9, 3.4274903210331926`*^9}, {
+  3.4396603057953324`*^9, 3.439660322170437*^9}, {3.4396604004990635`*^9, 
+  3.439660703188501*^9}, {3.4396608242049007`*^9, 3.439661287004737*^9}, {
+  3.439675573933303*^9, 3.4396755960115695`*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+(#2) Accessing and navigating the Documentation Center (10 min)\
+\>", "Subsection",
+ CellChangeTimes->{{3.4057206168049984`*^9, 3.4057206306928744`*^9}, {
+   3.4057213477326703`*^9, 3.405721348655401*^9}, {3.427492529828579*^9, 
+   3.4274925416880293`*^9}, {3.4274967280898223`*^9, 3.427496736480501*^9}, {
+   3.427498275255974*^9, 3.4274982785372453`*^9}, {3.4275416693461943`*^9, 
+   3.427541672721216*^9}, {3.431182699061427*^9, 3.4311827006864586`*^9}, 
+   3.433260732626588*^9, 3.433260764064893*^9}],
+
+Cell[TextData[{
+ "In general, ",
+ StyleBox["Mathematica ",
+  FontSlant->"Italic"],
+ "tends to have excellent documentation.  It is under constant development, \
+and has a long ways to go, but is still far better than the documentation \
+available with most scientific software packages.  The Documentation Center \
+(DC) is the first place to look for just about anything that you need to know \
+about ",
+ StyleBox["Mathematica.",
+  FontSlant->"Italic"],
+ "  Try each of the following methods of accessing the DC.\n\n(a.1) The ",
+ StyleBox["Help",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " menu contains",
+ StyleBox[" ",
+  FontWeight->"Bold"],
+ "link to the Documentation Center.  There is also a keyboard shortcut (",
+ StyleBox["F1",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ ").  By default, a new DC window opens to the documentation home page, where \
+you will a wide range of ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " content organized by topic.  Find the \"Mathematics and Algorithms\" \
+heading, and follow the \"Calculus\" link to obtain a guide page listing a \
+variety of calculus related functions.  Follow the \"Integrate\" link, which \
+will take you to a reference page with information on how to use the \
+Integrate function to perform calculus integrals.\n\n(a.2) Now use the back \
+arrow or the home button near the top of the DC window to return to the DC \
+home page.   Then use the search field to search for the word \"Integrate\", \
+which should take you back to the same reference page that you viewed before.\
+\n\n(a.3) Return once again to the DC home page and follow the link labeled \
+\"Index of Functions\" near the bottom of the DC window, which will take you \
+to a complete alphabetical listing of all built-in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " functions.  Find and follow the \"Integrate\" link on this page.  Now \
+close the DC window.\n\n(b) In the cell below, place your cursor somewhere \
+within the word \"Integrate\" and do a right-click to get a contextual menu.  \
+Then select \"Get Help\" in the resulting contextual menu to go directly to \
+the corresponding DC reference page."
+}], "Text",
+ CellChangeTimes->{{3.405720644377437*^9, 3.4057210809071608`*^9}, {
+   3.4057211192082963`*^9, 3.405721128764031*^9}, {3.405721191587902*^9, 
+   3.40572129236884*^9}, 3.405721366546989*^9, {3.4274916369322395`*^9, 
+   3.427491976246911*^9}, {3.4274920079814887`*^9, 3.4274920905601425`*^9}, {
+   3.4274921610762186`*^9, 3.4274921749356823`*^9}, {3.4274922907020483`*^9, 
+   3.427492296452085*^9}, {3.4274923415929985`*^9, 3.427492567594445*^9}, {
+   3.427492604391556*^9, 3.427492745626835*^9}, {3.427492788955237*^9, 
+   3.4274929915034084`*^9}, {3.427493031441164*^9, 3.4274931298167934`*^9}, {
+   3.427493183160885*^9, 3.427493186020278*^9}, {3.4274932193642416`*^9, 
+   3.427493252926956*^9}, {3.427493309161691*^9, 3.4274939080717745`*^9}, {
+   3.4274939410563602`*^9, 3.4274941049949093`*^9}, {3.4274942933867407`*^9, 
+   3.4274946512640305`*^9}, {3.4274946841079907`*^9, 
+   3.4274947124675474`*^9}, {3.4274947728741837`*^9, 
+   3.4274949880786867`*^9}, {3.427495087673074*^9, 3.427495255517898*^9}, {
+   3.4274953467216063`*^9, 3.4274953512372603`*^9}, {3.4274954480035048`*^9, 
+   3.4274956373172164`*^9}, {3.427495671692436*^9, 3.4274956748643312`*^9}, {
+   3.4274973787971115`*^9, 3.427497379109614*^9}, {3.4274982917248297`*^9, 
+   3.427498412491227*^9}, {3.4275404832761035`*^9, 3.4275405295263996`*^9}, {
+   3.433280692293747*^9, 3.4332807441700745`*^9}, {3.4332807842179747`*^9, 
+   3.433280823828364*^9}, 3.4396616189131117`*^9, {3.439661651382069*^9, 
+   3.4396620173375363`*^9}, 3.43966206863474*^9, {3.4396621015880756`*^9, 
+   3.4396622820267305`*^9}, {3.4396625227001457`*^9, 
+   3.4396625497159433`*^9}, {3.4396625919505887`*^9, 3.439662676638631*^9}}],
+
+Cell[BoxData["Integrate"], "Input",
+ CellChangeTimes->{{3.4396620729628925`*^9, 3.439662074306651*^9}}],
+
+Cell[TextData[{
+ "\n(c) Here in our Physics 230 lab descriptions, hyperlinks to the DC will \
+be displayed in a different color (usually blue).  Follow the link in this \
+sentence to the ",
+ StyleBox[ButtonBox["Integrate",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Integrate"],
+  FontWeight->"Bold"],
+ " reference page.\n\n(d) Type \"",
+ StyleBox["?Integrate",
+  FontWeight->"Bold"],
+ "\" or \"",
+ StyleBox["??Integrate",
+  FontWeight->"Bold"],
+ "\" into the cell below and evaluate it, which will show some basic usage \
+information.  Then click on the resulting \"",
+ StyleBox["\[RightAngleBracket]\[RightAngleBracket]",
+  FontWeight->"Bold",
+  FontColor->RGBColor[
+   0.3176470588235294, 0.6470588235294118, 0.8431372549019608]],
+ "\" link to go to the corresponding DC reference page.\n\nIn an input cell, \
+type the name of the function that you want more information about preceded \
+by one or two question marks.  The resulting output will provide an \
+introduction to the use of this function, along with a blue link to the \
+relevent reference page.  "
+}], "Text",
+ CellChangeTimes->{{3.405720644377437*^9, 3.4057210809071608`*^9}, {
+   3.4057211192082963`*^9, 3.405721128764031*^9}, {3.405721191587902*^9, 
+   3.40572129236884*^9}, 3.405721366546989*^9, {3.4274916369322395`*^9, 
+   3.427491976246911*^9}, {3.4274920079814887`*^9, 3.4274920905601425`*^9}, {
+   3.4274921610762186`*^9, 3.4274921749356823`*^9}, {3.4274922907020483`*^9, 
+   3.427492296452085*^9}, {3.4274923415929985`*^9, 3.427492567594445*^9}, {
+   3.427492604391556*^9, 3.427492745626835*^9}, {3.427492788955237*^9, 
+   3.4274929915034084`*^9}, {3.427493031441164*^9, 3.4274931298167934`*^9}, {
+   3.427493183160885*^9, 3.427493186020278*^9}, {3.4274932193642416`*^9, 
+   3.427493252926956*^9}, {3.427493309161691*^9, 3.4274939080717745`*^9}, {
+   3.4274939410563602`*^9, 3.4274941049949093`*^9}, {3.4274942933867407`*^9, 
+   3.4274946512640305`*^9}, {3.4274946841079907`*^9, 
+   3.4274947124675474`*^9}, {3.4274947728741837`*^9, 
+   3.4274949880786867`*^9}, {3.427495087673074*^9, 3.427495255517898*^9}, {
+   3.4274953467216063`*^9, 3.4274953512372603`*^9}, {3.4274954480035048`*^9, 
+   3.4274956373172164`*^9}, {3.427495671692436*^9, 3.4274956748643312`*^9}, {
+   3.4274973787971115`*^9, 3.427497379109614*^9}, {3.4274982917248297`*^9, 
+   3.427498412491227*^9}, {3.4275404832761035`*^9, 3.4275405295263996`*^9}, {
+   3.433280692293747*^9, 3.4332807441700745`*^9}, {3.4332807842179747`*^9, 
+   3.433280823828364*^9}, 3.4396616189131117`*^9, {3.439661651382069*^9, 
+   3.4396620173375363`*^9}, 3.43966206863474*^9, {3.439662303636244*^9, 
+   3.4396625173719864`*^9}, {3.439667632357847*^9, 3.4396676385766373`*^9}, 
+   3.4396676798894014`*^9, {3.4396677503117275`*^9, 3.439667756046139*^9}, {
+   3.4396677891557255`*^9, 3.4396677955932665`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.427495885053177*^9, 3.427495888475074*^9}, 
+   3.4275405338233023`*^9, {3.439662352089679*^9, 3.4396623757617054`*^9}, 
+   3.439662682091791*^9}],
+
+Cell[TextData[{
+ "\n(e) Go to the ",
+ StyleBox[ButtonBox["www.wolfram.com/mathematica",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://www.wolfram.com/mathematica"], None}],
+  FontWeight->"Bold"],
+ " website and click on the Resources link.  There you will find a fully \
+online version of the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " Documentation Center that is often more up-to-date than the DC on your \
+local computer.  This site will be a valuable resource every now and then.  \
+Go back to the Resources page and take a few minutes to explore the other \
+links there.  These include a ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " Learning Center, Wolram Solutions, the Wolfram Demonstration Project, user \
+forums (",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " Forums), and many other bells and whistles.  From the Our Sites link at ",
+ StyleBox[ButtonBox["www.wolfram.com/mathematica",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://www.wolfram.com/mathematica"], None}],
+  FontWeight->"Bold"],
+ " you can find  Eric Weisstein\[CloseCurlyQuote]s widely-used ",
+ StyleBox["MathWorld",
+  FontSlant->"Italic"],
+ " encyclopedia of mathematics, the Demonstration Project, a free online \
+integrator"
+}], "Text",
+ CellChangeTimes->{{3.405720644377437*^9, 3.4057210809071608`*^9}, {
+   3.4057211192082963`*^9, 3.405721128764031*^9}, {3.405721191587902*^9, 
+   3.40572129236884*^9}, 3.405721366546989*^9, {3.4274916369322395`*^9, 
+   3.427491976246911*^9}, {3.4274920079814887`*^9, 3.4274920905601425`*^9}, {
+   3.4274921610762186`*^9, 3.4274921749356823`*^9}, {3.4274922907020483`*^9, 
+   3.427492296452085*^9}, {3.4274923415929985`*^9, 3.427492567594445*^9}, {
+   3.427492604391556*^9, 3.427492745626835*^9}, {3.427492788955237*^9, 
+   3.4274929915034084`*^9}, {3.427493031441164*^9, 3.4274931298167934`*^9}, {
+   3.427493183160885*^9, 3.427493186020278*^9}, {3.4274932193642416`*^9, 
+   3.427493252926956*^9}, {3.427493309161691*^9, 3.4274939080717745`*^9}, {
+   3.4274939410563602`*^9, 3.4274941049949093`*^9}, {3.4274942933867407`*^9, 
+   3.4274946512640305`*^9}, {3.4274946841079907`*^9, 
+   3.4274947124675474`*^9}, {3.4274947728741837`*^9, 
+   3.4274949880786867`*^9}, {3.427495087673074*^9, 3.427495255517898*^9}, {
+   3.4274953467216063`*^9, 3.4274953512372603`*^9}, {3.4274954480035048`*^9, 
+   3.4274956373172164`*^9}, {3.427495671692436*^9, 3.4274956748643312`*^9}, {
+   3.4274973787971115`*^9, 3.427497379109614*^9}, {3.4274982917248297`*^9, 
+   3.427498412491227*^9}, {3.4275404832761035`*^9, 3.4275405001355867`*^9}, {
+   3.4275405490577745`*^9, 3.4275405701360345`*^9}, {3.4332807471545258`*^9, 
+   3.433280755826623*^9}, 3.439662708732586*^9, {3.439662772576745*^9, 
+   3.4396627837955666`*^9}, 3.4396677848744483`*^9, {3.5235230981177998`*^9, 
+   3.5235231100428*^9}, {3.5235232635228*^9, 3.5235232689328003`*^9}, {
+   3.5235233876317997`*^9, 3.5235234459908*^9}, {3.5235236848728*^9, 
+   3.5235236877138*^9}, {3.5235242543448*^9, 3.5235243254188004`*^9}, {
+   3.5235244098398*^9, 3.5235244407948*^9}, {3.5235245818508*^9, 
+   3.5235246141688004`*^9}, {3.5235246534888*^9, 3.5235246859477997`*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["(#3) Using the Documentation Center (10 min)", "Subsection",
+ CellChangeTimes->{{3.4274961211015625`*^9, 3.4274961249453373`*^9}, {
+  3.4274967025271587`*^9, 3.427496717261628*^9}, {3.427541675893111*^9, 
+  3.4275416784087524`*^9}, {3.431182718452424*^9, 3.431182727093215*^9}}],
+
+Cell[TextData[{
+ " In order to explore the information available in the DC, return to the ",
+ StyleBox[ButtonBox["Integrate",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Integrate"],
+  FontWeight->"Bold"],
+ StyleBox[" ",
+  FontWeight->"Bold"],
+ "reference page, which we will now study more carefully.\n\n(a) At the top \
+of this page, on a light-yellow background, we find a description of the \
+function \"usage\", i.e. several different ways to use the Integrate function \
+(definite integral, indefinite integral, multiple integral).  Many ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " functions have more than one usage -- the type of calculation performed \
+depends on the input that you provide.\n\n(b) The \"More Information\" \
+section contains tips, tricks, special options, and frequently answered \
+questions about using a given function.  Use the triangular open/close icon \
+to open this section, read it, and then close it again.\n\n(c) The \"Examples\
+\" section has a subsection called \"Basic Examples\".  This is, in our \
+opinion, the best feature of the DC.  Each of the examples that you see \
+contains \"live\" code, meaning that you can actually modify and reevaluate \
+it right there in the DC window.  Take a minute to step through and evaluate \
+each of the basic examples.  Modify at least one of the examples and \
+reevaluate it.\n\n(d) Now close the \"Basic Examples\" subsection in order to \
+get a clearer view of the other types of examples that are available (\"Scope\
+\", \"Generalizations & Extensions\", \"Options\", \"Applications\", \
+\"Properties & Relations\", \"Possible Issues\", \"Neat Examples\").  Briefly \
+browse through each of these subsections to get a feel for the type of \
+information that they contain.\n\n(e) The other sections near the bottom of \
+each DC reference page contain links to a variety of related information.  \
+The \"See Also\" section contains links to the \"Reference\" pages of related \
+functions.  The \"Tutorials\" section contains links to \"Tutorial\" pages \
+that discuss related concepts in substantial detail.  The \"More About\" \
+section contains links to related \"Guide\" pages, which are usually lists of \
+functions organized by topic.  Explore some of these links to get a feel for \
+their content and relevance."
+}], "Text",
+ CellChangeTimes->{{3.4274950364383707`*^9, 3.427495077063631*^9}, {
+  3.4274952743148932`*^9, 3.4274952772992873`*^9}, {3.427495308705738*^9, 
+  3.427495308705738*^9}, {3.4274956869737844`*^9, 3.4274957217396317`*^9}, {
+  3.4274957568648567`*^9, 3.4274958252715445`*^9}, {3.427495872365596*^9, 
+  3.427496079601297*^9}, {3.4274961279922314`*^9, 3.427496367853142*^9}, {
+  3.427496428103527*^9, 3.4274966976521273`*^9}, {3.427496894747139*^9, 
+  3.427496915091019*^9}, {3.427497100639082*^9, 3.4274973628751345`*^9}, {
+  3.427540611995678*^9, 3.4275408176532435`*^9}, {3.427540848325315*^9, 
+  3.4275409123413496`*^9}, {3.427541001638796*^9, 3.4275410876393466`*^9}, {
+  3.4275960522230425`*^9, 3.4275960618949795`*^9}, {3.4396628137488832`*^9, 
+  3.4396630565629373`*^9}, {3.439663098078828*^9, 3.4396631804231052`*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["(#4-#7) The main menu (20 min)", "Subsection",
+ CellChangeTimes->{{3.4274911607260666`*^9, 3.4274911645073404`*^9}, {
+   3.427498178395979*^9, 3.4274981808022447`*^9}, {3.4275056842252665`*^9, 
+   3.4275056870690346`*^9}, {3.427541684580667*^9, 3.427541687268184*^9}, 
+   3.427574135830593*^9, {3.4311827796098485`*^9, 3.4311827809848747`*^9}, 
+   3.439664094928958*^9}],
+
+Cell[TextData[{
+ "Many of the main menu options (see the main menu bar at the top of the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " application window) will be immediately useful to you, while you may never \
+use some of the others.  Because the options within the ",
+ StyleBox["File",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ ", ",
+ StyleBox["Edit",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ ",",
+ StyleBox[" ",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ StyleBox["Insert",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ ", ",
+ StyleBox["Window",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " and ",
+ StyleBox["Help",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " menus are mostly self-explanatory, and much like those that you would \
+encounter in any software package, we will focus on the others in the \
+following exercises.  Feel free to refer to the the ",
+ StyleBox[ButtonBox["Menu Items",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/MenuItems"],
+  FontWeight->"Bold"],
+ " links near the bottom of the ",
+ StyleBox[ButtonBox["Notebook Basics",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/NotebookBasics"],
+  FontWeight->"Bold"],
+ " guide page if you find it helpful."
+}], "Text",
+ CellChangeTimes->{{3.427491178913683*^9, 3.427491271664276*^9}, {
+   3.427491335789687*^9, 3.427491342274103*^9}, {3.427491381696231*^9, 
+   3.427491437368462*^9}, {3.427491530369057*^9, 3.4274915791662445`*^9}, {
+   3.427498477366643*^9, 3.427498521679426*^9}, {3.4274985754141455`*^9, 
+   3.4274987517121487`*^9}, {3.427498863822241*^9, 3.427498950213419*^9}, {
+   3.4274989926824408`*^9, 3.427499250887218*^9}, {3.4274992871062*^9, 
+   3.427499316606389*^9}, {3.4274993473253355`*^9, 3.427499799593855*^9}, {
+   3.4274998381097264`*^9, 3.4274999172977333`*^9}, {3.427500062548663*^9, 
+   3.427500070454963*^9}, {3.427500206955837*^9, 3.4275002357841463`*^9}, {
+   3.4275003600036917`*^9, 3.4275003609099474`*^9}, {3.4275005522080464`*^9, 
+   3.4275005595830936`*^9}, {3.4275007720375786`*^9, 3.427500776678233*^9}, {
+   3.4275010020859256`*^9, 3.4275011419930716`*^9}, {3.4275046260153685`*^9, 
+   3.427504626827874*^9}, {3.4275047478286486`*^9, 3.4275047549693193`*^9}, {
+   3.427505480942715*^9, 3.4275055426618605`*^9}, {3.4275056200373554`*^9, 
+   3.4275056545688267`*^9}, {3.4332608551140985`*^9, 3.4332611647626505`*^9}, 
+   3.439675854044471*^9}],
+
+Cell[CellGroupData[{
+
+Cell["(#4) Format menu (5 min)", "Subsubsection",
+ CellChangeTimes->{{3.4275046040464783`*^9, 3.427504604937109*^9}, 
+   3.427505920117401*^9, {3.4275416006426296`*^9, 3.4275416020176387`*^9}, {
+   3.4275416909713326`*^9, 3.427541692471342*^9}, {3.431182749687399*^9, 
+   3.431182761390749*^9}}],
+
+Cell[TextData[{
+ "(a) The ",
+ StyleBox["Format: Style",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " submenu is quite useful for organizing notebooks.  To see (or change) the \
+style of a cell, select its bracket (thin line on the far right-hand-side) \
+and do a right-click to find ",
+ StyleBox["Style",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " in the contextual menu.  Find and change the style of the input cell below \
+(try ",
+ StyleBox["Title",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ ", ",
+ StyleBox["Section",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ ", ",
+ StyleBox["Subsection",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ ", etc), finally leaving the style as ",
+ StyleBox["Text",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " when you're done."
+}], "Text",
+ CellChangeTimes->{{3.427491178913683*^9, 3.427491271664276*^9}, {
+   3.427491335789687*^9, 3.427491342274103*^9}, {3.427491381696231*^9, 
+   3.427491437368462*^9}, {3.427491530369057*^9, 3.4274915791662445`*^9}, {
+   3.427498477366643*^9, 3.427498521679426*^9}, {3.4274985754141455`*^9, 
+   3.4274987517121487`*^9}, {3.427498863822241*^9, 3.427498950213419*^9}, {
+   3.4274989926824408`*^9, 3.427499250887218*^9}, {3.4274992871062*^9, 
+   3.427499316606389*^9}, {3.4274993473253355`*^9, 3.427499799593855*^9}, {
+   3.4274998381097264`*^9, 3.4274999172977333`*^9}, {3.427500062548663*^9, 
+   3.427500070454963*^9}, {3.427500206955837*^9, 3.4275002357841463`*^9}, {
+   3.4275003600036917`*^9, 3.4275003609099474`*^9}, {3.4275005522080464`*^9, 
+   3.4275005595830936`*^9}, {3.4275007720375786`*^9, 3.427500776678233*^9}, {
+   3.4275010020859256`*^9, 3.4275011419930716`*^9}, 3.427504618030943*^9, {
+   3.4275413568285694`*^9, 3.4275414390009704`*^9}, {3.4396633373928595`*^9, 
+   3.439663338127239*^9}, 3.4396633763618593`*^9, {3.4396760731239977`*^9, 
+   3.439676075108386*^9}}],
+
+Cell[BoxData[
+ RowBox[{"This", " ", "is", " ", "just", " ", "a", " ", 
+  RowBox[{"test", "."}]}]], "Input",
+ CellChangeTimes->{{3.4274996125301576`*^9, 3.427499623030225*^9}}],
+
+Cell[TextData[{
+ "\n(b) The ",
+ StyleBox["Format: Stylesheet",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ StyleBox[" ",
+  FontWeight->"Bold"],
+ "submenu changes the look and feel of the whole notebook by altering the \
+fonts and colors associated with each style.  The stylesheet used here is ",
+ StyleBox["Creative:PastelColor",
+  FontSlant->"Italic"],
+ ".  Try changing this just for fun -- but change it back again.  You can \
+also edit existing stylesheets or even create new ones.\n\n(c) As in most \
+word processors, ",
+ StyleBox["Control-B",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " and ",
+ StyleBox["Control-I",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " produce bold-faced and italicized text.  The ",
+ StyleBox["Format",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " menu options can also be used to alter the font/face/size/color of a \
+specific word or phrase, though we rarely bother with this capability.  Type \
+a one-line movie quote in the space below and use the Format menu options to \
+give each word a different font, size and color.\n\n\[Rule]\n\n(d) The ",
+ StyleBox["Format: Screen Environment",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ StyleBox[" ",
+  FontWeight->"Bold"],
+ "submenu changes the presentation format (",
+ StyleBox["Working",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ ", ",
+ StyleBox["Presentation",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ ", ",
+ StyleBox["SlideShow",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ ", ",
+ StyleBox["Printout",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ ", etc.)  Try changing the screen environment, and then change it back to (",
+ StyleBox["Working",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " when you are done.\n\n(e) The ",
+ StyleBox["Cell: Convert To",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " submenu is a non-essential means of making equations look pretty.  Try \
+converting the following input cell to ",
+ StyleBox["StandardForm",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " and then ",
+ StyleBox["TraditionalForm",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.4057827714119635`*^9, 3.405782929288513*^9}, {
+   3.405782990826458*^9, 3.405783146155856*^9}, {3.405783191582673*^9, 
+   3.4057832232736206`*^9}, {3.4274999196883736`*^9, 3.427499926188415*^9}, {
+   3.4275002392685432`*^9, 3.4275002448935795`*^9}, {3.4275002923938837`*^9, 
+   3.4275003961601725`*^9}, {3.4275004338010387`*^9, 3.427500470270022*^9}, {
+   3.4275005722550497`*^9, 3.4275006875214124`*^9}, {3.4275007437248974`*^9, 
+   3.427500927663574*^9}, {3.42750116607135*^9, 3.4275011948684096`*^9}, {
+   3.427501289119013*^9, 3.4275012944159217`*^9}, {3.427501672074589*^9, 
+   3.4275020040923386`*^9}, {3.4275020598739457`*^9, 
+   3.4275022012498503`*^9}, {3.427502238218837*^9, 3.4275022611564837`*^9}, {
+   3.427541148483486*^9, 3.427541183921213*^9}, {3.42754121632767*^9, 
+   3.427541267828*^9}, {3.4275414821262465`*^9, 3.4275415819393854`*^9}, {
+   3.4275433055864058`*^9, 3.427543323680272*^9}, {3.427543537650391*^9, 
+   3.4275439561686945`*^9}, {3.42754400621589*^9, 3.4275440345754466`*^9}, {
+   3.4396633031895156`*^9, 3.439663303736394*^9}, {3.4396633405178795`*^9, 
+   3.439663391236954*^9}, {3.4396759342637343`*^9, 3.439675956670128*^9}, 
+   3.4396761159055223`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", " ", "x"}], "]"}]], "Input",
+ CellChangeTimes->{{3.427502265890889*^9, 3.427502270390918*^9}}],
+
+Cell[TextData[{
+ "The other options (",
+ StyleBox["Postscript",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ ", ",
+ StyleBox["Bitmap",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ ", ",
+ StyleBox["Metafile",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ ") turn the expression into a graphic that can be cut and pasted into \
+another program; but be warned that these three conversions are irreversible."
+}], "Text",
+ CellChangeTimes->{{3.4275432076951547`*^9, 3.4275432361797123`*^9}, {
+  3.427543271633064*^9, 3.427543299617618*^9}, {3.4275433351334705`*^9, 
+  3.4275433818681445`*^9}, {3.4275434626655364`*^9, 3.4275434802125235`*^9}, {
+  3.4275440532630663`*^9, 3.4275440542474475`*^9}, {3.4396633948776026`*^9, 
+  3.4396633963151116`*^9}, {3.4396760931553764`*^9, 3.4396761084054737`*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["(#5) Cell menu (5 min)", "Subsubsection",
+ CellChangeTimes->{{3.427504640484211*^9, 3.4275046409373393`*^9}, {
+  3.4275416102051907`*^9, 3.4275416134708366`*^9}, {3.427541695690113*^9, 
+  3.427541697862002*^9}, {3.4311827626720233`*^9, 3.4311827646564364`*^9}}],
+
+Cell[TextData[{
+ "(a) The ",
+ StyleBox["Cell: Divide Cell",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " and ",
+ StyleBox["Cell: Merge Cells",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " options are quite useful.  In the input cell below, place your cursor at \
+the beginning of the second expression and split the cell into two separate \
+cells.  Then select both cells and merge them back together again.  When the \
+cells split or merge, notice that the cell brackets (at the right) also split \
+and merge."
+}], "Text",
+ CellChangeTimes->{{3.4057827714119635`*^9, 3.405782929288513*^9}, {
+   3.405782990826458*^9, 3.405783146155856*^9}, {3.405783191582673*^9, 
+   3.4057832232736206`*^9}, {3.4274999196883736`*^9, 3.427499926188415*^9}, {
+   3.4275002392685432`*^9, 3.4275002448935795`*^9}, {3.4275002923938837`*^9, 
+   3.4275003961601725`*^9}, {3.4275004338010387`*^9, 3.427500470270022*^9}, {
+   3.4275005722550497`*^9, 3.4275006875214124`*^9}, {3.4275007437248974`*^9, 
+   3.427500927663574*^9}, {3.42750116607135*^9, 3.4275011948684096`*^9}, {
+   3.427501289119013*^9, 3.4275012944159217`*^9}, {3.427501672074589*^9, 
+   3.4275020040923386`*^9}, {3.4275020598739457`*^9, 
+   3.4275022012498503`*^9}, {3.427502238218837*^9, 3.4275022611564837`*^9}, 
+   3.4275022935941916`*^9, {3.4275985770360765`*^9, 3.4275986057237597`*^9}, {
+   3.439663441096648*^9, 3.4396634622530336`*^9}, {3.439663524878434*^9, 
+   3.439663528456582*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"1", "+", "1"}], "\n", 
+ RowBox[{"2", "/", "2"}]}], "Input",
+ CellChangeTimes->{{3.427502022467456*^9, 3.4275020379988055`*^9}, {
+  3.4275021723121653`*^9, 3.427502224937502*^9}}],
+
+Cell[TextData[{
+ "\n(b) The ",
+ StyleBox["Cell: Grouping",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " submenu contains both useful options and dangerous options.  For now, just \
+stick to using the options in the bottom portion of the list, like ",
+ StyleBox["Open All Subgroups",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " and ",
+ StyleBox["Close All Subgroups",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ ".  Observe that the cell brackets at the right are nested or \"grouped\" \
+within multiple layers corresponding to the sections, subsections, \
+sub-subsections, etc. of the notebook.  At this point, be warned you may have \
+a hard time finding your way back to this paragraph after the next \
+instruction -- so take a good look around to see where you are within the \
+notebook.  Then start toggling (a double-click followed by another \
+double-click) the various cell brackets to see what happens.  You should see \
+that toggling the bracket surrounding a group of cells has the same effect as \
+toggling the corresponding triangular open/close icon at the left.  Next, \
+observe that if you toggle a single cell within a larger cell group, then \
+that cell becomes the only cell visible within the group.  The ",
+ StyleBox["Cell: Grouping",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " submenu also provides options that perform these same functions.  Now try \
+the ",
+ StyleBox["Open All Subgroups",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " and ",
+ StyleBox["Close All Subgroups",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " options -- you will find that they are only available if you first select \
+a cell-group bracket, and that they are most useful when you select the \
+entire notebook (the outermost bracket).",
+ StyleBox["\n\n",
+  FontWeight->"Bold"],
+ "(c) ",
+ StyleBox["Cell: Show Expression",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " shows you what ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " actually sees in a cell, though you may wish that you hadn't looked.  \
+Remember that to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", everything is an expression.  This feature can be toggled on and off -- \
+so don't panic and accidentally delete the whole cell to escape the garbage \
+on the screen!  Try it.\n\n(d) As mentioned earlier, the ",
+ StyleBox["Cell: Delete All Output",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " option deletes every output cell in the entire notebook.  This is useful \
+when cleaning up your notebook at the end of a session, but can't be undone."
+}], "Text",
+ CellChangeTimes->{{3.4057827714119635`*^9, 3.405782929288513*^9}, {
+   3.405782990826458*^9, 3.405783146155856*^9}, {3.405783191582673*^9, 
+   3.4057832232736206`*^9}, {3.4274999196883736`*^9, 3.427499926188415*^9}, {
+   3.4275002392685432`*^9, 3.4275002448935795`*^9}, {3.4275002923938837`*^9, 
+   3.4275003961601725`*^9}, {3.4275004338010387`*^9, 3.427500470270022*^9}, {
+   3.4275005722550497`*^9, 3.4275006875214124`*^9}, {3.4275007437248974`*^9, 
+   3.427500927663574*^9}, {3.42750116607135*^9, 3.4275011948684096`*^9}, {
+   3.427501289119013*^9, 3.4275012944159217`*^9}, {3.427501672074589*^9, 
+   3.427501750684467*^9}, {3.4275023295319214`*^9, 3.4275025352988634`*^9}, {
+   3.427502626549447*^9, 3.427502813128766*^9}, {3.4275028680353675`*^9, 
+   3.4275028681603684`*^9}, {3.42750291675443*^9, 3.4275030273176374`*^9}, {
+   3.4275033879449453`*^9, 3.4275035765399017`*^9}, {3.427503718259559*^9, 
+   3.4275037243689733`*^9}, {3.4275046894376497`*^9, 3.427504699375213*^9}, {
+   3.4275063590889606`*^9, 3.4275064107455406`*^9}, {3.427598472660408*^9, 
+   3.4275985725204225`*^9}, {3.427598640223981*^9, 3.427598970897972*^9}, {
+   3.4275990592891626`*^9, 3.4275991133207583`*^9}, {3.427599170743001*^9, 
+   3.4275993107751474`*^9}, {3.4275994880575314`*^9, 
+   3.4275996092926826`*^9}, {3.4275996540585938`*^9, 
+   3.4275998294972167`*^9}, {3.4275998609817934`*^9, 3.4276000833582163`*^9}, 
+   3.4293341432736683`*^9, {3.4396634532842264`*^9, 3.4396634762218733`*^9}, {
+   3.4396635089564576`*^9, 3.4396636458010836`*^9}, {3.439676144655706*^9, 
+   3.4396761642652063`*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["(#6) Graphics and Palettes menus (5 min)", "Subsubsection",
+ CellChangeTimes->{{3.4275047198753443`*^9, 3.427504725891008*^9}, {
+  3.4275416161739793`*^9, 3.4275416171427355`*^9}, {3.4275417017057767`*^9, 
+  3.4275417061901803`*^9}, {3.431182770469048*^9, 3.43118277189095*^9}}],
+
+Cell[TextData[{
+ "The ",
+ StyleBox["Graphics: Drawing Tools",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " and ",
+ StyleBox["Graphics: Inspector",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " options are tools for modifying ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " graphics output.  These tools still need a lot of work, but do have some \
+utility.\n\n(a) The options in the ",
+ StyleBox["Palettes",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " menu open windows that allow you to insert special characters (e.g. Greek \
+letters), pick colors, create a few pre-formatted equations, and invoke other \
+bells and whistles.  While these limited tools can be useful on occasion, we \
+encourage you not to rely too heavily on them.  Use the ",
+ StyleBox["Basic Math Input",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " palette to enter ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Alpha]", "1"], "=", " ", 
+    SuperscriptBox["\[Beta]", "2"]}], TraditionalForm]]],
+ " into the cell below."
+}], "Text",
+ CellChangeTimes->CompressedData["
+1:eJwdyksowwEAx/H/NuLiYEV5b0NMnkvCXP7MaMqyA0LSpEzWWJpyYMq8h3ku
+m8z+Q3NRlJRXpLXWtpNHOcjN/jeWx5Tk//sfvn0uX6Fap+rhEgQhZILBQu0z
+r4smjVJxGLbqn36g51cWF8VYvRvmQ+N1KBHmxny962ZocizGE4ahjVDSAGOp
+1Z4MjzbnBVAkMBXAVGeFBEa7vGWwUzxdAzWHb02wQ/LdComqTx001t+YIc/X
+boEfwcwtKFUGWGO7uQGY83r/wP7RJRmDjIoluhzy15pk8Cnd1Q7PhONqeCE0
+sSqyrL0wMa/PAP+qRin4Io8/g8pGrx/uBOcCsJJTKNczXnH662Abj2yAHbxa
+1oXJFxXU2xOmYNG2zQylGaesIceJBd5mN25BgztlD266B1mvtGkmE6Pk7WMW
+FuuPF2EkvGyBtqHhNZj3GViH+d8rNjg/4qSgs5jL/zXT5IRGlACpln27dpUm
+fY+XrA9URE45aFKWRdRDf65fBSUHgmZ4Thj63Ix3xCHrP3xNC3M=
+  "]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.4275052910196247`*^9, 3.427505291519628*^9}, {
+  3.427505393114028*^9, 3.4275054456612396`*^9}}],
+
+Cell[TextData[{
+ "\n(b) You can also typeset this kind of ",
+ StyleBox[ButtonBox["Two-Dimensional Input",
+  BaseStyle->"Link",
+  ButtonData->"paclet://tutorial/EnteringTwoDimensionalInput"],
+  FontWeight->"Bold"],
+ " via keyboard shortcuts.  Even ",
+ StyleBox[ButtonBox["Special Characters",
+  BaseStyle->"Link",
+  ButtonData->"paclet://guide/SpecialCharacters"],
+  FontWeight->"Bold"],
+ " can be entered from the keyboard.  Enter ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Alpha]", "1"], "=", " ", 
+    SuperscriptBox["\[Beta]", "2"]}], TraditionalForm]]],
+ " into the cell below using only the keyboard (no palettes)."
+}], "Text",
+ CellChangeTimes->{{3.429883388768341*^9, 3.4298834152826214`*^9}, {
+  3.4298834622083883`*^9, 3.4298834872757072`*^9}, {3.42988351977744*^9, 
+  3.42988351977744*^9}, {3.4298835686094675`*^9, 3.4298835735657434`*^9}, {
+  3.429883624065748*^9, 3.4298836430806913`*^9}, {3.429884001494485*^9, 
+  3.4298840418989086`*^9}, {3.4298840786498775`*^9, 3.4298841292574687`*^9}, {
+  3.4332623123857784`*^9, 3.433262313963944*^9}, {3.4396638523024054`*^9, 
+  3.439663863349351*^9}}],
+
+Cell[BoxData[" "], "Input",
+ CellChangeTimes->{
+  3.429884033067402*^9, {3.5112498635008*^9, 3.5112498818152*^9}, {
+   3.5112499304716*^9, 3.511249951516*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "(#7) Evaluation menu: quiting and restarting ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " (5 min)"
+}], "Subsubsection",
+ CellChangeTimes->{{3.39917252113325*^9, 3.399172529227*^9}, {
+  3.3997576927507477`*^9, 3.3997576936097927`*^9}, {3.4057025063034563`*^9, 
+  3.405702506787838*^9}, {3.405721330294628*^9, 3.405721330795092*^9}, {
+  3.4197022106423373`*^9, 3.419702226505062*^9}, {3.427504655390557*^9, 
+  3.427504672718793*^9}, {3.4275416210958853`*^9, 3.42754162175214*^9}, {
+  3.4275417094714513`*^9, 3.4275417115495896`*^9}, {3.4311827740941176`*^9, 
+  3.4311827760160294`*^9}}],
+
+Cell[TextData[{
+ "The ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " application window is technically just a \"Front End\" or graphical user \
+interface (GUI) to the underlying number-cruncher (called the \"kernel\") \
+that runs separately behind the scenes.  If the application window is the \
+body (eyes, ears, mouth, arms and legs), then the kernel is the brain.\n\nThe \
+most important options in the ",
+ StyleBox["Evaluation",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " menu are ",
+ StyleBox["Abort",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " (to kill a running evaluation that is taking too long) and ",
+ StyleBox["Quit Kernel",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " (which completely stops and restarts ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " internally without actually closing the application window).  This is like \
+rebooting the brain while the body is still standing -- you stop moving, get \
+a blank stare, blink once or twice, yell \"Happy Birthday\" like Frosty the \
+Snowman, and then carry on with a clean slate.  The other options provide \
+finer control in more complicated situations.  ",
+ StyleBox["Quit Kernel",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " is useful when weird things happen repeatedly and you just feel like \
+starting over.  We won't try to hang the computer or crash ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " today, though you will almost certainly get some practice later.\n\n(a) To \
+understand the effect of restarting the kernel, evaluate cell \"A\" below, \
+which defines a list."
+}], "Text",
+ CellChangeTimes->{{3.4197025817675776`*^9, 3.419702591816574*^9}, {
+   3.419702646499996*^9, 3.419702649375603*^9}, {3.4197026800070715`*^9, 
+   3.419702720609395*^9}, {3.419702970380885*^9, 3.4197029757257643`*^9}, {
+   3.4275037194314413`*^9, 3.427503790947524*^9}, {3.427503876682448*^9, 
+   3.4275038803543463`*^9}, {3.4275039125264273`*^9, 
+   3.4275042487785797`*^9}, {3.4275042798881536`*^9, 3.427504395732645*^9}, {
+   3.43326232807368*^9, 3.433262342620928*^9}, 3.439676303484847*^9}],
+
+Cell[BoxData[
+ RowBox[{"mylist", " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", " ", "2", ",", " ", "3", ",", " ", "4", ",", " ", "5"}], 
+   "}"}]}]], "Input",
+ CellChangeTimes->{{3.39917253800825*^9, 3.399172655977*^9}, {
+   3.399173789352*^9, 3.399173806117625*^9}, {3.3994042853333235`*^9, 
+   3.3994042943147182`*^9}, {3.399404331581271*^9, 3.3994044988909426`*^9}, {
+   3.401125800534752*^9, 3.4011258017836075`*^9}, {3.405697403821454*^9, 
+   3.4056974138863335`*^9}, {3.405697938261833*^9, 3.405697971023562*^9}, {
+   3.4056982660530963`*^9, 3.4056983210424366`*^9}, {3.41970228618954*^9, 
+   3.4197026245578628`*^9}, {3.4197029642077065`*^9, 3.419702968427348*^9}, 
+   3.4274975290480733`*^9, {3.427503798244446*^9, 3.427503800931963*^9}, {
+   3.4275038856512556`*^9, 3.427503887776269*^9}, 3.4332623477616844`*^9}],
+
+Cell[TextData[{
+ "\n(b) Now select ",
+ StyleBox["Quit Kernel",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ StyleBox[" \[Rule] ",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ StyleBox["Local",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " in the ",
+ StyleBox["Evalation",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " menu, which is equivalent to exiting ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " and restarting it.  After you have done this, do NOT evaluate the cell \
+above again, but go straight to the cell below.  Evaluating this cell will \
+automatically restart the kernel.  Observe that ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " does not remember the definitions from the previous session.  For this \
+reason, you always begin a new session by reevaluating any cells that contain \
+important definitions.  Try it -- reevaluate both cells in order without \
+restarting in between."
+}], "Text",
+ CellChangeTimes->{{3.405782162814505*^9, 3.4057822986574078`*^9}, {
+   3.4197026338098164`*^9, 3.4197026911187925`*^9}, {3.4197027691040096`*^9, 
+   3.4197028031268187`*^9}, {3.4197029825084457`*^9, 
+   3.4197029912759223`*^9}, {3.427497432766207*^9, 3.4274974383131175`*^9}, {
+   3.4275038164789376`*^9, 3.4275038635417385`*^9}, {3.427503898432587*^9, 
+   3.427503900104473*^9}, {3.427504411232744*^9, 3.4275045631555915`*^9}, {
+   3.429157012715768*^9, 3.429157016981366*^9}, {3.4332623531368217`*^9, 
+   3.433262381075037*^9}, 3.439676306406741*^9, {3.5235255751358*^9, 
+   3.5235255763838*^9}}],
+
+Cell[BoxData["mylist"], "Input",
+ CellChangeTimes->{{3.39917253800825*^9, 3.399172655977*^9}, {
+   3.399173789352*^9, 3.399173806117625*^9}, 3.3994042853333235`*^9, {
+   3.4057825611234612`*^9, 3.40578257926606*^9}, {3.419702612867894*^9, 
+   3.419702615618475*^9}, 3.4197026944319925`*^9, {3.4197027277671556`*^9, 
+   3.419702728423545*^9}, {3.419702957081202*^9, 3.4197029618009486`*^9}, 
+   3.4274975007666426`*^9, {3.427503893713807*^9, 3.4275038950263157`*^9}, 
+   3.433262393075344*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Basics (40 min)", "Section",
+ CellChangeTimes->{{3.427505994399126*^9, 3.4275059956022587`*^9}, {
+   3.427506060305798*^9, 3.427506065837084*^9}, {3.4275467927024736`*^9, 
+   3.4275468084994497`*^9}, {3.4311829085341988`*^9, 3.4311829110654974`*^9}, 
+   3.4311829432379904`*^9, 3.4332595893316956`*^9, {3.4332806284639874`*^9, 
+   3.433280628667118*^9}, {3.439664976700226*^9, 3.439664976825227*^9}, {
+   3.4396650138723392`*^9, 3.439665014075465*^9}, {3.5112504623536*^9, 
+   3.5112504638044*^9}, {3.5112541935122004`*^9, 3.511254216335*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["(#8) Semicolon and % (5 min)", "Subsection",
+ CellChangeTimes->{{3.39917121644575*^9, 3.399171220305125*^9}, {
+  3.399404262022237*^9, 3.3994042636282845`*^9}, {3.399651058289336*^9, 
+  3.399651058742041*^9}, {3.405702500069002*^9, 3.4057025023034053`*^9}, {
+  3.4057213262127185`*^9, 3.405721326697543*^9}, {3.427541735721619*^9, 
+  3.427541737799758*^9}, {3.42757945321056*^9, 3.4275794699919167`*^9}, {
+  3.4275801909184055`*^9, 3.4275801927465425`*^9}, {3.4311828069072475`*^9, 
+  3.4311828120479717`*^9}, {3.5112500241963997`*^9, 3.5112500253508*^9}}],
+
+Cell[TextData[{
+ "(a) Semicolons are used to separate multiple expressions on a single line, \
+and to suppress output.  While each expression is actually evaluated, we only \
+",
+ StyleBox["see",
+  FontSlant->"Italic"],
+ " the result when no semicolon is applied.  Evaluate the following input \
+cell and make sure that you understand why only two of the results appear in \
+the output? "
+}], "Text",
+ CellChangeTimes->{{3.405697313285415*^9, 3.4056973454519196`*^9}, {
+  3.40578234022443*^9, 3.405782415560751*^9}, {3.4275061695877476`*^9, 
+  3.42750627468217*^9}, {3.4275077598948*^9, 3.4275077606916804`*^9}, {
+  3.4275794837888803`*^9, 3.4275795175703464`*^9}, {3.4396657577052245`*^9, 
+  3.4396657584396043`*^9}, {3.5112500409820004`*^9, 3.5112500414032*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"1", "+", "2", "+", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"1", "+", "1"}], ";", " ", 
+   RowBox[{"2", "+", "2"}]}], " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"10", "/", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Sqrt", "[", "7", "]"}]}], "Input",
+ CellChangeTimes->{{3.399171230727*^9, 3.399171389961375*^9}, {
+   3.39917183907075*^9, 3.3991718855395*^9}, {3.399404236107169*^9, 
+   3.3994042441997805`*^9}, {3.427506287338501*^9, 3.4275062925729094`*^9}, {
+   3.427579289740763*^9, 3.42757931264716*^9}, {3.427579854650629*^9, 
+   3.427579941494934*^9}, 3.427579986932725*^9, {3.4275800336517744`*^9, 
+   3.4275801311992736`*^9}, {3.42915681326392*^9, 3.4291568554199*^9}, {
+   3.439665747298908*^9, 3.439665747955162*^9}}],
+
+Cell[TextData[{
+ "\n(b) The percent (",
+ ButtonBox["%",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Out"],
+ ") symbol can be used to refer to the previous output in the current input \
+cell.  Just as \"%\" yields the previous output, \"%%\" yields the output \
+before that, \"%%%\" yields the output before that, and so on.  One can also \
+call specific inputs or outputs by cell number -- see the ",
+ StyleBox[ButtonBox["In",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/In"],
+  FontWeight->"Bold"],
+ " and ",
+ StyleBox[ButtonBox["Out",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Out"],
+  FontWeight->"Bold"],
+ StyleBox[" ",
+  FontWeight->"Bold"],
+ "functions for examples.  Use % in the cell below, together with the number \
+of the appropriate output cell, to review the result of the 1+2+3 calculation \
+above."
+}], "Text",
+ CellChangeTimes->{{3.427542359498192*^9, 3.4275427816070876`*^9}, {
+  3.4275447048922367`*^9, 3.4275447361580615`*^9}, {3.427579056629896*^9, 
+  3.4275790573955264`*^9}, {3.4275793501474*^9, 3.4275793678350134`*^9}, {
+  3.4275794760544558`*^9, 3.4275794792888517`*^9}, {3.4275795311485586`*^9, 
+  3.427579668805689*^9}, {3.427579732759224*^9, 3.427579851400608*^9}, {
+  3.427580006729727*^9, 3.427580009729746*^9}, {3.427580069714505*^9, 
+  3.427580073495779*^9}, {3.427580118121065*^9, 3.4275801840746117`*^9}, {
+  3.439665760580243*^9, 3.439665761330248*^9}, {3.43966586645592*^9, 
+  3.439665921565648*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.439665753986451*^9, 3.439665755283334*^9}, {
+   3.4396658017367563`*^9, 3.439665802518011*^9}, {3.439665844924533*^9, 
+   3.439665849924565*^9}, 3.439665927284435*^9}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["(#9) Camel Case (5 min)", "Subsection",
+ CellChangeTimes->{{3.399171952180125*^9, 3.399171983336375*^9}, {
+  3.4057025040221777`*^9, 3.4057025045846844`*^9}, {3.4057213282614927`*^9, 
+  3.405721328746318*^9}, {3.4275417520342236`*^9, 3.42754175376861*^9}, {
+  3.4311828164855566`*^9, 3.431182818282466*^9}, {3.5112501778564*^9, 
+  3.511250179042*^9}}],
+
+Cell[TextData[{
+ "(a) ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code is case sensitive.  Built-in functions and variables use camel case \
+-- the first letter of each word is capitalized.  When defining your own \
+functions and variables, use lowercase names so that you can easily \
+distinguish them from built-in function names.  Evaluate this plot example, \
+which illustrates the camel-case convention.  "
+}], "Text",
+ CellChangeTimes->{{3.399171132555125*^9, 3.39917119725825*^9}, 
+   3.39917183088325*^9, 3.399172477211375*^9, {3.399172701148875*^9, 
+   3.399172882102*^9}, {3.405782427796457*^9, 3.4057825370895967`*^9}, {
+   3.4396659944098644`*^9, 3.439666040503909*^9}, {3.511250079436*^9, 
+   3.5112500819944*^9}}],
+
+Cell[BoxData[
+ RowBox[{"LogLogPlot", "[", 
+  RowBox[{
+   RowBox[{"CoshIntegral", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "5"}], "}"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+   RowBox[{"FrameLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<x\>\"", ",", "\"\<y\>\""}], "}"}]}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.405713474479195*^9, 3.405713512290428*^9}}],
+
+Cell["\<\
+
+(b) Repair the incorrect syntax in the following built-in expression and \
+evaluate it.  You should see a matrix in the output if you apply the \
+camel-case correctly.\
+\>", "Text",
+ CellChangeTimes->{{3.427507874676785*^9, 3.427507924802106*^9}, 
+   3.4293339913029737`*^9, {3.4396659839566727`*^9, 3.4396660008474054`*^9}, {
+   3.439666047019576*^9, 3.439666137957658*^9}}],
+
+Cell[BoxData[
+ RowBox[{"matrixform", "[", 
+  RowBox[{"identitymatrix", "[", "5", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.427507932489655*^9, 3.427507968943013*^9}, {
+  3.4275080077245116`*^9, 3.427508014396429*^9}, {3.4291568827009754`*^9, 
+  3.429156896029015*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["(#10) Bracket types (5 min)", "Subsection",
+ CellChangeTimes->{{3.39917252113325*^9, 3.399172529227*^9}, {
+   3.3997576927507477`*^9, 3.3997576936097927`*^9}, {3.4057025063034563`*^9, 
+   3.405702506787838*^9}, {3.405721330294628*^9, 3.405721330795092*^9}, {
+   3.4275430914431863`*^9, 3.4275430937088547`*^9}, {3.43118282525135*^9, 
+   3.4311828285014124`*^9}, 3.4332806210731735`*^9, 3.5112501832852*^9}],
+
+Cell[TextData[{
+ "(a) There are four essential types of brackets used in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " expressions.  You will find that their usage is very consistent.  Evaluate \
+the cell below and study the output carefully."
+}], "Text",
+ CellChangeTimes->{{3.42750803327155*^9, 3.4275080651936293`*^9}, {
+  3.427508191444437*^9, 3.427508276569982*^9}, {3.429375486691764*^9, 
+  3.4293755226453495`*^9}, {3.4396661461295853`*^9, 3.439666147520219*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"asterisks", " ", "just", " ", "inside", " ", "of", " ", 
+    RowBox[{"parentheses", " ", "--"}], " ", "user", " ", "comments"}], " ", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], "     ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"square", " ", 
+     RowBox[{"brackets", " ", "--"}], " ", "function", " ", "arguments"}], 
+    " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"2", "/", 
+    RowBox[{"(", 
+     RowBox[{"3", "+", "a"}], ")"}]}], "     ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"parentheses", " ", "--"}], " ", "algebraic", " ", "grouping", 
+     " ", "only"}], " ", "*)"}], " ", "\[IndentingNewLine]", 
+   RowBox[{"dat", " ", "=", " ", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "3", ",", "5", ",", "7", ",", "9"}], "}"}]}], "     ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"curly", " ", 
+      RowBox[{"brackets", " ", "--"}], " ", "lists", " ", "of", " ", 
+      RowBox[{"objects", ":", " ", 
+       RowBox[{"good", " ", "for", " ", "vectors"}]}]}], ",", " ", "matrices",
+      ",", " ", "iterators", ",", " ", 
+     RowBox[{"nested", " ", "lists"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"dat", "[", 
+    RowBox[{"[", "4", "]"}], "]"}], "     ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"double", "-", 
+     RowBox[{"square", " ", 
+      RowBox[{"brackets", " ", "--"}], " ", "specify", " ", "an", " ", 
+      "element", " ", "within", " ", "a", " ", "list"}]}], " ", 
+    "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.39917253800825*^9, 3.399172655977*^9}, {
+  3.399173789352*^9, 3.399173806117625*^9}, {3.3994042853333235`*^9, 
+  3.3994042943147182`*^9}, {3.399404331581271*^9, 3.3994044988909426`*^9}, {
+  3.401125800534752*^9, 3.4011258017836075`*^9}, {3.405697403821454*^9, 
+  3.4056974138863335`*^9}, {3.405697938261833*^9, 3.405697971023562*^9}, {
+  3.4056982660530963`*^9, 3.4056983210424366`*^9}, {3.4274980593483424`*^9, 
+  3.427498123208126*^9}, {3.4275080821156125`*^9, 3.427508130100295*^9}}],
+
+Cell["\<\
+
+(b) Here's a single command that uses all four bracket types.\
+\>", "Text",
+ CellChangeTimes->{{3.405782162814505*^9, 3.4057822986574078`*^9}, {
+   3.427508156272337*^9, 3.427508156866091*^9}, 3.429333998615567*^9, {
+   3.4293755679271793`*^9, 3.4293755683646846`*^9}, {3.4396661508014903`*^9, 
+   3.4396661517546215`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"dat", "[", 
+      RowBox[{"[", "i", "]"}], "]"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"i", "+", "a"}], ")"}]}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "5"}], "}"}]}], "]"}], "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "The", " ", "Table", " ", "command", " ", "is", " ", "used", " ", "to", 
+    " ", "create", " ", 
+    RowBox[{"lists", "."}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.39917253800825*^9, 3.399172655977*^9}, {
+   3.399173789352*^9, 3.399173806117625*^9}, 3.3994042853333235`*^9, {
+   3.4057825611234612`*^9, 3.40578257926606*^9}}],
+
+Cell["\<\
+
+(c) In the cell below, use curly brackets to create and name a list \
+containing three elements.  Then use double square brackets to extract the \
+middle element from the list.\
+\>", "Text",
+ CellChangeTimes->{{3.405782162814505*^9, 3.4057822986574078`*^9}, {
+   3.427508156272337*^9, 3.427508156866091*^9}, 3.429333998615567*^9, {
+   3.4293755679271793`*^9, 3.4293755683646846`*^9}, {3.4396661508014903`*^9, 
+   3.439666243536459*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.39917253800825*^9, 3.399172655977*^9}, {
+   3.399173789352*^9, 3.399173806117625*^9}, 3.3994042853333235`*^9, {
+   3.4057825611234612`*^9, 3.40578257926606*^9}, 3.439666250224002*^9}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+(#11) Rules and variable assignments (10 min)\
+\>", "Subsection",
+ CellChangeTimes->{{3.39917291007075*^9, 3.39917291607075*^9}, {
+  3.4057025112410197`*^9, 3.405702511850403*^9}, {3.405715450249255*^9, 
+  3.4057154510468693`*^9}, {3.4057213347675247`*^9, 3.405721335299268*^9}, {
+  3.427543139912867*^9, 3.427543144194199*^9}, {3.4311828869400344`*^9, 
+  3.4311828893150797`*^9}, {3.5112501916312*^9, 3.5112501919276*^9}, {
+  3.5112503511724*^9, 3.5112503517964*^9}}],
+
+Cell[TextData[{
+ "There are several important functions associated with the concept of \
+mathematical \"equality\".  Each one is unique in its action and its \
+application.  But the differences can also be subtle.  \n\t\"==\" is a \
+logical equality (similar to \"=\" in Maple).  See DC reference page for ",
+ StyleBox[ButtonBox["Equal",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Equal"],
+  FontWeight->"Bold"],
+ StyleBox[".",
+  FontWeight->"Bold"],
+ "\n\t\"=\" is a simple assignment (similar to \":=\" in Maple).  See DC \
+reference page for ",
+ StyleBox[ButtonBox["Set",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Set"],
+  FontWeight->"Bold"],
+ ".\n\t\"\[Rule]\" is a rule which is used for a one-time expression \
+replacement (i.e. substitution).  See DC reference page for ",
+ StyleBox[ButtonBox["Rule",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Rule"],
+  FontWeight->"Bold"],
+ " and ",
+ StyleBox[ButtonBox["ReplaceAll",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/ReplaceAll"],
+  FontWeight->"Bold"],
+ ".\n\t\":=\" is a delayed assignment (only evaluated when lhs is called, \
+reevaluated for each call).  See DC reference page for ",
+ StyleBox[ButtonBox["SetDelayed",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/SetDelayed"],
+  FontWeight->"Bold"],
+ ".\n\tThere are also others that we don't discuss here (e.g. ",
+ StyleBox[ButtonBox["SameQ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/SameQ"],
+  FontWeight->"Bold"],
+ ").\nEvaluate each of the examples below and make sure that you understand \
+the output.  Your TA should quiz you for explanations.\n\n(a) Logical \
+equality -- used for equations to be solved and for logical true/false tests."
+}], "Text",
+ CellChangeTimes->{{3.399171132555125*^9, 3.39917119725825*^9}, 
+   3.39917183088325*^9, 3.399172477211375*^9, {3.39917292400825*^9, 
+   3.39917311832075*^9}, {3.3991731504145*^9, 3.399173255352*^9}, {
+   3.399173341586375*^9, 3.399173348398875*^9}, {3.405699056134295*^9, 
+   3.4056991011817465`*^9}, {3.40569945690505*^9, 3.405699459170704*^9}, 
+   3.405699850066332*^9, {3.427510101987915*^9, 3.4275101553476315`*^9}, {
+   3.4275101872540855`*^9, 3.427510236879403*^9}, {3.427510689382299*^9, 
+   3.4275108316644597`*^9}, {3.4275457507270546`*^9, 3.427545768680295*^9}, {
+   3.4275458020867586`*^9, 3.4275458379932384`*^9}, {3.4275459124937153`*^9, 
+   3.427546010400592*^9}, {3.427546083401059*^9, 3.4275461347920127`*^9}, {
+   3.4275462471833572`*^9, 3.4275462941367826`*^9}, {3.427590945690361*^9, 
+   3.4275909707998967`*^9}, {3.4396667604303923`*^9, 3.439666771242961*^9}, {
+   3.439666810618213*^9, 3.439666829071456*^9}}],
+
+Cell[BoxData[
+ RowBox[{"3", "\[Equal]", "4", "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Checks", " ", "to", " ", "see", " ", "if", " ", "3", " ", "is", " ", 
+    "equal", " ", "to", " ", "4", " ", "and", " ", "returns", " ", "True", 
+    " ", "or", " ", 
+    RowBox[{"False", "."}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.39917335344575*^9, 3.3991733659145*^9}, {
+  3.3997580528467927`*^9, 3.399758056282973*^9}, {3.405699122572645*^9, 
+  3.4056991589168606`*^9}, {3.405709246123582*^9, 3.40570925338662*^9}, {
+  3.4275109021492853`*^9, 3.4275109118368473`*^9}, {3.5112502030192003`*^9, 
+  3.51125020408*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "^", "2"}], "\[Equal]", "4"}], ",", "x"}], "]"}], "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Find", " ", "all", " ", "values", " ", "of", " ", "x", " ", "such", " ", 
+    "that", " ", 
+    RowBox[{"x", "^", "2"}], " ", "equals", " ", "4."}], " ", 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.39917337144575*^9, 3.399173383961375*^9}, {
+  3.40569916318254*^9, 3.4056991743701835`*^9}, {3.4275108565396185`*^9, 
+  3.4275108927586007`*^9}}],
+
+Cell["\<\
+
+(b) Variable assignments.\
+\>", "Text",
+ CellChangeTimes->{{3.405699772627841*^9, 3.4056997765497665`*^9}, 
+   3.4293340331941347`*^9, {3.4396668374152594`*^9, 3.439666838055889*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"q", "=", "4"}], ";"}], "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Assigns", " ", "q", " ", "to", " ", "have", " ", "the", " ", "value", " ",
+     "4.", "  ", "This", " ", "is", " ", "really", " ", "a", " ", "shorthand",
+     " ", "notation", " ", "for", " ", "the", " ", "Set", " ", 
+    RowBox[{"function", "."}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.399404546682568*^9, 3.3994045708200674`*^9}, {
+   3.399404659059157*^9, 3.3994046607899466`*^9}, {3.3997580674505577`*^9, 
+   3.399758123007341*^9}, 3.399758424860135*^9, 3.399758492740309*^9, {
+   3.4056991783389845`*^9, 3.4056992390741367`*^9}, {3.4056997883155417`*^9, 
+   3.4056998350973907`*^9}, {3.4057092395336266`*^9, 3.405709258035591*^9}, {
+   3.427510266723344*^9, 3.427510321254943*^9}, {3.511250209384*^9, 
+   3.5112502100548*^9}}],
+
+Cell[BoxData[
+ RowBox[{"q", "   ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Observe", " ", "that", " ", "Mathematica", " ", "now", " ", "evaluates", 
+    " ", "q", " ", "to", " ", "mean", " ", "4."}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.399404546682568*^9, 3.3994045708200674`*^9}, {
+   3.399404659059157*^9, 3.3994046607899466`*^9}, {3.3997580674505577`*^9, 
+   3.399758123007341*^9}, 3.399758424860135*^9, 3.399758492740309*^9, {
+   3.4056991783389845`*^9, 3.4056992390741367`*^9}, {3.4056997883155417`*^9, 
+   3.4056998318160987`*^9}, {3.4275103322862635`*^9, 3.427510355739539*^9}}],
+
+Cell["\<\
+
+(c) Variable substitution.\
+\>", "Text",
+ CellChangeTimes->{{3.405699740721183*^9, 3.405699753971352*^9}, {
+   3.4057091928404293`*^9, 3.405709192965654*^9}, {3.427510532834422*^9, 
+   3.4275105347875595`*^9}, {3.4275105771472054`*^9, 
+   3.4275106361944585`*^9}, {3.4275109473370748`*^9, 3.4275109653996906`*^9}, 
+   3.4293340352254105`*^9, {3.4332803383784366`*^9, 3.433280386817177*^9}, {
+   3.439666840587155*^9, 3.4396668708217235`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"a", "+", 
+     RowBox[{"a", "^", "2"}]}], ")"}], " ", "/.", " ", 
+   RowBox[{"a", "\[Rule]", "3"}]}], "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "\"\</.\>\"", " ", "provides", " ", "a", " ", "convenient", " ", 
+    "shorthand", " ", "version", " ", "of", " ", "the", " ", "same", " ", 
+    "function"}], " ", "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"a", "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "observe", " ", "that", " ", "the", " ", "global", " ", "value", " ", "of",
+     " ", "\"\<a\>\"", " ", "is", " ", "unaffected", " ", "by", " ", "the", 
+    " ", "replacement"}], " ", "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.3991736542895*^9, 3.3991737417895*^9}, {
+   3.399404625955855*^9, 3.399404645571471*^9}, 3.3994048107917204`*^9, {
+   3.3994049125496807`*^9, 3.399404912939498*^9}, {3.399758213378875*^9, 
+   3.3997582453822055`*^9}, {3.399758619816493*^9, 3.3997586362320614`*^9}, {
+   3.4056992830903254`*^9, 3.4056994063106523`*^9}, 3.405699577375342*^9, {
+   3.4057086039081945`*^9, 3.4057086044247475`*^9}, {3.4057091988042603`*^9, 
+   3.4057092849119635`*^9}, {3.405709561001341*^9, 3.4057095854514837`*^9}, {
+   3.42751039811481*^9, 3.4275104285525045`*^9}, {3.427510552412672*^9, 
+   3.4275105703659124`*^9}, {3.4275106407569876`*^9, 
+   3.4275106636790094`*^9}, {3.4396668876968317`*^9, 
+   3.4396668888218384`*^9}, {3.5112502333456*^9, 3.5112502340008*^9}}],
+
+Cell["\<\
+
+(d) Delayed assignments.  This one is subtle.  Evaluate the following input \
+cell and think through the results carefully.  Explain what happened in your \
+own words in a new Item-style cell.\
+\>", "Text",
+ CellChangeTimes->{{3.4056996241415653`*^9, 3.405699722002193*^9}, {
+   3.4275109812122917`*^9, 3.4275110606971755`*^9}, {3.427511585341158*^9, 
+   3.4275115869192934`*^9}, {3.4275910444566183`*^9, 
+   3.4275910673473897`*^9}, {3.427591126207141*^9, 3.4275911282696543`*^9}, {
+   3.4275913003020053`*^9, 3.427591356192988*^9}, 3.4293340373348126`*^9, {
+   3.439666863962304*^9, 3.4396668652435627`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", " ", "=", " ", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"a", " ", "=", " ", "m"}], ";"}], "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"immediate", " ", 
+    RowBox[{"assignment", " ", "--"}], " ", "evaluated", " ", "right", " ", 
+    "now"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", " ", ":=", " ", "m"}], "   ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"delayed", " ", 
+    RowBox[{"assignment", " ", "--"}], " ", "not", " ", "evaluated", " ", 
+    "until", " ", "used", " ", "later"}], " ", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"m", " ", "=", " ", "3"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"a", "   ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "uses", " ", "the", " ", "original", " ", "value", " ", "of", " ", "m", 
+    " ", "that", " ", "was", " ", "in", " ", "force", " ", "when", " ", "the",
+     " ", "assignment", " ", "was", " ", "first", " ", "made"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"b", "   ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "reevaluated", " ", "now", " ", "using", " ", "the", " ", "current", " ", 
+    "value", " ", "of", " ", "m"}], " ", "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.399173512367625*^9, 3.399173527055125*^9}, {
+   3.39917356838325*^9, 3.39917357332075*^9}, {3.399173638648875*^9, 
+   3.399173639242625*^9}, {3.399404603845406*^9, 3.399404605981606*^9}, {
+   3.399758539316167*^9, 3.3997585408624477`*^9}, {3.401126831059501*^9, 
+   3.401126831715151*^9}, {3.4011268749567895`*^9, 3.4011269390387135`*^9}, {
+   3.4011272213894444`*^9, 3.4011272281176558`*^9}, {3.4011272649745183`*^9, 
+   3.401127273560404*^9}, {3.4011273116505117`*^9, 3.401127319533915*^9}, {
+   3.405699528312214*^9, 3.4056996122351627`*^9}, {3.4056998715509825`*^9, 
+   3.405699880316719*^9}, 3.4057085914952865`*^9, {3.4275110768066535`*^9, 
+   3.4275113005893354`*^9}, {3.4275114849655156`*^9, 3.427511486043648*^9}, {
+   3.4275911079882746`*^9, 3.4275911311134224`*^9}}],
+
+Cell[TextData[{
+ "\n(e) Now define an expression p = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"x", "!"}], "/", 
+    SuperscriptBox["x", "x"]}], TraditionalForm]]],
+ ".  Then, on the next line, use \"/.\" and \"\[Rule]\" to display the \
+numerical value of  ",
+ StyleBox["p",
+  FontSlant->"Italic"],
+ " when ",
+ StyleBox["x",
+  FontSlant->"Italic"],
+ " = 5 without actually changing the definition of p."
+}], "Text",
+ CellChangeTimes->{
+  3.405721320003837*^9, {3.40572135681922*^9, 3.4057214529552264`*^9}, {
+   3.4057215761319284`*^9, 3.40572163207442*^9}, {3.4057216640571976`*^9, 
+   3.405721782119783*^9}, {3.405721813523899*^9, 3.405721859816819*^9}, {
+   3.4057219703098865`*^9, 3.405721970419363*^9}, {3.405722060252651*^9, 
+   3.4057221138961363`*^9}, {3.4057221976456585`*^9, 
+   3.4057224054320555`*^9}, {3.4060566965733075`*^9, 3.40605671727736*^9}, {
+   3.406056749903822*^9, 3.406056869331047*^9}, {3.4275912338797054`*^9, 
+   3.427591266801791*^9}, 3.4396667308989525`*^9, {3.439666899353156*^9, 
+   3.4396669091188436`*^9}, {3.47189354238999*^9, 3.471893606124773*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.439676731675088*^9, 3.4396767322375917`*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+(#12) Clearing variable assignments (5 min)\
+\>", "Subsection",
+ CellChangeTimes->{{3.4275116218570166`*^9, 3.427511626169544*^9}, {
+  3.427543146928627*^9, 3.4275431517568445`*^9}, {3.4293847303257065`*^9, 
+  3.429384736575786*^9}, {3.431182893799541*^9, 3.4311828950651903`*^9}, {
+  3.5112502699588003`*^9, 3.5112502701148*^9}}],
+
+Cell[TextData[{
+ "(a) Before we continue further, we need to erase the definitions of any \
+symbols used previously, so that they don't interfere with subsequent work \
+that employs the same symbol names for different purposes.  ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " doesn't have anything quite like Maple's \"restart\" command, but the \
+following use of ",
+ StyleBox[ButtonBox["Clear",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Clear"],
+  FontWeight->"Bold"],
+ " is close.  Here, the \"*\" is a wildcard symbol that refers to all \
+definitions, and the \"`\" character signfies the current session (i.e. clear \
+all definitions in the current session).  Evaluate the following cell."
+}], "Text",
+ CellChangeTimes->{{3.405709666581501*^9, 3.4057097023331814`*^9}, {
+   3.4057131772798314`*^9, 3.4057131945238028`*^9}, {3.427511589997438*^9, 
+   3.4275115905755663`*^9}, {3.4275136544481506`*^9, 
+   3.4275137827145963`*^9}, {3.4275908020488167`*^9, 
+   3.4275908849712224`*^9}, {3.4291570411218367`*^9, 3.4291570423249536`*^9}, 
+   3.4293340703039846`*^9, {3.429375396378108*^9, 3.4293754693790426`*^9}, {
+   3.429384747466551*^9, 3.4293847851701584`*^9}, {3.4396669267439566`*^9, 
+   3.439666927447086*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.40570905413831*^9, 3.405709064766765*^9}, {
+   3.405713183283172*^9, 3.4057131862848425`*^9}, {3.429375282423525*^9, 
+   3.4293753068144617`*^9}, {3.4293753808622847`*^9, 3.429375389940526*^9}, 
+   3.4293754742072296`*^9}],
+
+Cell[TextData[{
+ "\n(b) Now use the cell below to verify that ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " doesn't remember any of the variable assignments that you made in the \
+previous section."
+}], "Text",
+ CellChangeTimes->{{3.429384795154661*^9, 3.429384832405138*^9}, {
+  3.4396669219158*^9, 3.4396669300564775`*^9}}],
+
+Cell[BoxData[" "], "Input",
+ CellChangeTimes->{3.429384777966941*^9}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+(#13) Wolfram Alpha integration (10 min)\
+\>", "Subsection",
+ CellChangeTimes->{{3.5112522703241997`*^9, 3.5112522859086*^9}, {
+  3.5112527056734*^9, 3.511252707873*^9}, {3.511254189425*^9, 
+  3.511254190049*^9}}],
+
+Cell[TextData[{
+ "The features of Wolfram Alpha have been incorporated the most recent \
+versions of ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ".  This means that you can retrieve a lot of useful information and so many \
+computations using a more free-form input than with the standard ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " notation.  You can switch into Wolfram Alpha mode by typing an = sign at \
+the beginning of an input cell.  Evaluate the following expressions= to see \
+how this works."
+}], "Text",
+ CellChangeTimes->{{3.5112522901986*^9, 3.5112523800078*^9}, {
+  3.511252442829*^9, 3.511252465995*^9}, {3.511252550781*^9, 
+  3.5112525595326*^9}, {3.5112528380706*^9, 3.5112528599418*^9}}],
+
+Cell["mass of electron", "WolframAlphaShort",
+ CellChangeTimes->{{3.511252784001*^9, 3.5112527864189997`*^9}}],
+
+Cell["speed of sound in water", "WolframAlphaShort",
+ CellChangeTimes->{{3.511252789929*^9, 3.5112527927838*^9}}],
+
+Cell["cos(sqrt(x))", "WolframAlphaShort",
+ CellChangeTimes->{{3.5112530734122*^9, 3.5112530787005997`*^9}}],
+
+Cell[TextData[{
+ "Because the Wolfram Alpha syntax is less structured and less precise than \
+standard ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " notation we won\[CloseCurlyQuote]t be focussing on it much in this course. \
+ However, you\[CloseCurlyQuote]re find to helpful to get data you will need \
+for some of the assignments and are welcome to use it in the \
+\[OpenCurlyDoubleQuote]On Your Own\[CloseCurlyDoubleQuote] assignments if you \
+like."
+}], "Text",
+ CellChangeTimes->{{3.5112529271622*^9, 3.5112529767078*^9}, {
+  3.5112530291706*^9, 3.5112530610726*^9}}],
+
+Cell["\<\
+There are a couple of features in the Wolfram Alpha output which you may find \
+helpful.  After you hit Shift-Enter to evaluate the output you\
+\[CloseCurlyQuote]ll note that you\[CloseCurlyQuote]ll usually see two \
+symbols to the right of the converted expression in the input box.  Read \
+about this in the DC for WolframAlphaIntegration and experiment to see how \
+they work.\
+\>", "Text",
+ CellChangeTimes->{{3.511253094051*^9, 3.5112532038761997`*^9}, {
+  3.5112532754365997`*^9, 3.5112533238901997`*^9}}],
+
+Cell["", "WolframAlphaShort",
+ CellChangeTimes->{3.5112533986298*^9}],
+
+Cell["\<\
+Use Wolfram Alpha to compare the density of copper to the density of mercury.\
+\>", "Text",
+ CellChangeTimes->{{3.5112534661466*^9, 3.511253480561*^9}, {
+   3.5112537901898003`*^9, 3.511253806679*^9}, {3.511253877815*^9, 
+   3.5112538806542*^9}, {3.5112539747377996`*^9, 3.5112540157346*^9}, 
+   3.5112541745425997`*^9}],
+
+Cell[BoxData[""], "WolframAlphaShortInput",
+ CellChangeTimes->{3.5112539803226*^9}],
+
+Cell["", "WolframAlphaShort",
+ CellChangeTimes->{3.5112541679594*^9}],
+
+Cell["\<\
+Expand to details in your answer to verify the units displayed.  What units \
+are being used?\
+\>", "Text",
+ CellChangeTimes->{{3.5112540673705997`*^9, 3.5112541498946*^9}}],
+
+Cell["", "Text",
+ CellChangeTimes->{{3.5112541296146*^9, 3.5112541431085997`*^9}}]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Applications (55 min)", "Section",
+ CellChangeTimes->{{3.427508754666792*^9, 3.4275087661668653`*^9}, {
+   3.4275142020922804`*^9, 3.4275142024204073`*^9}, {3.427573787328363*^9, 
+   3.427573791781516*^9}, {3.4275963213966403`*^9, 3.4275963319435825`*^9}, {
+   3.431183881068496*^9, 3.4311838825372744`*^9}, {3.4311840111334934`*^9, 
+   3.4311840113053713`*^9}, 3.433259593081791*^9, {3.433261213310768*^9, 
+   3.4332612137639046`*^9}, {3.433261834201662*^9, 3.433261834404793*^9}, 
+   3.433262231743089*^9, {3.433262437263975*^9, 3.4332624374202294`*^9}, 
+   3.433280211297058*^9, 3.4396650061222897`*^9}],
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " can applied to a remarkable variety of math and physics problems, both \
+symbolic and numeric.  Here we will work through a few of the most common \
+examples.  Where hyperlinks are provided, you are expected to go to the DC to \
+browse and evaluate several worked examples before continuing."
+}], "Text",
+ CellChangeTimes->{{3.4275740749239535`*^9, 3.4275741028772573`*^9}, {
+  3.427574150455687*^9, 3.427574258722005*^9}, {3.427581225456277*^9, 
+  3.4275812462845354`*^9}, {3.427583250031734*^9, 3.4275832666724653`*^9}, {
+  3.427583529580398*^9, 3.427583553939929*^9}, {3.4275906459696927`*^9, 
+  3.4275906487665854`*^9}, {3.4275907850174575`*^9, 3.427590789017483*^9}, {
+  3.4275967626025887`*^9, 3.4275967638057213`*^9}, {3.429157051621769*^9, 
+  3.429157052793637*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+(#14) Algebraic Manipulation (5 min)\
+\>", "Subsection",
+ CellChangeTimes->{{3.4275742769096212`*^9, 3.427574284050292*^9}, {
+   3.4275743677227025`*^9, 3.427574394004121*^9}, {3.4275744304106035`*^9, 
+   3.427574430879357*^9}, {3.4275748443976283`*^9, 3.427574847163271*^9}, {
+   3.4275749035386314`*^9, 3.4275749266012793`*^9}, {3.4275776060424876`*^9, 
+   3.4275776086518793`*^9}, {3.431182951378772*^9, 3.4311829540038223`*^9}, 
+   3.4332618296702967`*^9, {3.5112503098636*^9, 3.51125031016*^9}, {
+   3.511254424751*^9, 3.5112544250006*^9}}],
+
+Cell[TextData[{
+ "(a) ",
+ StyleBox[ButtonBox["Expand",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Expand"],
+  FontWeight->"Bold"],
+ " the product ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "+", "s"}], ")"}], "4"], TraditionalForm]]],
+ " into a polynomial in ",
+ StyleBox["s",
+  FontSlant->"Italic"],
+ ", and then ",
+ StyleBox["Simplify",
+  FontWeight->"Bold"],
+ " it again.  In the second calculation, use % to operate on the previous \
+result."
+}], "Text",
+ CellChangeTimes->{{3.4275773634784355`*^9, 3.4275773675253363`*^9}, {
+   3.427577617198809*^9, 3.4275776472458763`*^9}, {3.427578395000662*^9, 
+   3.4275784642511053`*^9}, {3.4275785351421843`*^9, 3.427578536267191*^9}, {
+   3.4275788682380657`*^9, 3.4275789069883137`*^9}, {3.4275802511844163`*^9, 
+   3.4275803166692104`*^9}, 3.427581216456219*^9, {3.4332617618560605`*^9, 
+   3.4332617638248606`*^9}, {3.439739331899747*^9, 3.4397393332903805`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.4275742881909437`*^9, 3.4275742926753473`*^9}, {
+   3.4275784891887646`*^9, 3.427578499329455*^9}, 3.427578741737256*^9, {
+   3.4332617460431557`*^9, 3.4332617718719416`*^9}}],
+
+Cell[TextData[{
+ "\n(b) Bring the sum  ",
+ Cell[BoxData[
+  RowBox[{
+   FractionBox["1", "a"], "+", 
+   FractionBox["1", "b"]}]],
+  CellChangeTimes->{{3.427578647986656*^9, 3.4275786732993183`*^9}}],
+ "  ",
+ StyleBox[ButtonBox["Together",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Together"],
+  FontWeight->"Bold"],
+ " over a single common denominator, and then split it ",
+ StyleBox[ButtonBox["Apart",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Apart"],
+  FontWeight->"Bold"],
+ " again."
+}], "Text",
+ CellChangeTimes->{{3.4275773634784355`*^9, 3.4275773675253363`*^9}, {
+   3.427577617198809*^9, 3.4275776472458763`*^9}, {3.427578395000662*^9, 
+   3.4275784849074874`*^9}, {3.42757862125211*^9, 3.4275786347990713`*^9}, {
+   3.4275786772993436`*^9, 3.4275787347684617`*^9}, {3.4275788600817633`*^9, 
+   3.4275788651442957`*^9}, 3.427578923160292*^9, {3.4275789917232313`*^9, 
+   3.4275790067702026`*^9}, {3.427580341059992*^9, 3.4275803411693673`*^9}, 
+   3.4293338934423456`*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.4275742881909437`*^9, 3.4275742926753473`*^9}, {
+   3.427578642486621*^9, 3.4275786728461905`*^9}, {3.427578748737301*^9, 
+   3.427578793628213*^9}, 3.4275790118171096`*^9}],
+
+Cell[TextData[{
+ "\n(c) ",
+ StyleBox[ButtonBox["Expand",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Expand"],
+  FontWeight->"Bold"],
+ " the product ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "+", " ", "r", " ", "+", " ", "s"}], ")"}], "4"], 
+   TraditionalForm]]],
+ " into a two-variable polynomial in r and s.  Then ",
+ StyleBox[ButtonBox["Collect",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Collect"],
+  FontWeight->"Bold"],
+ " terms (see the reference page to see how to use its special ",
+ StyleBox["Simplify",
+  FontWeight->"Bold"],
+ " option -- different from the ",
+ StyleBox["Simplify",
+  FontWeight->"Bold"],
+ " function) to reorganize the result as a one-variable polynomial in ",
+ StyleBox["s",
+  FontSlant->"Italic"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.4275773634784355`*^9, 3.4275773675253363`*^9}, {
+   3.427577617198809*^9, 3.4275776472458763`*^9}, {3.427578395000662*^9, 
+   3.4275784642511053`*^9}, 3.4275803387006016`*^9, {3.427580399575991*^9, 
+   3.4275803996697416`*^9}, {3.427580429669934*^9, 3.4275804993266296`*^9}, {
+   3.4275805474675627`*^9, 3.4275806674058304`*^9}, 3.4293338953017445`*^9, {
+   3.4332617894817677`*^9, 3.4332618139198933`*^9}, {3.439667996735179*^9, 
+   3.4396679994695716`*^9}, {3.4396680527042875`*^9, 3.439668054110546*^9}, {
+   3.4396763957041874`*^9, 3.4396764019229774`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.4275807018123007`*^9, 3.4275807021873026`*^9}, {
+   3.4293337808002787`*^9, 3.4293338229414434`*^9}, 3.429379628385402*^9}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["(#15) Plot graphics (10 min)", "Subsection",
+ CellChangeTimes->{{3.4275742769096212`*^9, 3.427574284050292*^9}, {
+   3.4275743150661154`*^9, 3.427574316378624*^9}, {3.4275744214886713`*^9, 
+   3.427574433598124*^9}, {3.4311836143915014`*^9, 3.43118361615716*^9}, 
+   3.433260478588835*^9, 3.433262125865379*^9, {3.5112504334312*^9, 
+   3.5112504337432003`*^9}, {3.5112544271066*^9, 3.5112544276994*^9}}],
+
+Cell[TextData[{
+ "(a) The ",
+ StyleBox[ButtonBox["Function Visualization",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/FunctionVisualization"],
+  FontWeight->"Bold"],
+ " guide page has many convenient links to the most important routines for \
+graphing functions.  Browse a few of the corresponding reference pages.\n\n\
+(b) Use ",
+ StyleBox[ButtonBox["Manipulate",
+  BaseStyle->"Link",
+  ButtonData->"paclet://ref/Manipulate"],
+  FontWeight->"Bold"],
+ " to create an interactive ",
+ StyleBox[ButtonBox["Plot",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Plot"],
+  FontWeight->"Bold"],
+ " of the function  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"A", " ", 
+     RowBox[{"cos", "(", 
+      RowBox[{
+       RowBox[{"k", " ", "x"}], "+", "p"}], ")"}]}], "+", "b"}], 
+   TraditionalForm]],
+  CellChangeTimes->{{3.4275742881909437`*^9, 3.4275742926753473`*^9}, {
+    3.427580932063774*^9, 3.42758095245453*^9}, 3.42758113459632*^9, {
+    3.4275940808354254`*^9, 3.4275941015855584`*^9}}],
+ "  over the range from ",
+ StyleBox["x",
+  FontSlant->"Italic"],
+ " = -2\[Pi] to 2\[Pi].  Let ",
+ StyleBox["A",
+  FontSlant->"Italic"],
+ " run from 1 to 2, ",
+ StyleBox["k ",
+  FontSlant->"Italic"],
+ "from 1 to 10, ",
+ StyleBox["p",
+  FontSlant->"Italic"],
+ " from 0 to 2\[Pi], and ",
+ StyleBox["b",
+  FontSlant->"Italic"],
+ " from -1/2 to 1/2."
+}], "Text",
+ CellChangeTimes->{{3.427591868258765*^9, 3.427591888915148*^9}, {
+   3.4275940524133687`*^9, 3.4275940756166425`*^9}, {3.427594115570023*^9, 
+   3.4275941449920864`*^9}, {3.427594238227058*^9, 3.427594239883319*^9}, {
+   3.4275946362452307`*^9, 3.4275946368858595`*^9}, {3.4275946787298775`*^9, 
+   3.4275946787298775`*^9}, {3.4275947522615976`*^9, 
+   3.4275948096838408`*^9}, {3.4275948548560047`*^9, 
+   3.4275948558091354`*^9}, {3.427595020700816*^9, 3.4275951071857443`*^9}, {
+   3.4298990581731853`*^9, 3.4298990781888103`*^9}, {3.4298991352200603`*^9, 
+   3.4298994130013103`*^9}, {3.429904490753825*^9, 3.4299045521757*^9}, {
+   3.429904624722575*^9, 3.429904647253825*^9}, {3.4299046891757*^9, 
+   3.429904734347575*^9}, {3.429904771222575*^9, 3.429904812722575*^9}, {
+   3.4311830466306005`*^9, 3.431183049896288*^9}, {3.431183140038644*^9, 
+   3.4311832237590013`*^9}, {3.4311832589315515`*^9, 3.431183421309669*^9}, 
+   3.433261955486017*^9, {3.4332620335192647`*^9, 3.433262038175634*^9}, 
+   3.433262138287572*^9, {3.433262209430018*^9, 3.4332622118675804`*^9}, {
+   3.43966697969742*^9, 3.4396669852287054`*^9}, 3.4396774133513255`*^9, {
+   3.439677459007868*^9, 3.4396774595234957`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.4275946464327955`*^9, 3.4275946470890493`*^9}}],
+
+Cell[TextData[{
+ "\n(c) Use ",
+ StyleBox[ButtonBox["Plot3D",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Plot3D"],
+  FontWeight->"Bold"],
+ " to make a graph ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"cos", "(", 
+     RowBox[{"5", " ", "x"}], ")"}], " ", 
+    RowBox[{"cos", "(", 
+     RowBox[{"5", " ", "y"}], ")"}], " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["x", "2"], "+", 
+        SuperscriptBox["y", "2"]}], ")"}]}]]}], TraditionalForm]],
+  CellChangeTimes->{{3.427595153545416*^9, 3.4275951863425007`*^9}, {
+   3.427595400765748*^9, 3.427595413062702*^9}, {3.4275955694230776`*^9, 
+   3.4275955907982144`*^9}}],
+ " over the range where both ",
+ StyleBox["x",
+  FontSlant->"Italic"],
+ " and ",
+ StyleBox["y",
+  FontSlant->"Italic"],
+ " vary between -2 and +2.  You may need to apply the",
+ StyleBox[" ",
+  FontColor->GrayLevel[0]],
+ StyleBox["PlotRange \[Rule] All",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" ",
+  FontColor->GrayLevel[0]],
+ "option if the output doesn't look nice."
+}], "Text",
+ CellChangeTimes->{
+  3.427594862418553*^9, {3.427594947294096*^9, 3.4275950127788897`*^9}, {
+   3.42759511902957*^9, 3.427595150514147*^9}, {3.4275953680311637`*^9, 
+   3.4275953680311637`*^9}, {3.4275955986420145`*^9, 
+   3.4275956317516017`*^9}, {3.4275957683774757`*^9, 
+   3.4275957695493584`*^9}, {3.427595844393587*^9, 3.427596010582151*^9}, {
+   3.427596133551688*^9, 3.427596171645682*^9}, 3.4293339219270854`*^9, {
+   3.4298988232981853`*^9, 3.4298989339075603`*^9}, 3.4298990553450603`*^9, {
+   3.4311831197882547`*^9, 3.431183121147656*^9}, {3.431183610532052*^9, 
+   3.43118361067268*^9}, {3.433262041644473*^9, 3.4332621146463413`*^9}, {
+   3.4332622141801395`*^9, 3.4332622142895174`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.427595799002672*^9, 3.4275958004558063`*^9}, {
+  3.439677491586201*^9, 3.439677545789673*^9}}],
+
+Cell[TextData[{
+ "\nWARNING: Cutting/pasting nice-looking two-dimensional mathematical \
+expressions for use as input may or may not work depending on how the \
+expression was originally produced.  When produced, the expression may have \
+been rendered in ",
+ StyleBox[ButtonBox["TraditionalForm",
+  BaseStyle->"Link",
+  ButtonData->"paclet://ref/TraditionalForm"],
+  FontWeight->"Bold"],
+ " (looks great, but doesn't work well as input) or in ",
+ StyleBox[ButtonBox["StandardForm",
+  BaseStyle->"Link",
+  ButtonData->"paclet://ref/StandardForm"],
+  FontWeight->"Bold"],
+ " (still looks OK, and works well as input).  If you cut/paste a ",
+ StyleBox["TraditionalForm",
+  FontWeight->"Bold"],
+ " expression into an input cell, and subsequently have trouble with it, \
+select the cell and try to repair it using the ",
+ StyleBox["Cell: ConvertTo: InputForm",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]],
+ " menu option.  In addition to fixing some problems, this step will often \
+reveal additional problems that need to be corrected by hand."
+}], "Text",
+ CellChangeTimes->{{3.4332621471784244`*^9, 3.433262179929263*^9}, {
+  3.4396670040257006`*^9, 3.4396671367609253`*^9}, {3.439667166792368*^9, 
+  3.439667227292755*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["(#16) Calculus (10 min)", "Subsection",
+ CellChangeTimes->{{3.4275742769096212`*^9, 3.4275743124254737`*^9}, {
+   3.427574347691324*^9, 3.4275743478007*^9}, {3.4275744377387753`*^9, 
+   3.4275744383637795`*^9}, {3.427574910944929*^9, 3.427574912538689*^9}, {
+   3.4311829695978713`*^9, 3.4311829827699995`*^9}, 3.4311838790528326`*^9, 
+   3.433260459103961*^9, 3.4332624266074524`*^9, {3.5112504362236*^9, 
+   3.511250436598*^9}, {3.5112544297118*^9, 3.5112544304138002`*^9}}],
+
+Cell[TextData[{
+ "(a) Use ",
+ StyleBox[ButtonBox["Limit",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Limit"],
+  FontWeight->"Bold"],
+ " to evaluate  ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{
+     UnderscriptBox["lim", 
+      RowBox[{"x", "\[Rule]", "0"}]], 
+     FractionBox[
+      RowBox[{"sin", "(", "x", ")"}], "x"]}],
+    FontSize->16], TraditionalForm]],
+  CellChangeTimes->{{3.4275742881909437`*^9, 3.4275742926753473`*^9}, {
+   3.4275812705659404`*^9, 3.427581303613027*^9}, {3.427581334363224*^9, 
+   3.4275814118168445`*^9}},
+  FontSize->18],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.4275749328513193`*^9, 3.427574941273248*^9}, {
+  3.4275812617846346`*^9, 3.4275812674409204`*^9}, {3.427581419551269*^9, 
+  3.42758146186404*^9}, {3.4275815036455574`*^9, 3.4275815228175545`*^9}, {
+  3.427581955695325*^9, 3.4275819846017604`*^9}}],
+
+Cell[BoxData[" "], "Input",
+ CellChangeTimes->{{3.427581474707872*^9, 3.427581475504752*^9}}],
+
+Cell[TextData[{
+ "\n(b) Use ",
+ StyleBox[ButtonBox["D",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/D"],
+  FontWeight->"Bold"],
+ " to evaluate the first derivative of  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["e", 
+     RowBox[{"-", "x"}]], 
+    RowBox[{"sin", "(", "x", ")"}]}], TraditionalForm]]],
+ "  with respect to x.  You will need ",
+ StyleBox[ButtonBox["some mathematical functions",
+  BaseStyle->"Link",
+  ButtonData->"paclet:tutorial/SomeMathematicalFunctions"],
+  FontWeight->"Bold"],
+ " for this exercise."
+}], "Text",
+ CellChangeTimes->{{3.427581485192314*^9, 3.4275814964111357`*^9}, {
+   3.4275815442708173`*^9, 3.427581662677825*^9}, {3.4275817033499603`*^9, 
+   3.427581723506339*^9}, {3.42758184241335*^9, 3.427581926117011*^9}, {
+   3.4275825158707857`*^9, 3.427582567011738*^9}, {3.427582599168194*^9, 
+   3.4275826626686*^9}, {3.42758320173455*^9, 3.4275832223128066`*^9}, {
+   3.4275917270547366`*^9, 3.427591727445364*^9}, 3.429333855551236*^9, {
+   3.4332606072171273`*^9, 3.4332606097640676`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.427581474707872*^9, 3.427581475504752*^9}, {
+   3.4275816765529137`*^9, 3.4275816971780457`*^9}, 3.4275819304607887`*^9}],
+
+Cell[TextData[{
+ "\n(c) Use ",
+ StyleBox[ButtonBox["Integrate",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Integrate"],
+  FontWeight->"Bold"],
+ " to evaluate  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     SuperscriptBox["e", 
+      RowBox[{"-", "x"}]], 
+     RowBox[{"sin", "(", "x", ")"}], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}], TraditionalForm]],
+  CellChangeTimes->{{3.427581474707872*^9, 3.427581475504752*^9}, {
+   3.4275820129144416`*^9, 3.427582062024131*^9}}],
+ ", first as an indefinite integral, and then as an integral over the range \
+from 0 to ",
+ StyleBox[ButtonBox["Infinity",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Infinity"],
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.427581485192314*^9, 3.4275814964111357`*^9}, {
+   3.4275819343045635`*^9, 3.427581951554674*^9}, {3.427581990804925*^9, 
+   3.4275820352739596`*^9}, {3.4275820727273245`*^9, 
+   3.4275821375714893`*^9}, {3.4275827886850314`*^9, 3.427582885216899*^9}, {
+   3.4275829212015047`*^9, 3.4275829405766287`*^9}, {3.4275830169677424`*^9, 
+   3.427583022889655*^9}, 3.4275831001245246`*^9, 3.42933385745751*^9, {
+   3.4332604452286053`*^9, 3.433260449150581*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.427581474707872*^9, 3.427581475504752*^9}, {
+  3.4275820129144416`*^9, 3.427582062024131*^9}, {3.4275821620091457`*^9, 
+  3.4275821953999844`*^9}, {3.4275828894981766`*^9, 3.4275829260609107`*^9}, {
+  3.4275830317647123`*^9, 3.4275831058901863`*^9}}],
+
+Cell[TextData[{
+ "\n(d) Use ",
+ StyleBox[ButtonBox["Series",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Series"],
+  FontWeight->"Bold"],
+ " to perform a 10th order Taylor-series expansion of the function ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["e", 
+     RowBox[{"-", "x"}]], 
+    RowBox[{"sin", "(", "x", ")"}]}], TraditionalForm]]],
+ " about the point ",
+ StyleBox["x",
+  FontSlant->"Italic"],
+ " = 0."
+}], "Text",
+ CellChangeTimes->{{3.427581485192314*^9, 3.4275814964111357`*^9}, {
+   3.427581936570203*^9, 3.427581936679579*^9}, {3.427583114577742*^9, 
+   3.427583126124691*^9}, {3.427591415318366*^9, 3.427591417537131*^9}, {
+   3.4275917998520775`*^9, 3.427591849008642*^9}, 3.4293338589731545`*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.427581474707872*^9, 3.427581475504752*^9}, {
+   3.4275917210859485`*^9, 3.4275917865707426`*^9}, 3.427591836774189*^9}],
+
+Cell[TextData[{
+ "\n(e) ",
+ StyleBox[ButtonBox["Sum",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Sum"],
+  FontWeight->"Bold"],
+ " the expression ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{
+     UnderoverscriptBox["\[Sum]", 
+      RowBox[{"n", "=", "1"}], "\[Infinity]"], 
+     FractionBox["1", 
+      SuperscriptBox["n", "6"]]}],
+    FontSize->18], TraditionalForm]],
+  CellChangeTimes->{{3.427581474707872*^9, 3.427581475504752*^9}, {
+    3.4275917210859485`*^9, 3.4275917865707426`*^9}, 3.427591836774189*^9, {
+    3.42759389169359*^9, 3.427593901193651*^9}}],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.427581485192314*^9, 3.4275814964111357`*^9}, {
+   3.427581936570203*^9, 3.427581936679579*^9}, {3.427583114577742*^9, 
+   3.427583126124691*^9}, {3.427591415318366*^9, 3.427591417537131*^9}, {
+   3.4275917998520775`*^9, 3.427591849008642*^9}, {3.427593844646414*^9, 
+   3.4275939112874656`*^9}, {3.4275939426314163`*^9, 3.427593943678298*^9}, {
+   3.4275939771941376`*^9, 3.4275939936629925`*^9}, 3.4293338605356746`*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.427593972162855*^9, 3.427593973162862*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["(#17) Complex numbers (10 min)", "Subsection",
+ CellChangeTimes->{{3.4275742769096212`*^9, 3.427574284050292*^9}, {
+   3.4275743305349646`*^9, 3.4275743528632326`*^9}, {3.4275744397544136`*^9, 
+   3.4275744402231665`*^9}, {3.4275748668821473`*^9, 3.4275748717571783`*^9}, 
+   3.4275749153980827`*^9, {3.4311829878169713`*^9, 3.431182989551379*^9}, 
+   3.431183971851489*^9, {3.4332603050375166`*^9, 3.433260305396901*^9}, {
+   3.5112504407788*^9, 3.511250442292*^9}, {3.5112544325354*^9, 
+   3.5112544330814*^9}}],
+
+Cell[TextData[{
+ "The imaginary ",
+ StyleBox["I",
+  FontFamily->"Times New Roman"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox[
+    RowBox[{"-", "1"}]], TraditionalForm]],
+  CellChangeTimes->{{3.4275756628600464`*^9, 3.4275756748756714`*^9}}],
+ " is one of several built-in ",
+ StyleBox[ButtonBox["Mathematical Constants",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/MathematicalConstants"],
+  FontWeight->"Bold"],
+ " (there are also a number of ",
+ StyleBox[ButtonBox["Physical Constants",
+  BaseStyle->"Link",
+  ButtonData->"paclet:PhysicalConstants/tutorial/PhysicalConstants"],
+  FontWeight->"Bold"],
+ ").  Because ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " always uses CamelCase for built-in names, it is represented by a capital \
+\"I\" rather than a lowercase \"i\".\n\n(a) Read the DC tutorial on ",
+ StyleBox[ButtonBox["Complex Numbers",
+  BaseStyle->"Link",
+  ButtonData->"paclet:tutorial/ComplexNumbers"],
+  FontWeight->"Bold"],
+ " to learn how to create and operate on complex expressions.\n\n(b) Compute ",
+ Cell[BoxData[
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"1", "+", 
+     RowBox[{"2", "I"}]}], 
+    RowBox[{"2", "-", "I"}]], ")"}]],
+  CellChangeTimes->{{3.4275764018160305`*^9, 3.427576431847473*^9}, {
+   3.4275764781446443`*^9, 3.4275764861915708`*^9}},
+  FontSize->14],
+ "and assign the resulting complex number to the variable ",
+ StyleBox["a",
+  FontSlant->"Italic"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.4275752440191383`*^9, 3.427575256784436*^9}, {
+   3.427575311267417*^9, 3.427575313001747*^9}, {3.4275755720319214`*^9, 
+   3.4275755920475464`*^9}, {3.4275756340475464`*^9, 
+   3.4275756340475464`*^9}, {3.4275756895944214`*^9, 
+   3.4275757938600464`*^9}, {3.4275759244381714`*^9, 
+   3.4275759700788927`*^9}, {3.4275760577825785`*^9, 
+   3.4275761344549446`*^9}, {3.4275761768145905`*^9, 3.427576351987587*^9}, {
+   3.4275764244099255`*^9, 3.4275764589101458`*^9}, 3.4275764943322477`*^9, {
+   3.4275765247855673`*^9, 3.427576525363696*^9}, {3.427576564348321*^9, 
+   3.4275766817709475`*^9}, {3.4275773179156437`*^9, 
+   3.4275773347438765`*^9}, {3.427592177135742*^9, 3.427592180229512*^9}, {
+   3.4293796591670465`*^9, 3.429379663682729*^9}, {3.4293797316992245`*^9, 
+   3.4293797912781124`*^9}, 3.431183826020564*^9, {3.439678032339662*^9, 
+   3.4396780551366825`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.427576690083501*^9, 3.4275766908491306`*^9}, {
+  3.4275921861357994`*^9, 3.4275922028859067`*^9}}],
+
+Cell[TextData[{
+ "\n(c) Use standard ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " functions to calculate the (a) ",
+ StyleBox[ButtonBox["Re",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Re"],
+  FontWeight->"Bold"],
+ "al part, (b) ",
+ StyleBox[ButtonBox["Im",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Im"],
+  FontWeight->"Bold"],
+ "aginary part, (c) ",
+ StyleBox[ButtonBox["Abs",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Abs"],
+  FontWeight->"Bold"],
+ "olute value, (d) ",
+ StyleBox[ButtonBox["Arg",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Arg"],
+  FontWeight->"Bold"],
+ "ument (i.e. phase in radians), and (e) complex ",
+ StyleBox[ButtonBox["Conjugate",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Conjugate"],
+  FontWeight->"Bold"],
+ " of ",
+ StyleBox["a",
+  FontSlant->"Italic"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.4275768230062265`*^9, 3.4275769426007414`*^9}, {
+   3.427576988476035*^9, 3.427577113758087*^9}, {3.427592161026264*^9, 
+   3.427592165370042*^9}, {3.4275931842515626`*^9, 3.427593258283286*^9}, 
+   3.4293338755671167`*^9, {3.4298841891072044`*^9, 3.4298842147146316`*^9}, {
+   3.4311838330832*^9, 3.431183848239741*^9}, {3.439678039495958*^9, 
+   3.439678056527317*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.42757682513124*^9, 3.4275768267562504`*^9}, {
+   3.427576952038302*^9, 3.4275769767884607`*^9}, 3.427577261212156*^9, {
+   3.4396777714629927`*^9, 3.4396777978381615`*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["(#18) Linear Algebra (10 min)", "Subsection",
+ CellChangeTimes->{{3.4275742769096212`*^9, 3.427574284050292*^9}, {
+  3.427574322331787*^9, 3.4275743558945017`*^9}, {3.427574441504425*^9, 
+  3.427574442035678*^9}, {3.427574876397833*^9, 3.4275748783040953`*^9}, {
+  3.431182998567178*^9, 3.4311830001609583`*^9}, {3.5112504447412*^9, 
+  3.5112504455836*^9}, {3.5112544353434*^9, 3.5112544360298*^9}}],
+
+Cell[TextData[{
+ "(a) See the tutorials on ",
+ StyleBox[ButtonBox["Vectors and Matrices",
+  BaseStyle->"Link",
+  ButtonData->"paclet:tutorial/VectorsAndMatrices"],
+  FontWeight->"Bold"],
+ " and on ",
+ StyleBox[ButtonBox["Basic Matrix Operations",
+  BaseStyle->"Link",
+  ButtonData->"paclet:tutorial/BasicMatrixOperations"],
+  FontWeight->"Bold"],
+ ".  \n\n(b) Create a matrix ",
+ StyleBox["M",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0.5]],
+ " = ",
+ Cell[BoxData[
+  TagBox[
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"3", "2", 
+       RowBox[{"-", "4"}]},
+      {"2", "1", 
+       RowBox[{"-", "2"}]},
+      {"4", "2", 
+       RowBox[{"-", "5"}]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+        "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.7]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+   Function[BoxForm`e$, 
+    MatrixForm[BoxForm`e$]]]],
+  CellChangeTimes->{{3.4275923123866076`*^9, 3.427592318964775*^9}, {
+   3.427592389965229*^9, 3.427592457856289*^9}}],
+ "and a vector ",
+ StyleBox["v",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0.5]],
+ " = ",
+ Cell[BoxData[
+  TagBox[
+   RowBox[{"(", "\[NoBreak]", 
+    TagBox[GridBox[{
+       {"3"},
+       {
+        RowBox[{"-", "2"}]},
+       {"1"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.5599999999999999]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     Column], "\[NoBreak]", ")"}],
+   Function[BoxForm`e$, 
+    MatrixForm[BoxForm`e$]]]],
+  CellChangeTimes->{{3.4275923123866076`*^9, 3.427592318964775*^9}, {
+   3.427592389965229*^9, 3.427592457840664*^9}, {3.427592502919077*^9, 
+   3.427592519262932*^9}}],
+ ".  Then use ",
+ StyleBox[ButtonBox["Dot",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Dot"],
+  FontWeight->"Bold"],
+ " to compute  ",
+ StyleBox["M.v",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0.5]],
+ " and  ",
+ StyleBox["v.v",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0.5]],
+ ", ",
+ StyleBox[ButtonBox["Cross",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Cross"],
+  FontWeight->"Bold"],
+ " to compute  ",
+ StyleBox["v\[Cross]v",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0.5]],
+ ", ",
+ StyleBox[ButtonBox["Norm",
+  BaseStyle->"Link",
+  ButtonData->"paclet://ref/Norm"],
+  FontWeight->"Bold"],
+ " to compute  ",
+ StyleBox["||",
+  FontWeight->"Bold"],
+ StyleBox["v",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0.5]],
+ StyleBox["||",
+  FontWeight->"Bold"],
+ ", and ",
+ StyleBox[ButtonBox["Normalize",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Normalize"],
+  FontWeight->"Bold"],
+ " to compute ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    OverscriptBox["v", "^"],
+    FontWeight->"Bold",
+    FontColor->GrayLevel[0.5]], TraditionalForm]]],
+ ".  Use the shorthand notation for ",
+ StyleBox["Dot",
+  FontWeight->"Bold"],
+ " and ",
+ StyleBox["Cross",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.427591924118498*^9, 3.4275920097596707`*^9}, 
+   3.4275920528224463`*^9, {3.4275921150572195`*^9, 3.4275921177603617`*^9}, 
+   3.427592442606191*^9, {3.4275924759189043`*^9, 3.4275924885908604`*^9}, {
+   3.4275925235754595`*^9, 3.4275926845764894`*^9}, {3.4275928127023096`*^9, 
+   3.4275928317805567`*^9}, {3.427592913734206*^9, 3.4275929826252723`*^9}, {
+   3.4275930151723557`*^9, 3.4275930763133717`*^9}, {3.4275933445963387`*^9, 
+   3.427593430893766*^9}, {3.4275966160235257`*^9, 3.427596624664206*^9}, {
+   3.4332618835779266`*^9, 3.433261902515911*^9}, {3.4396780652148724`*^9, 
+   3.439678070652407*^9}, {3.471789678419198*^9, 3.4717896958261166`*^9}, {
+   3.471789729046142*^9, 3.4717897317649965`*^9}, {3.471789779094939*^9, 
+   3.471789827596753*^9}, {3.471789887597905*^9, 3.471789900770033*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.439677888541867*^9, 3.4396778889949946`*^9}}],
+
+Cell[TextData[{
+ "\n(c) Compute the matrix ",
+ StyleBox[ButtonBox["Inverse",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Inverse"],
+  FontWeight->"Bold"],
+ ", the ",
+ StyleBox[ButtonBox["Det",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Det"],
+  FontWeight->"Bold"],
+ "erminant, the ",
+ StyleBox[ButtonBox["Transpose",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Transpose"],
+  FontWeight->"Bold"],
+ " of ",
+ StyleBox["M",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0.5]],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.4275927100297775`*^9, 3.4275927879052763`*^9}, {
+   3.427593144766935*^9, 3.4275931652983165`*^9}, {3.427593278267789*^9, 
+   3.4275933077992287`*^9}, {3.427593484331608*^9, 3.427593484331608*^9}, 
+   3.4293338842547283`*^9, {3.433261849498929*^9, 3.4332618507645864`*^9}, 
+   3.439677924057719*^9, {3.439678073949303*^9, 3.439678075949316*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.43967794685474*^9, 3.439677947245367*^9}}],
+
+Cell[TextData[{
+ "\n(d) Assume that ",
+ StyleBox["M.x",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0.5]],
+ StyleBox[" = ",
+  FontWeight->"Bold"],
+ StyleBox["v",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0.5]],
+ "  for unknown vector ",
+ StyleBox["x",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0.5]],
+ ".  Find ",
+ StyleBox["x",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0.5]],
+ " by calculating ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    StyleBox["M",
+     FontWeight->"Bold",
+     FontSlant->"Plain",
+     FontColor->GrayLevel[0.5]], 
+    RowBox[{"-", "1"}]], TraditionalForm]]],
+ StyleBox[". v",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0.5]],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.4275935243162394`*^9, 3.427593591941672*^9}, {
+   3.427593628660657*^9, 3.427593753848958*^9}, 3.429333886114127*^9, {
+   3.4311836956743116`*^9, 3.4311837955043535`*^9}, {3.433260325131781*^9, 
+   3.4332603408821845`*^9}, {3.439674989043747*^9, 3.439674992215582*^9}, {
+   3.43967504738675*^9, 3.4396750655271435`*^9}, {3.439678079199337*^9, 
+   3.4396780799024663`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.4396779496047573`*^9, 3.43967794997976*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+(#19) Solving equations (10 min)\
+\>", "Subsection",
+ CellChangeTimes->{{3.4275742769096212`*^9, 3.427574284050292*^9}, {
+   3.4275743583163924`*^9, 3.427574364394556*^9}, {3.427574443723189*^9, 
+   3.4275744443013177`*^9}, {3.4275748536633124`*^9, 3.427574859647726*^9}, {
+   3.431183661376778*^9, 3.4311836630643106`*^9}, {3.431183977304719*^9, 
+   3.4311839896799564`*^9}, {3.433260389852188*^9, 3.4332603984930344`*^9}, 
+   3.433261710276615*^9, 3.433280171827298*^9, {3.4396650030597696`*^9, 
+   3.4396650033566465`*^9}, {3.5112504479236*^9, 3.5112504486724*^9}, {
+   3.5112544379642*^9, 3.5112544386818*^9}}],
+
+Cell[TextData[{
+ "(a)  ",
+ StyleBox[ButtonBox["Solve",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Solve"],
+  FontWeight->"Bold"],
+ " the equation ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["x", "4"], " ", "-", " ", 
+     SuperscriptBox["x", "3"], " ", "-", " ", 
+     RowBox[{"11", " ", 
+      SuperscriptBox["x", "2"]}], "+", " ", 
+     RowBox[{"9", " ", "x"}], "+", "18"}], " ", "\[Equal]", " ", "0"}], 
+   TraditionalForm]],
+  CellChangeTimes->{{3.4275973150279994`*^9, 3.427597336606262*^9}}],
+ ", which should produce a list of four replacement rules.  Assign a name to \
+this list (e.g. ",
+ StyleBox["mylist",
+  FontSlant->"Italic"],
+ ") and use variable substitution (i.e. ",
+ StyleBox["x /. mylist",
+  FontWeight->"Bold"],
+ ") to convert this list into a simple list of decimal numbers."
+}], "Text",
+ CellChangeTimes->{{3.4396780933713026`*^9, 3.439678104027621*^9}, {
+  3.4718936682501707`*^9, 3.471893708516053*^9}, {3.471893792875968*^9, 
+  3.47189379309472*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.4396779677923737`*^9, 3.4396779682298765`*^9}}],
+
+Cell[TextData[{
+ "\n(b) If you have time left over, work through the tutorial on ",
+ StyleBox[ButtonBox["Solving Equations",
+  BaseStyle->"Link",
+  ButtonData->"paclet:tutorial/SolvingEquations"],
+  FontWeight->"Bold"],
+ ", evaluating each example along the way and paying attention to the way \
+that the numeric function (",
+ StyleBox[ButtonBox["N",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/N"],
+  FontWeight->"Bold"],
+ ") and variable substitutions ( \"/.\" is shorthand for ",
+ StyleBox[ButtonBox["ReplaceAll",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/ReplaceAll"],
+  FontWeight->"Bold"],
+ ") are employed.  The tutorial also demonstrates several other functions \
+used for to solve equations."
+}], "Text",
+ CellChangeTimes->{{3.4332804642879095`*^9, 3.433280464662919*^9}, {
+  3.4396781084807744`*^9, 3.439678109246404*^9}}]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["On Your Own (25 min)", "Section",
+ CellChangeTimes->{{3.5112505171252003`*^9, 3.5112505418668003`*^9}, {
+  3.5112542206717997`*^9, 3.5112542210306*^9}, {3.5113440921406*^9, 
+  3.5113440935290003`*^9}}],
+
+Cell["\<\
+Each lab will have a section at the end like this which will be less \
+structured than the tutorial sections.  It is intended to give you an \
+opportunity to practice using what you have learned in previous sections in a \
+less structure manner.  You will be expected to set up your own format of \
+input boxes, output boxes, and explanation text to accomplish the tasks in \
+each section.\
+\>", "Text",
+ CellChangeTimes->{{3.5112505671856003`*^9, 3.51125075476*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+(#20) Average Speed (10 minutes)\
+\>", "Subsection",
+ CellChangeTimes->{{3.5112507604695997`*^9, 3.5112507643384*^9}, {
+  3.5112508028392*^9, 3.5112508040872*^9}, {3.5112516256362*^9, 
+  3.5112516280542*^9}, {3.5112543925214*^9, 3.511254396125*^9}, {
+  3.5112544414898*^9, 3.5112544423322*^9}, {3.5113440958222*^9, 
+  3.5113440963526*^9}}],
+
+Cell[TextData[{
+ "Recall from Physics 121 that the average speed of a person is the total \
+distance they travel divided by the time to travel that distance.  The \
+average velocity, on the other hand is the total ",
+ StyleBox["displacement",
+  FontWeight->"Bold"],
+ " divided by the time.  For instance, imagine that I walk 10 meters forward \
+in 3 seconds and then 5 meters backward in the next 2 seconds.  My average \
+speed will be my total distance travelled (10 m + 5 m = 15 m) divided by the \
+total time (3 s + 2 s = 5 s).  15 m / 5 s = 3 m/s.  My average velocity, on \
+the other hand will be my total displacement (10 m - 5 m = 5 m) divided by \
+the same total time of 5 seconds.  5 m / 5 s = 1 m/s.\n\nSolve the following \
+problem using ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.5112516335453997`*^9, 3.5112517473786*^9}, {
+  3.5112518039622*^9, 3.5112520728282003`*^9}, {3.5113417629526*^9, 
+  3.5113418373334*^9}}],
+
+Cell["\<\
+Abigail drives from Provo to Salt Lake City in 47 minutes.  She then drives \
+back to Lehi in in 27 minutes.  Find her average speed and average velocity \
+in meters per second.  HINT: You can use Wolfram Alpha to get the distances \
+you need.\
+\>", "Text",
+ CellChangeTimes->{{3.5112517589538*^9, 3.5112517639302*^9}, {
+  3.5112520800978003`*^9, 3.511252161249*^9}, {3.511254288953*^9, 
+  3.5112543670622*^9}}],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.5113418628705997`*^9}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+(#21) Acceleration of the Earth (15 minutes)\
+\>", "Subsection",
+ CellChangeTimes->{{3.5112544483694*^9, 3.5112544627838*^9}, {
+  3.5113440994882*^9, 3.5113440999874*^9}}],
+
+Cell["\<\
+In Physics 121, you learned that the centripetal acceleration of object \
+moving in circular motion is a=v^2/r, where v is the speed of the object and \
+r is the distance between the object and the axis of rotation.  You also \
+learned that the relationship between an object\[CloseCurlyQuote]s \
+acceleration and the force on that object is given by \
+Newton\[CloseCurlyQuote]s Second Law, F=ma, where m is the mass of the object \
+and a is its acceleration.
+
+A person standing on the surface of the Earth is subject to two accelerations \
+from the motion of the Earth, one because of the daily rotation of the Earth \
+about its axis and another because of the yearly revolution of the Earth \
+around the sun.  Compare the force on an 82 kg person due to each of these \
+motions. HINT: You can use Wolram Alpha to get the values of any of the \
+constants or distances you need.  You will probably need to click on the + \
+button to select them in the correct units.\
+\>", "Text",
+ CellChangeTimes->{{3.5113418749918003`*^9, 3.511342252231*^9}, {
+  3.5113437077966003`*^9, 3.5113437260486*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.5113435194110003`*^9, 3.5113435910774*^9}, 
+   3.5113447027558002`*^9}]
+}, Closed]]
+}, Closed]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{1272, 907},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (November 7, 2010)",
+StyleDefinitions->FrontEnd`FileName[{"Creative"}, "PastelColor.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 313, 4, 65, "Title"],
+Cell[883, 28, 404, 7, 40, "Subtitle"],
+Cell[1290, 37, 1491, 28, 65, "Text"],
+Cell[CellGroupData[{
+Cell[2806, 69, 663, 9, 75, "Section"],
+Cell[CellGroupData[{
+Cell[3494, 82, 720, 11, 36, "Subsection"],
+Cell[4217, 95, 2078, 42, 119, "Text"],
+Cell[6298, 139, 191, 3, 41, "Input"],
+Cell[6492, 144, 1421, 31, 101, "Text"],
+Cell[7916, 177, 1035, 21, 162, "Input"],
+Cell[8954, 200, 1951, 43, 83, "Text"],
+Cell[10908, 245, 176, 3, 41, "Input"],
+Cell[11087, 250, 117, 2, 41, "Input"],
+Cell[11207, 254, 116, 2, 41, "Input"],
+Cell[11326, 258, 115, 2, 41, "Input"],
+Cell[11444, 262, 184, 5, 41, "Input"],
+Cell[11631, 269, 2046, 40, 209, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[13714, 314, 515, 8, 28, "Subsection"],
+Cell[14232, 324, 3890, 67, 281, "Text"],
+Cell[18125, 393, 103, 1, 41, "Input"],
+Cell[18231, 396, 2828, 49, 137, "Text"],
+Cell[21062, 447, 194, 3, 41, "Input"],
+Cell[21259, 452, 3172, 58, 101, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[24468, 515, 284, 3, 28, "Subsection"],
+Cell[24755, 520, 3148, 48, 317, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[27940, 573, 376, 5, 28, "Subsection"],
+Cell[28319, 580, 2534, 56, 65, "Text"],
+Cell[CellGroupData[{
+Cell[30878, 640, 295, 4, 27, "Subsubsection"],
+Cell[31176, 646, 2044, 44, 47, "Text"],
+Cell[33223, 692, 175, 3, 41, "Input"],
+Cell[33401, 697, 3658, 85, 245, "Text"],
+Cell[37062, 784, 185, 4, 41, "Input"],
+Cell[37250, 790, 883, 20, 29, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[38170, 815, 267, 3, 21, "Subsubsection"],
+Cell[38440, 820, 1500, 27, 47, "Text"],
+Cell[39943, 849, 203, 4, 62, "Input"],
+Cell[40149, 855, 4381, 83, 245, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[44567, 943, 284, 3, 21, "Subsubsection"],
+Cell[44854, 948, 1738, 42, 85, "Text"],
+Cell[46595, 992, 145, 2, 41, "Input"],
+Cell[46743, 996, 1122, 25, 67, "Text"],
+Cell[47868, 1023, 159, 3, 41, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[48064, 1031, 612, 12, 21, "Subsubsection"],
+Cell[48679, 1045, 2212, 45, 173, "Text"],
+Cell[50894, 1092, 829, 13, 41, "Input"],
+Cell[51726, 1107, 1626, 35, 83, "Text"],
+Cell[53355, 1144, 492, 7, 41, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53908, 1158, 556, 7, 75, "Section"],
+Cell[CellGroupData[{
+Cell[54489, 1169, 562, 7, 36, "Subsection"],
+Cell[55054, 1178, 763, 14, 47, "Text"],
+Cell[55820, 1194, 805, 16, 102, "Input"],
+Cell[56628, 1212, 1447, 32, 83, "Text"],
+Cell[58078, 1246, 216, 3, 41, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[58331, 1254, 357, 5, 28, "Subsection"],
+Cell[58691, 1261, 738, 14, 47, "Text"],
+Cell[59432, 1277, 464, 11, 41, "Input"],
+Cell[59899, 1290, 386, 8, 47, "Text"],
+Cell[60288, 1300, 272, 5, 41, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[60597, 1310, 412, 5, 28, "Subsection"],
+Cell[61012, 1317, 479, 9, 29, "Text"],
+Cell[61494, 1328, 2033, 44, 122, "Input"],
+Cell[63530, 1374, 334, 7, 47, "Text"],
+Cell[63867, 1383, 668, 18, 41, "Input"],
+Cell[64538, 1403, 447, 9, 47, "Text"],
+Cell[64988, 1414, 232, 3, 41, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[65257, 1422, 478, 8, 28, "Subsection"],
+Cell[65738, 1432, 2621, 55, 173, "Text"],
+Cell[68362, 1489, 621, 12, 41, "Input"],
+Cell[68986, 1503, 532, 14, 41, "Input"],
+Cell[69521, 1519, 194, 5, 47, "Text"],
+Cell[69718, 1526, 857, 16, 41, "Input"],
+Cell[70578, 1544, 595, 10, 41, "Input"],
+Cell[71176, 1556, 453, 9, 47, "Text"],
+Cell[71632, 1567, 1468, 28, 82, "Input"],
+Cell[73103, 1597, 621, 11, 47, "Text"],
+Cell[73727, 1610, 2024, 42, 162, "Input"],
+Cell[75754, 1654, 1096, 25, 49, "Text"],
+Cell[76853, 1681, 94, 1, 41, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[76984, 1687, 340, 6, 28, "Subsection"],
+Cell[77327, 1695, 1231, 23, 65, "Text"],
+Cell[78561, 1720, 312, 5, 41, "Input"],
+Cell[78876, 1727, 334, 8, 47, "Text"],
+Cell[79213, 1737, 69, 1, 41, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[79319, 1743, 223, 5, 28, "Subsection"],
+Cell[79545, 1750, 725, 15, 47, "Text"],
+Cell[80273, 1767, 110, 1, 37, "WolframAlphaShort"],
+Cell[80386, 1770, 113, 1, 37, "WolframAlphaShort"],
+Cell[80502, 1773, 107, 1, 37, "WolframAlphaShort"],
+Cell[80612, 1776, 581, 12, 47, "Text"],
+Cell[81196, 1790, 521, 9, 47, "Text"],
+Cell[81720, 1801, 69, 1, 37, "WolframAlphaShort"],
+Cell[81792, 1804, 330, 6, 29, "Text"],
+Cell[82125, 1812, 83, 1, 31, "WolframAlphaShortInput"],
+Cell[82211, 1815, 69, 1, 37, "WolframAlphaShort"],
+Cell[82283, 1818, 183, 4, 29, "Text"],
+Cell[82469, 1824, 82, 1, 29, "Text"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[82600, 1831, 612, 8, 45, "Section"],
+Cell[83215, 1841, 842, 14, 47, "Text"],
+Cell[CellGroupData[{
+Cell[84082, 1859, 555, 9, 36, "Subsection"],
+Cell[84640, 1870, 956, 26, 31, "Text"],
+Cell[85599, 1898, 224, 3, 41, "Input"],
+Cell[85826, 1903, 989, 25, 53, "Text"],
+Cell[86818, 1930, 222, 3, 41, "Input"],
+Cell[87043, 1935, 1380, 36, 67, "Text"],
+Cell[88426, 1973, 172, 2, 41, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[88635, 1980, 409, 5, 28, "Subsection"],
+Cell[89047, 1987, 2568, 63, 65, "Text"],
+Cell[91618, 2052, 96, 1, 41, "Input"],
+Cell[91717, 2055, 1818, 49, 54, "Text"],
+Cell[93538, 2106, 143, 2, 41, "Input"],
+Cell[93684, 2110, 1252, 27, 101, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[94973, 2142, 482, 6, 28, "Subsection"],
+Cell[95458, 2150, 855, 25, 41, "Text"],
+Cell[96316, 2177, 93, 1, 41, "Input"],
+Cell[96412, 2180, 1044, 26, 47, "Text"],
+Cell[97459, 2208, 170, 2, 41, "Input"],
+Cell[97632, 2212, 1205, 31, 49, "Text"],
+Cell[98840, 2245, 299, 4, 41, "Input"],
+Cell[99142, 2251, 730, 21, 47, "Text"],
+Cell[99875, 2274, 168, 2, 41, "Input"],
+Cell[100046, 2278, 1038, 26, 63, "Text"],
+Cell[101087, 2306, 92, 1, 41, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[101216, 2312, 519, 7, 28, "Subsection"],
+Cell[101738, 2321, 2329, 57, 130, "Text"],
+Cell[104070, 2380, 147, 2, 41, "Input"],
+Cell[104220, 2384, 1227, 39, 47, "Text"],
+Cell[105450, 2425, 221, 3, 41, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[105708, 2433, 405, 5, 28, "Subsection"],
+Cell[106116, 2440, 4251, 135, 110, "Text"],
+Cell[110370, 2577, 94, 1, 41, "Input"],
+Cell[110467, 2580, 868, 26, 47, "Text"],
+Cell[111338, 2608, 91, 1, 41, "Input"],
+Cell[111432, 2611, 1081, 37, 49, "Text"],
+Cell[112516, 2650, 93, 1, 41, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[112646, 2656, 624, 10, 28, "Subsection"],
+Cell[113273, 2668, 1009, 29, 49, "Text"],
+Cell[114285, 2699, 96, 1, 41, "Input"],
+Cell[114384, 2702, 840, 21, 65, "Text"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[115273, 2729, 207, 3, 45, "Section"],
+Cell[115483, 2734, 477, 8, 47, "Text"],
+Cell[CellGroupData[{
+Cell[115985, 2746, 349, 7, 36, "Subsection"],
+Cell[116337, 2755, 977, 19, 101, "Text"],
+Cell[117317, 2776, 421, 8, 47, "Text"],
+Cell[117741, 2786, 89, 1, 62, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[117867, 2792, 181, 4, 28, "Subsection"],
+Cell[118051, 2798, 1104, 18, 119, "Text"],
+Cell[119158, 2818, 120, 2, 41, "Input"]
+}, Closed]]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
