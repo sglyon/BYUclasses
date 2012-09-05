@@ -18,7 +18,10 @@ var('b c th')
 # exact_func = pos.diff(th, 2)
 
 def ex_func(b, c, th):
-	return -b**4*sin(th)**2*cos(th)**2/((-b**2*sin(th)**2/c**2 + 1)**(3/2)*c**3) + b**2*sin(th)**2/(sqrt(-b**2*sin(th)**2/c**2 + 1)*c) - b**2*cos(th)**2/(sqrt(-b**2*sin(th)**2/c**2 + 1)*c) - b*cos(th)
+	a = -b**4*sin(th)**2*cos(th)**2/((-b**2*sin(th)**2/c**2 + 1)**(3/2)*c**3)\
+	 + b**2*sin(th)**2/(sqrt(-b**2*sin(th)**2/c**2 + 1)*c) - b**2*cos(th)**2\
+	 /(sqrt(-b**2*sin(th)**2/c**2 + 1)*c) - b*cos(th)
+	return a
 
 approx_func = lambda b, c, th: - b * np.cos(th) - b ** 2/c * np.cos(2 * th)	
 
