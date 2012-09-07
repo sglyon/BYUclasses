@@ -49,4 +49,3 @@ pl.legend(loc=8)
 pl.show()
 
 fig.savefig('Problem 2-23.png')
-
