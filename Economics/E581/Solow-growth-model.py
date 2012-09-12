@@ -154,7 +154,7 @@ print '####' * 18
 
 # Parameters for simulation 2 followed by simulation and cleaning data.
 sigma, rho = [0.1, 0.]
-kbar = (sigma / (delta + n + g)) ** (1 / (1 - theta))
+kbar = (sigma / (delta + n + g)) ** (1 / (1 - theta)) 
 data_2 = pd.DataFrame(main())
 data_2.columns = ['mean', 'standard deviation', 'corr with y', 'corr with A',
                   'autocorrelation']
