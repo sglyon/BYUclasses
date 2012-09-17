@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     34675,       1138]
-NotebookOptionsPosition[     31273,       1031]
-NotebookOutlinePosition[     31691,       1048]
-CellTagsIndexPosition[     31648,       1045]
+NotebookDataLength[     37146,       1233]
+NotebookOptionsPosition[     33599,       1122]
+NotebookOutlinePosition[     34071,       1141]
+CellTagsIndexPosition[     34028,       1138]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -562,7 +562,7 @@ Cell[BoxData[
  FontSize->16,
  FontWeight->"Bold"]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -921,14 +921,105 @@ Cell[BoxData[
        FontWeight->"Bold"], "z"]}]}]}], TraditionalForm]], "Equation",
  CellChangeTimes->{{3.556397614835301*^9, 3.556397624639132*^9}}],
 
+Cell[TextData[{
+ "In order to define a plane, one only needs two vectors in the plane as well \
+as a vector normal to both of them. The vector ",
+ StyleBox["(x",
+  FontWeight->"Bold"],
+ " - ",
+ StyleBox["y) ",
+  FontWeight->"Bold"],
+ "and ",
+ StyleBox["(z",
+  FontWeight->"Bold"],
+ " - ",
+ StyleBox["y) ",
+  FontWeight->"Bold"],
+ " are the vecotrs pointing from ",
+ StyleBox["y",
+  FontWeight->"Bold"],
+ " to both ",
+ StyleBox["x",
+  FontWeight->"Bold"],
+ " and ",
+ StyleBox["z",
+  FontWeight->"Bold"],
+ " and are therefore in the plane created by the three particles. To get the \
+normal vector I just need to take the cross product of those two:"
+}], "Text",
+ CellChangeTimes->{{3.5563976380039682`*^9, 3.556397680667046*^9}, {
+  3.5564489977957067`*^9, 3.556449113749371*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{" ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      StyleBox["(",
+       FontWeight->"Bold"], 
+      RowBox[{
+       StyleBox["x",
+        FontWeight->"Bold"], "-", 
+       StyleBox["y",
+        FontWeight->"Bold"]}], 
+      StyleBox[")",
+       FontWeight->"Bold"]}], 
+     StyleBox[" ",
+      FontWeight->"Bold"], 
+     StyleBox["\[Cross]",
+      FontWeight->"Bold"], 
+     StyleBox[" ",
+      FontWeight->"Bold"], 
+     RowBox[{
+      StyleBox["(",
+       FontWeight->"Bold"], 
+      RowBox[{
+       StyleBox["z",
+        FontWeight->"Bold"], "-", 
+       StyleBox["y",
+        FontWeight->"Bold"]}], 
+      StyleBox[")",
+       FontWeight->"Bold"]}]}], 
+    StyleBox["  ",
+     FontWeight->"Bold"], 
+    StyleBox["=",
+     FontWeight->"Plain"], 
+    StyleBox[" ",
+     FontWeight->"Plain"], 
+    RowBox[{
+     SuperscriptBox[
+      StyleBox[
+       RowBox[{"\[Beta]", "(", "t", ")"}],
+       FontWeight->"Plain"], "2"], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox[
+         StyleBox["\[ScriptU]",
+          FontWeight->"Bold"], "x"], " ", "-", " ", 
+        SuperscriptBox[
+         StyleBox["\[ScriptU]",
+          FontWeight->"Bold"], "y"]}], ")"}], "\[Cross]", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox[
+         StyleBox["\[ScriptU]",
+          FontWeight->"Bold"], "z"], " ", "-", " ", 
+        SuperscriptBox[
+         StyleBox["\[ScriptU]",
+          FontWeight->"Bold"], "y"]}], ")"}]}]}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.556449118307585*^9, 3.556449166178215*^9}}],
+
 Cell["\<\
-When talking about planes being paralell, it is useful to look at the cross \
-product of the vectors defining the plane. By definition, the result of a \
-cross product is perpendicular to both vectors initially involved. \
+The above vector has a constant direction, which means that the plane isn\
+\[CloseCurlyQuote]t chaning its orientation or that it is always parallell to \
+some fixed plane. \
 \>", "Text",
- CellChangeTimes->{{3.5563976380039682`*^9, 3.556397680667046*^9}}]
+ CellChangeTimes->{{3.556449175789493*^9, 3.556449213379668*^9}}]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -1031,6 +1122,8 @@ Cell[BoxData[
 },
 WindowSize->{740, 756},
 WindowMargins->{{4, Automatic}, {Automatic, 4}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
 FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
 2011)",
 StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
@@ -1099,9 +1192,9 @@ Cell[CellGroupData[{
 Cell[16133, 526, 720, 22, 74, "Code"],
 Cell[16856, 550, 362, 12, 72, "Output"]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[17267, 568, 90, 1, 34, "Section"],
+Cell[17267, 568, 90, 1, 54, "Section"],
 Cell[CellGroupData[{
 Cell[17382, 573, 110, 1, 31, "Subsection"],
 Cell[17495, 576, 233, 4, 20, "Text"],
@@ -1127,17 +1220,19 @@ Cell[25606, 833, 233, 4, 35, "Text"],
 Cell[25842, 839, 693, 26, 26, "Equation"],
 Cell[26538, 867, 693, 26, 26, "Equation"],
 Cell[27234, 895, 693, 26, 26, "Equation"],
-Cell[27930, 923, 313, 5, 35, "Text"]
+Cell[27930, 923, 779, 27, 50, "Text"],
+Cell[28712, 952, 1591, 60, 29, "Equation"],
+Cell[30306, 1014, 263, 5, 35, "Text"]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[28292, 934, 125, 3, 34, "Section"],
-Cell[28420, 939, 180, 4, 20, "Text"],
-Cell[28603, 945, 147, 3, 20, "Text"],
-Cell[28753, 950, 641, 18, 29, "EquationNumbered"],
-Cell[29397, 970, 570, 15, 38, "Text"],
-Cell[29970, 987, 202, 4, 20, "Text"],
-Cell[30175, 993, 1070, 34, 34, "Equation"]
+Cell[30618, 1025, 125, 3, 54, "Section"],
+Cell[30746, 1030, 180, 4, 20, "Text"],
+Cell[30929, 1036, 147, 3, 20, "Text"],
+Cell[31079, 1041, 641, 18, 29, "EquationNumbered"],
+Cell[31723, 1061, 570, 15, 38, "Text"],
+Cell[32296, 1078, 202, 4, 20, "Text"],
+Cell[32501, 1084, 1070, 34, 34, "Equation"]
 }, Open  ]]
 }, Open  ]]
 }
