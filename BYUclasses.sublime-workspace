@@ -20,13 +20,10 @@
 	"buffers":
 	[
 		{
-			"contents": "##Chase Coleman\n##Econ 581 HW 2\n#For Kerk the man Phillips\n##----------------------------------------------------------------------------##\nimport numpy as np\nimport scipy as sp\nfrom scipy import linalg as la\nfrom scipy import optimize as opt\nimport math\nimport numpy.random as rand\nimport matplotlib.pyplot as plt\nfrom time import time\n##-----------------------Define Parameters------------------------------------##\ng = .025\nn = .01\ndelta = .1\ntheta = .33\ngamma = 1.0\nrho = .05\nT = 50\n\ndef gety(k_now):\n	return k_now**theta\n\ndef getr(k_now):\n	return theta * k_now**(theta - 1.)\n\ndef getw(k_now):\n	return (1. - theta) * k_now**theta\n\ndef kplus(k_now, c_now):\n	return ((k_now**theta) + (1. - delta)*k_now - c_now)/((1. + g)*(1. + n))\n\ndef cplus(c_now, k_plus):\n	return (((1. - delta + theta*k_plus**(theta - 1.))/((1. + rho)*(1. + g)**gamma))**(1./gamma)) * c_now\n##----------------------------------------------------------------------------##\nk_bar = ((1./theta)*(((1.+rho)*(1.+g)**gamma) - 1. + delta))**(1./(theta - 1.))\nc_bar = k_bar**theta - k_bar*(g + n +g*n + delta)\ny_bar = gety(k_bar)\nr_bar = getr(k_bar)\nw_bar = getw(k_bar)\n\nk_knot = 1.7*k_bar\n\nkt = np.zeros((50,1))\nct = np.zeros((50,1))\n\nc0 = .82690000001\nkt[0,0] = k_knot\n\ndef getcguess(c_knot):\n	ct[0,0] = c_knot\n	for i in range(1,50):\n		kt[i,0] = kplus(kt[i-1, 0], ct[i-1,0])\n		ct[i,0] = cplus(ct[i-1, 0], kt[i, 0])\n	k_final = kt[49,0]\n	y = k_final - k_bar\n	return abs(y)\n		\nc_guess = opt.fmin(getcguess, c0, ftol = 1e-10)\n\n\nyt = np.zeros((50,1))\nrt = np.zeros((50,1))\nwt = np.zeros((50,1))\nkt[0,0] = k_knot\nct[0,0] = c_guess\nyt[0,0] = gety(k_knot)\nrt[0,0] = getr(k_knot)\nwt[0,0] = getw(k_knot)\n\nfor i in range(1,50):\n	kt[i,0] = kplus(kt[i-1, 0], ct[i-1,0])\n	ct[i,0] = cplus(ct[i-1, 0], kt[i,0])\n	yt[i,0] = gety(kt[i,0])\n	rt[i,0] = getr(kt[i,0])\n	wt[i,0] = getw(kt[i,0])\n\nt = sp.arange(50)\nplt.plot(t, kt, 'r', label = 'kt')\nplt.plot(t, ct, 'k', label = 'ct')\nplt.plot(t, yt, 'o', label = 'yt')\nplt.plot(t, rt, 'o', label = 'rt')\nplt.plot(t, rt, 'k', label = 'wt')\nplt.legend()\nplt.show()\n",
 			"file": "/Users/spencerlyon2/Dropbox/Macro Boot Camp/Econ 581 HW/581hw2.py",
-			"file_size": 2141,
-			"file_write_time": 1347380774000000,
 			"settings":
 			{
-				"buffer_size": 2055,
+				"buffer_size": 2044,
 				"line_ending": "Windows"
 			}
 		},
@@ -50,7 +47,7 @@
 			"file": "Economics/E581/Ramsey-Cass-Koopman.py",
 			"settings":
 			{
-				"buffer_size": 1332,
+				"buffer_size": 2915,
 				"line_ending": "Unix"
 			}
 		}
@@ -63,7 +60,7 @@
 		[
 			[
 				"lint",
-				"SublimeLinter: Disable Linting"
+				"SublimeLinter: Lint Current File"
 			],
 			[
 				"align",
@@ -102,7 +99,7 @@
 				"Snippet: New Property"
 			]
 		],
-		"width": 552.0
+		"width": 551.0
 	},
 	"console":
 	{
@@ -225,15 +222,15 @@
 					"file": "/Users/spencerlyon2/Dropbox/Macro Boot Camp/Econ 581 HW/581hw2.py",
 					"settings":
 					{
-						"buffer_size": 2055,
+						"buffer_size": 2044,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1441,
-								1443
+								1825,
+								1825
 							]
 						],
 						"settings":
@@ -305,7 +302,7 @@
 							[
 							],
 							"pyflakes_ignore_import_*": true,
-							"sublimelinter": false,
+							"sublimelinter": true,
 							"sublimelinter_delay": 2.0,
 							"sublimelinter_disable":
 							[
@@ -329,7 +326,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 252.0,
+						"translation.y": 499.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -573,15 +570,15 @@
 					"file": "Economics/E581/Ramsey-Cass-Koopman.py",
 					"settings":
 					{
-						"buffer_size": 1332,
+						"buffer_size": 2915,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1031,
-								1031
+								2852,
+								2852
 							]
 						],
 						"settings":
@@ -673,10 +670,12 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 34.0,
+						"translation.y": 649.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -750,7 +749,7 @@
 		[
 			[
 				"",
-				"/Users/spencerlyon2/Documents/Research/Endogenous-Yield-Curves/Yield Curve.sublime-project"
+				"/Users/spencerlyon2/Documents/School/Semesters/Fall 2012/English 316/English 316.sublime-project"
 			]
 		],
 		"width": 380.0

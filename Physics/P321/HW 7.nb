@@ -1,0 +1,93 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2330,         83]
+NotebookOptionsPosition[      1722,         58]
+NotebookOutlinePosition[      2140,         75]
+CellTagsIndexPosition[      2097,         72]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.556550518540929*^9, 3.55655052906815*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Spencer Lyon", "Title",
+ CellChangeTimes->{{3.5563934847615757`*^9, 3.556393486943615*^9}}],
+
+Cell["Physics 321", "Subtitle",
+ CellChangeTimes->{{3.5563934890645647`*^9, 3.556393491119731*^9}}],
+
+Cell["Homework Due 9-14-12", "Subsubtitle",
+ CellChangeTimes->{{3.556393493568112*^9, 3.556393502950733*^9}, {
+  3.556548524449684*^9, 3.5565485245302134`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["P5.9", "Section",
+ CellChangeTimes->{{3.5565485548185*^9, 3.5565485653194427`*^9}, {
+  3.556720945625881*^9, 3.556720945746364*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"m", " ", "=", " ", "2"}], ";", " ", 
+  RowBox[{"\[Alpha]", " ", "=", " ", "2000"}], ";", " ", 
+  RowBox[{
+   RowBox[{"g", "[", "t_", "]"}], " ", ":=", 
+   RowBox[{"36", " ", 
+    RowBox[{"Cos", "[", 
+     RowBox[{"p", " ", "t"}], "]"}]}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.556720997992632*^9, 3.556721032121255*^9}}]
+}, Open  ]],
+
+Cell["P5.18", "Section",
+ CellChangeTimes->{{3.556720949577423*^9, 3.5567209525031843`*^9}}]
+}, Open  ]]
+},
+WindowSize->{718, 856},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 132, 2, 27, "Input"],
+Cell[CellGroupData[{
+Cell[714, 26, 97, 1, 76, "Title"],
+Cell[814, 29, 99, 1, 64, "Subtitle"],
+Cell[916, 32, 160, 2, 26, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[1101, 38, 138, 2, 54, "Section"],
+Cell[1242, 42, 357, 9, 43, "Code"]
+}, Open  ]],
+Cell[1614, 54, 92, 1, 54, "Section"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
