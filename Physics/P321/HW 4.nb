@@ -1,0 +1,985 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     31299,        976]
+NotebookOptionsPosition[     28949,        900]
+NotebookOutlinePosition[     29462,        920]
+CellTagsIndexPosition[     29419,        917]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Spencer Lyon", "Title",
+ CellChangeTimes->{{3.556280010905649*^9, 3.556280011781023*^9}}],
+
+Cell["Physics 321 HW 4 (Due 9-10-12)", "Subtitle",
+ CellChangeTimes->{{3.556280013350316*^9, 3.5562800243815613`*^9}}],
+
+Cell["Problems 4.3, 4.9, 4.14", "Subsubtitle",
+ CellChangeTimes->{{3.556280031181994*^9, 3.556280047436414*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["4.3", "Section",
+ CellChangeTimes->{{3.556280051909617*^9, 3.556280054780188*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"m1", " ", "=", " ", 
+    RowBox[{"m2", " ", "=", " ", "5000"}]}], ";"}], " ", 
+  RowBox[{"(*", " ", "kg", " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"G", " ", "=", " ", "6.67*^-11"}], " ", ";", 
+  RowBox[{"(*", 
+   RowBox[{"N", " ", 
+    SuperscriptBox["m", "2"], 
+    SuperscriptBox["kg", 
+     RowBox[{"-", "2"}]]}], " ", "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.55628005712611*^9, 3.556280084150262*^9}, {
+  3.5562803493913918`*^9, 3.556280350478915*^9}}],
+
+Cell[TextData[{
+ "We know that F = ma \[Rule] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      RowBox[{"-", " ", 
+       SubscriptBox["m", "1"]}], 
+      SubscriptBox["m", "2"], "G"}], 
+     SuperscriptBox["r", "2"]], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SubscriptBox["m", "1"], "a"}], " ", "\[Rule]", " ", "a"}], " ", "=", 
+     " ", 
+     FractionBox[
+      RowBox[{"m", " ", "G"}], 
+      SuperscriptBox["R", "2"]]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ".\nThe acceleration will be non-constant becuase it is dependent on the \
+(changing) distance between the 2 spheres. The slowest acceleration coems \
+when the distance is a maximum, or it is equal to one. If we solve for that \
+an then assume it is the constant velocity we will get a maximum on the time \
+required for the spheres to come in contact."
+}], "Text",
+ CellChangeTimes->{{3.556280169432808*^9, 3.556280315502597*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", " ", "=", " ", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"m1", " ", "*", " ", "G"}], 
+     SuperscriptBox["1", "2"]], "//", "N"}]}], ";", " ", 
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<a = \>\"", ",", " ", "a", ",", " ", 
+    "\"\<\!\(\*FractionBox[\(m\), SuperscriptBox[\(s\), \(2\)]]\)\>\""}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.556280317264748*^9, 3.556280390766706*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"a = \"\>", "\[InvisibleSpace]", "3.335`*^-7", 
+    "\[InvisibleSpace]", "\<\"\\!\\(\\*FractionBox[\\(m\\), \
+SuperscriptBox[\\(s\\), \\(2\\)]]\\)\"\>"}],
+   SequenceForm[
+   "a = ", 3.335*^-7, 
+    "\!\(\*FractionBox[\(m\), SuperscriptBox[\(s\), \(2\)]]\)"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{{3.5562803783110523`*^9, 3.556280391719479*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "The constant acceleration equation for motion is x = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], 
+      SuperscriptBox["at", "2"]}], "\[Rule]", " ", "t"}], " ", "=", " ", 
+    SqrtBox[
+     FractionBox[
+      RowBox[{"2", "x"}], "a"]]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". \nWe will use this equation and note that the total distance the spheres \
+need to move is 1 - 2 ( 0.47) = 0.06 m. This means that each sphere will \
+cover 1/2 this distance or 0.03 m."
+}], "Text",
+ CellChangeTimes->{{3.556280397741651*^9, 3.5562804796948843`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"t", " ", "=", " ", 
+   SqrtBox[
+    FractionBox[
+     RowBox[{"2", " ", "0.03"}], "a"]]}], ";", " ", 
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<Final time is that t = \>\"", ",", " ", "t", ",", " ", 
+    "\"\< seconds\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.5562804831222477`*^9, 3.556280525533373*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"Final time is that t = \"\>", "\[InvisibleSpace]", 
+    "424.1580424529414`", "\[InvisibleSpace]", "\<\" seconds\"\>"}],
+   SequenceForm["Final time is that t = ", 424.1580424529414, " seconds"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{{3.5562805149008913`*^9, 3.5562805319752913`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<If t < 425 true will be printed here: \>\"", ",", " ", 
+   RowBox[{"t", " ", "<", " ", "425"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.5562805540705976`*^9, 3.556280575967566*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"If t < 425 true will be printed here: \"\>", 
+    "\[InvisibleSpace]", "True"}],
+   SequenceForm["If t < 425 true will be printed here: ", True],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{{3.5562805732375183`*^9, 3.55628057648083*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4.9", "Section",
+ CellChangeTimes->{{3.5562805795413523`*^9, 3.556280579797258*^9}}],
+
+Cell[TextData[{
+ "Equation (4.2) says that F(z) = m ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["dv", "dt"], " ", "\[Rule]", " ", 
+     FractionBox["dv", "dt"]}], " ", "=", " ", "g"}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.556280590642007*^9, 3.55628061810515*^9}}],
+
+Cell["\<\
+Integrating this equation we get that v = gt + C. We know that the object was \
+dropped from rest so at t=0 the velocity was also equal to 0. v(0) = 0 = g(0) \
++ C \[Rule] C = 0 \[Rule] v = gt.\
+\>", "Text",
+ CellChangeTimes->{{3.556280626562381*^9, 3.556280686163007*^9}}],
+
+Cell[TextData[{
+ "If we integrate this again, we see that x = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "2"], 
+     SuperscriptBox["gt", "2"]}], "  ", "+", " ", 
+    RowBox[{"C", "."}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " We now say that the ball\[CloseCurlyQuote]s initial position at time t =0 \
+before the ball was dropped was x =0. Using this we can solve for C: x(0) = 0 \
+= ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], 
+      SuperscriptBox[
+       RowBox[{"g", "(", "0", ")"}], "2"]}], " ", "+", " ", "C"}], " ", "=", 
+    " ", 
+    RowBox[{
+     RowBox[{"0", " ", "\[Rule]", " ", "C"}], "=", 
+     RowBox[{
+      RowBox[{"0", "\[Rule]", "x"}], " ", "=", " ", 
+      RowBox[{
+       FractionBox["1", "2"], 
+       SuperscriptBox["gt", "2"]}]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.556280688419057*^9, 3.556280779786167*^9}}],
+
+Cell[TextData[{
+ "Now we let ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["h", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "be equal to the height from the top of the building to the top of the \
+window. ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "is the time required to travel this distance. We will use he equation we \
+just derived to write expressions for the position and time of the ball when \
+it reaches the top and bottom of the window."
+}], "Text",
+ CellChangeTimes->{{3.5562807858315353`*^9, 3.556280831937512*^9}, {
+  3.5562808669580193`*^9, 3.5562808788938637`*^9}}],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["h", "1"], " ", "=", " ", 
+    RowBox[{
+     FractionBox["1", "2"], 
+     SuperscriptBox[
+      RowBox[{"g", "(", 
+       SubscriptBox["t", "1"], ")"}], "2"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "         [1]\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["h", "1"], " ", "+", " ", "h"}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], 
+      SuperscriptBox[
+       RowBox[{"g", "(", 
+        RowBox[{
+         SubscriptBox["t", "1"], " ", "+", " ", "\[Tau]"}], ")"}], "2"]}], 
+     " ", "=", " ", 
+     RowBox[{
+      FractionBox["1", "2"], "g", " ", 
+      RowBox[{"(", " ", 
+       RowBox[{
+        SuperscriptBox[
+         SubscriptBox["t", "1"], "2"], " ", "+", " ", 
+        RowBox[{"2", 
+         SubscriptBox["t", "1"], "\[Tau]"}]}]}]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " + ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[Tau]", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ")           [2]"
+}], "Text",
+ CellChangeTimes->{{3.5562808392926083`*^9, 3.556280848232654*^9}, {
+  3.556280881366147*^9, 3.556280936813553*^9}, {3.556281022424827*^9, 
+  3.5562810275650167`*^9}}],
+
+Cell[TextData[{
+ "Subtracting equation [1] from equation [2] gives us: h = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["1", "2"], 
+    RowBox[{"g", "(", 
+     RowBox[{
+      RowBox[{"2", 
+       SubscriptBox["t", "1"], "\[Tau]"}], " ", "+", 
+      SuperscriptBox["\[Tau]", "2"]}], ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.556280898700696*^9, 3.5562809579157667`*^9}, {
+  3.556281034639317*^9, 3.556281040591805*^9}}],
+
+Cell[TextData[{
+ "We will now solve this for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "and get this expression: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["t", "1"], " ", "=", " ", 
+    RowBox[{
+     FractionBox["h", "g\[Tau]"], " ", "-", " ", 
+     RowBox[{
+      FractionBox["1", "2"], "\[Tau]"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ".\nPlugging this back into equation [1] we get: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["h", "1"], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], 
+      SuperscriptBox[
+       RowBox[{"g", "(", 
+        RowBox[{
+         FractionBox["h", "g\[Tau]"], " ", "-", " ", 
+         RowBox[{
+          FractionBox["1", "2"], "\[Tau]"}]}], ")"}], "2"]}], " ", "=", " ", 
+     RowBox[{
+      FractionBox["1", "2"], 
+      RowBox[{"g", "(", 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox["h", "2"], 
+         RowBox[{
+          SuperscriptBox["g", "2"], 
+          SuperscriptBox["\[Tau]", "2"]}]], "-", " ", 
+        FractionBox["h", "g"], " ", "+", " ", 
+        FractionBox[
+         SuperscriptBox["\[Tau]", "2"], "4"]}], ")"}], " "}]}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.556280959216941*^9, 3.556281100740121*^9}, {
+  3.5562811371571417`*^9, 3.5562811697292*^9}}],
+
+Cell[TextData[{
+ "Simplifying we get: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["h", "1"], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], "g", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"4", 
+         FractionBox[
+          SuperscriptBox["h", "2"], 
+          RowBox[{"4", 
+           SuperscriptBox["g", "2"], 
+           SuperscriptBox["\[Tau]", "2"]}]]}], " ", "-", " ", 
+        FractionBox[
+         RowBox[{"4", "h", " ", "g", " ", 
+          SuperscriptBox["\[Tau]", "2"]}], 
+         RowBox[{"4", 
+          SuperscriptBox["g", "2"], 
+          SuperscriptBox["\[Tau]", "2"]}]], " ", "+", " ", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox["g", "2"], 
+          SuperscriptBox["\[Tau]", "4"]}], 
+         RowBox[{"4", 
+          SuperscriptBox["g", "2"], 
+          SuperscriptBox["\[Tau]", "2"]}]]}], ")"}]}], " ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       FractionBox["1", "2"], "g", " ", 
+       RowBox[{"(", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"4", 
+           SuperscriptBox["h", "2"]}], " ", "-", " ", 
+          RowBox[{"4", 
+           SuperscriptBox["hg\[Tau]", "2"]}], " ", "+", " ", 
+          SuperscriptBox["h", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["\[Tau]", "4"]}]]}], 
+         RowBox[{"4", 
+          SuperscriptBox["g", "2"], 
+          SuperscriptBox["\[Tau]", "2"]}]], ")"}]}], " ", "=", " ", 
+      RowBox[{
+       FractionBox["1", 
+        RowBox[{"8", 
+         SuperscriptBox["g\[Tau]", "2"], " "}]], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"4", 
+          SuperscriptBox["h", "2"]}], " ", "-", " ", 
+         RowBox[{"4", 
+          SuperscriptBox["hg\[Tau]", "2"]}], " ", "+", " ", 
+         RowBox[{
+          SuperscriptBox["g", "2"], 
+          SuperscriptBox["\[Tau]", "4"]}]}], ")"}]}]}]}]}], TraditionalForm]],
+  
+  FormatType->"TraditionalForm"],
+ "\nFinally we get that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["h", "1"], " ", "=", " ", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"8", 
+       SuperscriptBox["g\[Tau]", "2"]}]], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"2", "h"}], " ", "-", " ", 
+        SuperscriptBox["g\[Tau]", "2"]}], ")"}], "2"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.556281176430407*^9, 3.556281203396748*^9}, {
+  3.556281504369378*^9, 3.5562816514422607`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4.14", "Section",
+ CellChangeTimes->{{3.556281670181308*^9, 3.556281670716964*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {FaceForm[Opacity[0.31]], 
+    DiskBox[{0.5817666807121962, 0.7624944802336415}, \
+{0.14588197146562887`, 0.12878442557572123`}]}, 
+   {FaceForm[Opacity[0.27]], 
+    DiskBox[{0.7342796508808085, 0.45864372614092286`}, \
+{0.1458819714656292, 0.12878442557572128`}]}, 
+   {AbsoluteThickness[1], StrokeForm[{GrayLevel[0.], Opacity[1.]}], EdgeForm[
+    None], LineBox[{{0.43588470924656697`, 0.49285208918447365`}, {
+     0.43588470924656697`, 0.8107886398245374}}]}, 
+   {AbsoluteThickness[1], StrokeForm[{GrayLevel[0.], Opacity[1.]}], EdgeForm[
+    None], LineBox[{{0.7276486521778252, 0.8107886398245372}, {
+     0.7320693179798139, 0.45663146949130196`}}]}, 
+   {FaceForm[Opacity[0.27]], 
+    RectangleBox[{0.40270727580372245`, 0.5137611722391608}, \
+{0.4875302033748773, 0.4438939870442101}]}, 
+   {FaceForm[Opacity[0.27]], 
+    RectangleBox[{0.8369198812274903, 0.18281134763150036`}, \
+{0.9217428087986457, 0.1129441624365494}]}, 
+   {FaceForm[Opacity[0.27]], 
+    RectangleBox[{0.5501376022964432, 0.1828113476315006}, \
+{0.6349605298675982, 0.1129441624365494}]}, 
+   {AbsoluteThickness[1], StrokeForm[{GrayLevel[0.], Opacity[1.]}], EdgeForm[
+    None], LineBox[{{0.5913934097936837, 0.17109531526035945`}, {
+     0.5913934097936837, 0.489031865900423}}]}, 
+   {AbsoluteThickness[1], StrokeForm[{GrayLevel[0.], Opacity[1.]}], EdgeForm[
+    None], LineBox[{{0.8781756887247312, 0.1600636544401041}, {
+     0.8781756887247312, 0.4780002050801677}}]}, InsetBox[
+    StyleBox[Cell["m",
+      GeneratedCell->False,
+      CellAutoOverwrite->False,
+      CellBaseline->Baseline,
+      TextAlignment->Left],
+     Background->GrayLevel[1.]], {0.8470455646462118, 0.13082991849845493`}, {
+    Left, Baseline}, {0.06323440367488821, 0.04044942300760304}, {{1., 0.}, {
+    0., 1.}},
+    Alignment->{Left, Top}], InsetBox[
+    StyleBox[Cell["4m",
+      GeneratedCell->False,
+      CellAutoOverwrite->False,
+      CellBaseline->Baseline,
+      TextAlignment->Left],
+     Background->GrayLevel[1.]], {0.40540930577209616`, 0.4510270549340736}, {
+    Left, Baseline}, {0.08880668289689897, 0.040449423007603055`}, {{1., 
+    0.}, {0., 1.}},
+    Alignment->{Left, Top}], InsetBox[
+    StyleBox[Cell["4m",
+      GeneratedCell->False,
+      CellAutoOverwrite->False,
+      CellBaseline->Baseline,
+      TextAlignment->Left],
+     Background->GrayLevel[1.]], {0.5441065376063736, 0.12743167087324814`}, {
+    Left, Baseline}, {0.08880668289689897, 0.04044942300760304}, {{1., 0.}, {
+    0., 1.}},
+    Alignment->{Left, Top}], 
+   {AbsoluteThickness[1], StrokeForm[Opacity[1.]], EdgeForm[None], 
+    ArrowBox[{{0.3387096774193549, 0.540322580645161}, {0.3387096774193549, 
+     0.7661290322580636}}]}, 
+   {AbsoluteThickness[1], StrokeForm[Opacity[1.]], EdgeForm[None], 
+    ArrowBox[{{0.5483870967741937, 0.42204301075268713`}, {0.5483870967741937,
+      0.22849462365591222`}}]}, 
+   {AbsoluteThickness[1], StrokeForm[Opacity[1.]], EdgeForm[None], 
+    ArrowBox[{{0.78494623655914, 0.7446236559139783}, {0.78494623655914, 
+     0.5672043010752679}}]}, 
+   {AbsoluteThickness[1], StrokeForm[Opacity[1.]], EdgeForm[None], 
+    ArrowBox[{{0.9190681003584231, 0.21236559139784772`}, {0.9190681003584231,
+      0.4381720430107503}}]}, InsetBox[
+    StyleBox[Cell["[2]",
+      GeneratedCell->False,
+      CellAutoOverwrite->False,
+      CellBaseline->Baseline,
+      TextAlignment->Left],
+     Background->GrayLevel[1.]], {0.6505376344086025, 0.13172043010752588`}, {
+    Left, Baseline},
+    Alignment->{Left, Top}], InsetBox[
+    StyleBox[Cell["[3]",
+      GeneratedCell->False,
+      CellAutoOverwrite->False,
+      CellBaseline->Baseline,
+      TextAlignment->Left],
+     Background->GrayLevel[1.]], {0.9677419354838711, 0.1424731182795691}, {
+    Left, Baseline},
+    Alignment->{Left, Top}], InsetBox[
+    StyleBox[Cell["[1]",
+      GeneratedCell->False,
+      CellAutoOverwrite->False,
+      CellBaseline->Baseline,
+      TextAlignment->Left],
+     Background->GrayLevel[1.]], {0.5107526881720432, 0.49731182795698814`}, {
+    Left, Baseline},
+    Alignment->{Left, Top}]},
+  ContentSelectable->True,
+  ImagePadding->{{0., 0.}, {0., 0.}},
+  ImageSize->{249., 186.},
+  PlotRange->{{0., 1.3333333333333335`}, {0., 1.}},
+  PlotRangePadding->Automatic]], "Input",
+ CellChangeTimes->{{3.5562817968899107`*^9, 3.5562819085190163`*^9}, {
+  3.556281989476815*^9, 3.556282064836111*^9}, {3.556282208421546*^9, 
+  3.556282217688924*^9}, {3.5562825185674257`*^9, 3.556282536706274*^9}, {
+  3.556282573463675*^9, 3.5562825792730503`*^9}}],
+
+Cell["\<\
+The system is set up as in the figure above. The arrows indicate which \
+direction the masses/2nd pully system are moving. \
+\>", "Text",
+ CellChangeTimes->{{3.556282077953331*^9, 3.556282101427874*^9}}],
+
+Cell[TextData[{
+ "We will define the first mass (weighing 4m moves upward) at velocity ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". It must be true that the second pully moves down at this same velocity. \
+We will then say that the second system of masses moves with a velocity, \
+relative to the 2nd pully, of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["v", "2"], "."}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " This makes mass [2] move at a velocity ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["v", "1"], " ", "+", " ", 
+    SubscriptBox["v", "2"], " "}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "relative to the first pully and the mass [4] moves at a relative velocity \
+of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["v", "1"], " ", "-", " ", 
+    SubscriptBox["v", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". We will also define tensions in the two strings to be ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["T", "1"], " "}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "for the upper pully system and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["T", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " for the lower pully system. \n\nUsing this info we can define three \
+equations that describe the motion of the 3 blocks (all based on equation \
+that F = ma):"
+}], "Text",
+ CellChangeTimes->{{3.556282129056634*^9, 3.556282155696405*^9}, {
+  3.556282188498513*^9, 3.55628220161749*^9}, {3.556282335913274*^9, 
+  3.556282357198544*^9}, {3.556282413431419*^9, 3.5562824552702723`*^9}, {
+  3.556282488173533*^9, 3.556282514006537*^9}, {3.556282554022895*^9, 
+  3.5562825680772257`*^9}, {3.556282617199067*^9, 3.5562826603659678`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"4", "m", " ", 
+    FractionBox[
+     SubscriptBox["dv", "1"], "dt"]}], " ", "=", " ", 
+   RowBox[{
+    SubscriptBox["T", "1"], " ", "-", " ", 
+    RowBox[{"4", "mg"}]}]}], TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.556282663759186*^9, 3.5562826759243517`*^9}},
+ TextAlignment->Center,
+ TextJustification->0.],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"4", " ", "m", " ", 
+    FractionBox["d", "dt"], 
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["v", "2"], "  ", "+", " ", 
+      SubscriptBox["v", "1"]}], ")"}]}], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"4", "mg"}], " ", "-", " ", 
+    SubscriptBox["T", "2"]}]}], TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.5562826789265833`*^9, 3.556282698316276*^9}},
+ TextAlignment->Center,
+ TextJustification->0.],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{" ", 
+   RowBox[{
+    RowBox[{"m", " ", 
+     FractionBox["d", "dt"], 
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["v", "2"], "  ", "-", " ", 
+       SubscriptBox["v", "1"]}], ")"}]}], " ", "=", "  ", 
+    RowBox[{
+     SubscriptBox["T", "2"], " ", "-", " ", "mg"}]}]}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.55628269852634*^9, 3.556282706575119*^9}},
+ TextAlignment->Center,
+ TextJustification->0.],
+
+Cell[TextData[{
+ "We will also need to define ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["a", "1"], " ", "=", " ", 
+    FractionBox[
+     SubscriptBox["dv", "1"], "dt"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["a", "2"], " ", "=", " ", 
+    FractionBox[
+     SubscriptBox["dv", "2"], "dt"]}], TraditionalForm]]],
+ ".  We are still missing 1 equation becuase we have 4 unknowns, 2 \
+accelerations and 2 tensions, but only three equaitons (the ones numbered \
+above)."
+}], "Text",
+ CellChangeTimes->{{3.5562827276651783`*^9, 3.5562827534438057`*^9}, {
+  3.556282811239011*^9, 3.556282844806264*^9}}],
+
+Cell["\<\
+We do still have one more equation we can find, and that is the one defining \
+the motion of the 2nd pully. The only forces acting on are the two tensions. \
+We know that the second tension acts twice as much as the first one and that \
+because there is no mass, there is no net force, and therefore the two \
+tensisons must be equal to one another. This gives us our 4th equation :\
+\>", "Text",
+ CellChangeTimes->{{3.5562828907301083`*^9, 3.556283018275172*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["T", "1"], " ", "=", " ", 
+   RowBox[{"2", 
+    SubscriptBox["T", "2"]}]}], TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.5562828907301083`*^9, 3.556283020752145*^9}},
+ TextAlignment->Center,
+ TextJustification->0.],
+
+Cell["\<\
+We now make a lot of substitusions and see the following: \
+\>", "Text",
+ CellChangeTimes->{{3.556283035947796*^9, 3.5562830489260683`*^9}}],
+
+Cell[TextData[{
+ " ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"4", "m", " ", 
+      SubscriptBox["a", "1"]}], " ", "-", " ", 
+     SubscriptBox["T", "1"]}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{"-", "4"}], "m", " ", "g", " "}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.556283050900813*^9, 3.556283062550077*^9}, {
+  3.556283100037695*^9, 3.556283105344611*^9}, {3.55628318625455*^9, 
+  3.556283228450775*^9}, {3.556283578169579*^9, 3.556283578169673*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"4", " ", "m", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["a", "2"], " ", "+", " ", 
+       SubscriptBox["a", "1"]}], ")"}]}], " ", "+", " ", 
+    SubscriptBox["T", "2"]}], " ", "=", " ", 
+   RowBox[{"4", " ", "m", " ", "g"}]}], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{{3.5562831331890306`*^9, 3.556283148999691*^9}, {
+  3.556283234256412*^9, 3.556283238051704*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"m", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["a", "2"], " ", "-", " ", 
+       SubscriptBox["a", "1"]}], ")"}]}], " ", "-", " ", 
+    SubscriptBox["T", "2"]}], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"-", " ", "m"}], " ", "g"}]}], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{{3.5562830857093983`*^9, 3.5562831249244967`*^9}, {
+  3.5562832136908417`*^9, 3.5562832136990137`*^9}, {3.556283243872616*^9, 
+  3.5562832502106533`*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SubscriptBox["T", "1"], " ", "-", " ", 
+    RowBox[{"2", 
+     SubscriptBox["T", "2"]}]}], " ", "=", " ", "0"}], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{{3.556283215379705*^9, 3.5562832219286633`*^9}}],
+
+Cell["\<\
+Transforming these 4 equations into a matrix we get:\
+\>", "Text",
+ CellChangeTimes->{{3.5562832557983*^9, 3.556283265540584*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", GridBox[{
+       {
+        RowBox[{"4", " ", "m"}], "0", 
+        RowBox[{"-", "1"}], "0"},
+       {
+        RowBox[{"4", "m", " "}], 
+        RowBox[{"4", "m", " "}], "0", "1"},
+       {
+        RowBox[{"-", "m"}], "m", "0", 
+        RowBox[{"-", "1"}]},
+       {"0", "0", "1", 
+        RowBox[{"-", "2"}]}
+      }], ")"}], " ", "*", " ", 
+    RowBox[{"(", GridBox[{
+       {
+        SubscriptBox["a", "1"]},
+       {
+        SubscriptBox["a", "2"]},
+       {
+        SubscriptBox["T", "1"]},
+       {
+        SubscriptBox["T", "2"]}
+      }], ")"}]}], " ", "=", " ", 
+   RowBox[{"(", GridBox[{
+      {
+       RowBox[{
+        RowBox[{"-", "4"}], " ", "m", " ", "g"}]},
+      {
+       RowBox[{"4", "m", " ", "g"}]},
+      {
+       RowBox[{
+        RowBox[{"-", "m"}], " ", "g"}]},
+      {"0"}
+     }], ")"}]}], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{{3.5562832670049047`*^9, 3.5562833976387787`*^9}, {
+  3.556283582266547*^9, 3.556283610732111*^9}}],
+
+Cell["\<\
+Allowing mathematica so solve this system we get.\
+\>", "Text",
+ CellChangeTimes->{{3.55628340117854*^9, 3.556283408555366*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"(", GridBox[{
+      {"a1"},
+      {"a2"},
+      {"T1"},
+      {"T2"}
+     }], ")"}], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Inverse", "[", 
+     RowBox[{"(", GridBox[{
+        {
+         RowBox[{"4", " ", "m"}], "0", 
+         RowBox[{"-", "1"}], "0"},
+        {
+         RowBox[{"4", "m", " "}], 
+         RowBox[{"4", "m", " "}], "0", "1"},
+        {
+         RowBox[{"-", "m"}], "m", "0", 
+         RowBox[{"-", "1"}]},
+        {"0", "0", "1", 
+         RowBox[{"-", "2"}]}
+       }], ")"}], " ", "]"}], ".", 
+    RowBox[{"(", GridBox[{
+       {
+        RowBox[{
+         RowBox[{"-", "4"}], " ", "m", " ", "g"}]},
+       {
+        RowBox[{"4", "m", " ", "g"}]},
+       {
+        RowBox[{
+         RowBox[{"-", "m"}], " ", "g"}]},
+       {"0"}
+      }], ")"}]}]}], TraditionalForm]], "Input",
+ CellChangeTimes->{{3.5562834115481*^9, 3.556283470642494*^9}, {
+  3.55628352246845*^9, 3.556283522827919*^9}, {3.556283584058896*^9, 
+  3.556283618514181*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{"-", 
+       FractionBox["g", "9"]}]},
+     {
+      FractionBox[
+       RowBox[{"2", " ", "g"}], "3"]},
+     {
+      FractionBox[
+       RowBox[{"32", " ", "g", " ", "m"}], "9"]},
+     {
+      FractionBox[
+       RowBox[{"16", " ", "g", " ", "m"}], "9"]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.556283474819989*^9, {3.556283524518951*^9, 3.556283540288097*^9}, {
+   3.556283590859172*^9, 3.556283620062726*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Therefore we get that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["a", "1"], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      FractionBox[
+       RowBox[{"-", "1"}], "9"], "g", "  ", "and", " ", 
+      SubscriptBox["a", "2"]}], " ", "=", " ", 
+     RowBox[{
+      FractionBox["2", "3"], "g"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.556283625166315*^9, 3.556283642496483*^9}, {
+  3.5562837973407393`*^9, 3.556283801587943*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->{"RulerBar", "EditBar"},
+WindowSize->{718, 856},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 95, 1, 76, "Title"],
+Cell[677, 25, 118, 1, 64, "Subtitle"],
+Cell[798, 28, 112, 1, 26, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[935, 33, 88, 1, 54, "Section"],
+Cell[1026, 36, 524, 14, 46, "Input"],
+Cell[1553, 52, 965, 26, 77, "Text"],
+Cell[CellGroupData[{
+Cell[2543, 82, 428, 12, 48, "Input"],
+Cell[2974, 96, 436, 10, 39, "Print"]
+}, Open  ]],
+Cell[3425, 109, 631, 17, 77, "Text"],
+Cell[CellGroupData[{
+Cell[4081, 130, 350, 10, 53, "Input"],
+Cell[4434, 142, 375, 7, 20, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4846, 154, 235, 4, 27, "Input"],
+Cell[5084, 160, 322, 7, 20, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5455, 173, 90, 1, 54, "Section"],
+Cell[5548, 176, 340, 10, 31, "Text"],
+Cell[5891, 188, 283, 5, 35, "Text"],
+Cell[6177, 195, 999, 32, 57, "Text"],
+Cell[7179, 229, 663, 17, 50, "Text"],
+Cell[7845, 248, 1266, 43, 57, "Text"],
+Cell[9114, 293, 489, 15, 31, "Text"],
+Cell[9606, 310, 1416, 46, 66, "Text"],
+Cell[11025, 358, 2475, 78, 75, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13537, 441, 89, 1, 54, "Section"],
+Cell[13629, 444, 4546, 100, 201, "Input"],
+Cell[18178, 546, 213, 4, 20, "Text"],
+Cell[18394, 552, 1835, 48, 95, "Text"],
+Cell[20232, 602, 373, 11, 47, "EquationNumbered"],
+Cell[20608, 615, 471, 14, 47, "EquationNumbered"],
+Cell[21082, 631, 469, 15, 47, "EquationNumbered"],
+Cell[21554, 648, 692, 21, 46, "Text"],
+Cell[22249, 671, 474, 7, 50, "Text"],
+Cell[22726, 680, 281, 8, 26, "EquationNumbered"],
+Cell[23010, 690, 150, 3, 20, "Text"],
+Cell[23163, 695, 531, 15, 20, "Text"],
+Cell[23697, 712, 496, 13, 20, "Text"],
+Cell[24196, 727, 558, 15, 20, "Text"],
+Cell[24757, 744, 306, 8, 20, "Text"],
+Cell[25066, 754, 140, 3, 20, "Text"],
+Cell[25209, 759, 1069, 40, 73, "Text"],
+Cell[26281, 801, 138, 3, 20, "Text"],
+Cell[CellGroupData[{
+Cell[26444, 808, 1005, 37, 80, "Input"],
+Cell[27452, 847, 938, 29, 114, "Output"]
+}, Open  ]],
+Cell[28405, 879, 516, 17, 31, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
