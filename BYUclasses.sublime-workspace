@@ -23,7 +23,7 @@
 			"file": "/Users/spencerlyon2/Dropbox/Macro Boot Camp/Econ 581 HW/581hw2.py",
 			"settings":
 			{
-				"buffer_size": 2044,
+				"buffer_size": 2045,
 				"line_ending": "Windows"
 			}
 		},
@@ -222,15 +222,15 @@
 					"file": "/Users/spencerlyon2/Dropbox/Macro Boot Camp/Econ 581 HW/581hw2.py",
 					"settings":
 					{
-						"buffer_size": 2044,
+						"buffer_size": 2045,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1825,
-								1825
+								0,
+								0
 							]
 						],
 						"settings":
@@ -749,7 +749,7 @@
 		[
 			[
 				"",
-				"/Users/spencerlyon2/Documents/School/Semesters/Fall 2012/English 316/English 316.sublime-project"
+				"/Users/spencerlyon2/Documents/School/BYUclasses.wiki/Wiki notes.sublime-project"
 			]
 		],
 		"width": 380.0

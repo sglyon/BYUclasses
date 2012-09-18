@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     41665,       1345]
-NotebookOptionsPosition[     38481,       1250]
-NotebookOutlinePosition[     38898,       1267]
-CellTagsIndexPosition[     38855,       1264]
+NotebookDataLength[     49747,       1613]
+NotebookOptionsPosition[     45722,       1495]
+NotebookOutlinePosition[     46140,       1512]
+CellTagsIndexPosition[     46097,       1509]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -124,12 +124,12 @@ Cell[BoxData[
       FractionBox[
        RowBox[{"18", " ", 
         RowBox[{"cos", "(", 
-         RowBox[{"p", " ", "t"}], ")"}]}], 
+         RowBox[{"t", " ", "\[Omega]"}], ")"}]}], 
        RowBox[{
-        SuperscriptBox["p", "2"], "-", "1000"}]]}]}], "}"}], "}"}], 
+        SuperscriptBox["\[Omega]", "2"], "-", "1000"}]]}]}], "}"}], "}"}], 
   TraditionalForm]], "Output",
  CellChangeTimes->{{3.556881113720724*^9, 3.5568811422198133`*^9}, {
-  3.556882733001191*^9, 3.556882745226775*^9}}]
+   3.556882733001191*^9, 3.556882745226775*^9}, 3.556908210418247*^9}]
 }, Open  ]],
 
 Cell[TextData[{
@@ -1026,7 +1026,8 @@ Cell[BoxData[
     SuperscriptBox["\[Omega]", "2"]}], "+", 
    RowBox[{"3", " ", 
     SuperscriptBox["\[Omega]", "4"]}]}], TraditionalForm]], "Output",
- CellChangeTimes->{3.5568856015669947`*^9, 3.556885666283476*^9}]
+ CellChangeTimes->{3.5568856015669947`*^9, 3.556885666283476*^9, 
+  3.556908210565435*^9}]
 }, Open  ]],
 
 Cell[TextData[{
@@ -1078,7 +1079,8 @@ Cell[BoxData[
     Rational[2, 3]^Rational[1, 2] $CellContext`n, 
      2^Rational[1, 2] $CellContext`n}],
    Editable->False], TraditionalForm]], "Print",
- CellChangeTimes->{{3.55688581092232*^9, 3.5568858267624903`*^9}}]
+ CellChangeTimes->{{3.55688581092232*^9, 3.5568858267624903`*^9}, 
+   3.5569082106261253`*^9}]
 }, Open  ]],
 
 Cell[TextData[{
@@ -1245,13 +1247,256 @@ Cell[BoxData[
  FontSize->16,
  FontWeight->"Bold"]
 }, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["P6.1", "Section",
+ CellChangeTimes->{{3.556907977164667*^9, 3.556907977874065*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"m", " ", "=", " ", "4"}], " ", 
+  RowBox[{"(*", " ", "kg", " ", "*)"}], ";", " ", 
+  RowBox[{"F", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", " ", 
+     RowBox[{"12", " ", 
+      SuperscriptBox["t", "2"]}], ",", "0"}], "}"}]}], ";", " ", 
+  RowBox[{"v0", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", " ", "1", ",", " ", "2"}], "}"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.556908004001853*^9, 3.556908013392115*^9}, {
+  3.556908164272416*^9, 3.5569082135685043`*^9}}],
+
+Cell["", "Text",
+ CellChangeTimes->{{3.556908209888625*^9, 3.556908210925069*^9}}],
+
+Cell["\<\
+We are given the force acting on our particle and the initial velocity. We \
+can use Newton\[CloseCurlyQuote]s second law to solve for the velocity.\
+\>", "Text",
+ CellChangeTimes->{{3.5569691002182283`*^9, 3.5569691342022963`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"4", " ", 
+    FractionBox[
+     RowBox[{"\[PartialD]", 
+      StyleBox["v",
+       FontWeight->"Bold"]}], 
+     RowBox[{"\[PartialD]", "t"}]]}], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"4", " ", "\[ImaginaryI]"}], " ", "+", " ", 
+    RowBox[{"12", " ", 
+     SuperscriptBox["t", "2"], " ", "\[ImaginaryJ]", " "}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.5569691391728907`*^9, 3.556969187503017*^9}, {
+  3.5569692284574213`*^9, 3.556969228729601*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[PartialD]", 
+    StyleBox["v",
+     FontWeight->"Bold"]}], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"\[ImaginaryI]", " ", "+", " ", 
+      RowBox[{"3", " ", 
+       SuperscriptBox["t", "2"], "\[ImaginaryJ]"}]}], " ", ")"}], 
+    RowBox[{"\[PartialD]", "t"}]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.556969189177726*^9, 3.556969214631238*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   StyleBox["v",
+    FontWeight->"Bold"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"t", " ", "\[ImaginaryI]"}], " ", "+", " ", 
+    RowBox[{
+     SuperscriptBox["t", "3"], "\[ImaginaryJ]"}], " ", "+", " ", 
+    StyleBox["C",
+     FontWeight->"Bold"]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.556969215489155*^9, 3.556969246850095*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    StyleBox["v",
+     FontWeight->"Bold"], "(", "0", ")"}], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"2", ",", " ", "1", ",", " ", "2"}], "}"}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", " ", "0", ",", " ", "0"}], "}"}], " ", "+", " ", 
+       StyleBox["C",
+        FontWeight->"Bold"]}], 
+      StyleBox[" ",
+       FontWeight->"Bold"], 
+      StyleBox["\[Rule]",
+       FontWeight->"Bold"], 
+      StyleBox[" ",
+       FontWeight->"Bold"], 
+      StyleBox["C",
+       FontWeight->"Bold"]}], " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "1", ",", "2"}], "}"}]}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.556969248492755*^9, 3.556969312196519*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   StyleBox["v",
+    FontWeight->"Bold"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"t", " ", "+", " ", "2"}], ")"}], " ", "\[ImaginaryI]"}], "  ", 
+    "+", " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["t", "3"], " ", "+", " ", "1"}], ")"}], 
+     "\[ImaginaryJ]"}], " ", "+", " ", 
+    RowBox[{"2", " ", 
+     StyleBox["k",
+      FontWeight->"Bold"]}]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.556969313317086*^9, 3.556969339038072*^9}}],
+
+Cell["\<\
+We can now let mathematica know about the velocity function:\
+\>", "Text",
+ CellChangeTimes->{{3.5569693094539022`*^9, 3.5569693105802813`*^9}, {
+  3.556969353446196*^9, 3.5569693644868097`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"v", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"2", " ", "+", " ", "t"}], ",", " ", 
+     RowBox[{
+      SuperscriptBox["t", "3"], " ", "+", " ", "1"}], ",", " ", "2"}], 
+    "}"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.556969367248608*^9, 3.5569693984052963`*^9}}],
+
+Cell[TextData[{
+ "Equation (6.4) tells us that W = ",
+ Cell[BoxData[
+  RowBox[{
+   SuperscriptBox[
+    SubscriptBox["\[Integral]", 
+     SubscriptBox["t", "1"]], 
+    SubscriptBox["t", "2"]], 
+   RowBox[{
+    StyleBox[
+     RowBox[{"F", " ", "\[CenterDot]", "v"}],
+     FontWeight->"Bold"], " ", 
+    RowBox[{"\[DifferentialD]", "t"}]}]}]]],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.556908098343657*^9, 3.5569081584235363`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"Dot", "[", 
+    RowBox[{"F", ",", " ", "v"}], "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", " ", "0", ",", " ", "1"}], "}"}]}], "]"}]], "Code",
+ CellChangeTimes->{{3.556908218997405*^9, 3.556908250430887*^9}, 
+   3.5569693814639883`*^9}],
+
+Cell[BoxData[
+ FormBox["16", TraditionalForm]], "Output",
+ CellChangeTimes->{{3.556908244015506*^9, 3.556908250949621*^9}, 
+   3.556969425745804*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "We also know that the kinetic energy at any given time \[ScriptT] is given \
+by T = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "2"], " ", "m"}], " ", "|", 
+    StyleBox["v",
+     FontWeight->"Bold"], 
+    SuperscriptBox["|", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.556969451513829*^9, 3.556969482743898*^9}}],
+
+Cell[TextData[{
+ "The velocity at t = 0 is {2, 1, 2}. So T(0) = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "2"], "4", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["2", "2"], " ", "+", " ", 
+       SuperscriptBox["1", "1"], " ", "+", " ", 
+       SuperscriptBox["2", "2"]}], ")"}]}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{"2", " ", "*", " ", 
+      RowBox[{"(", "9", ")"}]}], " ", "=", " ", "18"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.556969492856378*^9, 3.556969498768331*^9}, {
+  3.556969559079129*^9, 3.5569696238418016`*^9}}],
+
+Cell[TextData[{
+ "The velocity at \[ScriptT] = 1 is {3, 2, 2}. So T(1) = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "2"], "4", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["3", "2"], " ", "+", " ", 
+       SuperscriptBox["2", "2"], " ", "+", " ", 
+       SuperscriptBox["2", "2"]}], ")"}]}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{"2", "*", 
+      RowBox[{"(", "17", ")"}]}], " ", "=", " ", "34"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.556969595719241*^9, 3.556969658594818*^9}}],
+
+Cell["\<\
+The change in kinetic energy it T(1) - T(0) = 34 - 18 = 16. \
+\>", "Text",
+ CellChangeTimes->{{3.5569696592190933`*^9, 3.5569696789377127`*^9}}],
+
+Cell["\<\
+This is the same as the work done, thus illustrating the princple of \
+conservation of energy. \
+\>", "Text",
+ CellChangeTimes->{{3.556969679941464*^9, 3.556969695891438*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{718, 856},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
-2010)",
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
 StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
   CharacterEncoding -> "UTF-8"]
 ]
@@ -1279,72 +1524,95 @@ Cell[1925, 61, 379, 10, 29, "Equation"],
 Cell[2307, 73, 181, 6, 20, "Text"],
 Cell[CellGroupData[{
 Cell[2513, 83, 603, 17, 59, "Code"],
-Cell[3119, 102, 858, 29, 51, "Output"]
+Cell[3119, 102, 895, 29, 70, "Output"]
 }, Open  ]],
-Cell[3992, 134, 1674, 55, 47, "Text"],
-Cell[5669, 191, 490, 14, 36, "Text"],
-Cell[6162, 207, 656, 16, 61, "Text"],
-Cell[6821, 225, 443, 14, 51, "Equation"],
-Cell[7267, 241, 405, 11, 25, "Text"],
-Cell[7675, 254, 601, 16, 51, "Equation"],
-Cell[8279, 272, 480, 12, 23, "Text"],
-Cell[8762, 286, 1315, 47, 40, "Text"],
-Cell[10080, 335, 1314, 46, 40, "Text"],
-Cell[11397, 383, 255, 6, 26, "Text"]
+Cell[4029, 134, 1674, 55, 47, "Text"],
+Cell[5706, 191, 490, 14, 36, "Text"],
+Cell[6199, 207, 656, 16, 61, "Text"],
+Cell[6858, 225, 443, 14, 51, "Equation"],
+Cell[7304, 241, 405, 11, 25, "Text"],
+Cell[7712, 254, 601, 16, 51, "Equation"],
+Cell[8316, 272, 480, 12, 23, "Text"],
+Cell[8799, 286, 1315, 47, 40, "Text"],
+Cell[10117, 335, 1314, 46, 40, "Text"],
+Cell[11434, 383, 255, 6, 26, "Text"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[11689, 394, 92, 1, 34, "Section"],
-Cell[11784, 397, 150, 3, 20, "Text"],
-Cell[11937, 402, 3841, 93, 182, "Input"],
+Cell[11726, 394, 92, 1, 34, "Section"],
+Cell[11821, 397, 150, 3, 20, "Text"],
+Cell[11974, 402, 3841, 93, 182, "Input"],
 Cell[CellGroupData[{
-Cell[15803, 499, 136, 3, 18, "Subsubsection"],
-Cell[15942, 504, 216, 4, 20, "Text"],
-Cell[16161, 510, 171, 4, 20, "Text"],
-Cell[16335, 516, 581, 18, 29, "Equation"],
-Cell[16919, 536, 460, 15, 29, "Equation"],
-Cell[17382, 553, 596, 17, 31, "Equation"],
-Cell[17981, 572, 483, 15, 31, "Equation"],
-Cell[18467, 589, 900, 23, 50, "Text"],
-Cell[19370, 614, 380, 10, 20, "Text"],
-Cell[19753, 626, 212, 4, 20, "Text"],
-Cell[19968, 632, 830, 24, 31, "Equation"],
-Cell[20801, 658, 933, 25, 37, "Equation"],
-Cell[21737, 685, 719, 24, 20, "Text"],
-Cell[22459, 711, 338, 10, 23, "Text"],
-Cell[22800, 723, 1395, 42, 44, "Equation"],
-Cell[24198, 767, 1152, 36, 44, "Equation"]
+Cell[15840, 499, 136, 3, 18, "Subsubsection"],
+Cell[15979, 504, 216, 4, 20, "Text"],
+Cell[16198, 510, 171, 4, 20, "Text"],
+Cell[16372, 516, 581, 18, 29, "Equation"],
+Cell[16956, 536, 460, 15, 29, "Equation"],
+Cell[17419, 553, 596, 17, 31, "Equation"],
+Cell[18018, 572, 483, 15, 31, "Equation"],
+Cell[18504, 589, 900, 23, 50, "Text"],
+Cell[19407, 614, 380, 10, 20, "Text"],
+Cell[19790, 626, 212, 4, 20, "Text"],
+Cell[20005, 632, 830, 24, 31, "Equation"],
+Cell[20838, 658, 933, 25, 37, "Equation"],
+Cell[21774, 685, 719, 24, 20, "Text"],
+Cell[22496, 711, 338, 10, 23, "Text"],
+Cell[22837, 723, 1395, 42, 44, "Equation"],
+Cell[24235, 767, 1152, 36, 44, "Equation"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25387, 808, 121, 1, 18, "Subsubsection"],
-Cell[25511, 811, 1550, 52, 38, "Text"],
-Cell[27064, 865, 912, 27, 29, "Equation"],
-Cell[27979, 894, 741, 21, 29, "Equation"],
-Cell[28723, 917, 211, 4, 20, "Text"],
-Cell[28937, 923, 445, 14, 32, "EquationNumbered"],
-Cell[29385, 939, 427, 13, 32, "EquationNumbered"],
-Cell[29815, 954, 826, 26, 47, "Text"],
-Cell[30644, 982, 179, 5, 20, "Text"],
+Cell[25424, 808, 121, 1, 18, "Subsubsection"],
+Cell[25548, 811, 1550, 52, 38, "Text"],
+Cell[27101, 865, 912, 27, 29, "Equation"],
+Cell[28016, 894, 741, 21, 29, "Equation"],
+Cell[28760, 917, 211, 4, 20, "Text"],
+Cell[28974, 923, 445, 14, 32, "EquationNumbered"],
+Cell[29422, 939, 427, 13, 32, "EquationNumbered"],
+Cell[29852, 954, 826, 26, 47, "Text"],
+Cell[30681, 982, 179, 5, 20, "Text"],
 Cell[CellGroupData[{
-Cell[30848, 991, 810, 25, 71, "Code"],
-Cell[31661, 1018, 355, 10, 30, "Output"]
+Cell[30885, 991, 810, 25, 71, "Code"],
+Cell[31698, 1018, 380, 11, 70, "Output"]
 }, Open  ]],
-Cell[32031, 1031, 269, 8, 20, "Text"],
+Cell[32093, 1032, 269, 8, 20, "Text"],
 Cell[CellGroupData[{
-Cell[32325, 1043, 664, 19, 74, "Code"],
-Cell[32992, 1064, 544, 16, 47, "Print"]
+Cell[32387, 1044, 664, 19, 74, "Code"],
+Cell[33054, 1065, 572, 17, 70, "Print"]
 }, Open  ]],
-Cell[33551, 1083, 449, 14, 23, "Text"],
-Cell[34003, 1099, 144, 3, 20, "Text"],
-Cell[34150, 1104, 849, 28, 32, "Equation"],
-Cell[35002, 1134, 378, 7, 35, "Text"],
-Cell[35383, 1143, 424, 13, 44, "Equation"],
-Cell[35810, 1158, 426, 14, 44, "Equation"],
-Cell[36239, 1174, 138, 3, 20, "Text"],
-Cell[36380, 1179, 929, 29, 46, "Equation"],
-Cell[37312, 1210, 166, 3, 20, "Text"],
-Cell[37481, 1215, 478, 14, 70, "Equation"],
-Cell[37962, 1231, 479, 14, 70, "Equation"]
+Cell[33641, 1085, 449, 14, 23, "Text"],
+Cell[34093, 1101, 144, 3, 20, "Text"],
+Cell[34240, 1106, 849, 28, 32, "Equation"],
+Cell[35092, 1136, 378, 7, 35, "Text"],
+Cell[35473, 1145, 424, 13, 44, "Equation"],
+Cell[35900, 1160, 426, 14, 44, "Equation"],
+Cell[36329, 1176, 138, 3, 20, "Text"],
+Cell[36470, 1181, 929, 29, 46, "Equation"],
+Cell[37402, 1212, 166, 3, 20, "Text"],
+Cell[37571, 1217, 478, 14, 70, "Equation"],
+Cell[38052, 1233, 479, 14, 70, "Equation"]
 }, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[38580, 1253, 89, 1, 34, "Section"],
+Cell[38672, 1256, 524, 13, 49, "Code"],
+Cell[39199, 1271, 82, 1, 20, "Text"],
+Cell[39284, 1274, 242, 4, 20, "Text"],
+Cell[39529, 1280, 517, 15, 48, "Equation"],
+Cell[40049, 1297, 426, 12, 32, "Equation"],
+Cell[40478, 1311, 385, 11, 29, "Equation"],
+Cell[40866, 1324, 810, 27, 26, "Equation"],
+Cell[41679, 1353, 552, 18, 32, "Equation"],
+Cell[42234, 1373, 205, 4, 20, "Text"],
+Cell[42442, 1379, 318, 9, 49, "Code"],
+Cell[42763, 1390, 427, 15, 31, "Text"],
+Cell[CellGroupData[{
+Cell[43215, 1409, 313, 8, 43, "Code"],
+Cell[43531, 1419, 149, 3, 27, "Output"]
+}, Open  ]],
+Cell[43695, 1425, 419, 14, 31, "Text"],
+Cell[44117, 1441, 640, 19, 31, "Text"],
+Cell[44760, 1462, 589, 18, 31, "Text"],
+Cell[45352, 1482, 154, 3, 20, "Text"],
+Cell[45509, 1487, 185, 4, 20, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
