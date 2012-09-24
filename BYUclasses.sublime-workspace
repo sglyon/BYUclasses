@@ -23,16 +23,24 @@
 			"file": "Economics/E581/OLG__model.py",
 			"settings":
 			{
-				"buffer_size": 3136,
+				"buffer_size": 3131,
 				"line_ending": "Unix",
 				"name": "\"\"\""
+			}
+		},
+		{
+			"file": "/Users/spencerlyon2/Desktop/kerks_solow.m",
+			"settings":
+			{
+				"buffer_size": 2569,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "Economics/E581/Solow-growth-model.py",
 			"settings":
 			{
-				"buffer_size": 5862,
+				"buffer_size": 5951,
 				"line_ending": "Unix"
 			}
 		}
@@ -40,9 +48,17 @@
 	"build_system": "Packages/User/my_python.sublime-build",
 	"command_palette":
 	{
-		"height": 375.0,
+		"height": 71.0,
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"lint show",
+				"SublimeLinter: Show Error List"
+			],
 			[
 				"pack ins",
 				"Package Control: Install Package"
@@ -54,10 +70,6 @@
 			[
 				"align",
 				"Preferences: Alignment File Settings – Default"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"insall",
@@ -88,7 +100,7 @@
 				"Snippet: New Property"
 			]
 		],
-		"width": 588.0
+		"width": 552.0
 	},
 	"console":
 	{
@@ -105,13 +117,16 @@
 	},
 	"file_history":
 	[
+		"/Users/spencerlyon2/Desktop/rst cheatsheet.rst",
+		"/Users/spencerlyon2/Desktop/test2.rst",
+		"/Users/spencerlyon2/Desktop/test.rst",
+		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/Solow-growth-model.py",
 		"/Users/spencerlyon2/Dropbox/Macro Boot Camp/Econ 581 HW/581hw2.py",
 		"/Users/spencerlyon2/Dropbox/Macro Boot Camp/Spencer Lyon/Econ Homework/OLG 3 Period/Matlab/OLG_3Period.m",
 		"/Users/spencerlyon2/Dropbox/Macro Boot Camp/Spencer Lyon/Econ Homework/OLG 3 Period/Matlab/k32Solve.m",
 		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/Ramsey-Cass-Koopman.py",
 		"/Users/spencerlyon2/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/Ramsy-Cass-Koopman.py",
-		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/Solow-growth-model.py",
 		"/Users/spencerlyon2/Dropbox/Yield Curve/Drafts/YieldCurve1209a.tex",
 		"/Users/spencerlyon2/Documents/School/BYUclasses/Physics/P330/README.md",
 		"/Users/spencerlyon2/Documents/School/BYUclasses/Physics/P330/P2_6c.m",
@@ -214,7 +229,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -222,15 +237,15 @@
 					"file": "Economics/E581/OLG__model.py",
 					"settings":
 					{
-						"buffer_size": 3136,
+						"buffer_size": 3131,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3014,
-								3014
+								1284,
+								1284
 							]
 						],
 						"settings":
@@ -328,31 +343,140 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 576.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
 					"buffer": 1,
-					"file": "Economics/E581/Solow-growth-model.py",
+					"file": "/Users/spencerlyon2/Desktop/kerks_solow.m",
 					"settings":
 					{
-						"buffer_size": 5862,
+						"buffer_size": 2569,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4791,
-								4677
+								373,
+								362
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Matlab/Matlab.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Economics/E581/Solow-growth-model.py",
+					"settings":
+					{
+						"buffer_size": 5951,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3116,
+								3122
 							]
 						],
 						"settings":
@@ -449,7 +573,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1536.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -474,18 +598,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -523,7 +640,7 @@
 		[
 			[
 				"",
-				"/Users/spencerlyon2/Documents/Research/Endogenous-Yield-Curves/Yield Curve.sublime-project"
+				"/Users/spencerlyon2/Documents/Python/Sublime Text Projects/dolo.sublime-project"
 			]
 		],
 		"width": 380.0

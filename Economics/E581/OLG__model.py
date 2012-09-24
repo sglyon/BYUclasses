@@ -11,12 +11,12 @@ import pandas as pd
 
 start_time = time()
 
-beta, theta, gamma, sigma = [.88, .36, 0.6, np.sqrt(0.004)]
+beta, theta, gamma, sigma = [.99, .36, 0.6, np.sqrt(0.004)]
 
 l1 = 60.2
 l2 = 4.8
 Lt = 65
-T = 120
+T = 121
 
 num_sims = 1000
 
@@ -46,10 +46,21 @@ def create_moments(data):
 
     return np.asarray(moms)
 
+
+def certainty_equiv_ss():
+    wss = lambda k, z: (1 - theta) * np.exp(z) * (k / Lt) ** (theta)
+    rss = lambda k, z: theta * np.exp(z) * (Lt / k) ** (1 - theta)
+
+    c1ss = lambda k, z: wss(k, z) * l1 - k
+    c2ss = lambda k, z: wss(k, z) * l2 + rss(k, z) * k
+
+    def opt_func(x):
+        pass
+        #eul = c1ss(x, 0) ** (-gamma) - beta * 
+
 for sim in range(num_sims):
     ##----- Step 1
-    ## TODO: Should this be normally distributed? Wait for repsonse from Kerk.
-    epsilon = np.random.normal(0, sigma, size=T)  # I chose an upper bound of 1
+    epsilon = np.random.normal(0, sigma, size=T)
 
     z = np.zeros(T)
     for i in range(1, T):
@@ -62,14 +73,14 @@ for sim in range(num_sims):
             ((l2 / Lt) + (theta * (1 + beta)) / (1 - theta))
 
     K = np.zeros(T)
-    K[0] = 6.9792
+    K[0] = 8.7241
 
     for i in range(1, T):
-        K[i] = Kappa * lamb[i] * K[i - 1] ** theta
+        K[i] = Kappa * lamb[i - 1] * K[i - 1] ** theta
 
     ##----- Step 3
-    wage = (1 - theta) * np.exp(z) * (K / Lt) ** theta  # S:(T x 1) P:[0, T-1]
-    rate = theta * np.exp(z) * (Lt / K) ** (1 - theta)  # (T x 1) [0, T-1]
+    wage = (1 - theta) * lamb * (K / Lt) ** theta  # S:(T x 1) P:[0, T-1]
+    rate = theta * lamb * (Lt / K) ** (1 - theta)  # (T x 1) [0, T-1]
     Y = lamb * (K ** theta) * Lt ** (1 - theta)  # S:(T x 1) P:[0, T-1]
     c1 = wage[:-1] * l1 - K[1:]  # S:(T-1 x 1) P:[0, T-2]
     c2 = wage[:-1] * l2 + rate[:-1] * K[:-1]  # S:(T-1 x 1) P:[0, T-2]
