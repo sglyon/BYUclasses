@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      5752,        195]
-NotebookOptionsPosition[      4922,        165]
-NotebookOutlinePosition[      5340,        182]
-CellTagsIndexPosition[      5297,        179]
+NotebookDataLength[     12428,        383]
+NotebookOptionsPosition[     11327,        345]
+NotebookOutlinePosition[     11745,        362]
+CellTagsIndexPosition[     11702,        359]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -76,9 +76,10 @@ Cell[BoxData[
 
 Cell["\<\
 The last part of the previous line includes Gregory\[CloseCurlyQuote]s \
-\[OpenCurlyQuote]massless\[CloseCurlyQuote] equation for V and L.\
+transformation to \[OpenCurlyQuote]massless\[CloseCurlyQuote] equations for V \
+and L.\
 \>", "Text",
- CellChangeTimes->{{3.557486143118541*^9, 3.557486168047345*^9}}],
+ CellChangeTimes->{{3.557486143118541*^9, 3.557486185408461*^9}}],
 
 Cell["\<\
 Using equations (7.5) and (7.7) we can write the angular momentum equation \
@@ -133,33 +134,212 @@ Cell[BoxData[
   RowBox[{
    RowBox[{
     RowBox[{
-     FractionBox["1", "2"], 
-     RowBox[{"(", 
-      RowBox[{
-       SuperscriptBox[
-        OverscriptBox["r", "."], "2"], " ", "+", " ", 
-       SuperscriptBox[
-        RowBox[{"(", 
-         RowBox[{"r", " ", 
-          FractionBox["L", 
-           SuperscriptBox["r", "2"]]}], ")"}], "2"]}], ")"}]}], " ", "+", " ", 
-    RowBox[{"m", " ", 
-     SuperscriptBox["\[CapitalOmega]", "2"], " ", 
-     FractionBox[
-      SuperscriptBox["r", "2"], "2"]}]}], " ", "=", " ", 
-   RowBox[{"E", " ", "\[Rule]", " ", 
-    RowBox[{
      RowBox[{
       FractionBox["1", "2"], 
-      SuperscriptBox[
-       OverscriptBox["r", "."], "2"]}], " ", "+", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox[
+         OverscriptBox["r", "."], "2"], " ", "+", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"r", " ", 
+           FractionBox["L", 
+            SuperscriptBox["r", "2"]]}], ")"}], "2"]}], ")"}]}], " ", "+", 
+     " ", 
+     RowBox[{"m", " ", 
+      SuperscriptBox["\[CapitalOmega]", "2"], " ", 
+      FractionBox[
+       SuperscriptBox["r", "2"], "2"]}]}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{"E", " ", "\[Rule]", " ", 
+      RowBox[{
+       RowBox[{
+        FractionBox["1", "2"], 
+        SuperscriptBox[
+         OverscriptBox["r", "."], "2"]}], " ", "+", " ", 
+       FractionBox[
+        SuperscriptBox["L", "2"], 
+        RowBox[{"2", " ", 
+         SuperscriptBox["r", "2"]}]], " ", "+", " ", 
+       RowBox[{
+        SuperscriptBox["\[CapitalOmega]", "2"], 
+        FractionBox[
+         SuperscriptBox["r", "2"], "2"]}]}]}], " ", "=", " ", 
+     RowBox[{
+      RowBox[{"E", " ", "\[Rule]", 
+       StyleBox[
+        RowBox[{
+         RowBox[{
+          FractionBox["1", "2"], 
+          SuperscriptBox[
+           OverscriptBox["r", "."], "2"]}], " ", "+", " ", 
+         SuperscriptBox["V", "*"]}],
+        FontSize->16,
+        FontWeight->"Bold"]}], 
+      StyleBox[" ",
+       FontSize->16,
+       FontWeight->"Bold"], 
+      StyleBox["=",
+       FontSize->16,
+       FontWeight->"Bold"], 
+      StyleBox[" ",
+       FontSize->16,
+       FontWeight->"Bold"], 
+      StyleBox["E",
+       FontSize->16,
+       FontWeight->"Bold"]}]}]}], 
+   StyleBox[" ",
+    FontSize->16,
+    FontWeight->"Bold"], 
+   StyleBox[",",
+    FontSize->16,
+    FontWeight->"Bold"], 
+   StyleBox[" ",
+    FontSize->16,
+    FontWeight->"Bold"]}], TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.557485806936392*^9, 3.557485876504366*^9}, {
+  3.557486087975482*^9, 3.55748612311649*^9}, {3.557486193413006*^9, 
+  3.557486244615697*^9}}],
+
+Cell["where", "Text",
+ CellChangeTimes->{{3.557486245786714*^9, 3.557486246061805*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{" ", 
+   RowBox[{
+    SuperscriptBox["V", "*"], " ", "=", "  ", 
+    RowBox[{
      FractionBox[
       SuperscriptBox["L", "2"], 
       RowBox[{"2", " ", 
-       SuperscriptBox["r", "2"]}]], " ", "+", " "}]}]}], 
-  TraditionalForm]], "EquationNumbered",
- CellChangeTimes->{{3.557485806936392*^9, 3.557485876504366*^9}, {
-  3.557486087975482*^9, 3.55748612311649*^9}}]
+       SuperscriptBox["r", "2"]}]], " ", "+", " ", 
+     RowBox[{
+      SuperscriptBox["\[CapitalOmega]", "2"], 
+      FractionBox[
+       SuperscriptBox["r", "2"], "2"], " "}]}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.5574862471872187`*^9, 3.557486256848125*^9}}],
+
+Cell[TextData[{
+ "Because \[ScriptR] can never be negative, ",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox["\[ScriptR]", "."], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " can also never be negative. Thus, we see that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["V", "*"], " ", "\[LessEqual]", " ", 
+    RowBox[{"E", " ", 
+     RowBox[{"(", "were"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " it greater we might get negative values for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    OverscriptBox["r", "."], ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". Because that is the case, we have bounded oscillation between the apsidal \
+distances. \[Square]"
+}], "Text",
+ CellChangeTimes->{{3.5574862920736103`*^9, 3.557486296405601*^9}, {
+  3.557486348359757*^9, 3.557486413645122*^9}, {3.5574864629557533`*^9, 
+  3.5574864984519997`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Finding apsidal distances", "Subsection",
+ CellChangeTimes->{{3.557486526577139*^9, 3.557486532713131*^9}}],
+
+Cell["\<\
+The motion looks something like this:\
+\>", "Text",
+ CellChangeTimes->{{3.557486547014443*^9, 3.55748655576155*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{PointBox[{0.9398992588383844, 0.15738594244942872`}], 
+   {EdgeForm[{GrayLevel[0.], Opacity[1.], AbsoluteThickness[1]}], FaceForm[
+    Opacity[0.27]], 
+    DiskBox[{0.4171715505050504, 0.7236110818664883}, \
+{0.0290404040404042, 0.0167770411679129}]}, 
+   LineBox[{{0.4299357940790498, 0.7118550217965476}, {0.9261614924506324, 
+    0.17574851335099528`}}], InsetBox[
+    StyleBox[Cell["C",
+      GeneratedCell->False,
+      CellAutoOverwrite->False,
+      CellBaseline->Baseline,
+      TextAlignment->Left],
+     FontSize->12,
+     Background->GrayLevel[1.]], {0.37361094444444465`, 0.7908848082900084}, {
+    Left, Baseline}, {0.0726010101010101, 0.05033112350373862}, {{1., 0.}, {
+    0., 1.}},
+    Alignment->{Left, Top}], InsetBox[
+    StyleBox[Cell["c",
+      GeneratedCell->False,
+      CellAutoOverwrite->False,
+      CellBaseline->Baseline,
+      TextAlignment->Left],
+     FontSize->12,
+     Background->GrayLevel[1.]], {0.6644569040404047, 0.5048656856781437}, {
+    Left, Baseline}, {0.03630050505050514, 0.050331123503738605`}, {{1., 
+    0.}, {0., 1.}},
+    Alignment->{Left, Top}], InsetBox[
+    StyleBox[Cell["O",
+      GeneratedCell->False,
+      CellAutoOverwrite->False,
+      CellBaseline->Baseline,
+      TextAlignment->Left],
+     FontSize->12,
+     Background->GrayLevel[1.]], {0.9398988232323234, 0.11560890128151646`}, {
+    Left, Baseline}, {0.0726010101010101, 0.05033112350373862}, {{1., 0.}, {
+    0., 1.}},
+    Alignment->{Left, Top}], 
+   {Arrowheads[{0.04}], EdgeForm[{GrayLevel[0.], Opacity[1.], 
+    AbsoluteThickness[1]}], FaceForm[Opacity[0.27]], 
+    ArrowBox[{{0.4463960875420875, 0.73411578489853}, {1.0315904793771042`, 
+     0.7944092379341903}}]}, InsetBox[
+    StyleBox[Cell["\[CapitalOmega] c",
+      GeneratedCell->False,
+      CellAutoOverwrite->False,
+      CellBaseline->Baseline,
+      TextAlignment->Left],
+     FontSize->12,
+     Background->GrayLevel[1.]], {0.7196336717171717, 0.8244388906258346}, {
+    Left, Baseline}, {0.16016414141414148`, 0.05033112350373862}, {{1., 0.}, {
+    0., 1.}},
+    Alignment->{Left, Top}], 
+   LineBox[{{0.5248272082427358, 0.7353884435986677}, {0.5242497414073822, 
+    0.7102413859831596}, {0.5204746131354733, 0.7040399770136185}, {
+    0.5166994848635643, 0.6978385680440775}, {0.5202821241903554, 
+    0.6956576244751159}, {0.5165069959184464, 0.6894562155055747}, {
+    0.5127318676465377, 0.6832548065360339}, {0.5089567393746287, 
+    0.6770533975664929}, {0.5051816111027198, 0.6708519885969518}, {
+    0.5014064828308108, 0.6646505796274109}, {0.5049891221576018, 
+    0.6624696360584493}, {0.501213993885693, 0.6562682270889083}, {
+    0.49743886561378414`, 0.6500668181193673}, {0.4936637373418751, 
+    0.6438654091498262}, {0.49008109801508404`, 0.6460463527187877}, {
+    0.4863059697431752, 0.6398449437492467}}], InsetBox[
+    StyleBox[Cell["\[Alpha]",
+      GeneratedCell->False,
+      CellAutoOverwrite->False,
+      CellBaseline->Baseline,
+      TextAlignment->Left],
+     FontSize->12,
+     Background->GrayLevel[1.]], {0.5438129646464647, 0.6476545126038955}, {
+    Left, Baseline}, {0.0653409090909091, 0.05033112350373862}, {{1., 0.}, {
+    0., 1.}},
+    Alignment->{Left, Top}]},
+  ContentSelectable->True,
+  ImagePadding->{{0., 0.}, {0., 0.}},
+  ImageSize->{240., 180.},
+  PlotRange->{{0., 1.333333}, {0., 1.}},
+  PlotRangePadding->Automatic]], "Input",
+ CellChangeTimes->{{3.557486567148267*^9, 3.557486604273451*^9}, {
+  3.557486781384356*^9, 3.55748689243396*^9}, {3.557486923410203*^9, 
+  3.5574869296553*^9}, {3.557487134282299*^9, 3.557487168012383*^9}}]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
@@ -189,12 +369,20 @@ Cell[CellGroupData[{
 Cell[1068, 35, 89, 1, 54, "Section"],
 Cell[1160, 38, 171, 4, 20, "Text"],
 Cell[1334, 44, 944, 30, 49, "Equation"],
-Cell[2281, 76, 228, 4, 20, "Text"],
-Cell[2512, 82, 188, 4, 20, "Text"],
-Cell[2703, 88, 250, 7, 30, "EquationNumbered"],
-Cell[2956, 97, 647, 21, 49, "EquationNumbered"],
-Cell[3606, 120, 292, 8, 24, "Text"],
-Cell[3901, 130, 993, 31, 50, "EquationNumbered"]
+Cell[2281, 76, 249, 5, 20, "Text"],
+Cell[2533, 83, 188, 4, 20, "Text"],
+Cell[2724, 89, 250, 7, 30, "EquationNumbered"],
+Cell[2977, 98, 647, 21, 49, "EquationNumbered"],
+Cell[3627, 121, 292, 8, 24, "Text"],
+Cell[3922, 131, 2033, 70, 55, "EquationNumbered"],
+Cell[5958, 203, 87, 1, 20, "Text"],
+Cell[6048, 206, 473, 15, 50, "Equation"],
+Cell[6524, 223, 894, 25, 37, "Text"],
+Cell[CellGroupData[{
+Cell[7443, 252, 113, 1, 31, "Subsection"],
+Cell[7559, 255, 126, 3, 20, "Text"],
+Cell[7688, 260, 3599, 80, 195, "Input"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
