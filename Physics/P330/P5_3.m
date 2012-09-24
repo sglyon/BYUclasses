@@ -44,7 +44,7 @@ while x0 < 10
 		vy1 = vy0 - (9.8) * tao;
 		y1 = y0 + vy1 * tao;
     
-    % Check to see if we are on our way down. If, so start making new x/y
+    % Check to see if we are on our way down. If, so start making new x, y
     % lists
         if (y1 - y0) <= 0 
             xs = [xs x1];

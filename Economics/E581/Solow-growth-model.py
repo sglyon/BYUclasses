@@ -13,11 +13,12 @@ import pandas as pd
 start_time = time()
 
 ## Global parameters, applicable to all simulations
-a_bar, g, n, delta, theta, omega = [1., 0.025, 0.01, 0.1, 0.33, .0004 ** (1./2)]
+a_bar, g, n, delta, theta, omega = [1., 0.025, 0.01, 0.1, 0.33, .0004 ** (1. / 2)]
 T = 120  # sample size
 num_sims = 1000
-new_ind = {0:'Exact y', 1: 'Exact i', 2: 'Exact c', 3: 'Exact k',
-           4: 'Approx. y', 5: 'Approx. i', 6: 'Approx. c', 7: 'Approx. k'}
+new_ind = {0: 'Exact y', 1: 'Exact c', 2: 'Exact i', 3: 'Exact k',
+           4: 'Approx. y', 5: 'Approx. c', 6: 'Approx. i', 7: 'Approx. k'}
+
 
 ## Code to do the simulation
 def main():
@@ -61,13 +62,12 @@ def main():
             The array containing the 5 moments explained above
         """
         moms = [data.mean(),
-                   data.std(),
+                   data.std(ddof=1),
                    np.corrcoef(data, y)[0, 1],
                    np.corrcoef(data, A)[0, 1],
-                   np.corrcoef(data[1:], data[:-1])[0,1]]
+                   np.corrcoef(data[1:], data[:-1])[0, 1]]
 
         return np.asarray(moms)
-
 
     all_data = np.empty((8, 5, num_sims))  # Table to store all the data.
 
@@ -106,20 +106,22 @@ def main():
         ## Simulate the economy
         for t in range(1, T):
             ## Calculate the exact series
-            a[t] = rho * a[t-1] + epsilon[t]
+            a[t] = rho * a[t - 1] + epsilon[t]
             A[t] = a_bar * np.exp(g ** t + a[t])
-            k[t] = (k[t-1] * (1 - delta) + sigma * y[t-1]) / (1 + g + n)
+            k[t] = (k[t - 1] * (1 - delta) + sigma * y[t - 1]) / (1 + g + n)
             y[t] = k[t] ** theta * np.exp((1 - theta) * a[t])
-            i[t] = k[t] - (1 - delta) * k[t-1]
+            i[t] = k[t] - (1 - delta) * k[t - 1]
+            #i[t] = sigma * y[t]
             c[t] = y[t] - i[t]
+            #c[t] = (1 - sigma) * y[t]
 
             ## Calculate the approximate series
-            temp_k = kbar * (1 + k_tilde[t-1])
-            k_tilde[t] = (temp_k * (1 - delta)  + sigma * temp_k **theta *
-                           np.exp((1 - theta) * a[t-1])) / (kbar * (1 + g + n)) - 1
+            temp_k = kbar * (1 + k_tilde[t - 1])
+            k_tilde[t] = (temp_k * (1 - delta) + sigma * temp_k ** theta *
+                           np.exp((1 - theta) * a[t - 1])) / (kbar * (1 + g + n)) - 1
             k_approx[t] = kbar * np.exp(k_tilde[t])
             y_approx[t] = k_approx[t] ** theta * np.exp((1 - theta) * a[t])
-            i_approx[t] = k_approx[t] - (1 - delta) * k_approx[t-1]
+            i_approx[t] = k_approx[t] - (1 - delta) * k_approx[t - 1]
             c_approx[t] = y_approx[t] - i_approx[t]
 
         all_data[0, :, mc] = create_moments(y)
@@ -146,7 +148,7 @@ kbar = (sigma / (delta + n + g)) ** (1 / (1 - theta))
 data_1 = pd.DataFrame(main())
 data_1.columns = ['mean', 'standard deviation', 'corr with y', 'corr with A',
                   'autocorrelation']
-data_1 = data_1.rename(index = new_ind)
+data_1 = data_1.rename(index=new_ind)
 
 print '####' * 18
 print '#--------------------Finished parameter set 1--------------------------#'
@@ -154,11 +156,11 @@ print '####' * 18
 
 # Parameters for simulation 2 followed by simulation and cleaning data.
 sigma, rho = [0.1, 0.]
-kbar = (sigma / (delta + n + g)) ** (1 / (1 - theta)) 
+kbar = (sigma / (delta + n + g)) ** (1 / (1 - theta))
 data_2 = pd.DataFrame(main())
 data_2.columns = ['mean', 'standard deviation', 'corr with y', 'corr with A',
                   'autocorrelation']
-data_2 = data_2.rename(index = new_ind)
+data_2 = data_2.rename(index=new_ind)
 
 print '####' * 18
 print '#--------------------Finished parameter set 2--------------------------#'
@@ -170,7 +172,7 @@ kbar = (sigma / (delta + n + g)) ** (1 / (1 - theta))
 data_3 = pd.DataFrame(main())
 data_3.columns = ['mean', 'standard deviation', 'corr with y', 'corr with A',
                   'autocorrelation']
-data_3 = data_3.rename(index = new_ind)
+data_3 = data_3.rename(index=new_ind)
 
 running_time = time()
 elapsed_time = running_time - start_time
