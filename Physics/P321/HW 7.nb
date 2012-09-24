@@ -10,17 +10,18 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     49747,       1613]
-NotebookOptionsPosition[     45722,       1495]
-NotebookOutlinePosition[     46140,       1512]
-CellTagsIndexPosition[     46097,       1509]
+NotebookDataLength[     49259,       1593]
+NotebookOptionsPosition[     45222,       1474]
+NotebookOutlinePosition[     45693,       1493]
+CellTagsIndexPosition[     45650,       1490]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
  RowBox[{"Clear", "[", "\"\<`*\>\"", "]"}]], "Input",
- CellChangeTimes->{{3.556550518540929*^9, 3.55655052906815*^9}}],
+ CellChangeTimes->{{3.556550518540929*^9, 3.55655052906815*^9}, 
+   3.556986751499399*^9}],
 
 Cell[CellGroupData[{
 
@@ -206,22 +207,22 @@ Cell[TextData[{
   3.556882766926688*^9, 3.556882767177576*^9}}],
 
 Cell[TextData[{
- "Becuase the mass is hanging, the equilibrium will be when only the force of \
-gravity is acating against the spring. We can approximate that force as mg = \
-2 * 10 = 20. With a spring constance \[Alpha] = 2000, the extension of the \
-spring at that point is ",
+ "Becuase the mass is hanging, the total extension of the spring will be the \
+sum of the displacement due to gravity acting on the block and the \
+displacement caused by the driving force.  With a spring constant \[Alpha] = \
+2000, the extension of the spring in equilibirium is ",
  Cell[BoxData[
   FormBox[
    RowBox[{
     FractionBox["20", "2000"], " ", "=", " ", 
     RowBox[{
      FractionBox["1", "100"], 
-     RowBox[{"m", "."}]}]}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+     RowBox[{"m", "."}]}]}], TraditionalForm]]],
  " If we add that to the amplitude of the driven response we get the total \
-amplitude:"
+amplitude of the extension:"
 }], "Text",
- CellChangeTimes->{{3.556882236511643*^9, 3.556882326478676*^9}}],
+ CellChangeTimes->{{3.556882236511643*^9, 3.556882326478676*^9}, {
+  3.5569863472951603`*^9, 3.556986410089772*^9}}],
 
 Cell[BoxData[
  FormBox[
@@ -289,36 +290,32 @@ Cell[TextData[{
  Cell[BoxData[
   FormBox[
    RowBox[{
-    SuperscriptBox["\[Omega]", "2"], ">", " ", "1000"}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+    SuperscriptBox["\[Omega]", "2"], ">", " ", "1000"}], TraditionalForm]]],
  " we have 0.03 ",
  Cell[BoxData[
   FormBox[
    RowBox[{"\[GreaterEqual]", 
     FractionBox["18", 
      RowBox[{
-      SuperscriptBox["p", "2"], " ", "-", "1000"}]]}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+      SuperscriptBox["\[Omega]", "2"], " ", "-", "1000"}]]}], 
+   TraditionalForm]]],
  " \[Rule] 18 \[LessEqual] ",
  Cell[BoxData[
   FormBox[
    RowBox[{"0.03", 
     RowBox[{"(", 
      RowBox[{
-      SuperscriptBox["p", "2"], " ", "-", " ", "1000"}], ")"}]}], 
-   TraditionalForm]],
-  FormatType->"TraditionalForm"],
+      SuperscriptBox["\[Omega]", "2"], " ", "-", " ", "1000"}], ")"}]}], 
+   TraditionalForm]]],
  "\[Rule] 600 \[LessEqual] ",
  Cell[BoxData[
   FormBox[
    RowBox[{
-    SuperscriptBox["\[Omega]", "2"], "-", "1000"}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+    SuperscriptBox["\[Omega]", "2"], "-", "1000"}], TraditionalForm]]],
  " \[Rule] 1600 \[LessEqual] ",
  Cell[BoxData[
   FormBox[
-   SuperscriptBox["\[Omega]", "2"], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+   SuperscriptBox["\[Omega]", "2"], TraditionalForm]]],
  " \[Rule] ",
  StyleBox["\[Omega] \[GreaterEqual] 40 ",
   FontSize->18,
@@ -326,47 +323,42 @@ Cell[TextData[{
  Cell[BoxData[
   FormBox[
    FractionBox["rad", "sec"], TraditionalForm]],
-  FormatType->"TraditionalForm",
   FontSize->18,
   FontWeight->"Bold"]
 }], "Text",
  CellChangeTimes->{{3.556882497624667*^9, 3.556882644187995*^9}, {
-  3.5568827767355833`*^9, 3.556882818153657*^9}}],
+  3.5568827767355833`*^9, 3.556882818153657*^9}, {3.556986325029508*^9, 
+  3.556986326233783*^9}}],
 
 Cell[TextData[{
  "With ",
  Cell[BoxData[
   FormBox[
    RowBox[{
-    SuperscriptBox["\[Omega]", "2"], ">", " ", "1000"}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+    SuperscriptBox["\[Omega]", "2"], ">", " ", "1000"}], TraditionalForm]]],
  " we have 0.03 ",
  Cell[BoxData[
   FormBox[
    RowBox[{"\[GreaterEqual]", 
     FractionBox["18", 
      RowBox[{"1000", " ", "-", " ", 
-      SuperscriptBox["p", "2"]}]]}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+      SuperscriptBox["\[Omega]", "2"]}]]}], TraditionalForm]]],
  " \[Rule] 18 \[LessEqual] ",
  Cell[BoxData[
   FormBox[
    RowBox[{"0.03", 
     RowBox[{"(", 
      RowBox[{"1000", " ", "-", " ", 
-      SuperscriptBox["p", "2"]}], ")"}]}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+      SuperscriptBox["\[Omega]", "2"]}], ")"}]}], TraditionalForm]]],
  "\[Rule] 600 \[LessEqual] ",
  Cell[BoxData[
   FormBox[
    RowBox[{"1000", " ", "-", " ", 
-    SuperscriptBox["\[Omega]", "2"]}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+    SuperscriptBox["\[Omega]", "2"]}], TraditionalForm]]],
  " \[Rule] 400 \[LessEqual] ",
  Cell[BoxData[
   FormBox[
-   SuperscriptBox["p", "2"], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+   SuperscriptBox["\[Omega]", "2"], TraditionalForm]]],
  " \[Rule] ",
  StyleBox["\[Omega]\[LessEqual] 20 ",
   FontSize->18,
@@ -374,12 +366,12 @@ Cell[TextData[{
  Cell[BoxData[
   FormBox[
    FractionBox["rad", "sec"], TraditionalForm]],
-  FormatType->"TraditionalForm",
   FontSize->18,
   FontWeight->"Bold"]
 }], "Text",
  CellChangeTimes->{{3.556882665695443*^9, 3.556882696787347*^9}, {
-  3.5568827784486523`*^9, 3.556882817004057*^9}}],
+  3.5568827784486523`*^9, 3.556882817004057*^9}, {3.556986318513139*^9, 
+  3.556986327567103*^9}}],
 
 Cell[TextData[{
  "If either of the two conditions in bold are met, the spring is safe. ",
@@ -388,7 +380,7 @@ Cell[TextData[{
 }], "Text",
  CellChangeTimes->{{3.556882702793519*^9, 3.556882715346591*^9}, {
   3.5568828206085176`*^9, 3.5568828214243*^9}}]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -589,28 +581,28 @@ Cell[BoxData[
 
 Cell[TextData[{
  "Using a linear approximation, we can ignore any terms of order 2 or more. \
-The small angle approximation allows us to say that sin x = x. ",
+The small angle approximation allows us to say that sin x = x and cos x = 1. ",
  "We also know that ",
  Cell[BoxData[
   FormBox[
    RowBox[{
     SubscriptBox["x", "1"], "=", " ", 
-    RowBox[{"a", " ", "\[Theta]"}]}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+    RowBox[{"a", " ", "\[Theta]"}]}], TraditionalForm]]],
  " and ",
  Cell[BoxData[
   FormBox[
    RowBox[{
     SubscriptBox["x", "2"], " ", "=", " ", 
     RowBox[{"a", "(", 
-     RowBox[{"\[Theta]", " ", "+", " ", "\[Phi]"}], ")"}]}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+     RowBox[{"\[Theta]", " ", "+", " ", "\[Phi]"}], ")"}]}], 
+   TraditionalForm]]],
  ", because of the small angle approximation and the length of the strings \
 both being a."
 }], "Text",
  CellChangeTimes->{{3.5568836297038603`*^9, 3.556883635110692*^9}, {
   3.556883670358831*^9, 3.5568837109581337`*^9}, {3.556884078481579*^9, 
-  3.5568840786354628`*^9}, {3.55688415629742*^9, 3.5568841563054237`*^9}}],
+  3.5568840786354628`*^9}, {3.55688415629742*^9, 3.5568841563054237`*^9}, {
+  3.556986449298497*^9, 3.556986451370431*^9}}],
 
 Cell[TextData[{
  "We can solve for equilibirum values of ",
@@ -618,70 +610,57 @@ Cell[TextData[{
   FormBox[
    RowBox[{
     SubscriptBox["T", "1"], " ", "and", " ", 
+    SubscriptBox["T", "2"]}], TraditionalForm]]],
+ " by setting the equaitons in y equal to zero and solving for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["T", "1"], " ", "and", " ", 
     SubscriptBox["T", "2"]}], TraditionalForm]],
   FormatType->"TraditionalForm"],
- " by setting the equaitons in x equal to the total force mg and solving. "
+ ".  We do this below"
 }], "Text",
- CellChangeTimes->{{3.556884156760338*^9, 3.556884193924515*^9}}],
-
-Cell["\<\
-Using these approximations we can completely ignore both equations in y and \
-the equations in x simplify to the following:\
-\>", "Text",
- CellChangeTimes->{{3.556883713038926*^9, 3.55688373571741*^9}}],
+ CellChangeTimes->{{3.556884156760338*^9, 3.556884193924515*^9}, {
+  3.556986421217916*^9, 3.556986432014461*^9}, {3.5569864634264097`*^9, 
+  3.556986468321123*^9}}],
 
 Cell[BoxData[
  FormBox[
-  RowBox[{
-   RowBox[{"3", "m", " ", 
-    SubscriptBox[
-     OverscriptBox["x", ".."], "1"]}], " ", "=", " ", 
+  RowBox[{" ", 
    RowBox[{
     RowBox[{
      RowBox[{
-      RowBox[{"-", 
-       SubscriptBox["T", "1"]}], "\[Theta]"}], " ", "+", " ", 
+      SubscriptBox["T", "1"], "cos", " ", "\[Theta]"}], " ", "-", " ", 
      RowBox[{
-      SubscriptBox["T", "2"], "\[Phi]"}]}], "  ", "=", " ", 
+      SubscriptBox["T", "2"], " ", "cos", " ", "\[Phi]"}], " ", "-", " ", 
+     RowBox[{"3", " ", "m", " ", "g"}]}], " ", "=", " ", 
     RowBox[{
-     RowBox[{
-      RowBox[{"3", "m", " ", "a", " ", 
-       OverscriptBox["\[Theta]", ".."]}], " ", "\[Rule]", " ", 
+     RowBox[{"0", " ", "\[Rule]", " ", 
       RowBox[{
        SubscriptBox["T", "1"], " ", "-", " ", 
-       SubscriptBox["T", "2"], "  ", "-", " ", 
-       RowBox[{"3", "mg"}]}]}], " ", "=", " ", "0"}]}]}], 
+       SubscriptBox["T", "2"], " ", "-", " ", 
+       RowBox[{"3", " ", "m", " ", "g"}]}]}], " ", "=", "0", " "}]}]}], 
   TraditionalForm]], "Equation",
  CellChangeTimes->{{3.556883747207733*^9, 3.5568837662783127`*^9}, {
   3.556883927668466*^9, 3.556883936180367*^9}, {3.556884044516449*^9, 
-  3.556884055691772*^9}}],
+  3.556884055691772*^9}, {3.5569864732692547`*^9, 3.5569864923783484`*^9}}],
 
 Cell[BoxData[
  FormBox[
-  RowBox[{
+  RowBox[{" ", 
    RowBox[{
-    RowBox[{" ", 
-     RowBox[{
-      RowBox[{"m", " ", 
-       SubscriptBox[
-        OverscriptBox["x", ".."], "2"]}], " ", "=", " ", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"-", " ", 
-         SubscriptBox["T", "2"]}], "\[Phi]"}], " ", "=", " ", 
-       RowBox[{"=", " ", 
-        RowBox[{
-         RowBox[{"m", " ", "a", " ", 
-          OverscriptBox[
-           RowBox[{"(", "\[Theta]"}], ".."]}], " ", "+", " ", 
-         OverscriptBox["\[Phi]", ".."]}]}]}]}], ")"}], " ", "\[Rule]", " ", 
     RowBox[{
-     SubscriptBox["T", "2"], " ", "-", " ", "mg"}]}], " ", "=", "0", " "}], 
-  TraditionalForm]], "Equation",
+     RowBox[{
+      RowBox[{
+       SubscriptBox["T", "2"], " ", "cos", " ", "\[Phi]"}], " ", "-", 
+      RowBox[{"m", " ", "g"}]}], "\[Rule]", " ", 
+     RowBox[{
+      SubscriptBox["T", "2"], " ", "-", " ", "mg"}]}], " ", "=", "0", " "}]}],
+   TraditionalForm]], "Equation",
  CellChangeTimes->{{3.556883771487327*^9, 3.556883787461463*^9}, {
-  3.556883834613014*^9, 3.556883834616184*^9}, {3.556883938996131*^9, 
-  3.556883952532332*^9}, {3.556884057731122*^9, 3.5568840674719543`*^9}, {
-  3.556884497008778*^9, 3.556884517030591*^9}}],
+   3.556883834613014*^9, 3.556883834616184*^9}, {3.556883938996131*^9, 
+   3.556883952532332*^9}, {3.556884057731122*^9, 3.5568840674719543`*^9}, {
+   3.556884497008778*^9, 3.556884517030591*^9}, 3.556986499856936*^9}],
 
 Cell[TextData[{
  "We can then solve for ",
@@ -1247,7 +1226,7 @@ Cell[BoxData[
  FontSize->16,
  FontWeight->"Bold"]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -1495,8 +1474,10 @@ conservation of energy. \
 },
 WindowSize->{718, 856},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
-2011)",
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
+2010)",
 StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
   CharacterEncoding -> "UTF-8"]
 ]
@@ -1511,108 +1492,107 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 132, 2, 27, "Input"],
+Cell[557, 20, 158, 3, 27, "Input"],
 Cell[CellGroupData[{
-Cell[714, 26, 97, 1, 76, "Title"],
-Cell[814, 29, 99, 1, 64, "Subtitle"],
-Cell[916, 32, 160, 2, 26, "Subsubtitle"],
+Cell[740, 27, 97, 1, 76, "Title"],
+Cell[840, 30, 99, 1, 64, "Subtitle"],
+Cell[942, 33, 160, 2, 26, "Subsubtitle"],
 Cell[CellGroupData[{
-Cell[1101, 38, 138, 2, 54, "Section"],
-Cell[1242, 42, 415, 10, 43, "Code"],
-Cell[1660, 54, 262, 5, 35, "Text"],
-Cell[1925, 61, 379, 10, 29, "Equation"],
-Cell[2307, 73, 181, 6, 20, "Text"],
+Cell[1127, 39, 138, 2, 54, "Section"],
+Cell[1268, 43, 415, 10, 43, "Code"],
+Cell[1686, 55, 262, 5, 35, "Text"],
+Cell[1951, 62, 379, 10, 29, "Equation"],
+Cell[2333, 74, 181, 6, 20, "Text"],
 Cell[CellGroupData[{
-Cell[2513, 83, 603, 17, 59, "Code"],
-Cell[3119, 102, 895, 29, 70, "Output"]
+Cell[2539, 84, 603, 17, 59, "Code"],
+Cell[3145, 103, 895, 29, 48, "Output"]
 }, Open  ]],
-Cell[4029, 134, 1674, 55, 47, "Text"],
-Cell[5706, 191, 490, 14, 36, "Text"],
-Cell[6199, 207, 656, 16, 61, "Text"],
-Cell[6858, 225, 443, 14, 51, "Equation"],
-Cell[7304, 241, 405, 11, 25, "Text"],
-Cell[7712, 254, 601, 16, 51, "Equation"],
-Cell[8316, 272, 480, 12, 23, "Text"],
-Cell[8799, 286, 1315, 47, 40, "Text"],
-Cell[10117, 335, 1314, 46, 40, "Text"],
-Cell[11434, 383, 255, 6, 26, "Text"]
-}, Closed]],
-Cell[CellGroupData[{
-Cell[11726, 394, 92, 1, 34, "Section"],
-Cell[11821, 397, 150, 3, 20, "Text"],
-Cell[11974, 402, 3841, 93, 182, "Input"],
-Cell[CellGroupData[{
-Cell[15840, 499, 136, 3, 18, "Subsubsection"],
-Cell[15979, 504, 216, 4, 20, "Text"],
-Cell[16198, 510, 171, 4, 20, "Text"],
-Cell[16372, 516, 581, 18, 29, "Equation"],
-Cell[16956, 536, 460, 15, 29, "Equation"],
-Cell[17419, 553, 596, 17, 31, "Equation"],
-Cell[18018, 572, 483, 15, 31, "Equation"],
-Cell[18504, 589, 900, 23, 50, "Text"],
-Cell[19407, 614, 380, 10, 20, "Text"],
-Cell[19790, 626, 212, 4, 20, "Text"],
-Cell[20005, 632, 830, 24, 31, "Equation"],
-Cell[20838, 658, 933, 25, 37, "Equation"],
-Cell[21774, 685, 719, 24, 20, "Text"],
-Cell[22496, 711, 338, 10, 23, "Text"],
-Cell[22837, 723, 1395, 42, 44, "Equation"],
-Cell[24235, 767, 1152, 36, 44, "Equation"]
+Cell[4055, 135, 1674, 55, 47, "Text"],
+Cell[5732, 192, 490, 14, 36, "Text"],
+Cell[6225, 208, 711, 16, 61, "Text"],
+Cell[6939, 226, 443, 14, 51, "Equation"],
+Cell[7385, 242, 405, 11, 25, "Text"],
+Cell[7793, 255, 601, 16, 51, "Equation"],
+Cell[8397, 273, 480, 12, 23, "Text"],
+Cell[8880, 287, 1184, 43, 38, "Text"],
+Cell[10067, 332, 1186, 41, 38, "Text"],
+Cell[11256, 375, 255, 6, 26, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25424, 808, 121, 1, 18, "Subsubsection"],
-Cell[25548, 811, 1550, 52, 38, "Text"],
-Cell[27101, 865, 912, 27, 29, "Equation"],
-Cell[28016, 894, 741, 21, 29, "Equation"],
-Cell[28760, 917, 211, 4, 20, "Text"],
-Cell[28974, 923, 445, 14, 32, "EquationNumbered"],
-Cell[29422, 939, 427, 13, 32, "EquationNumbered"],
-Cell[29852, 954, 826, 26, 47, "Text"],
-Cell[30681, 982, 179, 5, 20, "Text"],
+Cell[11548, 386, 92, 1, 54, "Section"],
+Cell[11643, 389, 150, 3, 20, "Text"],
+Cell[11796, 394, 3841, 93, 18, "Input"],
 Cell[CellGroupData[{
-Cell[30885, 991, 810, 25, 71, "Code"],
-Cell[31698, 1018, 380, 11, 70, "Output"]
+Cell[15662, 491, 136, 3, 20, "Subsubsection"],
+Cell[15801, 496, 216, 4, 20, "Text"],
+Cell[16020, 502, 171, 4, 29, "Text"],
+Cell[16194, 508, 581, 18, 29, "Equation"],
+Cell[16778, 528, 460, 15, 31, "Equation"],
+Cell[17241, 545, 596, 17, 31, "Equation"],
+Cell[17840, 564, 483, 15, 50, "Equation"],
+Cell[18326, 581, 901, 23, 35, "Text"],
+Cell[19230, 606, 627, 18, 26, "Text"],
+Cell[19860, 626, 781, 19, 26, "Equation"],
+Cell[20644, 647, 627, 15, 20, "Equation"],
+Cell[21274, 664, 719, 24, 23, "Text"],
+Cell[21996, 690, 338, 10, 44, "Text"],
+Cell[22337, 702, 1395, 42, 44, "Equation"],
+Cell[23735, 746, 1152, 36, 18, "Equation"]
 }, Open  ]],
-Cell[32093, 1032, 269, 8, 20, "Text"],
 Cell[CellGroupData[{
-Cell[32387, 1044, 664, 19, 74, "Code"],
-Cell[33054, 1065, 572, 17, 70, "Print"]
+Cell[24924, 787, 121, 1, 38, "Subsubsection"],
+Cell[25048, 790, 1550, 52, 29, "Text"],
+Cell[26601, 844, 912, 27, 29, "Equation"],
+Cell[27516, 873, 741, 21, 20, "Equation"],
+Cell[28260, 896, 211, 4, 32, "Text"],
+Cell[28474, 902, 445, 14, 32, "EquationNumbered"],
+Cell[28922, 918, 427, 13, 47, "EquationNumbered"],
+Cell[29352, 933, 826, 26, 20, "Text"],
+Cell[30181, 961, 179, 5, 71, "Text"],
+Cell[CellGroupData[{
+Cell[30385, 970, 810, 25, 30, "Code"],
+Cell[31198, 997, 380, 11, 20, "Output"]
 }, Open  ]],
-Cell[33641, 1085, 449, 14, 23, "Text"],
-Cell[34093, 1101, 144, 3, 20, "Text"],
-Cell[34240, 1106, 849, 28, 32, "Equation"],
-Cell[35092, 1136, 378, 7, 35, "Text"],
-Cell[35473, 1145, 424, 13, 44, "Equation"],
-Cell[35900, 1160, 426, 14, 44, "Equation"],
-Cell[36329, 1176, 138, 3, 20, "Text"],
-Cell[36470, 1181, 929, 29, 46, "Equation"],
-Cell[37402, 1212, 166, 3, 20, "Text"],
-Cell[37571, 1217, 478, 14, 70, "Equation"],
-Cell[38052, 1233, 479, 14, 70, "Equation"]
+Cell[31593, 1011, 269, 8, 74, "Text"],
+Cell[CellGroupData[{
+Cell[31887, 1023, 664, 19, 47, "Code"],
+Cell[32554, 1044, 572, 17, 23, "Print"]
+}, Open  ]],
+Cell[33141, 1064, 449, 14, 20, "Text"],
+Cell[33593, 1080, 144, 3, 32, "Text"],
+Cell[33740, 1085, 849, 28, 35, "Equation"],
+Cell[34592, 1115, 378, 7, 44, "Text"],
+Cell[34973, 1124, 424, 13, 44, "Equation"],
+Cell[35400, 1139, 426, 14, 20, "Equation"],
+Cell[35829, 1155, 138, 3, 46, "Text"],
+Cell[35970, 1160, 929, 29, 20, "Equation"],
+Cell[36902, 1191, 166, 3, 70, "Text"],
+Cell[37071, 1196, 478, 14, 70, "Equation"],
+Cell[37552, 1212, 479, 14, 54, "Equation"]
 }, Open  ]]
-}, Closed]],
-Cell[CellGroupData[{
-Cell[38580, 1253, 89, 1, 34, "Section"],
-Cell[38672, 1256, 524, 13, 49, "Code"],
-Cell[39199, 1271, 82, 1, 20, "Text"],
-Cell[39284, 1274, 242, 4, 20, "Text"],
-Cell[39529, 1280, 517, 15, 48, "Equation"],
-Cell[40049, 1297, 426, 12, 32, "Equation"],
-Cell[40478, 1311, 385, 11, 29, "Equation"],
-Cell[40866, 1324, 810, 27, 26, "Equation"],
-Cell[41679, 1353, 552, 18, 32, "Equation"],
-Cell[42234, 1373, 205, 4, 20, "Text"],
-Cell[42442, 1379, 318, 9, 49, "Code"],
-Cell[42763, 1390, 427, 15, 31, "Text"],
-Cell[CellGroupData[{
-Cell[43215, 1409, 313, 8, 43, "Code"],
-Cell[43531, 1419, 149, 3, 27, "Output"]
 }, Open  ]],
-Cell[43695, 1425, 419, 14, 31, "Text"],
-Cell[44117, 1441, 640, 19, 31, "Text"],
-Cell[44760, 1462, 589, 18, 31, "Text"],
-Cell[45352, 1482, 154, 3, 20, "Text"],
-Cell[45509, 1487, 185, 4, 20, "Text"]
+Cell[CellGroupData[{
+Cell[38080, 1232, 89, 1, 49, "Section"],
+Cell[38172, 1235, 524, 13, 20, "Code"],
+Cell[38699, 1250, 82, 1, 20, "Text"],
+Cell[38784, 1253, 242, 4, 48, "Text"],
+Cell[39029, 1259, 517, 15, 32, "Equation"],
+Cell[39549, 1276, 426, 12, 29, "Equation"],
+Cell[39978, 1290, 385, 11, 26, "Equation"],
+Cell[40366, 1303, 810, 27, 32, "Equation"],
+Cell[41179, 1332, 552, 18, 20, "Equation"],
+Cell[41734, 1352, 205, 4, 49, "Text"],
+Cell[41942, 1358, 318, 9, 31, "Code"],
+Cell[42263, 1369, 427, 15, 43, "Text"],
+Cell[CellGroupData[{
+Cell[42715, 1388, 313, 8, 27, "Code"],
+Cell[43031, 1398, 149, 3, 31, "Output"]
+}, Open  ]],
+Cell[43195, 1404, 419, 14, 31, "Text"],
+Cell[43617, 1420, 640, 19, 31, "Text"],
+Cell[44260, 1441, 589, 18, 20, "Text"],
+Cell[44852, 1461, 154, 3, 20, "Text"],
+Cell[45009, 1466, 185, 4, 0, "Text"]
 }, Open  ]]
 }, Open  ]]
 }

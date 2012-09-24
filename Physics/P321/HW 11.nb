@@ -1,0 +1,204 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5752,        195]
+NotebookOptionsPosition[      4922,        165]
+NotebookOutlinePosition[      5340,        182]
+CellTagsIndexPosition[      5297,        179]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Spencer Lyon", "Title",
+ CellChangeTimes->{{3.5563934847615757`*^9, 3.556393486943615*^9}}],
+
+Cell["Physics 321", "Subtitle",
+ CellChangeTimes->{{3.5563934890645647`*^9, 3.556393491119731*^9}}],
+
+Cell["Homework Due 9-24-12 (HW 11)", "Subsubtitle",
+ CellChangeTimes->{{3.556393493568112*^9, 3.556393502950733*^9}, {
+  3.556548524449684*^9, 3.5565485245302134`*^9}, {3.557146625536984*^9, 
+  3.557146625976923*^9}, {3.557329158862515*^9, 3.55732916423748*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["P7.4", "Section",
+ CellChangeTimes->{{3.557329179237965*^9, 3.557329180636994*^9}}],
+
+Cell["\<\
+We know that in a conservative field F = - \[Del]V. In this case, that makes:\
+\
+\>", "Text",
+ CellChangeTimes->{{3.5574854654135323`*^9, 3.557485563218073*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"V", "=", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"\[Integral]", 
+      RowBox[{
+       RowBox[{"F", "(", "r", ")"}], 
+       RowBox[{"\[DifferentialD]", "r"}]}]}]}], " ", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"(", "-", ")"}]}], "m", " ", 
+      SuperscriptBox["\[CapitalOmega]", "2"], 
+      RowBox[{"\[Integral]", 
+       RowBox[{"r", " ", 
+        RowBox[{"\[DifferentialD]", "r"}]}]}]}], " ", "=", 
+     RowBox[{
+      FormBox[
+       RowBox[{"m", " ", 
+        SuperscriptBox["\[CapitalOmega]", "2"], " ", 
+        FractionBox[
+         SuperscriptBox["r", "2"], "2"]}],
+       TraditionalForm], "\[Rule]", " ", 
+      RowBox[{
+       SuperscriptBox["\[CapitalOmega]", "2"], 
+       FractionBox[
+        SuperscriptBox["r", "2"], "2"]}]}]}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{
+  3.557485565870728*^9, {3.55748612785115*^9, 3.5574861395468063`*^9}}],
+
+Cell["\<\
+The last part of the previous line includes Gregory\[CloseCurlyQuote]s \
+\[OpenCurlyQuote]massless\[CloseCurlyQuote] equation for V and L.\
+\>", "Text",
+ CellChangeTimes->{{3.557486143118541*^9, 3.557486168047345*^9}}],
+
+Cell["\<\
+Using equations (7.5) and (7.7) we can write the angular momentum equation \
+and Energy equation\
+\>", "Text",
+ CellChangeTimes->{{3.557485651918488*^9, 3.5574856769919043`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["r", "2"], " ", 
+    OverscriptBox["\[Theta]", "."]}], " ", "=", " ", "L"}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.557485683298911*^9, 3.557485692088922*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "2"], 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox[
+        OverscriptBox["r", "."], "2"], " ", "+", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"r", " ", 
+          OverscriptBox["\[Theta]", "."]}], ")"}], "2"]}], ")"}]}], " ", "+", 
+    "  ", 
+    RowBox[{
+     SuperscriptBox["\[CapitalOmega]", "2"], " ", 
+     FractionBox[
+      SuperscriptBox["r", "2"], "2"]}]}], " ", "=", " ", "E"}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.5574856987770557`*^9, 3.5574857337854137`*^9}, 
+   3.557486126794722*^9}],
+
+Cell[TextData[{
+ "We solve for ",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox["\[Theta]", "."], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " in equation (0.1) and plug it in to (0.2) to get the following"
+}], "Text",
+ CellChangeTimes->{{3.557485779304016*^9, 3.557485803141177*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "2"], 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox[
+        OverscriptBox["r", "."], "2"], " ", "+", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"r", " ", 
+          FractionBox["L", 
+           SuperscriptBox["r", "2"]]}], ")"}], "2"]}], ")"}]}], " ", "+", " ", 
+    RowBox[{"m", " ", 
+     SuperscriptBox["\[CapitalOmega]", "2"], " ", 
+     FractionBox[
+      SuperscriptBox["r", "2"], "2"]}]}], " ", "=", " ", 
+   RowBox[{"E", " ", "\[Rule]", " ", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], 
+      SuperscriptBox[
+       OverscriptBox["r", "."], "2"]}], " ", "+", " ", 
+     FractionBox[
+      SuperscriptBox["L", "2"], 
+      RowBox[{"2", " ", 
+       SuperscriptBox["r", "2"]}]], " ", "+", " "}]}]}], 
+  TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.557485806936392*^9, 3.557485876504366*^9}, {
+  3.557486087975482*^9, 3.55748612311649*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{960, 1152},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
+2010)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 97, 1, 76, "Title"],
+Cell[679, 25, 99, 1, 64, "Subtitle"],
+Cell[781, 28, 262, 3, 26, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[1068, 35, 89, 1, 54, "Section"],
+Cell[1160, 38, 171, 4, 20, "Text"],
+Cell[1334, 44, 944, 30, 49, "Equation"],
+Cell[2281, 76, 228, 4, 20, "Text"],
+Cell[2512, 82, 188, 4, 20, "Text"],
+Cell[2703, 88, 250, 7, 30, "EquationNumbered"],
+Cell[2956, 97, 647, 21, 49, "EquationNumbered"],
+Cell[3606, 120, 292, 8, 24, "Text"],
+Cell[3901, 130, 993, 31, 50, "EquationNumbered"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
