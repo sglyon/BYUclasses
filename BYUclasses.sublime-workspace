@@ -23,7 +23,7 @@
 			"file": "Economics/E581/OLG__model.py",
 			"settings":
 			{
-				"buffer_size": 3131,
+				"buffer_size": 3017,
 				"line_ending": "Unix",
 				"name": "\"\"\""
 			}
@@ -117,6 +117,8 @@
 	},
 	"file_history":
 	[
+		"/Users/spencerlyon2/Documents/Research/Endogenous-Yield-Curves/N-Period Model/n-period.py",
+		"/Users/spencerlyon2/Documents/Research/Endogenous-Yield-Curves/3-Period Model/Python Code/Rick_3per_GSSA.py",
 		"/Users/spencerlyon2/Desktop/rst cheatsheet.rst",
 		"/Users/spencerlyon2/Desktop/test2.rst",
 		"/Users/spencerlyon2/Desktop/test.rst",
@@ -149,7 +151,6 @@
 		"/Users/spencerlyon2/Library/Application Support/Sublime Text 2/Packages/Terminal/Base File.sublime-settings",
 		"/Users/spencerlyon2/Documents/School/BYUclasses/Physics/P330/P5_2_a.m",
 		"/Users/spencerlyon2/Library/Application Support/Sublime Text 2/Packages/User/matlab.sublime-build",
-		"/Users/spencerlyon2/Documents/Research/Endogenous-Yield-Curves/3-Period Model/Python Code/Rick_3per_GSSA.py",
 		"/Users/spencerlyon2/Library/Application Support/Sublime Text 2/Packages/SideBarEnhancements/Side Bar.sublime-settings",
 		"/Users/spencerlyon2/Dropbox/Yield Curve/Drafts/YieldCurveSlides.tex",
 		"/Users/spencerlyon2/Documents/School/BYUclasses/Physics/P330/P4_3_a.m",
@@ -170,7 +171,7 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -229,7 +230,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -237,15 +238,15 @@
 					"file": "Economics/E581/OLG__model.py",
 					"settings":
 					{
-						"buffer_size": 3131,
+						"buffer_size": 3017,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1284,
-								1284
+								307,
+								307
 							]
 						],
 						"settings":
@@ -343,7 +344,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 576.0,
+						"translation.y": 720.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -640,7 +641,7 @@
 		[
 			[
 				"",
-				"/Users/spencerlyon2/Documents/Python/Sublime Text Projects/dolo.sublime-project"
+				"/Users/spencerlyon2/Documents/Research/Endogenous-Yield-Curves/Yield Curve.sublime-project"
 			]
 		],
 		"width": 380.0

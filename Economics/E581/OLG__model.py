@@ -11,14 +11,14 @@ import pandas as pd
 
 start_time = time()
 
-beta, theta, gamma, sigma = [.99, .36, 0.6, np.sqrt(0.004)]
+beta, theta, gamma, sigma = [.99, .36, 0.6, np.sqrt(0.0004)]
 
 l1 = 60.2
 l2 = 4.8
 Lt = 65
 T = 121
 
-num_sims = 1000
+num_sims = 10000
 
 all_moments = np.empty((7, 5, num_sims))
 
@@ -45,18 +45,6 @@ def create_moments(data):
                np.corrcoef(data[1:], data[:-1])[0, 1]]
 
     return np.asarray(moms)
-
-
-def certainty_equiv_ss():
-    wss = lambda k, z: (1 - theta) * np.exp(z) * (k / Lt) ** (theta)
-    rss = lambda k, z: theta * np.exp(z) * (Lt / k) ** (1 - theta)
-
-    c1ss = lambda k, z: wss(k, z) * l1 - k
-    c2ss = lambda k, z: wss(k, z) * l2 + rss(k, z) * k
-
-    def opt_func(x):
-        pass
-        #eul = c1ss(x, 0) ** (-gamma) - beta * 
 
 for sim in range(num_sims):
     ##----- Step 1

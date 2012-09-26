@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     12428,        383]
-NotebookOptionsPosition[     11327,        345]
-NotebookOutlinePosition[     11745,        362]
-CellTagsIndexPosition[     11702,        359]
+NotebookDataLength[     26481,        844]
+NotebookOptionsPosition[     24342,        778]
+NotebookOutlinePosition[     24760,        795]
+CellTagsIndexPosition[     24717,        792]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -338,15 +338,448 @@ Cell[BoxData[
   PlotRangePadding->Automatic]], "Input",
  CellChangeTimes->{{3.557486567148267*^9, 3.557486604273451*^9}, {
   3.557486781384356*^9, 3.55748689243396*^9}, {3.557486923410203*^9, 
-  3.5574869296553*^9}, {3.557487134282299*^9, 3.557487168012383*^9}}]
+  3.5574869296553*^9}, {3.557487134282299*^9, 3.557487168012383*^9}}],
+
+Cell["\<\
+We can solve for expressions that define the constants E and L.\
+\>", "Text",
+ CellChangeTimes->{{3.557494763796927*^9, 3.557494773193872*^9}}],
+
+Cell[TextData[{
+ "We know that E = T + V. We have an expression and we know that T = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["1", "2"], 
+    SuperscriptBox["mv", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", but in our case we are dealing with massless energy so T = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["1", "2"], 
+    SuperscriptBox["v", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". Using that info we get an expression for E:"
+}], "Text",
+ CellChangeTimes->{{3.5574946794890633`*^9, 3.557494711003068*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"E", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"T", " ", "+", " ", "V"}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       FractionBox["1", "2"], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"\[CapitalOmega]", " ", "c"}], ")"}], "2"]}], " ", "+", " ", 
+      
+      RowBox[{
+       FractionBox["1", "2"], 
+       SuperscriptBox["\[CapitalOmega]", "2"], 
+       SuperscriptBox["c", "2"]}]}], " ", "=", 
+     RowBox[{
+      SuperscriptBox["\[CapitalOmega]", "2"], 
+      SuperscriptBox["c", "2"]}]}]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.557494713220298*^9, 3.557494737492601*^9}}],
+
+Cell["\<\
+We can also use the old cross product definition of L (L = r \[Cross] v) To \
+get an expression for that.\
+\>", "Text",
+ CellChangeTimes->{{3.557494739479306*^9, 3.557494776801819*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"L", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"r", " ", "\[Cross]", " ", "v"}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"c", " ", "\[Cross]", " ", "\[CapitalOmega]"}], " ", "c"}], " ",
+      "=", " ", 
+     RowBox[{"\[CapitalOmega]", " ", 
+      SuperscriptBox["c", "2"], " ", "sin", " ", 
+      RowBox[{"(", "\[Alpha]", ")"}]}]}]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.5574947781411324`*^9, 3.557494796755536*^9}}],
+
+Cell[TextData[{
+ "We then get the expression for ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["V", "*"], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.5574948501755753`*^9, 3.557494857871812*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{" ", 
+   RowBox[{
+    SuperscriptBox["V", "*"], " ", "=", "  ", 
+    RowBox[{
+     RowBox[{
+      FractionBox[
+       SuperscriptBox["L", "2"], 
+       RowBox[{"2", " ", 
+        SuperscriptBox["r", "2"]}]], " ", "+", " ", 
+      RowBox[{
+       SuperscriptBox["\[CapitalOmega]", "2"], 
+       FractionBox[
+        SuperscriptBox["r", "2"], "2"]}]}], "  ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       FractionBox[
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"\[CapitalOmega]", " ", 
+           SuperscriptBox["c", "2"], " ", "sin", " ", 
+           RowBox[{"(", "\[Alpha]", ")"}]}], ")"}], "2"], 
+        RowBox[{"2", " ", 
+         SuperscriptBox["r", "2"]}]], " ", "+", 
+       RowBox[{
+        SuperscriptBox["\[CapitalOmega]", "2"], 
+        FractionBox[
+         SuperscriptBox["r", "2"], "2"]}]}], " ", "=", " ", 
+      RowBox[{
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[CapitalOmega]", "2"], 
+         SuperscriptBox["c", "4"], " ", 
+         RowBox[{
+          SuperscriptBox["sin", "2"], "(", "\[Alpha]", ")"}]}], 
+        RowBox[{"2", 
+         SuperscriptBox["r", "2"]}]], " ", "+", " ", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[CapitalOmega]", "2"], " ", 
+         SuperscriptBox["r", "2"]}], "2"]}]}]}]}]}], 
+  TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.557494862711628*^9, 3.557494920371105*^9}, {
+  3.557495067589253*^9, 3.557495067817865*^9}}],
+
+Cell[TextData[{
+ "We then use equation (7.11) to get a polynomial in terms of r. Note that \
+this equation is simply ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["V", "*"], " ", "=", " ", "E"}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.557494956280263*^9, 3.557494972625657*^9}, {
+  3.557495011401206*^9, 3.557495021989053*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox["V", "*"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"E", " ", "\[Rule]", 
+     RowBox[{
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[CapitalOmega]", "2"], 
+        SuperscriptBox["c", "4"], " ", 
+        RowBox[{
+         SuperscriptBox["sin", "2"], "(", "\[Alpha]", ")"}]}], 
+       RowBox[{"2", 
+        SuperscriptBox["r", "2"]}]], " ", "+", " ", 
+      FractionBox[
+       RowBox[{"\[CapitalOmega]", " ", 
+        SuperscriptBox["r", "2"]}], "2"]}]}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["\[CapitalOmega]", "2"], 
+       SuperscriptBox["c", "2"]}], " ", "\[Rule]", " ", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["c", "4"], " ", 
+        RowBox[{
+         SuperscriptBox["sin", "2"], "(", "\[Alpha]", ")"}]}], " ", "+", " ", 
+       
+       SuperscriptBox["r", "4"]}]}], " ", "=", " ", 
+     RowBox[{"2", " ", 
+      SuperscriptBox["c", "2"], 
+      SuperscriptBox["r", "2"]}]}]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.5574950341239643`*^9, 3.557495101997107*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["r", "4"], " ", "-", " ", 
+    RowBox[{"2", " ", 
+     SuperscriptBox["c", "2"], 
+     SuperscriptBox["r", "2"]}], " ", "+", " ", 
+    RowBox[{
+     SuperscriptBox["c", "4"], " ", 
+     RowBox[{
+      SuperscriptBox["sin", "2"], "(", "\[Alpha]", ")"}]}]}], " ", "=", " ", 
+   "0"}], TraditionalForm]], "EquationNumbered",
+ CellChangeTimes->{{3.5574951030882893`*^9, 3.5574951248435373`*^9}}],
+
+Cell["\<\
+The apsidal distances are the positive roots of equation  (0.4).\
+\>", "Text",
+ CellChangeTimes->{{3.557495126770198*^9, 3.5574951457774477`*^9}}],
+
+Cell[TextData[{
+ "We let ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " find them for us:"
+}], "Text",
+ CellChangeTimes->{{3.557495147376959*^9, 3.557495156985239*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ans", " ", "=", " ", 
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["r", "4"], " ", "-", " ", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["c", "2"], 
+       SuperscriptBox["r", "2"]}], " ", "+", " ", 
+      RowBox[{
+       SuperscriptBox["c", "4"], " ", 
+       SuperscriptBox[
+        RowBox[{"Sin", "[", "\[Alpha]", "]"}], "2"]}]}], "\[Equal]", "0"}], 
+    ",", " ", "r"}], "]"}]}]], "Code",
+ CellChangeTimes->{{3.5574951603372717`*^9, 3.557495195691072*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"r", "\[Rule]", 
+      RowBox[{
+       RowBox[{"-", "c"}], " ", 
+       SqrtBox[
+        RowBox[{
+         RowBox[{"cos", "(", "\[Alpha]", ")"}], "+", "1"}]]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"r", "\[Rule]", 
+      RowBox[{"c", " ", 
+       SqrtBox[
+        RowBox[{
+         RowBox[{"cos", "(", "\[Alpha]", ")"}], "+", "1"}]]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"r", "\[Rule]", 
+      RowBox[{"-", 
+       SqrtBox[
+        RowBox[{
+         SuperscriptBox["c", "2"], "-", 
+         RowBox[{
+          SuperscriptBox["c", "2"], " ", 
+          RowBox[{"cos", "(", "\[Alpha]", ")"}]}]}]]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"r", "\[Rule]", 
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox["c", "2"], "-", 
+        RowBox[{
+         SuperscriptBox["c", "2"], " ", 
+         RowBox[{"cos", "(", "\[Alpha]", ")"}]}]}]]}], "}"}]}], "}"}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{{3.5574951835221863`*^9, 3.557495196625524*^9}}]
+}, Open  ]],
+
+Cell["\<\
+We can see that the positive ones are  the 2nd and 4th ones. We pull them out\
+\
+\>", "Text",
+ CellChangeTimes->{{3.557495197382633*^9, 3.5574952058401957`*^9}, {
+  3.557495238085888*^9, 3.557495249062231*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"sol1", " ", "=", " ", 
+  RowBox[{"r", "/.", " ", 
+   RowBox[{"ans", "[", 
+    RowBox[{"[", "2", "]"}], "]"}]}]}], "\n", 
+ RowBox[{"sol2", " ", "=", " ", 
+  RowBox[{"r", "/.", " ", 
+   RowBox[{"ans", "[", 
+    RowBox[{"[", "4", "]"}], "]"}]}]}]}], "Code",
+ CellChangeTimes->{{3.557495252025334*^9, 3.5574952752524137`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"c", " ", 
+   SqrtBox[
+    RowBox[{
+     RowBox[{"cos", "(", "\[Alpha]", ")"}], "+", "1"}]]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{{3.557495266921709*^9, 3.5574952754040937`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  SqrtBox[
+   RowBox[{
+    SuperscriptBox["c", "2"], "-", 
+    RowBox[{
+     SuperscriptBox["c", "2"], " ", 
+     RowBox[{"cos", "(", "\[Alpha]", ")"}]}]}]], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.557495266921709*^9, 3.5574952754065237`*^9}}]
+}, Open  ]],
+
+Cell["\<\
+To get it in the form of the book we need to use some trig idtentities. \
+\>", "Text",
+ CellChangeTimes->{{3.5574952767308903`*^9, 3.5574952966041737`*^9}, 
+   3.5574954023504267`*^9}],
+
+Cell[TextData[{
+ "The first solution needs the identity that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["cos", "2"], "(", "x", ")"}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       FractionBox["1", "2"], 
+       RowBox[{"(", 
+        RowBox[{"1", " ", "+", " ", 
+         RowBox[{"cos", "(", 
+          RowBox[{"2", " ", "x"}], ")"}]}], ")"}]}], " ", "\[Rule]", " ", 
+      RowBox[{"cos", "(", 
+       RowBox[{"2", "x"}], ")"}]}], " ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"2", " ", 
+         RowBox[{
+          SuperscriptBox["cos", "2"], "(", "x", ")"}]}], " ", "-", " ", "1"}],
+        "\[Rule]", " ", 
+       RowBox[{"cos", " ", "x"}]}], " ", "=", " ", 
+      RowBox[{
+       RowBox[{"2", " ", 
+        RowBox[{
+         SuperscriptBox["cos", "2"], "(", 
+         FractionBox["x", "2"], ")"}]}], " ", "-", " ", "1"}]}]}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". Applying that we get:"
+}], "Text",
+ CellChangeTimes->{{3.557495849979842*^9, 3.557495919587316*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"c", 
+    SqrtBox[
+     RowBox[{
+      RowBox[{"cos", "(", "\[Alpha]", ")"}], " ", "+", " ", "1"}]]}], " ", 
+   "=", " ", 
+   RowBox[{
+    RowBox[{"c", 
+     SqrtBox[
+      RowBox[{
+       RowBox[{"2", " ", 
+        SuperscriptBox["cos", "2"], 
+        FractionBox["\[Alpha]", "2"]}], "  ", "-", " ", 
+       RowBox[{"+", "1"}]}]]}], " ", "=", " ", 
+    StyleBox[
+     RowBox[{"c", " ", 
+      SqrtBox["2"], 
+      RowBox[{"cos", "(", 
+       FractionBox["\[Alpha]", "2"], ")"}], "\[Square]"}],
+     FontSize->16,
+     FontWeight->"Bold"]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.557495926233057*^9, 3.557495975814445*^9}}],
+
+Cell[TextData[{
+ "The second one needs the identity ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["sin", "2"], "(", "x", ")"}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       FractionBox["1", "2"], 
+       RowBox[{"(", 
+        RowBox[{"1", " ", "-", " ", 
+         RowBox[{"cos", "(", 
+          RowBox[{"2", "x"}], ")"}]}], ")"}]}], " ", "\[Rule]", " ", 
+      RowBox[{"cos", "(", "x", ")"}]}], " ", "=", " ", 
+     RowBox[{"1", " ", "-", " ", 
+      RowBox[{"2", " ", 
+       RowBox[{
+        SuperscriptBox["sin", "2"], "(", 
+        FractionBox["x", "2"], ")"}]}]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". Applying that:"
+}], "Text",
+ CellChangeTimes->{{3.557495978276339*^9, 3.557496045583025*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SqrtBox[
+    RowBox[{
+     SuperscriptBox["c", "2"], " ", "-", " ", 
+     RowBox[{
+      SuperscriptBox["c", "2"], " ", 
+      RowBox[{"cos", "(", "\[Alpha]", ")"}]}]}]], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"c", " ", 
+     SqrtBox[
+      RowBox[{"1", " ", "-", " ", 
+       RowBox[{"cos", "(", "\[Alpha]", ")"}], " "}]]}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{"c", 
+      SqrtBox[
+       RowBox[{"1", " ", "-", " ", 
+        RowBox[{"(", 
+         RowBox[{"1", " ", "-", " ", 
+          RowBox[{"2", " ", 
+           RowBox[{
+            SuperscriptBox["sin", "2"], "(", 
+            RowBox[{"\[Alpha]", "/", "2"}], ")"}]}]}], ")"}]}]]}], " ", "=", 
+     " ", 
+     RowBox[{
+      RowBox[{"c", 
+       SqrtBox[
+        RowBox[{"2", " ", 
+         RowBox[{
+          SuperscriptBox["sin", "2"], "(", 
+          RowBox[{"\[Alpha]", "/", "2"}], ")"}]}]]}], " ", "=", " ", 
+      StyleBox[
+       RowBox[{"c", 
+        SqrtBox[
+         RowBox[{"2", " ", 
+          RowBox[{"sin", "(", 
+           FractionBox["\[Alpha]", "2"], ")"}]}]], "\[Square]"}],
+       FontSize->18,
+       FontWeight->"Bold"]}]}]}]}], TraditionalForm]], "Equation",
+ CellChangeTimes->{{3.557496048257442*^9, 3.557496114754327*^9}}],
+
+Cell["\<\
+These are the major and minor axis of the ellipse. so we are done. \
+\>", "Text",
+ CellChangeTimes->{{3.557496126136339*^9, 3.557496143423026*^9}}]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{960, 1152},
+WindowSize->{718, 856},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
-2010)",
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
 StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
   CharacterEncoding -> "UTF-8"]
 ]
@@ -377,11 +810,39 @@ Cell[3627, 121, 292, 8, 24, "Text"],
 Cell[3922, 131, 2033, 70, 55, "EquationNumbered"],
 Cell[5958, 203, 87, 1, 20, "Text"],
 Cell[6048, 206, 473, 15, 50, "Equation"],
-Cell[6524, 223, 894, 25, 37, "Text"],
+Cell[6524, 223, 894, 25, 39, "Text"],
 Cell[CellGroupData[{
 Cell[7443, 252, 113, 1, 31, "Subsection"],
 Cell[7559, 255, 126, 3, 20, "Text"],
-Cell[7688, 260, 3599, 80, 195, "Input"]
+Cell[7688, 260, 3599, 80, 195, "Input"],
+Cell[11290, 342, 153, 3, 20, "Text"],
+Cell[11446, 347, 585, 17, 57, "Text"],
+Cell[12034, 366, 665, 20, 46, "Equation"],
+Cell[12702, 388, 195, 4, 20, "Text"],
+Cell[12900, 394, 484, 12, 29, "Equation"],
+Cell[13387, 408, 238, 7, 20, "Text"],
+Cell[13628, 417, 1473, 44, 51, "Equation"],
+Cell[15104, 463, 388, 10, 20, "Text"],
+Cell[15495, 475, 1110, 33, 50, "Equation"],
+Cell[16608, 510, 457, 13, 29, "EquationNumbered"],
+Cell[17068, 525, 156, 3, 20, "Text"],
+Cell[17227, 530, 176, 6, 20, "Text"],
+Cell[CellGroupData[{
+Cell[17428, 540, 528, 15, 49, "Code"],
+Cell[17959, 557, 1063, 35, 42, "Output"]
+}, Open  ]],
+Cell[19037, 595, 220, 5, 20, "Text"],
+Cell[CellGroupData[{
+Cell[19282, 604, 347, 9, 59, "Code"],
+Cell[19632, 615, 228, 7, 32, "Output"],
+Cell[19863, 624, 278, 8, 39, "Output"]
+}, Open  ]],
+Cell[20156, 635, 194, 4, 20, "Text"],
+Cell[20353, 641, 1073, 34, 47, "Text"],
+Cell[21429, 677, 686, 23, 53, "Equation"],
+Cell[22118, 702, 772, 24, 32, "Text"],
+Cell[22893, 728, 1249, 40, 70, "Equation"],
+Cell[24145, 770, 157, 3, 20, "Text"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
