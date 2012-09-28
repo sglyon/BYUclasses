@@ -1,0 +1,468 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     16994,        458]
+NotebookOptionsPosition[     15932,        418]
+NotebookOutlinePosition[     16288,        434]
+CellTagsIndexPosition[     16245,        431]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.557860261781172*^9, 3.557860266071823*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Spencer Lyon", "Title",
+ CellChangeTimes->{{3.557857290614017*^9, 3.557857292141198*^9}}],
+
+Cell["Physics 330", "Subtitle",
+ CellChangeTimes->{{3.5578572940044317`*^9, 3.5578572956442633`*^9}}],
+
+Cell["Take home exam 1 (due 9-28-12)", "Subsubtitle",
+ CellChangeTimes->{{3.557857298085308*^9, 3.557857312870894*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["1", "Section",
+ CellChangeTimes->{{3.557857315903236*^9, 3.5578573169583797`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["a.)", "Subsection",
+ CellChangeTimes->{{3.557857320991501*^9, 3.5578573212476473`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"m", " ", "=", " ", "3"}], ";", " ", 
+  RowBox[{"R", " ", "=", " ", "0.1"}], ";", " ", 
+  RowBox[{"L", " ", "=", " ", "0.1"}], ";", " ", 
+  RowBox[{"\[Theta]", " ", "=", " ", 
+   RowBox[{"\[Pi]", "/", "3"}]}], ";", " ", 
+  RowBox[{"g", " ", "=", " ", "9.8"}], ";"}]], "Input",
+ CellChangeTimes->{{3.557860775760696*^9, 3.5578607957597637`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"L", " ", "+", " ", 
+          RowBox[{"R", "  ", 
+           RowBox[{"\[Phi]", "[", "t", "]"}]}], " ", "+", " ", 
+          RowBox[{"R", " ", 
+           RowBox[{"Sin", "[", 
+            RowBox[{"\[Phi]", "[", "t", "]"}], "]"}]}]}], ")"}], "2"], " ", 
+       "+", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"R", " ", "-", " ", 
+          RowBox[{"R", " ", 
+           RowBox[{"Cos", "[", 
+            RowBox[{"\[Phi]", "[", "t", "]"}], "]"}]}]}], ")"}], "2"]}], 
+      ")"}], 
+     RowBox[{"1", "/", "2"}]], " ", "-", " ", "L"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"u", "=", "  ", 
+   RowBox[{
+    FractionBox["R", 
+     RowBox[{"s", " ", "+", " ", "L"}]], " ", "*", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"L", " ", "+", " ", 
+         RowBox[{"R", " ", 
+          RowBox[{"\[Phi]", "[", "t", "]"}]}]}], ")"}], 
+       RowBox[{"(", 
+        RowBox[{"1", " ", "+", " ", 
+         RowBox[{"Cos", "[", 
+          RowBox[{"\[Phi]", "[", "t", "]"}], "]"}]}], ")"}]}], " ", "+", " ", 
+      
+      RowBox[{"2", " ", "R", " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"\[Phi]", "[", "t", "]"}], "]"}]}]}], ")"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eqn", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       FractionBox["3", "2"], "m", " ", 
+       SuperscriptBox["R", "2"], " ", 
+       RowBox[{"D", "[", 
+        RowBox[{
+         RowBox[{"\[Phi]", "[", "t", "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", " ", "2"}], "}"}]}], "]"}]}], "\[Equal]", " ", 
+      RowBox[{
+       RowBox[{"m", " ", "g", " ", "R", " ", 
+        RowBox[{"Sin", "[", "\[Theta]", "]"}]}], " ", "-", " ", 
+       RowBox[{"k", "  ", "*", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"L", " ", "+", " ", 
+                RowBox[{"R", "  ", 
+                 RowBox[{"\[Phi]", "[", "t", "]"}]}], " ", "+", " ", 
+                RowBox[{"R", " ", 
+                 RowBox[{"Sin", "[", 
+                  RowBox[{"\[Phi]", "[", "t", "]"}], "]"}]}]}], ")"}], "2"], 
+             " ", "+", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"R", " ", "-", " ", 
+                RowBox[{"R", " ", 
+                 RowBox[{"Cos", "[", 
+                  RowBox[{"\[Phi]", "[", "t", "]"}], "]"}]}]}], ")"}], "2"]}],
+             ")"}], 
+           RowBox[{"1", "/", "2"}]], " ", "-", " ", "L"}], ")"}], " ", "*", 
+        " ", 
+        RowBox[{"(", 
+         RowBox[{
+          FractionBox["R", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{"L", " ", "+", " ", 
+                 RowBox[{"R", "  ", 
+                  RowBox[{"\[Phi]", "[", "t", "]"}]}], " ", "+", " ", 
+                 RowBox[{"R", " ", 
+                  RowBox[{"Sin", "[", 
+                   RowBox[{"\[Phi]", "[", "t", "]"}], "]"}]}]}], ")"}], "2"], 
+              " ", "+", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{"R", " ", "-", " ", 
+                 RowBox[{"R", " ", 
+                  RowBox[{"Cos", "[", 
+                   RowBox[{"\[Phi]", "[", "t", "]"}], "]"}]}]}], ")"}], 
+               "2"]}], ")"}], 
+            RowBox[{"1", "/", "2"}]]], " ", "*", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"L", " ", "+", " ", 
+               RowBox[{"R", " ", 
+                RowBox[{"\[Phi]", "[", "t", "]"}]}]}], ")"}], 
+             RowBox[{"(", 
+              RowBox[{"1", " ", "+", " ", 
+               RowBox[{"Cos", "[", 
+                RowBox[{"\[Phi]", "[", "t", "]"}], "]"}]}], ")"}]}], " ", "+",
+             " ", 
+            RowBox[{"2", " ", "R", " ", 
+             RowBox[{"Sin", "[", 
+              RowBox[{"\[Phi]", "[", "t", "]"}], "]"}]}]}], ")"}]}], 
+         ")"}]}]}]}], ",", "\[IndentingNewLine]", " ", 
+     RowBox[{
+      RowBox[{"\[Phi]", "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+     "\[IndentingNewLine]", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Phi]", "'"}], "[", "0", "]"}], "\[Equal]", "0"}]}], "}"}]}],
+   ";"}]}], "Input",
+ CellChangeTimes->{{3.557858268975326*^9, 3.5578583287141743`*^9}, {
+  3.5578583832405043`*^9, 3.5578584197879477`*^9}, {3.557858504171357*^9, 
+  3.557858712955542*^9}, {3.5578589146543207`*^9, 3.557858916251273*^9}, {
+  3.557859714003665*^9, 3.557859725489882*^9}, {3.557860271706998*^9, 
+  3.557860465801249*^9}, {3.557860791258965*^9, 3.557860796677478*^9}, {
+  3.557860848016794*^9, 3.5578608488893557`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NDSolve", "[", 
+  RowBox[{
+   RowBox[{"eqn", "/.", "case1"}], ",", " ", 
+   RowBox[{"\[Phi]", "[", "t", "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", " ", "1", ",", " ", "100"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.557858715704012*^9, 3.557858811827812*^9}, {
+  3.5578597664550247`*^9, 3.557859770727928*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   StyleBox[
+    RowBox[{"NDSolve", "::", "nlnum"}], "MessageName"], 
+   RowBox[{
+   ":", " "}], "\<\"The function value \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({0.00010263245979892371`, \
+\\(\\(22.222222222222218`\\\\ \\(\\((\\(\\(2.54611468712625` \[VeryThinSpace]\
+\\)\\) - \\(\\(7.446704364255652`*^-12\\\\ k\\)\\))\\)\\)\\)\\)}\\)\\)\\n\
+\[NoBreak] is not a list of numbers with dimensions \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({2}\\)\\)\[NoBreak] at \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({t, \\(\\(\[Phi](t)\\)\\), \
+\\(\\(\\(\\(\\*SuperscriptBox[\\\"\[Phi]\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]]\\)\\)(t)\\)\\)}\\)\\)\[NoBreak] = \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({1.8139248456888382`*^-6, \
+1.861675688034286`*^-10, 0.00010263245979892371`}\\)\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/NDSolve\\\", ButtonNote -> \
+\\\"NDSolve::nlnum\\\"]\\)\"\>"}], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{
+  3.557858812286261*^9, 3.557859727034999*^9, {3.557859767269495*^9, 
+   3.557859771105567*^9}, 3.5578603153367987`*^9, 3.557860381094988*^9, {
+   3.557860411471025*^9, 3.5578604177826853`*^9}, {3.5578604693557587`*^9, 
+   3.557860473860673*^9}, 3.557860850225676*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   StyleBox[
+    RowBox[{"NDSolve", "::", "nlnum"}], "MessageName"], 
+   RowBox[{
+   ":", " "}], "\<\"The function value \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({0.00010263245979892371`, \
+\\(\\(22.222222222222218`\\\\ \\(\\((\\(\\(2.54611468712625` \[VeryThinSpace]\
+\\)\\) - \\(\\(7.446704364255652`*^-12\\\\ k\\)\\))\\)\\)\\)\\)}\\)\\)\\n\
+\[NoBreak] is not a list of numbers with dimensions \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({2}\\)\\)\[NoBreak] at \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({t, \\(\\(\[Phi](t)\\)\\), \
+\\(\\(\\(\\(\\*SuperscriptBox[\\\"\[Phi]\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]]\\)\\)(t)\\)\\)}\\)\\)\[NoBreak] = \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({1.8139248456888382`*^-6, \
+1.861675688034286`*^-10, 0.00010263245979892371`}\\)\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/NDSolve\\\", ButtonNote -> \
+\\\"NDSolve::nlnum\\\"]\\)\"\>"}], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{
+  3.557858812286261*^9, 3.557859727034999*^9, {3.557859767269495*^9, 
+   3.557859771105567*^9}, 3.5578603153367987`*^9, 3.557860381094988*^9, {
+   3.557860411471025*^9, 3.5578604177826853`*^9}, {3.5578604693557587`*^9, 
+   3.557860473860673*^9}, 3.5578608502305183`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", "}"}], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.557858812333386*^9, 3.557859727143228*^9, {3.557859767303441*^9, 
+   3.55785977114093*^9}, 3.557860315371138*^9, 3.5578603811336393`*^9, {
+   3.5578604115077343`*^9, 3.55786041780864*^9}, {3.5578604693624077`*^9, 
+   3.557860473867238*^9}, 3.557860850232152*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NDSolve", "[", " ", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       FractionBox["3", "2"], "m", " ", 
+       SuperscriptBox["R", "2"], " ", 
+       RowBox[{"D", "[", 
+        RowBox[{
+         RowBox[{"\[Phi]", "[", "t", "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", " ", "2"}], "}"}]}], "]"}]}], "\[Equal]", " ", 
+      RowBox[{
+       RowBox[{"m", " ", "g", " ", "R", " ", 
+        RowBox[{"Sin", "[", "\[Theta]", "]"}]}], " ", "-", " ", 
+       RowBox[{"k", "  ", "*", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"L", " ", "+", " ", 
+                RowBox[{"R", "  ", 
+                 RowBox[{"\[Phi]", "[", "t", "]"}]}], " ", "+", " ", 
+                RowBox[{"R", " ", 
+                 RowBox[{"Sin", "[", 
+                  RowBox[{"\[Phi]", "[", "t", "]"}], "]"}]}]}], ")"}], "2"], 
+             " ", "+", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"R", " ", "-", " ", 
+                RowBox[{"R", " ", 
+                 RowBox[{"Cos", "[", 
+                  RowBox[{"\[Phi]", "[", "t", "]"}], "]"}]}]}], ")"}], "2"]}],
+             ")"}], 
+           RowBox[{"1", "/", "2"}]], " ", "-", " ", "L"}], ")"}], " ", "*", 
+        " ", 
+        RowBox[{"(", 
+         RowBox[{
+          FractionBox["R", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{"L", " ", "+", " ", 
+                 RowBox[{"R", "  ", 
+                  RowBox[{"\[Phi]", "[", "t", "]"}]}], " ", "+", " ", 
+                 RowBox[{"R", " ", 
+                  RowBox[{"Sin", "[", 
+                   RowBox[{"\[Phi]", "[", "t", "]"}], "]"}]}]}], ")"}], "2"], 
+              " ", "+", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{"R", " ", "-", " ", 
+                 RowBox[{"R", " ", 
+                  RowBox[{"Cos", "[", 
+                   RowBox[{"\[Phi]", "[", "t", "]"}], "]"}]}]}], ")"}], 
+               "2"]}], ")"}], 
+            RowBox[{"1", "/", "2"}]]], " ", "*", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"L", " ", "+", " ", 
+               RowBox[{"R", " ", 
+                RowBox[{"\[Phi]", "[", "t", "]"}]}]}], ")"}], 
+             RowBox[{"(", 
+              RowBox[{"1", " ", "+", " ", 
+               RowBox[{"Cos", "[", 
+                RowBox[{"\[Phi]", "[", "t", "]"}], "]"}]}], ")"}]}], " ", "+",
+             " ", 
+            RowBox[{"2", " ", "R", " ", 
+             RowBox[{"Sin", "[", 
+              RowBox[{"\[Phi]", "[", "t", "]"}], "]"}]}]}], ")"}]}], 
+         ")"}]}]}]}], ",", "\[IndentingNewLine]", " ", 
+     RowBox[{
+      RowBox[{"\[Phi]", "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+     "\[IndentingNewLine]", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Phi]", "'"}], "[", "0", "]"}], "\[Equal]", "0"}]}], "}"}], 
+   ",", " ", 
+   RowBox[{"\[Phi]", "[", "t", "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", " ", "1", ",", " ", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.557860872309464*^9, 3.557860890569684*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   StyleBox[
+    RowBox[{"NDSolve", "::", "nlnum"}], "MessageName"], 
+   RowBox[{
+   ":", " "}], "\<\"The function value \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({0.00010263245979892371`, \
+\\(\\(22.222222222222218`\\\\ \\(\\((\\(\\(2.54611468712625` \[VeryThinSpace]\
+\\)\\) - \\(\\(7.446704364255652`*^-12\\\\ k\\)\\))\\)\\)\\)\\)}\\)\\)\\n\
+\[NoBreak] is not a list of numbers with dimensions \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({2}\\)\\)\[NoBreak] at \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({t, \\(\\(\[Phi](t)\\)\\), \
+\\(\\(\\(\\(\\*SuperscriptBox[\\\"\[Phi]\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]]\\)\\)(t)\\)\\)}\\)\\)\[NoBreak] = \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({1.8139248456888382`*^-6, \
+1.861675688034286`*^-10, 0.00010263245979892371`}\\)\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/NDSolve\\\", ButtonNote -> \
+\\\"NDSolve::nlnum\\\"]\\)\"\>"}], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.5578608909770823`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   StyleBox[
+    RowBox[{"NDSolve", "::", "nlnum"}], "MessageName"], 
+   RowBox[{
+   ":", " "}], "\<\"The function value \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({0.00010263245979892371`, \
+\\(\\(22.222222222222218`\\\\ \\(\\((\\(\\(2.54611468712625` \[VeryThinSpace]\
+\\)\\) - \\(\\(7.446704364255652`*^-12\\\\ k\\)\\))\\)\\)\\)\\)}\\)\\)\\n\
+\[NoBreak] is not a list of numbers with dimensions \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({2}\\)\\)\[NoBreak] at \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({t, \\(\\(\[Phi](t)\\)\\), \
+\\(\\(\\(\\(\\*SuperscriptBox[\\\"\[Phi]\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]]\\)\\)(t)\\)\\)}\\)\\)\[NoBreak] = \
+\[NoBreak]\\!\\(TraditionalForm\\`\\({1.8139248456888382`*^-6, \
+1.861675688034286`*^-10, 0.00010263245979892371`}\\)\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/NDSolve\\\", ButtonNote -> \
+\\\"NDSolve::nlnum\\\"]\\)\"\>"}], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.5578608909794807`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", "}"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.557860890981143*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["b.)", "Subsection",
+ CellChangeTimes->{{3.557857323756184*^9, 3.557857326584016*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1436, 856},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 133, 2, 27, "Input"],
+Cell[CellGroupData[{
+Cell[715, 26, 95, 1, 76, "Title"],
+Cell[813, 29, 101, 1, 46, "Subtitle"],
+Cell[917, 32, 119, 1, 26, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[1061, 37, 88, 1, 67, "Section"],
+Cell[CellGroupData[{
+Cell[1174, 42, 93, 1, 34, "Subsection"],
+Cell[1270, 45, 378, 8, 27, "Input"],
+Cell[1651, 55, 4995, 137, 213, "Input"],
+Cell[CellGroupData[{
+Cell[6671, 196, 356, 8, 27, "Input"],
+Cell[7030, 206, 1335, 24, 55, "Message"],
+Cell[8368, 232, 1337, 24, 55, "Message"],
+Cell[9708, 258, 361, 7, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10106, 270, 3375, 90, 166, "Input"],
+Cell[13484, 362, 1090, 20, 55, "Message"],
+Cell[14577, 384, 1090, 20, 55, "Message"],
+Cell[15670, 406, 116, 3, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[15813, 413, 91, 1, 34, "Subsection"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
