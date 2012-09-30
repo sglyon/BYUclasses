@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     26070,        834]
-NotebookOptionsPosition[     23627,        754]
-NotebookOutlinePosition[     24045,        771]
-CellTagsIndexPosition[     24002,        768]
+NotebookDataLength[     26089,        833]
+NotebookOptionsPosition[     23647,        753]
+NotebookOutlinePosition[     24064,        770]
+CellTagsIndexPosition[     24021,        767]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -745,17 +745,16 @@ Cell["P7.10", "Section",
 Cell["Nearly circualr orbits ", "Text",
  CellChangeTimes->{{3.557594785013694*^9, 3.557594788504633*^9}}],
 
-Cell["\<\
-See handwritten solution. (too much algebra to typeset after the last problem)\
-\>", "Text",
- CellChangeTimes->{{3.557609029091264*^9, 3.557609045717416*^9}}]
+Cell["See handwritten solution. (too much algebra to typeset)", "Text",
+ CellChangeTimes->{{3.557609029091264*^9, 3.557609045717416*^9}, {
+  3.557610718996201*^9, 3.5576107193556023`*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{718, 856},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
-2011)",
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
+2010)",
 StyleDefinitions->FrontEnd`FileName[{"Book"}, "Textbook.nb", 
   CharacterEncoding -> "UTF-8"]
 ]
@@ -833,7 +832,7 @@ Cell[21582, 684, 1599, 51, 89, "Equation"]
 Cell[CellGroupData[{
 Cell[23230, 741, 90, 1, 54, "Section"],
 Cell[23323, 744, 105, 1, 20, "Text"],
-Cell[23431, 747, 168, 3, 20, "Text"]
+Cell[23431, 747, 188, 2, 20, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
