@@ -32,7 +32,7 @@
 			"file": "/Users/spencerlyon2/Desktop/kerks_solow.m",
 			"settings":
 			{
-				"buffer_size": 2569,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
@@ -43,14 +43,59 @@
 				"buffer_size": 5951,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "Economics/E581/marcov_notebook.py",
+			"settings":
+			{
+				"buffer_size": 978,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "from __future__ import division\nimport numpy as np\ncimport numpy as np\nDTYPE = np.float\nctypedef np.float_t DTYPE_t\n\n",
+			"file": "Economics/E581/markov_cython.pyx",
+			"file_size": 117,
+			"file_write_time": 1349672605000000,
+			"settings":
+			{
+				"buffer_size": 117,
+				"line_ending": "Unix",
+				"name": "from __future__ import division"
+			}
+		},
+		{
+			"file": "Economics/E581/convolve2.pyx",
+			"settings":
+			{
+				"buffer_size": 3220,
+				"line_ending": "Unix",
+				"name": "from __future__ import division"
+			}
+		},
+		{
+			"contents": "from distutils.core import setup\nfrom distutils.extension import Extension\nfrom Cython.Distutils import build_ext\n\nsetup(\n    cmdclass={'build_ext': build_ext},\n    ext_modules=[Extension(\"conv\", [\"convolve2.pyx\"])]\n)\n",
+			"file": "Economics/E581/setup.py",
+			"file_size": 218,
+			"file_write_time": 1349673392000000,
+			"settings":
+			{
+				"buffer_size": 218,
+				"line_ending": "Unix",
+				"name": "from distutils.core import setup"
+			}
 		}
 	],
 	"build_system": "Packages/User/my_python.sublime-build",
 	"command_palette":
 	{
-		"height": 71.0,
+		"height": 137.0,
 		"selected_items":
 		[
+			[
+				"disabl",
+				"SublimeLinter: Disable Linting"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -100,7 +145,7 @@
 				"Snippet: New Property"
 			]
 		],
-		"width": 552.0
+		"width": 380.0
 	},
 	"console":
 	{
@@ -230,7 +275,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -354,15 +399,15 @@
 					"file": "/Users/spencerlyon2/Desktop/kerks_solow.m",
 					"settings":
 					{
-						"buffer_size": 2569,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								373,
-								362
+								0,
+								0
 							]
 						],
 						"settings":
@@ -578,6 +623,203 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Economics/E581/marcov_notebook.py",
+					"settings":
+					{
+						"buffer_size": 978,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Economics/E581/markov_cython.pyx",
+					"settings":
+					{
+						"buffer_size": 117,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								117,
+								117
+							]
+						],
+						"settings":
+						{
+							"auto_name": "from __future__ import division",
+							"sublimelinter": false,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Economics/E581/convolve2.pyx",
+					"settings":
+					{
+						"buffer_size": 3220,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3220,
+								3220
+							]
+						],
+						"settings":
+						{
+							"auto_name": "from __future__ import division",
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 599.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Economics/E581/setup.py",
+					"settings":
+					{
+						"buffer_size": 218,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								193,
+								193
+							]
+						],
+						"settings":
+						{
+							"auto_name": "from distutils.core import setup",
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
 				}
 			]
 		}
@@ -641,7 +883,7 @@
 		[
 			[
 				"",
-				"/Users/spencerlyon2/Documents/Research/Endogenous-Yield-Curves/Yield Curve.sublime-project"
+				"/Users/spencerlyon2/Documents/School/Semesters/Fall 2012/English 316/English 316.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -649,7 +891,7 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 215.0,
 	"status_bar_visible": true
 }
