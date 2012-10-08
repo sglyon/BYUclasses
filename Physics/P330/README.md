@@ -1,4 +1,3 @@
-
 # Physics 330 #
 
 ## TODO's ##
@@ -14,7 +13,7 @@
 
 ### Lab 3 ###
 
-	* Written secion in problem 3.1
+	* Done
 
 ### Lab 4 ###
 
