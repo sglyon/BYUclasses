@@ -34,8 +34,15 @@
 #
 # MISSING STEP FOR HOW TO VERIFY POLICY FUNCTION
 #
+# >See the "marcov_p1.png" image below this and just above the "Problem 2" header.
+#
 # The final form of the value function is the following:
 # $$V(K) = ln(AK^{\theta} - \beta \theta A K^{\theta}) + \beta V(\beta \theta A K^{\theta})$$
+
+# <codecell>
+
+from IPython.core.display import Image
+Image(filename='marcov_p1.png')
 
 # <markdowncell>
 
@@ -44,11 +51,13 @@
 # <codecell>
 
 import numpy as np
+import pandas as pd
+import pylab as pl
 from numpy import asarray
 from scipy.optimize import fmin
 from pandas.io.data import DataReader
 import datetime as dt
-import filters
+from statsmodels.tsa.filters.hp_filter import hpfilter
 
 theta = 0.35
 delta = 0.02
@@ -62,7 +71,7 @@ output = asarray(DataReader('GDPC1', 'fred',
 differ = (output[1:] - output[:-1]) / output[:-1]
 ave_trend = differ.mean()
 
-filtered = filters.hp_filter(np.log(output), lam=1600)[1]
+filtered = hpfilter(np.log(output), lamb=1600)[0]
 std_filt = filtered.std(ddof=1)
 auto_corr_filt = np.corrcoef(filtered[1:], filtered[:-1], ddof=1)[0, 1]
 
@@ -78,22 +87,21 @@ marcov3 = np.array([[0.5, 0.45, 0.05],
                     [0.25, 0.25, 0.5]]).cumsum(1)
 
 
-def do_mc(periods=T, only2=False):
+def do_mc(periods=T):
     """does mc simulation"""
-    if only2 == False:
-        s2 = 0
-        s3 = 0
-        epsilon = np.random.normal(0, 0.02, T)  # generate random shocks
+    s2 = 0
+    s3 = 0
+    epsilon = np.random.normal(0, 0.02, T)  # generate random shocks
 
-        y2 = np.zeros(periods)
-        y3 = np.zeros(periods)
+    y2 = np.zeros(periods)
+    y3 = np.zeros(periods)
 
-        for t in range(1, periods):
-            r_num = np.random.rand()
-            y2[t] = g2[s2] + y2[t - 1] + epsilon[t]
-            y3[t] = g3[s3] + y3[t - 1] + epsilon[t]
-            s2 = np.where(marcov2[s2, :] > r_num)[0][0]
-            s3 = np.where(marcov3[s3, :] > r_num)[0][0]
+    for t in range(1, periods):
+        r_num = np.random.rand()
+        y2[t] = g2[s2] + y2[t - 1] + epsilon[t]
+        y3[t] = g3[s3] + y3[t - 1] + epsilon[t]
+        s2 = np.where(marcov2[s2, :] > r_num)[0][0]
+        s3 = np.where(marcov3[s3, :] > r_num)[0][0]
 
     return np.array([y2, y3])
 
@@ -106,56 +114,64 @@ for i in range(num_sims):
 
 # <codecell>
 
-
 def create_moments(data):
     """
     gets the moments he asks for (growth rate, std, autocorr)
     """
     if data.ndim == 2:
+        df = pd.DataFrame(data).T
         total_obs = data.shape[0]
-        auto_corr = np.empty(total_obs)
-        all_std = np.empty(total_obs)
-        all_growth = np.empty(total_obs)
+        diff = (data[:, 2:] - data[:, 1:-1]) / data[:, 1:-1]
+        growth = np.mean(diff, axis=1).mean()
 
-        for obs in range(total_obs):
-            this_obs = data[obs, :]
-            diff = (this_obs[2:] - this_obs[1:-1]) / this_obs[1:-1]
-            all_growth[obs] = np.mean(diff)
+        filt_data = np.empty(data.shape)
+        for i in range(total_obs):
+            filt_data[i, :] = hpfilter(data[i,:], lamb=1600)[0]
 
-            filt = filters.hp_filter(np.log(this_obs), lam=1600)[1]
+        std = filt_data.std(ddof=1, axis=1).mean()
 
-            all_std[obs] = np.std(filt, ddof=1)
-            auto_corr[obs] = np.corrcoef(filt[2:], filt[1:-1])[0, 1]
+        filt_df = pd.DataFrame(filt_data).T
+        all_corrs = np.zeros(total_obs)
+        for i in range(total_obs):
+            all_corrs[i] = filt_df[i].autocorr()
 
-        growth = all_growth.mean()
-        std = all_std.mean()
-        autos = auto_corr.mean()
+        autos = all_corrs.mean()
 
     else:
         diff = (data[2:] - data[1:-1]) / data[1:-1]
         growth = np.mean(diff)
 
-        filt = filters.hp_filter(np.log(data), lam=1600)[1]
+        filt = hpfilter(np.log(data), lamb=1600)[0]
         std = np.std(filt, ddof=1)
         autos = np.corrcoef(filt[2:], filt[1:-1])[0, 1]
     return [growth, std, autos]
 
+y2_moms = create_moments(y2_data)
+y3_moms = create_moments(y3_data)
+data_moms = create_moments(output)
+all_moms = np.array([y2_moms, y3_moms, data_moms])
+moms_df = pd.DataFrame(all_moms)
+new_ind = {0: 'y2', 1: 'y3', 2: 'data'}
+moms_df.columns = ['mean growth', 'Std. Dev', 'Auto. Corr.']
+moms_df = moms_df.rename(index=new_ind)
+moms_df
+
+# <markdowncell>
+
+# ### Problem 3
+
 # <codecell>
 
-# print create_moments(y2_data)
-# data_moms = create_moments(output)
-
-
-# <codecell>
-
-
-def opt_func(p11, p22, g1, g2, sigma):
+def opt_func(x):
     """
-    do 70 mc's and return diff between moments and data moments
+    do 50 mc's and return diff between moments and data moments
     """
-    marcov_mat = np.array([[p11, 1 - p11], [1 - p22, p22]])
+    p11, p22, g1, g2, sigma = x
+
+    marcov_mat = np.array([[p11, 1 - p11],
+                           [1 - p22, p22]], dtype=float).cumsum(1)
     g22 = np.array([g1, g2])
-    sims = 70
+    sims = 10
 
     y2_sim = np.zeros((sims, T))
 
@@ -163,18 +179,42 @@ def opt_func(p11, p22, g1, g2, sigma):
         s2 = 0
         epsilon = np.random.normal(0, sigma, T)
 
-        for t in range(T):
+        for t in range(1, T):
             r_num = np.random.rand()
             y2_sim[sim, t] = g22[s2] + y2_sim[sim, t - 1] + epsilon[t]
-            s2 = np.where(macov_mat[s2, :] > r_num)[0][0]
+            s2 = np.where(marcov_mat[s2, :] > r_num)[0][0]
 
-    sim_moms = create_moments(y2_sim)
+    sim_moms = np.asarray(create_moments(y2_sim))
 
-    difference = np.abs(sim_moms - data_moms)
+    difference = np.linalg.norm(sim_moms - np.asarray(data_moms))
 
     return difference
 
-initial_guess = np.array([.6, .3, .02, -.01, .001])
-best_params = fmin(opt_func, initial_guess)[0]
+x0 = [.6, .3, .02, -.01, .0015]
+p11, p22, g1o, g2o, sigmao = fmin(opt_func, x0, xtol=1e-4, maxfun=1e8)
+print 'the optimal parameters are p1 = %.3f, p2 = %.3f, g1 = %.3f, g2 = %.3f, sigma = %.3f ' %(p11, p22, g1o, g2o, sigmao)
 
+# <markdowncell>
+
+# Note that because we are trying to optimize over a random process, we will never actually converge. This is pretty close, and probably the best we can hope for without reforming the problem/solution approach a bit. (see plot below for more evidence that we are close)
+
+# <codecell>
+
+opt_marcov = np.array([[p11, 1 - p11],[1 - p22, p22]]).cumsum(1)
+opt_g = np.array([g1o, g2o])
+y_opt = np.zeros(254)
+s2_opt = 0
+opt_eps = np.random.normal(0, sigmao, 254)
+for t in range(1, 254):
+    y_opt[t] = opt_g[s2_opt] + y_opt[t - 1] + opt_eps[t]
+    rand_num = np.random.rand()
+    s2 = np.where(opt_marcov[s2_opt, :] > rand_num)[0][0]
+pl.plot(range(254), y_opt, label='sim. data')
+pl.plot(range(output.size), np.log(output), label='log data')
+pl.legend(loc=0)
+pl.show()
+
+# <markdowncell>
+
+# Note that this plot shows that the general shape of the two plots is very similar. The main difference is a scale factor. This is encouraging.
 

@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"marc",
+				"marco3"
+			],
+			[
+				"D",
+				"DTYPE_t"
+			],
+			[
 				"__",
 				"__future__  (module)"
 			],
@@ -20,43 +28,31 @@
 	"buffers":
 	[
 		{
-			"file": "Economics/E581/OLG__model.py",
-			"settings":
-			{
-				"buffer_size": 3017,
-				"line_ending": "Unix",
-				"name": "\"\"\""
-			}
-		},
-		{
-			"file": "/Users/spencerlyon2/Desktop/kerks_solow.m",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Economics/E581/Solow-growth-model.py",
-			"settings":
-			{
-				"buffer_size": 5951,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "Economics/E581/marcov_notebook.py",
 			"settings":
 			{
-				"buffer_size": 978,
+				"buffer_size": 6230,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "from __future__ import division\nimport numpy as np\ncimport numpy as np\nDTYPE = np.float\nctypedef np.float_t DTYPE_t\n\n",
+			"file": "/Users/spencerlyon2/Documents/Python/Cython/numpy examples/convolve4.pyx",
+			"settings":
+			{
+				"buffer_size": 3607,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spencerlyon2/Documents/Research/Endogenous-Yield-Curves/3-Period Model/Python Code/GSSA_function.py",
+			"settings":
+			{
+				"buffer_size": 43697,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "Economics/E581/markov_cython.pyx",
-			"file_size": 117,
-			"file_write_time": 1349672605000000,
 			"settings":
 			{
 				"buffer_size": 117,
@@ -65,33 +61,53 @@
 			}
 		},
 		{
-			"file": "Economics/E581/convolve2.pyx",
-			"settings":
-			{
-				"buffer_size": 3220,
-				"line_ending": "Unix",
-				"name": "from __future__ import division"
-			}
-		},
-		{
-			"contents": "from distutils.core import setup\nfrom distutils.extension import Extension\nfrom Cython.Distutils import build_ext\n\nsetup(\n    cmdclass={'build_ext': build_ext},\n    ext_modules=[Extension(\"conv\", [\"convolve2.pyx\"])]\n)\n",
 			"file": "Economics/E581/setup.py",
-			"file_size": 218,
-			"file_write_time": 1349673392000000,
 			"settings":
 			{
 				"buffer_size": 218,
 				"line_ending": "Unix",
 				"name": "from distutils.core import setup"
 			}
+		},
+		{
+			"file": "Economics/E581/data_filters.py",
+			"settings":
+			{
+				"buffer_size": 4884,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Economics/E581/monte.pyx",
+			"settings":
+			{
+				"buffer_size": 1424,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Economics/E581/monte_py.py",
+			"settings":
+			{
+				"buffer_size": 949,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "Packages/User/my_python.sublime-build",
 	"command_palette":
 	{
-		"height": 137.0,
+		"height": 375.0,
 		"selected_items":
 		[
+			[
+				"lint",
+				"SublimeLinter: Background Linting"
+			],
+			[
+				"disable",
+				"SublimeLinter: Disable Linting"
+			],
 			[
 				"disabl",
 				"SublimeLinter: Disable Linting"
@@ -107,10 +123,6 @@
 			[
 				"pack ins",
 				"Package Control: Install Package"
-			],
-			[
-				"lint",
-				"SublimeLinter: Lint Current File"
 			],
 			[
 				"align",
@@ -145,7 +157,7 @@
 				"Snippet: New Property"
 			]
 		],
-		"width": 380.0
+		"width": 552.0
 	},
 	"console":
 	{
@@ -162,12 +174,16 @@
 	},
 	"file_history":
 	[
+		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/filters.py",
+		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/convolve2.pyx",
+		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/Solow-growth-model.py",
+		"/Users/spencerlyon2/Desktop/kerks_solow.m",
+		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/OLG__model.py",
 		"/Users/spencerlyon2/Documents/Research/Endogenous-Yield-Curves/N-Period Model/n-period.py",
 		"/Users/spencerlyon2/Documents/Research/Endogenous-Yield-Curves/3-Period Model/Python Code/Rick_3per_GSSA.py",
 		"/Users/spencerlyon2/Desktop/rst cheatsheet.rst",
 		"/Users/spencerlyon2/Desktop/test2.rst",
 		"/Users/spencerlyon2/Desktop/test.rst",
-		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/Solow-growth-model.py",
 		"/Users/spencerlyon2/Dropbox/Macro Boot Camp/Econ 581 HW/581hw2.py",
 		"/Users/spencerlyon2/Dropbox/Macro Boot Camp/Spencer Lyon/Econ Homework/OLG 3 Period/Matlab/OLG_3Period.m",
 		"/Users/spencerlyon2/Dropbox/Macro Boot Camp/Spencer Lyon/Econ Homework/OLG 3 Period/Matlab/k32Solve.m",
@@ -230,6 +246,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ndarray",
 			"Approx",
 			"Exact",
 			"all_data",
@@ -275,23 +292,23 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Economics/E581/OLG__model.py",
+					"file": "Economics/E581/marcov_notebook.py",
 					"settings":
 					{
-						"buffer_size": 3017,
+						"buffer_size": 6230,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								307,
-								307
+								2257,
+								2139
 							]
 						],
 						"settings":
@@ -302,7 +319,6 @@
 								"README",
 								"FIXME"
 							],
-							"auto_name": "\"\"\"",
 							"csslint_options":
 							{
 								"adjoining-classes": "warning",
@@ -389,140 +405,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 720.0,
+						"translation.y": 1092.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/Users/spencerlyon2/Desktop/kerks_solow.m",
+					"file": "/Users/spencerlyon2/Documents/Python/Cython/numpy examples/convolve4.pyx",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 3607,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": false,
-							"sublimelinter_mark_style": "outline",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Matlab/Matlab.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Economics/E581/Solow-growth-model.py",
-					"settings":
-					{
-						"buffer_size": 5951,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3116,
-								3122
+								1498,
+								1498
 							]
 						],
 						"settings":
@@ -619,17 +520,17 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 216.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "Economics/E581/marcov_notebook.py",
+					"buffer": 2,
+					"file": "/Users/spencerlyon2/Documents/Research/Endogenous-Yield-Curves/3-Period Model/Python Code/GSSA_function.py",
 					"settings":
 					{
-						"buffer_size": 978,
+						"buffer_size": 43697,
 						"regions":
 						{
 						},
@@ -648,6 +549,122 @@
 								"README",
 								"FIXME"
 							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1087.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Economics/E581/markov_cython.pyx",
+					"settings":
+					{
+						"buffer_size": 117,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								117,
+								117
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"auto_name": "from __future__ import division",
 							"csslint_options":
 							{
 								"adjoining-classes": "warning",
@@ -739,63 +756,6 @@
 				},
 				{
 					"buffer": 4,
-					"file": "Economics/E581/markov_cython.pyx",
-					"settings":
-					{
-						"buffer_size": 117,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								117,
-								117
-							]
-						],
-						"settings":
-						{
-							"auto_name": "from __future__ import division",
-							"sublimelinter": false,
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "Economics/E581/convolve2.pyx",
-					"settings":
-					{
-						"buffer_size": 3220,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3220,
-								3220
-							]
-						],
-						"settings":
-						{
-							"auto_name": "from __future__ import division",
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 599.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
 					"file": "Economics/E581/setup.py",
 					"settings":
 					{
@@ -806,13 +766,276 @@
 						"selection":
 						[
 							[
-								193,
-								193
+								217,
+								218
 							]
 						],
 						"settings":
 						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
 							"auto_name": "from distutils.core import setup",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Economics/E581/data_filters.py",
+					"settings":
+					{
+						"buffer_size": 4884,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 566.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 6,
+					"file": "Economics/E581/monte.pyx",
+					"settings":
+					{
+						"buffer_size": 1424,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								68,
+								68
+							]
+						],
+						"settings":
+						{
+							"sublimelinter": false,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "Economics/E581/monte_py.py",
+					"settings":
+					{
+						"buffer_size": 949,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								948,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"sublimelinter": true,
 							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -841,11 +1064,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -888,10 +1118,10 @@
 		],
 		"width": 380.0
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 215.0,
 	"status_bar_visible": true
 }
