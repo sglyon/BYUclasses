@@ -25,15 +25,13 @@
 
 ### Lab 6 ###
 
-	* Fix plot on 6_4a.m I think the problem is with the 'cosine function of matching amplitude....'
-	* Fix plot on 6_4b.m I think the problem is with the 'cosine function of matching amplitude....'
-	* Figure out how to deal with time in driven problems (P6.5, P6.6)
+	* Done
 
 ### Lab 7 ###
 
-	* P7_2.m The semilogy plot looks funny.
 	* Fill in table for P7_3.m. Also check for 'aliasing'?
 	* Finish P7_4.m
+	* Do problems 5, 6
 
 ### Lab 8 ###
 

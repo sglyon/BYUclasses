@@ -1,7 +1,7 @@
 clear; clc; close all;
 w0 = 200 ;
 W_array = [10 1 0.1] ;
-N = 2^16;
+N = 2^17;
 tmax = 32;
 t0 = tmax / 2;
 tao = 32 / N;

@@ -1,8 +1,8 @@
 clear; close all; clc;
 
-f = wavread('/Users/spencerlyon2/Documents/School/BYUclasses/Physics/P330/Data/beethoven.wav') ;
+f = wavread('~/Documents/School/BYUclasses/Physics/P330/Data/beethoven.wav') ;
 
-N=length(f);
+N = length(f);
 tfinal = N / 11025;
 tao = tfinal / (N - 1);
 

@@ -35,13 +35,13 @@ def monteCarlo(unsigned int sims, unsigned int pers):
     cdef unsigned int s2, s3
 
     cdef DTYPE_t rand_num
-    for sim in range(sims):
+    for sim in xrange(sims):
 
         epsilon = np.random.normal(0, sigma, pers)
         s2 = 0
         s3 = 0
 
-        for t in range(1, pers):
+        for t in xrange(1, pers):
             rand_num = np.random.rand()
             y2[sim, t] = g2[s2] + y2[sim, t - 1] + epsilon[t]
             y3[sim, t] = g3[s3] + y3[sim, t - 1] + epsilon[t]
