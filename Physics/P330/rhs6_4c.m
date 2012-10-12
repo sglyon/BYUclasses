@@ -1,4 +1,4 @@
-function F = rsh6_4c(t, u)
+function F = rhs6_4c(t, u)
 % right-hand side function for Matlab's ordinary
 % differential equation solvers: Pendulum problem
 % ..        2
