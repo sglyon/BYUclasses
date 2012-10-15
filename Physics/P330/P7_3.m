@@ -2,10 +2,10 @@ clear; clc; close all;
 w0 = 200 ;
 W_array = [10 1 0.1] ;
 N = 2^17;
-tmax = 32;
+tmax = 2 ^ 5;
 t0 = tmax / 2;
-tao = 32 / N;
-time = 0: tao: 32 - tao ;
+tao = tmax / N;
+time = 0: tao: tmax - tao ;
 
 f = @(t, W) cos(w0 .* t) .* exp(-(t - t0).^2 ./W^2);
 
@@ -57,3 +57,15 @@ subplot(2,1,2)
 plot(w, P3)
 title('Angular frequency with W = .1')
 
+
+dt10 = 16.5;
+dw10 = 0.35;
+dtw10 = dt10 * dw10
+
+dt1 = 1.75;
+dw1 = 2.25;
+dtw1 = dt1 * dw1
+
+dtp1 = .125;
+dwp1 = 23;
+dtwp1 = dtp1 * dwp1
