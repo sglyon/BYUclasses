@@ -1,0 +1,166 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4438,        156]
+NotebookOptionsPosition[      3838,        129]
+NotebookOutlinePosition[      4248,        147]
+CellTagsIndexPosition[      4205,        144]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"sol", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"z", "[", "t", "]"}], "/.", 
+   RowBox[{
+    RowBox[{"DSolve", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"z", "'"}], "[", "t", "]"}], " ", "==", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "u"}], " ", "*", " ", 
+           RowBox[{"Log", "[", 
+            RowBox[{"1", " ", "-", " ", 
+             RowBox[{"k", " ", "t"}]}], "]"}]}], " ", "-", " ", 
+          RowBox[{"g", " ", "*", " ", "t"}]}]}], ",", 
+        RowBox[{
+         RowBox[{"z", "[", "0", "]"}], "\[Equal]", "0"}]}], "}"}], ",", " ", 
+      RowBox[{"z", "[", "t", "]"}], ",", "t"}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.559570686773144*^9, 3.559570687607143*^9}, {
+  3.5595707243394413`*^9, 3.559570771226857*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  FractionBox[
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"g", " ", "k", " ", 
+      SuperscriptBox["t", "2"]}]}], "+", 
+    RowBox[{"2", " ", "k", " ", "t", " ", "u"}], "-", 
+    RowBox[{"2", " ", "k", " ", "t", " ", "u", " ", 
+     RowBox[{"log", "(", 
+      RowBox[{"1", "-", 
+       RowBox[{"k", " ", "t"}]}], ")"}]}], "+", 
+    RowBox[{"2", " ", "u", " ", 
+     RowBox[{"log", "(", 
+      RowBox[{"1", "-", 
+       RowBox[{"k", " ", "t"}]}], ")"}]}]}], 
+   RowBox[{"2", " ", "k"}]], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.559570747934037*^9, 3.55957077163697*^9}, 
+   3.5595708492024317`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"realans", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"sol", " ", "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"t", "\[Rule]", "\[Tau]"}], ",", " ", 
+      RowBox[{"k", "->", " ", 
+       RowBox[{"(", 
+        FractionBox[
+         RowBox[{"(", 
+          RowBox[{"\[Gamma]", " ", "-", " ", "1"}], ")"}], 
+         RowBox[{"\[Gamma]", " ", "*", " ", "\[Tau]"}]], ")"}]}]}], "}"}]}], "//",
+    "FullSimplify"}]}]], "Input",
+ CellChangeTimes->{{3.5595707732381907`*^9, 3.559570773928041*^9}, {
+  3.559570814528895*^9, 3.559570896432132*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox[
+     RowBox[{"g", " ", 
+      SuperscriptBox["\[Tau]", "2"]}], "2"]}], "+", 
+   FractionBox[
+    RowBox[{"\[Tau]", " ", "u", " ", 
+     RowBox[{"log", "(", 
+      FractionBox["1", "\[Gamma]"], ")"}]}], 
+    RowBox[{"\[Gamma]", "-", "1"}]], "+", 
+   RowBox[{"\[Tau]", " ", "u"}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.5595708426244392`*^9, 3.559570897030476*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Collect", "[", 
+  RowBox[{"realans", ",", " ", "\[Tau]", ",", " ", "Simplify"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.559570897856566*^9, 3.5595709182221622`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Tau]", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"u", " ", 
+        RowBox[{"log", "(", 
+         FractionBox["1", "\[Gamma]"], ")"}]}], 
+       RowBox[{"\[Gamma]", "-", "1"}]], "+", "u"}], ")"}]}], "-", 
+   FractionBox[
+    RowBox[{"g", " ", 
+     SuperscriptBox["\[Tau]", "2"]}], "2"]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.559570918602247*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{20, Automatic}, {Automatic, 44}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
+2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 885, 24, 27, "Input"],
+Cell[1467, 48, 633, 18, 50, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2137, 71, 565, 15, 48, "Input"],
+Cell[2705, 88, 446, 13, 61, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3188, 106, 192, 4, 27, "Input"],
+Cell[3383, 112, 439, 14, 68, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

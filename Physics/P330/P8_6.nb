@@ -1,0 +1,254 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      8032,        245]
+NotebookOptionsPosition[      7553,        223]
+NotebookOutlinePosition[      7910,        239]
+CellTagsIndexPosition[      7867,        236]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"sol", "  ", "=", " ", 
+  RowBox[{
+   RowBox[{"x", "[", "t", "]"}], "/.", 
+   RowBox[{
+    RowBox[{"DSolve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"x", "''"}], "[", "t", "]"}], " ", "+", " ", 
+        RowBox[{"0", "*", 
+         RowBox[{
+          RowBox[{"x", "'"}], "[", "t", "]"}]}], " ", "+", " ", 
+        RowBox[{
+         SuperscriptBox["\[Omega]0", "2"], " ", "*", " ", 
+         RowBox[{"x", "[", "t", "]"}]}]}], " ", "\[Equal]", " ", 
+       RowBox[{
+        RowBox[{"-", " ", "\[Epsilon]"}], " ", "*", " ", 
+        SuperscriptBox["\[Omega]0", "2"], " ", "*", " ", 
+        RowBox[{"Cos", "[", 
+         RowBox[{"\[Omega]p", " ", "t"}], "]"}], " ", "*", " ", "A", "*", " ", 
+        RowBox[{"Cos", "[", 
+         RowBox[{"\[Omega]0", "  ", "t"}], "]"}]}]}], ",", " ", 
+      RowBox[{"x", "[", "t", "]"}], ",", " ", "t"}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.559568523986446*^9, 3.559568588059993*^9}, {
+  3.5595686359109697`*^9, 3.5595686365653353`*^9}, {3.559568667020731*^9, 
+  3.559568668973822*^9}, {3.55956872169564*^9, 3.559568729109672*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"-", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"4", " ", "\[Omega]p", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"2", " ", "\[Omega]0"}], "-", "\[Omega]p"}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"2", " ", "\[Omega]0"}], "+", "\[Omega]p"}], ")"}]}]], 
+     RowBox[{"A", " ", "\[Omega]0", " ", "\[Epsilon]", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"8", " ", 
+         SuperscriptBox["\[Omega]0", "2"], " ", 
+         RowBox[{"sin", "(", 
+          RowBox[{"t", " ", "\[Omega]0"}], ")"}], " ", 
+         RowBox[{"sin", "(", 
+          RowBox[{"t", " ", "\[Omega]p"}], ")"}]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[Omega]p", "2"], " ", 
+         RowBox[{"sin", "(", 
+          RowBox[{"t", " ", "\[Omega]0"}], ")"}], " ", 
+         RowBox[{"sin", "(", 
+          RowBox[{"t", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", "\[Omega]0"}], "-", "\[Omega]p"}], ")"}]}], 
+          ")"}]}], "-", 
+        RowBox[{"2", " ", 
+         SuperscriptBox["\[Omega]p", "2"], " ", 
+         RowBox[{"sin", "(", 
+          RowBox[{"t", " ", "\[Omega]0"}], ")"}], " ", 
+         RowBox[{"sin", "(", 
+          RowBox[{"t", " ", "\[Omega]p"}], ")"}]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[Omega]p", "2"], " ", 
+         RowBox[{"sin", "(", 
+          RowBox[{"t", " ", "\[Omega]0"}], ")"}], " ", 
+         RowBox[{"sin", "(", 
+          RowBox[{"t", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", "\[Omega]0"}], "+", "\[Omega]p"}], ")"}]}], 
+          ")"}]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[Omega]p", "2"], " ", 
+         RowBox[{"cos", "(", 
+          RowBox[{"t", " ", "\[Omega]0"}], ")"}], " ", 
+         RowBox[{"cos", "(", 
+          RowBox[{"t", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", "\[Omega]0"}], "-", "\[Omega]p"}], ")"}]}], 
+          ")"}]}], "-", 
+        RowBox[{
+         SuperscriptBox["\[Omega]p", "2"], " ", 
+         RowBox[{"cos", "(", 
+          RowBox[{"t", " ", "\[Omega]0"}], ")"}], " ", 
+         RowBox[{"cos", "(", 
+          RowBox[{"t", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", "\[Omega]0"}], "+", "\[Omega]p"}], ")"}]}], 
+          ")"}]}], "+", 
+        RowBox[{"2", " ", "\[Omega]0", " ", "\[Omega]p", " ", 
+         RowBox[{"sin", "(", 
+          RowBox[{"t", " ", "\[Omega]0"}], ")"}], " ", 
+         RowBox[{"sin", "(", 
+          RowBox[{"t", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", "\[Omega]0"}], "-", "\[Omega]p"}], ")"}]}], 
+          ")"}]}], "+", 
+        RowBox[{"2", " ", "\[Omega]0", " ", "\[Omega]p", " ", 
+         RowBox[{"sin", "(", 
+          RowBox[{"t", " ", "\[Omega]0"}], ")"}], " ", 
+         RowBox[{"sin", "(", 
+          RowBox[{"t", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", "\[Omega]0"}], "+", "\[Omega]p"}], ")"}]}], 
+          ")"}]}], "+", 
+        RowBox[{"2", " ", "\[Omega]0", " ", "\[Omega]p", " ", 
+         RowBox[{"cos", "(", 
+          RowBox[{"t", " ", "\[Omega]0"}], ")"}], " ", 
+         RowBox[{"cos", "(", 
+          RowBox[{"t", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", "\[Omega]0"}], "-", "\[Omega]p"}], ")"}]}], 
+          ")"}]}], "+", 
+        RowBox[{"2", " ", "\[Omega]0", " ", "\[Omega]p", " ", 
+         RowBox[{"cos", "(", 
+          RowBox[{"t", " ", "\[Omega]0"}], ")"}], " ", 
+         RowBox[{"cos", "(", 
+          RowBox[{"t", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", "\[Omega]0"}], "+", "\[Omega]p"}], ")"}]}], 
+          ")"}]}]}], ")"}]}]}]}], "+", 
+   RowBox[{
+    SubscriptBox[
+     TagBox["c",
+      C], "2"], " ", 
+    RowBox[{"sin", "(", 
+     RowBox[{"t", " ", "\[Omega]0"}], ")"}]}], "+", 
+   RowBox[{
+    SubscriptBox[
+     TagBox["c",
+      C], "1"], " ", 
+    RowBox[{"cos", "(", 
+     RowBox[{"t", " ", "\[Omega]0"}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.5595686274169273`*^9, {3.559568660199308*^9, 3.559568671184901*^9}, 
+   3.5595687295394*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.5595686216623383`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Collect", "[", 
+  RowBox[{"sol", ",", " ", "A", " ", ",", " ", "Simplify"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5595687108839617`*^9, 3.5595687753472023`*^9}, 
+   3.559568807018199*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox[
+     RowBox[{"A", " ", 
+      SuperscriptBox["\[Omega]0", "2"], " ", "\[Epsilon]", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"2", " ", "\[Omega]0", " ", 
+         RowBox[{"sin", "(", 
+          RowBox[{"t", " ", "\[Omega]0"}], ")"}], " ", 
+         RowBox[{"sin", "(", 
+          RowBox[{"t", " ", "\[Omega]p"}], ")"}]}], "+", 
+        RowBox[{"\[Omega]p", " ", 
+         RowBox[{"cos", "(", 
+          RowBox[{"t", " ", "\[Omega]0"}], ")"}], " ", 
+         RowBox[{"cos", "(", 
+          RowBox[{"t", " ", "\[Omega]p"}], ")"}]}]}], ")"}]}], 
+     RowBox[{
+      RowBox[{"4", " ", 
+       SuperscriptBox["\[Omega]0", "2"], " ", "\[Omega]p"}], "-", 
+      SuperscriptBox["\[Omega]p", "3"]}]]}], "+", 
+   RowBox[{
+    SubscriptBox[
+     TagBox["c",
+      C], "2"], " ", 
+    RowBox[{"sin", "(", 
+     RowBox[{"t", " ", "\[Omega]0"}], ")"}]}], "+", 
+   RowBox[{
+    SubscriptBox[
+     TagBox["c",
+      C], "1"], " ", 
+    RowBox[{"cos", "(", 
+     RowBox[{"t", " ", "\[Omega]0"}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.559568733751739*^9, 3.559568776578594*^9}, 
+   3.5595688082299356`*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{Automatic, 331}, {Automatic, 70}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
+2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1178, 28, 68, "Input"],
+Cell[1760, 52, 4254, 118, 125, "Output"]
+}, Open  ]],
+Cell[6029, 173, 70, 1, 27, "Input"],
+Cell[CellGroupData[{
+Cell[6124, 178, 213, 4, 27, "Input"],
+Cell[6340, 184, 1197, 36, 54, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
