@@ -2,7 +2,7 @@ clear; close all; clc;
 
 global w0 gamma
 w0 = 1;
-gamma = .8;
+gamma = .3;
 
 tstart = 0; tfinal = 2^4;
 N = 2 ^ 12;
@@ -25,4 +25,5 @@ tau = time(2) - time(1);
 dw = 2 * pi / (N * tau);
 w = 0: dw : 2 * pi / tau - dw;
 
-plot(w, P)
+plot(w, P);
+xlim([0 2]);

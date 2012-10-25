@@ -25,7 +25,7 @@ alpha = (I2 * A * wPhi ^ 2) / (I1 + I2);
 
 % Set time bounds
 tstart = 0; tfinal = 800;
-times = linspace(tstart, tfinal, 1000);
+times = linspace(tstart, tfinal, 10000);
 
 u0 = zeros(2, 1);  % initial conditions are both zero in this problem
 
