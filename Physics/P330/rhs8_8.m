@@ -20,6 +20,5 @@ global L0 gamma g w0 DL wp
 F = zeros(length(u), 1);
 
 F(1) = u(2);
-F(2) = u(3);
-F(3) = (2*DL*sin(wp*t)) / (L0 + DL*cos(wp*t)) * u(2) - gamma * u(2) ...
+F(2) = (2*DL*sin(wp*t)) / (L0 + DL*cos(wp*t)) * u(2) - gamma * u(2) ...
          - (g / (L0 + DL*cos(wp*t))) * sin(u(1));
