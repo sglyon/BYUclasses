@@ -1,0 +1,33 @@
+declarations:
+    variables: [c, y, i, r, w, u, lam, k, z]
+    shocks: [epsilon]
+    parameters: [B, mu, gamma, beta, delta, theta, hbar, A, rho, sigma]
+
+
+equations:
+
+    - y = A * k ^ theta * (exp(z) * hbar) ^ (1 - theta)
+    - u = 1 / (1 - gamma) * (c ^(1 - gamma) - 1) + B * log(1 -hbar)
+    - r = theta * A * (exp(z) * hbar / k) ^ (1 - theta)
+    - w = (1 - theta) * A * (exp(z)) ^(1 - theta) * (k / hbar) ^ (theta)
+    - i(-1) = k - (1 - delta) * k(-1)
+    - c = y - i
+    - lam = exp(z)
+    - 1 = beta * (c / c(+1)) ^ (gamma) * (1 + r(+1) - delta)
+    - z = rho * z(-1) + epsilon
+
+calibration:
+    parameters:
+        gamma : 2
+        beta  : 0.995
+        delta : 0.025
+        theta : 0.33
+        hbar  : 0.3
+        A     : 1
+        rho   : 0.9
+        sigma : 0.02
+        B     : 2.5
+        mu    : 1
+
+    covariances: |
+        [[0.02 ** 2]]

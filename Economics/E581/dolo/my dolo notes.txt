@@ -1,0 +1,37 @@
+## Import statements
+
+from dolo import solve_decision_rule, yaml_import
+from dolo import display  # if you want to latex print stuff in ipynb
+
+## Import and solve the model
+model = yaml_import('~/path/to/model')
+ss_guess = np.ones(len(model.variables)) * 0.5  # fix this if it doesn't work
+dr = solve_decision_rule(model, steady_state=ss_guess)
+
+## Get stuff from the model
+from dolo.numeric.decision_rules import stoch_simul, impulse_response_function
+sims = stoch_simul(dr, 'shock name in yaml', ['list', 'of' ,'vars', 'to', 'sim'])
+sims2 = stoch_simul(dr, 'shock name in yaml', model.variables, horizon=500)  # all vars
+imps = impulse_response_function(dr, 'shock name in yaml', ['list', 'of' ,'vars', 'to', 'sim'])
+the_vars = np.array([str(i) for i in model.variables])
+frame = pd.DataFrame(dr['ys'], index=the_vars, columns=['Steady state'])
+
+## Get the moments (not sure what this does)
+from dolo.numeric.decision_rules import theoretical_moments
+tm = theoretical_moments(dr)
+corr_matrix = tm[1]
+
+## Get same moments as dynare
+import pandas as pd
+the_vars = np.array([str(i) for i in model.variables])
+sim_frame = pd.DataFrame(sims, index=the_vars).T
+auto_corrs = sim_frame.apply(lambda x: x.autocorr(), axis=0)
+corrs = sim_frame.corr()
+
+## Build moment table for kerk
+frame['Mean'] = sim_frame.mean()
+frame['Std. Dev'] = sim_frame.std(ddof=1)
+# frame['Variance'] = sim_frame.var(ddof=1)
+frame['Corr with y'] = corrs['y']
+frame['Corr with lambda'] = corrs['lam']
+frame['Autocorr'] = auto_corrs
