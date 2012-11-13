@@ -8,7 +8,7 @@ epsi = 2;
 w0 = 1.3;
 omega = 1.4;
 
-N = 2^8;
+N = 2^10;
 tstart = 0; tfinal = 500;
 times = linspace(tstart, tfinal, N);
 tau = times(2) - times(1);

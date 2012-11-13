@@ -6,12 +6,12 @@ from dolo import display  # if you want to latex print stuff in ipynb
 ## Import and solve the model
 model = yaml_import('~/path/to/model')
 ss_guess = np.ones(len(model.variables)) * 0.5  # fix this if it doesn't work
-dr = solve_decision_rule(model, steady_state=ss_guess)
+dr = solve_decision_rule(model, steady_state=ss_guess, solve_ss=True)
 
 ## Get stuff from the model
 from dolo.numeric.decision_rules import stoch_simul, impulse_response_function
-sims = stoch_simul(dr, 'shock name in yaml', ['list', 'of' ,'vars', 'to', 'sim'])
-sims2 = stoch_simul(dr, 'shock name in yaml', model.variables, horizon=500)  # all vars
+sims = stoch_simul(dr, ['list', 'of' ,'vars', 'to', 'sim'])
+sims2 = stoch_simul(dr, model.variables, horizon=500)  # all vars
 imps = impulse_response_function(dr, 'shock name in yaml', ['list', 'of' ,'vars', 'to', 'sim'])
 the_vars = np.array([str(i) for i in model.variables])
 frame = pd.DataFrame(dr['ys'], index=the_vars, columns=['Steady state'])

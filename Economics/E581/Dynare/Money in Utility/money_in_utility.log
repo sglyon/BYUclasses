@@ -1,0 +1,153 @@
+ 
+STEADY-STATE RESULTS:
+ 
+c   		 2.39466
+k   		 133.599
+h   		 0.239645
+y   		 6.40265
+w   		 7.87351
+r   		 0.033801
+P   		 0.683812
+i   		 4.00798
+u   		 0.192119
+lam 		 1
+g   		 0
+z   		 0
+ 
+MODEL SUMMARY
+ 
+  Number of variables:         12
+  Number of stochastic shocks: 2
+  Number of state variables:   3
+  Number of jumpers:           2
+  Number of static variables:  7
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables   epsilon_z  epsilon_g 
+epsilon_z     0.000400   0.000000
+epsilon_g     0.000000   0.000100
+ 
+POLICY AND TRANSITION FUNCTIONS
+                                     c               k               h               y               w               r               P               i               u               lam             g               z  
+Constant                    2.394732      133.633842        0.239637        6.402586        7.873648        0.033801        0.683678        4.042506        0.192176        1.000000               0               0
+(correction)                0.000068        0.034350       -0.000008       -0.000063        0.000139               0       -0.000135        0.034522        0.000056               0               0               0
+k(-1)                       0.006512        0.983880        0.000352        0.036573        0.025056       -0.000045       -0.003688        0.013800        0.001616               0               0               0
+g(-1)                              0               0               0               0               0               0       38.152030               0       -0.557931               0        0.900000               0
+z(-1)                       1.519305        3.276942       -0.047065        1.506849        4.508022        0.005966       -0.194504        3.293327        0.792044        0.995000               0        0.995000
+epsilon_z                   1.526939        3.293409       -0.047301        1.514421        4.530676        0.005996       -0.195482        3.309876        0.796024        1.000000               0        1.000000
+epsilon_g                          0               0               0               0               0               0       42.391145               0       -0.619924               0        1.000000               0
+k(-1),k(-1)                -0.000021       -0.000058               0       -0.000021       -0.000060               0        0.000026       -0.000059       -0.000012               0               0               0
+g(-1),k(-1)                        0               0               0               0               0               0       -0.103746               0       -0.001492               0               0               0
+g(-1),g(-1)                        0               0               0               0               0               0       17.168414               0       15.313293               0               0               0
+z(-1),k(-1)                 0.005468        0.026633       -0.000247        0.005610        0.015959       -0.000020        0.000542        0.026766        0.001449               0               0               0
+z(-1),g(-1)                        0               0               0               0               0               0      -24.205707               0        0.195283               0               0               0
+z(-1),z(-1)                 0.393904       -0.305967        0.016320        0.375516        1.185087        0.001311        0.061229       -0.307497       -0.095712        0.495013               0               0
+epsilon_z,epsilon_z         0.397873       -0.309050        0.016484        0.379300        1.197027        0.001325        0.061846       -0.310595       -0.096677        0.500000               0               0
+epsilon_g,epsilon_z                0               0               0               0               0               0      -27.030382               0        0.218071               0               0               0
+epsilon_g,epsilon_g                0               0               0               0               0               0       21.195572               0       18.905300               0               0               0
+k(-1),epsilon_z             0.005495        0.026767       -0.000248        0.005638        0.016039       -0.000020        0.000545        0.026901        0.001456               0               0               0
+k(-1),epsilon_g                    0               0               0               0               0               0       -0.115273               0       -0.001657               0               0               0
+g(-1),epsilon_z                    0               0               0               0               0               0      -24.327344               0        0.196264               0               0               0
+g(-1),epsilon_g                    0               0               0               0               0               0       38.152030               0       34.029541               0               0               0
+z(-1),epsilon_z             0.791767       -0.615009        0.032804        0.754807        2.382084        0.002636        0.123074       -0.618084       -0.192386        0.995000               0               0
+z(-1),epsilon_g                    0               0               0               0               0               0      -26.895230               0        0.216981               0               0               0
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+c              2.4650     0.5215     0.2719
+k            140.7096    35.7675  1279.3120
+h              0.2408     0.0063     0.0000
+y              6.6861     1.5796     2.4950
+w              8.1231     1.7448     3.0443
+r              0.0337     0.0008     0.0000
+P              0.7073     0.9868     0.9737
+i              4.2213     1.1196     1.2535
+u              0.2041     0.2122     0.0450
+lam            1.0201     0.2003     0.0401
+g             -0.0000     0.0229     0.0005
+z             -0.0000     0.2003     0.0401
+ 
+
+
+VARIANCE DECOMPOSITION (in percent)
+
+          epsilon_z  epsilon_g 
+c         100.00       0.00
+k         100.00       0.00
+h         100.00       0.00
+y         100.00       0.00
+w         100.00       0.00
+r         100.00       0.00
+P           2.87      97.13
+i         100.00       0.00
+u          99.55       0.45
+lam       100.00       0.00
+g           0.00     100.00
+z         100.00       0.00
+ 
+
+
+MATRIX OF CORRELATIONS
+
+Variables      c       k       h       y       w       r       P       i       u      lam      g       z   
+c            1.0000  0.9605  0.4444  0.9807  0.9994 -0.4534 -0.1668  1.0000  0.9940  0.9758  0.0000  0.9758
+k            0.9605  1.0000  0.6761  0.9964  0.9693 -0.6836 -0.1684  0.9597  0.9308  0.8764  0.0000  0.8764
+h            0.4444  0.6761  1.0000  0.6111  0.4743 -0.9999 -0.1007  0.4418  0.3646  0.2378  0.0000  0.2378
+y            0.9807  0.9964  0.6111  1.0000  0.9867 -0.6191 -0.1693  0.9801  0.9580  0.9142  0.0000  0.9142
+w            0.9994  0.9693  0.4743  0.9867  1.0000 -0.4832 -0.1677  0.9993  0.9906  0.9679  0.0000  0.9679
+r           -0.4534 -0.6836 -0.9999 -0.6191 -0.4832  1.0000  0.1021 -0.4508 -0.3740 -0.2476  0.0000 -0.2476
+P           -0.1668 -0.1684 -0.1007 -0.1693 -0.1677  0.1021  1.0000 -0.1667 -0.2293 -0.1562  0.9856 -0.1562
+i            1.0000  0.9597  0.4418  0.9801  0.9993 -0.4508 -0.1667  1.0000  0.9943  0.9764  0.0000  0.9764
+u            0.9940  0.9308  0.3646  0.9580  0.9906 -0.3740 -0.2293  0.9943  1.0000  0.9888 -0.0670  0.9888
+lam          0.9758  0.8764  0.2378  0.9142  0.9679 -0.2476 -0.1562  0.9764  0.9888  1.0000  0.0000  1.0000
+g            0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.9856  0.0000 -0.0670  0.0000  1.0000  0.0000
+z            0.9758  0.8764  0.2378  0.9142  0.9679 -0.2476 -0.1562  0.9764  0.9888  1.0000  0.0000  1.0000
+ 
+
+
+COEFFICIENTS OF AUTOCORRELATION
+
+Order      1       2       3       4       5   
+c        0.9983  0.9965  0.9947  0.9929  0.9910
+k        1.0000  0.9998  0.9996  0.9994  0.9990
+h        0.9886  0.9774  0.9664  0.9555  0.9447
+y        0.9998  0.9995  0.9991  0.9987  0.9982
+w        0.9986  0.9972  0.9958  0.9943  0.9927
+r        0.9888  0.9778  0.9670  0.9563  0.9458
+P        0.9029  0.8154  0.7367  0.6659  0.6022
+i        0.9982  0.9964  0.9946  0.9927  0.9908
+u        0.9967  0.9935  0.9903  0.9871  0.9839
+lam      0.9950  0.9900  0.9851  0.9801  0.9752
+g        0.9000  0.8100  0.7290  0.6561  0.5905
+z        0.9950  0.9900  0.9851  0.9801  0.9752
+{Error using <a href="matlab:helpUtils.errorDocCallback('handle.handle/get')" style="font-weight:bold">handle.handle/get</a>
+Invalid or deleted object.
+
+Error in <a href="matlab:helpUtils.errorDocCallback('restorehg', '/Applications/MATLAB_R2012b.app/toolbox/matlab/graphics/private/restorehg.m', 115)" style="font-weight:bold">restorehg</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2012b.app/toolbox/matlab/graphics/private/restorehg.m',115,0)">line 115</a>)
+if strcmp(get(h, 'BackingStore'), 'off') || ~isempty(findall(h, 'EraseMode', 'xor'))
+
+Error in <a href="matlab:helpUtils.errorDocCallback('restore', '/Applications/MATLAB_R2012b.app/toolbox/matlab/graphics/private/restore.m', 33)" style="font-weight:bold">restore</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2012b.app/toolbox/matlab/graphics/private/restore.m',33,0)">line 33</a>)
+        pj = restorehg( pj, h );
+
+Error in <a href="matlab:helpUtils.errorDocCallback('print>LocalPrint', '/Applications/MATLAB_R2012b.app/toolbox/matlab/graphics/print.m', 291)" style="font-weight:bold">print>LocalPrint</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2012b.app/toolbox/matlab/graphics/print.m',291,0)">line 291</a>)
+        pj = restore( pj, h );
+
+Error in <a href="matlab:helpUtils.errorDocCallback('print', '/Applications/MATLAB_R2012b.app/toolbox/matlab/graphics/print.m', 237)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2012b.app/toolbox/matlab/graphics/print.m',237,0)">line 237</a>)
+    LocalPrint(pj);
+
+Error in <a href="matlab:helpUtils.errorDocCallback('dyn_saveas', '/Applications/Dynare/4.3.1/matlab/dyn_saveas.m', 37)" style="font-weight:bold">dyn_saveas</a> (<a href="matlab: opentoline('/Applications/Dynare/4.3.1/matlab/dyn_saveas.m',37,0)">line 37</a>)
+        eval(['print -depsc2 ' fname]);
+
+Error in <a href="matlab:helpUtils.errorDocCallback('stoch_simul', '/Applications/Dynare/4.3.1/matlab/stoch_simul.m', 233)" style="font-weight:bold">stoch_simul</a> (<a href="matlab: opentoline('/Applications/Dynare/4.3.1/matlab/stoch_simul.m',233,0)">line 233</a>)
+                    dyn_saveas(hh,[M_.fname '_IRF_' deblank(tit(i,:))],options_);
+
+Error in <a href="matlab:helpUtils.errorDocCallback('money_in_utility', '/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/Dynare/Money in Utility/money_in_utility.m', 185)" style="font-weight:bold">money_in_utility</a> (<a href="matlab: opentoline('/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/Dynare/Money in Utility/money_in_utility.m',185,0)">line 185</a>)
+info = stoch_simul(var_list_);
+
+Error in <a href="matlab:helpUtils.errorDocCallback('dynare', '/Applications/Dynare/4.3.1/matlab/dynare.m', 120)" style="font-weight:bold">dynare</a> (<a href="matlab: opentoline('/Applications/Dynare/4.3.1/matlab/dynare.m',120,0)">line 120</a>)
+evalin('base',fname) ;
+} 

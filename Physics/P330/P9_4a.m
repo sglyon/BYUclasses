@@ -5,7 +5,7 @@ global A gamma
 
 gamma = 0.4;
 
-N = 2^6;
+N = 2^15;
 tstart = 0; tfinal = 1000;
 times = linspace(tstart, tfinal, N);
 

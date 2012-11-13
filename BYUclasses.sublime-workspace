@@ -32,64 +32,72 @@
 	"buffers":
 	[
 		{
-			"file": "/Applications/Dynare/4.3.1/examples/example1.mod",
+			"file": "Economics/E581/dolo/cash_in_advance.yaml",
 			"settings":
 			{
-				"buffer_size": 1561,
+				"buffer_size": 1620,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/spencerlyon2/Documents/Python/Open_Source/dolo/examples/yaml_files/example1.yaml",
+			"file": "/Users/spencerlyon2/Desktop/transcript.py",
 			"settings":
 			{
-				"buffer_size": 867,
+				"buffer_size": 3911,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "Economics/E581/Dynare/Problem 1/hw8_1.mod",
+			"file": "Economics/E581/dolo/money_in_utility.yaml",
 			"settings":
 			{
-				"buffer_size": 1304,
+				"buffer_size": 1667,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/spencerlyon2/Documents/Python/Open_Source/dolo/Untitled0.ipynb",
+			"file": "Economics/E581/Dynare/Cash in Advance/cash_in_advance.mod",
 			"settings":
 			{
-				"buffer_size": 10275,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Economics/E581/dolo/hw8_1.yaml",
-			"settings":
-			{
-				"buffer_size": 854,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Economics/E581/dolo/hw8_1_dolo.py",
-			"settings":
-			{
-				"buffer_size": 96,
+				"buffer_size": 2116,
 				"line_ending": "Unix",
-				"name": "hw8_1_dolo.py"
+				"name": "%-------------------------------------------------"
+			}
+		},
+		{
+			"file": "Economics/E581/dolo/my dolo notes.txt",
+			"settings":
+			{
+				"buffer_size": 1471,
+				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "Packages/User/my_python.sublime-build",
 	"command_palette":
 	{
-		"height": 71.0,
+		"height": 375.0,
 		"selected_items":
 		[
 			[
+				"dis",
+				"SublimeLinter: Disable Linting"
+			],
+			[
+				"auto",
+				"SublimeCodeIntel: Disable Live Autocompletion"
+			],
+			[
+				"align",
+				"Preferences: Alignment File Settings – Default"
+			],
+			[
 				"install",
 				"Package Control: Install Package"
+			],
+			[
+				"yaml",
+				"Set Syntax: YAML"
 			],
 			[
 				"git push",
@@ -136,10 +144,6 @@
 				"Package Control: Install Package"
 			],
 			[
-				"align",
-				"Preferences: Alignment File Settings – Default"
-			],
-			[
 				"insall",
 				"Package Control: Install Package"
 			],
@@ -160,7 +164,7 @@
 				"Snippet: New Property"
 			]
 		],
-		"width": 551.0
+		"width": 552.0
 	},
 	"console":
 	{
@@ -177,13 +181,30 @@
 	},
 	"file_history":
 	[
+		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/Dynare/Money in Utility/money_in_utility.mod",
+		"/Users/spencerlyon2/Desktop/transcript.py",
+		"/Users/spencerlyon2/Desktop/go here.txt",
+		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/dolo/Cash in advance and money.ipynb",
+		"/Users/spencerlyon2/Downloads/cashadvance.mod",
+		"/Users/spencerlyon2/Desktop/mymod.txt",
+		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/dolo/my dolo notes.txt",
+		"/Users/spencerlyon2/Desktop/chasemod.txt",
+		"/Users/spencerlyon2/Library/Application Support/Sublime Text 2/Packages/Terminal/Base File.sublime-settings",
+		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/dolo/cash_in_advance.yaml",
+		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/Dynare/template.mod",
+		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/dolo/hw8_1_dolo.py",
+		"/Users/spencerlyon2/Desktop/test.py",
+		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/dolo/hw8_1.yaml",
 		"/Users/spencerlyon2/Documents/Python/Open_Source/dolo/Untitled0.ipynb",
+		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/Dynare/Problem 1/hw8_1.mod",
+		"/Users/spencerlyon2/Documents/Python/Open_Source/dolo/examples/yaml_files/example1.yaml",
+		"/Applications/Dynare/4.3.1/examples/example1.mod",
+		"/Users/spencerlyon2/Library/Application Support/Sublime Text 2/Packages/Alignment/Base File.sublime-settings",
 		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/Dynare/Problem 2/hw8_2.mod",
 		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/Dynare/Problem 4/hw8_4.mod",
 		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/Dynare/Problem 3/hw8_3.mod",
 		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/solve.m",
 		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/uhlig.py",
-		"/Users/spencerlyon2/Documents/School/BYUclasses/Economics/E581/Dynare/template.mod",
 		"/Users/spencerlyon2/Dropbox/Shared/BYU MCL/Macro Boot Camp/Spencer Lyon/Econ Homework/Dynare/DynareTemplate.mod",
 		"/home/spencerlyon2/Documents/School/BYUclasses/Economics/E581/monte_py.py",
 		"/home/spencerlyon2/Documents/School/BYUclasses/Economics/E581/monte.pyx",
@@ -228,7 +249,6 @@
 		"/Users/spencerlyon2/Documents/Research/Endogenous-Yield-Curves/3-Period Model/Presentation notes.md",
 		"/Users/spencerlyon2/Documents/School/BYUclasses.wiki/Newtons Laws.md",
 		"/Users/spencerlyon2/Documents/School/BYUclasses.wiki/Horrible fiary tell retelling.md",
-		"/Users/spencerlyon2/Library/Application Support/Sublime Text 2/Packages/Terminal/Base File.sublime-settings",
 		"/Users/spencerlyon2/Documents/School/BYUclasses/Physics/P330/P5_2_a.m",
 		"/Users/spencerlyon2/Library/Application Support/Sublime Text 2/Packages/User/matlab.sublime-build",
 		"/Users/spencerlyon2/Library/Application Support/Sublime Text 2/Packages/SideBarEnhancements/Side Bar.sublime-settings",
@@ -258,6 +278,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -265,6 +286,29 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"nona",
+			"Econ",
+			":",
+			"beta",
+			"K",
+			"m",
+			"M",
+			"cbeta",
+			"gamma",
+			"beta",
+			"gamma",
+			":",
+			"         ",
+			"          ",
+			"xxx ",
+			"xxx",
+			",",
+			":",
+			"**",
+			"A",
+			"a",
+			"A",
+			"sage",
 			"eps",
 			"thet",
 			"lam",
@@ -304,11 +348,18 @@
 			"N"
 		],
 		"highlight": true,
-		"in_selection": false,
+		"in_selection": true,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
 		[
+			"=",
+			":",
+			"",
+			" ",
+			" xxx",
+			"xxx",
+			"=",
 			"K",
 			"k",
 			"ct[t - 1]",
@@ -327,143 +378,23 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/Applications/Dynare/4.3.1/examples/example1.mod",
+					"file": "Economics/E581/dolo/cash_in_advance.yaml",
 					"settings":
 					{
-						"buffer_size": 1561,
+						"buffer_size": 1620,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": false,
-							"sublimelinter_mark_style": "outline",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 647.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 1,
-					"file": "/Users/spencerlyon2/Documents/Python/Open_Source/dolo/examples/yaml_files/example1.yaml",
-					"settings":
-					{
-						"buffer_size": 867,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								1190,
+								1190
 							]
 						],
 						"settings":
@@ -565,27 +496,21 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 2,
-					"file": "Economics/E581/Dynare/Problem 1/hw8_1.mod",
+					"buffer": 1,
+					"file": "/Users/spencerlyon2/Desktop/transcript.py",
 					"settings":
 					{
-						"buffer_size": 1304,
+						"buffer_size": 3911,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								90,
-								90
+								0,
+								0
 							]
 						],
 						"settings":
@@ -678,28 +603,30 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 916.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/Users/spencerlyon2/Documents/Python/Open_Source/dolo/Untitled0.ipynb",
+					"buffer": 2,
+					"file": "Economics/E581/dolo/money_in_utility.yaml",
 					"settings":
 					{
-						"buffer_size": 10275,
+						"buffer_size": 1667,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1578,
+								1326
 							]
 						],
 						"settings":
@@ -710,6 +637,123 @@
 								"README",
 								"FIXME"
 							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 5.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Economics/E581/Dynare/Cash in Advance/cash_in_advance.mod",
+					"settings":
+					{
+						"buffer_size": 2116,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								2116
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"auto_name": "%-------------------------------------------------",
 							"csslint_options":
 							{
 								"adjoining-classes": "warning",
@@ -801,27 +845,21 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
+				},
 				{
 					"buffer": 4,
-					"file": "Economics/E581/dolo/hw8_1.yaml",
+					"file": "Economics/E581/dolo/my dolo notes.txt",
 					"settings":
 					{
-						"buffer_size": 854,
+						"buffer_size": 1471,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								672,
-								672
+								690,
+								601
 							]
 						],
 						"settings":
@@ -914,39 +952,10 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/YAML/YAML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Markdown/MultiMarkdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 121.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "Economics/E581/dolo/hw8_1_dolo.py",
-					"settings":
-					{
-						"buffer_size": 96,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								96,
-								96
-							]
-						],
-						"settings":
-						{
-							"auto_name": "hw8_1_dolo.py",
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 4.0,
-						"translation.y": 0.0,
+						"translation.y": 88.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -971,36 +980,16 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
-			],
-			[
-				0,
-				1,
-				1,
-				2
-			],
-			[
-				1,
-				1,
-				2,
-				2
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.5,
 			1.0
 		]
 	},
@@ -1037,7 +1026,7 @@
 		[
 			[
 				"",
-				"/Users/spencerlyon2/Documents/Python/Sublime Text Projects/dolo.sublime-project"
+				"/Users/spencerlyon2/Documents/Research/Endogenous-Yield-Curves/Yield Curve.sublime-project"
 			]
 		],
 		"width": 380.0

@@ -8,7 +8,7 @@ l = 1;
 epsi = 0.3;
 w0 = 1.3;
 
-N = 2^8;
+N = 2^13;
 tstart = 0; tfinal = 50;
 times = linspace(tstart, tfinal, N);
 tau = times(2) - times(1);
@@ -37,6 +37,10 @@ vdot = epsi .* (l.^2 - x1.^2) .* x2- w0.^2 .* x1;
 quiver(x1, x2, xdot, vdot);
 title('Phase plot when epsilon=0.3');
 
+figure
+plot(xe, ve);
+title('Part a phase plot');
+
 %% Part b
 epsi = 1;
 [te2, u2] = ode45(@rhs9_1, times, u0, options);
@@ -62,6 +66,10 @@ figure
 xdot = x2;
 vdot = epsi .* (l.^2 - x1.^2) .* x2- w0.^2 .* x1;
 quiver(x1, x2, xdot, vdot);
+
+figure
+plot(xe2, ve2);
+title('Part b phase plot');
 
 % Now do epsilon=20
 epsi = 20;
@@ -89,3 +97,7 @@ xdot = x2;
 vdot = epsi .* (l.^2 - x1.^2) .* x2- w0.^2 .* x1;
 quiver(x1, x2, xdot, vdot);
 title('phase plot espilon=20');
+
+figure
+plot(xe3, ve3);
+title('Part c phase plot')

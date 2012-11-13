@@ -8,7 +8,7 @@ xx = linspace(-2, 2, 1000);
 plot(xx, U(xx));  % Minima at +- 1
 
 %% Part b
-N = 2^8;
+N = 2^10;
 tstart = 0; tfinal = 40;
 times = linspace(tstart, tfinal, N);
 
@@ -73,9 +73,9 @@ title('position with initial x,v = (0, 0.00001)');
 %% Part c
 global A gamma
 
-gamma = 0.4;        
+gamma = 0.4;
 
-N = 2^8;
+N = 2^10;
 tstart = 0; tfinal = 1000;
 times = linspace(tstart, tfinal, N);
 tau = times(2) - times(1);

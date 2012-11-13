@@ -1,14 +1,14 @@
 declarations:
     variables: [c, k, h, y, w, r, P, i, u, lam, g, z]
     shocks: [epsilon_z, epsilon_g]
-    parameters: [beta, delta, theta, eta, a, B, h0, n, mu, rho, sigma_z, Psi, sigma_g]
+    parameters: [beta, delta, theta, eta, a, B, h0, n, mu, rho, sigma_z, Psi, sigma_g, D]
 
 
 equations:
-    - c = (1 + mu + g) / P
-    - h * w = k * (1 + a + n) + (1 + mu + g) / P - (1 + r - delta) * k(-1)
-    - 1 = beta * ((1 + r(+1) - delta) * (1 - h) / (1 - h(+1)) * (w /( exp(a)*w(+1))))
-    - 1 = beta * (w * P * (1-h))/ (c(+1) * P(+1) * exp(g(+1) - n))
+    - c = w * h + (1 + r - delta) * k + (1 + mu + g) / P - k *(1 + a + n) - (1 + mu + g) / P
+    - 1 / c = beta * 1 / (c(+1) * exp(a)) * (1 + r(+1) - delta)
+    - 1 / c = beta * ((1 / (c(+1) * exp(n))  + D * P) * exp(-mu - g))
+    - B * c = (1 - h) * w
     - r = theta * k(-1) ^ (eta - 1) * (theta * k(-1)^eta + (1 - theta) * (h * lam)^ eta) ^(1/eta - 1)
     - w = (1 - theta) * lam * (h * lam) ^(eta - 1) * (( 1 - theta) * (h * lam) ^ eta + theta * k(-1) ^ eta) ^ (1 / eta - 1)
     - g = Psi * g(-1) + epsilon_g
@@ -16,7 +16,7 @@ equations:
     - lam = exp(z)
     - i = (1 + a + n) * k - (1 - delta) * k(-1)
     - y = (theta * k(-1)^eta + (1 - theta) * (lam * h)^eta) ^(1 / eta)
-    - u = log(c) + B * log(1 - h)
+    - u = log(c) + B * log(1 - h) +  D * log(1 / P)
 
 calibration:
     parameters:
@@ -29,12 +29,13 @@ calibration:
         n       : 0.00125
         a       : 0.00375
         mu      : 0.01
-        rho     : 0.05
+        rho     : 0.995
         sigma_z : 0.02
         Psi     : 0.9
         sigma_g : 0.01
+        D       : 0.01
 
-    steady_state:
+        steady_state:
         c   : 4.39441
         k   : 245.166
         h   : 0.439769
