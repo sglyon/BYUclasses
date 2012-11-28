@@ -1,0 +1,37 @@
+\ifx\undefined\bysame
+\newcommand{\bysame}{\leavevmode\hbox to\leftmargin{\hrulefill\,\,}}
+\fi
+\begin{thebibliography}{xx}
+
+\harvarditem[Green et al.]{Green, Mei, Manzi, Luo, Ramesh and
+  Thomas}{1989}{Green:1989}
+{\bf Green, S.~M., Yu~Mei, A.~E. Manzi, H.~L. Luo, R.~Ramesh, and G.~Thomas},
+  ``Effects of compositional variations on the properties of superconducting
+  (Bi,Pb)2Sr2Ca2Cu3Oδ.,'' {\it J APPL PHYS}, 1989, {\it 66} (2), 728.
+
+\harvarditem[Lee et al.]{Lee, Lee, Park, Huang, Oh, Kim, Yoo, Kim, Kim, Cho,
+  Park and Suck}{1989}{LeePark:1989}
+{\bf Lee, H.~K., K.~W. Lee, K.~Park, N.~M. Huang, O.~K. Oh, J.~S. Kim, K.~H.
+  Yoo, Y.~B. Kim, C.~S. Kim, Y.~K. Cho, J.~C. Park, and S.~I. Suck},
+  ``Preparation and properties of Pb-doped Bi-Sr-Ca-Cu-O superconductors.,''
+  {\it J APPL PHYS}, 1989, {\it 66} (4), 1881.
+
+\harvarditem[Anis-ur Rehman]{Anis-ur Rehman}{2009}{anis:2009}
+{\bf ur~Rehman, M.~Anis}, ``Thermal and electrothermal characterization of
+  bismuth based high-Tc superconductors,'' {\it J ALLOY COMPD}, 2009, {\it 469}
+  (1), 66--72.
+
+\harvarditem[Wu et al.]{Wu, Ashburn, Torng, Hor, Meng, Gao, Huang, Wang and
+  Chu}{1987}{Ashburn:1987}
+{\bf Wu, M.~K., J.~R. Ashburn, C.~J. Torng, P.~H. Hor, R.~L. Meng, L.~Gao,
+  Z.~J. Huang, Y.~Q. Wang, and C.~W. Chu}, ``Superconductivity at 93 K in a new
+  mixed-phase Y-Ba-Cu-O compound system at ambient pressure,'' {\it Phys. Rev.
+  Lett.}, Mar 1987, {\it 58}, 908--910.
+
+\harvarditem[Yanagisawa et al.]{Yanagisawa, Dietderich, Kumakura, Togano, Maeda
+  and Takahashi}{1988}{yanagisawa:1988}
+{\bf Yanagisawa, E., D.R. Dietderich, H.~Kumakura, K.~Togano, H.~Maeda, and
+  K.~Takahashi}, ``Properties of Pb-Doped Bi-Sr-Ca-Cu-O Superconductors,'' {\it
+  Japanese J APPL PHYS}, 1988, {\it 27} (8), L1460--L1462.
+
+\end{thebibliography}

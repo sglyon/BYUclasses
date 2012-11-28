@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: scReport.aux
+The style file: aer.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: scReport.bib
+You've used 5 entries,
+            2984 wiz_defined-function locations,
+            689 strings with 5459 characters,
+and the built_in function-call counts, 6487 in all, are:
+= -- 797
+> -- 593
+< -- 142
++ -- 238
+- -- 136
+* -- 620
+:= -- 1372
+add.period$ -- 5
+call.type$ -- 5
+change.case$ -- 35
+chr.to.int$ -- 5
+cite$ -- 5
+duplicate$ -- 55
+empty$ -- 140
+format.name$ -- 278
+if$ -- 1515
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 5
+newline$ -- 21
+num.names$ -- 60
+pop$ -- 73
+preamble$ -- 1
+purify$ -- 40
+quote$ -- 0
+skip$ -- 0
+stack$ -- 0
+substring$ -- 157
+swap$ -- 20
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 20
+warning$ -- 0
+while$ -- 58
+width$ -- 0
+write$ -- 90

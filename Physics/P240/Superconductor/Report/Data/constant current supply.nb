@@ -1,0 +1,173 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5384,        163]
+NotebookOptionsPosition[      4783,        139]
+NotebookOutlinePosition[      5225,        156]
+CellTagsIndexPosition[      5182,        153]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "\"\<`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Vin", "=", "15"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Iout", "=", 
+   RowBox[{"20", "*", 
+    RowBox[{"10", "^", 
+     RowBox[{"(", 
+      RowBox[{"-", "3"}], ")"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"P", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Vplus", "=", 
+     RowBox[{"P", "/", "Iout"}]}], ";"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R3", "=", "560"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"volt", "=", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{"Vplus", "==", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "Iout"}], "*", " ", "R3"}], "+", "Vin"}]}], ",", 
+      "Vplus"}], "]"}], "//", "N"}]}], ";"}], "\n", 
+ RowBox[{"Vplus", "=", 
+  RowBox[{"Vplus", "/.", 
+   RowBox[{"volt", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{"R1", "=", "1000"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"resis", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"Vplus", "\[Equal]", 
+      RowBox[{"15", "*", 
+       RowBox[{"R2", "/", 
+        RowBox[{"(", 
+         RowBox[{"R1", "+", "R2"}], ")"}]}]}]}], ",", "R2"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"R2", "=", 
+  RowBox[{"R2", "/.", 
+   RowBox[{"resis", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.5606829028282022`*^9, 3.560682963055224*^9}, {
+  3.560683082916209*^9, 3.560683156584575*^9}, {3.560683296317547*^9, 
+  3.560683351424057*^9}, {3.5606834037802925`*^9, 3.5606834048033943`*^9}, {
+  3.5606835633712497`*^9, 3.560683563706283*^9}, {3.5606835972446365`*^9, 
+  3.560683664511363*^9}, {3.560683805047415*^9, 3.560683807381648*^9}}],
+
+Cell[BoxData["3.8`"], "Output",
+ CellChangeTimes->{{3.560683136253542*^9, 3.560683157358652*^9}, {
+   3.560683323219237*^9, 3.5606833519551105`*^9}, 3.5606834056954837`*^9, 
+   3.5606835642773404`*^9, {3.560683598021714*^9, 3.560683665177429*^9}, 
+   3.56068381099601*^9}],
+
+Cell[BoxData["339.28571428571433`"], "Output",
+ CellChangeTimes->{{3.560683136253542*^9, 3.560683157358652*^9}, {
+   3.560683323219237*^9, 3.5606833519551105`*^9}, 3.5606834056954837`*^9, 
+   3.5606835642773404`*^9, {3.560683598021714*^9, 3.560683665177429*^9}, 
+   3.5606838109980097`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", "120"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eqn1", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"1", "/", " ", "R2"}], " ", "==", " ", 
+    RowBox[{
+     RowBox[{"1", " ", "/", " ", "r1"}], " ", "+", " ", 
+     RowBox[{"1", "/", "r2"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eqn2", "=", 
+   RowBox[{"R2", "\[Equal]", 
+    RowBox[{"r11", "+", "r21"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"eqn1", "/.", 
+    RowBox[{"{", 
+     RowBox[{"r1", "\[Rule]", "a"}], "}"}]}], ",", " ", "r2"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"eqn2", "/.", 
+    RowBox[{"{", 
+     RowBox[{"r11", "\[Rule]", "a"}], "}"}]}], ",", "r21"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.5606834560895224`*^9, 3.5606835822501373`*^9}, {
+  3.5606836535662684`*^9, 3.560683660461958*^9}, {3.560683692559167*^9, 
+  3.560683768259736*^9}, {3.560683821638074*^9, 3.5606838306299725`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"r2", "\[Rule]", 
+    RowBox[{"-", "185.66775244299671`"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.5606835135262656`*^9, 3.560683582514164*^9}, {
+  3.5606836552854404`*^9, 3.5606836666925807`*^9}, {3.5606837171756287`*^9, 
+  3.5606837691298237`*^9}, {3.5606838134842587`*^9, 3.560683831214031*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"r21", "\[Rule]", "219.28571428571433`"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.5606835135262656`*^9, 3.560683582514164*^9}, {
+  3.5606836552854404`*^9, 3.5606836666925807`*^9}, {3.5606837171756287`*^9, 
+  3.5606837691298237`*^9}, {3.5606838134842587`*^9, 3.5606838312260323`*^9}}]
+}, Open  ]]
+},
+WindowSize->{707, 817},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.25, 1.25 Inherited],
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1851, 53, 256, "Input"],
+Cell[2433, 77, 272, 4, 35, "Output"],
+Cell[2708, 83, 290, 4, 35, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3035, 92, 1015, 27, 124, "Input"],
+Cell[4053, 121, 364, 7, 35, "Output"],
+Cell[4420, 130, 347, 6, 35, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
