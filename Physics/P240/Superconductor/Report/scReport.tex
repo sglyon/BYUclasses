@@ -11,17 +11,16 @@
   \usepackage{setspace}
   \usepackage{vmargin}
   \setmarginsrb   {1.25in}  % left margin
-                  { 0.6in}  % top margin
-                  { 1.0in}  % right margin
-                  { 0.8in}  % bottom margin
-                  {  20pt}  % head height
-                  {0.25in}  % head sep
-                  {   9pt}  % foot height
-                  { 0.3in}  % foot sep
+                         { 0.6in}  % top margin
+                         { 1.0in}  % right margin
+                         { 0.8in}  % bottom margin
+                         {  20pt}  % head height
+                         {0.25in}  % head sep
+                         {   9pt}  % foot height
+                         { 0.3in}  % foot sep
 
   \usepackage{sectsty}
   \allsectionsfont{\centering \normalfont\scshape}
-
   % Bibliography
   \usepackage{natbib}
   \bibliographystyle{aer}
@@ -76,7 +75,7 @@
       \begin{abstract}
             \begin{center}
             \small{
-                  In this paper I analyze the properties of a Pb-doped BSCCO superconductor ($Bi_{2-x}Pb_xSr_2Ca_{y-1}Cu_yO_{\delta}$). Specifically I examined how the the resistivity of the superconductor varies with respect to temperature. To measure the temperature I coupled the superconductor with a diode and fit a linear model to the temperature response of the diode. I found that the transition temperature for the superconductor is about $110^{\circ} C$. The transition is fairly clear and looks much like a step function. I also found that the superconductor behaves more like a metal than a semiconductor after it crosses the critical temperature.
+                  In this paper I analyze the properties of a Pb-doped BSCCO superconductor ($Bi_{2-x}Pb_xSr_2Ca_{y-1}Cu_yO_{\delta}$). Specifically I examined how the resistivity of the superconductor varies with respect to temperature. To measure the temperature I coupled the superconductor with a diode and fit a linear model to the temperature response of the diode. I found that the transition temperature for the superconductor is about $105K$. The transition is fairly clear and looks much like a step function. I also found that the superconductor behaves more like a metal than a semiconductor after it crosses the critical temperature.
             }
             \end{center}
       \end{abstract}
@@ -108,27 +107,53 @@
 
       \subsection{Preparation}
 
-            Much of the preparation of the superconductor was done by the BYU faculty. In order to measure the temperature and the resistance, the superconductor needed to be held at the same temperature as something I could easily measure the temperature of. A 1N4148 diode has the remarkable property that its resistance response to temperature is extremely close to linear. Knowing this, the faculty attached one of these diodes to the BSCCO superconductor as shown in Figure ~\ref{fig:scDiode}.
+            An important part of the preparation phase was to make a cyrostat that I could attach the superconductor to and place in a temperature bath. One function of the cyrostat was to heat our system by connecting it to a power supply. I built the main part of the heater block (cyrostat) out of aluminum because aluminum has a fairly high thermal conductivity. The aluminum body was hollow on one end (so the super conductor could be place inside) and had threads on the other end. Those threads were important because they allowed me to attach a copper cooling rod to one end of the body. The final piece of the heater block was a brass cap with a hole in it that covered the hollow end of the body.
 
-            \begin{figure}[h]
-                  \includegraphics[width=0.9\textwidth]{Figures/SuperconductorDrawing.eps}
-                  \caption{Connection diagram of superconductor and diode}
-                  \label{fig:scDiode}
+            Much of the preparation of the superconductor was done by the BYU faculty. In order to measure the temperature and the resistance, the superconductor needed to be held at the same temperature as something I could easily measure the temperature of. A 1N4148 diode has the remarkable property that its resistance response to temperature is extremely close to linear. Knowing this, the faculty attached one of these diodes to the BSCCO superconductor as shown in \textbf{Figure} ~\ref{fig:scDiode}.
+
+            \begin{figure}[ht]
+                  \begin{minipage}[b]{0.45\linewidth}
+                        \centering
+                        \includegraphics[width=\textwidth]{Figures/SuperconductorDrawing.eps}
+                        \caption{Connection of superconductor and diode}
+                        \label{fig:scDiode}
+                  \end{minipage}
+                  \hspace{0.5cm}
+                  \begin{minipage}[b]{0.45\linewidth}
+                        \centering
+                        \includegraphics[width=\textwidth]{Figures/ConstantCurrent.eps}
+                        \caption{Constant current supply circuit}
+                        \label{fig:constantCurrent}
+                  \end{minipage}
             \end{figure}
 
-            Another important part of the preparation phase was to calibrate the diode. To do this
+            Another important part of the preparation phase was to calibrate the diode. The first step in this calibration process was to create a constant current supply. We did this by building a circuit like the one in \textbf{Figure} ~\ref{fig:constantCurrent}. In that circuit we used the following values: $R_1 = 1 k \Omega$, $R_2 = 807 \Omega$, and $R_3 = 820 k \Omega$. Using those resistor values produced a constant current of $10.3 \mu A$. I then put the diode and a thermocouple in an ice bath and liquid nitrogen (LN) bath with $T_{ice} = 273.35K$ and $T_{LN} = 77.15K$, respectively. the resultant voltages were $V_{ice} = 0.4595$ and $V_{LN} = 0.9889$. I was then able to fit this data to a linear model of the form $V = V_0 + m T$, with $V_0 = 0.460024$ and $m = -0.002698$ (because there were only two data points, the fit was perfect).
+
+             In order to measure the resistivity of the BSCCO superconductor, I needed to build a second constant current supply to run through the superconductor. I used the same circuit layout (see \textbf{Figure} ~\ref{fig:constantCurrent}), but this time with $R_1 = 952\Omega$, $R_2 = 332 \Omega$, and $R_3 = 551 \Omega$. The measured current output from this circuit was $20.17 mA$.
+
+             The final step in the preparation phase was to build a LabView VI that would measure the voltage drop across the diode (for temperature data) while simultaneously measuring the voltage drop across the superconductor (for resistivity). There were a few subtleties associated with this process. Because the resistivity is effectively zero while the BSCCO is superconducting, we needed to make sure the scale on the input for that voltage reading was very small. Also, because I was measuring two voltages at the same time, I needed to be sure that the measurements I was taking were actually the voltages across the diode and superconductor, and not the interaction between the two sources and the A/D converter. To do this I simply set the NI DAQ to sample the channel for each source 3 times and then I only looked at the last reading. This allowed the voltages to fully settle to their true values. The final minor step in building the VI was making sure that when we were reading the superconductor voltage (very small) we weren't getting poor data because of the intrinsic offset voltage of the DAQ. To do this we cooled the superconductor to LN temperatures and measured the voltage drop across the superconductor. Theoretically, this should be zero because at those temperatures we have supercontuctance, but we measured an offset voltage of $V_{offset} = -0.366 mV$. To account for this we simply had to subtract $V_{offset}$ from all of our voltage readings for the superconductor.
 
       \subsection{Collection}
 
-            fd
+            Once the preparation phase was finished, we were ready to take the measurements. To take the measurements I set the system up by connecting the diode and superconductor to their respective constant current supplies, connecting each of them to the NI DAQ, and connecting the diode/superconductor to the inside of the cytrostat. I then took data in two phases: a quick scan of the temperature range from $80K$ to $280K$, and a slow scan of the range from $80K$ to $130 K$. To do the quick scan I cooled the cyrostat to LN temperatures. After removing the system from the liquid nitrogen, I placed it on the table and used the VI to measure the data as it heated up to room temperature. Doing this quick sweep allowed me to get a pretty good idea about where the critical temperature was for my superconductor (see \textbf{Figure} ~\ref{fig:curves}). To do the slow scan I started by cooling the system to LN temperature again. I then laid the cyrostat horizontally on the styrofoam LN container and placed another styrofoam container on top of that to hold in the fumes so the heater block wouldn't heat too quickly.
 
-  \section{Results}
 
-      put some results here
 
-  \section{Discussion of Results}
+  \section{Results and Discussion}
 
-      discuss those results
+      The results of my experiment match the reported data from the papers cited previously. As can been seen in \textbf{Figure} ~\ref{fig:curves} my superconductor is still at zero resistance until about $T_c = 105.5K$.  All of the values reported by other groups were in the range of $105-112K$. The wide range of values could be due to a difference in how the transition temperature is defined. Looking at the plots in \textbf{Figure} ~\ref{fig:curves}, the superconductor leaves the zero resistance state at about $105.5K$, but it doesn't reach a stable value until about $111.5K$. The fact that my value is lower than the average from the other papers could be a result of how $T_c$ was defined.
+
+      \begin{figure}[ht]
+              \centering
+              \includegraphics[height=2.5in, width=6.5in]{Figures/curves.eps}
+              \caption{Fast scan (left) and slow scan (right) for superconductor}
+              \label{fig:curves}
+      \end{figure}
+
+      My superconductor had a near step-like behavior at $T_c$. Theory suggests that the transition should be a perfect step, so the fact that mine is very close is good. One explanation for why my transition is a little rounded could that the rate of temperature change was not constant. This matters because I read data at a constant rate of $100Hz$, and trying to read non-constant rates using a constant sampling frequency can introduce error. Another explanation for the discrepancy in my curve is that the DAQ may not have been able to resolve such fast changes in the resistance.
+
+      Another interesting property that is highlighted in the quick scan curve in \textbf{Figure} ~\ref{fig:curves} is the behavior of the superconductor after it finishes the transition. In general, a standard metal will increase in resistivity as temperature increases and a standard semiconductor will decrease resistivity with an increase in temperature. The quick scan curve clearly shows that as temperature continues to increase beyond $T_c$, the resistivity of the material also increases, mimicking the behavior of of a metal.
+
 
   \clearpage
   \pagestyle{empty}

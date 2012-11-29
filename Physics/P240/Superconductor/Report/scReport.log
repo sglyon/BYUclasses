@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  27 NOV 2012 23:09
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  28 NOV 2012 10:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -455,55 +455,55 @@ LaTeX Info: Redefining \cite on input line 694.
 (./scReport.aux)
 \openout1 = `scReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 70.
-LaTeX Font Info:    Try loading font information for FML+futm on input line 70.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 69.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 69.
 
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 70.
-LaTeX Font Info:    Try loading font information for FMS+futm on input line 70.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 69.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 69.
 
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 70.
-LaTeX Font Info:    Try loading font information for FMX+futm on input line 70.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 69.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 69.
 
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 70.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 69.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Try loading font information for T1+futs on input line 70.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 69.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/fourier/t1futs.fd
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
 )
-LaTeX Info: Redefining \microtypecontext on input line 70.
+LaTeX Info: Redefining \microtypecontext on input line 69.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -574,12 +574,12 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 75.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 74.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Try loading font information for OT1+bch on input line 75.
+LaTeX Font Info:    Try loading font information for OT1+bch on input line 74.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/ot1bch.fd
 File: ot1bch.fd 2004/10/18 font definitions for OT1/bch.
@@ -588,25 +588,25 @@ File: ot1bch.fd 2004/10/18 font definitions for OT1/bch.
 File: mt-bch.cfg 2007/03/03 v1.5 microtype config. file: Bitstream Charter (RS)
 
 )
-LaTeX Font Info:    Try loading font information for FML+futmi on input line 75
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 74
 .
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 75.
+(Font)              scaled to size 13.24796pt on input line 74.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 75.
+(Font)              scaled to size 9.19998pt on input line 74.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 75.
+(Font)              scaled to size 7.35999pt on input line 74.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 75.
+(Font)              scaled to size 13.24796pt on input line 74.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 75.
+(Font)              scaled to size 9.19998pt on input line 74.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 75.
-LaTeX Font Info:    Try loading font information for U+msa on input line 75.
+(Font)              scaled to size 7.35999pt on input line 74.
+LaTeX Font Info:    Try loading font information for U+msa on input line 74.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
@@ -614,7 +614,7 @@ File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 (/usr/local/texlive/2011/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 75.
+LaTeX Font Info:    Try loading font information for U+msb on input line 74.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -623,87 +623,127 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 75.
+(Font)              scaled to size 6.99199pt on input line 74.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 75.
+(Font)              scaled to size 5.51999pt on input line 74.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 75.
+(Font)              scaled to size 6.99199pt on input line 74.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 75.
+(Font)              scaled to size 5.51999pt on input line 74.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 75.
+(Font)              scaled to size 8.27998pt on input line 74.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 75.
-LaTeX Font Info:    Calculating math sizes for size <7.6> on input line 75.
+(Font)              scaled to size 8.27998pt on input line 74.
+LaTeX Font Info:    Calculating math sizes for size <7.6> on input line 74.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.31386pt on input line 75.
+(Font)              scaled to size 5.31386pt on input line 74.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 4.19522pt on input line 75.
+(Font)              scaled to size 4.19522pt on input line 74.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.31386pt on input line 75.
+(Font)              scaled to size 5.31386pt on input line 74.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 4.19522pt on input line 75.
+(Font)              scaled to size 4.19522pt on input line 74.
  [1
 
 
 {/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 91.
+(Font)              scaled to size 10.07397pt on input line 90.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 91.
+(Font)              scaled to size 7.63599pt on input line 90.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 91.
+(Font)              scaled to size 10.07397pt on input line 90.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 91.
- [1]
+(Font)              scaled to size 7.63599pt on input line 90.
+ [1] [2]
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 112.
 Package epstopdf Info: Source file: <Figures/SuperconductorDrawing.eps>
-(epstopdf)                    date: 2012-11-27 23:04:32
+(epstopdf)                    date: 2012-11-28 00:26:23
 (epstopdf)                    size: 858026 bytes
 (epstopdf)             Output file: <Figures/SuperconductorDrawing-eps-converte
 d-to.pdf>
-(epstopdf)                    date: 2012-11-27 23:06:08
+(epstopdf)                    date: 2012-11-28 00:26:23
 (epstopdf)                    size: 33719 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/SuperconductorDraw
 ing-eps-converted-to.pdf Figures/SuperconductorDrawing.eps>
-(epstopdf)             \includegraphics on input line 114.
+(epstopdf)             \includegraphics on input line 117.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/SuperconductorDrawing-eps-converted-to.pdf, id=13, 757.83125pt x 577.1
+<Figures/SuperconductorDrawing-eps-converted-to.pdf, id=16, 757.83125pt x 577.1
 5625pt>
 File: Figures/SuperconductorDrawing-eps-converted-to.pdf Graphic file (type pdf
 )
  <use Figures/SuperconductorDrawing-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/SuperconductorDrawing-eps-converted-to.pdf use
-d on input line 114.
-(pdftex.def)             Requested size: 391.98386pt x 298.52896pt.
+d on input line 117.
+(pdftex.def)             Requested size: 195.99193pt x 149.26448pt.
+Package epstopdf Info: Source file: <Figures/ConstantCurrent.eps>
+(epstopdf)                    date: 2012-11-28 08:28:21
+(epstopdf)                    size: 11136 bytes
+(epstopdf)             Output file: <Figures/ConstantCurrent-eps-converted-to.p
+df>
+(epstopdf)                    date: 2012-11-28 08:28:52
+(epstopdf)                    size: 7816 bytes
+(epstopdf)             Command: <repstopdf --outfile=Figures/ConstantCurrent-ep
+s-converted-to.pdf Figures/ConstantCurrent.eps>
+(epstopdf)             \includegraphics on input line 124.
+Package epstopdf Info: Output file is already uptodate.
 
+<Figures/ConstantCurrent-eps-converted-to.pdf, id=17, 283.0575pt x 248.93pt>
+File: Figures/ConstantCurrent-eps-converted-to.pdf Graphic file (type pdf)
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+<use Figures/ConstantCurrent-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/ConstantCurrent-eps-converted-to.pdf used on i
+nput line 124.
+(pdftex.def)             Requested size: 195.99193pt x 172.36581pt.
+ [3 <./Figures/SuperconductorDrawing-eps-converted-to.pdf> <./Figures/ConstantC
+urrent-eps-converted-to.pdf>] [4]
+Package epstopdf Info: Source file: <Figures/curves.eps>
+(epstopdf)                    date: 2012-11-28 09:32:22
+(epstopdf)                    size: 57139 bytes
+(epstopdf)             Output file: <Figures/curves-eps-converted-to.pdf>
+(epstopdf)                    date: 2012-11-28 09:33:06
+(epstopdf)                    size: 41543 bytes
+(epstopdf)             Command: <repstopdf --outfile=Figures/curves-eps-convert
+ed-to.pdf Figures/curves.eps>
+(epstopdf)             \includegraphics on input line 148.
+Package epstopdf Info: Output file is already uptodate.
+ <Figures/curves-eps-converted-to.pdf, id=41, 1022.82124pt x 593.21625pt>
+File: Figures/curves-eps-converted-to.pdf Graphic file (type pdf)
 
-[2] [3 <./Figures/SuperconductorDrawing-eps-converted-to.pdf>] (./scReport.bbl
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 8.
-) [4
+<use Figures/curves-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/curves-eps-converted-to.pdf used on input line
+ 148.
+(pdftex.def)             Requested size: 469.75435pt x 180.67271pt.
 
-] (./scReport.aux) ) 
+Overfull \hbox (34.21378pt too wide) in paragraph at lines 148--149
+ [][] 
+ []
+
+[5 <./Figures/curves-eps-converted-to.pdf>] [6] (./scReport.bbl) [7
+
+]
+(./scReport.aux) ) 
 Here is how much of TeX's memory you used:
- 7095 strings out of 493633
- 106761 string characters out of 3143378
- 200758 words of memory out of 3000000
- 10021 multiletter control sequences out of 15000+200000
- 143748 words of font info for 267 fonts, out of 3000000 for 9000
+ 7155 strings out of 493633
+ 107645 string characters out of 3143378
+ 201778 words of memory out of 3000000
+ 10031 multiletter control sequences out of 15000+200000
+ 146988 words of font info for 303 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 47i,14n,47p,805b,352s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/base/8r
-.enc}</usr/local/texlive/2011/texmf-dist/fonts/type1/public/fourier/fourier-mli
-t.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/fourier/fourier-ms
-.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></
-usr/local/texlive/2011/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/loc
-al/texlive/2011/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on scReport.pdf (5 pages, 99043 bytes).
+ 47i,14n,47p,1516b,352s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/base/8r.e
+nc}</usr/local/texlive/2011/texmf-dist/fonts/type1/public/fourier/fourier-ml.pf
+b></usr/local/texlive/2011/texmf-dist/fonts/type1/public/fourier/fourier-mlit.p
+fb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/fourier/fourier-ms.pf
+b></usr/local/texlive/2011/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr
+/local/texlive/2011/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/
+texlive/2011/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on scReport.pdf (8 pages, 154368 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 80 PDF objects out of 1000 (max. 8388607)
+ 55 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 55302 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 55312 words of extra memory for PDF output out of 61914 (max. 10000000)
 

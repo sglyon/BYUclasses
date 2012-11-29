@@ -20,10 +20,10 @@
 	"buffers":
 	[
 		{
-			"file": "/Users/spencerlyon2/Dropbox/Yield Curve/Drafts/YieldCurve1211b.tex",
+			"file": "Physics/P240/Superconductor/Report/scReport.tex",
 			"settings":
 			{
-				"buffer_size": 58642,
+				"buffer_size": 14462,
 				"line_ending": "Unix"
 			}
 		},
@@ -34,37 +34,57 @@
 				"buffer_size": 9665,
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/Thesis.cls",
-			"settings":
-			{
-				"buffer_size": 16402,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/spencerlyon2/Dropbox/Latex/Templates/project-report/project-report-howtotex.tex",
-			"settings":
-			{
-				"buffer_size": 3885,
-				"line_ending": "Unix"
-			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 49.0,
+		"height": 115.0,
 		"selected_items":
 		[
 			[
-				"Snippet: ",
-				"Snippet: add"
+				"git pul",
+				"Git: Pull Current Branch"
+			],
+			[
+				"git ",
+				"Git: Commit history"
+			],
+			[
+				"gist",
+				"Gist: Open Gist"
+			],
+			[
+				"snippet",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"syntax latex",
+				"Set Syntax: LaTeX Memoir"
 			],
 			[
 				"install",
 				"Package Control: Install Package"
+			],
+			[
+				"latex",
+				"Set Syntax: LaTeX Beamer"
+			],
+			[
+				"preview",
+				"Markdown Preview: preview in Browser"
+			],
+			[
+				"markdon",
+				"Markdown Preview: preview in Browser"
+			],
+			[
+				"preview mark",
+				"Markdown Preview: open Markdown Cheat sheet"
+			],
+			[
+				"markdown",
+				"Markdown Preview: preview in Browser"
 			],
 			[
 				"browser",
@@ -105,9 +125,13 @@
 			[
 				"",
 				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: New Property"
 			]
 		],
-		"width": 746.0
+		"width": 356.0
 	},
 	"console":
 	{
@@ -124,18 +148,37 @@
 	},
 	"file_history":
 	[
-		"/Users/spencerlyon2/Documents/School/BYUclasses/Physics/P240/Semiconductor/Report/scReport.bib",
-		"/Users/spencerlyon2/Documents/School/BYUclasses/Physics/P240/Semiconductor/Report/scReport.tex",
+		"/Volumes/Untitled/240/SuperconductorPaper/SuperconductorDraft.tex",
 		"/Users/spencerlyon2/Library/Application Support/Sublime Text 2/Packages/User/LaTeX.sublime-settings",
-		"/Users/spencerlyon2/Library/Application Support/Sublime Text 2/Packages/User/latexMargin",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/Thesis.cls",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/Chapters/chapResults.tex",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/Chapters/chapBonds.tex",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/Chapters/chapSolution.tex",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/Chapters/chapModel.tex",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/Chapters/chapIntro.tex",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/Bibliography.bib",
+		"/Users/spencerlyon2/Documents/Latex/Templates/table.tex",
+		"/Users/spencerlyon2/Documents/Latex/Templates/thesis_2/ClassicThesis.tex",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/techReport.tex",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/Appendices/AppendixC.tex",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/Appendices/AppendixB.tex",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/Appendices/AppendixA.tex",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/presentation.tex",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/catapult instrucitons.txt",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/techReport.bbl",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/Chapters/chapConclusion.tex",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/Chapters/ChapterTemplate.tex",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/Chapters/Chapter1.tex",
+		"/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/presentation.bib",
+		"/Users/spencerlyon2/Dropbox/Yield Curve/Drafts/YieldCurveSlides.tex",
 		"/Users/spencerlyon2/Dropbox/Yield Curve/Drafts/YieldCurve1211b.tex",
-		"/Users/spencerlyon2/Box Documents/Fall 2012/English 316/Style guide 5_5-5_8.txt",
-		"/Users/spencerlyon2/Box Documents/Fall 2012/English 316/Style Guide5_9-5_10 and 4_1-4_6.md",
-		"/Users/spencerlyon2/Box Documents/Fall 2012/English 316/Style guide 6_1-6_3.txt",
-		"/Users/spencerlyon2/Box Documents/Fall 2012/English 316/Style guide 5_1-5_4.txt",
-		"/Users/spencerlyon2/Documents/School/BYUclasses.wiki/Other/English 316.md",
-		"/Users/spencerlyon2/Documents/School/Semesters/Fall 2012/English 316/Style Guide 3_1-3_5.md",
+		"/Users/spencerlyon2/Box Documents/Fall 2012/English 316/webpage apa.txt",
 		"/Users/spencerlyon2/Library/Application Support/Sublime Text 2/Packages/Markdown Preview/sample.md",
+		"/Users/spencerlyon2/Box Documents/Fall 2012/English 316/English 316.md",
+		"/Users/spencerlyon2/Documents/School/Semesters/Fall 2012/English 316/Style guide 5_5-5_8.txt",
+		"/Users/spencerlyon2/Documents/School/Semesters/Fall 2012/English 316/Style Guide5_9-5_10 and 4_1-4_6.md",
+		"/Users/spencerlyon2/Documents/School/Semesters/Fall 2012/English 316/Style guide 5_1-5_4.txt",
+		"/Users/spencerlyon2/Documents/School/Semesters/Fall 2012/English 316/Style Guide 3_1-3_5.md",
 		"/Users/spencerlyon2/Documents/School/BYUclasses/Physics/P330/README.md",
 		"/Users/spencerlyon2/Documents/School/BYUclasses/Physics/P330/P2_6c.m",
 		"/Users/spencerlyon2/Documents/School/BYUclasses/Physics/P330/P2_6b.m",
@@ -159,7 +202,6 @@
 		"/Users/spencerlyon2/Library/Application Support/Sublime Text 2/Packages/User/matlab.sublime-build",
 		"/Users/spencerlyon2/Documents/Research/Endogenous-Yield-Curves/3-Period Model/Python Code/Rick_3per_GSSA.py",
 		"/Users/spencerlyon2/Library/Application Support/Sublime Text 2/Packages/SideBarEnhancements/Side Bar.sublime-settings",
-		"/Users/spencerlyon2/Dropbox/Yield Curve/Drafts/YieldCurveSlides.tex",
 		"/Users/spencerlyon2/Documents/School/BYUclasses/Physics/P330/P4_3_a.m",
 		"/Users/spencerlyon2/Desktop/temp/YieldCurveSlides.tex",
 		"/Users/spencerlyon2/Dropbox/Yield Curve/Drafts/YieldCurve1208a.tex",
@@ -186,7 +228,6 @@
 		"height": 0.0,
 		"where_history":
 		[
-			""
 		]
 	},
 	"find_state":
@@ -194,19 +235,34 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"bib",
-			"section",
-			"lst",
-			"lstp",
-			"lstpa",
-			"miss",
-			"missing",
-			"miss",
-			"thepage",
-			"tti",
-			"\\ref{ap",
-			"appendix",
+			"space",
+			"set",
+			"LN",
+			"we",
 			"abstract",
+			"chap",
+			"chapte",
+			"section",
+			"item1",
+			"notag",
+			"label",
+			"blue",
+			"bib",
+			"chapterb",
+			"chap",
+			"title",
+			"chapter",
+			"head",
+			"right",
+			"rightmark",
+			"fancyplai",
+			"thepage",
+			"head",
+			"phil",
+			"abstract",
+			"article",
+			"cite",
+			"ref",
 			"12.",
 			"10.",
 			"8.",
@@ -244,33 +300,29 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/spencerlyon2/Dropbox/Yield Curve/Drafts/YieldCurve1211b.tex",
+					"file": "Physics/P240/Superconductor/Report/scReport.tex",
 					"settings":
 					{
-						"buffer_size": 58642,
+						"buffer_size": 14462,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								618,
-								599
-							],
-							[
-								1849,
-								1826
+								2179,
+								2179
 							]
 						],
 						"settings":
@@ -368,7 +420,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 681.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -482,238 +534,7 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1203.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/spencerlyon2/Dropbox/Fall 2012/English 316/Technical Report/Report/Thesis.cls",
-					"settings":
-					{
-						"buffer_size": 16402,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2949,
-								2578
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": false,
-							"sublimelinter_mark_style": "outline",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/LaTeX/TeX.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 726.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/Users/spencerlyon2/Dropbox/Latex/Templates/project-report/project-report-howtotex.tex",
-					"settings":
-					{
-						"buffer_size": 3885,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								3885
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": false,
-							"sublimelinter_mark_style": "outline",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 226.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -754,7 +575,11 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 144.0
+		"height": 139.0
+	},
+	"output.git":
+	{
+		"height": 133.0
 	},
 	"replace":
 	{
@@ -780,15 +605,15 @@
 		[
 			[
 				"",
-				"/Users/spencerlyon2/Documents/School/BYUclasses/BYUclasses.sublime-project"
+				"/Users/spencerlyon2/Documents/Research/Endogenous-Yield-Curves/Yield Curve.sublime-project"
 			]
 		],
 		"width": 380.0
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
-	"side_bar_width": 192.0,
+	"side_bar_visible": false,
+	"side_bar_width": 245.0,
 	"status_bar_visible": true
 }

@@ -18,7 +18,7 @@ time=linspace(0,100,length(fastR));
 %plot(time,fastV,'r-',time,fastR,'b-',fastV,fastR,'k-')
 figure
 plot(fastT,fastR,'b-')
-title('Resistance vs Temperature')
+title('Quick scan: Resistance vs Temperature')
 legend('Resistance')
 xlabel('T')
 ylabel('R')
