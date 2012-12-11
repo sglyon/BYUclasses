@@ -29,6 +29,7 @@ volt=volt';
 B=(temp1'*temp1)\temp1'*volt;
 
 %plot the fit
+
 figure
 T=linspace(-200,10,100);
 coef=B(1)+B(2)*T;
@@ -39,4 +40,5 @@ str1(2)={s2};
 plot(T,coef,'b-',temp,volt,'r*')
 title('Voltage vs. Temperature')
 legend('fit','data')
+figfontsizes(11, 9);
 text(-20,0.8,str1)

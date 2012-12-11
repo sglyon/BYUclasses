@@ -1,0 +1,53 @@
+%%% Preamble
+  \documentclass[paper=a4, fontsize=11pt]{scrartcl}
+  \usepackage[T1]{fontenc}
+  \usepackage{fourier}
+
+  \usepackage[english]{babel}
+  \usepackage[protrusion=true,expansion=true]{microtype}
+  \usepackage{amsmath,amsfonts,amsthm}
+  \usepackage[pdftex]{graphicx}
+  \usepackage{url}
+  \usepackage{setspace}
+  \usepackage{vmargin}
+  \setmarginsrb   {1.25in}  % left margin
+                         { 0.6in}  % top margin
+                         { 1.0in}  % right margin
+                         { 0.8in}  % bottom margin
+                         {  20pt}  % head height
+                         {0.25in}  % head sep
+                         {   9pt}  % foot height
+                         { 0.3in}  % foot sep
+
+  %%% Maketitle metadata
+  \newcommand{\horrule}[1]{\rule{\linewidth}{#1}}     % Horizontal rule
+
+  \title{
+    \vspace{-.3in}
+    \usefont{OT1}{bch}{b}{n}
+    \normalfont \normalsize \textsc{Physics 240} \\ [25pt]
+    \horrule{0.5pt} \\[0.4cm]
+    \huge Annotated Bibliography \\
+    \horrule{2pt} \\[0.5cm]
+  }
+
+  \author{
+    Spencer Lyon
+  }
+
+  \date{
+  \normalfont \normalsize
+  December 11, 2012 \\[-4pt] \normalsize
+  }
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+
+    \nocite{*}
+    \bibliographystyle{plain-annote}
+    \bibliography{annotated_bib}
+
+
+
+\end{document}

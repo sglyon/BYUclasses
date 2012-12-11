@@ -1,0 +1,14 @@
+BYUclasses.sublime-workspace
+BYUclasses.sublime-project
+*.aux
+*.fdb_latexmk
+*.nav
+*.out
+*.snm
+*.gz
+*.toc
+*.pdfsync
+*.blg
+*.bbl
+*.log
+*.pyc
