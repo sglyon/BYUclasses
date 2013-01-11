@@ -1,0 +1,98 @@
+%% Preamble
+  \documentclass{tufte-book}
+  % \documentclass{article}
+  \usepackage{lipsum}
+  \usepackage{tikz}
+  \usepackage{xifthen}
+  \usepackage[T1]{fontenc}
+  \usepackage{fourier}
+  \usepackage[english]{babel}
+  \usepackage[protrusion=true,expansion=true]{microtype}
+  \usepackage{amsmath,amsfonts,amsthm}
+  \usepackage{url}
+  \usepackage{setspace}
+  % \usepackage{vmargin}
+  % % \setmarginsrb   {0.79in}  % left margin
+  % %                        {1.00in}   % top margin
+  % %                        {0.59in}   % right margin
+  % %                        {0.79in}  % bottom margin
+  % %                        {  20pt}   % head height
+  % %                        {0.25in}   % head sep
+  % %                        {   9pt}    % foot height
+  % %                        { 0.3in}    % foot sep
+
+  \usepackage{sectsty}
+  \allsectionsfont{\centering \normalfont\scshape}
+
+  % Bibliography
+  \usepackage{natbib}
+  \bibliographystyle{aer}
+  \setlength{\parindent}{0.25in}
+
+  \usepackage{pdfpages}
+  \usepackage{booktabs}
+  \usepackage{wrapfig}
+  \usepackage{float}
+  \usepackage{pdfsync}
+  \usepackage{fancyhdr}
+  \usepackage{multicol}
+  \newcommand\ve{\varepsilon} % From Rick
+  \theoremstyle{definition} % From Rick
+  \newtheorem{definition}{Definition} % Number definitions on their own
+  \usepackage{hyperref}  % From Rick
+  \hypersetup{colorlinks,linkcolor=cyan,urlcolor=blue,citecolor=black}  % From Rick
+
+ %% Setup default header
+  \fancypagestyle{mainDoc}{
+      \fancyhead[L]{\small Endogenous Yield Curve}
+      \fancyhead[R]{\thepage}
+      \fancyfoot{} % no footer
+      \renewcommand{\headrulewidth}{.5pt}
+      \renewcommand{\footrulewidth}{0pt}
+      \setlength{\headheight}{13.6pt}
+  }
+
+  \newenvironment{loggentry}[2]% date, heading
+  {\noindent\textbf{#2}\marginnote{#1}\par}{\vspace{0.5cm}}
+
+  \def\?#1{}
+
+  \pgfmathtruncatemacro{\StartYear}{2012}
+  \pgfmathtruncatemacro{\EndYear}{2013}
+
+  \newcommand{\writetitle}{0}
+  \newcommand{\mytitle}[1]
+  {   \ifthenelse{\writetitle=1}{#1}{}
+  }
+  \title{Econ 588}
+
+  \author{Spencer Lyon}
+
+
+\begin{document}
+
+\maketitle
+
+\foreach \Year in {\StartYear,...,\EndYear}
+{   \foreach \Month in {Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec}
+    {   \foreach \Day in {1,...,31}
+        {   \IfFileExists{\Year/\Month/\Day}
+                {
+                    \newread\mysource
+                    \openin\mysource=\Year/\Month/\Day.tex
+                    \read\mysource to \firstline
+                    \closein\mysource
+                    \xdef\writetitle{1}
+                    \begin{loggentry}{\Year - \Month - \Day}{\firstline}
+                        \xdef\writetitle{0}
+                        \input{\Year/\Month/\Day}
+                    \end{loggentry}
+                }
+        { % Else statement goes here. Nothing to do if file doesn't exist.
+        }
+
+        }
+    }
+}
+
+\end{document}

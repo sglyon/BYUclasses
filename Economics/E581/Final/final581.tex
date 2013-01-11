@@ -5,8 +5,12 @@
 	\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
 	\usepackage[english]{babel} % English language/hyphenation
 	\usepackage{amsmath,amsfonts,amsthm} % Math packages
+      \usepackage{hyperref}  % From Rick
+      \hypersetup{colorlinks,linkcolor=cyan,urlcolor=blue,citecolor=black}  % From Rick
 	\usepackage{booktabs}
 	\usepackage{topcapt}
+	\usepackage{pdfsync}
+      \newcommand\ve{\varepsilon}
 
 	\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 
@@ -68,62 +72,72 @@
 
 \section{The Households' Problem}
 
-	\subsection{Population Growth}
+	\subsection{Setup}
 
-		Let $\lambda_{s, t}$ represent the size of the generation of workers of age $s$ in period $t$. Without loss of generality I make the following normalization: $$\lambda_{S, 0} = 1$$ Looking at all other generations in period zero I get the following:
+		Agents each live for S periods. Let $\lambda_{s, t}$ represent the size of the generation of workers of age $s$ in period $t$. We assume that the population grows at a rate $n$, and that $\lambda_{S, 0} = 1$. With these assumptions we can say the following:
 
-		\begin{align} \label{eq:lamGen}
-		\begin{split}
-			\lambda_{S-1, 0} &= (1 + n) \lambda_{S, 0} = (1 + n) \\
-					\lambda_{S-2, 0} &= (1 + n) \lambda_{S - 1, 0} = (1 + n) ^ 2 \\
-					... \\
-					\lambda_{S-s, 0} &= (1 + n)^s
-		\end{split}
+		\begin{align}
+			\lambda_{s, t} = e^{n(S-s+t)}
 		\end{align}
 
-		A similar analysis holds for the $S$ aged generation in different periods $t$:
 
-		\begin{align} \label{eq:lamTime}
-		\begin{split}
-			\lambda_{S, 1} &= \lambda_{S-1, 0} = (1 + n) \\
-					\lambda_{S, 2} &= \lambda_{S - 2, 0} = (1 + n) ^ 2 \\
-					... \\
-					\lambda_{S, t} &= (1 + n)^t
-		\end{split}
-		\end{align}
+            Each period, households make two decisions: (1) how much of their income to save for the next period ($k_{s+t, t+1}$) and (2) how much labor to supply each period ($l_{s,t}$). Consumption must be strictly positive and labor is non-negative. If an agent decides to supply 0 labor in a period, they have effectively made the decision to retire and their labor in each subsequent period will also be 0. To represent this persistent decision, I will use a binary variable $R_{s, t}$ that is equal to one if an agent currently of age $s$ has chosen to supply zero labor in period $t$ or any period before that. With all this information the budget constraint each agent faces each period is below.
 
-		Combining these two results I can an expression for the size of any generation in any time period $$\lambda_{S-s, t} = (1 + n) ^{s + t}$$
+            \begin{align} \label{eq:budget}
+              c_{s, t} + k_{s+1, t+1} = (1 - R_{s,t}) \left(w_t f_s l_{t, s} (1 - \tau) + (1 + r_t - \delta) k_{s, t}\right) + R_{s, t} \left((1 + r_t - \delta) k_{s, t} + \frac{T}{\sum_{s=1}^S R_{s, t}}\right)
+            \end{align}
 
-	\subsection{Objective Function}
+            Where
 
-		Each period, households make two decisions: (1) how much of their income to consume in the current period, (2) how much labor to supply. Consumption must be strictly positive and labor is non-negative. If an agent decides to supply 0 labor in a period, they have effectively made the decision to retire and their labor in each subsequent period will also be 0.
+            \begin{itemize}
+              \item $c_{s, t}$ is the consumption of a household of age $s$ in period $t$
+              \item $k_{s+1, t+1}$ is the savings by an agent currently of age $s$ for the next period ($t + 1$)
+              \item $w_t$ is the wage in period $t$
+              \item $f_s$\footnote{For this I chose a simple piecewise function $f_s = b + c s$ when s < P and $f_s = - log(c) + b + c P$ when s > P} is the productivity of an agent in the $s$th period of his life
+              \item $l_{s, t}$ is the labor supplied by the agent
+              \item $\tau$ is the tax rate on labor income
+              \item $r_t$ is the interest rate of capital
+              \item $k_{s, t}$ is what the agent currently of age $s$ saved last period ($t-1$) to consume in period $t$
+              \item $R_t$ is explained in the paragraph above the equation.
+            \end{itemize}
 
-		The budget constraint a household of age $s$ in period $t$ faces has the form
+		Because agents have productivity, preferences, and an objective function according to their age only, I will, without loss of generality, represent each generation with a single representative agent. This simplification allows me to conclude that in all periods $t$ there are exactly $S$ households involved in the economy. I make two more assumptions about households and their budget constraints: first that agents begin their lives with no capital ($k_{1, t} = 0 \forall t$) and second that agents consume all their income in their last period of life ($k_{S+1, t} = 0 \forall t$).
 
-		\begin{align} \label{eq:budget}
-			c_{s, t} + k_{s+1, t+1} = w_t f_s l_{t, s} (1 - \tau) + (1 + r_t - \delta) k_{s, t}
-		\end{align}
-
-		Where
-
-		\begin{itemize}
-			\item $c_{s, t}$ is the consumption of a household of age $s$ in period $t$
-			\item $k_{s+1, t+1}$ is the savings by an agent currently of age $s$ for the next period ($t + 1$)
-			\item $w_t$ is the wage in period $t$
-			\item $f_s$ is the productivity of an agent in the $s$th period of his life
-			\item $l_{ws t}$ is the labor supplied by the agent
-			\item $\tau$ is the tax rate on labor income
-			\item $r_t$ is the interest rate of capital
-			\item $k_{s, t}$ is what the agent currently of age $s$ saved last period ($t-1$) to consume in period $t$
-		\end{itemize}
-
-		Because agents have productivity according to their age only, I will, without loss of generality, represent each generation with a single representative agent. This simplification allows me to conclude that in all periods $t$ there are exactly $S$ households involved in the economy. I make two more assumptions about households and their budget constraints: first that agents begin their lives with no capital ($k_{1, t} = 0 \forall t$) and second that agents consume all their income in their last period of life ($k_{S, t} = 0 \forall t$).
-
-		Agents have a utility function defined in terms of consumption and leisure.
+            Agents have a utility function defined in terms of consumption and leisure.
 
 		\begin{align}
 			u(c_{s, t}, 1 - l_{s, t}) = \frac{1}{1 - \gamma}(c^{1 -\gamma} - 1) + B ln(1 - l_{s,t})
 		\end{align}
+
+      \subsection{First Order Conditions}
+          \label{sub:first_order_conditions}
+
+          The agents' objective is to maximize expected lifetime utility. This can be expressed as follows:
+
+          \begin{align}
+              \max_{k_{s+1, t+1}, l_{s, t}} E_s \left[ \sum_{s=1}^S \beta ^{s-1}u(c_{s, t}) \right]
+          \end{align}
+
+          To solve this problem, there are two main steps. First, I need to solve the budget constraints for $c_{s, t}$ substitute them into the objective function. Then I would need to take derivatives with respect to $k_{s+1, t+1}$and $l_{s, t}$. Doing this will result in $2S - 1$ Euler equations. We will have $S$ labor-leisure Euler equations and $S-1$ inter-temporal Euler equations. The inter-temporal Euler equations have the following form:
+
+          \begin{align}
+              u'(c_{s, t}) = \beta \left[(1 + r_{t+1} - \delta)u'(c_{s+1, t+1})  \right] \quad\forall s \in [1, S-1]
+          \end{align}
+
+          Note that in the above Euler equation, $u'$ is the marginal utility of consumption. For our utility function this is equal to $c^{-\gamma}$. I will make that substitution really quick in the Euler equation.
+
+          \begin{align}
+              c_{s, t}^{-\gamma}= \beta \left[(1 + r_{t+1} - \delta) c_{s+1, t+1}^{-\gamma})  \right] \quad \forall s \in [1, S-1]
+          \end{align}
+
+          The labor-leisure Euler equations have the following form (note that I go directly to $u' = c^{-\gamma}$):
+
+          \begin{align}
+              c_{s, t}^{-\gamma} (1 - \tau) w_t f_s = \frac{B}{1 - l_{s,t}} \quad \forall s \in [1, S]
+          \end{align}
+
+          Note that in the labor leisure Euler equation, $\frac{\partial U }{\partial l_{s,t}} = \frac{B}{1 - l_{s,t}}$. This fully characterizes the solution to the households problem.
+
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 2
@@ -131,76 +145,114 @@
 
 \section{The Firm's Problem}
 
-Note about firms.
+    The firm's problem is quite simple. Because there are no prices, the firm's objective is just to maximize output with respect to prices. This is the production function (note that technology grows at a rate $a$):
 
-I believe that I need to include population growth in the production function. The way to do it is to say that $L_t = \sum_{s=1} ^ S \lambda_{s, t} \times l_{s, t}$
+    \begin{align}
+        Y_t = f(K_t, L_t) = K_t^{\alpha} (e^{at + z_t} L_t) ^{1 - \alpha}
+     \end{align}
+
+      This results in the following objective function.
+
+    \begin{align}
+        \max_{K_t, L_t} \quad K_t^{\alpha} (e^{at + z_t} L_t) ^{1 - \alpha} - K_t r_t - L_t w_t
+    \end{align}
+
+    We then take derivatives with respect to $K_t$ and $L_t$ we get the following expressions for $r_t \text{ and } w_t$:
+
+    \begin{align}
+        r_t = \left(\frac{L_t e^{at + z_t}}{K_t} \right)^{1 - \alpha} \\
+        w_t = \left(\frac{K_t}{L_t} \right)^{\alpha} (e^{at + z_t})^{1 - \alpha}
+    \end{align}
+
+    This fully characterizes the firm's problem.
 
 \section{The Governments Behavior}
 
-The behavior of the government is just a simple identity. Each period they will collect $T = \sum_{s=1}^S $
+The behavior of the government is just a simple identity. Each period they will collect $T = \sum_{s=1}^S \tau (w_t f_s l_{s,t})$ and they distribute all of $T$ to the retired agents.
 
 \section{Market Clearing Conditions}
-	There are three market clearing conditions that must be met in equilibrium
+	There are three market clearing conditions that must be met in equilibrium. The third condition is for the goods market, but by Walras' law it is redundant in equilibrium, so I won't list it here.
 
 	\begin{itemize}
 		\item Capital market $K_t = \sum_{s=2}^S k_{s, t}$
-		\item Labor market: $L_t = \sum_{s = 1} ^S l_{s, t}$
-		\item Goods market: $Y_t = C_t + K_{t+1} - (1 - \delta)K_t$
+		\item Labor market: $L_t = \sum_{s = 1} ^S \lambda_{s, t} l_{s, t}$
 	\end{itemize}
 
-	One of these conditions is redundant in equilibrium by Walras' law. Generally, the goods market conditions isn't directly used in solving the model.
+\section{Stationarized (Dynare) Equations}
 
-\section{Stationarized Equations}
+    To stationarize the model we need to remove all growth from the model. The only variables that are endogenously growing are $A_t = e^{at + z_t}$ and $\lambda_{s,t} = e^{n(s+t)}$. This is a list of the non-stationary equations:
 
-\section{Dynare Equations}
+    \begin{itemize}
+        \item $c_{s, t} + k_{s+1, t+1} = (1 - R_{s,t}) \left(w_t f_s l_{t, s} (1 - \tau) + (1 + r_t - \delta) k_{s, t}\right) + R_{s, t} \left((1 + r_t - \delta) k_{s, t} + \frac{T}{\sum_{s=1}^S R_{s, t}}\right)$
+        \item $Y_t = f(K_t, L_t) = K_t^{\alpha} (e^{at + z_t} L_t) ^{1 - \alpha}$
+        \item $r_t = \left(\frac{L_t e^{at + z_t}}{K_t} \right)^{1 - \alpha}$
+        \item $w_t = \left(\frac{K_t}{L_t} \right)^{\alpha} (e^{at + z_t})^{1 - \alpha}$
+        \item $z_t =\rho z_{t-1} + (1 - \rho) \mu + \ve_t$
+        \item $c_{s, t}^{-\gamma}= \beta \left[(1 + t_{t+1} - \delta) c_{s+1, t+1}^{-\gamma})  \right] \forall s \in [1, S-1]$
+        \item $c_{s, t}^{-\gamma} (1 - \tau) w_t f_s = \frac{B}{1 - l_{s,t}} \forall s \in [1, S]$
+    \end{itemize}
+
+    I am having a hard time figuring out how to stationarize, so I will say this was my best reasonable shot in the amount of time I have. Dynare accepts stationary equations so these are the ones we would put into Dynare. The only difficult (missing) part about this is that I don't know how to represent the binary variable $R_{s,t}$ in Dynare.
 
 \section{Variables and Parameterization}
 
-List of variables
+      List of variables
 
-\begin{itemize}
-	\item Endogenous state
-	\begin{itemize}
-		\item $k_{s+1, t+1} \text{ } \forall s, t$
-		\item $l_{s, t} \text{ } \forall s, t$
-	\end{itemize}
-	\item Exogenous State
-	\begin{itemize}
-		\item $z_t$
-	\end{itemize}
-\end{itemize}
+      \begin{itemize}
+      	\item Endogenous state
+      	\begin{itemize}
+      		\item $k_{s+1, t+1} \text{ } \forall t \text{ and } \forall s \in [1, S-1]$
+      		\item $l_{s, t} \text{ } \forall s, t$
+      	\end{itemize}
+      	\item Exogenous State
+      	\begin{itemize}
+      		\item $z_t$
+      	\end{itemize}
+      \end{itemize}
 
-Below is a table of parameters and potential values for them
+      There are also a set of endogenous non-state variables. Among these are
 
-% Requires the booktabs if the memoir class is not being used
-\begin{table}[htbp]
-   \centering
-   % \topcaption{Table captions are better up top} % requires the topcapt package
-   \begin{tabular}{@{} llr @{}} % Column formatting, @{} suppresses leading/trailing space
-      \toprule
-      \multicolumn{2}{c}{Item} \\
-      \cmidrule(r){1-2} % Partial rule. (r) trims the line a little bit on the right; (l) & (lr) also possible
-      Parameter    & Description & Value\\
-      \midrule
-			$\alpha$    & Capital share of income & 0.35 \\
-			$\delta$     & depreciation rate     &  $1 - (1 - 0.05)^{60/S}$ \\
-			$\beta$      & discount factor  & $0.96^{60/S}$ \\
-			$\sigma$    & standard deviation of shock process  & $(\sum_{i=1}^{60/S} \rho^{2(\frac{60}{S} - i)}) - \sigma_{ann}$ \\
-			$\mu$   	 & mean of shock process  & 0 \\
-			$\rho$        & persistence of shock process& $0.95^{4 \frac{60}{S}}$ \\
-			$\gamma$  & coefficient of relative risk aversion  & 2 \\
-			$B$            & LOOK THIS UP  & ??? \\
-			$b$       	 & slope term in $f_s$  & no standard value \\
-			$c$      	 & intercept term in $f_s$  & no standard value \\
-			$n$ 		 & growth rate of generations  & 0.01 (1\%) \\
-      \bottomrule
-   \end{tabular}
-   \caption{Parameters in the model and potential values}
-   \label{tab:booktabs}
-\end{table}
+      \begin{itemize}
+          \item $Y_t$
+          \item  $r_t$
+          \item $w_t$
+          \item $c_t$
+          \item $u_{s,t}$
+          \item $i_t$
+       \end{itemize}
 
+      Below is a table of parameters and potential values for them
 
+      % Requires the booktabs if the memoir class is not being used
+      \begin{table}[!htbp]
+         \centering
+         % \topcaption{Table captions are better up top} % requires the topcapt package
+         \begin{tabular}{@{} llr @{}} % Column formatting, @{} suppresses leading/trailing space
+            \toprule
+            \multicolumn{2}{c}{Item} \\
+            \cmidrule(r){1-2} % Partial rule. (r) trims the line a little bit on the right; (l) & (lr) also possible
+            Parameter    & Description & Value\\
+            \midrule
+      			$\alpha$    & Capital share of income & 0.35 \\
+      			$\delta$     & depreciation rate     &  $1 - (1 - 0.05)^{60/S}$ \\
+      			$\beta$      & discount factor  & $0.96^{60/S}$ \\
+      			$\sigma$    & standard deviation of shock process  & $(\sum_{i=1}^{60/S} \rho^{2(\frac{60}{S} - i)}) - \sigma_{ann}$ \\
+      			$\mu$   	 & mean of shock process  & 0 \\
+      			$\rho$        & persistence of shock process& $0.95^{4 \frac{60}{S}}$ \\
+      			$\gamma$  & coefficient of relative risk aversion  & 2 \\
+      			$B$            & weight on leisure in  utility function & 1 \\
+      			$b$       	 & slope term in $f_s$  & no standard value \\
+      			$c$      	 & intercept term in $f_s$  & no standard value \\
+          			$n$ 		 & growth rate of generations  & 0.01 (1\%) \\
+                      $\tau$        & The tax rate & see literature (maybe 20\%) \\
+            \bottomrule
+         \end{tabular}
+         \caption{Parameters in the model and potential values}
+         \label{tab:booktabs}
+      \end{table}
 
 \section{Steady State}
+
+    Solving for the certainty equivalence steady state is very easy. You just need to go to all the behavioral equations and replace every variable $x_{s,t}=\bar{x_{s}} \quad \forall t$. After you do this you are able to solve each of the equations simultaneously for each of the steady state values.
 
 \end{document}
