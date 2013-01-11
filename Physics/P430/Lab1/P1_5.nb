@@ -1,0 +1,162 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4281,        153]
+NotebookOptionsPosition[      3775,        130]
+NotebookOutlinePosition[      4130,        146]
+CellTagsIndexPosition[      4087,        143]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.5667518910825167`*^9, 3.566751912678913*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["P1.5", "Section",
+ CellChangeTimes->{{3.566751547667492*^9, 3.56675154959225*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"eq1", " ", "=", " ", 
+   RowBox[{"fplus", "==", 
+    RowBox[{"f", "+", 
+     RowBox[{"fp", "*", "h"}], "+", 
+     RowBox[{"fp2", "*", 
+      RowBox[{
+       RowBox[{"h", "^", "2"}], "/", "2"}]}], "+", 
+     RowBox[{"fp3", "*", 
+      RowBox[{
+       RowBox[{"h", "^", "3"}], "/", "6"}]}], "+", 
+     RowBox[{"fp4", "*", 
+      RowBox[{
+       RowBox[{"h", "^", "4"}], "/", "24"}]}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eq2", " ", "=", " ", 
+   RowBox[{"fminus", "==", 
+    RowBox[{"f", "-", 
+     RowBox[{"fp", "*", "h"}], "+", 
+     RowBox[{"fp2", "*", 
+      RowBox[{
+       RowBox[{"h", "^", "2"}], "/", "2"}]}], "-", 
+     RowBox[{"fp3", "*", 
+      RowBox[{
+       RowBox[{"h", "^", "3"}], "/", "6"}]}], "+", 
+     RowBox[{"fp4", "*", 
+      RowBox[{
+       RowBox[{"h", "^", "4"}], "/", "24"}]}]}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.5667515558081617`*^9, 3.566751558410636*^9}, 
+   3.5667516893524303`*^9, {3.566751796086529*^9, 3.566751807291851*^9}, {
+   3.566751885901915*^9, 3.566751886587679*^9}, {3.5667519239098673`*^9, 
+   3.566751929721609*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"eq1", " ", "&&", " ", "eq2"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"fp", ",", " ", "fp2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.56675180970861*^9, 3.5667518393590527`*^9}, {
+  3.566751932403702*^9, 3.566751936054182*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"fp", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"3", " ", "fminus"}], "+", 
+         RowBox[{"fp3", " ", 
+          SuperscriptBox["h", "3"]}], "-", 
+         RowBox[{"3", " ", "fplus"}]}], 
+        RowBox[{"6", " ", "h"}]]}]}], ",", 
+     RowBox[{"fp2", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"24", " ", "f"}], "-", 
+         RowBox[{"12", " ", "fminus"}], "+", 
+         RowBox[{"fp4", " ", 
+          SuperscriptBox["h", "4"]}], "-", 
+         RowBox[{"12", " ", "fplus"}]}], 
+        RowBox[{"12", " ", 
+         SuperscriptBox["h", "2"]}]]}]}]}], "}"}], "}"}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.566751840015292*^9, {3.5667518875530252`*^9, 3.566751936823457*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "As can be seen above, the error in f\[CloseCurlyQuote] is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"O", "(", 
+     SuperscriptBox["h", "2"], ")"}], " "}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "and the error in in ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"f", "''"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"O", "(", 
+    SuperscriptBox["h", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ")."
+}], "Text",
+ CellChangeTimes->{{3.56675210775896*^9, 3.56675214699592*^9}, 
+   3.566752177357486*^9}]
+}, Open  ]]
+},
+WindowSize->{718, 856},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 135, 2, 28, "Input"],
+Cell[CellGroupData[{
+Cell[717, 26, 88, 1, 80, "Section"],
+Cell[808, 29, 1131, 33, 46, "Input"],
+Cell[CellGroupData[{
+Cell[1964, 66, 298, 7, 28, "Input"],
+Cell[2265, 75, 864, 27, 52, "Output"]
+}, Open  ]],
+Cell[3144, 105, 615, 22, 36, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
