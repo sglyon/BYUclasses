@@ -15,7 +15,7 @@ a = 0;b = pi;  % the left and right bounds
 h = (b - a) / (N - 1);  % calculate the step size
 x_edge = a:h:b;  % build the cell-edge spatial grid
 
-f = @(x) sin(x) .* sinh(x);  % Define anonymous function
+f = @(x) sin(x) .* sinh(x);  % Defin
 
 figure  % create new figure
 plot(x_edge, f(x_edge));  % plot the function on my grid
