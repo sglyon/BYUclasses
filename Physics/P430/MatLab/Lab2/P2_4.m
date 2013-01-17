@@ -26,7 +26,7 @@ x = x';
 % Create A matrix
 A = zeros(n, n);  % Preallocate memory for A
 A(1, 1) = 1;  % Set first row of A
-A(n, n - 1: n) = 1;  % Set last row of A
+A(n, n) = 1;  % Set last row of A
 
 for jrow = 2: n - 1  % fill in all other rows of A
     A(jrow, jrow - 1: jrow + 1) = [1 / (h ^ 2), - 2 / (h ^ 2), 1 / (h ^ 2)];
@@ -43,11 +43,12 @@ y_old = zeros(n, 1);
 
 while iter < max_iter && dist > toler
     b = 1 - sin(y_old);  % Create b using y_old
+    b(1) = 0;
+    b(end) = 0;
     y = A \ b;  % Solve linear problem for y
 
     % Create y'' and check the norm
-    ypp = (y(3:n) - 2 * y(2:n - 1) + y(1:n - 2)) / h ^ 2;
-    dist  = norm(ypp + sin(y(2:n - 1)) - 1, 2);
+    dist = norm(A * y - 1 + sin(y), 2);
 
     % Set y_old equal to the y created on this iteration and update iter
     y_old = y;
