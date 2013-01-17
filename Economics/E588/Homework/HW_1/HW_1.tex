@@ -1,0 +1,423 @@
+%% Preamble
+  \documentclass{article}
+
+  \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+  \usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+  \usepackage[english]{babel} % English language/hyphenation
+  \usepackage{amsmath,amsfonts,amsthm} % Math packages
+  \usepackage{fancyhdr} % Required for custom headers
+  \usepackage{lastpage} % Required to determine the last page for the footer
+  \usepackage{extramarks} % Required for headers and footers
+  \usepackage{graphicx} % Required to insert images
+  \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+  \usepackage{hyperref} % Used to add links to websites to the pdf
+
+  % Margins
+  \topmargin=-0.45in
+  \evensidemargin=0in
+  \oddsidemargin=0in
+  \textwidth=6.5in
+  \textheight=9.0in
+  \headsep=0.25in
+
+  \linespread{1.1} % Line spacing
+
+  % Set up the header and footer
+  \pagestyle{fancy}
+  \lhead{\hmwkAuthorName} % Top left header
+  \chead{\hmwkClass\ (\hmwkClassInstructor) \hmwkTitle} % Top center header
+  \rhead{\firstxmark} % Top right header
+  \lfoot{\lastxmark} % Bottom left footer
+  \cfoot{} % Bottom center footer
+  \rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+  \renewcommand\headrulewidth{0.4pt} % Size of the header rule
+  \renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+  \setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+  %%   DOCUMENT STRUCTURE COMMANDS
+  % Header and footer for when a page split occurs within a problem environment
+  \newcommand{\enterProblemHeader}[1]{
+  \nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+  \nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+  }
+
+  % Header and footer for when a page split occurs between problem environments
+  \newcommand{\exitProblemHeader}[1]{
+  \nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+  \nobreak\extramarks{#1}{}\nobreak
+  }
+
+  \setcounter{secnumdepth}{0} % Removes default section numbers
+  \newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+  \newcommand{\homeworkProblemName}{}
+  \newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+  \stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+  \renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+  \section{\homeworkProblemName} % Make a section in the document with the custom problem count
+  \enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+  }{
+  \exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+  }
+
+  \newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+  \noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+  }
+
+  \newcommand{\homeworkSectionName}{}
+  \newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+  \renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+  \subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+  \enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+  }{
+  \enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+  }
+
+
+  %   NAME AND CLASS SECTION
+  \newcommand{\hmwkTitle}{Assignment\ \#1} % Assignment title
+  \newcommand{\hmwkDueDate}{Tuesday,\ January\ 15,\ 2012} % Due date
+  \newcommand{\hmwkClass}{Econ\ 588} % Course/class
+  \newcommand{\hmwkClassInstructor}{McDonald} % Teacher/lecturer
+  \newcommand{\hmwkAuthorName}{Spencer Lyon} % Your name
+
+  %   TITLE PAGE
+  \title{
+      \vspace{2in}
+      \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+      \normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+      \vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+      \vspace{3in}
+  }
+
+  \author{\textbf{\hmwkAuthorName}}
+  \date{} % Insert date here if you want it to appear below your name
+
+\begin{document}
+
+% Problem 1
+  \begin{homeworkProblem}
+      \textbf{Expand $(A + B) (A - B)$ and $(A - B) (A + B)$. Are these expansions the same? If not, why not?}
+      \vspace{.2in}
+
+      \problemAnswer{ % Answer
+        These two matrix expressions can be expanded as follows:
+        \begin{align*}
+            (A + B)(A - B) &= AA - AB + BA - BB \\
+            (A - B)(A + B) &= AA + AB - BA -  BB
+        \end{align*}
+        As can be seen these expressions are not equal. This is because matrix multiplication is not commutative. \qed
+      }
+  \end{homeworkProblem}
+
+% Problem 2
+  \begin{homeworkProblem} % Custom section title
+      \textbf{Given $A = \left(\begin{smallmatrix} 1&0&3 \\ 2&-1&1 \end{smallmatrix} \right)$, $B = \left(\begin{smallmatrix} 3&4&1 \\ 0&-1&5 \\ 0&2&-2\end{smallmatrix} \right)$, and $C = \left(\begin{smallmatrix} 2 \\ -1 \\ 4 \end{smallmatrix} \right)$. Calculate $(AB)'$, $B'A'$, $C'A'$, and $(AC)'$.
+        }
+      \vspace{.2in}
+
+      \problemAnswer{
+          \begin{itemize}
+              \item $AB = \left(\begin{smallmatrix} 1&0&3 \\ 2&-1&1 \end{smallmatrix} \right) \left(\begin{smallmatrix} 3&4&1 \\ 0&-1&5 \\ 0&2&-2\end{smallmatrix} \right) = \left( \begin{smallmatrix}      $3$ & $6$ \\ $10$ & $11$ \\$-5$ & $-5$ \end{smallmatrix} \right)$
+              \item $B'A' = \left(\begin{smallmatrix} 3&0&0 \\ 4&-1&2 \\ 1&5&-2\end{smallmatrix} \right)  \left(\begin{smallmatrix} 1&2 \\ 0&-1 \\ 3&1 \end{smallmatrix} \right) = \left( \begin{smallmatrix}      $3$ & $6$ \\ $10$ & $11$ \\$-5$ & $-5$ \end{smallmatrix} \right)$
+              \item $C'A' = \left(\begin{smallmatrix} 2&-1&4 \end{smallmatrix} \right) \left(\begin{smallmatrix} 1&2 \\ 0&-1 \\ 3&1 \end{smallmatrix} \right) = \left( \begin{smallmatrix} 14 & 9 \end{smallmatrix} \right)$
+              \item $(AC)' = \left(\begin{smallmatrix} 1&0&3 \\ 2&-1&1 \end{smallmatrix} \right) \left(\begin{smallmatrix} 2 \\ -1 \\ 4 \end{smallmatrix} \right) = \left( \begin{smallmatrix} 14 & 9 \end{smallmatrix} \right) \qed $
+          \end{itemize}
+      }
+  \end{homeworkProblem}
+
+% Problem 3
+  \begin{homeworkProblem}
+  \textbf{Prove that diagonal matrices of the same order are commutative in multiplication with each other.}
+  \vspace{.2in}
+
+  \problemAnswer{
+    Let $A_n, B_n$ be $n x n$ diagonal matrices. In this case the product $AB = \left( \begin{smallmatrix} A_{22}B_{11} & 0 & 0 & ... & 0 \\  0 & A_{22}B_{22}  &0 & ... & 0 \\ 0  &0  & A_{33}B_{33} & ... & 0 \\ \vdots & \vdots & \vdots & ... & A_{nn}B_{nn}\end{smallmatrix} \right)$. The product BA would be very similar: $BA = \left( \begin{smallmatrix} B_{22}A_{11} & 0 & 0 & ... & 0 \\  0 & B_{22}A_{22}  &0 & ... & 0 \\ 0  &0  & B_{33}A_{33} & ... & 0 \\ \vdots & \vdots & \vdots & ... & B_{nn}A_{nn}\end{smallmatrix} \right)$. These two are clearly equal because in each case there is a scalar on the diagonal. That scalar is the result of scalar multiplication between elements of $A \text{ and } B$ that are in the same position. Scalar multiplication is commutative so $AB = BA$ for diagonal matrices. \qed
+  }
+
+  \end{homeworkProblem}
+
+% Problem 4
+  \begin{homeworkProblem}
+  \textbf{Prove that $\begin{vmatrix} a_{11} & a_{12} & ... & a_{1n} \\ 0 & a_{22} & ... & a_{2n} \\ \vdots & \vdots & \text{ } & \vdots \\ 0&0&...&a_{nn}\end{vmatrix} = \prod_{i=1}^n a_{ii}$}
+  \vspace{.2in}
+
+  \problemAnswer{
+    We will prove this by using the method of cofactor expansion to find the determinant. Let $A_{ij}$ stand for the cofactor about the $i, j$ element of the matrix A. We will start by taking the cofactor expansion along the first column. This results in the following $$det(A) = a_{11} \begin{vmatrix} a_{22} & ... & a_{2n} \\ \vdots &  \text{} & \vdots \\ 0&...&a_{nn}\end{vmatrix} + 0 A_{21} + ... + 0 A_{n1} = a_{11} A_{11}$$ The next step would be to do a cofactor expainsion about the first column of $A_{11}$. By induction, we can see that this would be $$det(A) = a_{11} \left(a_{22}A_{22} + 0 A_{32} + ... + 0 A_{n2} \right)$$ If we follow this inductive argument we will arrive at the answer which is that $$ det(A) = a_{11}a_{22}...a_{nn} = \prod_{i=1}^n a_{iI}) \qed $$
+  }
+
+  \end{homeworkProblem}
+
+% Problem 5
+  \begin{homeworkProblem}
+  \textbf{Show that the matrix $Q = \left(\begin{smallmatrix} 1/\sqrt{6} & 2/\sqrt{5} & 1/\sqrt{30} \\ -2 / \sqrt{6}&1/\sqrt{5}&-2/\sqrt{30} \\ 1/\sqrt{6} & 0 & -5/\sqrt{30} \end{smallmatrix} \right)$  is orthogonal.}
+  \vspace{.2in}
+
+  \problemAnswer{
+    To do this we will simply show that $QQ' = I$ $$QQ' =
+    \left(\begin{smallmatrix} 1/\sqrt{6} & 2/\sqrt{5} & 1/\sqrt{30} \\ -2 / \sqrt{6} & 1/\sqrt{5}&-2/\sqrt{30} \\ 1/\sqrt{6} & 0 & -5/\sqrt{30} \end{smallmatrix} \right)
+    \left(\begin{smallmatrix} 1/\sqrt{6} & -2/\sqrt{6} & 1/\sqrt{6} \\ 2 / \sqrt{5} & 1/\sqrt{5}&0 \\ 1/\sqrt{30} & -2 / \sqrt{30} & -5/\sqrt{30} \end{smallmatrix} \right) =
+    \left(\begin{smallmatrix} 1&0&0 \\ 0&1&0 \\ 0&0&1 \end{smallmatrix} \right)  = I \qed$$
+  }
+
+  \end{homeworkProblem}
+
+% Problem 6
+  \begin{homeworkProblem}
+  \textbf{Determine whether the following quadratic forms are positive definite:
+    \begin{itemize}
+        \item $6x_1^2 + 49x_2^2 + 51x_3^2 - 82x_2x_3 + 20x_1x_3 - 4x_1x_2$
+        \item $4x_1^2 + 9x_2^2 + 2x_3^2 + 8x_2x_3 + 6x_1x_3 + 6x_1x_2$
+    \end{itemize}
+  }
+  \vspace{.2in}
+
+  \problemAnswer{
+    In order to solve this problem I am assuming (as Dr. McDonald did in his notes) that the quadratic form $Q$ is constructed using some symmetric matrix $A$ and a non-zero vector $x$. If that is the case then we can use the expression for $Q$ to back into the matrix $A$. For each case, we know that the diagonal entries are simply the coefficients on the squared terms. This means that for the first problem $a_{11} = 6, a_{22} = 49, a_{33} = 51$.
+
+    To find the off-diagonal entries we know that the coefficient in front of $x_ix_j$ must be $a_{ij} + a_{ji}$. Knowing this, and that $A$ must by symmetric, we can fill in all remaining entries of the matrices $A$. I will write them below and note that $A_1$ is the matrix for the first quadratic form above and $A_2$ is the matrix for the second one.
+
+    \begin{align*}
+        A_1 = \left(\begin{matrix} 6 & -2 & 10 \\ -2 & 49 & -41 \\ 10 & -41 & 51 \end{matrix} \right), \quad{} A_2 = \left(\begin{matrix} 4 & 3 & 3 \\ 3 & 9 & 4 \\ 3 & 4 & 2 \end{matrix} \right)
+    \end{align*}
+
+    The conditions for a symmetric matrix to be positive definite are
+
+    \begin{itemize}
+        \item $a_{11} > 0$
+        \item $|A_{2x2}|  = \begin{vmatrix} a_{11} & a_{12} \\ a_{21} & a_{22}\end{vmatrix} > 0$
+        \item $|A_{3x3}| = \begin{vmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{vmatrix} > 0$
+     \end{itemize}
+
+
+  I will take it one case at a time and start with $A_1$
+
+  \begin{itemize}
+      \item $a_{11} = 6 > 0$
+      \item $A_{(1, 2x2)} = (6)(49) - (-2)(-2) = 290 > 0$
+      \item $A_{(1, 3x3)} = (6)(49)(51) - (6)(-41)(-41) - (-2)(-2)(51) + (-2) (-41) (10) + (10)(-2) (-41)  - (10)(49)(10) = 1444 > 0$
+  \end{itemize}
+
+  For $A_2$ we get
+
+  \begin{itemize}
+      \item $a_{11} = 4 > 0$
+      \item $A_{(1, 2x2)} = (4)(9) - (3)(3) = 27 > 0$
+      \item $A_{(1, 3x3)} = (4)(9)(2) - (4)(4)(4) - (3)(3)(2) + (3)(4)(3) + (3)(3)(4)  - (3)(9)(3) = -19 < 0$
+  \end{itemize}
+
+  This means that $A_1$ is positive definite, but $A_2$ is not. \qed
+
+  }
+
+  \end{homeworkProblem}
+
+% Problem 7
+  \begin{homeworkProblem}
+  \textbf{Prove that A = $\left(\begin{smallmatrix}  1/2 & 1 \\ 1/4 & 1/2\end{smallmatrix}\right)$ is a nonsymmetric, idempotent matrix.}
+  \vspace{.2in}
+
+  \problemAnswer{
+    It is clear that A is non symmetric. For a matrix to be idempotent $ AA = A$. I will show that below
+
+    \begin{align}
+        AA = \begin{pmatrix} 1/2 & 1 \\ 1/4 & 1/2 \end{pmatrix} \begin{pmatrix} 1/2 & 1 \\ 1/4 & 1/2 \end{pmatrix} = \begin{pmatrix} (1/2)(1/2) + (1)(1/4) & (1)(1/2) + (1/2)(1) \\ (1/2)(1/2) + (1/4)(1/2) & (1/4)(1) + (1/2)(1/2) \end{pmatrix} = \begin{pmatrix} 1/2 & 1 \\ 1/4 & 1/2 \end{pmatrix}
+    \end{align}
+  }
+
+  \end{homeworkProblem}
+
+% Problem 8
+  \begin{homeworkProblem}
+  \textbf{Let $X$ denote an $ N x K$ ($N > K$) matrix. Demonstrate that $B = I_N - X(X'X)^{-1}X'$ is symmetric and idempotent.}
+  \vspace{.2in}
+
+  \problemAnswer{
+    We will use some rules of the transpose to get this. First I define another matrix $P \equiv X(X'X)^{-1}X' $ and then I will proceed to show symmetry.
+
+    $$P' = (X(X'X)^{-1}X')' = X''(X'X)^{-1'}X' = X(X'X'')^{-1}X' = X(X'X)^{-1}X' = P $$
+    $$B' = (I - P)' = I' - P' = I - P = B$$
+
+    Now to show that B is Idempotent I will do something similar.
+
+    $$PP = X(X'X)^{-1}X'X(X'X)^{-1}X' = X I (X'X)^{-1}X' = X(X'X)^{-1}X' = P $$
+    $$BB = (I - P) (I - P) = II - 2IP +PP = I - 2P + P = I - P = B$$ \qed
+  }
+
+  \end{homeworkProblem}
+
+% Problem 9
+  \begin{homeworkProblem}
+  \textbf{Obtain the characteristics roots of $C = \left(\begin{smallmatrix} 5/2 & 1/2 \\ 1/2 & 5/2 \end{smallmatrix}\right)$. Can you determine the sign of $(x_1, x_2)C(x_1, x_2)'$ for an arbitrary $X = (x_1, x_2) \ne 0$?}
+  \vspace{.2in}
+
+  \problemAnswer{
+    The characteristic roots of a matrix are found by solving the equation $|C - \lambda I| =0$. For our matrix this becomes
+
+    $$ 0 = |C - \lambda I | = \begin{vmatrix} 5/2 - \lambda & 1/2 \\ 1/2 & 5/2 - \lambda\end{vmatrix} = (5/2 - \lambda)(5/2 - \lambda) - (1/2)(1/2) = \lambda^2 - 5 \lambda - 6 = 0$$
+
+    The roots of the characteristic equation are $\lambda_1 = 2, \lambda_2 = 3$.
+
+    Because both roots are positive we can say that $XCX' > 0 \quad{} \forall X \ne 0$. \qed
+  }
+
+  \end{homeworkProblem}
+
+% Problem 10
+  \begin{homeworkProblem}
+  \textbf{Using the technique of inverses of partitioned matrices, determine the inverse of
+              $
+              \left[\begin{array}{cc|c}
+                    1 & 0 & 0 \\
+                    0 & 5 & 2 \\ \hline
+                    0 & 2 & 1
+              \end{array}\right]
+               = \begin{bmatrix} D_{11} & D_{12} \\ D_{21}, & D_{22} \end{bmatrix}
+               $}
+  \vspace{.2in}
+
+  \problemAnswer{
+      To solve this we will need the inverse of $D_{11}$ and $_D{22}$. The inverse of a diagonal matrix is simply the inverse of each scalar element along the diagonal so $D_{11}^{-1} = \left(\begin{smallmatrix} 1&0 \\ 0 & 1/5\end{smallmatrix}\right)$ and $D_{22}^{-1} = 1$.
+
+      We will also define $B \equiv D^{-1} = \left(\begin{smallmatrix} B_{11} & B_{12} \\ B_{21} & B{22}\end{smallmatrix}\right)$.
+
+      We are now ready to use the expressions on pages 5-6 of the notes
+
+      \begin{itemize}
+          \item $
+          B_{11} = (D_{11} - D_{12}D_{22}^{-1}D_{21})^{-1} =
+          (\left(\begin{smallmatrix} 1&0 \\ 0&5\end{smallmatrix}\right) - \left(\begin{smallmatrix} 0 \\ 2\end{smallmatrix}\right) (1) \left(\begin{smallmatrix}0&2 \end{smallmatrix}\right))^{-1} =
+          (\left(\begin{smallmatrix} 1&0 \\ 0&5\end{smallmatrix}\right) - \left(\begin{smallmatrix} 0&0 \\ 0&4\end{smallmatrix}\right))^{-1} =
+          (\left(\begin{smallmatrix} 1&0\\0&1\end{smallmatrix}\right))^{-1} =
+          \left(\begin{smallmatrix} 1&0 \\0&1\end{smallmatrix}\right)$
+          \item $
+          B_{12} = -B_{11}D_{12}D_{22}^{-1} =
+          -\left(\begin{smallmatrix} 1&0\\0&1\end{smallmatrix}\right) \left(\begin{smallmatrix} 0\\2\end{smallmatrix}\right) (1) =
+          \left(\begin{smallmatrix} 0 \\ - 2 \end{smallmatrix}\right)
+          $
+          \item $
+          B_{21} = - D_{22}^{-1} D_{21} B_{11} =
+          -(1) \left(\begin{smallmatrix} 0 & 2 \end{smallmatrix}\right) \left(\begin{smallmatrix} 1&0 \\ 0 & 1\end{smallmatrix}\right) =
+          \left(\begin{smallmatrix}  0 & - 2\end{smallmatrix}\right)
+          $
+          \item $
+          B_{22} = D_{22}^{-1} + D_{22}^{-1} D_{21} B_{11}^{-1} D_{12} D_{22} =
+          (1) + (1) \left(\begin{smallmatrix} 0 & 2 \end{smallmatrix}\right) \left(\begin{smallmatrix} 1 & 0 \\ 0 & 1\end{smallmatrix}\right)^{-1} \left(\begin{smallmatrix} 0 \\ 2\end{smallmatrix}\right) (1) =
+          1 + 4 = 5
+          $
+      \end{itemize}
+
+      We are now ready to define $D^{-1}$
+
+      $$
+      D^{-1} = \left(\begin{smallmatrix} B_{11} & B_{12} \\ B_{21} & B_{22}\end{smallmatrix}\right) =
+      \left[\begin{array}{cc|c}
+                    1 & 0 & 0 \\
+                    0 & 1 & -2 \\ \hline
+                    0 & -2 & 5
+              \end{array}\right] \qed
+      $$
+  }
+
+  \end{homeworkProblem}
+
+% Problem 11
+  \begin{homeworkProblem}
+  \newcommand\matA{\left(\begin{smallmatrix} 5&2 \\ 2&1 \end{smallmatrix}\right)}
+  \newcommand\matB{\left(\begin{smallmatrix} 3&5 \\ 1&2 \end{smallmatrix}\right)}
+  \newcommand\matBinv{\left(\begin{smallmatrix} 2&-5 \\ -1&3 \end{smallmatrix}\right)}
+  \newcommand\matAT{\left(\begin{smallmatrix} 5&2 \\ 2&1 \end{smallmatrix}\right)}
+  \newcommand\matBT{\left(\begin{smallmatrix} 3&1 \\ 5&2 \end{smallmatrix}\right)}
+  \textbf{Let $A =\matA $  and $B = \matB $ Find
+  \begin{itemize}
+    \item $A \otimes B$
+    \item $(A \otimes B)^{-1}$
+    \item $(A \otimes B)'$
+    \item $Tr(A \otimes B)$
+    \item $|A \otimes B|$
+  \end{itemize}}
+
+  \vspace{.2in}
+
+  \problemAnswer{
+    We will take them one at a time:
+
+    \begin{itemize}
+        \item $A \otimes B =
+        \left(\begin{smallmatrix} 5 \matB & 2 \matB \\ 2 \matB & 1 \matB \end{smallmatrix}\right) =
+        \left(\begin{smallmatrix} 15&25&6&10\\ 5&10&2&4\\ 6&10&3&5\\ 2&4&1&2 \end{smallmatrix}\right)$
+
+        \item $(A \otimes B)^{-1} = A^{-1} \otimes B^{-1}  =
+        \left(\begin{smallmatrix} 1&-2 \\ -2&5  \end{smallmatrix}\right) \otimes \left(\begin{smallmatrix} 2 & -5 \\ -1 & 3 \end{smallmatrix}\right) =
+        \left(\begin{smallmatrix} 1 \matBinv & -2 \matBinv \\ -2 \matBinv & 5\matBinv \end{smallmatrix}\right) =
+        \left(\begin{smallmatrix} 2&-5&-4&10 \\ -1&3&2&-6\\ -4&10&10&-25\\ 2&-6&-5&15 \end{smallmatrix}\right)$
+
+        \item $(A \otimes B)' = \matAT \otimes \matBT  =
+        \left(\begin{smallmatrix} 5 \matBT & 2 \matBT \\ 2 \matBT & 1 \matBT \end{smallmatrix}\right) =
+        \left(\begin{smallmatrix} 15&5&6&2\\ 25&10&10&4\\ 6&2&3&1\\ 10&4&5&2 \end{smallmatrix}\right)$
+
+        \item $Tr(A \otimes B) = Tr(A) Tr(B) = (5 + 1) ( 3 + 2) = (6) (5) = 30$
+
+        \item $|A \otimes B| = |A|^2 |B|^2 = (1) ^2 (1) ^2 = 1$
+    \end{itemize}
+    \qed
+  }
+
+  \end{homeworkProblem}
+
+% Problem 12
+  \begin{homeworkProblem}
+  \textbf{Let $A$ and $B$ be square matrices. Prove that $Tr(AB) = Tr(BA)$}
+  \vspace{.2in}
+
+  \problemAnswer{
+    We know that the $i, j$ element of the matrix product $AB$ is $AB_{ij} = \sum_{k = 1}^n a_{ik} b_{ki}$.
+
+    We also know that the trace of a matrix is the sum of the diagonal, or $Tr(a) = \sum_{i= 1}^n a_{ii}$.
+
+    Using these two facts we can get the trace of a matrix product by $\sum_{i = 1} ^n \sum_{k = 1} ^n a_{ik} b_{ki}$. We can use this to write an expression for $Tr(AB) \text{ and } Tr(BA)$:
+
+    \begin{align*}
+        Tr(AB) &=\sum_{i = 1} ^n \sum_{k = 1} ^n a_{ik} b_{ki}\\
+        Tr(BA) &=\sum_{i = 1} ^n \sum_{k = 1} ^n b_{ik} a_{ki}
+    \end{align*}
+
+    Because scalar multiplication and addition are commutative, these two expressions are equal. \qed
+
+  }
+  \end{homeworkProblem}
+
+% Problem 16
+  \begin{homeworkProblem}[Problem 16]
+  \textbf{Prove that $\frac{\partial trace(A)}{A} = I$}
+  \vspace{.2in}
+
+  \problemAnswer{
+    The following is an expression for the derivative of a scalar $y$ with respect to a $(p x q)$ matrix $A$
+
+    $$ \frac{\partial y}{\partial A} =
+    \begin{pmatrix}
+    \frac{\partial y}{\partial A_{11}} & \frac{\partial y}{\partial A_{21}} & \dots & \frac{\partial y}{\partial A_{p1}} \\
+    \frac{\partial y}{\partial A_{12}} & \frac{\partial y}{\partial A_{22}} & \dots & \frac{\partial y}{\partial A_{p1}} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    \frac{\partial y}{\partial A_{1q}} & \frac{\partial y}{\partial A_{2q}} & \dots & \frac{\partial y}{\partial A_{pq}}
+    \end{pmatrix}$$
+
+
+  In our case $y = Tr(A) = \sum_{i=1}^p A_{ii}$. This means that the partial derivative of $y$ with respect to any non-diagonal entry of $A$ will be zero. It also means that the partial derivative of $y$ with respect to any diagonal entry of $A$ will be equal to 1. Combining these two facts with the expression above we get our answer:
+
+  $$ \frac{\partial trace(A)}{A} =
+  \begin{pmatrix}
+    1 & 0 & \dots & 0 \\
+    0 & 1 & \dots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \dots & 1
+  \end{pmatrix} =
+  I \qed
+  $$
+  }
+
+  \end{homeworkProblem}
+
+\end{document}

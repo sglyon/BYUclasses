@@ -1,0 +1,148 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3891,        139]
+NotebookOptionsPosition[      3076,        104]
+NotebookOutlinePosition[      3433,        120]
+CellTagsIndexPosition[      3390,        117]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["P2.1", "Section",
+ CellChangeTimes->{{3.5671749962482367`*^9, 3.567174997839913*^9}, {
+  3.567175077751832*^9, 3.567175079349263*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Part b", "Subsection",
+ CellChangeTimes->{{3.5671750977990427`*^9, 3.567175098325191*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Clear main context and read in ToMatlab package\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.5671750253861217`*^9, 3.567175068957611*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.567172037662694*^9, 3.5671720439778557`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"<<", "\"\<ToMatlab`\>\""}]], "Input",
+ CellChangeTimes->{{3.567171919597143*^9, 3.567171927707003*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Solve the equation", "Subsubsection",
+ CellChangeTimes->{{3.5671750034307537`*^9, 3.567175009050826*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sol", " ", "=", " ", 
+   RowBox[{"DSolve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"y", "''"}], "[", "x", "]"}], " ", "+", " ", 
+         RowBox[{"9", 
+          RowBox[{"y", "[", "x", "]"}]}]}], " ", "\[Equal]", " ", 
+        RowBox[{"Sin", "[", "x", "]"}]}], ",", " ", 
+       RowBox[{
+        RowBox[{"y", "[", "0", "]"}], "\[Equal]", "0"}], ",", " ", 
+       RowBox[{
+        RowBox[{"y", "[", "2", "]"}], "\[Equal]", "1"}]}], "}"}], ",", " ", 
+     RowBox[{"y", "[", "x", "]"}], ",", "x"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"y", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"y", "[", "x", "]"}], "/.", 
+    RowBox[{"sol", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.5671719706649933`*^9, 3.567172029706321*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Send the solution to MatLab", "Subsubsection",
+ CellChangeTimes->{{3.567175011670903*^9, 3.567175022702458*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToMatlab", "[", "y", "]"}]], "Input",
+ CellChangeTimes->{{3.567172049270212*^9, 3.567172051062293*^9}}],
+
+Cell[BoxData[
+ FormBox["\<\"(1/24).*((-2).*cos(3.*x).*sin(2.*x)+(-4).*cos(2).^2.*sin(3.*x)+ \
+...\\n  cos(8).*sin(3.*x)+4.*cos(x).^2.*sin(3.*x)+(-1).*cos(4.*x).*sin(3.* \
+...\\n  x)+24.*csc(6).*sin(3.*x)+2.*cot(6).*sin(4).*sin(3.*x)+(-1).*cot(6) \
+...\\n  .*sin(8).*sin(3.*x)+cos(3.*x).*sin(4.*x));\\n\"\>", 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{3.56717205148146*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{80, Automatic}, {Automatic, 95}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 140, 2, 80, "Section"],
+Cell[CellGroupData[{
+Cell[744, 28, 96, 1, 44, "Subsection"],
+Cell[CellGroupData[{
+Cell[865, 33, 148, 3, 35, "Subsubsection"],
+Cell[1016, 38, 135, 2, 28, "Input"],
+Cell[1154, 42, 127, 2, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1318, 49, 111, 1, 35, "Subsubsection"],
+Cell[1432, 52, 902, 26, 46, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2371, 83, 118, 1, 35, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[2514, 88, 127, 2, 28, "Input"],
+Cell[2644, 92, 380, 6, 131, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
