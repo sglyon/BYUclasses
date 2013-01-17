@@ -29,6 +29,7 @@ yppquad = ypp;
 % Use linear extrapolation to get endpoints for derivatives
 yplin(1) = 2 * yplin(2) - yplin(3);
 yplin(n) = 2 * yplin(n - 1) - yplin(n - 2);
+
 ypplin(1) = 2 * ypplin(2) - ypplin(3);
 ypplin(n) = 2 * ypplin(n - 1) - ypplin(n - 2);
 
