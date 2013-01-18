@@ -13,6 +13,9 @@ from scipy.special import jn
 from numpy import exp
 import pandas as pd
 from tools import make_grid, centered_difference
+from sympy import symbols, Eq, solve, pprint, simplify
+
+plt.ion()
 
 
 def p1_1(part=None):
@@ -35,7 +38,6 @@ def p1_1(part=None):
 
     f = lambda x: np.sin(x) * np.sinh(x)
 
-    plt.ion()
     plt.figure()
     plt.plot(x_edge, f(x_edge))
     plt.title('Part a')
@@ -66,7 +68,47 @@ def p1_1(part=None):
 
     y3 = f3(x_c_ghost)
 
-    return
+    pass  # Return nothing
+
+
+def p1_3(part=None):
+    """
+    Complete solution to problem 1.3
+
+    Parameters
+    ----------
+    part: str, optional(default=None)
+        The part number you would like evaluated. If this is left blank
+        the default value of None is used and the entire problem will be
+        solved.
+
+    Returns
+    -------
+    i-dont-know-yet
+    """
+    a, b, c, x, x1, x2, x3, h, y1, y2, y3 = symbols('a, b, c, x, x1, x2, x3, \
+                                                     h, y1, y2, y3')
+    x2 = x1 + h
+    x3 = x1 + 2 * h
+    eqns = (Eq(y1, a + b * x1 + c * x1 ** 2),
+            Eq(y2, a + b * x2 + c * x2 ** 2),
+            Eq(y3, a + b * x3 + c * x3 ** 2))
+    soln = solve(eqns, a, b, c)
+    y = a + b * x + c * x ** 2
+
+    soln[x] = (x1 + x2) / 2
+    y_est1 = simplify(y.subs(soln))
+    print 'y(x1 + x2) / 2 ->\n'
+    pprint(y_est1)
+
+    soln.pop(x)
+
+    soln[x] = (x2 + x3) / 2
+    y_est2 = simplify(y.subs(soln))
+    print '\ny(x1 + x2) / 2 ->\n'
+    pprint(y_est2)
+
+    pass  # return nothing
 
 
 def p1_4(part=None):
@@ -92,32 +134,12 @@ def p1_4(part=None):
 
     y = f(x)  # Evaluate function on grid
 
-    yp = np.zeros(y.shape)  # Pre-allocate memory for yp and ypp
-    ypp = np.zeros(y.shape)
+    # Get numerical derivatives using routine from tools.py
 
-    # get centered estimate for yp(p)
-    yp[1:-1] = (y[2:] - y[:-2]) / (2 * h)  # 1st der.
-    ypp[1:-1] = (y[2:] - 2 * y[1:-1] + y[:-2]) / (h ** 2)  # 2nd der.
-
-    # Copy yp and ypp for linear and quadratic extrapolation
-    yplin = np.copy(yp)
-    ypquad = np.copy(yp)
-    ypplin = np.copy(ypp)
-    yppquad = np.copy(ypp)
-
-    # Use linear extrapolation to get endpoints for derivatives
-    yplin[0] = 2 * yplin[1] - yplin[2]
-    yplin[-1] = 2 * yplin[-2] - yplin[-3]
-
-    ypplin[0] = 2 * ypplin[1] - ypplin[2]
-    ypplin[-1] = 2 * ypplin[-2] - ypplin[-3]
-
-    # Use quadratic extrapolation to get endpoints for derivatives
-    ypquad[0] = 3 * ypquad[1] - 3 * ypquad[2] + ypquad[3]
-    ypquad[-1] = 3 * ypquad[-2] - 3 * ypquad[-3] + ypquad[-4]
-
-    yppquad[0] = 3 * yppquad[1] - 3 * yppquad[2] + yppquad[3]
-    yppquad[-1] = 3 * yppquad[-2] - 3 * yppquad[-3] + yppquad[-4]
+    yplin = centered_difference(y, 1, h, 'linear')
+    ypplin = centered_difference(y, 2, h, 'linear')
+    ypquad = centered_difference(y, 1, h, 'quadratic')
+    yppquad = centered_difference(y, 2, h, 'quadratic')
 
     # Calculate real derivatives
     fp = - jn(1, x)
@@ -152,6 +174,35 @@ def p1_4(part=None):
                 loc=0)
     plt.draw()
 
+    pass  # return nothing
+
+
+def p1_5(part=None):
+    """
+    Complete solution to problem 1.5
+
+    Parameters
+    ----------
+    part: str, optional(default=None)
+        The part number you would like evaluated. If this is left blank
+        the default value of None is used and the entire problem will be
+        solved.
+
+    Returns
+    -------
+    i-dont-know-yet
+    """
+    f, fp, fp2, fp3, fp4, h, fplus, fminus = symbols('f, fp, fp2, fp3, fp4, \
+                                                     h, fplus, fminus')
+    eqns = (Eq(fplus, f + fp * h + fp2 * h ** 2 / 2 + \
+                      fp3 * h ** 3 / 6 + fp4 * h ** 4 / 24),
+            Eq(fminus, f - fp * h + fp2 * h ** 2 / 2 - \
+                       fp3 * h ** 3 / 6 + fp4 * h ** 4 / 24))
+    soln = solve(eqns, fp, fp2)
+    pprint(soln)
+
+    pass  # return nothing
+
 
 def p1_6(part=None):
     """
@@ -185,8 +236,11 @@ def p1_6(part=None):
 
     errors = pd.DataFrame(errs, columns=['h1', 'h2', 'h3'],
                 index=['Forward first', 'Centered first', 'Centered Second'])
+
     print 'Errors:'
     print errors
+
+    pass  # return nothing
 
 
 def p1_7(part=None):
@@ -212,8 +266,8 @@ def p1_7(part=None):
     ypp = np.zeros(y.shape)
 
     # Get centered estimate for yp(p)
-    yp[1:-1] = (y[2:] - y[:-2]) / (2 * h)  # 1st der.
-    ypp[1:-1] = (y[2:] - 2 * y[1:-1] + y[:-2]) / (h ** 2)  # 2nd der.
+    yp = centered_difference(y, 1, h, 'linear')
+    ypp = centered_difference(y, 2, h, 'linear')
 
     # Get real derivatives
     fp = -np.sin(x)
@@ -231,3 +285,5 @@ def p1_7(part=None):
     plt.legend(('Real', 'Estimated'), loc=0)
     plt.title('fp(x)')
     plt.draw()
+
+    pass  # return nothing

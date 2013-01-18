@@ -56,7 +56,7 @@ def make_grid(xmin, xmax, n, grid_type='cell_edge'):
     return grid, h
 
 
-def centered_difference(data, order, extrap_type=None):
+def centered_difference(data, order, h, extrap_type=None):
     """
     Compute a nth order numerical derivative given an array of data
 
@@ -69,6 +69,10 @@ def centered_difference(data, order, extrap_type=None):
         An integer specifying which derivative should be computed.
         For example, if order=1, the first derivative will be computed.
         Acceptable values are 1 or 2.
+
+    h: float
+        The step size for the independent variable used to create the
+        input data for this function.
 
     extrap_type: str, optional(default=None)
         A string representing the type of extrapolation to be used in
@@ -84,10 +88,10 @@ def centered_difference(data, order, extrap_type=None):
 
     Notes
     -----
-    This function assumes that the data passed in are equally spaced.
+    This function assumes equal spacing for the independent variable
+    used to create the parameter data.
     """
     der = np.zeros(data.shape)
-    h = data[1] - data[0]
 
     if order == 1:
         # Baseline interior points
@@ -97,9 +101,12 @@ def centered_difference(data, order, extrap_type=None):
             der[0] = 2 * der[1] - der[2]
             der[-1] = 2 * der[-2] - der[-3]
 
-        elif extrap_type == 'quad':
+        elif extrap_type == 'quadratic':
             der[0] = 3 * der[1] - 3 * der[2] + der[3]
             der[-1] = 3 * der[-2] - 3 * der[-3] + der[-4]
+
+        elif extrap_type == None:
+            pass
 
         else:
             errstr_extrap = "Function not implemented for extrap_type != "
@@ -114,9 +121,12 @@ def centered_difference(data, order, extrap_type=None):
             der[0] = 2 * der[1] - der[2]
             der[-1] = 2 * der[-2] - der[-3]
 
-        elif extrap_type == 'quad':
+        elif extrap_type == 'quadratic':
             der[0] = 3 * der[1] - 3 * der[2] + der[3]
             der[-1] = 3 * der[-2] - 3 * der[-3] + der[-4]
+
+        elif extrap_type == None:
+            pass
 
         else:
             errstr_extrap = "Function not implemented for extrap_type != "
