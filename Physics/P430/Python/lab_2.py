@@ -3,7 +3,7 @@ Created Jan 16, 2013
 
 Author: Spencer Lyon
 
-Lab 1 for Physics 430
+Lab 2 for Physics 430
 """
 from __future__ import division
 import numpy as np
