@@ -168,10 +168,9 @@ def p3_2(part=None):
             t = r'$\omega^2$ = %.3f, $\omega$ = %.3f' \
                 % (w2[i], np.sqrt(np.abs(w2[i])))
             gn = v1[:, k[i]]
-            w = (i + 1) * np.pi / L
-            exact = np.sin(w * x)
+            # w = (i + 1) * np.pi / L
             plt.figure()
-            plt.plot(x, gn, 'r.', x, exact, 'b-')
+            plt.plot(x, gn, 'r.')
             plt.title(t)
             plt.xlabel('x')
             plt.ylabel('g(n, x)')

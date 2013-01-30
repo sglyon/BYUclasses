@@ -48,7 +48,7 @@ def make_grid(xmin, xmax, n, grid_type='cell_edge'):
 
     elif grid_type == 'cell_center_ghost':
         h = (xmax - xmin) / n
-        grid = np.arange(xmin - h / 2, xmax + h / 2 + h, h)
+        grid = np.arange(xmin - h / 2, xmax + h, h)
 
     else:
         errstr = "Function not implemented for grid_type != "
