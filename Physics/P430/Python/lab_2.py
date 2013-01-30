@@ -40,7 +40,7 @@ def p2_1(part=None):
 
     Part b:
         Solve boundary value problem in mathematica, use ToMatlab to get
-        the solution in MatLab, then plot the solution using a blue
+        the solution in Python, then plot the solution using a blue
         curve.
 
     Part c:

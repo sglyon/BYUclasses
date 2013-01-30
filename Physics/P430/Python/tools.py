@@ -10,6 +10,8 @@ TODO: implement whos function that uses pandas to print key info about data.
 from __future__ import division
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import scipy.linalg as la
 
 
 def make_grid(xmin, xmax, n, grid_type='cell_edge'):
@@ -138,6 +140,79 @@ def centered_difference(data, order, h, extrap_type=None):
         raise ValueError('Function not implemented for order != (1 or 2)')
 
     return der
+
+
+def solve_plot_eig(A, B, T, mu, x=None):
+    """
+    Routine similar to the function eigen.m from MatLab. This will solve
+    the genralized eigenvlaue problem
+
+        Av = lamb B v,
+
+    After computing the solution it will convert the lamb into
+    frequencies (omega), sort the eigenvalues / eigen vectors, and plot
+    the solutions.
+
+    Parameters
+    ----------
+    A: array-like, dtype=float
+        The matrix A in the generalized eigenvalue problem above
+
+    B: array-like, dtype=float
+        The matrix B in the genearalized eigenvalue problem above.
+
+    T: scalar, dype=float
+        The tension in the string for this problem
+
+    mu: scalar, dtype=float
+        The linear mass density of the string
+
+    x: array-like, dtype=float, optional(default=None)
+        The vector of dependent variable values, equally spaced. This
+        is only used in making the plot labels correct.
+
+    lb: scalar, dtype=float
+        The lower bound on the dependent variable values
+
+    ub: scalar, dtype=float
+        The upper bound on the dependent variable values
+    Returns
+    -------
+    Nothing, just plots the eigenmodes.
+    """
+    plt.ion()
+
+    # Solve genearalized eigenvalue problem (eigen.m for python)
+    lamb, v1 = la.eig(A, B)
+
+    w2raw = - (T / mu) * lamb  # convert lambda to w ** 2
+    w2, k = [np.sort(w2raw), np.argsort(w2raw)]  # sort and get indices
+    contin = 1
+
+    for i in range(w2.size):
+        if contin == 1:
+            t = r'$\omega^2$ = %.3f, $\omega$ = %.3f' \
+                % (w2[i], np.sqrt(np.abs(w2[i])))
+            gn = v1[:, k[i]]
+            plt.figure()
+            if x:
+                plt.plot(x, gn, 'r.')
+            else:
+                plt.plot(gn)
+            plt.title(t)
+            plt.xlabel('x')
+            plt.ylabel('g(n, x)')
+            plt.draw()
+            ans = raw_input('Continue? Enter 0 if no, leave blank if yes ')
+            try:
+                contin = int(ans)
+                plt.close('all')
+            except ValueError:
+                contin = 1
+        else:
+            plt.close('all')
+            break
+
 
 
 def whos(var):
