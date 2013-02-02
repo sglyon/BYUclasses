@@ -14,6 +14,7 @@
   \hypersetup{colorlinks,linkcolor=cyan,urlcolor=blue,citecolor=black}  % From Rick
   \usepackage{xifthen}
   \usepackage{booktabs}
+  \usepackage{mdframed}
 
   % Margins
   \topmargin=-0.45in
@@ -65,7 +66,7 @@
   }
 
   \newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
-  \noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+  \noindent \begin{mdframed} #1 \end{mdframed} % Makes the box around the problem answer and puts the content inside
   }
 
   \newcommand{\homeworkSectionName}{}
@@ -137,9 +138,6 @@
       {\ensuremath{ \frac{ e^{-\frac{1}{2} (y - \mu)' \Sigma^{-1} (y - \mu)} }{ (2 \pi)^{n/2} \left| \Sigma \right| ^{(1/2)}} }}% if #1 is empty
       {\ensuremath{ \frac{ e^{-\frac{1}{2} (#1 - \mu)' \Sigma^{-1} (#1 - \mu)} }{ (2 \pi)^{n/2} \left| \Sigma \right| ^{(1/2)}} }}% if #1 is not empty
   }
-
-% TODO: Problems 9, 12-21
-% TODO: Check part d on 10.
 
 \begin{document}
 
@@ -220,6 +218,8 @@
             \item  $E(x - \mu)^4  = \frac{\partial^4\Psi(t)}{\partial t^4} = \frac{\partial^4 (- log(1 -\beta t))}{\partial t^4} = \frac{6 \beta^4}{\left(1 - \beta \right)^4} \bigg|_{t=0} = 6 \beta^4$
           \end{itemize}
 
+          \qed
+
       }
   \end{homeworkProblem}
 
@@ -266,6 +266,8 @@
             0 = \fracpd{l}{\beta}  = \sum_{i=1}^N x_i \beta^{-2} - n \beta^{-1}  \rightarrow &{} \frac{\sum_{i=1}^N x_i}{N} = \tilde{\beta} \\ & \bar{x} = \tilde{\beta} \qed
         \end{align*}
 
+        \qed
+
       }
   \end{homeworkProblem}
 
@@ -297,15 +299,17 @@
 
 % Problem 9
   \begin{homeworkProblem}
-      \textbf{Using the results from question 8, demonstrate that the exact distribution of the sample mean $(Y)$ is given by GA$( : \beta, p=n)$}
+      \textbf{Using the results from question 8, demonstrate that the exact distribution of the sample mean $(Y)$ is given by GA$( ; \beta / n, p=n)$}
       \vspace{.2in}
 
       \problemAnswer{ % Answer
-        answer
+         First I formally define $\bar{Y} = \sum_{i=1}^N x_i$.I can then say that the sample mean of $\bar{Y}$ is the following (note that I define $T \equiv t / n$):
 
         \begin{align*}
-            x
+            E\left[e^{\bar{Y} t}\right] = E\left[e^{ \left( \frac{1}{n}\right)\sum_{i=1}^N x_i t }\right] = E\left[e^{ \sum_{i=1}^N x_i T}\right] = \frac{1}{(1 - \beta T)^N} = \frac{1}{\left( 1 - \left( \frac{\beta}{n}\right) t\right)^N}
         \end{align*}
+
+        As shown in problem 8 this is the moment generating function for a $GA (; \beta / n, n)$ distribution. \qed
       }
   \end{homeworkProblem}
 
@@ -316,11 +320,15 @@
 
       \problemAnswer{ % Answer
 
+        \homeworkSection{a.)}
+
         The pdf  of the generalized gamma distribution is given by $f(y; a, \beta, p)  = \ggpdf{}$. To find the log-likelihood function we need to first find the likelihood function $L = \prod_{i-1}^N f(y_i)$. Once we have that the log-likelihood function is just the natural log of the likelihood function.
 
         \begin{align*}
             l = \ln(L) = \ln \left( \prod_{i=1}^N \ggpdf{y_i} \right) = (ap - 1) \sum_{i=1}^N \ln(y_i) - \sum_{i=1}^N \left(\frac{y_i}{\beta} \right) ^a - n (ap) \ln(\beta) - N \ln (\Gamma(p))
         \end{align*}
+
+        \homeworkSection{b.)}
 
         Now we were asked to obtain the MLE for $\beta$ in the case where $a = p = 1$. Under these conditions the log-likelihood function reduces to $$l = \sum_{i=1}^N \frac{x_i}{\beta} - n \ln(\beta)$$ To get the MLE we take the derivative of the log-likelihood function with respect to $\beta$, set it equal to 0, and solve for $\beta$. This is below.
 
@@ -328,13 +336,17 @@
             0 = \fracpd{l}{\beta}  = \sum_{i=1}^N y_i \beta^{-2} - n \beta^{-1}  \rightarrow &{} \frac{\sum_{i=1}^N y_i}{N} = \tilde{\beta} \\ & \bar{y} = \tilde{\beta}
         \end{align*}
 
+        \homeworkSection{c.)}
+
         The second derivative of the log-likelihood function for the exponential is given by the following
 
         \begin{align*}
             \fracpd{^2 l}{\beta^2} = -2 \sum_{i=1}^N y_i \beta^{-3} + n \beta ^{-2}
         \end{align*}
 
-        The asymptotic distribution can be found by seeing what the parameter values are in the limit as $N$ increases. Because the MLE estimate for $\beta$ is not a function of $N$ , the asymptotic distribution of $\beta$ is still $\tilde{\beta} = \bar{y}$
+        \homeworkSection{d.)}
+
+        The asymptotic distribution for the  MLE of $\beta$ for the exponential is $N(\beta, \beta^2 / n)$
 
         \qed
       }
@@ -382,28 +394,35 @@
       \vspace{.2in}
 
       \problemAnswer{ % Answer
+
+        \homeworkSection{a.)}
         The pdf for the GB2 is $f(y) = \gbbpdf{}$. If we now set $p=1$ We can get what was asked for in part (a)
 
         \begin{align*}
             f(y;, 1, b, p=1, q) =\frac{|a| y^{a (1) - 1}}{b^{a(1)} B(1, q)(1 + (y/b)^a)^{1+q}} = \frac{|a| y^{a - 1}}{b^{a} (1/q) (1 + (y/b)^a)^{q}} = \frac{|a| q(y/b)^{a-1)}}{b(1 + (y/b)^a)^{q+1}}
         \end{align*}
 
+        \homeworkSection{b.)}
         From the GB distribution tree we see that Burr12 = $GB2(y;1,b,=1,q)$, or the function we just derived. We are given the cdf for the Burr12, so to find the hazard function we just plug these objects into $h(y) = \frac{f(y)}{1 - F(y)}$.
 
         \begin{align*}
               h(y) = \frac{f(y)}{1 - F(y)} = \frac{\frac{|a| q(y/b)^{a-1)}}{b(1 + (y/b)^a)^{q+1}}} {1 - \left(1 - \left( \frac{1}{1 + (y/b)^a}\right)^q \right) } = \frac{q \left| a\right|  \left(\frac{y}{b}\right)^{a-1} \left(\frac{1}{\frac{y^2}{b^2}+1}\right)^{-q} \left(\left(\frac{y}{b}\right)^a+1\right)^{-q-1}}{b}
         \end{align*}
 
+        \homeworkSection{c.)}
+
         When $ 0 < a < 1$, the hazard function is U shaped. This means that as y increases so does the value of the hazard function. With $a = 1$ The function is still U shaped, but less so. See Figure ~\ref{fig:b12Haz}.
 
+        \qed
+
       }
-                \begin{figure}[h]
+                \begin{figure}[!h]
              \includegraphics[width=\linewidth, height=4in]{Graphics/b12Haz.pdf}
              \caption{Hazard function for the Burr 12 distribution with 2 different values for $a$ and $b = q = 1$.}
              \label{fig:b12Haz}
         \end{figure}
 
-        \qed
+
   \end{homeworkProblem}
 
 % Problem 13
@@ -414,8 +433,8 @@
       \problemAnswer{ % Answer
 
         \begin{itemize}
-            \item For the Gamma distribution, when $p < 1$, the shape is U, when $p >1$ the shape is inverse U.
-            \item The Weibull distrubition can only be U shaped or increasing.
+            \item For the Gamma distribution, when $p < 1$, the shape is decreasing, and when $p >1$ the shape increasing
+            \item The Weibull distribution hazard function is increasing when $ a > 1$ and decreasing when $ a < 1$
             \item For the exponential distribution, the hazard function can only be constant
         \end{itemize}
 
@@ -435,8 +454,8 @@
         \begin{itemize}
             \item $z = y^2 \rightarrow y = \sqrt(z)$
             \item $\fracpd{y}{z} = \frac{1}{2 \sqrt{y}}$
-            \item $f(g^{-1}(z) = \lognpdf{\sqrt{z}} $
-            \item $h(z) = \lognpdf{\sqrt{z}}  \frac{1}{2 \sqrt{z}} = \frac{1}{2 z \sqrt{2 \pi} } e^{- \frac{(1/2 \log(z) - \mu)^2}{2 \sigma^2}} = \frac{1}{2 z \sqrt{2 \pi} } e^{- \frac{ (1/4) (\log(z) - 2 \mu)^2}{2 \sigma^2}} =  \frac{e^{-\frac{(\log (z)-2 \mu )^2}{8 \sigma ^2}}}{2 \sqrt{2 \pi } \sigma z} $
+            \item $f(g^{-1}(z)) = \lognpdf{\sqrt{z}} $
+            \item $h(z) = \lognpdf{\sqrt{z}}  \frac{1}{2 \sqrt{z}} = \frac{1}{2 z \sigma \sqrt{2 \pi} } e^{- \frac{(1/2 \log(z) - \mu)^2}{2 \sigma^2}} = \frac{1}{2 z \sigma \sqrt{2 \pi} } e^{- \frac{ (1/4) (\log(z) - 2 \mu)^2}{2 \sigma^2}} =  \frac{e^{-\frac{(\log (z)-2 \mu )^2}{8 \sigma ^2}}}{2 \sqrt{2 \pi } \sigma z} $
             \item The above is distributed $LN(2 \mu, 4 \sigma^2) $
         \end{itemize}
 
@@ -526,11 +545,14 @@
       \vspace{.2in}
 
       \problemAnswer{ % Answer
+        \homeworkSection{a.)}
         To demonstrate part (a) I will just expand out the part we are given and show that it is equivalent to the quadratic form we started with.
 
         \begin{align*}
             \left(\begin{smallmatrix} x_1 & x_2 \end{smallmatrix}\right) \left(\begin{smallmatrix} 2 & 2 \\ 2 & 5/2 \end{smallmatrix}\right) \left(\begin{smallmatrix} x_1 \\ x_2 \end{smallmatrix}\right)  + \left(\begin{smallmatrix} x_1 & x_2 \end{smallmatrix}\right)  \left(\begin{smallmatrix} 1 \\ 3 \end{smallmatrix}\right) = \left(\begin{smallmatrix} x_1 & x_2 \end{smallmatrix}\right) \left(\begin{smallmatrix} 2 x_1+2 x_2 \\ 2 x_1+\frac{5 x_2}{2} \end{smallmatrix}\right) + x_1 + 3 x_2 = 2x_1^2 + (5/2)x_2^2 + 4x_1x_2 + x_1 + 3x_2
         \end{align*}
+
+        \homeworkSection{b.)}
 
         The derivative of the quadratic form is $\fracpd{g(X)}{X} = 2\left(\begin{smallmatrix} 2 & 2 \\ 2 & 5/2 \end{smallmatrix}\right) \left(\begin{smallmatrix} x_1 \\ x_2 \end{smallmatrix}\right)  + \left(\begin{smallmatrix} 1 \\ 3 \end{smallmatrix}\right)$. To find the optimum I will set this equal to zero and solve for $X$.
 
@@ -546,6 +568,7 @@
             \left(\begin{smallmatrix} x_1 \\ x_2  \end{smallmatrix}\right) = \left(\begin{smallmatrix}  7/4 \\ -2 \end{smallmatrix}\right)
         \end{align*}
 
+        \homeworkSection{c.)}
         Now I will look at second order conditions: $\fracpd{^2G(X)}{X^2} = \left(\begin{smallmatrix} 4 & 4 \\ 4 & 5 \end{smallmatrix}\right)$. It can be shown that the eigen values for this matrix are $ \frac{1}{2} (9 \pm \sqrt{65})$, which are both positive. This means the matrix is positive definite and the optimum I found was a minimum. \qed
       }
   \end{homeworkProblem}
@@ -571,29 +594,93 @@
 
 % Problem 20
   \begin{homeworkProblem}
-      \textbf{Let $y_i$ be iid as $N(0, \sigma ^2)$ or in other words $Y \sim N(0, \sigma^2 I_n)$ \\ \\ (a) Determine the distribution of $\bar{Y}  = \sum_{t=1}^n \frac{y_t}{n}$ \\ (b) Demonstrate that $A$ is idempotent. \\ (c) Verify that trace$(A) = n - 1$ \\ (d) Demonstrate that hte distribution of $s^2(n-1) / \sigma^2$ is $\chi^2(n-1)$ \\ (e) Verify that $Y$ and $s^2$ are independently distributed \\ (f) What is the distribution of $\left( \frac{\frac{\bar{Y} - 0 }{\sigma /n}}{\left(\frac{s^2(n-1)}{\sigma^2} / (n-1) \right)^{1/2} } \right) = \frac{\bar{Y} - 0}{s / n}$}
+      \textbf{Let $y_i$ be iid as $N(0, \sigma ^2)$ or in other words $Y \sim N(0, \sigma^2 I_n)$ \\ \\
+      (a) Determine the distribution of $\bar{Y}  = \sum_{t=1}^n \frac{y_t}{n}$ \\
+      (b) Demonstrate that $A$ is idempotent. \\
+      (c) Verify that trace$(A) = n - 1$ \\
+      (d) Demonstrate that the distribution of $s^2(n-1) / \sigma^2$ is $\chi^2(n-1)$ \\
+      (e) Verify that $Y$ and $s^2$ are independently distributed \\
+      (f) What is the distribution of $\left( \frac{\frac{\bar{Y} - 0 }{\sigma /n}}{\left(\frac{s^2(n-1)}{\sigma^2} / (n-1) \right)^{1/2} } \right) = \frac{\bar{Y} - 0}{s / n}$ ?}
       \vspace{.2in}
 
       \problemAnswer{ % Answer
-        answer
+      \homeworkSection{a.)}
+        The first 'useful theorem' states that if $Y \sim N(\mu, \Sigma)$, then $Z = AY \sim(B \mu, B\Sigma B')$.  Using this theory it is easy to see that $\bar{Y} \sim N((\frac{1}{n}) i' \mu_y, (\frac{1}{n} )i' \Sigma_Y (\frac{1}{n} )i) = N(0, (\frac{\sigma^2}{n^2}) i'i)$
+
+        \homeworkSection{b.)}
+
+        We are given the following:
 
         \begin{align*}
-            x
+            s^2 = \sum (y_i - \bar{Y})^2 / (n - 1) = \dots = \frac{Y'AY} {(n-1)}, \quad \text{ where } A = I - \frac{1}{n} ii'
         \end{align*}
+
+        To show that $A$ is idempotent we simply need to show that $AA = A$. I do this below
+
+        \begin{align*}
+            AA &= \left( I - \frac{1}{n} ii' \right) \left( I - \frac{1}{n} ii'\right) \\
+            &= II - \frac{1}{n} I ii' - \frac{1}{n}ii' I + \frac{1}{n^2} (ii')(ii') \\
+            &= I - \frac{2}{n} - \frac{1}{n^2} n ii' \\
+            &= I - \frac{2}{n} ii' - \frac{1}{n} ii' \\
+             &= I - \frac{1}{n} ii'
+        \end{align*}
+
+        \homeworkSection{c.)}
+
+        Because the $Tr(A)$ is the sum of the diagonal entries, it is going to be equal to $n (1) - \left(\frac{1}{n} \right) (n (1)) = n - 1$. The first part comes from $I$ and the second part comes from the fact that every entry of ($\left( \frac{1}{n} \right) ii'$) is equal to $\left( \frac{1}{n}\right)$.
+
+        \homeworkSection{d.)}
+
+        On to part d: Let $\hat{s} \equiv s^2 (n-1) / \sigma^2 = \left(\frac{Y'AY}{(n-1)}\right) \frac{(n-1)}{\sigma^2} = Y'AY / \sigma^2$. The 2nd useful theorem says that if $Y \sim N(0, I)$ and $A$ is a symmetric idempotent matrix, then $Y'AY \sim \chi^2(m)$, where m is equal to $Tr(A)$. We don't quite have that, but if you remember $Y \sim N(0, \sigma^2 I)$, so you when you take into account the $\left(\frac{1}{\sigma^2} \right)$ in $\hat{s}$, we can cancel the $\sigma^2$ terms and we can apply the 2nd useful theorem. We have shown that $A$ is idempotent and it is clearly symmetric. We have also shown that the $Tr(A) = n - 1$, therefore $\hat{s} \sim \chi^2(n -1)$
+
+        \homeworkSection{e.)}
+
+        For part e we will appeal to the 4th useful theorem, which states that if $Y \sim N(0, I)$ and L is a ($kxn$) matrix of rank $k$, then $LY$ and the idempotent quadratic form $Y'AY$ are independently distributed if $LA = 0$. In the context of our problem, $A = I - \left(\frac{1}{n} \right) ii'$ and $L = \left( \frac{1}{n} \right) i'$. We can now apply this theorem =:
+
+        \begin{align*}
+            AL &= \left[  I - \left(\frac{1}{n} \right) ii' \right] \left[ \left( \frac{1}{n} \right) i' \right] \\
+            &= I \left( \frac{1}{n} \right) i' - \left(\frac{1}{n} \right) ii' \left( \frac{1}{n} \right) i'\\
+            &= \left( \frac{1}{n} \right) i' - \left( \frac{1}{n^2}\right) n i' \\
+            &= \left( \frac{1}{n} \right) i' - \left( \frac{1}{n} \right) i' \\
+            &= 0
+        \end{align*}
+
+        \homeworkSection{f.)}
+
+        From point (4) of the distribution theory for the normal we learn that $\frac{N(0, 1)}{\sqrt{\chi^2(d) / d}} \sim t(d)$. Applying this to our problem, we already know that $\left(\frac{s^2(n-1)}{\sigma^2} / (n-1) \right)^{1/2}  = \sqrt{\chi^2(n - 1) / (n-1)}$. This is the denominator of the relation from point (4).  We also know that $\bar{Y} \sim N(0, \left( \frac{\sigma^2}{n^2}\right) i'i$, which means that $\frac{\bar{Y}}{\sigma / n} = \frac{\bar{Y - 0}n}{\sigma} \sim N\left(\frac{n}{\sigma} 0, \left( \frac{n^2}{\sigma^2} \right) \left( \frac{\sigma^2}{n^2} \right) i'i \right) = N(0, i'i)$. This is analogous to the $N(0, 1)$ in the numerator for part (4) of the distribution theory section. All of this means that $\frac{\bar{Y} - 0}{s /n} \sim t(n - 1)$. \qed
+
       }
   \end{homeworkProblem}
 
 % Problem 21
   \begin{homeworkProblem}
-      \textbf{The mean and variable of a Gamma are given by $\beta p \text{ and } \beta^2 p$, respectively. Let the corresponding sample moments by denoted by $\bar{Y} \text{ and } s^2$ \\ \\ (a) Derive the method of moments estimators of the parameters $\beta \text{ and } p$ \\ (b) Derive the method of moments estimator of the parameter $\beta$ in an exponential distribution. \\ (c) Using two sample moments discuss how you could use the generalized method of moments estimation to estimate the parameter $\beta$ in an exponential distribution.}
+      \textbf{The mean and variance of a Gamma are given by $\beta p \text{ and } \beta^2 p$, respectively. Let the corresponding sample moments by denoted by $\bar{Y} \text{ and } s^2$ \\ \\ (a) Derive the method of moments estimators of the parameters $\beta \text{ and } p$ \\ (b) Derive the method of moments estimator of the parameter $\beta$ in an exponential distribution. \\ (c) Using two sample moments discuss how you could use the generalized method of moments estimation to estimate the parameter $\beta$ in an exponential distribution.}
       \vspace{.2in}
 
       \problemAnswer{ % Answer
-        answer
+        \homeworkSection{a}
+
+        To use the method of moments you simply set the theoretical moments equal to the sample moments and solve for parameters. Doing that in this case gives this system of two equations: $\bar{Y} = \beta p \text{ and } s^2 = \beta^2 p$. I will solve them below by making the substitution $p = \frac{\bar{Y}}{\beta}$
 
         \begin{align*}
-            x
+            s^2 = \beta^2 p = \beta ^2 \frac{\bar{Y}}{\beta} = \beta \bar{Y} \rightarrow \hat{\beta} = \frac{s^2}{\bar{Y}}
         \end{align*}
+
+        \begin{align*}
+          \hat{p} = \frac{\bar{Y}}{\beta} = \frac{\bar{Y}}{s^2 / \bar{Y}} = \left(\frac{\bar{Y}}{s} \right) ^2
+        \end{align*}
+
+        \homeworkSection{b}
+
+        The MOM estimator for $\beta$ in an exponential distribution is just $\hat{\beta} = \bar{Y}$
+
+        \homeworkSection{c}
+
+        To use GMM we need to create a vector function $g(\theta)$ that is simply equal to the difference between each sample moment and its theoretical counterpart. We would then solve the optimization problem $\min_{\theta} g(\theta)' W g(\theta)$, where $W$ is some weighting matrix. For example, if you wanted to place equal importance on each moment $W$ would be the identity matrix. \\
+
+        To do this for the exponential distribution, we would say that $g(\theta) = \left(\begin{smallmatrix} (\bar{Y} - \beta) & (s^2 - \beta^2) \end{smallmatrix}\right)$. The optimal $W$ in this case is found by the expression $W^{-1} = \text{Var}(g(\theta))$.
+
+
       }
   \end{homeworkProblem}
 
