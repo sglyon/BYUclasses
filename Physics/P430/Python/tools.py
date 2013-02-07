@@ -214,9 +214,72 @@ def solve_plot_eig(A, B, T, mu, x=None):
             break
 
 
+def stlf():
+    """
+    Python equivalent of the code found in stlf.m
+    """
+    import matplotlib.pyplot as plt
+    # Staggered Leapfrog Script Template
 
-def whos(var):
-    """
-    A function comparable to MatLab's whos function.
-    """
-    the_type = type(var)
+    # Set the values for parameters
+    c = 2  # wave speed
+
+    # build a cell-centered grid with N=200 cells
+    # on the interval x=0 to x=L, with L=1
+    L = 1
+    x = make_grid(0, L, 200, grid_type='cell_center_ghost')
+
+    # define the initial displacement and velocity vs. x
+    y = np.exp(- (x - L / 2) ** 2 * 160 / L ** 2) - \
+        np.exp(- (0 - L / 2) ** 2 * 160 / L ** 2)
+    vy = np.zeros_like(x)
+
+    # Choose a time step (Suggest that it is no larger than taulim)
+    taulim = h / c
+    print(' Courant time step limit %f \n' % taulim)
+    tau = raw_input('Enter the time step: ')
+
+    # Get the initial value of yold from the initial y and vy
+
+    # Apply the boundary conditions for yold(1) and yold(N+2)
+
+    # plot the initial conditions and pause to look at them
+    plt.figure()
+    plt.subplot(211)
+    plt.plot(x, y)
+    plt.xlabel('x')
+    plt.ylabel('y(x,0)')
+    plt.title('Initial Displacement')
+    plt.subplot(212)
+    plt.plot(x, vy)
+    plt.xlabel('x')
+    plt.ylabel('v_y(x,0)')
+    plt.title('Initial Velocity')
+    # pause  TODO: fix this pause call
+
+    # Choose how long to run and when to plot
+    tfinal = raw_input(' Enter tfinal:')
+    skip = raw_input(' Enter # of steps to skip between plots (faster):')
+    nsteps = tfinal / tau
+
+    # here is the loop that steps the solution along
+
+    plt.figure()  # open a new frame for the animation
+    for n in range(nsteps):
+        time = n * tau  # compute the time
+
+        # Use leapfrog and the boundary conditions to load ynew with y
+        # at the next time step using y and yold, i.e., ynew(2:N+1)=...
+        # Be sure to use colon commands so it will run fast.
+
+        #update yold and y
+        yold = yy = ynew
+
+    # make plots every skip time steps
+        if n % skip == 0:
+            plt.plot(x, y, 'b-')
+            plt.xlabel('x')
+            plt.ylabel('y')
+            plt.title('Staggered Leapfrog Wave: time %.2f' % time)
+            plt.axis([x.min(), x.max(), -2, 2])
+            pause(.1)  # TODO: figure out how to use this
