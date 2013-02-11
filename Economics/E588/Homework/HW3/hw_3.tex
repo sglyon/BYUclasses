@@ -1,0 +1,120 @@
+%%% Local Variables:
+%%% mode: latex TeX-master: t End:
+
+%% Preamble
+\documentclass{article}
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[pdftex]{graphicx}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{hyperref} % Used to add links to websites to the pdf
+\hypersetup{colorlinks,linkcolor=cyan,urlcolor=blue,citecolor=black} % From Rick
+\usepackage{xifthen} \usepackage{booktabs} \usepackage{mdframed}
+
+% Margins
+\topmargin=-0.45in \evensidemargin=0in \oddsidemargin=0in
+\textwidth=6.5in \textheight=9.0in \headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy} \lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassInstructor)
+  \hmwkTitle} % Top center header
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%% DOCUMENT STRUCTURE COMMANDS
+% Header and footer for when a page split occurs within a problem
+% environment
+\newcommand{\enterProblemHeader}[1]{ \nobreak\extramarks{#1}{#1
+    continued on next page\ldots}\nobreak \nobreak\extramarks{#1
+    (continued)}{#1 continued on next page\ldots}\nobreak }
+
+% Header and footer for when a page split occurs between problem
+% environments
+\newcommand{\exitProblemHeader}[1]{ \nobreak\extramarks{#1
+    (continued)}{#1 continued on next page\ldots}\nobreak
+  \nobreak\extramarks{#1}{}\nobreak }
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem
+\arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+
+  \stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+
+  \renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+
+  \section{\homeworkProblemName} % Make a section in the document with the custom problem count
+
+  \enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+  \exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+  \noindent \begin{mdframed} #1
+
+  \end{mdframed} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+
+  \renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+
+  \subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+  \enterProblemHeader{\homeworkProblemName\
+    [\homeworkSectionName]} % Header and footer within the environment
+}{
+  \enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+
+% NAME AND CLASS SECTION
+\newcommand{\hmwkTitle}{Assignment\ \#3 - General Regression
+  Model} % Assignment title
+\newcommand{\hmwkDueDate}{Tuesday,\ January\ 15,\ 2012} % Due date
+\newcommand{\hmwkClass}{Econ\ 588} % Course/class
+\newcommand{\hmwkClassInstructor}{McDonald} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Spencer Lyon} % Your name
+
+% TITLE PAGE
+\title{ \vspace{2in}
+  \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+  \normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+  \vspace{0.1in}\large{\textit{\hmwkClassInstructor}} \vspace{3in} }
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+\begin{document}
+
+% Problem 1
+\begin{homeworkProblem}
+  \textbf{New problem}
+
+  \problemAnswer{
+    This is my answer
+
+  }
+
+\end{homeworkProblem}
+
+
+\end{document}

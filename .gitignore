@@ -12,3 +12,6 @@ BYUclasses.sublime-project
 *.bbl
 *.log
 *.pyc
+_region_.*
+*.prv
+auto
