@@ -1,0 +1,4 @@
+Notes for 582 lectures
+
+* Copenhagen Lectures
+** Digression on Brownian motion and geometric Brownian Motions
