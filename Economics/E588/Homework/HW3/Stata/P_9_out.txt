@@ -1,0 +1,165 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\lyon4\Documents\Econ 588\Homework\HW3\Stata\P_9.txt
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}14 Feb 2013, 15:03:35
+
+{com}. do "C:\Users\lyon4\Documents\Econ 588\Homework\HW3\Stata\P3_9.do"
+{txt}
+{com}. * load the data
+. use "C:\Users\lyon4\Documents\Econ 588\Homework\HW3\Stata\Problem 9", clear
+{txt}
+{com}. 
+. * Do the commands from the homework explanation
+. reg y d1 d2 d3
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}      11
+{txt}{hline 13}{char +}{hline 30}           F(  3,     7) ={res}    0.25
+    {txt}   Model {char |} {res} 210.166667     3  70.0555556           {txt}Prob > F      = {res} 0.8558
+    {txt}Residual {char |} {res} 1925.83333     7  275.119048           {txt}R-squared     = {res} 0.0984
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res}-0.2880
+    {txt}   Total {char |} {res}       2136    10       213.6           {txt}Root MSE      = {res} 16.587
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}           y{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}d1 {c |}{col 14}{res}{space 2}-10.33333{col 26}{space 2} 13.54299{col 37}{space 1}   -0.76{col 46}{space 3}0.470{col 54}{space 4}-42.35743{col 67}{space 3} 21.69076
+{txt}{space 10}d2 {c |}{col 14}{res}{space 2}     -3.5{col 26}{space 2} 15.14153{col 37}{space 1}   -0.23{col 46}{space 3}0.824{col 54}{space 4}-39.30402{col 67}{space 3} 32.30402
+{txt}{space 10}d3 {c |}{col 14}{res}{space 2}-9.333333{col 26}{space 2} 13.54299{col 37}{space 1}   -0.69{col 46}{space 3}0.513{col 54}{space 4}-41.35743{col 67}{space 3} 22.69076
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}       31{col 26}{space 2} 9.576343{col 37}{space 1}    3.24{col 46}{space 3}0.014{col 54}{space 4} 8.355547{col 67}{space 3} 53.64445
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+. xtgls y x, i(code)
+
+{txt}Cross-sectional time-series FGLS regression
+
+Coefficients:  {res}generalized least squares
+{txt}Panels:        {res}homoskedastic
+{txt}Correlation:   {res}no autocorrelation
+
+{txt}Estimated covariances{col 28}= {res}        1{txt}{col 49}Number of obs{col 68}= {res}       11
+{txt}Estimated autocorrelations{col 28}= {res}        0{txt}{col 49}Number of groups{col 68}= {res}        4
+{txt}Estimated coefficients{col 28}= {res}        2{txt}{col 49}Obs per group: min{col 68}= {res}        2
+{txt}{col 64}avg{col 68}= {res}     2.75
+{txt}{col 64}max{col 68}= {res}        3
+{txt}{col 49}Wald chi2({res}1{txt}){col 68}= {res}    15.36
+{txt}Log likelihood{col 28}= {res}-39.78067{txt}{col 49}Prob > chi2{col 68}= {res}   0.0001
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}           y{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 11}x {c |}{col 14}{res}{space 2} 1.900053{col 26}{space 2} .4848619{col 37}{space 1}    3.92{col 46}{space 3}0.000{col 54}{space 4} .9497408{col 67}{space 3} 2.850365
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 8.935918{col 26}{space 2} 4.916466{col 37}{space 1}    1.82{col 46}{space 3}0.069{col 54}{space 4}-.7001789{col 67}{space 3} 18.57201
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. 
+. xtgls y x d1 d2 d2, i(code)
+{txt}note: d2 omitted because of collinearity
+
+Cross-sectional time-series FGLS regression
+
+Coefficients:  {res}generalized least squares
+{txt}Panels:        {res}homoskedastic
+{txt}Correlation:   {res}no autocorrelation
+
+{txt}Estimated covariances{col 28}= {res}        1{txt}{col 49}Number of obs{col 68}= {res}       11
+{txt}Estimated autocorrelations{col 28}= {res}        0{txt}{col 49}Number of groups{col 68}= {res}        4
+{txt}Estimated coefficients{col 28}= {res}        4{txt}{col 49}Obs per group: min{col 68}= {res}        2
+{txt}{col 64}avg{col 68}= {res}     2.75
+{txt}{col 64}max{col 68}= {res}        3
+{txt}{col 49}Wald chi2({res}3{txt}){col 68}= {res}    21.31
+{txt}Log likelihood{col 28}= {res}-38.66035{txt}{col 49}Prob > chi2{col 68}= {res}   0.0001
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}           y{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 11}x {c |}{col 14}{res}{space 2} 2.125779{col 26}{space 2} .4740539{col 37}{space 1}    4.48{col 46}{space 3}0.000{col 54}{space 4}  1.19665{col 67}{space 3} 3.054908
+{txt}{space 10}d1 {c |}{col 14}{res}{space 2} -5.31237{col 26}{space 2}  5.74977{col 37}{space 1}   -0.92{col 46}{space 3}0.356{col 54}{space 4}-16.58171{col 67}{space 3} 5.956972
+{txt}{space 10}d2 {c |}{col 14}{res}{space 2}-10.52512{col 26}{space 2} 7.132284{col 37}{space 1}   -1.48{col 46}{space 3}0.140{col 54}{space 4}-24.50414{col 67}{space 3} 3.453903
+{txt}{space 10}d2 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 7}_cons {c |}{col 14}{res}{space 2} 10.38999{col 26}{space 2} 4.864028{col 37}{space 1}    2.14{col 46}{space 3}0.033{col 54}{space 4} .8566701{col 67}{space 3} 19.92331
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. 
+. xtreg y x, fe i(code)
+
+{txt}Fixed-effects (within) regression               Number of obs      = {res}       11
+{txt}Group variable: {res}code                            {txt}Number of groups   = {res}        4
+
+{txt}R-sq:  within  = {res}0.6489                         {txt}Obs per group: min = {res}        2
+{txt}       between = {res}0.2529                                        {txt}avg = {res}      2.8
+{txt}       overall = {res}0.5826                                        {txt}max = {res}        3
+
+                                                {txt}F({res}1{txt},{res}6{txt})             = {res}    11.09
+{txt}corr(u_i, Xb)  = {res}-0.2172                        {txt}Prob > F           =    {res}0.0158
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}           y{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 11}x {c |}{col 14}{res}{space 2} 2.075862{col 26}{space 2} .6233781{col 37}{space 1}    3.33{col 46}{space 3}0.016{col 54}{space 4} .5505109{col 67}{space 3} 3.601213
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  7.44953{col 26}{space 2} 6.166182{col 37}{space 1}    1.21{col 46}{space 3}0.272{col 54}{space 4}-7.638574{col 67}{space 3} 22.53763
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+     sigma_u {c |} {res} 5.4777527
+     {txt}sigma_e {c |} {res} 10.615746
+         {txt}rho {c |} {res} .21027196{txt}   (fraction of variance due to u_i)
+{hline 13}{c BT}{hline 64}
+F test that all u_i=0:     F({res}3{txt}, {res}6{txt}) = {res}    0.64                {txt}Prob > F = {res}0.6182
+{txt}
+{com}. 
+. xtreg y x, be i(code)
+
+{txt}Between regression (regression on group means)  Number of obs      = {res}       11
+{txt}Group variable: {res}code                            {txt}Number of groups   = {res}        4
+
+{txt}R-sq:  within  = {res}0.6489                         {txt}Obs per group: min = {res}        2
+{txt}       between = {res}0.2529                                        {txt}avg = {res}      2.8
+{txt}       overall = {res}0.5826                                        {txt}max = {res}        3
+
+                                                {txt}F({res}1{txt},{res}2{txt})             = {res}     0.68
+{txt}sd(u_i + avg(e_i.))= {res} 5.184962                  {txt}Prob > F           =    {res}0.4971
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}           y{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 11}x {c |}{col 14}{res}{space 2} .8608597{col 26}{space 2} 1.046335{col 37}{space 1}    0.82{col 46}{space 3}0.497{col 54}{space 4}-3.641156{col 67}{space 3} 5.362875
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 17.60407{col 26}{space 2} 9.599326{col 37}{space 1}    1.83{col 46}{space 3}0.208{col 54}{space 4}-23.69849{col 67}{space 3} 58.90664
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. 
+. xtreg y x, re i(code)
+{res}
+{txt}Random-effects GLS regression                   Number of obs      = {res}       11
+{txt}Group variable: {res}code                            {txt}Number of groups   = {res}        4
+
+{txt}R-sq:  within  = {res}0.6489                         {txt}Obs per group: min = {res}        2
+{txt}       between = {res}0.2529                                        {txt}avg = {res}      2.8
+{txt}       overall = {res}0.5826                                        {txt}max = {res}        3
+
+                                                {txt}Wald chi2({res}1{txt})       = {res}    12.56
+{txt}corr(u_i, X)   = {res}0{txt} (assumed)                    Prob > chi2        =    {res}0.0004
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}           y{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 11}x {c |}{col 14}{res}{space 2} 1.900053{col 26}{space 2}  .536035{col 37}{space 1}    3.54{col 46}{space 3}0.000{col 54}{space 4} .8494434{col 67}{space 3} 2.950662
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 8.935918{col 26}{space 2} 5.435358{col 37}{space 1}    1.64{col 46}{space 3}0.100{col 54}{space 4}-1.717188{col 67}{space 3} 19.58902
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+     sigma_u {c |} {res}         0
+     {txt}sigma_e {c |} {res} 10.615746
+         {txt}rho {c |} {res}         0{txt}   (fraction of variance due to u_i)
+{hline 13}{c BT}{hline 64}
+
+{com}. 
+. 
+{txt}end of do-file
+
+{com}. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\lyon4\Documents\Econ 588\Homework\HW3\Stata\P_9.txt
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}14 Feb 2013, 15:03:42
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

@@ -1,0 +1,157 @@
+%%% Preamble
+  \documentclass[a4paper, 11pt]{article}
+  \usepackage[T1]{fontenc}
+  \usepackage{fourier}
+  \usepackage[english]{babel}
+  \usepackage[protrusion=true,expansion=true]{microtype}
+  \usepackage{amsmath,amsfonts,amsthm}
+  \usepackage[pdftex]{graphicx}
+  \usepackage{url}
+  \usepackage{setspace}
+  \usepackage{vmargin}
+  \setmarginsrb {0.79in}  % left margin
+                {1.00in}   % top margin
+                {0.79in}   % right margin
+                {0.79in}  % bottom margin
+                {  20pt}   % head height
+                {0.25in}   % head sep
+                {   9pt}    % foot height
+                { 0.3in}    % foot sep
+
+  \usepackage{sectsty}
+  \allsectionsfont{\centering \normalfont\scshape}
+
+  % Bibliography
+  \usepackage{natbib}
+  \bibliographystyle{aer}
+  \setlength{\parindent}{0.25in}
+
+
+  %% Added by me
+  \usepackage{pdfpages}
+  \usepackage{booktabs}
+  \usepackage{wrapfig}
+  \usepackage{float}
+  \usepackage{pdfsync}
+  \usepackage{fancyhdr}
+  \usepackage{multicol}
+  \newcommand\ve{\varepsilon} % From Rick
+  \theoremstyle{definition} % From Rick
+  \newtheorem{definition}{Definition} % Number definitions on their own
+  \usepackage{hyperref}  % From Rick
+  \hypersetup{colorlinks,linkcolor=cyan,urlcolor=blue,citecolor=black}
+
+  %%% Equation and float numbering
+  \numberwithin{equation}{section}
+  \numberwithin{table}{section}
+
+
+  %% EVEYTHING BELOW NEEDS TO BE CHANGED!
+  %% Setup default header
+  \fancypagestyle{mainDoc}{
+      \fancyhead[L]{\small GARCH - ARIMA Yield Curve}
+      \fancyhead[R]{\thepage}
+      \fancyfoot{} % no footer
+      \renewcommand{\headrulewidth}{.5pt}
+      \renewcommand{\footrulewidth}{0pt}
+      \setlength{\headheight}{13.6pt}
+  }
+
+  %%% Maketitle metadata
+  \newcommand{\horrule}[1]{\rule{\linewidth}{#1}}     % Horizontal rule
+
+  % Set title here
+  \newcommand \thetitle{Risk Analysis Using GARCH and ARIMA Models}
+
+  \title{
+    \vspace{-.6in}
+    \usefont{OT1}{bch}{b}{n}
+    \normalfont \normalsize \textsc{ } \\ [25pt]
+    \horrule{0.5pt}
+    \huge \thetitle \\
+    \horrule{2pt}
+  }
+
+  \author{
+    Spencer Lyon
+    % \thanks{}
+  }
+
+  \date{
+  \normalfont \normalsize
+  \today \\[-4pt] \normalsize
+  }
+
+%% Title Page
+\begin{document}
+\begin{titlepage}
+  \maketitle
+  \thispagestyle{empty}
+  \begin{center}
+
+  \includegraphics{Logo} \\ [0.8cm] % University/department logo - uncomment to place it
+
+  Macroeconomics and Computational Laboratory (MCL) \\[0.5cm] % Research group name
+  BYU Economics\\[1.5cm]  % and department name
+
+  % \large{\textit{Abstract}}
+  \begin{abstract}
+      \normalsize
+      \setstretch{1.75}
+        Put an awesome abstract here.
+  \end{abstract}
+  \end{center}
+  \tableofcontents
+\end{titlepage}
+
+%% Main document
+\newpage
+\pagenumbering{arabic}  % Use arabic numbers now
+\setcounter{page}{1}  % Reset page numbering
+
+\begin{center}
+\huge{\thetitle}  % Make sure the newcommand \thetitle is defined above
+\rule{\linewidth}{.1pt}
+\end{center}
+
+\setstretch{1.75}
+
+\section{Introduction} \label{sec:intro}
+  \thispagestyle{empty}
+  \pagestyle{mainDoc}
+
+  One longstanding phenomenon economists see in financial data is known as the equity premium puzzle \citep{Prescott:1985}. The heart of the equity premium puzzle can be summarized one of two equivalent questions: why is demand for risk free government bonds so high when returns on those assets are so low? The second question could be stated as follows:  why is demand for stocks, and hence stock prices, so low despite the relatively high expected returns
+
+  Over the years economists have posed many possible explanations for why the equity puzzle premium (EPP) exists, or even if it exists. Modern economics is based largely on rational expectations and risk aversion. An appeal to these theories to explain the EPP seems natural and intuitive; however, this type of explanation falls very short. To put this disparity in perspective \cite{Mankiw:1991} pointed out that in order for risk aversion to explain the EPP, investors would have to be indifferent between taking a sure \$51,209 or having 50\% at winning either \$50,000 and \$100,000. Other common explanations have generally been rooted in tax policy, market failures, liquidity constraints, and the implied volatility of the underlying equities.
+
+  The focus of this paper will be analyzing the ability of ARIMA and (G)ARCH models for identifying and explaining the equity premium puzzle. ARMIA methods have been around for some time and have held a significant foothold in the finance literature.  An ARIMA model allows the economist to model the effect of historical moving averages on current values. This flexibility is particular appealing to someone trying to model financial time series because things like seasonality, momentum, and market lags and/or inefficiencies lead to these moving averages storing a lot of relevant data.
+
+  ARCH and GARCH models are, in a sense, very similar to ARIMA models. Instead of trying to model the effect of changing moving averages, (G)ARCH models attempt to capture changes in the variance of underlying parameters. It is immediately apparent the trained financial eye that focusing on the changes in expected variance might actually be more instructive than moving averages when applied to forecasting models.
+
+  The remainder of this paper will be structured as follows: Section ~\ref{sec:estimation} will discuss ARIMA and (G)ARCH models as well as the data I am using, Section~\ref{sec:results} will show the results of my analysis, and Section~\ref{sec:conclusion} will have a few concluding thoughts and ideas for further research.
+
+\section{Estimation} \label{sec:estimation}
+
+  \subsection{The Data} \label{sub:the_data}
+
+    The data for this paper is quite simple. To mimic a risk free asset I have gathered daily data for the price of both 3-month and 10-year US treasury bills. I obtained this data from the St. Louis Federal reserve under the data set names DGS3MO and DGS10 for the 3-month and 10-year maturities, respectively. The units on these data sets are percent returns, the data is not seasonally adjusted, and the data was sampled at a daily frequency.
+
+    To model risky assets I chose to use the daily returns on the S\&P 500 stock market index.  The units on this data set is US dollars (\$) and I retrieved the data from Yahoo! Finance. The S\&P 500 was a natural choice because it is a very common metric used in finance to measure the overall movement of the stock market. Because some explaination of the EPP refer to the volatility of stocks I also chose to use the VIX, also from Yahoo! Finance. \footnote{The VIX is constructed using the implied volatilities on call and put options for the stocks making up the S\&P 500. It is the generally accepted measure of overall stock market volatility.}
+
+    For the most part, these four time series had observations on the same days: all of them are reported for week-days only. However, the big difference is that the data from Yahoo! Finance is only reported on trading days, while the data from FRED is reported every Monday through Friday, including most holidays. To overcome this I simply dropped observations for days where FRED reported data, but the stock markets were closed. In Table~\ref{tab:describe} I have included a summary of this data.
+
+    \input{describe_data}
+
+  \subsection{ARIMA Models} \label{sub:arima}
+
+  \subsection{(G)ARCH Models} \label{sub:garch}
+
+\section{Results} \label{sec:results}
+
+\section{Conclusion} \label{sec:conclusion}
+
+\newpage
+
+\bibliography{EPP_TSA}
+
+\end{document}

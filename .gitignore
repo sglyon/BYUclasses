@@ -1,5 +1,6 @@
 BYUclasses.sublime-workspace
 BYUclasses.sublime-project
+*.fls
 *.aux
 *.fdb_latexmk
 *.nav
@@ -16,3 +17,5 @@ _region_.*
 *.prv
 auto
 *.mp4
+*.dta
+*.smcl

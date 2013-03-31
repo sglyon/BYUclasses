@@ -36,7 +36,6 @@
   \rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
   \renewcommand\headrulewidth{0.4pt} % Size of the header rule
   \renewcommand\footrulewidth{0.4pt} % Size of the footer rule
-
   \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
   %%   DOCUMENT STRUCTURE COMMANDS
@@ -684,5 +683,70 @@
       }
   \end{homeworkProblem}
 
+  \begin{table}[ht]
+  \begin{center}
+    \begin{tabular}{c|r|l}
+    \toprule
+      a & b & c\\
+      \midrule
+      $1$ & $2$ & $3$\\
+      $4$ & hello & $\infty$\\
+    \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\begin{table}[ht]
+\begin{center}
+  \begin{tabular}{ccc}
+  \toprule
+  ab & b & c\\
+   \midrule
+  1 & 2 & 3.0\\
+  4 & hello & inf\\
+  \bottomrule
+  \end{tabular}
+\end{center}
+\end{table}
+
+
+\begin{table}[ht]
+  \begin{center}
+    \begin{tabular}{|ccc|}
+    \toprule
+      ab & b & c\\
+      \midrule
+      $1$ & $2$ & $3$\\
+      $4$ & hello & $\infty$\\
+    \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\begin{table}[ht]
+  \begin{center}
+    \begin{tabular}{rccc}
+    \toprule
+       & ab & b & c\\
+      \midrule
+      A & $1$ & $2$ & $3$\\
+      B & $4$ & hello & $\infty$\\
+    \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\begin{table}[ht]
+  \begin{center}
+    \begin{tabular}{rccc}
+    \toprule
+       & ab & b & c\\
+      \midrule
+      A & $1$ & $2$ & $3$\\
+      B & $4$ & hello & $\infty$\\
+    \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
 
 \end{document}
