@@ -43,13 +43,11 @@
 
   %%% Equation and float numbering
   \numberwithin{equation}{section}
-  \numberwithin{table}{section}
-
 
   %% EVEYTHING BELOW NEEDS TO BE CHANGED!
   %% Setup default header
   \fancypagestyle{mainDoc}{
-      \fancyhead[L]{\small GARCH - ARIMA Yield Curve}
+      \fancyhead[L]{\small GARCH - ARIMA EPP}
       \fancyhead[R]{\thepage}
       \fancyfoot{} % no footer
       \renewcommand{\headrulewidth}{.5pt}
@@ -138,11 +136,68 @@
 
     To model risky assets I chose to use the daily returns on the S\&P 500 stock market index.  The units on this data set is US dollars (\$) and I retrieved the data from Yahoo! Finance. The S\&P 500 was a natural choice because it is a very common metric used in finance to measure the overall movement of the stock market. Because some explaination of the EPP refer to the volatility of stocks I also chose to use the VIX, also from Yahoo! Finance. \footnote{The VIX is constructed using the implied volatilities on call and put options for the stocks making up the S\&P 500. It is the generally accepted measure of overall stock market volatility.}
 
-    For the most part, these four time series had observations on the same days: all of them are reported for week-days only. However, the big difference is that the data from Yahoo! Finance is only reported on trading days, while the data from FRED is reported every Monday through Friday, including most holidays. To overcome this I simply dropped observations for days where FRED reported data, but the stock markets were closed. In Table~\ref{tab:describe} I have included a summary of this data.
+    For the most part, these four time series had observations on the same days: all of them are reported for week-days only. However, the big difference is that the data from Yahoo! Finance is only reported on trading days, while the data from FRED is reported every Monday through Friday, including most holidays. To overcome this I simply dropped observations for days where FRED reported data, but the stock markets were closed. In Table~\ref{tab:describe} I have included a summary of this data and a simple plot of the data in Figure ~\ref{fig:alldata}.
 
-    \input{describe_data}
+    \setstretch{1.2}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=6in]{./Figures/all_data.eps}
+        \caption{\small Plot of the data used in this paper. Note that because the units are different and the value of the S\&P 500 is much larger than the percents on the T-bill data sets, I have divided each data set by its mean before plotting.}
+        \label{fig:alldata}
+    \end{figure}
+
+    \begin{table}[ht!]
+      \begin{center}
+      \label{tab:describe}
+        \begin{tabular}{r|ccccc}
+        \toprule
+           & DGS10  (\%)& DGS3MO  (\%)& SP500 (\$)& VIX (\$)\\
+          \midrule
+          \midrule
+          obs & $3305$ & $3305$ & $3305$ & $3305$\\
+          mean & $3.99311$ & $2.10994$ & $1210.33$ & $21.8055$\\
+          std & $1.14046$ & $2.01772$ & $187.527$ & $9.16702$\\
+          min & $1.43$ & $0$ & $676.53$ & $9.89$\\
+          25\% & $3.38$ & $0.15$ & $1095.45$ & $15.54$\\
+          50\% & $4.12$ & $1.59$ & $1214.91$ & $20.03$\\
+          75\% & $4.74$ & $3.85$ & $1357.98$ & $25.4$\\
+          max & $6.79$ & $6.42$ & $1569.19$ & $80.86$\\
+        \bottomrule
+        \end{tabular}
+        \caption{\small Summary of the data . All the data was sampled from 1/1/2000 to 3/28/2013. Note the rows with percent labels correspond to percentiles}
+      \end{center}
+    \end{table}
+    \setstretch{1.75}
 
   \subsection{ARIMA Models} \label{sub:arima}
+
+    Time series modeling is all about identifying time-varying trends in data and extrapolating those trends into the future with as little error as possible. One extremely general family of time series models is known as the ARIMA model, or autoregressive integrated moving average model. There are at least three roles an ARIMA model (or any forecasting model) can play:
+
+    \begin{enumerate}
+      \item By themselves to predict future values of a dependent variable
+      \item To predict the future value of an independent variable in an economic model
+      \item To estimate future values of systematic residuals in an economic model
+    \end{enumerate}
+
+    % TODO: Check this line
+    In this paper I will be using ARIMA models within the first and second categories listed above. In order to understand how I will be using them I will first explain what the model is in a general form. An ARIMA model is defined in terms of three parameters $p, q, \text{ and }, d$ and is defined as follows:
+
+     \begin{align}
+     Y_t^* - \phi_1Y_{t-1}^*  - \dots - \phi_pY_{t-p}^* &= \ve_t - \theta_1\ve_{t-1} - \dots - \theta_q \ve_{t-q} \label{eq:arimalong}\\
+     \left( 1 - \sum_{i=1}^p \phi_i L^i\right) Y_t^* &= \left( 1 + \sum_{i=1} ^q \theta_i L^i \right) \ve_t \label{eq:arima}
+     \end{align}
+
+    Where $L$ is the lag operator and $Y_t^* \equiv (1 - L)^d Y_t$.
+
+    The first major roadblock when trying to build an ARIMA model is identifying the parameters $p, q, \text{ and } d$. I will start by trying to identify $p$ and $q$. To do this I need to look at the autocorrelation and partial autocorrelation coefficients (see McDonald notes section 8). In Figure~\ref{fig:correlations} I have included a plot of the autocorrelation and partial autocorrelation coefficients for each data set.
+
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=6in]{./Figures/all_corrs.eps}
+        \caption{\small Autocorrelation and partial autocorrelation coefficients for each data set. Used to find the parameters $q$ and $p$ in an ARIMA model.}
+        \label{fig:correlations}
+    \end{figure}
+
 
   \subsection{(G)ARCH Models} \label{sub:garch}
 
