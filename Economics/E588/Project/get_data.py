@@ -106,42 +106,32 @@ def ac_pac():
 def ac_plot():
     # Plot the correlation and autocorrelation coefficients.
     corrs = ac_pac(45)
-    ti = ['Ten Year T-Bill (P)AC coefs',
-          'Three Month T-Bill (P)AC coefs',
-          'S&P 500 (P)AC coefs',
-          'VIX (P)AC coefs']
     fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(8, 5))
 
     corrs[['DGS10ac', 'DGS10pac']].plot(ax=axes[0, 0])
-    axes[0, 0].set_title(ti[0])
+    axes[0, 0].set_title('Ten Year T-Bill (P)AC coefs')
 
     corrs[['DGS3ac', 'DGS3pac']].plot(ax=axes[0, 1])
-    axes[0, 1].set_title(ti[1])
+    axes[0, 1].set_title('Three Month T-Bill (P)AC coefs')
 
     corrs[['SPac', 'SPpac']].plot(ax=axes[1, 0])
-    axes[1, 0].set_title(ti[2])
+    axes[1, 0].set_title('S&P 500 (P)AC coefs')
 
     corrs[['VIXac', 'VIXpac']].plot(ax=axes[1, 1])
-    axes[1, 1].set_title(ti[3])
+    axes[1, 1].set_title('VIX (P)AC coefs')
 
     fig.subplots_adjust(hspace=0.3)
     fig.savefig('./Figures/all_corrs.eps', format='eps', dpi=1000)
 
 
-def plot_diffs(ser, n=4, rows_cols=None, subplots=True, diffs=None):
+def plot_diffs(ser, n=4, rows_cols=None, subplots=True):
     """
     Plot the first n differences of the pandas series ser
     """
     df = pd.DataFrame(ser)
-    if diffs:
-        names = ['d%i' % i for i in diffs]
-        n = len(diffs)
-        for i in range(len(diffs)):
-            df[names[i]] = ser.diff(diffs[i])
-    else:
-        names = ['d%i' % i for i in range(1, n + 1)]
-        for i in range(n):
-            df[names[i]] = ser.diff(i + 1)
+    names = ['d%i' % i for i in range(1, n + 1)]
+    for i in range(n):
+        df[names[i]] = ser.diff(i + 1)
 
     df = df.drop(ser.name, axis=1)
 
@@ -156,8 +146,12 @@ def plot_diffs(ser, n=4, rows_cols=None, subplots=True, diffs=None):
             for c in range(cols):
                 name = names[i]
                 title = '%s: diff(%i)' % (ser.name, i + 1)
-                df[name].plot(ax=axes[r, c], xticks=[], use_index=False)
-                axes[r, c].set_title(title)
+                if rows == 1 or cols == 1:
+                    df[name].plot(ax=axes[r + c], xticks=[], use_index=False)
+                    axes[r + c].set_title(title)
+                else:
+                    df[name].plot(ax=axes[r, c], xticks=[], use_index=False)
+                    axes[r, c].set_title(title)
                 i += 1
 
         if rem:
@@ -172,6 +166,33 @@ def plot_diffs(ser, n=4, rows_cols=None, subplots=True, diffs=None):
     plt.show()
 
     # return df
+
+
+def diff_analysis():
+    arr1 = np.array([[i] * 4 for i in data.columns]).ravel()
+    arr2 = np.array([[1, 2, 3, 4] * 4])
+    arrays = np.row_stack([arr1, arr2])
+
+    tuples = zip(*arrays)
+    index = pd.MultiIndex.from_tuples(tuples, names=['DataSet', 'Lags'])
+    diffs = pd.DataFrame(columns=['Mean', 'Variance'], index=index).T
+
+    for col in data.columns:
+        for i in range(1, 5):
+            index = '%s, %s' % (col, str(i))
+            exec "d%i = data[col].diff(%i)" % (i, i)
+            exec "mean = d%i.mean()" % (i)
+            exec "var = d%i.var()" % (i)
+            print('DataSet: %s, LAGS: %i, Mean:%.2e, Variance: %.2e' \
+                  % (col, i, mean, var))
+            diffs[col][str(i)]['Mean'] = mean
+            diffs[col][str(i)]['Variance'] = var
+
+        plt.figure()
+        plot_diffs(data[col], 4, (2, 2))
+        plt.show()
+
+    return diffs
 
 
 # save_data()
@@ -189,3 +210,5 @@ sp = data[['SP500', 'VIX']]
 
 # Generate autocorrelation and partial autocorrelation coefficients
 corrs = ac_pac()
+
+plot_diffs(data.VIX, 4, (1, 4))

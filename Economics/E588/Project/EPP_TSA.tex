@@ -40,6 +40,7 @@
   \newtheorem{definition}{Definition} % Number definitions on their own
   \usepackage{hyperref}  % From Rick
   \hypersetup{colorlinks,linkcolor=cyan,urlcolor=blue,citecolor=black}
+  \usepackage{colortbl}
 
   %%% Equation and float numbering
   \numberwithin{equation}{section}
@@ -169,6 +170,7 @@
     \end{table}
     \setstretch{1.75}
 
+  \newpage
   \subsection{ARIMA Models} \label{sub:arima}
 
     Time series modeling is all about identifying time-varying trends in data and extrapolating those trends into the future with as little error as possible. One extremely general family of time series models is known as the ARIMA model, or autoregressive integrated moving average model. There are at least three roles an ARIMA model (or any forecasting model) can play:
@@ -191,13 +193,39 @@
 
     The first major roadblock when trying to build an ARIMA model is identifying the parameters $p, q, \text{ and } d$. I will start by trying to identify $p$ and $q$. To do this I need to look at the autocorrelation and partial autocorrelation coefficients (see McDonald notes section 8). In Figure~\ref{fig:correlations} I have included a plot of the autocorrelation and partial autocorrelation coefficients for each data set.
 
-    \begin{figure}[ht]
+    \begin{figure}[!h]
         \centering
         \includegraphics[width=6in]{./Figures/all_corrs.eps}
         \caption{\small Autocorrelation and partial autocorrelation coefficients for each data set. Used to find the parameters $q$ and $p$ in an ARIMA model.}
         \label{fig:correlations}
     \end{figure}
 
+    As can be clearly seen, for each of my time series we have an initial spike in the partial autocorrelation coefficient for 1 lag and then nothing. Also, in each picture we see that the autocorrelation coefficients slowly decline for all 4 time series. Together, these two pieces of information suggest that we should approximate an AR(1) model by setting $p = 1 $and $q = 0$.
+
+    The last identification step is to determine a suitable value for d. This is a bit more subjective, but can still be formalized. The easiest way to find a value for d is to plot successive differences of the time series and stop increasing the number of differences when you see that the time series is fairly constant in mean and variance. In Table~\ref{tab:differences} I have included a table that reports the mean and variance of the first 4 differences for all 4 data sets.
+
+    % TODO: figure out how to make this into a LaTeX table
+    \begin{table}
+    \label{tab:differences}
+    \setstretch{1.25}
+    \begin{tabular}{|l|c|cc||l|c|cc|}
+      \hline
+       \rowcolor{teal!45} DataSet & Lags &   Mean &     Variance & DataSet & Lags &   Mean &     Variance \\
+      \hline
+      \hline
+       \rowcolor{teal!7} DGS10  & 1    & -0.001425545 &  0.003990852 & SP500  & 1    &   0.03449455 &  224.2908 \\
+       \rowcolor{teal!23} {} &     2    & -0.002824705 &  0.007977331 & {} &     2    &   0.08398426 &  406.3557 \\
+       \rowcolor{teal!7} {} &     3    &  -0.00424894 &   0.01156277 & {} &      3    &    0.1329679 &   574.528 \\
+       \rowcolor{teal!23} {} &     4    & -0.005655862 &   0.01518609 & {} &     4    &    0.1779158 &  748.1064 \\
+       \rowcolor{teal!7} DGS3MO &  1    & -0.001637409 &  0.003366346 & VIX    & 1    & -0.003483656 &   3.13206 \\
+       \rowcolor{teal!23} {} &     2    & -0.003254617 &  0.007774232 & {} &     2    & -0.007680896 &  5.355797 \\
+       \rowcolor{teal!7} {} &     3    &  -0.00488189 &   0.01147704 & {} &     3    &  -0.01181405 &  7.261939 \\
+       \rowcolor{teal!23} {} &     4    & -0.006498031 &   0.01407682 & {} &     4    &  -0.01544986 &  9.018458 \\
+      \hline
+    \end{tabular}
+    \setstretch{1.75}
+    \caption{TODO: Write this caption}
+    \end{table}
 
   \subsection{(G)ARCH Models} \label{sub:garch}
 
