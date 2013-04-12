@@ -1,0 +1,107 @@
+library(foreign)
+mydata <- read.dta('~/Users/spencerlyon2/School/BYUclasses/Economics/E588/data/S&p500.dta')
+mydata <- read.dta('/Users/spencerlyon2/School/BYUclasses/Economics/E588/data/S&P500.dta')
+mydata
+write?
+?
+()
+write(mydata)
+write.csv(mydata)
+help
+help write.csv
+help(write.csv)
+write.csv(mydata, '~/Desktop/sp.csv')
+help('tseries')
+library('tseries')
+source('/Users/spencerlyon2/School/BYUclasses/Economics/E588/Project/analysis.R')
+getwd()
+db
+ts(kings)
+ts(db$sp500)
+ts(db$SP500)
+source('/Users/spencerlyon2/School/BYUclasses/Economics/E588/Project/analysis.R')
+sp500
+attributes(sp500)
+sp500[1:10]
+help(ts)
+ts(1:10, frequency = 4, start = c(1959, 2))
+names(db)
+db$DATE
+plot.ts(sp500)
+class(db)
+class(db$DATE)
+class(db$SP50)
+sp = db$SP500
+ts(ts, frequency=365)
+ts(sp, frequency=365)
+spts2 = ts(sp, frequency=365)
+plot.tx(spts2)
+plot.ts(spts2)
+library('TTR')
+decompose'
+decompose(sp500)
+;
+''
+decompose(sp500)
+sp500
+forecasts <- HoltWinters(sp500, beta=False, gamma=False)
+forecasts <- HoltWinters(sp500, beta=FALSE, gamma=FALSE)
+forecasts
+class(sp500)
+help(garch)
+jarque.bera.test(sp500)
+library('FinTS')
+ArchTest(sp500)
+ArchTest(sp500, lags=1)
+ArchTest(sp500, lags=2)
+ArchTest(sp500, lags=3)
+ArchTest(sp500, lags=4)
+ArchTest(sp500, lags=5)
+ArchTest(sp500, lags=6)
+ArchTest(sp500, lags=25)
+ArchTest(db$SP500, lags=25)
+ArchTest(db$SP500, lags=25, demean=TRUE)
+ArchTest(db$SP500)
+ArchTest(db$VIX)
+ArchTest(db$DGS10)
+ArchTest(db$DGS3MO)
+vec2var(sp500)
+library('vars')
+vec2var(sp500)
+help(ca.jo)
+help(z)
+sparima <- arima(sp500, order=c(1, 1, 0))
+sparima
+sparima <- arima(sp500, order=c(2, 1, 0))
+sparima <- arima(sp500, order=c(1, 1, 0))
+arima(sp500, order=c(2, 1, 0))
+arima(sp500, order=c(3, 1, 0))
+arima(sp500, order=c(3, 2, 0))
+arima(sp500, order=c(3, 2, 1))
+arima(sp500, order=c(10, 5, 5))
+arima(sp500, order=c(10, 5, 2))
+arima(sp500, order=c(6, 5, 2))
+arima(sp500, order=c(6, 3, 2))
+sparima
+spfore = forecast.Arima(sparima, h=20)
+library('forecast')
+spfore = forecast.Arima(sparima, h=20)
+spfore
+sp500[-5:-1]
+sp500[-5
+]
+spfor[5800:5809]
+sp500[5800:5809]
+plt.forecast(spfore)
+plot.forecast(spfore)
+spfore = forecast.Arima(sparima, h=500)
+plot.forecast(spfore)
+accuracy(sparima)
+help(accuracy)
+mode(sp500)
+length(sp500)
+sp500[6000] <- 4
+sp500[5812] <- 4
+help(arch.test)
+library('FinTS')
+ArchTest(sp500)

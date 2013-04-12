@@ -41,6 +41,7 @@
   \usepackage{hyperref}  % From Rick
   \hypersetup{colorlinks,linkcolor=cyan,urlcolor=blue,citecolor=black}
   \usepackage{colortbl}
+  \usepackage{caption}
 
   %%% Equation and float numbering
   \numberwithin{equation}{section}
@@ -81,6 +82,8 @@
   \today \\[-4pt] \normalsize
   }
 
+  \newcommand{\TODO}[1]{ {\color{magenta} TODO: #1} }
+
 %% Title Page
 \begin{document}
 \begin{titlepage}
@@ -88,7 +91,7 @@
   \thispagestyle{empty}
   \begin{center}
 
-  \includegraphics{Logo} \\ [0.8cm] % University/department logo - uncomment to place it
+  \includegraphics{logo} \\ [0.8cm] % University/department logo - uncomment to place it
 
   Macroeconomics and Computational Laboratory (MCL) \\[0.5cm] % Research group name
   BYU Economics\\[1.5cm]  % and department name
@@ -137,19 +140,19 @@
 
     To model risky assets I chose to use the daily returns on the S\&P 500 stock market index.  The units on this data set is US dollars (\$) and I retrieved the data from Yahoo! Finance. The S\&P 500 was a natural choice because it is a very common metric used in finance to measure the overall movement of the stock market. Because some explaination of the EPP refer to the volatility of stocks I also chose to use the VIX, also from Yahoo! Finance. \footnote{The VIX is constructed using the implied volatilities on call and put options for the stocks making up the S\&P 500. It is the generally accepted measure of overall stock market volatility.}
 
-    For the most part, these four time series had observations on the same days: all of them are reported for week-days only. However, the big difference is that the data from Yahoo! Finance is only reported on trading days, while the data from FRED is reported every Monday through Friday, including most holidays. To overcome this I simply dropped observations for days where FRED reported data, but the stock markets were closed. In Table~\ref{tab:describe} I have included a summary of this data and a simple plot of the data in Figure ~\ref{fig:alldata}.
+    For the most part, these four time series had observations on the same days: all of them are reported for week-days only. However, the big difference is that the data from Yahoo! Finance is only reported on trading days, while the data from FRED is reported every Monday through Friday, including most holidays. To overcome this I simply dropped observations for days where FRED reported data, but the stock markets were closed. In Table ~\ref{tab:describe} I have included a summary of this data and a simple plot of the data in Figure ~\ref{fig:alldata}.
 
     \setstretch{1.2}
     \begin{figure}[ht]
         \centering
         \includegraphics[width=6in]{./Figures/all_data.eps}
+        \captionsetup{width=5.5in}
         \caption{\small Plot of the data used in this paper. Note that because the units are different and the value of the S\&P 500 is much larger than the percents on the T-bill data sets, I have divided each data set by its mean before plotting.}
         \label{fig:alldata}
     \end{figure}
 
     \begin{table}[ht!]
       \begin{center}
-      \label{tab:describe}
         \begin{tabular}{r|ccccc}
         \toprule
            & DGS10  (\%)& DGS3MO  (\%)& SP500 (\$)& VIX (\$)\\
@@ -165,7 +168,9 @@
           max & $6.79$ & $6.42$ & $1569.19$ & $80.86$\\
         \bottomrule
         \end{tabular}
+        \captionsetup{width=5.5in}
         \caption{\small Summary of the data . All the data was sampled from 1/1/2000 to 3/28/2013. Note the rows with percent labels correspond to percentiles}
+        \label{tab:describe}
       \end{center}
     \end{table}
     \setstretch{1.75}
@@ -181,8 +186,7 @@
       \item To estimate future values of systematic residuals in an economic model
     \end{enumerate}
 
-    % TODO: Check this line
-    In this paper I will be using ARIMA models within the first and second categories listed above. In order to understand how I will be using them I will first explain what the model is in a general form. An ARIMA model is defined in terms of three parameters $p, q, \text{ and }, d$ and is defined as follows:
+    In this paper I will be using ARIMA models within the first category listed above. In order to understand how I will be using them I will first explain what the model is in a general form. An ARIMA model is defined in terms of three parameters $p, q, \text{ and }, d$ and is defined as follows:
 
      \begin{align}
      Y_t^* - \phi_1Y_{t-1}^*  - \dots - \phi_pY_{t-p}^* &= \ve_t - \theta_1\ve_{t-1} - \dots - \theta_q \ve_{t-q} \label{eq:arimalong}\\
@@ -191,41 +195,56 @@
 
     Where $L$ is the lag operator and $Y_t^* \equiv (1 - L)^d Y_t$.
 
-    The first major roadblock when trying to build an ARIMA model is identifying the parameters $p, q, \text{ and } d$. I will start by trying to identify $p$ and $q$. To do this I need to look at the autocorrelation and partial autocorrelation coefficients (see McDonald notes section 8). In Figure~\ref{fig:correlations} I have included a plot of the autocorrelation and partial autocorrelation coefficients for each data set.
+    \subsubsection{Identification} \label{ssub:identification}
 
-    \begin{figure}[!h]
-        \centering
-        \includegraphics[width=6in]{./Figures/all_corrs.eps}
-        \caption{\small Autocorrelation and partial autocorrelation coefficients for each data set. Used to find the parameters $q$ and $p$ in an ARIMA model.}
-        \label{fig:correlations}
-    \end{figure}
+      The first major roadblock when trying to build an ARIMA model is identifying the parameters $p, q, \text{ and } d$. I will start by trying to identify $p$ and $q$. To do this I need to look at the autocorrelation and partial autocorrelation coefficients (see McDonald notes section 8). In Figure~\ref{fig:correlations} I have included a plot of the autocorrelation and partial autocorrelation coefficients for each data set.
 
-    As can be clearly seen, for each of my time series we have an initial spike in the partial autocorrelation coefficient for 1 lag and then nothing. Also, in each picture we see that the autocorrelation coefficients slowly decline for all 4 time series. Together, these two pieces of information suggest that we should approximate an AR(1) model by setting $p = 1 $and $q = 0$.
+      \begin{figure}[!h]
+          \centering
+          \includegraphics[width=6in]{./Figures/all_corrs.eps}
+          \captionsetup{width=5.5in}
+          \caption{\small Autocorrelation and partial autocorrelation coefficients for each data set. Used to find the parameters $q$ and $p$ in an ARIMA model.}
+          \label{fig:correlations}
+      \end{figure}
 
-    The last identification step is to determine a suitable value for d. This is a bit more subjective, but can still be formalized. The easiest way to find a value for d is to plot successive differences of the time series and stop increasing the number of differences when you see that the time series is fairly constant in mean and variance. In Table~\ref{tab:differences} I have included a table that reports the mean and variance of the first 4 differences for all 4 data sets.
+      As can be clearly seen, for each of my time series we have an initial spike in the partial autocorrelation coefficient for 1 lag and then nothing. Also, in each picture we see that the autocorrelation coefficients slowly decline for all 4 time series. Together, these two pieces of information suggest that we should approximate an AR(1) model by setting $p = 1 $and $q = 0$.
 
-    % TODO: figure out how to make this into a LaTeX table
-    \begin{table}
-    \label{tab:differences}
-    \setstretch{1.25}
-    \begin{tabular}{|l|c|cc||l|c|cc|}
-      \hline
-       \rowcolor{teal!45} DataSet & Lags &   Mean &     Variance & DataSet & Lags &   Mean &     Variance \\
-      \hline
-      \hline
-       \rowcolor{teal!7} DGS10  & 1    & -0.001425545 &  0.003990852 & SP500  & 1    &   0.03449455 &  224.2908 \\
-       \rowcolor{teal!23} {} &     2    & -0.002824705 &  0.007977331 & {} &     2    &   0.08398426 &  406.3557 \\
-       \rowcolor{teal!7} {} &     3    &  -0.00424894 &   0.01156277 & {} &      3    &    0.1329679 &   574.528 \\
-       \rowcolor{teal!23} {} &     4    & -0.005655862 &   0.01518609 & {} &     4    &    0.1779158 &  748.1064 \\
-       \rowcolor{teal!7} DGS3MO &  1    & -0.001637409 &  0.003366346 & VIX    & 1    & -0.003483656 &   3.13206 \\
-       \rowcolor{teal!23} {} &     2    & -0.003254617 &  0.007774232 & {} &     2    & -0.007680896 &  5.355797 \\
-       \rowcolor{teal!7} {} &     3    &  -0.00488189 &   0.01147704 & {} &     3    &  -0.01181405 &  7.261939 \\
-       \rowcolor{teal!23} {} &     4    & -0.006498031 &   0.01407682 & {} &     4    &  -0.01544986 &  9.018458 \\
-      \hline
-    \end{tabular}
-    \setstretch{1.75}
-    \caption{TODO: Write this caption}
-    \end{table}
+      The last identification step is to determine a suitable value for d. This is a bit more subjective, but can still be formalized. I used two different techniques to do this. The first was taking successive differences of the data, looking at plots and the first two moments and stopping when the data looks stationary.  In Table~\ref{tab:differences} I have included a table that reports the mean and variance of the first 4 differences for all 4 data sets.
+
+      The second method for determining the correct number of lags is to use an augmented Dickey Fuller test.  the augmented Dickey Fuller (ADF) test is used to check for unit roots in a time series. In other words, ADF is applied to a time series to see if the coefficient ends up being 1 when a time series is regressed on its lag. The null hypothesis in the ADF test is that there is a unit root. I performed the ADF for all four data sets for the data by itself as well as the first lag. The results appear in Table ~\ref{tab:dickeyfuller}
+
+      \begin{table}
+      \begin{centering}
+      \setstretch{1.25}
+      \begin{tabular}{|l|c|cc||l|c|cc|}
+        \hline
+         \rowcolor{teal!45} DataSet & Lags &   Mean &     Variance & DataSet & Lags &   Mean &     Variance \\
+        \hline
+        \hline
+         \rowcolor{teal!7} DGS10  & 1    & -0.001425545 &  0.003990852 & SP500  & 1    &   0.03449455 &  224.2908 \\
+         \rowcolor{teal!23} {} &     2    & -0.002824705 &  0.007977331 & {} &     2    &   0.08398426 &  406.3557 \\
+         \rowcolor{teal!7} {} &     3    &  -0.00424894 &   0.01156277 & {} &      3    &    0.1329679 &   574.528 \\
+         \rowcolor{teal!23} {} &     4    & -0.005655862 &   0.01518609 & {} &     4    &    0.1779158 &  748.1064 \\
+         \rowcolor{teal!7} DGS3MO &  1    & -0.001637409 &  0.003366346 & VIX    & 1    & -0.003483656 &   3.13206 \\
+         \rowcolor{teal!23} {} &     2    & -0.003254617 &  0.007774232 & {} &     2    & -0.007680896 &  5.355797 \\
+         \rowcolor{teal!7} {} &     3    &  -0.00488189 &   0.01147704 & {} &     3    &  -0.01181405 &  7.261939 \\
+         \rowcolor{teal!23} {} &     4    & -0.006498031 &   0.01407682 & {} &     4    &  -0.01544986 &  9.018458 \\
+        \hline
+      \end{tabular}
+      \setstretch{1.75}
+      \captionsetup{width=5.5in}
+      \caption{Mean and Variance of data sets for first 4 lags for each time series. The goal is stationarity, so the correct number of lags will have a small mean and variance.}
+      \label{tab:differences}
+      \end{centering}
+      \end{table}
+
+       \begin{figure}[!h]
+          \centering
+          \includegraphics[width=6in]{./Figures/returns.eps}
+          \captionsetup{width=5.5in}
+          \caption{\small Average (estimated) annual returns for the S&P 500, VIX, DGS10, and DGS3MO time series from 1991 to 2012.}
+          \label{fig:returns}
+      \end{figure}
 
   \subsection{(G)ARCH Models} \label{sub:garch}
 

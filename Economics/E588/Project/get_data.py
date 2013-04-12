@@ -1,3 +1,13 @@
+"""
+Created Apr 9, 2013
+
+Author: Spencer Lyon
+
+Various routines used in my final project for 588
+
+TODO:
+    - Follow the data description from the original EPP paper page 147.
+"""
 import pandas as pd
 from pandas.io.data import DataReader, get_data_yahoo
 import statsmodels.api as sm
@@ -11,7 +21,7 @@ pd.DataFrame.latex_form = lambda self, *args, **kwargs: \
 
 
 def save_data():
-    start = '1/1/2000'
+    start = '1/1/1990'
 
     # Get S&P 500 data from yahoo
     sp500 = get_data_yahoo('^GSPC', start=start)['Adj Close']
@@ -183,7 +193,7 @@ def diff_analysis():
             exec "d%i = data[col].diff(%i)" % (i, i)
             exec "mean = d%i.mean()" % (i)
             exec "var = d%i.var()" % (i)
-            print('DataSet: %s, LAGS: %i, Mean:%.2e, Variance: %.2e' \
+            print('DataSet: %s, LAGS: %i, Mean:%.2e, Variance: %.2e'
                   % (col, i, mean, var))
             diffs[col][str(i)]['Mean'] = mean
             diffs[col][str(i)]['Variance'] = var
@@ -195,9 +205,37 @@ def diff_analysis():
     return diffs
 
 
+def est_returns(items, freq='A'):
+    """
+    Get an estimate for the annual return on an equity.
+
+    Parameters
+    ----------
+    items : pandas.DataFrame
+        The pandas data frame containing a TimeSeriesIndex and columns
+        for the equities you want to estimate returns for
+
+    freq : str, optional(default='A')
+        The frequency you would like to sample the
+    """
+    if freq == 'A':
+        periods = 250  # 250 trading days in a year
+    elif freq == 'M':
+        periods = 21  # 21 trading days in a month
+    elif freq == 'W':
+        periods = 5  # 5 trading days in a week
+
+    changes = items.pct_change(periods=periods)
+
+    # Resample annually
+    period_returns = changes.resample(freq, how='mean') * 100
+
+    period_returns.columns.name = 'Returns - ' + freq + ' (%)'
+
+    return period_returns.dropna()
+
 # save_data()
 data = load_data()
-
 # Describe data and save as latex file
 desc = data.describe()
 
@@ -211,4 +249,13 @@ sp = data[['SP500', 'VIX']]
 # Generate autocorrelation and partial autocorrelation coefficients
 corrs = ac_pac()
 
-plot_diffs(data.VIX, 4, (1, 4))
+ann_returns = est_returns(sp, freq='A')
+
+ann_returns = ann_returns.join(fred.resample('A', how='mean'))
+
+ann_returns.plot(figsize=(15, 8), linewidth=2.5,
+                   title='Estimated Annual returns')
+
+plt.savefig('./Figures/returns.eps', format='eps', dpi=1000)
+
+# plot_diffs(data.VIX, 4, (1, 4))nu
