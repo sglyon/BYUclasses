@@ -154,18 +154,18 @@
     \begin{table}[ht!]
       \begin{center}
         \begin{tabular}{r|ccccc}
-        \toprule
-           & DGS10  (\%)& DGS3MO  (\%)& SP500 (\$)& VIX (\$)\\
-          \midrule
-          \midrule
-          obs & $3305$ & $3305$ & $3305$ & $3305$\\
-          mean & $3.99311$ & $2.10994$ & $1210.33$ & $21.8055$\\
-          std & $1.14046$ & $2.01772$ & $187.527$ & $9.16702$\\
-          min & $1.43$ & $0$ & $676.53$ & $9.89$\\
-          25\% & $3.38$ & $0.15$ & $1095.45$ & $15.54$\\
-          50\% & $4.12$ & $1.59$ & $1214.91$ & $20.03$\\
-          75\% & $4.74$ & $3.85$ & $1357.98$ & $25.4$\\
-          max & $6.79$ & $6.42$ & $1569.19$ & $80.86$\\
+        \hline
+           \rowcolor{gray!45}  & DGS10  (\%)& DGS3MO  (\%)& SP500 (\$)& VIX (\$)\\
+          \hline
+          \hline
+          \rowcolor{gray!7} obs & $3305$ & $3305$ & $3305$ & $3305$\\
+          \rowcolor{gray!23} mean & $3.99311$ & $2.10994$ & $1210.33$ & $21.8055$\\
+          \rowcolor{gray!7} std & $1.14046$ & $2.01772$ & $187.527$ & $9.16702$\\
+          \rowcolor{gray!23} min & $1.43$ & $0$ & $676.53$ & $9.89$\\
+          \rowcolor{gray!7} 25\% & $3.38$ & $0.15$ & $1095.45$ & $15.54$\\
+          \rowcolor{gray!23} 50\% & $4.12$ & $1.59$ & $1214.91$ & $20.03$\\
+          \rowcolor{gray!7} 75\% & $4.74$ & $3.85$ & $1357.98$ & $25.4$\\
+          \rowcolor{gray!23} max & $6.79$ & $6.42$ & $1569.19$ & $80.86$\\
         \bottomrule
         \end{tabular}
         \captionsetup{width=5.5in}
@@ -200,55 +200,82 @@
       The first major roadblock when trying to build an ARIMA model is identifying the parameters $p, q, \text{ and } d$. I will start by trying to identify $p$ and $q$. To do this I need to look at the autocorrelation and partial autocorrelation coefficients (see McDonald notes section 8). In Figure~\ref{fig:correlations} I have included a plot of the autocorrelation and partial autocorrelation coefficients for each data set.
 
       \begin{figure}[!h]
-          \centering
-          \includegraphics[width=6in]{./Figures/all_corrs.eps}
-          \captionsetup{width=5.5in}
-          \caption{\small Autocorrelation and partial autocorrelation coefficients for each data set. Used to find the parameters $q$ and $p$ in an ARIMA model.}
-          \label{fig:correlations}
+        \centering
+        \includegraphics[width=6in]{./Figures/all_corrs.eps}
+        \captionsetup{width=5.5in}
+        \caption{\small Autocorrelation and partial autocorrelation coefficients for each data set. Used to find the parameters $q$ and $p$ in an ARIMA model. The initial spike in the partial autocorrelation coefficients and the gradual descent of the autocorrelation coefficients suggets $p=1$, and $q=0$.}
+        \label{fig:correlations}
       \end{figure}
 
-      As can be clearly seen, for each of my time series we have an initial spike in the partial autocorrelation coefficient for 1 lag and then nothing. Also, in each picture we see that the autocorrelation coefficients slowly decline for all 4 time series. Together, these two pieces of information suggest that we should approximate an AR(1) model by setting $p = 1 $and $q = 0$.
+      As can be clearly seen, for each of my time series we have an initial spike in the partial autocorrelation coefficient for 1 lag and then nothing. Also, in each picture we see that the autocorrelation coefficients slowly decline for all 4 time series. Together, these two pieces of information suggest that we should approximate an AR(1) model by setting $p = 1 $and $q = 0$. Another important feature in each of this plots is that while the decrease in the autocorrelation coefficients is steady, it is also very slow. This is indicative of a need to difference the data to make it more stationary before applying the model.
 
-      The last identification step is to determine a suitable value for d. This is a bit more subjective, but can still be formalized. I used two different techniques to do this. The first was taking successive differences of the data, looking at plots and the first two moments and stopping when the data looks stationary.  In Table~\ref{tab:differences} I have included a table that reports the mean and variance of the first 4 differences for all 4 data sets.
-
-      The second method for determining the correct number of lags is to use an augmented Dickey Fuller test.  the augmented Dickey Fuller (ADF) test is used to check for unit roots in a time series. In other words, ADF is applied to a time series to see if the coefficient ends up being 1 when a time series is regressed on its lag. The null hypothesis in the ADF test is that there is a unit root. I performed the ADF for all four data sets for the data by itself as well as the first lag. The results appear in Table ~\ref{tab:dickeyfuller}
+      The last identification step is to determine a suitable value for d, or determine how many times the data needs ot be differenced before it is stationary. This is a bit more subjective, but can still be formalized. I used two different techniques to do this. The first was taking successive differences of the data, looking at plots and the first two moments and stopping when the data looks stationary.  In Table~\ref{tab:differences} I have included a table that reports the mean and variance of the first 4 differences for all 4 data sets.
 
       \begin{table}
-      \begin{centering}
-      \setstretch{1.25}
-      \begin{tabular}{|l|c|cc||l|c|cc|}
-        \hline
-         \rowcolor{teal!45} DataSet & Lags &   Mean &     Variance & DataSet & Lags &   Mean &     Variance \\
-        \hline
-        \hline
-         \rowcolor{teal!7} DGS10  & 1    & -0.001425545 &  0.003990852 & SP500  & 1    &   0.03449455 &  224.2908 \\
-         \rowcolor{teal!23} {} &     2    & -0.002824705 &  0.007977331 & {} &     2    &   0.08398426 &  406.3557 \\
-         \rowcolor{teal!7} {} &     3    &  -0.00424894 &   0.01156277 & {} &      3    &    0.1329679 &   574.528 \\
-         \rowcolor{teal!23} {} &     4    & -0.005655862 &   0.01518609 & {} &     4    &    0.1779158 &  748.1064 \\
-         \rowcolor{teal!7} DGS3MO &  1    & -0.001637409 &  0.003366346 & VIX    & 1    & -0.003483656 &   3.13206 \\
-         \rowcolor{teal!23} {} &     2    & -0.003254617 &  0.007774232 & {} &     2    & -0.007680896 &  5.355797 \\
-         \rowcolor{teal!7} {} &     3    &  -0.00488189 &   0.01147704 & {} &     3    &  -0.01181405 &  7.261939 \\
-         \rowcolor{teal!23} {} &     4    & -0.006498031 &   0.01407682 & {} &     4    &  -0.01544986 &  9.018458 \\
-        \hline
-      \end{tabular}
-      \setstretch{1.75}
-      \captionsetup{width=5.5in}
-      \caption{Mean and Variance of data sets for first 4 lags for each time series. The goal is stationarity, so the correct number of lags will have a small mean and variance.}
-      \label{tab:differences}
-      \end{centering}
+        \begin{centering}
+        \setstretch{1.25}
+        \begin{tabular}{|l|c|cc||l|c|cc|}
+          \hline
+           \rowcolor{gray!45} DataSet & Lags &   Mean &     Variance & DataSet & Lags &   Mean &     Variance \\
+          \hline
+          \hline
+           \rowcolor{gray!7} DGS10  & 1    & -0.0014 &  0.0039 & SP500  & 1    &   0.0344 &  224.2908 \\
+           \rowcolor{gray!23} {} &     2    & -0.0028 &  0.0079 & {} &     2    &   0.0839 &  406.3557 \\
+           \rowcolor{gray!7} {} &     3    &  -0.0042 &   0.0115 & {} &      3    &    0.1329 &   574.528 \\
+           \rowcolor{gray!23} {} &     4    & -0.0056 &   0.0151 & {} &     4    &    0.1779 &  748.1064 \\
+           \rowcolor{gray!7} DGS3MO &  1    & -0.0016 &  0.0033 & VIX    & 1    & -0.0034 &   3.1320 \\
+           \rowcolor{gray!23} {} &     2    & -0.0032 &  0.0077 & {} &     2    & -0.0076 &  5.3557 \\
+           \rowcolor{gray!7} {} &     3    &  -0.0048 &   0.0114 & {} &     3    &  -0.0118 &  7.2619 \\
+           \rowcolor{gray!23} {} &     4    & -0.0064 &   0.0140 & {} &     4    &  -0.0154 &  9.0184 \\
+          \hline
+        \end{tabular}
+        \setstretch{1.75}
+        \captionsetup{width=5.5in}
+        \caption{Mean and Variance of data sets for first 4 lags for each time series. The goal is stationarity, so the correct number of lags will have a small mean and variance.}
+        \label{tab:differences}
+        \end{centering}
       \end{table}
 
-       \begin{figure}[!h]
-          \centering
-          \includegraphics[width=6in]{./Figures/returns.eps}
+      The second method for determining the correct number of lags is to use an augmented Dickey Fuller test.  the augmented Dickey Fuller (ADF) test is used to check for unit roots in a time series. In other words, ADF is applied to a time series to see if the coefficient ends up being 1 when a time series is regressed on its lag. The null hypothesis in the ADF test is that there is a unit root. I performed the ADF for all four data sets for the data by itself as well as the first lag. The results appear in Table ~\ref{tab:dickeyfuller}.
+
+      \begin{table}
+        \begin{centering}
+        \setstretch{1.25}
+          \begin{tabular}{|l|l|cc|}
+          \hline
+            \rowcolor{gray!45} DataSet & Lags &  Statistic & p-value\\
+            \hline
+            \hline
+            \rowcolor{gray!7} SP500 & 0 & -1.8564 & 0.6391\\
+           \rowcolor{gray!23} {} & 1  & -18.0968 & 0.0001\\
+            \rowcolor{gray!7} VIX & 0 & -4.9092 & 0.0001\\
+           \rowcolor{gray!23} {} & 1  & -19.162 & 0.0001\\
+            \rowcolor{gray!7} DGS10 & 0 & -3.9125 & 0.0133\\
+            \rowcolor{gray!23} {} & 1 & -16.5723 & 0.0001\\
+            \rowcolor{gray!7} DGS3MO & 0 & -1.5736 & 0.7589\\
+            \rowcolor{gray!23} {} & 1 & -17.1829 & 0.0001\\
+          \bottomrule
+          \end{tabular}
+          \setstretch{1.75}
           \captionsetup{width=5.5in}
-          \caption{\small Average (estimated) annual returns for the S&P 500, VIX, DGS10, and DGS3MO time series from 1991 to 2012.}
-          \label{fig:returns}
+          \caption{Results from the augmented Dickey-Fuller test. The test was run for each data set with no lags and again with a single lag. The test statistic corresponding to the 5\% confidence level is $ -3.5$. Any statistic lower than that suggests that the data might already be stationary (hence the small p-value).}
+          \label{tab:dickeyfuller}
+        \end{centering}
+      \end{table}
+
+      \begin{figure}[!h]
+        \centering
+        \includegraphics[width=6in]{./Figures/returns.eps}
+        \captionsetup{width=5.5in}
+        \caption{\small Average (estimated) annual returns for the S\&P 500, VIX, DGS10, and DGS3MO time series from 1991 to 2012.}
+        \label{fig:returns}
       \end{figure}
 
   \subsection{(G)ARCH Models} \label{sub:garch}
 
-\section{Results} \label{sec:results}
+\section{Forecasting} \label{sec:forecasting}
+
+\section{Estimating Returns} \label{sec:estimatingreturns}
 
 \section{Conclusion} \label{sec:conclusion}
 

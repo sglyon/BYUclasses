@@ -45,6 +45,7 @@ def save_data():
     data = data.dropna()
 
     data.save('SP_YC.db')
+    data.to_csv('the_data.csv')
 
 
 def load_data():
@@ -95,6 +96,12 @@ def sp_plots():
     plt.ylabel('%')
     plt.title('First Differenced US Treasury Bill Time Series')
     plt.savefig('./Figures/sp500_data_diff.eps', format='eps', dpi=1000)
+
+
+def data_plot():
+    (data / data.mean()).plot(linewidth=0.6)
+    plt.legend(loc=2)
+    plt.savefig('./Figures/all_data.eps', format='eps', dpi=900)
 
 
 def ac_pac():
@@ -207,7 +214,7 @@ def diff_analysis():
 
 def est_returns(items, freq='A'):
     """
-    Get an estimate for the annual return on an equity.
+    Get an estimate for the return on an equity at a given frequency
 
     Parameters
     ----------
@@ -234,6 +241,30 @@ def est_returns(items, freq='A'):
 
     return period_returns.dropna()
 
+
+def adf_tests(data):
+    lags = floor((data.shape[0] - 1) ** (1 / 3.))  # use R default
+    adf_nolag = np.asarray([sm.tsa.adfuller(data[i], maxlag=lags,
+                                            regression='ct',
+                                            autolag=None)[:2]
+                            for i in data.columns])
+    adf_1lag = np.asarray([sm.tsa.adfuller(data[i].diff(1).dropna(),
+                                           maxlag=lags,
+                                           regression='ct',
+                                           autolag=None)[:2]
+                           for i in data.columns])
+    adf_tests = np.concatenate([adf_nolag, adf_1lag])
+
+    multi_ind = pd.MultiIndex.from_arrays(
+               [['DGS10', 'DGS3MO', 'SP500', 'VIX'] * 2,
+                [0, 0, 0, 0, 1, 1, 1, 1]])
+
+    adf = pd.DataFrame(adf_tests, index=multi_ind, columns=['Statistic', 'p-value'])
+    adf.columns.name = 'Value'
+    adf.index.names = ['Data', 'Lags']
+    adf = adf.sort_index()
+    return adf
+
 # save_data()
 data = load_data()
 # Describe data and save as latex file
@@ -253,8 +284,7 @@ ann_returns = est_returns(sp, freq='A')
 
 ann_returns = ann_returns.join(fred.resample('A', how='mean'))
 
-ann_returns.plot(figsize=(15, 8), linewidth=2.5,
-                   title='Estimated Annual returns')
+ann_returns.plot(linewidth=2, title='Estimated Annual returns')
 
 plt.savefig('./Figures/returns.eps', format='eps', dpi=1000)
 

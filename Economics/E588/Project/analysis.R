@@ -1,4 +1,4 @@
-# setwd('/Users/spencerlyon2/School/BYUclasses/Economics/E588/Project')
+setwd('~/School/BYU/byuclasses/Economics/E588/Project')
 
 library('tseries')
 library('FinTS')  # for ArchTest function
@@ -13,12 +13,12 @@ dgs3mo <- ts(db$DGS3MO)
 
 cols <- colnames(db)[-1]
 
-# Generate ACF and PACF for VIX and SP500
-par(mfrow=c(2,2))
-acf(vix, main="ACF of VIX")
-acf(sp500, main="ACF of SP500")
-pacf(vix, main="PACF of VIX")
-pacf(sp500, main="PACF of SP500")
+# # Generate ACF and PACF for VIX and SP500
+# par(mfrow=c(2,2))
+# acf(vix, main="ACF of VIX")
+# acf(sp500, main="ACF of SP500")
+# pacf(vix, main="PACF of VIX")
+# pacf(sp500, main="PACF of SP500")
 
 # dev.new()  # New plot window
 
