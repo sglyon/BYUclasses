@@ -1,10 +1,19 @@
 clear
 cd C:\Users\lyon4\Documents\byuclasses\Economics\E588\Project
 
-insheet using DGS_SP.csv
+insheet using the_data.csv
 
 gen t = _n
 tset t
 
+arch sp500 t, arch(1) garch(t)
+predict sp_archCAST
 
+arch vix t, arch(1) garch(t)
+predict vix_archCAST
 
+arch dgs10 t, arch(1) garch(t)
+predict d10_archCAST
+
+arch dgs3mo t, arch(1) garch(t)
+predict d3m_archCAST
