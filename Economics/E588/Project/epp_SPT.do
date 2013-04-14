@@ -6,6 +6,18 @@ insheet using the_data.csv
 gen t = _n
 tset t
 
+reg sp500 t
+estat archlm, lags(1)
+
+reg vix t
+estat archlm, lags(1)
+
+reg dgs10 t
+estat archlm, lags(1)
+
+reg dgs3mo t
+estat archlm, lags(1)
+
 arch sp500 t, arch(1) garch(1)
 predict sp_archCAST
 
