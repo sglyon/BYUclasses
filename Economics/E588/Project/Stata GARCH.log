@@ -1,0 +1,558 @@
+--------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\lyon4\Documents\byuclasses\Economics\E588\Project\Stata GARCH.log
+  log type:  text
+ opened on:  13 Apr 2013, 18:30:16
+
+. do "C:\Users\lyon4\Documents\byuclasses\Economics\E588\Project\epp_SPT.do"
+
+. clear
+
+. cd C:\Users\lyon4\Documents\byuclasses\Economics\E588\Project
+C:\Users\lyon4\Documents\byuclasses\Economics\E588\Project
+
+. 
+. insheet using the_data.csv
+(5 vars, 5814 obs)
+
+. 
+. gen t = _n
+
+. tset t
+        time variable:  t, 1 to 5814
+                delta:  1 unit
+
+. 
+. reg sp500 t
+
+      Source |       SS       df       MS              Number of obs =    5814
+-------------+------------------------------           F(  1,  5812) =10596.78
+       Model |   528436076     1   528436076           Prob > F      =  0.0000
+    Residual |   289830450  5812   49867.593           R-squared     =  0.6458
+-------------+------------------------------           Adj R-squared =  0.6457
+       Total |   818266526  5813  140764.928           Root MSE      =  223.31
+
+------------------------------------------------------------------------------
+       sp500 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+           t |   .1796281    .001745   102.94   0.000     .1762073    .1830489
+       _cons |   449.0998   5.858113    76.66   0.000     437.6157    460.5839
+------------------------------------------------------------------------------
+
+. estat archlm, lags(1)
+LM test for autoregressive conditional heteroskedasticity (ARCH)
+---------------------------------------------------------------------------
+    lags(p)  |          chi2               df                 Prob > chi2
+-------------+-------------------------------------------------------------
+       1     |       5752.554               1                   0.0000
+---------------------------------------------------------------------------
+         H0: no ARCH effects      vs.  H1: ARCH(p) disturbance
+
+. 
+. reg vix t
+
+      Source |       SS       df       MS              Number of obs =    5814
+-------------+------------------------------           F(  1,  5812) =  281.97
+       Model |  17613.8641     1  17613.8641           Prob > F      =  0.0000
+    Residual |  363062.861  5812  62.4678013           R-squared     =  0.0463
+-------------+------------------------------           Adj R-squared =  0.0461
+       Total |  380676.725  5813  65.4871367           Root MSE      =  7.9037
+
+------------------------------------------------------------------------------
+         vix |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+           t |   .0010371   .0000618    16.79   0.000      .000916    .0011581
+       _cons |   17.33921   .2073369    83.63   0.000     16.93275    17.74566
+------------------------------------------------------------------------------
+
+. estat archlm, lags(1)
+LM test for autoregressive conditional heteroskedasticity (ARCH)
+---------------------------------------------------------------------------
+    lags(p)  |          chi2               df                 Prob > chi2
+-------------+-------------------------------------------------------------
+       1     |       5120.435               1                   0.0000
+---------------------------------------------------------------------------
+         H0: no ARCH effects      vs.  H1: ARCH(p) disturbance
+
+. 
+. reg dgs10 t
+
+      Source |       SS       df       MS              Number of obs =    5814
+-------------+------------------------------           F(  1,  5812) =36478.46
+       Model |  14941.4962     1  14941.4962           Prob > F      =  0.0000
+    Residual |  2380.58197  5812  .409597723           R-squared     =  0.8626
+-------------+------------------------------           Adj R-squared =  0.8625
+       Total |  17322.0782  5813  2.97988615           Root MSE      =     .64
+
+------------------------------------------------------------------------------
+       dgs10 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+           t |  -.0009552   5.00e-06  -190.99   0.000     -.000965   -.0009454
+       _cons |   7.916827   .0167891   471.55   0.000     7.883914     7.94974
+------------------------------------------------------------------------------
+
+. estat archlm, lags(1)
+LM test for autoregressive conditional heteroskedasticity (ARCH)
+---------------------------------------------------------------------------
+    lags(p)  |          chi2               df                 Prob > chi2
+-------------+-------------------------------------------------------------
+       1     |       5680.246               1                   0.0000
+---------------------------------------------------------------------------
+         H0: no ARCH effects      vs.  H1: ARCH(p) disturbance
+
+. 
+. reg dgs3mo t
+
+      Source |       SS       df       MS              Number of obs =    5814
+-------------+------------------------------           F(  1,  5812) = 7406.15
+       Model |  16501.4249     1  16501.4249           Prob > F      =  0.0000
+    Residual |  12949.5452  5812   2.2280704           R-squared     =  0.5603
+-------------+------------------------------           Adj R-squared =  0.5602
+       Total |  29450.9701  5813  5.06639774           Root MSE      =  1.4927
+
+------------------------------------------------------------------------------
+      dgs3mo |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+           t |  -.0010038   .0000117   -86.06   0.000    -.0010266   -.0009809
+       _cons |   6.265802   .0391573   160.02   0.000     6.189039    6.342565
+------------------------------------------------------------------------------
+
+. estat archlm, lags(1)
+LM test for autoregressive conditional heteroskedasticity (ARCH)
+---------------------------------------------------------------------------
+    lags(p)  |          chi2               df                 Prob > chi2
+-------------+-------------------------------------------------------------
+       1     |       5789.763               1                   0.0000
+---------------------------------------------------------------------------
+         H0: no ARCH effects      vs.  H1: ARCH(p) disturbance
+
+. 
+. arch sp500 t, arch(1) garch(1)
+
+(setting optimization to BHHH)
+Iteration 0:   log likelihood = -36801.955  
+Iteration 1:   log likelihood = -36795.983  
+Iteration 2:   log likelihood = -36761.682  
+Iteration 3:   log likelihood = -36714.315  
+Iteration 4:   log likelihood =  -36649.18  
+(switching optimization to BFGS)
+Iteration 5:   log likelihood = -36636.867  
+Iteration 6:   log likelihood = -35068.677  
+Iteration 7:   log likelihood = -34971.191  
+Iteration 8:   log likelihood = -34628.332  
+Iteration 9:   log likelihood = -34556.321  (backed up)
+Iteration 10:  log likelihood = -34521.239  
+Iteration 11:  log likelihood = -34496.599  
+Iteration 12:  log likelihood = -34475.733  
+Iteration 13:  log likelihood = -34472.963  
+Iteration 14:  log likelihood = -34469.792  
+(switching optimization to BHHH)
+Iteration 15:  log likelihood = -34469.401  
+Iteration 16:  log likelihood = -34469.377  
+Iteration 17:  log likelihood = -34469.317  
+Iteration 18:  log likelihood = -34469.264  
+Iteration 19:  log likelihood = -34469.226  
+(switching optimization to BFGS)
+Iteration 20:  log likelihood = -34469.194  
+Iteration 21:  log likelihood = -34469.052  
+Iteration 22:  log likelihood = -34469.033  
+Iteration 23:  log likelihood =  -34469.01  
+Iteration 24:  log likelihood = -34468.997  
+Iteration 25:  log likelihood = -34468.991  
+Iteration 26:  log likelihood = -34468.989  
+Iteration 27:  log likelihood = -34468.989  
+Iteration 28:  log likelihood = -34468.989  (backed up)
+Iteration 29:  log likelihood = -34468.989  (backed up)
+(switching optimization to BHHH)
+Iteration 30:  log likelihood = -34468.989  (backed up)
+Iteration 31:  log likelihood = -34468.989  
+Iteration 32:  log likelihood = -34468.989  (backed up)
+Iteration 33:  log likelihood = -34468.989  (backed up)
+Iteration 34:  log likelihood = -34468.989  (backed up)
+(switching optimization to BFGS)
+Iteration 35:  log likelihood = -34468.989  (backed up)
+Iteration 36:  log likelihood = -34468.989  (backed up)
+Iteration 37:  log likelihood = -34468.989  (backed up)
+Iteration 38:  log likelihood = -34468.989  (backed up)
+Iteration 39:  log likelihood = -34468.989  (backed up)
+Iteration 40:  log likelihood = -34468.989  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (0)
+Iteration 41:  log likelihood = -34468.989  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (1)
+Iteration 42:  log likelihood = -34468.989  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (2)
+Iteration 43:  log likelihood = -34468.989  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (3)
+Iteration 44:  log likelihood = -34468.989  (backed up)
+(switching optimization to BHHH)
+Iteration 45:  log likelihood = -34468.989  (backed up)
+Iteration 46:  log likelihood = -34468.989  (backed up)
+Iteration 47:  log likelihood = -34468.989  (backed up)
+Iteration 48:  log likelihood = -34468.989  (backed up)
+Iteration 49:  log likelihood = -34468.989  (backed up)
+(switching optimization to BFGS)
+BFGS stepping has contracted, resetting BFGS Hessian (4)
+Iteration 50:  log likelihood = -34468.989  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (5)
+Iteration 51:  log likelihood = -34468.989  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (6)
+Iteration 52:  log likelihood = -34468.989  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (7)
+Iteration 53:  log likelihood = -34468.989  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (8)
+Iteration 54:  log likelihood = -34468.989  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (9)
+Iteration 55:  log likelihood = -34468.989  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (10)
+Iteration 56:  log likelihood = -34468.989  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (11)
+Iteration 57:  log likelihood = -34468.989  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (12)
+Iteration 58:  log likelihood = -34468.989  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (13)
+Iteration 59:  log likelihood = -34468.989  (backed up)
+(switching optimization to BHHH)
+Iteration 60:  log likelihood = -34468.989  (backed up)
+Iteration 61:  log likelihood = -34468.989  (backed up)
+Iteration 62:  log likelihood = -34468.989  (backed up)
+Iteration 63:  log likelihood = -34468.989  
+
+ARCH family regression
+
+Sample: 1 - 5814                                   Number of obs   =      5814
+Distribution: Gaussian                             Wald chi2(1)    =  3.10e+06
+Log likelihood = -34468.99                         Prob > chi2     =    0.0000
+
+------------------------------------------------------------------------------
+             |                 OPG
+       sp500 |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+sp500        |
+           t |    .226231   .0001286  1759.81   0.000      .225979    .2264829
+       _cons |   269.7995   .3581854   753.24   0.000     269.0974    270.5015
+-------------+----------------------------------------------------------------
+ARCH         |
+        arch |
+         L1. |   .7472694     .07446    10.04   0.000     .6013304    .8932085
+             |
+       garch |
+         L1. |   .2654343   .0369086     7.19   0.000     .1930948    .3377738
+             |
+       _cons |   9.597279   1.496673     6.41   0.000     6.663853    12.53071
+------------------------------------------------------------------------------
+
+. predict sp_archCAST
+(option xb assumed; linear prediction)
+
+. 
+. arch vix t, arch(1) garch(1)
+
+(setting optimization to BHHH)
+Iteration 0:   log likelihood = -17088.717  
+Iteration 1:   log likelihood = -16896.419  
+Iteration 2:   log likelihood = -16854.517  
+Iteration 3:   log likelihood = -16833.706  
+Iteration 4:   log likelihood =  -16821.67  
+(switching optimization to BFGS)
+Iteration 5:   log likelihood = -16811.299  
+Iteration 6:   log likelihood = -16681.824  
+Iteration 7:   log likelihood = -16587.212  
+Iteration 8:   log likelihood =  -16581.75  
+Iteration 9:   log likelihood = -16577.922  
+Iteration 10:  log likelihood = -16576.388  
+Iteration 11:  log likelihood = -16576.124  
+Iteration 12:  log likelihood = -16576.096  
+Iteration 13:  log likelihood = -16576.095  
+Iteration 14:  log likelihood = -16576.095  
+(switching optimization to BHHH)
+Iteration 15:  log likelihood = -16576.095  
+
+ARCH family regression
+
+Sample: 1 - 5814                                   Number of obs   =      5814
+Distribution: Gaussian                             Wald chi2(1)    =    465.16
+Log likelihood = -16576.09                         Prob > chi2     =    0.0000
+
+------------------------------------------------------------------------------
+             |                 OPG
+         vix |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+vix          |
+           t |   .0002915   .0000135    21.57   0.000      .000265     .000318
+       _cons |   16.14731   .0476441   338.92   0.000     16.05393    16.24069
+-------------+----------------------------------------------------------------
+ARCH         |
+        arch |
+         L1. |    .784109   .0589299    13.31   0.000     .6686086    .8996094
+             |
+       garch |
+         L1. |   .2165781   .0283585     7.64   0.000     .1609965    .2721597
+             |
+       _cons |   .6045291   .0491652    12.30   0.000     .5081671    .7008912
+------------------------------------------------------------------------------
+
+. predict vix_archCAST
+(option xb assumed; linear prediction)
+
+. 
+. arch dgs10 t, arch(1) garch(1)
+
+(setting optimization to BHHH)
+Iteration 0:   log likelihood = -3078.4912  
+Iteration 1:   log likelihood = -3078.3482  
+Iteration 2:   log likelihood =  -3062.402  
+Iteration 3:   log likelihood =  -3039.801  
+Iteration 4:   log likelihood = -3036.8284  
+(switching optimization to BFGS)
+Iteration 5:   log likelihood = -3033.0495  
+Iteration 6:   log likelihood = -3027.1213  
+Iteration 7:   log likelihood =  -3025.914  
+Iteration 8:   log likelihood = -3022.7047  
+Iteration 9:   log likelihood = -3022.5235  
+Iteration 10:  log likelihood = -3022.5235  (backed up)
+Iteration 11:  log likelihood = -3022.5235  (backed up)
+Iteration 12:  log likelihood = -3022.5235  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (0)
+Iteration 13:  log likelihood = -3022.5235  (backed up)
+Iteration 14:  log likelihood =  -3022.306  (backed up)
+(switching optimization to BHHH)
+Iteration 15:  log likelihood = -3022.2848  (backed up)
+Iteration 16:  log likelihood = -3022.0237  
+Iteration 17:  log likelihood = -3021.8926  
+Iteration 18:  log likelihood = -3021.8759  
+Iteration 19:  log likelihood = -3021.7833  
+(switching optimization to BFGS)
+Iteration 20:  log likelihood = -3021.5937  
+Iteration 21:  log likelihood = -3019.9066  
+Iteration 22:  log likelihood =  -3015.782  
+Iteration 23:  log likelihood = -3011.4236  
+BFGS stepping has contracted, resetting BFGS Hessian (1)
+Iteration 24:  log likelihood = -3003.9169  
+Iteration 25:  log likelihood = -3003.6247  (backed up)
+Iteration 26:  log likelihood = -3003.5593  (backed up)
+Iteration 27:  log likelihood = -2998.6221  (backed up)
+Iteration 28:  log likelihood = -2961.0356  (backed up)
+Iteration 29:  log likelihood = -2960.4494  (backed up)
+(switching optimization to BHHH)
+Iteration 30:  log likelihood = -2955.7123  
+Iteration 31:  log likelihood = -2945.7081  
+Iteration 32:  log likelihood = -2933.9105  
+Iteration 33:  log likelihood = -2933.7967  
+Iteration 34:  log likelihood =  -2926.869  
+(switching optimization to BFGS)
+Iteration 35:  log likelihood = -2925.2093  
+Iteration 36:  log likelihood = -2911.3298  
+Iteration 37:  log likelihood = -2907.6981  
+Iteration 38:  log likelihood = -2904.5481  
+Iteration 39:  log likelihood = -2903.1883  
+Iteration 40:  log likelihood = -2902.5194  
+Iteration 41:  log likelihood = -2901.6496  
+Iteration 42:  log likelihood = -2900.2615  
+Iteration 43:  log likelihood = -2893.0634  
+Iteration 44:  log likelihood =  -2879.755  
+(switching optimization to BHHH)
+Iteration 45:  log likelihood = -2873.4279  
+Iteration 46:  log likelihood = -2872.5486  
+Iteration 47:  log likelihood = -2871.8663  
+Iteration 48:  log likelihood =  -2871.376  
+Iteration 49:  log likelihood = -2871.1112  
+(switching optimization to BFGS)
+Iteration 50:  log likelihood = -2871.0686  
+Iteration 51:  log likelihood = -2870.0946  
+Iteration 52:  log likelihood = -2869.8047  
+Iteration 53:  log likelihood = -2869.3164  
+Iteration 54:  log likelihood =  -2869.068  
+Iteration 55:  log likelihood = -2869.0348  
+Iteration 56:  log likelihood = -2869.0153  
+Iteration 57:  log likelihood = -2869.0131  
+Iteration 58:  log likelihood = -2869.0131  
+Iteration 59:  log likelihood = -2869.0131  
+
+ARCH family regression
+
+Sample: 1 - 5814                                   Number of obs   =      5814
+Distribution: Gaussian                             Wald chi2(1)    =  1.05e+06
+Log likelihood = -2869.013                         Prob > chi2     =    0.0000
+
+------------------------------------------------------------------------------
+             |                 OPG
+       dgs10 |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+dgs10        |
+           t |  -.0011496   1.12e-06 -1024.79   0.000    -.0011518   -.0011474
+       _cons |   8.480818   .0040509  2093.54   0.000     8.472879    8.488758
+-------------+----------------------------------------------------------------
+ARCH         |
+        arch |
+         L1. |   .9678515   .0776199    12.47   0.000     .8157193    1.119984
+             |
+       garch |
+         L1. |   .0249221   .0286885     0.87   0.385    -.0313064    .0811506
+             |
+       _cons |   .0034064   .0003105    10.97   0.000     .0027978     .004015
+------------------------------------------------------------------------------
+
+. predict d10_archCAST
+(option xb assumed; linear prediction)
+
+. 
+. arch dgs3mo t, arch(1) garch(1)
+
+(setting optimization to BHHH)
+Iteration 0:   log likelihood = -8268.3996  
+Iteration 1:   log likelihood = -8264.2656  
+Iteration 2:   log likelihood =  -8262.152  
+Iteration 3:   log likelihood = -8255.6858  
+Iteration 4:   log likelihood = -8249.2183  
+(switching optimization to BFGS)
+Iteration 5:   log likelihood = -8243.2537  
+Iteration 6:   log likelihood = -8239.0693  
+BFGS stepping has contracted, resetting BFGS Hessian (0)
+Iteration 7:   log likelihood = -8041.0143  
+Iteration 8:   log likelihood = -8002.4005  (backed up)
+Iteration 9:   log likelihood = -7708.6548  (backed up)
+Iteration 10:  log likelihood = -7254.8325  (backed up)
+Iteration 11:  log likelihood = -7234.2578  (backed up)
+Iteration 12:  log likelihood = -7233.4836  (backed up)
+Iteration 13:  log likelihood = -7233.4836  (backed up)
+Iteration 14:  log likelihood = -7152.9609  (backed up)
+(switching optimization to BHHH)
+Iteration 15:  log likelihood = -7152.9609  (backed up)
+Iteration 16:  log likelihood = -7141.8579  
+Iteration 17:  log likelihood = -7138.0746  
+Iteration 18:  log likelihood = -7127.6842  
+Iteration 19:  log likelihood = -7122.8492  
+(switching optimization to BFGS)
+Iteration 20:  log likelihood = -7122.5899  
+Iteration 21:  log likelihood =  -6906.381  
+Iteration 22:  log likelihood = -6773.7557  
+Iteration 23:  log likelihood = -6678.8272  (backed up)
+Iteration 24:  log likelihood = -6678.8272  (backed up)
+Iteration 25:  log likelihood = -6678.8272  (backed up)
+Iteration 26:  log likelihood = -6678.8272  (backed up)
+Iteration 27:  log likelihood = -6678.8272  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (1)
+Iteration 28:  log likelihood = -6678.8272  (backed up)
+Iteration 29:  log likelihood =   -6526.37  (backed up)
+(switching optimization to BHHH)
+Iteration 30:  log likelihood = -6496.7155  (backed up)
+Iteration 31:  log likelihood = -6483.7086  
+Iteration 32:  log likelihood = -6451.8886  
+Iteration 33:  log likelihood = -6426.7535  
+Iteration 34:  log likelihood = -6389.5021  
+(switching optimization to BFGS)
+Iteration 35:  log likelihood =  -6312.266  
+Iteration 36:  log likelihood = -6259.3709  
+Iteration 37:  log likelihood = -6074.3762  
+Iteration 38:  log likelihood = -6049.6741  
+Iteration 39:  log likelihood =  -6037.051  
+Iteration 40:  log likelihood = -6031.4219  
+Iteration 41:  log likelihood =  -5980.581  
+Iteration 42:  log likelihood =   -5856.59  
+Iteration 43:  log likelihood = -5852.8682  
+Iteration 44:  log likelihood = -5823.1174  
+(switching optimization to BHHH)
+Iteration 45:  log likelihood = -5819.2914  
+Iteration 46:  log likelihood = -5776.7659  
+Iteration 47:  log likelihood = -5767.1715  
+Iteration 48:  log likelihood = -5741.2078  
+Iteration 49:  log likelihood = -5735.9303  
+(switching optimization to BFGS)
+Iteration 50:  log likelihood = -5722.1505  
+Iteration 51:  log likelihood = -5693.1447  
+Iteration 52:  log likelihood = -5681.4288  
+Iteration 53:  log likelihood = -5678.8125  
+Iteration 54:  log likelihood = -5675.7469  
+Iteration 55:  log likelihood = -5674.8586  
+Iteration 56:  log likelihood = -5674.2379  
+Iteration 57:  log likelihood =  -5674.045  
+Iteration 58:  log likelihood =   -5673.88  
+BFGS stepping has contracted, resetting BFGS Hessian (2)
+Iteration 59:  log likelihood = -5673.1016  
+(switching optimization to BHHH)
+Iteration 60:  log likelihood = -5672.9721  (backed up)
+Iteration 61:  log likelihood = -5672.9688  
+Iteration 62:  log likelihood =  -5672.908  
+Iteration 63:  log likelihood = -5672.8739  
+Iteration 64:  log likelihood = -5672.8415  
+(switching optimization to BFGS)
+Iteration 65:  log likelihood = -5672.6039  
+BFGS stepping has contracted, resetting BFGS Hessian (3)
+Iteration 66:  log likelihood = -5666.7785  
+Iteration 67:  log likelihood = -5666.7122  (backed up)
+Iteration 68:  log likelihood = -5664.9088  (backed up)
+Iteration 69:  log likelihood = -5664.7555  (backed up)
+Iteration 70:  log likelihood =  -5664.754  (backed up)
+Iteration 71:  log likelihood = -5664.7382  (backed up)
+Iteration 72:  log likelihood = -5663.9305  
+Iteration 73:  log likelihood = -5663.3853  
+Iteration 74:  log likelihood = -5663.3556  
+(switching optimization to BHHH)
+Iteration 75:  log likelihood = -5663.3549  
+Iteration 76:  log likelihood = -5663.3548  
+Iteration 77:  log likelihood = -5663.3548  
+Iteration 78:  log likelihood = -5663.3548  
+Iteration 79:  log likelihood = -5663.3548  
+(switching optimization to BFGS)
+Iteration 80:  log likelihood = -5663.3548  
+Iteration 81:  log likelihood = -5663.3548  
+BFGS stepping has contracted, resetting BFGS Hessian (4)
+Iteration 82:  log likelihood = -5663.3548  
+Iteration 83:  log likelihood = -5663.3548  (backed up)
+Iteration 84:  log likelihood = -5663.3548  (backed up)
+Iteration 85:  log likelihood = -5663.3548  (backed up)
+Iteration 86:  log likelihood = -5663.3548  (backed up)
+Iteration 87:  log likelihood = -5663.3548  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (5)
+Iteration 88:  log likelihood = -5663.3548  
+Iteration 89:  log likelihood = -5663.3548  (backed up)
+(switching optimization to BHHH)
+Iteration 90:  log likelihood = -5663.3548  (backed up)
+Iteration 91:  log likelihood = -5663.3548  
+Iteration 92:  log likelihood = -5663.3548  
+Iteration 93:  log likelihood = -5663.3548  
+Iteration 94:  log likelihood = -5663.3548  (backed up)
+(switching optimization to BFGS)
+Iteration 95:  log likelihood = -5663.3548  (backed up)
+Iteration 96:  log likelihood = -5663.3548  (backed up)
+BFGS stepping has contracted, resetting BFGS Hessian (6)
+Iteration 97:  log likelihood = -5663.3548  (backed up)
+Iteration 98:  log likelihood = -5663.3548  (backed up)
+Iteration 99:  log likelihood = -5663.3548  
+
+ARCH family regression
+
+Sample: 1 - 5814                                   Number of obs   =      5814
+Distribution: Gaussian                             Wald chi2(1)    =  3.62e+06
+Log likelihood = -5663.355                         Prob > chi2     =    0.0000
+
+------------------------------------------------------------------------------
+             |                 OPG
+      dgs3mo |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+dgs3mo       |
+           t |  -.0014214   7.47e-07 -1902.21   0.000    -.0014229   -.0014199
+       _cons |   7.643948   .0024067  3176.14   0.000     7.639231    7.648665
+-------------+----------------------------------------------------------------
+ARCH         |
+        arch |
+         L1. |   .6030499   .0435874    13.84   0.000     .5176203    .6884796
+             |
+       garch |
+         L1. |   .4118269   .0168083    24.50   0.000     .3788833    .4447706
+             |
+       _cons |   .0002132   .0000427     4.99   0.000     .0001295    .0002969
+------------------------------------------------------------------------------
+
+. predict d3m_archCAST
+(option xb assumed; linear prediction)
+
+. 
+end of do-file
+
+. log close
+      name:  <unnamed>
+       log:  C:\Users\lyon4\Documents\byuclasses\Economics\E588\Project\Stata GARCH.log
+  log type:  text
+ closed on:  13 Apr 2013, 18:31:48
+--------------------------------------------------------------------------------------------
