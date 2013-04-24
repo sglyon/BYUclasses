@@ -1,7 +1,7 @@
 setwd('~/School/BYU/byuclasses/Economics/E588/Project')
 
-library('tseries')
-library('FinTS')  # for ArchTest function
+# library('tseries')
+# library('FinTS')  # for ArchTest function
 
 db <- read.csv(file='the_data.csv', sep=',', head=TRUE)
 
@@ -45,3 +45,33 @@ cols <- colnames(db)[-1]
 #     print(t1)
 #     print(t2)
 # }
+
+### GARCH Stuff
+# library(TSA)
+# garch.g01 <- garch.sim(alpha=c(.1, .9), n=400)
+# garch.g11 <- garch.sim(alpha=c(.1, .4), beta=c(.09), n=400)
+
+# libraray(rugarch)
+# gen_garch <- ugarchspec(variance.model=list(model='sGARCH', garchOrder=c(1, 1)),
+#                        mean.model=list(armaOrder=c(0, 0)))
+
+# dgs10_garch <- ugarchfit(spec=gen_garch, data=dgs10, out.sample=500)
+
+### ARIMA Stuff
+library(forecast)
+sp_arima <- Arima(sp500, order=c(1, 1, 0), include.drift=TRUE)
+vix_arima <- Arima(vix, order=c(1, 1, 0), include.drift=TRUE)
+d10_arima <- Arima(dgs10, order=c(1, 1, 0), include.drift=TRUE)
+dg3_arima <- Arima(dgs3mo, order=c(1, 1, 0), include.drift=TRUE)
+
+
+sp_arima.forecast <- forecast(sp_arima, h=1500)
+vix_arima.forecast <- forecast(vix_arima, h=1500)
+d10_arima.forecast <- forecast(d10_arima, h=1500)
+dg3_arima.forecast <- forecast(dg3_arima, h=1500)
+
+
+write.csv(sp_arima.forecast, 'sp_arima_forecast.csv')
+write.csv(vix_arima.forecast, 'vix_arima_forecast.csv')
+write.csv(d10_arima.forecast, 'd10_arima_forecast.csv')
+write.csv(dg3_arima.forecast, 'dg3_arima_forecast.csv')

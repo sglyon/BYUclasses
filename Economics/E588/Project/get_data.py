@@ -289,3 +289,38 @@ ann_returns.plot(linewidth=2, title='Estimated Annual returns')
 plt.savefig('./Figures/returns.eps', format='eps', dpi=1000)
 
 # plot_diffs(data.VIX, 4, (1, 4))nu
+
+# # Read ARIMA forecasts from R
+# sp_arima_fore = pd.DataFrame.from_csv('sp_arima_forecast.csv').reset_index().drop('index', axis=1)
+# vix_arima_fore = pd.DataFrame.from_csv('vix_arima_forecast.csv').reset_index().drop('index', axis=1)
+# d10_arima_fore = pd.DataFrame.from_csv('d10_arima_forecast.csv').reset_index().drop('index', axis=1)
+# d3m_arima_fore = pd.DataFrame.from_csv('dg3_arima_forecast.csv').reset_index().drop('index', axis=1)
+
+# # Read GARCH forecasts from Stata
+# stata = pd.DataFrame.from_csv('Sata_forecasts.csv')
+# sp_garch_fore = stata['sp_archCAST']
+# vix_garch_fore = stata['vix_archCAST']
+# d10_garch_fore = stata['d10_archCAST']
+# d3m_garch_fore = stata['d3m_archCAST']
+
+
+sp_arima_fore = sp_arima_fore['Point.Forecast']
+vix_arima_fore = vix_arima_fore['Point.Forecast']
+d10_arima_fore = d10_arima_fore['Point.Forecast']
+d3m_arima_fore = d3m_arima_fore['Point.Forecast']
+
+sp_arima_fore.index = sp_garch_fore.index
+vix_arima_fore.index = sp_garch_fore.index
+d10_arima_fore.index = sp_garch_fore.index
+d3m_arima_fore.index = sp_garch_fore.index
+
+forecasts = pd.DataFrame(index=sp_garch_fore.index)
+forecasts['SP_ARIMA'] = sp_arima_fore
+forecasts['VIX_ARIMA'] = vix_arima_fore
+forecasts['DGS10_ARIMA'] = d10_arima_fore
+forecasts['DGS3MO_ARIMA'] = d3m_arima_fore
+
+forecasts['SP_GARCH'] = sp_garch_fore
+forecasts['VIX_GARCH'] = vix_garch_fore
+forecasts['DGS10_GARCH'] = d10_garch_fore
+forecasts['DGS3MO_GARCH'] = d3m_garch_fore
