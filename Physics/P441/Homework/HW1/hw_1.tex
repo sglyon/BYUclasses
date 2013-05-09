@@ -106,6 +106,44 @@
     \ensuremath{\frac{\partial #1}{\partial #2}}
   }
 
+  % Inline curl definition
+  \newcommand{\smcurl}{
+  \ensuremath{\left|
+        \begin{smallmatrix}
+        \bs{\hat{x}} & \bs{\hat{y}} & \bs{\hat{z}} \\
+        \partial / \partial x & \partial / \partial y & \partial / \partial z \\
+        v_x & v_y & v_z
+        \end{smallmatrix}
+        \right|}
+  }
+
+  % inline curl of vector
+  \newcommand{\smcurldet}[3]{
+  \ensuremath{\left|
+        \begin{smallmatrix}
+        \bs{\hat{x}} & \bs{\hat{y}} & \bs{\hat{z}} \\
+        \partial / \partial x & \partial / \partial y & \partial / \partial z \\
+        #1 & #2 & #3
+        \end{smallmatrix}
+        \right|}
+  }
+
+  % expand curl determinant
+  \newcommand{\expandcurl}[3]{
+   \ensuremath{
+   \bs{\hat{x}} \left(\fracpd{(#3)}{y} - \fracpd{(#2)}{z} \right) - \bs{\hat{y}} \left(\fracpd{(#3)}{x} - \fracpd{(#1)}{z} \right) + \bs{\hat{z}} \left(\fracpd{(#2)}{x} - \fracpd{(#1)}{y} \right)
+   }
+   }
+
+   % Just a vector in xhat yhat zhat
+   \newcommand{\xyzvec}[3]{
+   \ensuremath{
+      (#1) \bs{\hat{x}} + (#2) \bs{\hat{y}} + (#3) \bs{\hat{z}}
+   }
+   }
+
+
+
 \begin{document}
 
 Assignment:
@@ -122,8 +160,8 @@ Assignment:
 \end{itemize}
 
 % Problem 1
-  \begin{homeworkProblem}
-      1.2: Is the cross product associative? $$ (\cross{A}{B}) \times \bs{C} \stackrel{?}{=} \bs{A} \times (\cross{B}{C})$$ If so prove it, if not provide a counter example
+  \begin{homeworkProblem}[Problem 1.2]
+      Is the cross product associative? $$ (\cross{A}{B}) \times \bs{C} \stackrel{?}{=} \bs{A} \times (\cross{B}{C})$$ If so prove it, if not provide a counter example
       \vspace{.2in}
 
       \problemAnswer{ % Answer
@@ -138,19 +176,19 @@ Assignment:
   \end{homeworkProblem}
 
 % Problem 2
-    \begin{homeworkProblem}
-      1.4: Use the cross product to find the components of the unit vector $\hat{n}$ that is normal to the plane passing through the following points:  $<1, 0 0>, <0, 2, 0>, <0, 0, 3>$.
-      \vspace{.2in}
-      \problemAnswer{ % Answer
-         We need to find two vectors parallel to the plane. We can use $<1, -2, 0>$ and $<0, 2, -3>$. Now that we have those vectors we can take the cross product between them and normalize the resultant vector. $$<1, -2, 0> \times <0, 2, -3> = <6, 3, 2>$$
+  \begin{homeworkProblem}[Problem 1.4]
+    Use the cross product to find the components of the unit vector $\hat{n}$ that is normal to the plane passing through the following points:  $<1, 0 0>, <0, 2, 0>, <0, 0, 3>$.
+    \vspace{.2in}
+    \problemAnswer{ % Answer
+       We need to find two vectors parallel to the plane. We can use $<1, -2, 0>$ and $<0, 2, -3>$. Now that we have those vectors we can take the cross product between them and normalize the resultant vector. $$<1, -2, 0> \times <0, 2, -3> = <6, 3, 2>$$
 
-       Now we normalize this vector to make it a unit vector: $$ \frac{<6, 3, 2>}{\text{norm}(<6, 3, 2>)} = \frac{<6, 3, 2>}{7} = <0.86,  0.43,  0.29>$$ \qed
-      }
+     Now we normalize this vector to make it a unit vector: $$ \frac{<6, 3, 2>}{\text{norm}(<6, 3, 2>)} = \frac{<6, 3, 2>}{7} = <0.86,  0.43,  0.29>$$ \qed
+    }
   \end{homeworkProblem}
 
 % Problem 3
-  \begin{homeworkProblem}
-    1.9: Find the transformation matrix $R$ that describes rotation by $120^{\circ}$ about an axis from the origin through the point $(1, 1, 1)$. The rotation is clockwise as you look down the axis toward the origin.
+  \begin{homeworkProblem}[Problem 1.9]
+    Find the transformation matrix $R$ that describes rotation by $120^{\circ}$ about an axis from the origin through the point $(1, 1, 1)$. The rotation is clockwise as you look down the axis toward the origin.
     \vspace{.2in}
     \problemAnswer{ % Answer
       The general form for the rotation matrix of a vector about an axis of direction $u$ is given below:
@@ -167,8 +205,8 @@ Assignment:
   \end{homeworkProblem}
 
 % Problem 4
-  \begin{homeworkProblem}
-    1.12: The height of a certain hill (in feet) is given by $$ h(x, y) = 10(2xy - 3x^2 - 4y^2 0 18x + 28y + 12)$$ where $y$ is the distance (in miles) north, $x$ is the distance east of South Hadley.
+  \begin{homeworkProblem}[Problem 1.12]
+    The height of a certain hill (in feet) is given by $$ h(x, y) = 10(2xy - 3x^2 - 4y^2 0 18x + 28y + 12)$$ where $y$ is the distance (in miles) north, $x$ is the distance east of South Hadley.
 
     \begin{enumerate}
       \item Where is the top of the hill located?
@@ -206,79 +244,145 @@ Assignment:
   \end{homeworkProblem}
 
 % Problem 5
-    \begin{homeworkProblem}
-      1.13: Let $\bs{\eta}$ be the separation vector from a fixed point $(x', y', z')$ to hte point $(x, y, z)$ and let $\eta$ be its length. Show that:
+  \begin{homeworkProblem}[Problem 1.13]
+    Let $\bs{\eta}$ be the separation vector from a fixed point $(x', y', z')$ to hte point $(x, y, z)$ and let $\eta$ be its length. Show that:
+
+    \begin{enumerate}
+      \item $\nabla(\eta^2) = 2 \bs{\eta}$
+      \item $\nabla(1 / \eta) = -\bs{\eta} / \eta^2$
+      \item What is the general formula for $\nabla(\eta^n)$?
+    \end{enumerate}
+
+    \vspace{.2in}
+    \problemAnswer{ % Answer
+      We begin by defining $\bs{\eta}$ $$\bs{\eta} = (x - x') \hat{x} + (y - y') \hat{y} + (z - z') \hat{z} $$
 
       \begin{enumerate}
-        \item $\nabla(\eta^2) = 2 \bs{\eta}$
-        \item $\nabla(1 / \eta) = -\bs{\eta} / \eta^2$
-        \item What is the general formula for $\nabla(\eta^n)$?
-      \end{enumerate}
+        \item We recognize that $\eta^2$ is simply the sum of each squared component: $$\eta^2 = (x - x')^2 + (y - y')^2 + (z - z')^2$$ We can now compute $\nabla(\eta^2)$
 
-      \vspace{.2in}
-      \problemAnswer{ % Answer
-        We begin by defining $\bs{\eta}$ $$\bs{\eta} = (x - x') \hat{x} + (y - y') \hat{y} + (z - z') \hat{z} $$
+          \begin{align*}
+            \nabla(\eta^2) &= \fracpd{\eta^2}{x} \hat{x} + \fracpd{\eta^2}{y} \hat{y} + \fracpd{\eta^2}{z} \hat{z} \\
+                  &= 2(x - x')\hat{x} + 2(y - y')\hat{y} + 2(z - z')\hat{z}\\
+                  &= 2 \bs{\eta}
+          \end{align*}
 
-        \begin{enumerate}
-          \item We recognize that $\eta^2$ is simply the sum of each squared component: $$\eta^2 = (x - x')^2 + (y - y')^2 + (z - z')^2$$ We can now compute $\nabla(\eta^2)$
+        \item We know that $\eta = \sqrt{\eta^2} = \left((x - x')^2 + (y - y')^2 + (z - z')^2\right)^{1/2} $. Using this we can say that $(1 / \eta) =  \left((x - x')^2 + (y - y')^2 + (z - z')^2\right)^{-1/2}$. We will use this definition to solve the problem.
+        Note that I define $\xi \equiv \left((x - x')^2 + (y - y')^2 + (z - z')^2\right)^{-3/2} \equiv \eta^{1/3}$. Also note that $\bs{\eta} = \eta \hat{\bs{\eta}}$
 
-            \begin{align*}
-              \nabla(\eta^2) &= \fracpd{\eta^2}{x} \hat{x} + \fracpd{\eta^2}{y} \hat{y} + \fracpd{\eta^2}{z} \hat{z} \\
-                    &= 2(x - x')\hat{x} + 2(y - y')\hat{y} + 2(z - z')\hat{z}\\
-                    &= 2 \bs{\eta}
-            \end{align*}
+          \begin{align*}
+            \nabla(1 / \eta) &= \fracpd{(1 / \eta)}{x} \hat{x} + \fracpd{(1 / \eta)}{y} \hat{y} + \fracpd{(1 / \eta)}{z} \hat{z} \\
+              &= \frac{-1}{2} \xi 2(x - x') \hat{x} - \frac{1}{2} \xi 2(y - y') \hat{y}- \frac{1}{2} \xi 2(z - z') \hat{z}\\
+              &= -\xi \left[(x - x') \hat{x} + (y - y') \hat{y} + (z - z') \hat{z} \right] \\
+              &= - \eta^{1/3} \bs{\eta} = -\hat{\bs{\eta}} / \eta^2
+          \end{align*}
 
-          \item We know that $\eta = \sqrt{\eta^2} = \left((x - x')^2 + (y - y')^2 + (z - z')^2\right)^{1/2} $. Using this we can say that $(1 / \eta) =  \left((x - x')^2 + (y - y')^2 + (z - z')^2\right)^{-1/2}$. We will use this definition to solve the problem.
-          Note that I define $\xi \equiv \left((x - x')^2 + (y - y')^2 + (z - z')^2\right)^{-3/2} \equiv \eta^{1/3}$. Also note that $\bs{\eta} = \eta \hat{\bs{\eta}}$
+        \item The general formula is pretty easy:
 
-            \begin{align*}
-              \nabla(1 / \eta) &= \fracpd{(1 / \eta)}{x} \hat{x} + \fracpd{(1 / \eta)}{y} \hat{y} + \fracpd{(1 / \eta)}{z} \hat{z} \\
-                &= \frac{-1}{2} \xi 2(x - x') \hat{x} - \frac{1}{2} \xi 2(y - y') \hat{y}- \frac{1}{2} \xi 2(z - z') \hat{z}\\
-                &= -\xi \left[(x - x') \hat{x} + (y - y') \hat{y} + (z - z') \hat{z} \right] \\
-                &= - \eta^{1/3} \bs{\eta} = -\hat{\bs{\eta}} / \eta^2
-            \end{align*}
+          \begin{align*}
+            \nabla (\eta^n) &= n \eta ^{n-1} \fracpd{\eta}{x} + n \eta ^{n-1} \fracpd{\eta}{y} + n \eta ^{n-1} \fracpd{\eta}{z}\\
+              &= n \eta ^{n-1} \left[ \frac{1}{2} \eta^-1 2 \eta_x + \frac{1}{2} \eta^-1 2 \eta_y + \frac{1}{2} \eta^-1 2 \eta_z\right] \\
+              &= n \eta ^{n-1} \left[ \hat{\bs{\eta_x}} + \hat{\bs{\eta_y}}+ \hat{\bs{\eta_z}} \right] \\
+              &= n \eta ^{n-1}  \hat{\bs{\eta}}
+          \end{align*}
 
-          \item The general formula is pretty easy:
-
-            \begin{align*}
-              \nabla (\eta^n) &= n \eta ^{n-1} \fracpd{\eta}{x} + n \eta ^{n-1} \fracpd{\eta}{y} + n \eta ^{n-1} \fracpd{\eta}{z}\\
-                &= n \eta ^{n-1} \left[ \frac{1}{2} \eta^-1 2 \eta_x + \frac{1}{2} \eta^-1 2 \eta_y + \frac{1}{2} \eta^-1 2 \eta_z\right] \\
-                &= n \eta ^{n-1} \left[ \hat{\bs{\eta_x}} + \hat{\bs{\eta_y}}+ \hat{\bs{\eta_z}} \right] \\
-                &= n \eta ^{n-1}  \hat{\bs{\eta}}
-            \end{align*}
-
-        \end{enumerate} \qed
-      }
-    \end{homeworkProblem}
+      \end{enumerate} \qed
+    }
+  \end{homeworkProblem}
 
 % Problem 6
-    \begin{homeworkProblem}
-      1.16: Sketch the vector function $$\bs{v} = \frac{\bs{\hat{r}}}{r^2}$$ and compute its divergence. The ansewr may surprise you ... can you explain it?
+  \begin{homeworkProblem}[Problem 1.16]
+    Sketch the vector function $$\bs{v} = \frac{\bs{\hat{r}}}{r^2}$$ and compute its divergence. The ansewr may surprise you ... can you explain it?
 
-      \begin{figure}[!h]
-        \includegraphics[width=\linewidth, height=4in]{VectorField.png}
-        \caption{The vector field $\bs{v} = \frac{\bs{\hat{r}}}{r^2}$}
-        \label{fig:b12Haz}
-      \end{figure}
+    \begin{figure}[!h]
+      \includegraphics[width=\linewidth, height=4in]{VectorField.png}
+      \caption{The vector field $\bs{v} = \frac{\bs{\hat{r}}}{r^2}$}
+      \label{fig:VectorField}
+    \end{figure}
 
-      \vspace{.2in}
-      \problemAnswer{ % Answer
+    \vspace{.2in}
+    \problemAnswer{ % Answer
 
-        For this problem $\bs{r} = x \hat{x} + y \hat{y} + z \hat{z}$ and  $r = \sqrt{x^2 + y^2 + z^2}$, so $\bs{v}$ becomes $$\bs{v} = \frac{\bs{\hat{r}}}{x^2 + y^2 + z^2} = \frac{\bs{r}}{(x^2 + y^2 + z^2) ^ {3/2}} = \frac{x \hat{x} + y \hat{y} + z \hat{z}}{(x^2 + y^2 + z^2) ^ {3/2}}$$
+      The plot of the vector field can be found in Figure \ref{fig:VectorField}.
 
-        The divergence can now be computed. Note that we make the substitution $\bs{\hat{r}} = \bs{r} / r$
+      For this problem $\bs{r} = x \hat{x} + y \hat{y} + z \hat{z}$ and  $r = \sqrt{x^2 + y^2 + z^2}$, so $\bs{v}$ becomes $$\bs{v} = \frac{\bs{\hat{r}}}{x^2 + y^2 + z^2} = \frac{\bs{r}}{(x^2 + y^2 + z^2) ^ {3/2}} = \frac{x \hat{x} + y \hat{y} + z \hat{z}}{(x^2 + y^2 + z^2) ^ {3/2}}$$
 
+      The divergence can now be computed. Note that we make the substitution $\bs{\hat{r}} = \bs{r} / r$
+
+      \begin{align*}
+        \nabla \cdot \bs{v} &= \fracpd{\bs{v}}{x} + \fracpd{\bs{v}}{y} + \fracpd{\bs{v}}{z} \\
+          &= \fracpd{(\bs{r} / r^3)}{x} + \fracpd{(\bs{r} / r^3)}{y} + \fracpd{(\bs{r} / r^3)}{z}\\
+          &= \fracpd{}{x} \left[ x (x^2 + y^2 + z^2) ^{-3/2}\right] + \fracpd{}{y} \left[ y (x^2 + y^2 + z^2) ^{-3/2}\right] + \fracpd{}{z} \left[ z (x^2 + y^2 + z^2) ^{-3/2}\right] \\
+          &=  3 (x^2 + y^2 + z^2) ^{-3/2} + (-3/2) (x^2 + y^2 + z^2) ^{-5/2} \left(2x^2 + 2y^2 + 2z^2 \right) \\
+          &= 3 r^{-3}  - 3 r^{-5} \left( r^2\right)\\
+          &= 3r^{-3} - 3r^{-3} = 0
+      \end{align*}
+
+      This is in the same form as Coulomb's law for a point charge. In this case the divergence represents the flux at a distance $r$. Because Coulomb's law describes point charges, the flux is zero for all radii not equal to 0. In other words, the only place flux exists is where the point charge is located. \qed
+    }
+  \end{homeworkProblem}
+
+% Problem 7
+  \begin{homeworkProblem}[Problem 1.18]
+    Calculate the curl of the vector functions:
+    \begin{enumerate}
+      \item $\bs{v} = \xyzvec{x^2}{3xz^2}{-2xz}$
+      \item $\bs{v} = \xyzvec{xy}{2yz}{3xz}$
+      \item $\bs{v} = \xyzvec{y^2}{2xy + z^2}{2yz}$
+    \end{enumerate}
+
+    \vspace{.2in}
+    \problemAnswer{ % Answer
+      The curl of a vector $\bs{v}$ is defined as $$\nabla \times \bs{v} = \smcurl$$ We will apply this definition each vector function.
+      \begin{enumerate}
+        \item
         \begin{align*}
-          \nabla \cdot \bs{v} &= \fracpd{\bs{v}}{x} + \fracpd{\bs{v}}{y} + \fracpd{\bs{v}}{z} \\
-            &= \fracpd{(\bs{r} / r^3)}{x} + \fracpd{(\bs{r} / r^3)}{y} + \fracpd{(\bs{r} / r^3)}{z}\\
-            &= \fracpd{}{x} \left[ x (x^2 + y^2 + z^2) ^{-3/2}\right] + \fracpd{}{y} \left[ y (x^2 + y^2 + z^2) ^{-3/2}\right] + \fracpd{}{z} \left[ z (x^2 + y^2 + z^2) ^{-3/2}\right] \\
-            &=  3 (x^2 + y^2 + z^2) ^{-3/2} + (-3/2) (x^2 + y^2 + z^2) ^{-5/2} \left(2x^2 + 2y^2 + 2z^2 \right) \\
-            &= 3 r^{-3}  - 3 r^{-5} \left( r^2\right)\\
-            &= 3r^{-3} - 3r^{-3} = 0
+          \nabla \times \bs{v} &=  \smcurldet{x^2}{3xz^2}{-2xz} \\
+            &= \expandcurl{x^2}{3xz^2}{-2xz} \\
+            &= \xyzvec{-6xz}{2z}{3z^2}
         \end{align*}
 
-        This is in the same form as Coulomb's law for a point charge. In this case the divergence represents the flux at a distance $r$. Because Coulomb's law describes point charges, the flux is zero for all radii not equal to 0. In other words, the only place flux exists is where the point charge is located. \qed
-      }
-    \end{homeworkProblem}
+        \item
+        \begin{align*}
+          \nabla \times \bs{v} &=  \smcurldet{xy}{2yz}{3xz} \\
+            &= \expandcurl{xy}{2yz}{3xz}\\
+            &= \xyzvec{-2y}{-3z}{-x}
+        \end{align*}
+
+        \item
+        \begin{align*}
+          \nabla \times \bs{v} &=  \smcurldet{y^2}{2xy + z^2}{2yz} \\
+            &= \expandcurl{y^2}{2xy + z^2}{2yz}\\
+            &= \xyzvec{2z - 2z}{0}{2y - 2y} \\
+            &= 0
+        \end{align*}
+
+      \end{enumerate} \qed
+    }
+  \end{homeworkProblem}
+
+% Problem 8
+  \begin{homeworkProblem}[Problem 1.19]
+    Draw a circle in the $xy$ plane. At a few representative points draw the vector $\bs{v}$ tangent to the circle, pointing in the clockwise direction. By comparing adjacent vectors, determine the sign of $\fracpd{v_x}{y}$ and $\fracpd{v_y}{x}$. According to the definition of the curl, what is the direction of $\nabla \times \bs{v}$? Explain how this example illustrates the geometrical interpretation of the curl.
+
+    \begin{figure}[!h]
+      \includegraphics[width=\linewidth, height=4in]{CurlField.png}
+      \caption{Tangent vectors in the clockwise direction on a circle in the $xy$ plane.}
+      \label{fig:CurlField}
+    \end{figure}
+
+    \vspace{.2in}
+    \problemAnswer{ % Answer
+
+    Moving from point 1 to point 2 in Figure \ref{fig:CurlField} we are increasing in $y$ and decreasing in $x$. We can also see that both $v_x$ and $v_y$ are increasing. Moving from point 3 to point 4 we see that we are  increasing in $x$ and decreasing in $y$, but that $v_x$ and $v_y$  are decreasing. From this analysis we can determine the following signs:
+
+    \begin{align*}
+      \fracpd{v_x}{y} &> 0 \\
+      \fracpd{v_y}{x} &< 0
+    \end{align*}
+
+    Coupling this with the definition of the curl we see that $\nabla \times \bs{v}$ is in the negative $\bs{\hat{z}}$ direction (terms in the $\bs{\hat{x}}$ and $\bs{\hat{y}}$ directions are all zero). It follows the direction of the right hand rule. If we take our right hand and twist in the direction of the tangent vectors, we will have our thumb pointing directly into the circle, which is the $-\bs{\hat{z}}$ direction. \qed
+
+    }
+  \end{homeworkProblem}
 
   \end{document}
