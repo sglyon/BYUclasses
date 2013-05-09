@@ -1,0 +1,136 @@
+% Created 2013-05-03 Fri 16:58
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{Physics 441}
+\author{Spencer Lyon}
+\date{2013-05-01 Wed}
+\hypersetup{
+  pdfkeywords={notes, physics, EM},
+  pdfsubject={},
+  pdfcreator={Emacs Org-mode version 7.8.11}}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{tocdepth}{3}
+\tableofcontents
+\vspace*{1cm}
+
+
+\section{Course Info}
+\label{sec-1}
+
+The slides are available online, but they are password protected. The password
+is m@xwell.
+
+TA Help sessions will be Thursday at Noon in N337
+\section{Unit 1}
+\label{sec-2}
+\subsection{Introduction}
+\label{sec-2-1}
+
+Dr. Berrando likes to use Clifford Algebras to solve these problems. Our book
+doesn't so in order for us to use them we need to be in class. He thinks they
+make this class easier, but did say that people either hate them or love them.
+
+We will be studying Electricity and Magnetism as a single field. Maxwell has us
+think about vector fields and sources. His equations all take the form $\nabla
+\dots = \dots$, where the dots on the rhs stands for $\cdot$ or $\times$ some
+field. The dots on the right stand for a source. In this class they will all be
+static (time independent).
+
+As an example of these principles and what things look like in a Clifford
+Algebra we would write: $$\nabla \mathscr{F} = \tilde{J}$$ Clifford Algebras
+make solving this for $\mathscr{F}$ very easy: $$\mathscr{F}=\nabla^{-1}J$$
+\subsection{Tools}
+\label{sec-2-2}
+
+\begin{table}[htb]
+\caption{The rows of this table don't align. A table was just a compact way to show the data}
+\begin{center}
+\begin{tabular}{llll}
+ Math                                               &  Physics                                 &     &     \\
+\hline
+ trigonometry                                       &  Trajectories r(t)                       &     &     \\
+ vectors: dot, cross, Clifford                      &  Fields (scalar-vector, static-dynamic)  &     &     \\
+ vector derivative operators ($\nabla$)             &  Sources (charge, current)               &     &     \\
+ Dirac Delta function                               &  Superposition of soureces               &     &     \\
+ Discrete to continuum                              &  Superposition of fields                 &     &     \\
+ integral theorems (stokes, gauss -- inside cover)  &  unit point sources                      &     &     \\
+ cylindrical and spherical coords                   &  maxwell's Equaitons                     &     &     \\
+ linearity                                          &  field lines                             &     &     \\
+                                                    &  charge conversation                     &     &     \\
+                                                    &  potentials                              &     &     \\
+\end{tabular}
+\end{center}
+\end{table}
+\subsubsection{Math Review}
+\label{sec-2-2-1}
+
+\begin{itemize}
+\item Sum of vectors
+\item dilation (multiplication by scalar)
+\item Linear combinations (put previous two points together)
+\item Scalar (dot) Product: $\boldsymbol{A} \cdot \boldsymbol{B} = A B
+  cos(\theta)$, where $A = \sqrt{\boldsymbol{A} \cdot \boldsymbol{A}}$
+\item Cross product: $\boldsymbol{A} \times \boldsymbol{B} = \boldsymbol{n} A
+  B |sin(\theta)|$
+\item Orthonormalbasis: $\{e_1, e_2, e_3\} = \{i, j, k\}$
+\item Triple dot (scalar) product: One cross and a dot. It is cyclically
+  constant. i.e. $A \cdot (B \times C) = B \cdot (C \times A) =C \cdot (A
+  \times B)$. It gives you the volume of the parallelipiped defined by the
+  three vectors.
+\item The triple vector product has two crosses. It is non-associative. Rule: $A
+  \times (B \times C) = B(A \cdot C) - C(A \cdot B)$
+\item Rotation of a vector in 3-d. A unit vector ($n$) defines the rotation axis
+  and $\phi$ defines the rotation angle. We can express this as \$r' = e$^{\phi n
+  \times}$ r = e$^{\phi n \times}$ (r$_{\parallel}$ + r$_{\perp}$) = r$_{\parallel}$ +
+  e$^{\phi n \times}$ r$_{\perp}$ = r$_{\parallel}$ + cos($\phi$) r$_{\perp}$ + sin($\phi$)
+  n \texttimes{} r\$
+\begin{itemize}
+\item Example: Rotate vector $e_1 + e_2$ by 45 degrees. Here $\phi = 45$, $r =
+    (e_1 + e_2)$, $n = e_3$. Plugging it in we get $r' = (\frac{1}{\sqrt{2}} +
+    \frac{1}{\sqrt{2}} e_3 \times) (e_1 + e_2)$
+\end{itemize}
+\end{itemize}
+
+Example of something he spent a long time on (note we do a TS expansion of
+exponential):
+
+$$e^{\alpha \frac{\partial}{\partial x}}f(x) = (1 + \alpha
+\frac{\partial}{\partial x} + \frac{\alpha^2}{2!} \frac{\partial ^2}{\partial
+x^2} + \dots )f(x) = f(x) \alpha f'(x) +\frac{\alpha^2}{2!} f''(x) = f(x +
+\alpha)$$
+\subsubsection{Clifford Algebra $Cl_3$}
+\label{sec-2-2-2}
+
+
+We will define multiplication in this space as $$AB = A \cdot B + i A \times
+B$$, with $i = e_1 e_2 e_3$
+
+There are 8 basis elements in a Clifford Space:
+\begin{itemize}
+\item In $\mathbb{R}: 1$
+\item In $i\mathbb{R}: i$
+\item In $\mathbb{R}^3: e_1, e_2, e_3$
+\item In $i\mathbb{R}^3: ie_1, ie_2, ie_3$
+\end{itemize}
+
+\end{document}

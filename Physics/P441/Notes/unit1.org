@@ -1,0 +1,146 @@
+#+TITLE:     Physics 441
+#+AUTHOR:    Spencer Lyon
+#+EMAIL:     spencerlyon2@Spencers-MacBook-Pro-4.local
+#+DATE:      2013-05-01 Wed
+#+DESCRIPTION:
+#+KEYWORDS:  notes, physics, EM
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+#+XSLT:
+#+STARTUP: overview
+
+
+* Course Info
+The slides are available online, but they are password protected. The password
+is m@xwell.
+
+TA Help sessions will be Thursday at Noon in N337
+
+The [[http://www.physics.byu.edu/faculty/berrondo/sp441/][Class website]] has good info.
+
+The [[http://www.physics.byu.edu/faculty/berrondo/sp441/homework12.html][homework schedule]] is here.
+* Unit 1
+** Introduction
+Dr. Berrando likes to use Clifford Algebras to solve these problems. Our book
+doesn't so in order for us to use them we need to be in class. He thinks they
+make this class easier, but did say that people either hate them or love them.
+
+We will be studying Electricity and Magnetism as a single field. Maxwell has us
+think about vector fields and sources. His equations all take the form $\nabla
+\dots = \dots$, where the dots on the rhs stands for $\cdot$ or $\times$ some
+field. The dots on the right stand for a source. In this class they will all be
+static (time independent).
+
+As an example of these principles and what things look like in a Clifford
+Algebra we would write: $$\nabla \mathscr{F} = \tilde{J}$$ Clifford Algebras
+make solving this for $\mathscr{F}$ very easy: $$\mathscr{F}=\nabla^{-1}J$$
+
+** Tools
+#+CAPTION: The rows of this table don't align. A table was just a compact way to show the data
+| Math                                              | Physics                                |   |   |
+|---------------------------------------------------+----------------------------------------+---+---|
+| trigonometry                                      | Trajectories r(t)                      |   |   |
+| vectors: dot, cross, Clifford                     | Fields (scalar-vector, static-dynamic) |   |   |
+| vector derivative operators ($\nabla$)            | Sources (charge, current)              |   |   |
+| Dirac Delta function                              | Superposition of soureces              |   |   |
+| Discrete to continuum                             | Superposition of fields                |   |   |
+| integral theorems (stokes, gauss -- inside cover) | unit point sources                     |   |   |
+| cylindrical and spherical coords                  | maxwell's Equaitons                    |   |   |
+| linearity                                         | field lines                            |   |   |
+|                                                   | charge conversation                    |   |   |
+|                                                   | potentials                             |   |   |
+
+*** Math Review
+- Sum of vectors
+- dilation (multiplication by scalar)
+- Linear combinations (put previous two points together)
+- Scalar (dot) Product: $\boldsymbol{A} \cdot \boldsymbol{B} = A B
+  cos(\theta)$, where $A = \sqrt{\boldsymbol{A} \cdot \boldsymbol{A}}$
+- Cross product: $\boldsymbol{A} \times \boldsymbol{B} = \boldsymbol{n} A
+  B |sin(\theta)|$
+- Orthonormalbasis: $\{e_1, e_2, e_3\} = \{i, j, k\}$
+- Triple dot (scalar) product: One cross and a dot. It is cyclically
+  constant. i.e. $A \cdot (B \times C) = B \cdot (C \times A) =C \cdot (A
+  \times B)$. It gives you the volume of the parallelipiped defined by the
+  three vectors.
+- The triple vector product has two crosses. It is non-associative. Rule: $A
+  \times (B \times C) = B(A \cdot C) - C(A \cdot B)$
+- Rotation of a vector in 3-d. A unit vector ($n$) defines the rotation axis
+  and $\phi$ defines the rotation angle. We can express this as $r' = e^{\phi n
+  \times} r = e^{\phi n \times} (r_{\parallel} + r_{\perp}) = r_{\parallel} +
+  e^{\phi n \times} r_{\perp} = r_{\parallel} + cos(\phi) r_{\perp} + sin(\phi)
+  n \times r$
+  - Example: Rotate vector $e_1 + e_2$ by 45 degrees. Here $\phi = 45$, $r =
+    (e_1 + e_2)$, $n = e_3$. Plugging it in we get $r' = (\frac{1}{\sqrt{2}} +
+    \frac{1}{\sqrt{2}} e_3 \times) (e_1 + e_2)$
+  - Algorithm for finding rotation
+    1. Make sure $\hat{n}$ is a unit vector
+    2. Find $r_{\parallel} = (\hat{n} \cdot r) \hat{n}$
+    3. Find $r_{\perp} = r - r_{\parallel}$
+    4. Put it together: $r' = r_{\parallel} + (cos \phi) r_{\perp} + (sin \phi)
+       \hat{n} \times r$
+
+Example of something he spent a long time on (note we do a TS expansion of
+exponential):
+
+$$e^{\alpha \frac{\partial}{\partial x}}f(x) = (1 + \alpha
+\frac{\partial}{\partial x} + \frac{\alpha^2}{2!} \frac{\partial ^2}{\partial
+x^2} + \dots )f(x) = f(x) \alpha f'(x) +\frac{\alpha^2}{2!} f''(x) = f(x +
+\alpha)$$
+
+*** Clifford Algebra $Cl_3$
+
+We will define multiplication in this space as $$AB = A \cdot B + i A \times
+B$$, with $i = e_1 e_2 e_3$
+
+There are 8 basis elements in a Clifford Space:
+- In $\mathbb{R}: 1$
+- In $i\mathbb{R}: i$
+- In $\mathbb{R}^3: e_1, e_2, e_3$
+- In $i\mathbb{R}^3: ie_1, ie_2, ie_3$
+
+These relationships can be summarized in the following table:
+
+| grade | domain           | basis elements                                                                                                                                                                                                                       | vector types (geometry)   | who      |
+|-------+------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+----------|
+|     0 | $\mathbb{R}$     | 1                                                                                                                                                                                                                                    | scalars                   | German   |
+|     1 | $\mathbb{R}^2$   | $\boldsymbol{\hat{e_1}}$, $\boldsymbol{\hat{e_2}}$,  $\boldsymbol{\hat{e_3}}$                                                                                                                                                        | vectors                   | French   |
+|     2 | $i \mathbb{R}^3$ | $i \boldsymbol{\hat{e_1}} = \boldsymbol{\hat{e_2}} \boldsymbol{\hat{e_3}}$,  $i \boldsymbol{\hat{e_2}} = \boldsymbol{\hat{e_3}} \boldsymbol{\hat{e_1}}$,  $i \boldsymbol{\hat{e_3}} = \boldsymbol{\hat{e_1}} \boldsymbol{\hat{e_2}}$ | bivectors                 | British  |
+|     3 | $i \mathbb{R}$   | $i =\boldsymbol{\hat{e_1}} \boldsymbol{\hat{e_2}} \boldsymbol{\hat{e_3}}$                                                                                                                                                            | trivector (pseudo scalar) | Japanese |
+
+We can decompose the matrix product of a clifford algebra into a symmetric part
+and an anti-symmetric part. In other words $$AB = (AB)_{sym} + (AB)_{non-sym} =
+A \cdot B + A \wedge B$$
+
+**** Sub-algebras
+
+Sub-algebras are simply subsets of an algebra where all objects are closed
+under multiplication and addition. For the clifford algebra, taking scalars and
+bivectors we end up with the even sub algebra (made up of grades 0 and 2).
+
+**** More facts
+
+The bivectors define oriented surfaces (oriented because $e_1 e_2 = - (e_2
+e_1)$ -- direction matters).
+
+The tri-vectors define an oriented volume.
+
+*** Trig
+We will need to know certain trig identities. Among them are the following
+(Note that bold letters are vectors, lower case letters are magnitude of
+vectors and capital letters are angles pointing to legs):
+- Law of cosines: $\boldsymbol{c} = \boldsymbol{a} - \boldsymbol{b}$ and $c^2 =
+  a^2 + b^2 - 2 \boldsymbol{a} \cdot \boldsymbol{b}
+- Law of sines: $\boldsymbol{c} + \boldsymbol{a} + \boldsymbol{b} = 0
+  \rightarrow |\boldsymbol{a} \times \boldsymbol{b}| = |\boldsymbol{a} \times
+  \boldsymbol{c}|$. We also know that $ab sin(C) = ac sin(B) \rightarrow
+  \frac{sin(B)}{b} = \frac{sin(C)}{c}$
+
+*** Differential Calculus
+    I know all this stuff

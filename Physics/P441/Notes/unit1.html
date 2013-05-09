@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Physics 441</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Physics 441"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-05-01 Wed"/>
+<meta name="author" content="Spencer Lyon"/>
+<meta name="description" content=""/>
+<meta name="keywords" content="notes, physics, EM"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Physics 441</h1>
+
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Course Info</a></li>
+<li><a href="#sec-2">2 Unit 1</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Introduction</a></li>
+<li><a href="#sec-2-2">2.2 Tools</a>
+<ul>
+<li><a href="#sec-2-2-1">2.2.1 Math Review</a></li>
+<li><a href="#sec-2-2-2">2.2.2 Clifford Algebra \(Cl_3\)</a></li>
+<li><a href="#sec-2-2-3">2.2.3 Trig</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Course Info</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>The slides are available online, but they are password protected. The password
+is m@xwell.
+</p>
+<p>
+TA Help sessions will be Thursday at Noon in N337
+</p>
+<p>
+The <a href="http://www.physics.byu.edu/faculty/berrondo/sp441/">Class website</a> has good info.
+</p>
+<p>
+The <a href="http://www.physics.byu.edu/faculty/berrondo/sp441/homework12.html">homework schedule</a> is here.
+</p></div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Unit 1</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Introduction</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p>Dr. Berrando likes to use Clifford Algebras to solve these problems. Our book
+doesn't so in order for us to use them we need to be in class. He thinks they
+make this class easier, but did say that people either hate them or love them.
+</p>
+<p>
+We will be studying Electricity and Magnetism as a single field. Maxwell has us
+think about vector fields and sources. His equations all take the form \(\nabla
+\dots = \dots\), where the dots on the rhs stands for \(\cdot\) or \(\times\) some
+field. The dots on the right stand for a source. In this class they will all be
+static (time independent).
+</p>
+<p>
+As an example of these principles and what things look like in a Clifford
+Algebra we would write: $$\nabla \mathscr{F} = \tilde{J}$$ Clifford Algebras
+make solving this for \(\mathscr{F}\) very easy: $$\mathscr{F}=\nabla^{-1}J$$
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Tools</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption>The rows of this table don't align. A table was just a compact way to show the data</caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Math</th><th scope="col" class="left">Physics</th><th scope="col" class="left"></th><th scope="col" class="left"></th></tr>
+</thead>
+<tbody>
+<tr><td class="left">trigonometry</td><td class="left">Trajectories r(t)</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">vectors: dot, cross, Clifford</td><td class="left">Fields (scalar-vector, static-dynamic)</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">vector derivative operators (\(\nabla\))</td><td class="left">Sources (charge, current)</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">Dirac Delta function</td><td class="left">Superposition of soureces</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">Discrete to continuum</td><td class="left">Superposition of fields</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">integral theorems (stokes, gauss &ndash; inside cover)</td><td class="left">unit point sources</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">cylindrical and spherical coords</td><td class="left">maxwell's Equaitons</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">linearity</td><td class="left">field lines</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left"></td><td class="left">charge conversation</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left"></td><td class="left">potentials</td><td class="left"></td><td class="left"></td></tr>
+</tbody>
+</table>
+
+
+
+</div>
+
+<div id="outline-container-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1"><span class="section-number-4">2.2.1</span> Math Review</h4>
+<div class="outline-text-4" id="text-2-2-1">
+
+<ul>
+<li>Sum of vectors
+</li>
+<li>dilation (multiplication by scalar)
+</li>
+<li>Linear combinations (put previous two points together)
+</li>
+<li>Scalar (dot) Product: \(\boldsymbol{A} \cdot \boldsymbol{B} = A B
+  cos(\theta)\), where \(A = \sqrt{\boldsymbol{A} \cdot \boldsymbol{A}}\)
+</li>
+<li>Cross product: \(\boldsymbol{A} \times \boldsymbol{B} = \boldsymbol{n} A
+  B |sin(\theta)|\)
+</li>
+<li>Orthonormalbasis: \(\{e_1, e_2, e_3\} = \{i, j, k\}\)
+</li>
+<li>Triple dot (scalar) product: One cross and a dot. It is cyclically
+  constant. i.e. \(A \cdot (B \times C) = B \cdot (C \times A) =C \cdot (A
+  \times B)\). It gives you the volume of the parallelipiped defined by the
+  three vectors.
+</li>
+<li>The triple vector product has two crosses. It is non-associative. Rule: \(A
+  \times (B \times C) = B(A \cdot C) - C(A \cdot B)\)
+</li>
+<li>Rotation of a vector in 3-d. A unit vector (\(n\)) defines the rotation axis
+  and \(\phi\) defines the rotation angle. We can express this as $r' = e^{&phi; n
+  &times;} r = e<sup>&phi; n &times;</sup> (r<sub>\parallel</sub> + r<sub>&perp;</sub>) = r<sub>\parallel</sub> +
+  e<sup>&phi; n &times;</sup> r<sub>&perp;</sub> = r<sub>\parallel</sub> + cos(&phi;) r<sub>&perp;</sub> + sin(&phi;)
+  n &times; r$
+<ul>
+<li>Example: Rotate vector \(e_1 + e_2\) by 45 degrees. Here \(\phi = 45\), \(r =
+    (e_1 + e_2)\), \(n = e_3\). Plugging it in we get \(r' = (\frac{1}{\sqrt{2}} +
+    \frac{1}{\sqrt{2}} e_3 \times) (e_1 + e_2)\)
+</li>
+<li>Algorithm for finding rotation
+<ol>
+<li>Make sure \(\hat{n}\) is a unit vector
+</li>
+<li>Find \(r_{\parallel} = (\hat{n} \cdot r) \hat{n}\)
+</li>
+<li>Find \(r_{\perp} = r - r_{\parallel}\)
+</li>
+<li>Put it together: \(r' = r_{\parallel} + (cos \phi) r_{\perp} + (sin \phi)
+       \hat{n} \times r\)
+</li>
+</ol>
+
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+<p>
+Example of something he spent a long time on (note we do a TS expansion of
+exponential):
+</p>
+
+
+$$e^{\alpha \frac{\partial}{\partial x}}f(x) = (1 + \alpha
+\frac{\partial}{\partial x} + \frac{\alpha^2}{2!} \frac{\partial ^2}{\partial
+x^2} + \dots )f(x) = f(x) \alpha f'(x) +\frac{\alpha^2}{2!} f''(x) = f(x +
+\alpha)$$
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2"><span class="section-number-4">2.2.2</span> Clifford Algebra \(Cl_3\)</h4>
+<div class="outline-text-4" id="text-2-2-2">
+
+
+<p>
+We will define multiplication in this space as $$AB = A \cdot B + i A \times
+B$$, with \(i = e_1 e_2 e_3\)
+</p>
+<p>
+There are 8 basis elements in a Clifford Space:
+</p><ul>
+<li>In \(\mathbb{R}: 1\)
+</li>
+<li>In \(i\mathbb{R}: i\)
+</li>
+<li>In \(\mathbb{R}^3: e_1, e_2, e_3\)
+</li>
+<li>In \(i\mathbb{R}^3: ie_1, ie_2, ie_3\)
+</li>
+</ul>
+
+
+<p>
+These relationships can be summarized in the following table:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="right" /><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="right">grade</th><th scope="col" class="left">domain</th><th scope="col" class="left">basis elements</th><th scope="col" class="left">vector types (geometry)</th><th scope="col" class="left">who</th></tr>
+</thead>
+<tbody>
+<tr><td class="right">0</td><td class="left">\(\mathbb{R}\)</td><td class="left">1</td><td class="left">scalars</td><td class="left">German</td></tr>
+<tr><td class="right">1</td><td class="left">\(\mathbb{R}^2\)</td><td class="left">\(\boldsymbol{\hat{e_1}}\), \(\boldsymbol{\hat{e_2}}\),  \(\boldsymbol{\hat{e_3}}\)</td><td class="left">vectors</td><td class="left">French</td></tr>
+<tr><td class="right">2</td><td class="left">\(i \mathbb{R}^3\)</td><td class="left">\(i \boldsymbol{\hat{e_1}} = \boldsymbol{\hat{e_2}} \boldsymbol{\hat{e_3}}\),  \(i \boldsymbol{\hat{e_2}} = \boldsymbol{\hat{e_3}} \boldsymbol{\hat{e_1}}\),  \(i \boldsymbol{\hat{e_3}} = \boldsymbol{\hat{e_1}} \boldsymbol{\hat{e_2}}\)</td><td class="left">bivectors</td><td class="left">British</td></tr>
+<tr><td class="right">3</td><td class="left">\(i \mathbb{R}\)</td><td class="left">\(i =\boldsymbol{\hat{e_1}} \boldsymbol{\hat{e_2}} \boldsymbol{\hat{e_3}}\)</td><td class="left">trivector (pseudo scalar)</td><td class="left">Japanese</td></tr>
+</tbody>
+</table>
+
+
+<p>
+We can decompose the matrix product of a clifford algebra into a symmetric part
+and an anti-symmetric part. In other words $$AB = (AB)_{sym} + (AB)_{non-sym} =
+A \cdot B + A \wedge B$$
+
+</p><ul>
+<li id="sec-2-2-2-1">Sub-algebras<br/>
+
+<p>
+Sub-algebras are simply subsets of an algebra where all objects are closed
+under multiplication and addition. For the clifford algebra, taking scalars and
+bivectors we end up with the even sub algebra (made up of grades 0 and 2).
+</p>
+</li>
+</ul>
+<ul>
+<li id="sec-2-2-2-2">More facts<br/>
+
+<p>
+The bivectors define oriented surfaces (oriented because \(e_1 e_2 = - (e_2
+e_1)\) &ndash; direction matters).
+</p>
+<p>
+The tri-vectors define an oriented volume.
+</p>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-2-2-3" class="outline-4">
+<h4 id="sec-2-2-3"><span class="section-number-4">2.2.3</span> Trig</h4>
+<div class="outline-text-4" id="text-2-2-3">
+
+<p>We will need to know certain trig identities. Among them are the following
+(Note that bold letters are vectors, lower case letters are magnitude of
+vectors and capital letters are angles pointing to legs):
+</p><ul>
+<li>Law of cosines: \(\boldsymbol{c} = \boldsymbol{a} - \boldsymbol{b}\) and $c<sup>2</sup> =
+  a<sup>2</sup> + b<sup>2</sup> - 2 \boldsymbol{a} &sdot; \boldsymbol{b}
+</li>
+<li>Law of sines: \(\boldsymbol{c} + \boldsymbol{a} + \boldsymbol{b} = 0
+  \rightarrow |\boldsymbol{a} \times \boldsymbol{b}| = |\boldsymbol{a} \times
+  \boldsymbol{c}|\). We also know that \(ab sin(C) = ac sin(B) \rightarrow
+  \frac{sin(B)}{b} = \frac{sin(C)}{c}\)
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-05-01 Wed</p>
+<p class="author">Author: Spencer Lyon</p>
+<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
