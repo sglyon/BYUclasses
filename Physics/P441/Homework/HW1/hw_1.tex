@@ -146,19 +146,6 @@
 
 \begin{document}
 
-Assignment:
-
-\begin{itemize}
-  \item 1.2
-  \item 1.4
-  \item 1.9
-  \item 1.12
-  \item 1.13
-  \item 1.16
-  \item 1.18
-  \item 1.19
-\end{itemize}
-
 % Problem 1
   \begin{homeworkProblem}[Problem 1.2]
       Is the cross product associative? $$ (\cross{A}{B}) \times \bs{C} \stackrel{?}{=} \bs{A} \times (\cross{B}{C})$$ If so prove it, if not provide a counter example
@@ -191,15 +178,28 @@ Assignment:
     Find the transformation matrix $R$ that describes rotation by $120^{\circ}$ about an axis from the origin through the point $(1, 1, 1)$. The rotation is clockwise as you look down the axis toward the origin.
     \vspace{.2in}
     \problemAnswer{ % Answer
-      The general form for the rotation matrix of a vector about an axis of direction $u$ is given below:
-      $$R = \begin{bmatrix} \cos \theta +u_x^2 \left(1-\cos \theta\right) & u_x u_y \left(1-\cos \theta\right) - u_z \sin \theta & u_x u_z \left(1-\cos \theta\right) + u_y \sin \theta \\ u_y u_x \left(1-\cos \theta\right) + u_z \sin \theta & \cos \theta + u_y^2\left(1-\cos \theta\right) & u_y u_z \left(1-\cos \theta\right) - u_x \sin \theta \\ u_z u_x \left(1-\cos \theta\right) - u_y \sin \theta & u_z u_y \left(1-\cos \theta\right) + u_x \sin \theta & \cos \theta + u_z^2\left(1-\cos \theta\right) \end{bmatrix}.$$
+      The general form for the rotation matrix of a vector about an axis of direction $k$ is given below\footnote{This algorithm was found at \url{http://en.wikipedia.org/wiki/Euler\%E2\%80\%93Rodrigues_parameters}}:
+      $$R = \begin{pmatrix}
+                  a^2+b^2-c^2-d^2 & 2(bc-ad) & 2(bd + ac) \\
+                  2(bc+ad) & a^2+c^2-b^2-d^2 & 2(cd - ab) \\
+                  2(bd-ac) & 2(cd+ab) & a^2+d^2-b^2-c^2
+                  \end{pmatrix}$$
 
-      In our case $\theta = 120^{\circ}$ and $u = <1, 1, 1>$. Plugging those things in we get the following matrix:
+      where $\bs{k} = (k_x, k_y, k_z)$ is the axis of rotation and
+
+      \begin{align*}
+      a & = \cos (\phi/2); \\
+      b & = k_x \sin (\phi/2); \\
+      c & = k_y \sin (\phi/2); \\
+      d & = k_z \sin (\phi/2).
+      \end{align*}
+
+      In our case $\phi = 120^{\circ}$ and $\bs{k} = <1, 1, 1>$. Plugging those things in that $a = 0.5$ and $b=c=d=0.866$. Plugging these values in to the matrix above we get:
 
       $$ R = \begin{bmatrix}
-      1.   &  0.63 &  2.37 \\
-      2.37 &  1.   &  0.63 \\
-      0.63 &  2.37 &  1.
+       0 & 0 &1 \\
+       1 & 0 & 0 \\
+       0 & 1 & 0
       \end{bmatrix} $$ \qed
     }
   \end{homeworkProblem}
@@ -214,7 +214,6 @@ Assignment:
       \item How steep is the slope (in feet per mile) at a point 1 mile north and one mile east of South Hadley? In what direction is the slope steepest, at that point?
     \end{enumerate}
 
-    \vspace{.2in}
     \problemAnswer{ % Answer
       To answer these questions we need the gradient $$\nabla h(x,y) = 10\left((2y - 6x - 18) \hat{x} + (2x - 8y + 28) \hat{y}\right)$$
       \begin{enumerate}
