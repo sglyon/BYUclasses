@@ -21,3 +21,8 @@ auto
 *.smcl
 *.jpg
 *.history
+
+
+# Don't grab compiled objects
+*.so
+build/
