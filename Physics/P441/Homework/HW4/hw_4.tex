@@ -1,0 +1,222 @@
+%% Preamble
+  \documentclass{homework}
+
+  \hwTitle{Assignment\ \#4 - Potentials} % Assignment title
+  \hwDueDate{Friday,\ May\ 31,\ 2013} % Due date
+  \hwClass{Physics\ 441} % Course/class
+  % \hwInstructor{Manuel Berrondo} % Teacher/lecturer
+  \hwAuthor{Spencer Lyon} % Your name
+
+  \usepackage{setspace}
+
+  %% Added by Spencer for source code highlighting
+  \usepackage{listings}
+  \usepackage{color}
+
+  \definecolor{dkgreen}{rgb}{0,0.6,0}
+  \definecolor{gray}{rgb}{0.5,0.5,0.5}
+  \definecolor{mauve}{rgb}{0.58,0,0.82}
+
+  \lstset{frame=tb,
+    language=Python,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=left,
+    stepnumber=5,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true
+    tabsize=4
+  }
+
+% Problems in this assignment
+% 3.3 -> 3.3
+% 3.10 -> 3.9
+% 3.14 -> 3.13
+% 3.19 -> 3.18
+% 3.24 -> 3.23
+% 3.29 -> 3.27
+% 3.31 -> 3.29
+
+
+% New commands I use a lot
+  \newcommand\ve{\varepsilon}
+  \newcommand{\bs}[1]{\ensuremath{\boldsymbol{#1}}}
+  \newcommand{\bhat}[1]{\ensuremath{\boldsymbol{\hat{#1}}}}
+  \newcommand{\cross}[2]{\ensuremath{\boldsymbol{#1} \times \boldsymbol{#2}}}
+  \newcommand{\curl}[1]{\ensuremath{\cross{\nabla}{\bs{#1}}}}
+  \newcommand{\diver}[1]{\ensuremath{\nabla \times \bs{#1}}}
+
+  % partial derivative as a fraction
+  \newcommand{\fracpd}[2]{
+    \ensuremath{\frac{\partial #1}{\partial #2}}
+  }
+
+  % fraction with parenthesis around it
+  \newcommand{\pfrac}[2]{
+    \ensuremath{ \left( \frac{#1}{#2} \right)}
+  }
+
+\begin{document}
+
+\maketitle
+
+\begin{homeworkProblem}[Problem 3.3]
+
+  Find the general solution to Laplace's equation in spherical coordinates, for the case where $V$ depends only on $r$. Do the same for cylindrical coordinates, assuming $V$ depends only on $s$
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+
+  Laplace's equation in spherical coordinates takes the following form:
+
+  \begin{align*}
+  \nabla^2 V = \frac{1}{r^2}\frac{\partial}{\partial r} \left(r^2 \frac{\partial V}{\partial r}\right) + \frac{1}{r^2 \sin\theta} \frac{\partial}{\partial \theta} \left(\sin\theta \frac{\partial V}{\partial \theta}\right) + \frac{1}{r^2 \sin^2\theta} \frac{\partial^2 V}{\partial \varphi^2} =0
+  \end{align*}
+
+  The problem says that $V$ only depends on $r$, so we can simplify this to parts that only contain derivatives in $r$. In this case, Laplace's equation becomes:
+
+  \begin{align*}
+    \nabla^2 V = \frac{1}{r^2}\frac{\partial}{\partial r} \left(r^2 \frac{\partial V}{\partial r}\right) = 0
+  \end{align*}
+
+  We can cancel out the leading $\frac{1}{r^2}$ (because the left hand side is 0) and get $$\frac{\partial}{\partial r} \left(r^2 \frac{\partial V}{\partial r}\right) = 0$$ which simplifies down to $$\left(r^2 \frac{\partial V}{\partial r}\right) = c \rightarrow \frac{\partial V}{\partial r}= \frac{c}{r^2} \rightarrow V = - \frac{c}{r} + k$$
+
+  Laplace's equation in cylindrical coordinates is
+
+  \begin{align*}
+    \nabla^2 V=\frac{1}{s} \frac{\partial}{\partial s} \left( s \frac{\partial V}{\partial s} \right) + \frac{1}{s^2} \frac{\partial^2 V}{\partial \phi^2} + \frac{\partial^2 V}{\partial z^2} =0
+  \end{align*}
+
+  Doing the same and keeping only terms with derivatives in $s$ we simplify to $$\nabla^2 V=\frac{1}{s} \frac{\partial}{\partial s} \left( s \frac{\partial V}{\partial s} \right) = 0$$
+
+  I again multiply both sides by $s$ to arrive at the following expression, which I simplify to get the final result:
+
+  \begin{align*}
+    \frac{\partial}{\partial s} \left( s \frac{\partial V}{\partial s} \right) = 0 \rightarrow  s \frac{\partial V}{\partial s} = c \rightarrow \frac{\partial V}{\partial s}  = \frac{c}{s} \rightarrow V = c \ln s + k
+  \end{align*}
+
+  \qed
+
+  }
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 3.10]
+
+  A uniform line charge $\lambda$ is placed on an infinite straight wire, a distance $d$ above a grounded conducting plane. (Let's say the wire runs parallel to the $x$-axis and directly above it, and the conducting plane is the $xy$ plane.)
+
+  \begin{enumerate}
+    \item Find the potential in the region above the plane [HINT: refer to problem 2.52] % 2.47 in manual
+    \item Find the charge density $\sigma$ induced on the conducting plane
+  \end{enumerate}
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+
+  \begin{enumerate}
+    \item We know that energy (potential in parenthesis) is a function of $\bhat{r}{r^2}$ ($-\bhat{r}{r}$) in 3d and $\bhat{r}/r$ ($\ln r \bhat{r}$) in 3d. Our problem is a 2-d problem (we are dealing with a line). Using that, and remembering we pick up factor of $2 \pi \ve_0$ from integrating $E \rightarrow V$ we know that the general formula for potential in 2d is the following.
+
+        \begin{align*}
+          V(\bs{s}) &= \frac{\lambda}{2 \pi \ve_0} ln (\bs{a}/\bs{s}) \\
+            &= \frac{\lambda}{4 \pi \ve_0} ln (\bs{a}^2/\bs{s}^2) \\
+        \end{align*}
+
+        In this case we say that $\bs{a} = -\bs{s}$ (it is an image problem!).  We also say that $\bs{a}$ is the distance away from the $x$-axis in the $xy$ plane. An expression for this is $\bs{a} = y + (z + d)$. We can now apply this to our expression for the potential energy to get the answer:
+
+        \begin{align*}
+          V(y, z) = \frac{\lambda}{4 \pi \ve_0} ln \left( \frac{y^2 + (z + d)^2}{y^2 + (z -d)^2} \right)
+        \end{align*}
+      \item Now we need to find $\sigma$ on the plane ($z=0$). We will use the equation at the top of page 126: $$\sigma = - \ve_0 \left. \fracpd{V}{z} \right|_{z=0}$$
+
+      We apply this equation and simplify to get $\sigma(y)$ (Note I let the computer do the algebra for me and I have included the code below)
+
+      \begin{align*}
+        \sigma(y) &= - \ve_0 \left. \fracpd{V}{z} \right|_{z=0} \\
+          &= \left. \frac{\lambda \left(y^{2} + \left(- d + z\right)^{2}\right) \left(\frac{\left(2 d - 2 z\right) \left(y^{2} + \left(d + z\right)^{2}\right)}{\left(y^{2} + \left(- d + z\right)^{2}\right)^{2}} + \frac{2 d + 2 z}{y^{2} + \left(- d + z\right)^{2}}\right)}{4 e_{0} \pi \left(y^{2} + \left(d + z\right)^{2}\right)} \right|_{z=0} \\
+          &=  - \frac{d \lambda}{\pi \left(d^{2} + y^{2}\right)}
+      \end{align*}
+      % TODO: Finish from here. Almost done, just need to evaluate.
+    \end{enumerate}
+      \setstretch{0.6}
+      \lstinputlisting[language=Python, firstline=1, lastline=13]{hw_4.py}
+      \setstretch{1.5}
+    \qed
+  }
+
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 3.14]
+
+  For the infinite slot (see example 3.3), detemrine the charge density $\sigma(y)$ on teh strip at $x=0$, assuming it is a conductor at constant potential $V_0$
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+
+  }
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 3.19]
+
+  The potential at the surface of a sphere (radius $R$) is given by $$V_0 = k \cos 3 \theta$$ where $k$ is a constant. Find the potential inside and outside the sphere, as well as the surface charge density $\sigma(\theta)$ on the sphere. (assume there is not charge inside or outside the sphere.)
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+
+  }
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 3.24]
+
+  Solve Laplace's equation by separation of variables in cylindrical coordinates, assuming there is no depndence on $z$ (cylindrical symmetry). [Make sure you find all solutions to the radial equation; in particular, your results must accommodate the case of an infinite line charge, for which (of course) we already know the answer.]
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+
+  }
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 3.29]
+
+  For particles (one of charge $q$, one of charge $3q$, and two of charge $-2q$) are placed at the following points:
+
+  \begin{itemize}
+    \item $q \rightarrow (0, 0, -1)$
+    \item $3q \rightarrow (0, 0, 1)$
+    \item $-2q \rightarrow (0, -1, 0)$
+    \item $-2q \rightarrow (0, 1, 0)$
+  \end{itemize}
+
+  Find a simple approximate formula for the potential, valid at points far from the origin (Express the answer in spherical coordinates)
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+
+  }
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 3.31]
+
+  For the dipole in example 3.10, expand $1/r_{\pm}$ to order $(d/r)^3$, and use this to determine the quadropole and octopole terms in the potential.
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+
+  }
+\end{homeworkProblem}
+
+
+
+\end{document}

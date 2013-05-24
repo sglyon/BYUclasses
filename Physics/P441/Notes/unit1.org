@@ -144,3 +144,21 @@ vectors and capital letters are angles pointing to legs):
 
 *** Differential Calculus
     I know all this stuff
+
+** Basic E&M
+*** Summary
+$$\nabla^-1 = \frac{\nabla}{\nabla^2}$$
+$$ \frac{1}{\nabla} = g \ast $$
+$$ g = \frac{1}{4 \pi r} \text{ Solution to } \nabla^2 g = \delta(r)$$
+$$\int_V \nabla \cdot \boldsymbol{E} d \tau = \oint_{dV} \boldsymbol{E} \cdot d \boldsymbol{a} $$
+$$\int_S (\nabla \cdot \boldsymbol{B}) d \boldsymbol{a} = \oint_{S} \boldsymbol{B} \cdot d \boldsymbol{l} $$
+$$ \nabla \boldsymbol{E} = \frac{1}{\varepsilon_0} \rho \quad \rho \text{ is charge density}$$
+
+
+** Midterm
+- Need to take it on Tuesday the 28th.
+- There will be 4 problems like homework difficulty
+- It is open book and open notes, open old homeworks
+  - We will not be allowed to have internet or solutions manual
+- We will go over it in class after it is graded
+- Chapters 1-2 and part of 3.
