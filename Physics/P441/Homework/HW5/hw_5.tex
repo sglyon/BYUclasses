@@ -1,0 +1,281 @@
+%% Preamble
+  \documentclass{homework}
+
+  \hwTitle{Assignment\ \#5 - Electric Fields in Matter} % Assignment title
+  \hwDueDate{Monday,\ June\ 10,\ 2013} % Due date
+  \hwClass{Physics\ 441} % Course/class
+  % \hwInstructor{Manuel Berrondo} % Teacher/lecturer
+  \hwAuthor{Spencer Lyon} % Your name
+
+  \usepackage{setspace}
+
+  %% Added by Spencer for source code highlighting
+  \usepackage{listings}
+  \usepackage{color}
+
+  \definecolor{dkgreen}{rgb}{0,0.6,0}
+  \definecolor{gray}{rgb}{0.5,0.5,0.5}
+  \definecolor{mauve}{rgb}{0.58,0,0.82}
+
+  \lstset{frame=tb,
+    language=Python,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=left,
+    stepnumber=5,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true
+    tabsize=4
+  }
+
+  % Declares the font
+  \usepackage{calligra}
+  \DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+  \DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+
+  % Makes '\sr' make a script r
+  \newcommand{\sr}{\ensuremath{\mathcalligra{r}}}
+
+% Problems in this assignment
+% 4.2 -> 4.2
+% 4.5 -> 4.5
+% 4.10 -> 4.10
+% 4.15 -> 4.15
+% 4.19 -> 4.19
+% 4.26 -> 4.26
+% 4.30 -> 4.30
+% 4.36 -> 4.33
+
+% New commands I use a lot
+  \newcommand\ve{\varepsilon}
+  \newcommand{\bs}[1]{\ensuremath{\boldsymbol{#1}}}
+  \newcommand{\bhat}[1]{\ensuremath{\boldsymbol{\hat{#1}}}}
+  \newcommand{\cross}[2]{\ensuremath{\boldsymbol{#1} \times \boldsymbol{#2}}}
+  \newcommand{\curl}[1]{\ensuremath{\cross{\nabla}{\bs{#1}}}}
+  \newcommand{\diver}[1]{\ensuremath{\nabla \times \bs{#1}}}
+
+  % partial derivative as a fraction
+  \newcommand{\fracpd}[2]{
+    \ensuremath{\frac{\partial #1}{\partial #2}}
+  }
+
+  % partial derivative as a fraction with evaluation bounds
+  \newcommand{\fracpdb}[3]{
+    \ensuremath{\left. \frac{\partial #1}{\partial #2} \right|_{#3}}
+  }
+
+  % Just a vector in xhat yhat zhat
+   \newcommand{\xyzvec}[3]{
+   \ensuremath{
+      (#1) \bhat{x} + (#2) \bhat{y} + (#3) \bhat{z}
+   }
+   }
+
+  % fraction with parenthesis around it
+  \newcommand{\pfrac}[2]{
+    \ensuremath{ \left( \frac{#1}{#2} \right)}
+  }
+
+\begin{document}
+
+\maketitle
+
+\begin{homeworkProblem}[Problem 4.2]
+
+  According to quantum mechanics, the electron could for a hydrogen atom in the ground state has a charge density
+
+  $$ \rho(r) = \frac{q}{\pi a^3} e^{-2r / a}, $$
+
+  where $q$ is the charge of the electron and $a$ is the Bohr radius. Find the atomic polarizability of such an atom [Hint: First calculate the electric field for the electron could, $E_e(r)$; then expand the exponential assuming that $ r >> a$]
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+
+  I will use Gauss' Law to find an expression for $E$. Recall that Gauss' Law is $ \int \bs{E} \cdot d \bs{a} = \frac{Q}{/ve_0}$. We need to find $Q$, which we can do by integrating the expression for charge density.
+
+  \begin{align*}
+    Q &= \int_0^r \rho d \tau \\
+      &= \frac{4 \pi q}{\pi a^3} \int_0^r e^ {-2r / a} r^2 dr \\
+      &= - \frac{q \left(- a^{2} e^{2 \frac{r}{a}} + a^{2} + 2 a r + 2 r^{2}\right) e^{- 2 \frac{r}{a}}}{a^{2}}
+  \end{align*}
+
+  Now that we have $Q$ we just need to find $E$ from Gauss' law.
+
+  \begin{align*}
+    E &= \frac{1}{4 \pi \ve_0 r^2} Q \\
+      &=- \frac{q \left(- a^{2} e^{2 \frac{r}{a}} + a^{2} + 2 a r + 2 r^{2}\right) e^{- 2 \frac{r}{a}}}{4 \pi a^{2} \epsilon_{0} r^{2}}\\
+      &= \frac{1}{4 \pi \ve_0} \frac{q}{r^2} \left[ 1 - e^{-2 r / a} \left(1 + 2 \frac{r}{a} + 2 \pfrac{d}{a}^2  \right) \right]
+  \end{align*}
+
+  We now need to expand the exponential term in $E$. I do this below
+
+  $$e^{-2r/a} = - \frac{4}{3} \frac{r^{3}}{a^{3}} + 2 \frac{r^{2}}{a^{2}} - 2 \frac{r}{a} + 1 + \mathcal{O}\left(\frac{r^{4}}{a^{4}}\right)$$
+
+  If we plug this into the solution for $E$, we get the following:
+
+  \begin{align*}
+    E &= \frac{q}{4 \pi \ve_0 r^2} \left[ 1 - e^{-2 r / a} \left(1 + 2 \frac{r}{a} + 2 \pfrac{r}{a}^2  \right) \right] \\
+      &= \frac{q}{4 \pi \ve_0 r^2} \left[1 - 1 -2\frac{r}{a} - 2\frac{r^2}{a^2} + 2\frac{r}{a} + 4\frac{r^2}{a^2} + 4\frac{r^3}{a^3} - 2\frac{r^2}{a^2} - 4\frac{r^3}{a^3} - \frac{4}{3}\frac{r^3}{a^3}  \right] \\
+      &= \frac{q}{4 \pi \ve_0 r^2} \left[ \frac{4}{3} \frac{r^3}{a^3} \right] \\
+      &= \frac{1}{3 \pi \ve_0 a^3} qr \\
+      &= \alpha p
+  \end{align*}
+
+  where $\alpha =3 \pi \ve_0 a^3$.
+  \qed
+
+  }
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 4.5]
+
+  In Figure 4.6, $\bs{p}_1$ and $\bs{p}_2$ are (perfect) dipoles at a distance $r$ apart. What is the torque on $\bs{p}_1$ due to $\bs{p}_2$? What is the torque on $\bs{p}_2$ due to $\bs{p}_1$? [In each case, I want the torque on the dipole about its own center]
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+
+    For this problem we will use equation 3.103: $\bs{E}_{\text{dipole}} = \frac{p}{4 \pi \ve_0 r^3} (2 \cos \theta \bhat{r} + \sin \theta \bhat{\theta}) $ and equation 4.4: $\bs{N} = \bs{p} \times \bs{E}$
+
+    We can find the torque of $\bs{p}_1$ on $\bs{p}_2$ by finding $\bs{E}_1$, which is what we get when $\theta = \pi / 2$ in equation 3.103 and plugging the result into equation 4.4
+
+    \begin{align*}
+      \bs{E}_1 &= \frac{p}{4 \pi \ve_0 r^3} (2 \cos \theta \bhat{r} + \sin \theta \bhat{\theta}) \\
+        &= \frac{p_1}{4 \pi \ve_0 r^3} (2 \cos \pi / 2 \bhat{r} + \sin \pi / 2 \bhat{\theta}) \\
+        &= \frac{p_1}{4 \pi \ve_0 r^3} \bhat{\theta}\\
+        \bs{N}_2 &= \bs{p}_2 \times \bs{E}_1 \\
+        &= p_2 E_1 \\
+        &= \frac{p_1 p_2}{4 \pi \ve_0 r^3}
+    \end{align*}
+
+    We now repeat the analysis above using $\theta = \pi$ for $\bs{p}_2$:
+
+    \begin{align*}
+      \bs{E}_2 &= \frac{p}{4 \pi \ve_0 r^3} (2 \cos \theta \bhat{r} + \sin \theta \bhat{\theta}) \\
+        &= \frac{p_2}{4 \pi \ve_0 r^3} (2 \cos \pi \bhat{r} + \sin \pi \bhat{\theta}) \\
+        &= \frac{p_2}{4 \pi \ve_0 r^3} -2 \bhat{r}\\
+        \bs{N}_1 &= \bs{p}_1 \times \bs{E}_2 \\
+        &= p_1 E_2 \\
+        &= \frac{2 p_1 p_2}{4 \pi \ve_0 r^3}
+    \end{align*}
+
+    \qed
+
+  }
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 4.10]
+
+  A sphere of radius $R$ carries a polarization $$\bs{P}(\bs{r}) = k \bs{r}$$
+
+  where $k$ is a constant and $\bs{r}$ is the vector from the center.
+
+  \begin{enumerate}
+    \item Calculate the bound of charges $\sigma_b$ and $\rho_b$
+    \item Find the field inside and outside the sphere
+  \end{enumerate}
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+
+    \begin{enumerate}
+      \item
+      \begin{itemize}
+        \item $\sigma_b$ is found using equation 4.11: $\sigma_b = \bs{P} \cdot \bhat{n} = k \hat{r} \cdot \bhat{n} = kR$
+        \item $\rho_b$ is found using equation 4.12 (Note I use the expression for the gradient in spherical coordinates as found in the front cover of the book): $\rho_b = - \nabla \cdot \bs{P} = - \nabla \cdot k \bs{r} = - \frac{1}{r^2} \fracpd{}{r} \left(r^2 k r \right) = - \frac{1}{r^2} 3 k r^2 = -3k$
+      \end{itemize}
+      \item
+      \begin{itemize}
+        \item For inside the sphere ($r < R $) we will use Gauss' law to find an expression for $E$ in terms of $\rho$.
+          \begin{align*}
+            \oint \bs{E} \cdot d \bs{a} &= E r \pi r^2 = \frac{1}{\ve_0} Q = \frac{1}{\ve_0}\frac{4}{3} \pi r^3 \rho \\
+            \bs{E} &= \frac{1}{3\ve_0} \rho r \bhat{r}
+          \end{align*}
+          We simply plug our $\rho$ in to get: $$ \bs{E} = \frac{1}{3 \ve_0} -3 k r \bs{r} = - (k r/  \ve_0) \bhat{r}$$
+        \item Outside the sphere ($r > R$) we can treat it as if all the charge were at the center. This makes $Q = (kR) (4 \pi R^2) + (-3k)(\frac{4}{3} \pi R^3 = 0$ so $\bs{E} = 0$. Gauss' law can help is verify this intuitively.
+      \end{itemize}
+    \end{enumerate}
+
+    \qed
+
+  }
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 4.15]
+
+  A thick spherical shell (inner radius $a$, outer radius $b$) is made of dielectric material with "frozen-in" polarization $$\bs{P} = \frac{k}{r} \bhat{r}$$ where $k$ is a constant and $r$ is the distance from the center. (There is no free charge in this problem.) Find the electric field in all three regions by two different methods:
+
+  \begin{enumerate}
+    \item Locate all the bound charge, and use Gauss' law (Equation 2.13) to calculate the field it produces
+    \item Use equation 4.23 to find \bs{D}, and then get \bs{E} from equation 4.21. [Notice that the second method is much faster and avoids any reference to bound charges.]
+  \end{enumerate}
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+
+    \begin{enumerate}
+      \item We start by finding $\sigma_b$ and $\rho_b$ like we did in the previous problem. $\sigma_b = \bs{P} \cdot \bhat{n} = \begin{cases} \bs{P} \cdot \bhat{r} = k/b & \text{r=b} \\ - \bs{P} \cdot \bhat{r} = -k/a & \text{r=a} \end{cases}$ and $\rho_b = - \nabla \cdot \bs{P} = - \frac{1}{r^2} \fracpd{}{r} \left(r^2 (k/r) \right) = - \frac{k}{r^2}$.
+
+      We will now apply Gauss' law ($\bs{E} = \frac{1}{4 \pi \ve_0} \frac{Q}{r^2}$) to three different regions
+      \begin{enumerate}
+        \item $r < a$. Here $Q = 0$ so $\bs{E} =0 $
+        \item $a < r < b$: Here we need to calculate $Q = \sigma_b A + \int \rho_b dv $: $$Q = \pfrac{-k}{a} (4 \pi a^2) + \int_a^r \pfrac{-k}{r^2} 4 \pi r^2 dr = -4 \pi ka - 4 \pi k (r-1) = -4 \pi kr$$ We plug this in to get that $\bs{E} = - (k / \ve_0 r) \bhat{r}$
+        \item $ r> b$: Here $Q = 0$ so $\bs{E} =0 $
+      \end{enumerate}
+      \item Equation 4.23 says that $\oint D \cdot d\bs{a} = Q_{f_{enc}}$. In our case there are not free charges so $Q_{f_{enc}} =0 \rightarrow \bs{D} = 0 $. We now say that $$\bs{D} = \ve_0 \bs{E} + \bs{P} \rightarrow \bs{E} = (- 1 / \ve_0) \bs{P}$$We get the same answer as before because inside $a$ and outside $b$, $\bs{P} = 0$ and plugging \bs{P} into our expression above yields: $$ \bs{E} = (-1 / \ve_0) k / r \bhat{r} = - (k / \ve_0 r) \bhat{r}$$
+    \end{enumerate}
+
+  }
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 4.19]
+
+  Suppose you have enough linear dielectric material, of dielectric constant $\ve_r$, to half-fill a parallel-plat capacitor. By what fraction is the capacitance increased when you distribute the material as shown in figure 4.25(a)? How about figure 4.25(b)? For a given potential difference $V$ between the plates, find \bs{E}, \bs{D}, and \bs{P} in each region and the free and bound charge on all surfaces, for both cases.
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+  }
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 4.26]
+
+  A spherical conductor of radius $a$, carries a charge $Q$. It is surrounded by linear dielectric material of susceptibility $\chi_e$, out to radius $b$. FInd the energy of this configuration.
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+  }
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 4.30]
+
+  An electric diopoly \bs{p}, pointing in the $y$ direction, is placed midway between two large conducting plates, as shown in figure 4.33. Each plate makes a small angle $\theta$ with respect to the $x$ axis, and they are maintained at potentials $\pm V$. What is the direction of the net force on \bs{p}? (There's nothing to calculate, but explain your answer qualitatively.)
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+  }
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 4.36]
+
+  At the interface between one linear dielectric and another, the electric field lines bend(see figure 4.34). Show that $$\tan_{\theta_2} / \tan_{\theta_1} = \ve_2 \ve_1$$ assuming there is no free charge at the boundary.
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+  }
+\end{homeworkProblem}
+
+\end{document}

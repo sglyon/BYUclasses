@@ -2,7 +2,7 @@
   \documentclass{homework}
 
   \hwTitle{Assignment\ \#4 - Potentials} % Assignment title
-  \hwDueDate{Friday,\ May\ 31,\ 2013} % Due date
+  \hwDueDate{Wednesday,\ June\ 5,\ 2013} % Due date
   \hwClass{Physics\ 441} % Course/class
   % \hwInstructor{Manuel Berrondo} % Teacher/lecturer
   \hwAuthor{Spencer Lyon} % Your name
@@ -35,6 +35,14 @@
     tabsize=4
   }
 
+  % Declares the font
+  \usepackage{calligra}
+  \DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+  \DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+
+  % Makes '\sr' make a script r
+  \newcommand{\sr}{\ensuremath{\mathcalligra{r}}}
+
 % Problems in this assignment
 % 3.3 -> 3.3
 % 3.10 -> 3.9
@@ -57,6 +65,19 @@
   \newcommand{\fracpd}[2]{
     \ensuremath{\frac{\partial #1}{\partial #2}}
   }
+
+  % partial derivative as a fraction with evaluation bounds
+  \newcommand{\fracpdb}[3]{
+    \ensuremath{\left. \frac{\partial #1}{\partial #2} \right|_{#3}}
+  }
+
+  % Just a vector in xhat yhat zhat
+   \newcommand{\xyzvec}[3]{
+   \ensuremath{
+      (#1) \bhat{x} + (#2) \bhat{y} + (#3) \bhat{z}
+   }
+   }
+
 
   % fraction with parenthesis around it
   \newcommand{\pfrac}[2]{
@@ -146,20 +167,36 @@
       % TODO: Finish from here. Almost done, just need to evaluate.
     \end{enumerate}
       \setstretch{0.6}
-      \lstinputlisting[language=Python, firstline=1, lastline=13]{hw_4.py}
+      \lstinputlisting[language=Python, firstline=1, lastline=14]{hw_4.py}
       \setstretch{1.5}
     \qed
   }
-
 \end{homeworkProblem}
 
 \begin{homeworkProblem}[Problem 3.14]
 
-  For the infinite slot (see example 3.3), detemrine the charge density $\sigma(y)$ on teh strip at $x=0$, assuming it is a conductor at constant potential $V_0$
+  For the infinite slot (see example 3.3), determine the charge density $\sigma(y)$ on the strip at $x=0$, assuming it is a conductor at constant potential $V_0$
 
   \vspace{.2in}
 
   \problemAnswer{ % Answer
+
+    I am going to start with the closed form solution for the infinite slot problem using equation 3.37. This solution is $$V(x, y) = \frac{2V_0}{\pi} \tan^{-1}\left(\frac{\sin(\pi y / a)}{\sinh (\pi x / a)}\right)$$ The value of $\sigma$ is then determined by $$\sigma = - \ve_0 \fracpdb{V}{x}{x=0}$$
+
+    Note that I used the computer code below to actually take this derivative for me.
+
+    \begin{align*}
+      \sigma &= - \ve_0 \fracpdb{V}{x}{x=0} \\
+        &= -\ve_0 \fracpdb{ \frac{2V_0}{\pi} \tan^{-1}\left(\frac{\sin(\pi y / a)}{\sinh (\pi x / a)}\right)}{x}{x=0} \\
+        &= 2 \frac{V_{0} \epsilon_{0} \sin{\left (\frac{\pi y}{a} \right )} \cosh{\left (\frac{\pi x}{a} \right )}}{a \left(- \cos^{2}{\left (\frac{\pi y}{a} \right )} + \cosh^{2}{\left (\frac{\pi x}{a} \right )}\right)}\\
+        &= 2 \frac{V_{0} \epsilon_{0}}{a \sin{\left (\frac{\pi y}{a} \right )}}
+    \end{align*}
+
+    \setstretch{0.6}
+      \lstinputlisting[language=Python, firstline=17, lastline=24]{hw_4.py}
+    \setstretch{1.5}
+
+    \qed
 
   }
 \end{homeworkProblem}
@@ -172,6 +209,52 @@
 
   \problemAnswer{ % Answer
 
+    We will start with equation 3.65, in which they give the general form for the solution to Laplace's equation in spherical coordinates:
+
+    \begin{align}
+      \label{eq:laplaceSpherical}
+      V(r, \theta) = \sum_{l=0}^{\infty} \left( A_lr^l + \frac{B_l}{r^{l+1}}\right) P_l(\cos \theta)
+    \end{align}
+
+    Following example 3.6 e can say that $B_l = 0 \forall l$  because otherwise the the potential would blow up at $r=0$. With that in mind, the solution we are working with is $$V(r, \theta) = \sum_{l=0} ^{\infty} A_l r^l P_l(cos\theta)$$
+
+    We now apply the boundary condition that $V(R) = k \cos 3 \theta$, in other words
+
+    \begin{align}
+      \label{eq:BC_3.19}
+      V(R, \theta) = \sum_{l=0}^{\infty} A_l R^l P_l(cos \theta) = k cos 3 \theta
+    \end{align}
+
+
+    We now use the orthogonality of the Legendre polynomials to our advantage and solve for the $A_l$ that satisfy our boundary conditions.
+
+    \begin{align*}
+      \int_{-1}^1 P_l(x) P_{l'}(x) dx &= \int_0^{\pi} P_l(cos \theta) P_{l'}(cos \theta) \sin \theta d \theta \\
+        &= \begin{cases} 0 & \text{ if } l' \ne l \\ \frac{2}{2l +1} & \text{ if } l' =l\end{cases}
+    \end{align*}
+
+    This means that we just need to multiply equation \ref{eq:laplaceSpherical} by the equation above and integrating to solve for $A_l$.
+
+    \begin{align*}
+      A_l &= \frac{2l + 1}{2R^l} \int_0^{\pi} V_0(\theta)P_l(\cos \theta) \sin \theta d \theta \\
+        &= \frac{2l + 1}{2R^l} \int_0^{\pi}  k cos (3 \theta) P_l(\cos \theta) \sin \theta d \theta
+    \end{align*}
+
+     Now to solve for these we simply plug values of $l$ into the expression above to obtain our coefficients $A_l$. Unlike in example 3.6, our potential doesn't cause most of the $A_l$ to go away, so I will not show them here. Together with
+     equation \ref{eq:laplaceSpherical}, this constitutes a complete solution for the part of the problem that asked for the potential energy.
+
+    A lot of the work for solving for $\sigma$ has been done in the book. In Example 3.9, the authors  arrive at an expression containing $\sigma$ which I repeat below(see equation 3.83):
+
+    $$\sum_{l=o}^{\infty} (2l + 1) A_l R^{l-1} P_l(\cos \theta) = \frac{1}{\ve_0} \sigma_0(\theta) $$
+
+    We can simply use our expression for $A$ above and solve for $\sigma$:
+
+    \begin{align*}
+      \sigma &= \ve_0 \sum_{l=o}^{\infty} (2l + 1) A_l R^{l-1} P_l(\cos \theta) \\
+        &= \frac{\ve_0}{2R} \sum_{l=o}^{\infty} (2l + 1)^2  P_l(\cos \theta) \left( \int_0^{\pi}  k cos (3 \theta) P_l(\cos \theta) \sin \theta d \theta\right)
+    \end{align*}
+
+    \qed
   }
 \end{homeworkProblem}
 
@@ -183,6 +266,61 @@
 
   \problemAnswer{ % Answer
 
+    Laplace's equation in cylindrical coordinates is
+
+    $$ \nabla V=\frac{1}{s} \frac{\partial}{\partial s} \left( s \frac{\partial V}{\partial s} \right) + \frac{1}{s^2} \frac{\partial^2 V}{\partial \phi^2} + \frac{\partial^2 V}{\partial z^2} =0$$
+
+    The problem tells us we have cylindrical symmetry, no z dependence, and that simplifies Laplace's equation to
+
+    $$ \nabla V=\frac{1}{s} \frac{\partial}{\partial s} \left( s \frac{\partial V}{\partial s} \right) + \frac{1}{s^2} \frac{\partial^2 V}{\partial \phi^2} =0$$
+
+    We seek a separable solution of the form $V(x, \phi) = S(s) \Phi(\phi)$. If we plug this guess in and take derivatives we come to.
+
+    $$ \frac{1}{s} \Phi \fracpd{}{s} \left(s \fracpd{S}{s} \right) + \frac{1}{s^2} S \fracpd{^2 \Phi}{\phi} = 0$$
+
+    We now multiply though by $\frac{s^2}{S \Phi}$ and obtain:
+
+    $$\frac{s}{S} \fracpd{}{s} \left(s \fracpd{S}{s} \right) + \frac{1}{\Phi}  \fracpd{^2 \Phi}{\phi} = 0$$
+
+    We have successfully separated the equations because the first part has only $s$ and $S$ terms, while the second term has only $\phi$ and $\Phi$ terms. For this reason, we can say that each of those is equal to a constant.
+
+    $$\frac{s}{S} \fracpd{}{s} \left(s \fracpd{S}{s} \right) = C_s \quad  \frac{1}{\Phi}  \fracpd{^2 \Phi}{\phi} = C_{\phi}$$
+
+    Following the logic in example 3.3, we can say that either $C_s$ or $C_{\phi}$ is negative. If we look closely we see that we will need to make $C_{\phi}$ negative, otherwise we would get an exponential function for $Phi(\phi)$ and that doesn't make sense physically. We can now solve for $\Phi$ (again using example 3.3 as a template):
+
+    \begin{align*}
+     C_{\phi} =  -k^2 &=  \frac{1}{\Phi}  \fracpd{^2 \Phi}{\phi}  \\
+      -k^2 \Phi &=  \fracpd{^2 \Phi}{\phi}\\
+      &\rightarrow \Phi (\phi) = C\sin k\phi + D \cos k \phi
+    \end{align*}
+
+    Due to the periodicity of $\Phi(\phi)$, we can safely say that $k \in [0, 1, 2, \dots ]$.
+
+    We now need to solve for $S(s)$. To do this (again following Example 3.3) we say that $C_s = k^2$. I used Mathematica to tell me that the solution to the equation is $S(s) = s^n$, where in our case  $k \in [\dots -1, 0, 1, \dots]$ (all integers).
+    We can decompose this solution into a linear combination of positive and negative exponents and say that our equation takes the general form:
+
+    $$S(s) = A s^k + Bs^{-k}$$
+
+    Notice, however, that $S(s)$ is equal to a constant when $k=0$, so we must treat that solution a bit differently (This is what the problem note was talking about when it reminded us to find all the solutions to the radial equation). To figure out this case we set $C_s = k^2 = 0$ and solve again...
+
+    \begin{align*}
+      C_s = 0 &= \frac{s}{S} \fracpd{}{s} \left(s \fracpd{S}{s} \right) \\
+      &= s \fracpd{}{s} \left(s \fracpd{S}{s} \right) \\
+      E &= s \fracpd{S}{s} \\
+      &\rightarrow S_{k=0} = E \ln s + F
+    \end{align*}
+
+    Notice that when $k=0$, the expression for $\Phi$ simply reduces to a constant. We will combine this constant with $F$ from above and combine into a term that we will call $a_0$ below.
+
+    We now have everything we need to give our final answer:
+
+    \begin{align*}
+      V(s, \phi) &= S(s) \Phi(\phi) \\
+        &= S_{k=0} \Phi_{k=0} + S_{k \ne 0} \Phi_{k \ne 0}\\
+        &= \left( A s^k + Bs^{-k} \right) \left(C\sin k\phi + D \cos k \phi \right) + E \ln s + a_0\\
+        &= a_0 + E \ln s + \sum_{k=1}^{\infty} \left( s^k [a_k \sin k \phi + b_k \cos k \phi]  + s^{-k} [c_k \sin k \phi + d_k \cos k \phi] \right)
+    \end{align*}
+    \qed
   }
 \end{homeworkProblem}
 
@@ -191,10 +329,10 @@
   For particles (one of charge $q$, one of charge $3q$, and two of charge $-2q$) are placed at the following points:
 
   \begin{itemize}
-    \item $q \rightarrow (0, 0, -1)$
-    \item $3q \rightarrow (0, 0, 1)$
-    \item $-2q \rightarrow (0, -1, 0)$
-    \item $-2q \rightarrow (0, 1, 0)$
+    \item $q \rightarrow (0, 0, -a)$
+    \item $3q \rightarrow (0, 0, a)$
+    \item $-2q \rightarrow (0, -a, 0)$
+    \item $-2q \rightarrow (0, a, 0)$
   \end{itemize}
 
   Find a simple approximate formula for the potential, valid at points far from the origin (Express the answer in spherical coordinates)
@@ -202,6 +340,28 @@
   \vspace{.2in}
 
   \problemAnswer{ % Answer
+
+    We will first obtain a total charge vector by multiplying the location vectors by the charges and adding (see equation 3.100):
+
+    \begin{align*}
+      \bs{p} &= q  (0, 0, -a) + 3q  (0, 0, a) + -2q  (0, -a, 0) + -2q  (0, a, 0) \\
+        &= \xyzvec{0}{2qa - 2qa}{3qa - qa} \\
+        &= 2qa \bhat{z}
+    \end{align*}
+
+    Equation 3.99 tells us that the potential for a dipole is given by the following expression
+
+    $$ V(\bs{r}) = \frac{1}{4 \pi \ve_0} \frac{\bs{p} \cdot \bs{r}}{r^2}$$
+
+    We plug in our expression for \bs{p} and evaluate to finish. Note that we replace $\bhat{z}$ with its spherical counterpart $\bhat{z} =  \cos \theta \bhat{r} - \sin \theta \bhat{\theta}$
+
+    \begin{align*}
+      V(\bs{r}) &= \frac{1}{4 \pi \ve_0} \frac{\bs{p} \cdot \bs{r}}{r^2} \\
+        &=  \frac{1}{4 \pi \ve_0} \frac{\left(2qa (  \cos \theta \bhat{r} - \sin \theta \bhat{\theta}) \right)\cdot \bs{r}}{r^2} \\
+        &= \frac{1}{4 \pi \ve_0} \frac{2qa \cos \theta}{r^2}
+    \end{align*}
+
+    \qed
 
   }
 \end{homeworkProblem}
@@ -214,9 +374,41 @@
 
   \problemAnswer{ % Answer
 
+    We start by recognizing that the two are separated by a distance $d$ and we follow example 3.10 to say that $r' =d / 2$. Using this info as a starting point, we will go to equation 3.94:
+
+    \begin{align*}
+      \frac{1}{\sr} &= \frac{1}{r} \sum_{n=0}^{\infty} \left( \frac{r'}{r}\right)^n P_n(\cos \alpha) \\
+        &= \frac{1}{r} \sum_{n=0}^{\infty} \left( \frac{d}{2r}\right)^n P_n(\cos \alpha)
+    \end{align*}
+
+    We will follow example 3.10 and say that $\sr_+$ is the distance from $+q$ and that $\sr_-$ is the distance from $-q$. We can simply say that the expression for $\sr_-$  is the same as the one given above, with a negative angle.
+
+    We now plug into the equation used in example 3.10:
+
+    \begin{align*}
+      V(\bs(r)) &= \frac{1}{4 \pi \ve_0} \left( \frac{q}{\sr_+} - \frac{q}{\sr_-} \right) \\
+        &= \frac{1}{4 \pi \ve_0} \frac{q}{r} \sum_{n=0}^{\infty} \left( \frac{d}{2r} \right)^n [P_n (\cos \theta) - P_n (- \cos \theta)]
+    \end{align*}
+
+    We now remember that $P_n (- \cos \theta) = (-1)^n P_n(\cos \theta)$ and we can say that whenever $n$ is even the expression in the square brackets is zero, so we only keep odd terms. In other words:
+
+    $$V(\bs{r}) = \frac{1}{4 \pi \ve_0} \frac{q}{r}  \sum_{n=\text{odd}}^{\infty} \left( \frac{d}{2r}\right)^n 2 P_n(\cos \theta) $$
+
+    We are now ready to pull out the quadrupole and octopole terms. To do this re remember that the quadrupole terms are of order $1/r^3$ while the octopole terms are of the order $1/r^4$. To get terms of this size we simply need to take the first two terms of the series...
+
+    \begin{align*}
+      V(\bs{r}) = \frac{d^3 q \left(5 \cos ^3(\theta )-3 \cos (\theta )\right)}{32 \pi  r^4 \epsilon}+\frac{d q \cos (\theta )}{4 \pi  r^2 \epsilon } + O\left( \frac{1}{r^5} \right)
+    \end{align*}
+
+    Notice that there are not any terms with $1/r^3$ dependence so the quadrupole term is zero. The octopole term is the one containing $1/r^4$, which we can see is:
+
+    $$V_{\text{octopole}} = \frac{d^3 q \left(5 \cos ^3(\theta )-3 \cos (\theta )\right)}{32 \pi  r^4 \epsilon}$$
+
+    \qed
+
+
+
   }
 \end{homeworkProblem}
-
-
 
 \end{document}

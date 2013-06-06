@@ -1,4 +1,4 @@
-% Created 2013-05-03 Fri 16:58
+% Created 2013-05-28 Tue 11:20
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -14,6 +14,8 @@
 \usepackage{latexsym}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage[mathscr]{euscript}
+\usepackage{amsmath,bm}
 \tolerance=1000
 \providecommand{\alert}[1]{\textbf{#1}}
 
@@ -41,6 +43,10 @@ The slides are available online, but they are password protected. The password
 is m@xwell.
 
 TA Help sessions will be Thursday at Noon in N337
+
+The \href{http://www.physics.byu.edu/faculty/berrondo/sp441/}{Class website} has good info.
+
+The \href{http://www.physics.byu.edu/faculty/berrondo/sp441/homework12.html}{homework schedule} is here.
 \section{Unit 1}
 \label{sec-2}
 \subsection{Introduction}
@@ -88,9 +94,9 @@ make solving this for $\mathscr{F}$ very easy: $$\mathscr{F}=\nabla^{-1}J$$
 \item Sum of vectors
 \item dilation (multiplication by scalar)
 \item Linear combinations (put previous two points together)
-\item Scalar (dot) Product: $\boldsymbol{A} \cdot \boldsymbol{B} = A B
-  cos(\theta)$, where $A = \sqrt{\boldsymbol{A} \cdot \boldsymbol{A}}$
-\item Cross product: $\boldsymbol{A} \times \boldsymbol{B} = \boldsymbol{n} A
+\item Scalar (dot) Product: $\bm{A} \cdot \bm{B} = A B
+  cos(\theta)$, where $A = \sqrt{\bm{A} \cdot \bm{A}}$
+\item Cross product: $\bm{A} \times \bm{B} = \bm{n} A
   B |sin(\theta)|$
 \item Orthonormalbasis: $\{e_1, e_2, e_3\} = \{i, j, k\}$
 \item Triple dot (scalar) product: One cross and a dot. It is cyclically
@@ -108,6 +114,14 @@ make solving this for $\mathscr{F}$ very easy: $$\mathscr{F}=\nabla^{-1}J$$
 \item Example: Rotate vector $e_1 + e_2$ by 45 degrees. Here $\phi = 45$, $r =
     (e_1 + e_2)$, $n = e_3$. Plugging it in we get $r' = (\frac{1}{\sqrt{2}} +
     \frac{1}{\sqrt{2}} e_3 \times) (e_1 + e_2)$
+\item Algorithm for finding rotation
+\begin{enumerate}
+\item Make sure $\hat{n}$ is a unit vector
+\item Find $r_{\parallel} = (\hat{n} \cdot r) \hat{n}$
+\item Find $r_{\perp} = r - r_{\parallel}$
+\item Put it together: $r' = r_{\parallel} + (cos \phi) r_{\perp} + (sin \phi)
+       \hat{n} \times r$
+\end{enumerate}
 \end{itemize}
 \end{itemize}
 
@@ -131,6 +145,85 @@ There are 8 basis elements in a Clifford Space:
 \item In $i\mathbb{R}: i$
 \item In $\mathbb{R}^3: e_1, e_2, e_3$
 \item In $i\mathbb{R}^3: ie_1, ie_2, ie_3$
+\end{itemize}
+
+These relationships can be summarized in the following table:
+
+
+\begin{center}
+\begin{tabular}{rllll}
+ grade  &  domain            &  basis elements                                                                                                                                                                                                                        &  vector types (geometry)    &  who       \\
+\hline
+     0  &  $\mathbb{R}$      &  1                                                                                                                                                                                                                                     &  scalars                    &  German    \\
+     1  &  $\mathbb{R}^2$    &  $\bm{\hat{e_1}}$, $\bm{\hat{e_2}}$,  $\bm{\hat{e_3}}$                                                                                                                                                         &  vectors                    &  French    \\
+     2  &  $i \mathbb{R}^3$  &  $i \bm{\hat{e_1}} = \bm{\hat{e_2}} \bm{\hat{e_3}}$,  $i \bm{\hat{e_2}} = \bm{\hat{e_3}} \bm{\hat{e_1}}$,  $i \bm{\hat{e_3}} = \bm{\hat{e_1}} \bm{\hat{e_2}}$  &  bivectors                  &  British   \\
+     3  &  $i \mathbb{R}$    &  $i =\bm{\hat{e_1}} \bm{\hat{e_2}} \bm{\hat{e_3}}$                                                                                                                                                             &  trivector (pseudo scalar)  &  Japanese  \\
+\end{tabular}
+\end{center}
+
+
+
+We can decompose the matrix product of a clifford algebra into a symmetric part
+and an anti-symmetric part. In other words $$AB = (AB)_{sym} + (AB)_{non-sym} =
+A \cdot B + A \wedge B$$
+\begin{itemize}
+
+\item Sub-algebras\\
+\label{sec-2-2-2-1}%
+Sub-algebras are simply subsets of an algebra where all objects are closed
+under multiplication and addition. For the clifford algebra, taking scalars and
+bivectors we end up with the even sub algebra (made up of grades 0 and 2).
+
+
+\item More facts\\
+\label{sec-2-2-2-2}%
+The bivectors define oriented surfaces (oriented because $e_1 e_2 = - (e_2
+e_1)$ -- direction matters).
+
+The tri-vectors define an oriented volume.
+
+\end{itemize} % ends low level
+\subsubsection{Trig}
+\label{sec-2-2-3}
+
+We will need to know certain trig identities. Among them are the following
+(Note that bold letters are vectors, lower case letters are magnitude of
+vectors and capital letters are angles pointing to legs):
+\begin{itemize}
+\item Law of cosines: $\bm{c} = \bm{a} - \bm{b}$ and $c^2$ =
+  a$^2$ + b$^2$ - 2 \bm{a} $\cdot$ \bm{b}
+\item Law of sines: $\bm{c} + \bm{a} + \bm{b} = 0
+  \rightarrow |\bm{a} \times \bm{b}| = |\bm{a} \times
+  \bm{c}|$. We also know that $ab sin(C) = ac sin(B) \rightarrow
+  \frac{sin(B)}{b} = \frac{sin(C)}{c}$
+\end{itemize}
+\subsubsection{Differential Calculus}
+\label{sec-2-2-4}
+
+    I know all this stuff
+\subsection{Basic E\&M}
+\label{sec-2-3}
+\subsubsection{Summary}
+\label{sec-2-3-1}
+
+$$\nabla^-1 = \frac{\nabla}{\nabla^2}$$
+$$ \frac{1}{\nabla} = g \ast $$
+$$ g = \frac{1}{4 \pi r} \text{ Solution to } \nabla^2 g = \delta(r)$$
+$$\int_V \nabla \cdot \bm{E} d \tau = \oint_{dV} \bm{E} \cdot d \bm{a} $$
+$$\int_S (\nabla \cdot \bm{B}) d \bm{a} = \oint_{S} \bm{B} \cdot d \bm{l} $$
+$$ \nabla \bm{E} = \frac{1}{\varepsilon_0} \rho \quad \rho \text{ is charge density}$$
+\subsection{Midterm}
+\label{sec-2-4}
+
+\begin{itemize}
+\item Need to take it on Tuesday the 28th.
+\item There will be 4 problems like homework difficulty
+\item It is open book and open notes, open old homeworks
+\begin{itemize}
+\item We will not be allowed to have internet or solutions manual
+\end{itemize}
+\item We will go over it in class after it is graded
+\item Chapters 1-2 and part of 3.
 \end{itemize}
 
 \end{document}
