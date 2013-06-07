@@ -2,7 +2,7 @@
   \documentclass{homework}
 
   \hwTitle{Assignment\ \#5 - Electric Fields in Matter} % Assignment title
-  \hwDueDate{Monday,\ June\ 10,\ 2013} % Due date
+  \hwDueDate{Monday,\ June\ 10,\ 2013} %  Due date
   \hwClass{Physics\ 441} % Course/class
   % \hwInstructor{Manuel Berrondo} % Teacher/lecturer
   \hwAuthor{Spencer Lyon} % Your name
@@ -235,36 +235,87 @@
       \item Equation 4.23 says that $\oint D \cdot d\bs{a} = Q_{f_{enc}}$. In our case there are not free charges so $Q_{f_{enc}} =0 \rightarrow \bs{D} = 0 $. We now say that $$\bs{D} = \ve_0 \bs{E} + \bs{P} \rightarrow \bs{E} = (- 1 / \ve_0) \bs{P}$$We get the same answer as before because inside $a$ and outside $b$, $\bs{P} = 0$ and plugging \bs{P} into our expression above yields: $$ \bs{E} = (-1 / \ve_0) k / r \bhat{r} = - (k / \ve_0 r) \bhat{r}$$
     \end{enumerate}
 
+    \qed
+
   }
 \end{homeworkProblem}
 
-\begin{homeworkProblem}[Problem 4.19]
+\begin{homeworkProblem}[Problem 4.19]  % TODO: The rest of this ridiculous problem
 
   Suppose you have enough linear dielectric material, of dielectric constant $\ve_r$, to half-fill a parallel-plat capacitor. By what fraction is the capacitance increased when you distribute the material as shown in figure 4.25(a)? How about figure 4.25(b)? For a given potential difference $V$ between the plates, find \bs{E}, \bs{D}, and \bs{P} in each region and the free and bound charge on all surfaces, for both cases.
 
   \vspace{.2in}
 
   \problemAnswer{ % Answer
+
+    We begin with equation 2.54 and say that $C = \frac{A\ve_0}{d}$ for a parallel plate capacitor with no dielectric. We then want to apply equation 2.53 ($C = Q / V$) to find the relative capacitance in each configuration. We will do this one at at time below.
+
+    \begin{enumerate}
+      \item Configuration (a): We know that $E = \sigma / \ve$ so for the part without dielectric we have $E = \sigma / \ve_0$ and the part with the dielectric we have that $E = \sigma / \ve_r$. I then integrate E to get an expression for the potential. (Note that I make the substitution $\sigma = \frac{Q}{\ve_0^2A} $)
+
+        \begin{align*}
+          V &= -\int \bs{E} \cdot d \bs{l} \\
+            &= - \left( \int_0^{d/2} \sigma / \ve_0 d \bs{l}  + \int_{d/2}^d \sigma / \ve_0 d \bs{l}\right)\\
+            &= \frac{\sigma}{\ve_0} \frac{d}{2} + \frac{\sigma}{\ve_r} \frac{d}{2} \\
+            &= \frac{Q}{\ve_0 A} \frac{d}{2} (1 + \ve_0 / \ve_r)
+        \end{align*}
+
+        Now I use the formula $C = \frac{Q}{V}$ to solve for $C_a$
+
+        \begin{align*}
+          C_a &= \frac{Q}{V} \\
+            &= \frac{Q}{}\frac{Q}{\ve_0 A} \frac{d}{2} (1 + \ve_0 / \ve_r)  \\
+            &= \ve_0 A \frac{2}{d} \pfrac{1}{1 + 1/\ve_r} \\
+          \frac{C_a}{C_0} &= \frac{\ve_0 A \frac{2}{d} \pfrac{1}{1 + 1/\ve_r}}{A \ve_0 / d} \\
+            &=  \frac{2 \ve_r}{1 + \ve_r}
+        \end{align*}
+
+    \end{enumerate}
+
   }
 \end{homeworkProblem}
 
 \begin{homeworkProblem}[Problem 4.26]
 
-  A spherical conductor of radius $a$, carries a charge $Q$. It is surrounded by linear dielectric material of susceptibility $\chi_e$, out to radius $b$. FInd the energy of this configuration.
+  A spherical conductor of radius $a$, carries a charge $Q$. It is surrounded by linear dielectric material of susceptibility $\chi_e$, out to radius $b$. Find the energy of this configuration.
 
   \vspace{.2in}
 
   \problemAnswer{ % Answer
+
+    This is a lot like example 4.5. That's nice. We will start there and display some results (note that both \bs{D} and \bs{E} are 0 when $r < a$).
+
+    \begin{align*}
+      \bs{D} = \frac{Q}{4 \pi r^2} \bhat{r}, \quad \bs{E} = \begin{cases} \frac{Q}{4 \pi \ve r^2} \bhat{r} &\text{ for } a< r< b \\ \frac{Q}{4 \pi \ve_0 r^2} \bhat{r} &\text{ for }  r> b\end{cases}
+    \end{align*}
+
+    We can find the energy of the configuration by finding the work needed to hold it together. I do this below using the equation given on page 197. Also note that I use the expression for tau in spherical coordinates given in the front cover ($d \tau = r^2 \sin \theta dr  d\theta d \phi$), but because our \bs{D} and \bs{E} only depend on $r$, I can only use that part and say that $d \tau = 4 \pi r^2 dr$
+
+    \begin{align*}
+      W &= \frac{1}{2} \int \bs{D} \cdot \bs{E} d \tau \\
+        &= \frac{1}{2} 4 \pi \left( \int_a^b \pfrac{Q}{4 \pi r^2} \pfrac{Q}{4 \pi \ve r^2} r^2 dr + \int_b^{\infty} \pfrac{Q}{4 \pi r^2} \pfrac{Q}{4 \pi \ve_0 r^2} r^2 dr \right) \\
+        &= \frac{1}{2} \pfrac{Q}{4 \pi}^2 4 \pi \left(\int_a^b \frac{1}{r^2} dr + \int_b^{\infty} \frac{1}{r^2} d r \right) \\
+        &= \frac{Q^2}{8 \pi} \left(\left. \frac{1}{\ve} \pfrac{-1}{r} \right |_a^b + \left. \frac{1}{\ve_0 } \pfrac{-1}{r} \right|_b^{\infty} \right) \\
+        &= \frac{Q^2}{8 \pi} \left( \frac{1}{\ve} \left( \frac{1}{a} - \frac{1}{b} \right) + \frac{1}{ \ve_0} \frac{1}{b}\right)
+    \end{align*}
+
+    \qed
+
   }
 \end{homeworkProblem}
 
 \begin{homeworkProblem}[Problem 4.30]
 
-  An electric diopoly \bs{p}, pointing in the $y$ direction, is placed midway between two large conducting plates, as shown in figure 4.33. Each plate makes a small angle $\theta$ with respect to the $x$ axis, and they are maintained at potentials $\pm V$. What is the direction of the net force on \bs{p}? (There's nothing to calculate, but explain your answer qualitatively.)
+  An electric dipole \bs{p}, pointing in the $y$ direction, is placed midway between two large conducting plates, as shown in figure 4.33. Each plate makes a small angle $\theta$ with respect to the $x$ axis, and they are maintained at potentials $\pm V$. What is the direction of the net force on \bs{p}? (There's nothing to calculate, but explain your answer qualitatively.)
 
   \vspace{.2in}
 
   \problemAnswer{ % Answer
+
+    This one was a bit tricky, but thinking about field lines helps a lot. We know that the field lines are always perpendicular to the surface of a conductor, in this case our two plates. That being said, we would have to draw them bowed out to the  $+\bhat{x}$ direction. We then need to decide which way things flow. This is easy, from positive to negative. If that is the case we are going down from the $+V$ plate (at a positive $\theta$) to the $-V$ plate. Following the right hand rule around those field lines points us to the $+ \bhat{x}$ direction, so that is the answer.
+
+    \qed
+
   }
 \end{homeworkProblem}
 
@@ -275,6 +326,26 @@
   \vspace{.2in}
 
   \problemAnswer{ % Answer
+
+    We need to use 4 equations:
+
+    \begin{enumerate}
+      \item Equation 4.26: $ D_{\text{above}}^{\perp} - D_{\text{below}}^{\perp} = \sigma_f$, in our case there are no free charges so $\sigma_f  = 0 $, which tells us that $ D_{\text{above}}^{\perp} = D_{\text{below}}^{\perp} \rightarrow D_{y1} = D_{y2}$
+      \item Equation 4.28 $E_{\text{above}}^{\parallel} - E_{\text{below}}^{\parallel} =0$, which means that $E_{\text{above}}^{\parallel} = E_{\text{below}}^{\parallel} \rightarrow E_{x1} = E_{x2}$
+      \item Equation 4.32: $ \bs{D} = \ve \bs{E}$, which with the above equations tells us that $\ve_1 E_{y1} = \ve_2 E_{y2}$
+      \item  Just some geometry from Figure 4.34: $\tan \theta_1 = \frac{E_{x1}}{E_{y1}}$ and $\tan \theta_2 = \frac{E_{x2}}{E_{y2}}$
+    \end{enumerate}
+
+    If we put all those things together we can get our solution
+
+    \begin{align*}
+      \frac{\tan \theta_2}{\tan \theta_1} &= \frac{ \frac{E_{x2}}{E_{y2}}}{\frac{E_{x1}}{E_{y1}}}\\
+       &= \frac{E_{y1}}{E_{y2}} \\
+       &= \frac{\ve_2}{\ve_1}
+    \end{align*}
+
+    \qed
+
   }
 \end{homeworkProblem}
 
