@@ -1,0 +1,194 @@
+%% Preamble
+  \documentclass{homework}
+
+  \hwTitle{Assignment\ \#6 - Magnetic Fields in Matter} % Assignment title
+  \hwDueDate{Wednesday,\ June\ 19,\ 2013} %  Due date
+  \hwClass{Physics\ 441} % Course/class
+  % \hwInstructor{Manuel Berrondo} % Teacher/lecturer
+  \hwAuthor{Spencer Lyon} % Your name
+
+  \usepackage{setspace}
+
+  %% Added by Spencer for source code highlighting
+  \usepackage{listings}
+  \usepackage{color}
+
+  \definecolor{dkgreen}{rgb}{0,0.6,0}
+  \definecolor{gray}{rgb}{0.5,0.5,0.5}
+  \definecolor{mauve}{rgb}{0.58,0,0.82}
+
+  \lstset{frame=tb,
+    language=Python,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=left,
+    stepnumber=5,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true
+    tabsize=4
+  }
+
+  % Declares the font
+  \usepackage{calligra}
+  \DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+  \DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+
+  % Makes '\sr' make a script r
+  \newcommand{\sr}{\ensuremath{\mathcalligra{r}}}
+
+% New commands I use a lot
+  \newcommand\ve{\varepsilon}
+  \newcommand{\bs}[1]{\ensuremath{\boldsymbol{#1}}}
+  \newcommand{\bhat}[1]{\ensuremath{\boldsymbol{\hat{#1}}}}
+  \newcommand{\cross}[2]{\ensuremath{\boldsymbol{#1} \times \boldsymbol{#2}}}
+  \newcommand{\curl}[1]{\ensuremath{\cross{\nabla}{\bs{#1}}}}
+  \newcommand{\diver}[1]{\ensuremath{\nabla \times \bs{#1}}}
+
+  % partial derivative as a fraction
+  \newcommand{\fracpd}[2]{
+    \ensuremath{\frac{\partial #1}{\partial #2}}
+  }
+
+  % partial derivative as a fraction with evaluation bounds
+  \newcommand{\fracpdb}[3]{
+    \ensuremath{\left. \frac{\partial #1}{\partial #2} \right|_{#3}}
+  }
+
+  % Just a vector in xhat yhat zhat
+   \newcommand{\xyzvec}[3]{
+   \ensuremath{
+      (#1) \bhat{x} + (#2) \bhat{y} + (#3) \bhat{z}
+   }
+   }
+
+  % fraction with parenthesis around it
+  \newcommand{\pfrac}[2]{
+    \ensuremath{ \left( \frac{#1}{#2} \right)}
+  }
+
+% Problems in this assignment
+% 6.3 -> 6.3
+% 6.6 -> 6.6
+% 6.12 -> 6.12
+% 6.23 -> 6.23
+% 6.25 -> 6.25
+
+\begin{document}
+
+\maketitle
+
+\begin{homeworkProblem}[Problem 6.3]
+
+  Find the force of attraction between two magnetic dipoles, $\bs{m}_1$ and $\bs{m}_2$ oriented as shown in figure 6.7, a distance $r$ apart:
+
+  \begin{enumerate}
+    \item Using equation 6.2
+    \item Using equation 6.3
+  \end{enumerate}
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+
+
+
+  }
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 6.6]
+
+  Of the following materials which would you expect to be paramagnetic and which diamagnetic::
+
+  \begin{itemize}
+    \item aluminium
+    \item copper
+    \item copper chloride ($\text{CuCl}_2$)
+    \item carbon
+    \item lead
+    \item nitrogen($\text{N}_2$)
+    \item salt ($\text{NaCl}$)
+    \item sulfur
+    \item water
+  \end{itemize}
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+
+
+
+  }
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 6.12]
+
+  An infinitely long cylinder, of radius $R$, carries a "frozen-in" magnetization, parallel to the axis, $$\bs{M} = kx \bhat{z}$$ where $k$ is a constant and $s$ is the distance from the axis; there is no free current anywhere. FInd the magnetic field inside and outside the cylinder by two different methods:
+
+  \begin{itemize}
+    \item As in Section 6.2, locate all the bound currents, and calculate the field they produce
+    \item Use Ampere's law (in the form of equation 6.20) to find \bs{H}, and then get \bs{B} from equation 6.18 (Notice that the second method is much faster, and avoids any explicit reference to the bound currents.)
+  \end{itemize}
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+
+
+
+  }
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 6.23]
+
+  A familiar toy consists of donut-shaped permanent magnets (magnetization parallel to the axis), which slide frictionlessly on a vertical rod (Figure 6.31). Treat the magnets as dipoles, which mass $m_d$ and dipole moment \bs{m}.
+
+  \begin{enumerate}
+    \item If you put two back-to-back magnets on teh rod, the upper one will :float: -- the magnetic force upward balancing the gravitational force downward. At what height ($z$) does it float?
+    \item If you now add a third magnet (parallel to the bottom one), what is the ratio of the two heights? (Determine the actual number to 3 significant digits)
+  \end{enumerate}
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+
+
+
+  }
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Problem 6.25]
+
+  Notice the following parallel:
+
+  $$
+  \begin{cases}
+    \nabla \cdot \bs{D} = 0, \quad\nabla \times \bs{E} = 0, \quad \ve_0 \bs{E} = \bs{D} - \bs{P} &\text{(no free charge)} \\
+    \nabla \cdot \bs{B} = 0, \quad \nabla \times \bs{H} = 0, \quad \mu_0 \bs{H} = \bs{B} - \mu_0 \bs{M} &\text{(no free charge)} \\
+  \end{cases}
+  $$
+
+  Thus, the transcription $\bs{D} \rightarrow \bs{B}, \bs{E} \rightarrow \bs{H}, \bs{P} \rightarrow \mu_0 \bs{M}, \ve_0 \rightarrow -\mu_0$ turn an electrostatic problem into an analogous magneto-static one. Use this, together with your knowledge of the electro-static results to re-derive:
+
+  \begin{enumerate}
+    \item The magnetic field inside a uniformly magnetized sphere
+    \item The magnetic field inside a sphere of linear magnetic material in an otherwise uniform magnetic field (problem 6.18)
+    \item The average magnetic field over a sphere, due to steady currents within the sphere (equation 5.93)
+  \end{enumerate}
+
+  \vspace{.2in}
+
+  \problemAnswer{ % Answer
+
+
+
+  }
+\end{homeworkProblem}
+
+\end{document}
