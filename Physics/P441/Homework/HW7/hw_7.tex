@@ -8,6 +8,7 @@
   \hwAuthor{Spencer Lyon} % Your name
 
   \usepackage{setspace}
+  \usepackage{colortbl}
 
   %% Added by Spencer for source code highlighting
   \usepackage{listings}
@@ -77,8 +78,8 @@
 % 6.3 -> 6.3
 % 6.6 -> 6.6
 % 6.12 -> 6.12
-% 6.23 -> 6.23
-% 6.25 -> 6.25
+% 6.23 -> 6.25
+% 6.25 -> 6.23
 
 \begin{document}
 
@@ -97,14 +98,43 @@
 
   \problemAnswer{ % Answer
 
+    \begin{enumerate}
+      \item Equation 6.2 says $$F = 2 \pi I R B \cos \theta$$ To evaluate this I need an expression for $B \cos \theta = \bs{B} \cdot \bhat{y}$. I did problem 5.34 and showed that $$ \bs{B}_{\text{dipole}} = \frac{\mu_0}{4 \pi} \frac{1}{r^3} \left[ 3(\bs{m}_1 \cdot \bhat{r}) \bhat{r}  - \bs{m}_1\right]$$ Applying that I can get the following expression:
 
+        \begin{align*}
+          \bs{B} \cdot \bhat{y} &= \frac{\mu_0}{4 \pi} \frac{1}{r^3} \left[ 3(\bs{m}_1 \cdot \bhat{r}) (\bhat{r} \cdot \bhat{y})  - (\bs{m}_1 \cdot \bhat{y}\right] \\
+            &=  \frac{\mu_0}{4 \pi} \frac{1}{r^3}  3 m_1 \sin \phi \cos \phi
+        \end{align*}
 
+        The above is true because $m_1 \cdot \bhat{y} = 0$, $m_1 \bhat{r} = m1 cos \phi$, and $\bhat{r} \cdot \bhat{y} = \sin \phi$.  I now plug this in to equaiton 6.2 to get $$F = 2 \pi I R \frac{\mu_0}{4 \pi} \frac{1}{r^3} \left[ 3 m_1 \sin \phi \cos \phi \right] $$ I can simplify the trig functions here and get a final answer (note that I apply the identity that $m_2 = I R^2 \pi$ and realize that $r >> R$ to simplify a square root).
+
+        \begin{align*}
+          F &= 2 \pi I R \frac{\mu_0}{4 \pi} \frac{1}{r^3} 3 m_1 \sin \phi \cos \phi \\
+            &= 2 \pi I R \frac{\mu_0}{4 \pi} \frac{1}{r^3} 3 m_1 \pfrac{R}{r} \phi \cos \phi \\
+            &= 2 \pi I R \frac{\mu_0}{4 \pi} \frac{1}{r^3} 3 m_1 \pfrac{R}{r}  \pfrac{\sqrt{r^2 - R^2}}{r} \\
+            &= 2 \pi I R^2 \frac{\mu_0}{4 \pi} \frac{1}{r^5} 3 m_1 \sqrt{r^2 - R^2} \\
+            &= m_2 \frac{\mu_0}{2 \pi} \frac{1}{r^5} 3 m_1 \sqrt{r^2 - R^2} \\
+            &= \frac{\mu_0}{2 \pi} \frac{1}{r^4} 3 m_1 m_2 \\
+        \end{align*}
+      \item Now I will use equation 6.3:
+      \begin{align*}
+        \bs{F} &= \nabla(\bs{m} \cdot \bs{B}) \\
+          &= (m_2 \cdot \nabla) \bs{B} \\
+          &= \left(m_2 \fracpd{}{z} \right) \frac{\mu_0}{4 \pi} \frac{1}{r^3} \left[ 3(\bs{m}_1 \cdot \bhat{r}) \bhat{r}  - \bs{m}_1\right] \\
+          &= \left(m_2 \fracpd{}{z} \right) \frac{\mu_0}{4 \pi} \frac{1}{z^3} \left[ 3(\bs{m}_1 \cdot \bhat{z}) \bhat{z}  - \bs{m}_1\right] \\
+          &= \left(m_2 \fracpd{}{z} \right) \frac{\mu_0}{4 \pi} \frac{1}{z^3} \left[ 2 \bs{m}_1 \right] \\
+          &=  m_2 \fracpd{}{z} \frac{1}{z^3} \frac{\mu_0}{4 \pi} \left[ 2 \bs{m}_1 \right] \\
+          &=  \fracpd{}{z} \frac{1}{z^3} \frac{\mu_0}{4 \pi} \left[ 2 \bs{m}_1 m_2 \right] \\
+          &= \pfrac{-3}{z^4} \frac{\mu_0}{2 \pi}  m_1 m_2 \\
+      \end{align*}
+    \end{enumerate}
+    Those are the same, so I am done. \qed
   }
 \end{homeworkProblem}
 
 \begin{homeworkProblem}[Problem 6.6]
 
-  Of the following materials which would you expect to be paramagnetic and which diamagnetic::
+  Of the following materials which would you expect to be paramagnetic and which diamagnetic:
 
   \begin{itemize}
     \item aluminium
@@ -122,25 +152,88 @@
 
   \problemAnswer{ % Answer
 
+    The key to this problem is determining if each of the molecules listed has an even of odd number of electrons. If there is an even number I expect the molecule to be diagmagnetic, if there is an odd number I would expect paramagnetism. See Table~\ref{tab:magnets} for the answer.
 
+    \qed
 
   }
+      \begin{table}
+        \begin{center}
+      \setstretch{1.25}
+      \scalebox{0.75}{
+      \begin{tabular}{lcc}
+        \hline
+         \rowcolor[gray]{.7} Molecule & \# of electrons &   Magnetism \\
+        \hline
+        \hline
+         \rowcolor[gray]{.95} Al & 13  & paramagnetic \\
+         \rowcolor[gray]{.8} Cu & The book gave the answer & diamagnetic \\
+         \rowcolor[gray]{.95}  $\text{CuCl}_2$ & 29 + (17 * 2) = 63 & paramagnetic \\
+         \rowcolor[gray]{.8} C & 6 & diamagnetic \\
+         \rowcolor[gray]{.95} Pb & 82 & diamagnetic \\
+         \rowcolor[gray]{.8} $\text{N}_2$ & 14 & diamagnetic \\
+         \rowcolor[gray]{.95} $\text{NaCl}$ & 11 + 17 = 28 & diamagnetic \\
+         \rowcolor[gray]{.8} S & 16 & diamagnetic \\
+         \rowcolor[gray]{.95} $H_2O$ & (1 *2) + 8 = 10 & diamagnetic \\
+        \hline
+      \end{tabular}}
+      \caption{Table describing magnetism of different molecules}
+      \label{tab:magnets}
+      \setstretch{1.75}
+    \end{center}
+    \end{table}
 \end{homeworkProblem}
 
 \begin{homeworkProblem}[Problem 6.12]
 
   An infinitely long cylinder, of radius $R$, carries a "frozen-in" magnetization, parallel to the axis, $$\bs{M} = kx \bhat{z}$$ where $k$ is a constant and $s$ is the distance from the axis; there is no free current anywhere. FInd the magnetic field inside and outside the cylinder by two different methods:
 
-  \begin{itemize}
+  \begin{enumerate}
     \item As in Section 6.2, locate all the bound currents, and calculate the field they produce
     \item Use Ampere's law (in the form of equation 6.20) to find \bs{H}, and then get \bs{B} from equation 6.18 (Notice that the second method is much faster, and avoids any explicit reference to the bound currents.)
-  \end{itemize}
+  \end{enumerate}
 
   \vspace{.2in}
 
   \problemAnswer{ % Answer
 
+    \begin{enumerate}
+      \item To do this I will need to apply equations 6.13 and 6.14 to get expressions for $\bs{J}_b$ and $\bs{K}_b$, respectively.
 
+          \begin{align*}
+            \bs{J}_b = \nabla \times \bs{M} = - k \bhat{\phi} \\
+            \bs{K}_b =  \bs{M} \times \bhat{n} = k R \bhat{\phi} \\
+          \end{align*}
+
+          It is easy to show that $B = 0$ outside the surface. All you need to know is that B is in the $\bhat{z}$ direction. To find the value of $B$ inside the surface I will use equation 5.44: $$ \oint \bs{B} \cdot d \bs{l} = \mu_0 I_{\text{enc}}$$ I do this below
+
+          \begin{align*}
+            \oint \bs{B} \cdot d \bs{l} = Bl &= \mu_0 I_{\text{enc}} \\
+              &= \mu_0 \left[ \int \bs{J}_b da + \bs{K}_b l \right] \\
+              &= \mu_0 \left[ \int (-k \bhat{\phi}) da + (k R \bhat{\phi}) l \right] \\
+              &= \mu_0 k l s \\
+              B &= \mu_0 k s \bhat{z}
+          \end{align*}
+        \item Now I will do it the easy way using Ampere's law. I can say that \bs{H} points in the $\bhat{z}$ direction. I will use the equation 6.20 and integrate over the same loop I just used before:
+
+        \begin{align*}
+          \oint \bs{H} \cdot d \bs{l} &= I_{f_{\text{enc}}} \\
+            H l &= 0 \\
+            \bs{H}  &= 0
+        \end{align*}
+
+        I can then use equation 6.18 ($\bs{H} = \frac{1}{\mu_0} \bs{B} - \bs{M}$) to say that $$B = \mu_0 \bs{M}$$. I can use the same arguments as before to say that outside the surface I have $\bs{M} = 0$ and inside $\bs{M} = k x \bhat{z}$ so I get the final answer that
+
+        $$
+        \begin{cases}
+          B = 0 &\text{outside} \\
+          B = \mu_0 k x \bhat{z} &\text{inside}
+        \end{cases}
+        $$
+
+    \end{enumerate}
+
+    \qed
 
   }
 \end{homeworkProblem}
@@ -158,7 +251,36 @@
 
   \problemAnswer{ % Answer
 
+    \begin{enumerate}
+      \item I start this one using our friend in equation 5.88: the expression for the magnetic field of a dipole. I do this with $\theta =0$ to get $$\bs{B}_1 = \frac{\mu_0}{4 \pi} \frac{2m}{z^3} \bhat{z}$$. I now compute this in the direction of $\bs{m}_2$: $$\bs{m}_2 \cdot \bs{b}_1 = - \frac{\mu_0}{2 \pi} \frac{m^2}{z^3}$$ Now I need to use equation 6.3 to get an expression for \bs{F}:
 
+        \begin{align*}
+          \bs{F} &= \nabla (\bs{m} \cdot \bs{B}) \\
+            &= \nabla (\bs{m}_2 \cdot \bs{B}_1) \\
+            &= \fracpd{}{z} \left[ - \frac{\mu_0}{2 \pi} \frac{m^2}{z^3} \right]  \bhat{z} \\
+            &= \frac{3 \mu_0}{2 \pi} \frac{m^2}{z^4} \bhat{z}
+        \end{align*}
+
+        I now need this to balance the gravitational force down ($mg$) and solve for z:
+
+        \begin{align*}
+          \bs{F} &= \bs{G} \\
+            \frac{3 \mu_0}{2 \pi} \frac{m^2}{z^4} \bhat{z} &= m_d g  -\bhat{z} \\
+            z &= \pfrac{3 \mu_0 m^2}{2 \pi m_d g}^{1/4} \\
+        \end{align*}
+      \item I can use the same expression for the force that I just derived. The only exception is that I need to replace $z$ with $z_t$ and $z_m$ for the distance between middle and top and the distance between middle and bottom, respectively. Doing this I can get expressions for the net force acting in the $z$ direction on the middle and top magnets:
+
+      $$
+      \begin{cases}
+        F_{\text{net}} = 0 = \frac{3 \mu_0}{2 \pi} \frac{m^2}{z_t^4} \bhat{z} - \frac{3 \mu_0}{2 \pi} \frac{m^2}{z_m^4} \bhat{z} - m_d g \bhat{z} &\text{middle magnet} \\
+        F_{\text{net}} = 0 = \frac{3 \mu_0}{2 \pi} \frac{m^2}{z_m^4} \bhat{z} - \frac{3 \mu_0}{2 \pi} \frac{m^2}{(z_m + z_t)^4} \bhat{z} - m_d g \bhat{z} &\text{top magnet}
+      \end{cases}
+      $$
+
+      I can subtract these two expressions and simplify to get that $\frac{1}{z_t^4} - \frac{2}{z_m^4} + \frac{1}{(z_t + z_m)^4} = 0$. I use this to get the expression $\frac{1}{(z_t / z_m)^4} + \frac{1}{(z_t/z_m + 1)^4} = 2$. I let the computer solve this for me and I got an answer of $z_t / z_m = 0.8501$
+
+      \qed
+    \end{enumerate}
 
   }
 \end{homeworkProblem}
@@ -186,8 +308,21 @@
 
   \problemAnswer{ % Answer
 
+    \begin{enumerate}
+      \item I will use equation 4.14 ($\bs{E} = - \frac{1}{3 \ve_0} \bs{P}$) to say that $$\bs{H} = - \frac{1}{3 \mu_0} (\mu_0 M) = - \frac{1}{3} M$$ I then use equation 6.18 ($\bs{H} = \frac{1}{\mu_0} \bs{B} - \bs{M}$) to say that $$\bs{B} = \mu_0 (\bs{H} + \bs{M}) = \mu_0 (- \frac{1}{3} \bs{M} + \bs{M}) = \frac{2}{3} \mu_0 \bs{M}$$
+      \item I will use equation 4.49 $ \left(\bs{E} = \frac{3}{\ve_r + 2} \bs{E}_0 \rightarrow \bs{E} = \frac{1}{1 + \chi_e / 3} \bs{E}_0 \right)$ to say that $$\bs{H} = \frac{1}{1  + \chi_m / 3}\bs{H}_0$$ I then use equation 6.30 $\left(\bs{B} = \mu_0 (1 +  \chi_m) \bs{H}\right)$ and equation 6.31 $\left( \bs{B}_0 = \mu_0 \bs{H}_0 \right) $ to set up the following expression $$\frac{\bs{B}}{\mu_0 (1 + \chi_m)} = \frac{1}{(1 + \chi_m / 3)}\frac{\bs{B}_0}{\mu_0} \rightarrow \bs{B} = \pfrac{1 + \chi_m}{1 + \chi_m / 3} \bs{B}_0$$.
+      \item I begin this part with the average electric field over a sphere: $\bs{E}_{\text{ave}} = - \frac{1}{4 \pi \ve_0} \frac{P}{R^3}$ I will use this in addition to equation 4.39 ($- \rho = \nabla \cdot \bs{P}$). I can use this as well as an understanding that there are no free charges to re-write the expression for the average electric field: $$\bs{E}_{\text{ave}} = - \frac{1}{4 \pi \ve_0} \frac{1}{R^3} \int \bs{P} d \tau$$ I am now in a position to make the substitutions indicated in the problem description to obtain the following: $$\bs{H}_{\text{ave}} = \frac{1}{4 \pi \mu_0} \frac{1}{R^3} \int \mu_0 \bs{M} d \tau = - \frac{1}{4 \pi R^3} \bs{m}$$ I again return to using equation 6.18 (given above) to say that
 
+        \begin{align*}
+          \bs{B}_{\text{ave}} &= -\frac{\mu_0 m}{4 \pi R^3} + \mu_0 \bs{M}_{\text{ave}} \\
+            &= -\frac{\mu_0 m}{4 \pi R^3} + \mu_0 \frac{m}{4/3 \pi R^3} \\
+            &=\frac{2 \mu_0 m}{4 \pi R^3}
+        \end{align*}
+        This is the same as equation 5.93, so I am done.
 
+    \end{enumerate}
+
+    \qed
   }
 \end{homeworkProblem}
 
